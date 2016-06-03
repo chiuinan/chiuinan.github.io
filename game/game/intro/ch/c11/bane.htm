@@ -1,0 +1,1980 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>巫術６－創世神筆之詛咒</title>
+</head>
+<body>
+<font face="細明體">
+<pre>
+名稱：巫術６－創世神筆之詛咒
+      (Wizardry 6 - Bane of the Cosmic Forge，中／英文版)
+簡介：SIR-TECH 1993年出品的角色扮演遊戲，由第三波修改成中文版並代理
+      發行。巫術系列向來和創世紀系列並稱為角色扮演遊戲的兩大經典之作，
+      前者以謎題難度著稱，後者則以劇情寫實取勝。本遊戲是這兩大系列遊
+      戲中唯一中文化者，其謎題難度之高，不在話下。整個遊戲採直角3D視
+      覺呈現，以團隊回合方式戰鬥，故事情節難以從遊戲中了解，反正也是
+      不斷的解謎直到最後殺死魔王。巫術系列最大的特色是它的技能屬性分
+      配與機率解鎖方式，這在其他的角色扮演遊戲是較為少見的。由於本遊
+      戲的難度相當的高，初級的玩家最好不要輕易嘗試，至於老手當然是不
+      可放過這款經典之作。
+限制：必須安裝在根目錄下的BANE目錄
+保護：圖形文字密碼，破解碼（中文版）：
+      WBASE.OVR
+        02 7D 16
+        00 -- --
+        74 06 B8 FF FF E9 2E FD
+        -- 00 C7 06 D2 4F 58 43
+      或
+        83 3E 0E 50 01 75 07
+        C7 06 D2 4F 58 43 90
+      或
+      WROOT.EXE
+        39 46 FE 74 0C 77 05 (密碼需輸入三個中文才能打得中敵人)
+        -- -- -- EB -- -- --
+修改：1.修正高速PC無法執行的問題：
+        WROOT.EXE
+          83 C1 01 73 01 46
+          BE 01 00 -- -- --
+        或
+          2E 8B 16 19 18 BB 0A 00
+          BA 09 00 90 90 -- -- --
+操作：TAB = 切換中英文 (DosBox無法切換，建議玩英文版，或用IMA開機檔)
+檔案：bane.ace = IMA開機檔，執行boot bane.ima即可在DosBox裡啟動純Dos
+      執行巫術６，中文可以切換輸入（DosBox未處理CON device driver所導
+      致）。IMA檔其實等同用檔案模擬磁／硬碟磁區，sec#0便是開機磁區。
+備註：中文版存檔與英文版不相容，若存檔要用到七代，請用英文版。中文版
+      目前已建好各種人物。
+備註：英文版目前存檔為初始超強裝備存檔，SAVEGAME.DBS.?為各結局存檔。
+
+修改：存檔SAVEGAME.DBS，第一個人物從位置C2C0h開始（從檔尾往前找較快），
+      每個人物1B0h byte（中文版則是1B8h，名字多了8 byte，因此中英文版
+      存檔不能相互讀取）。
+
+英文版 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+=======================================================
+ C2C0  (........名字.........) AA AA 00 00 BB BB BB BB
+ C2D0  CC CC CC CC DD DD DD DD EE EE EE EE FF FF FF FF
+ C2E0  GG GG GG GG HH HH -- -- II II II II II II II II
+ C2F0  II II II II II II II II II II II II II II II II
+ C300  (身上物品，8 byte一組，共10組)
+ C350  (背包物品，8 byte一組，共12組)
+ C3B0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3C0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3D0  JJ JJ JJ JJ JJ JJ JJ JJ 00 00 00 00 -- -- -- --
+ C3E0  -- -- 00 00 00 00 00 00 00 00 00 00 KK KK KK KK
+ C3F0  KK KK KK KK LL LL LL LL LL LL LL LL LL LL MM MM
+ C400  MM MM MM MM MM NN NN NN NN NN PP PP PP PP PP PP
+ C410  PP PP 00 QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ 00
+ C420  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C430  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C440  -- -- -- -- -- -- -- -- RR RR RR RR RR RR RR RR
+ C450  RR RR SS 00 00 00 00 00 00 00 00 00 W1 W2 W3 W4
+ C460  -- 00 00 00 00 00 01 0A 00 -- -- -- Z1 Z2 -- --
+=======================================================
+中文版 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+=======================================================
+ C2C0  (....................名字.....................)
+ C2D0  AA AA 00 00 BB BB BB BB CC CC CC CC DD DD DD DD
+ C2E0  EE EE EE EE FF FF FF FF GG GG GG GG HH HH -- --
+ C2F0  II II II II II II II II II II II II II II II II
+ C300  II II II II II II II II (身上物品，共10組)
+ C350  (身上物品)              (背包物品，共12組)
+ C3B0  (背包物品)              -- -- -- -- -- -- -- --
+ C3C0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3D0  -- -- -- -- -- -- -- -- JJ JJ JJ JJ JJ JJ JJ JJ
+ C3E0  00 00 00 00 -- -- -- -- -- -- 00 00 00 00 00 00
+ C3F0  00 00 00 00 KK KK KK KK KK KK KK KK LL LL LL LL
+ C400  LL LL LL LL LL LL MM MM MM MM MM MM MM NN NN NN
+ C410  NN NN PP PP PP PP PP PP PP PP 00 QQ QQ QQ QQ QQ
+ C420  QQ QQ QQ QQ QQ QQ QQ 00 -- -- -- -- -- -- -- --
+ C430  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C440  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C450  RR RR RR RR RR RR RR RR RR RR SS 00 00 00 00 00
+ C460  00 00 00 00 W1 W2 W3 W4 -- 00 00 00 00 00 01 0A
+ C470  00 -- -- -- Z1 Z2 -- -- (....下個人物名字.....)
+=======================================================
+
+AA=年齡
+BB=經驗值
+CC=殺敵數
+DD=金錢
+EE=目前生命／最大生命
+FF=目前精力／最大精力
+GG=目前負重（載入會重算）／最大負重
+HH=等級
+II=目前法力／最大法力，依次為火系、水系、風系、土系、心靈、魔法
+JJ=裝備的物品，在身上物品的第幾個（由00開始，FF表沒有），依次為主手、
+   副手、飾物、頭盔、護甲、護腿、手套、鞋子
+KK=屬性值，依次為力量、智力、虔誠、活力、敏捷、速度、個性、命運
+LL=武器技能值（Weaponry），各1 byte，最大64h，依次為：
+     手杖與匕首（Wand&Dagger）
+     刀劍類（Sword）
+     斧類（Axe）
+     釘頭鎚與連枷（Mace&Flail）
+     棍棒與長柄武器（Pole&Staff）
+     投擲類武器（Throwing）
+     投石器（Sling）
+     弓箭類（Bows）
+     盾牌（Shield）
+     空手戰鬥（Hands&Feet）
+MM=身體技能值（Physical），各1 byte，最大64h，依次為：
+     游泳（Swimming）
+     偵察（Scouting）
+     音樂（Music）
+     吟頌（Oratory）
+     竊盜（Legerdemain）
+     開鎖（Skulduggery）
+     忍術（Ninjutsu）
+NN=個人技能值（Personal），各1 byte，最大64h，依次為：
+     防衛（Defense）
+     速度（Speed）
+     移動（Movement）
+     瞄準（Aim）
+     力量（Power）
+PP=學術技能值（Academia），各1 byte，最大64h，依次為：
+     物品知識（Artifacts）
+     神話學（Mythology）
+     卷軸知識（Scribe）
+     鍊金術（Alchemy）
+     神學（Theology）
+     心靈學（Theosophy）
+     魔法學（Thaumaturgy）
+     刺擊術（Kirijutsu）
+QQ=似乎是火系、水系、風系、土系、心靈、魔法的抵抗力，格式不明
+RR=法術，各位元代表是否學到
+SS=隱藏法術：乾糧（Help Food）、魔法食物（Magic Food）
+W1=頭像編號
+W2=種族編號，各值為：
+     00=人類（Human）
+     01=精靈（Elf）
+     02=矮人（Dwarf）
+     03=侏儒（Gnome）
+     04=小精靈（Hobbit）
+     05=小妖精（Faerie）
+     06=蜥蜴人（Lizardman）
+     07=龍人（Dracon）
+     08=貓人（Felpurr）
+     09=狗人（Rawulf）
+     0A=雪人（Mook）
+W3=性別，00=男，01=女
+W4=職業編號，各值為：
+     00=戰士（Fighter）
+     01=法師（Mage）
+     02=牧師（Priest）
+     03=盜賊（Thief）
+     04=流浪者（Ranger）
+     05=鍊金術士（Alchemist）
+     06=詩人（Bard）
+     07=靈者（Psionic）
+     08=女戰士（Valkyrie）
+     09=主教（Bishop）
+     0A=領主（Lord）
+     0B=武士（Samurai）
+     0C=僧侶（Monk）
+     0D=忍者（Ninja）
+Z1=身上物品數量，最大0Ah
+Z2=背包物品數量，最大0Ch
+
+物品格式（8 byte一組）：AA AA BB BB CC DD EE FF
+
+AA=物品編號
+BB=重量（物品檢視時顯示資訊不會變，但人物實際負重會變）
+CC=物品種類
+     00=短程武器
+     01=中程武器（註：短程武器修改成中程武器並不會變更攻擊距離）
+     02=可投擲武器
+     03=長程武器（弓／投石器）
+     04=長程武器彈藥（箭／石頭）
+     05=飾物
+     06=頭盔
+     07=護甲
+     08=護腿
+     09=手套
+     0A=鞋子
+     0B=盾牌
+     0C=藥水
+     0D=卷軸
+     0E=無計數雜物（含樂器）
+     0F=有計數雜物
+DD=物品圖像編號，77表無圖像
+EE=物品數量／剩餘使用次數，非消耗性物品固定為0
+FF=各位元意義（物品檢視時顯示資訊不會變）：
+     01=是否裝備中
+     02=?
+     04=是否副手可裝備的武器
+     08=是否雙手武器
+     10=?
+     20=?
+     40=是否不可丟棄
+     80=?
+
+短程武器物品編號（CC=00，括號內為正確的圖像編號）：
+
+01 00      匕首（Dagger）
+02 00      副劍（Main Gauche）
+03 00      短劍（Short Sword）
+04 00      忍者短刀（Wakizashi）
+05 00      軍刀（Rapier）
+06 00 (0F) 小刀（Cutlass）
+07 00      弱劍（Inferior Sword）
+08 00 (01) 長劍（Longsword）
+09 00      闊劍（Broadsword）
+0A 00      武士刀（Katana）
+0B 00      弧形劍（Bastard Sword）
+0C 00      雙刃砍刀（Claymore）
+0D 00      刺芒戰斧（Bearded War Axe）
+0E 00      戰斧（Battle Axe）
+0F 00      聖化連枷（Anointed Flail）
+10 00      戰爭之杖（War Sceptre）
+11 00      釘頭鎚（Mace）
+12 00 (07) 木杖（Staff）
+13 00      流星鎚（Morningstar）
+14 00      鐵鎚（Hammer）
+15 00      戰鎚（War Hammer）
+1C 00      木棒（Club）
+24 00      大型匕首（Poignard）
+27 00      忍者刀（Ninjato）
+28 00      重劍（Flamberge）
+29 00      巨劍（Zweihander）
+2A 00      忍者長刀（No-Dachi）
+2B 00      雙手斧（Bipennis）
+2C 00      希卡之星（Zizka Star）
+2D 00      尖頭鎚（Bec De Corbin）
+30 00 (37) 忍者匕首（Sai）
+31 00 (38) 雙節棍（Nunchaka）
+3C 00 (00) 骷髏匕首（Skull Dagger）
+3D 00 (01) 刺擊之劍（Sword of Striking）
+3E 00      催眠刀（Beastmaster）
+3F 00      毒劍（Blackblade）
+40 00      屠龍劍（Dragon Slayer）
+41 00 (10) 武士之刃（Bushido Blade）
+43 00      毒釘頭鎚（Mustard Mace）
+50 00      盜賊匕首（Thieves Dagger）
+51 00 (3A) 死亡之刃（Blade Cuisinart）
+52 00      玄鐵重劍（Sword of Lading）
+53 00      火燄劍（Sword of Fire）
+54 00      哀傷之斧（Axe of Woe）
+55 00      碎骨杖（Maiden Head）
+56 00      火神之鎚（Vulcan Hammer）
+64 00 (59) 邪神匕首（Dagger of Ramm）
+65 00      惡魔之牙（Demons Tooth）
+66 00      心劍（Sword of Hearts）
+67 00      聖徒之劍（Saint Bastard）
+68 00 (3A) 狼牙刀（Fang）
+69 00      女神之劍（Estoc of Olivia）
+6A 00 (3B) 復仇者之刃（The Avenger）
+6B 00 (10) 村正妖刀（Muramasa Blade）
+6C 00      銳劍（Excaliber）
+6D 00      寒冰劍（Blades of Aesir）
+6E 00      鑽石之眼（Diamond Eyes）
+74 00 (33) 武士短刀+1（Wakizashi+1）
+76 00      鐵鎚+1.5（Hammer+1.5）
+77 00      巨鎚（Giant Sledge）
+25 01 (13) 魔法杖（Staff Magicus）
+26 01      星辰之杖（Stave of Stars）
+27 01      森林之杖（Dryadic Staff）
+28 01      月亮之杖（Stave of Moons）
+29 01      女巫之杖（Stave of Witches）
+2A 01      毀滅之杖（Staff of Ruin）
+2B 01      神秘之杖（Wand of Mystery）
+2C 01      編織之杖（Wand of Weaving）
+2D 01      水晶杖（Crystal Wand）
+2E 01      鬼魂之杖（Wand of Ghosts）
+2F 01      復活之杖（Necrology Rod）
+30 01      消除之杖（Wand of Razing）
+36 01      仙子之杖（Pixie Stick）
+37 01      仙靈之杖（Faerie Stick）
+38 01      夜晚之杖（Night Stick）
+39 01      靈魂之杖（Rod of Sprites）
+3A 01      閃電杖（Lightning Rod）
+3B 01      黃金之杖（Golden Rod）
+7F 01      魔彈之杖（Stave of Missiles）
+8F 01 (62) 十字鎬（Miner's Pick）
+9E 01 (00) 礦工鑿刀（Miner's Chisel）
+CA 01 (07) 神聖木樁（Holy Stake of Wood）
+
+中程武器物品編號（CC=01，括號內為正確的圖像編號）：
+
+16 00      長矛（Spear）
+17 00      錐槍（Awl Pike）
+18 00 (0A) 長棍（Quarterstaff）
+19 00      僧侶長棍（Bo）
+1A 00      戟（Halberd）
+2E 00 (36) 長鞭（Bullwhip）
+32 00      長槍（Lance）
+33 00      聖體杖（Monstrance）
+34 00      掃刀（Fauchard）
+35 00      忍者掃刀（Naginata）
+44 00 (0A) 忍者長棍（Hayai Bo）
+45 00      神聖之杖（Holy Basher）
+57 00      毀滅之刃（Ravens Bill）
+58 00      九尾鞭（Cat'o Nine Tail）
+6F 00 (5A) 女神之槍（Maenad's Lance）
+70 00      武士之杖（Zatoichi Bo）
+71 00      奪命之戟（Faust Halberd）
+73 00      閃電杖（Rammbus Staff）
+AB 01 (09) 死亡之矛（Spear of Death）
+CC 01 (13) 亞倫之杖（Staff of Aram）
+
+可投擲武器物品編號（CC=02，括號內為正確的圖像編號）：
+
+1B 00 (00) 飛刀（Dirk）
+25 00      大型飛刀（Stiletto）
+26 00      忍者飛刀（Ginzu Knife）
+2F 00      忍者飛鏢（Shuriken）
+42 00      蝴蝶斧（Butterfly Axe）
+75 00 (15) 死亡飛鏢（Shiken Shuri）
+31 01      爆竹（Sparkler）
+32 01      冰柱（Icicle）
+33 01      炸藥（Firecracker）
+34 01      管狀火箭（Bottlerocket）
+35 01      高空火箭（Skyrocket）
+66 01      仙靈之塵（Faerie Dust）
+67 01      噴嚏粉（Sneeze）
+68 01      盲目粉（Blind）
+69 01      古老灰塵（Ancient Dust）
+6A 01      神秘灰塵（Mystic Dust）
+AA 01      防熱藥粉（Foot Powder）
+
+長程武器物品編號（CC=03，括號內為正確的圖像編號）：
+
+1D 00 (0D) 投石器（Sling）
+1F 00 (0B) 短弓（Short Bow）
+20 00      長弓（Long Bow）
+22 00 (0C) 輕十字弓（Lt. Crossbow）
+4A 00      迷惑之弓（Vex Bow）
+4C 00      重十字弓（Hv. Crossbow）
+5B 00      昏迷之石（Wrist Rocket）
+5D 00      巨弓（Great Bow）
+60 00      死亡之弓（Seige Arbalest）
+72 00      精靈弓（Elven Bow）
+
+長程武器彈藥物品編號（CC=04，括號內為正確的圖像編號）：
+
+1E 00 (17) 飛石（Bullet Stone）
+21 00 (16) 精靈箭（Elm Arrow）
+23 00      方鏃箭（Quarrel）
+38 00      銳石（Razor Stone）
+39 00      愛神之箭（Cupid Arrow）
+3A 00      倒鉤箭（Barbed Arrow）
+48 00      蛇石（Serpent Stone）
+49 00      藍石（Rhine Stone）
+4B 00      毒箭（Viper Arrow）
+4D 00      碎骨石（Bone Breaker）
+5C 00      魔鬼之石（Devil Stone）
+5E 00      神秘之箭（Mystic Arrow）
+5F 00      死亡之箭（Peacemaker）
+61 00      閃電箭（Lightning Bolt）
+
+飾物物品編號（CC=05，括號內為正確的圖像編號）：
+
+C7 00 (49) 聖化披風（Anointed Cloak）
+D7 00 (49) 森林披風（Forest Cape）
+E9 00      僧侶披風（Cape of Hi-Zen）
+EA 00 (49) 幻影披風（Displacer Cloak）
+F0 00      眼罩（Eye-Patch）
+F1 00 (49) 陰影披風（Shadow Cloak）
+F2 00 (52) 骨質項鍊（Bone Necklace）
+F3 00      幸運草（Clove of Garlic）
+F4 00      絕望之鍊（Chain of Despair）
+F5 00 (4E) 銀十字架（Silver Cross）(使用前)
+F6 00 (4F) 紅寶石護符（Ruby Talisman）
+F7 00      虎形護符（Tora Maedate）
+F8 00      綠鸚鵡（Green Parrot）
+FC 00      午夜披風（Midnight Cloak）
+FD 00      醫藥袋（Medicine Bag）
+FE 00 (54) 玉雕像（Jade Figurine）
+FF 00      蜣螂項鍊（Scarab Necklace）
+00 01      死亡護符（Mempo of Death）
+04 01      玫瑰花圈（Garland of Roses）
+05 01      魔水晶（Pk Crystal）
+06 01 (57) 寶石墜子（Cameo Locket）
+07 01 (58) 鑽石戒指（Diamond Ring）
+0C 01      山貓戒指（Lynx Ring）
+0D 01      蟾蜍石戒指（Toadstone Ring）
+0E 01 (1F) 心靈戒指（Ring of Minds）
+0F 01 (1F) 神秘之戒（Mystic's Ring）
+10 01 (1F) 速度之戒（Ring of Speed）
+11 01 (1F) 靈巧之戒（Ring of Deftness）
+12 01 (1E) 夜晚護身符（Amulet of Night）
+13 01 (1E) 大氣護身符（Amulet of Air）
+14 01 (1E) 風護身符（Amulet of Winds）
+15 01 (1E) 冰護身符（Amulet of Ice）
+16 01 (1E) 生命護身符（Amulet of Life）
+17 01 (32) 體力護符（Ankh of Might）
+18 01 (32) 年齡護符（Ankh of Youth）
+19 01 (32) 醫療護符（Ankh of Wonder）
+1A 01 (32) 純淨護符（Ankh of Purity）
+1B 01 (32) 神聖護符（Ankh of Sanctity）
+1C 01 (32) 生命護符（Ankh of Life）
+1D 01 (32) 死亡護符（Ankh of Death）
+1E 01 (32) 火燄護符（Ankh of Phyre）
+23 01 (32) 防禦護符（Ankh of Arnie）
+24 01 (32) 虛無護符（Pol Ankh）
+90 01 (1F) 解碼戒指（J.R. Decoder）
+9C 01 (1F) 法師戒指（Wizard's Ring）
+A9 01 (54) 火神雕像（Idol of Mau-Mu-Mu）
+D8 01 (4E) 銀十字架（Silver Cross）(使用後)
+D9 01 (1F) 星辰戒指（Ring of Stars）
+E1 01 (1F) 達飛戒指（Ring of Delphi）
+
+頭盔物品編號（CC=06，括號內為正確的圖像編號）：
+
+80 00 (40) 無邊小帽（Skullcap）
+81 00      羽毛帽（Feathered Hat）
+8A 00      皮質頭盔（Leather Helm）
+8F 00      鋼盔（Steel Helm）
+93 00      鎧甲頭盔（Mail Coif）
+9A 00      硬質頭盔（Bascinet）
+A0 00 (5C) 忍者頭巾（Ninja Cowl）
+A2 00      法師帽（Wizard's Cone）
+A3 00      主教冠（Mitre）
+AF 00      錐形軟帽（Phrygian Cap）
+B0 00      雙層頭盔（Helm & Coif）
+B1 00 (44) 武士頭盔（Kabuto）
+C0 00      柏艮第頭盔（Burgonet Helm）
+C1 00 (19) 高硬質頭盔（Bascinet & Camail）
+C2 00      劣質頭盔（Coxcomb）
+CC 00      仙靈帽（Faerie Cap）
+CD 00      大主教冠（Mitre De Sanct）
+D4 00 (19) 騎士頭盔（Armet）
+DA 00      大型頭盔（Heaume）
+E3 00      法師尖帽（Mordecai's Cone）
+E4 00      詛咒之盔（Helm of Obitus）
+EB 00      船長帽（Tricorne Hat）
+EC 00 (60) 黑檀木盔（Ebony Heaume）
+81 01 (55) 山羊面具（Goat's Mask）
+
+護甲物品編號（CC=07，括號內為正確的圖像編號）：
+
+78 00 (2A) 布質襯衫（Cloth Shirt (U)）
+7A 00 (3C) 長袍(上)（Robes (U)）
+7C 00      獸皮甲（Fur Halter）
+7E 00 (2A) 羔羊皮衣（Suede Doublet）
+85 00      厚墊上衣（Quilt Tunic）
+87 00 (29) 皮質胸甲（Leather Cuirass）
+88 00      皮質鎖子甲（Leather Hauberk）
+8E 00      護胸鐵甲（Breastplate）
+90 00      生鏽甲冑（Tarnished Mail）
+91 00      鐵鍊鎖子甲（Chain Hauberk）
+98 00      鋼質鎧甲（Plate Mail）
+9E 00 (5D) 忍者衣(上)（Ninja Garb (U)）
+AA 00      青銅護胸甲（Bronze Cuirass）
+AC 00      強化鎖子甲（Studded Hauberk）
+B8 00      高級上衣（Jazeraint Tunic）
+BB 00      武士護甲(上)（Tosei-Do (U)）
+BD 00      劣質鎧甲（Plate Du Faux）
+BE 00 (1A) 高級鎧甲(上)（Full Plate (U)）
+CA 00      硬質護甲（Chamail Doublet）
+D0 00 (3C) 魔法長袍(上)（Robe of Enchant (U)）
+D2 00 (3C) 劣質長袍(上)（Vennal Robe (U)）
+DE 00      厚質胸罩（Stud-Cuir Bra+2）
+DF 00 (1A) 黑檀木甲(上)（Ebony Plate (U)）
+E1 00 (45) 高級護甲(上)（Hi-Kane-Do (U)）
+
+護腿物品編號（CC=08，括號內為正確的圖像編號）：
+
+79 00 (2C) 布質長褲（Cloth Shirt (L)）
+7B 00 (3D) 長袍(下)（Robes (L)）
+7D 00      軟羔皮裙（Chamois Skirt）
+7F 00 (2C) 羔羊皮長褲（Suede Pants）
+84 00 (2C) 獸皮護腿（Fur Legging）
+86 00      厚墊護腿（Quilt Legging）
+89 00      皮質護腿（Leather Legging）
+92 00      鐵鍊護腿（Chain Chausses）
+97 00      劣質鎧甲（Hoaxial Plate）
+99 00      鋼質護腿（Plate Greviere）
+9F 00 (5E) 忍者衣(下)（Ninja Garb (L)）
+AB 00      皮質護脛套（Leather Greaves）
+AD 00      強化護腿（Stud Chausses）
+AE 00      劣質護腿（Hoary Legging）
+B9 00      高級長裙（Jazeraint Skirt）
+BA 00 (2B) 青銅護脛套（Bronze Greaves）
+BC 00      武士護甲(下)（Tosei-Do (L)）
+BF 00 (1B) 高級鎧甲(下)（Full Plate (L)）
+CB 00      硬質長褲（Chamail Pants）
+D1 00 (3D) 魔法長袍(下)（Robe of Enchant (L)）
+D3 00 (3D) 劣質長袍(下)（Vennal Robe (L)）
+E0 00 (1B) 黑檀木甲(下)（Ebony Plate (L)）
+E2 00 (46) 高級護甲(下)（Hi-Kane-Do (L)）
+
+手套物品編號（CC=09，括號內為正確的圖像編號）：
+
+8B 00 (2D) 硬皮手套（Cuir Gauntlets）
+94 00      鎧甲手套（Mail Mittens）
+9B 00      鋼質手套（Steel Gauntlets）
+B2 00      劣質手套（Unctuous Gloves）
+B3 00      軟羔皮手套（Chamois Gloves）
+B4 00      紅銅手套（Copper Gloves）
+C3 00 (1C) 銀手套（Silver Gloves）
+D5 00 (4A) 螳螂手套（Mantis Gloves）
+
+鞋子物品編號（CC=0A，括號內為正確的圖像編號）：
+
+82 00 (2E) 涼鞋（Sandals）
+83 00 (2F) 厚底靴（Buskins）
+8C 00 (30) 皮質長靴（Leather Boots）
+95 00      鐵鍊長靴（Chain Hosen）
+9C 00      鋼片鞋（Solleret）
+A1 00 (5F) 忍者靴（Tabi Boots）
+C4 00 (1D) 銀鞋（Silver Solleret）
+C5 00      鉛鞋（Lead Boots）
+D6 00 (4B) 螳螂靴（Mantis Boots）
+E5 00      神聖拖鞋（Sacred Slippers）
+E6 00 (4C) 水翼鞋（Water Wings）
+E7 00      玻璃鞋（Glass Slippers）
+
+盾牌物品編號（CC=0B，括號內為正確的圖像編號）：
+
+8D 00 (26) 小型盾（Buckler Shield）
+96 00      圓盾（Round Shield）
+9D 00      熱盾（Heater Shield）
+B5 00      劣質盾（Duck Shield）
+C6 00      龍盾（Dragon Kite）
+E8 00      紋章盾（Heraldic Shield）
+
+藥水物品編號（CC=0C，括號內為正確的圖像編號）：
+
+3C 01 (20) 輕度醫療（Lt. Heal）
+3D 01 (20) 中度醫療（Mod. Heal）
+3E 01 (20) 高度醫療（Hv. Heal）
+3F 01 (20) 中等恢復疲勞（Mod. Stamina）
+40 01 (20) 高等恢復疲勞（Hv. Stamina）
+41 01 (20) 治療輕微病症（Cure Lt. Cnd）
+42 01 (20) 治療中毒（Cure Poison）
+43 01 (20) 治療麻痺（Cure Paralyz）
+44 01 (20) 治療石化（Cure Stone）
+45 01 (20) 復活（Resurrection）
+46 01      臭雲炸彈（Stink Bomb）
+47 01      櫻桃炸彈（Cherry Bomb）
+48 01      火燄炸彈（Fire Bomb）
+49 01      毒氣炸彈（Poison Bomb）
+4A 01      酸液炸彈（Acid Bomb）
+4B 01      致命毒液（Deadly Poison）
+4C 01 (20) 聖水（Holy Water）
+92 01 (65) 神秘油（Mystery Oil）
+CB 01 (20) 聖水（Holy H2O+）
+
+卷軸物品編號（CC=0D，括號內為正確的圖像編號）：
+
+4D 01 (21) 魔法護盾（Armor Shield）
+4F 01 (21) 魔法飛彈（Magic Missile）
+50 01 (21) 恐懼術（Terror）
+51 01 (21) 解咒術（Dispell Undead）
+52 01 (21) 緩慢術（Slow）
+53 01 (21) 解鎖術（Knock-Knock）
+54 01 (21) 束縛怪物（Hold Monsters）
+55 01 (21) 火燄盾（Fire Shield）
+56 01 (21) 冰盾術（Ice Shield）
+57 01 (21) 強化護盾（Armorplate）
+58 01 (21) 強化武器（Enchanted Blade）
+59 01 (21) 飛刀術（Blades）
+5A 01 (21) 火球術（Fireball）
+5B 01 (21) 移形化影（Blink）
+5C 01 (21) 製造幻影（Illusion）
+5D 01 (21) 大召喚術（Conjuration）
+5E 01 (21) 飄浮術（Levitate）
+5F 01 (21) 吸星大法（Lifesteal）
+60 01 (21) 復活術（Resurrection）
+
+無計數雜物編號（CC=0E）：
+
+36 00 (77) 簧風琴（Harmonium）
+37 00 (77) 琵琶（Lute）
+3B 00 (77) 天使之舌（Angel's Tongue）
+46 00 (77) 魔鬼之笛（Devil's Pipe）
+47 00 (77) 午夜之聲（Midnight Choir）
+4F 00 (77) 牧神之笛（Pan Flute）
+59 00 (77) 火燄號角（Horn of Prometheus）
+5A 00 (77) 低音豎琴（Basso Lyre）
+62 00 (77) 死靈魔音（Cuckoo Call）
+63 00 (77) 蛋糕豎琴（Lyre Of Cakes）
+1F 01 (31) 祈禱之書（Book of Mantras）
+20 01 (31) 迷惑之書（Book of Rapture）
+21 01 (31) 惡魔之書（Book of Demons）
+22 01 (31) 詩詞之書（Book of Poetry）
+61 01 (31) 飄浮之書（Book of Levitation）
+62 01 (31) 寡婦之書（Book of Widows）
+63 01 (31) 鑑識之書（Book of Identity）
+64 01 (31) 平靜之書（Book of Peace）
+65 01 (31) 反魔法之書（Book of Anti-Magic）
+6B 01 (31) 冰盾之書（Book of Iceshield）
+6C 01 (31) 大氣之書（Book of Airs）
+6D 01 (31) 氣盾之書（Book of Air Shield）
+6E 01 (31) 沉靜之書（Book of Silence）
+6F 01 (31) 解鎖之書（Book of Knocks）
+70 01 (31) 方位之書（Book of Directions）
+71 01 (31) 偵測之書（Book of Detection）
+72 01 (31) 寒冷之書（Book of Chills）
+73 01 (31) 盲目之書（Book of Blinding）
+74 01 (31) 虛弱之書（Book of Weakening）
+75 01 (31) 遲緩之書（Book of Sloth）
+76 01 (31) 毒害之書（Book of Poisons）
+77 01 (31) 火盾之書（Book of Fireshield）
+78 01 (31) 保護之書（Book of Protection）
+79 01 (31) 治療之書（Book of Lt.Curing）
+7A 01 (31) 催眠之書（Book of Dozes）
+7B 01 (31) 熔甲之書（Book of Armormelt）
+7C 01 (23) 金鑰匙（Gold Key）
+82 01 (23) 邪神之鑰（Key of Ramm）
+84 01 (31) 魔王日記（King's Diary）
+85 01 (23) 鐘樓鑰匙（Bell Key）
+86 01      粗重繩索（Hv. Rope）
+87 01 (23) 銀鑰匙（Silver Key）
+88 01      腐敗乳酪（Rotten Cheese）
+89 01      酒瓶（Wine Bottle）
+8A 01 (23) 獄卒鑰匙（Jailer Key）
+8B 01 (31) 死者日誌（Deadman's Log）
+8C 01      鋼鉤（Steel Hook）
+8D 01 (77) 繩鉤（Rope & Hook）
+8E 01 (23) 地牢鑰匙（Dungeon Key）
+91 01      玩具小狗（Stuffed Beagle）
+93 01 (77) 存根（Ticket Stub）
+94 01 (31) 邪神之書（Book of Ramm）
+95 01      破裂齒輪（Broken Sprocket）
+96 01      齒輪（Sprocket）
+97 01      橡皮纖維（Rubber Strand）
+98 01      橡皮筋（Rubber Braid）
+99 01      橡皮繩（Rubber Band）
+9A 01      巨石（Hv. Boulder）
+9B 01      小型飾物（Bauble & Trinkets）
+9D 01      礦工鑰匙（Key of a Minor）
+A0 01 (23) 塔樓鑰匙（Spire Key）
+A1 01 (31) 法師日記（Wizard's Record）
+A2 01 (77) 靈魂號角（Horn of Souls）
+A3 01      紅寶石之眼（Ruby Eyeball）
+A4 01      紅寶石之眼（Ruby Eyeball）
+A5 01      黏膠（Gloop Sploch）
+A6 01 (23) 骨鑰匙（Bone Key）
+A7 01      沙袋（Bag of Sand）
+A8 01      空袋子（Empty Bag）
+AC 01 (23) 米諾斯鑰匙（Key of Minos）
+AD 01 (23) 亡靈之鑰（Key of the Damned）
+AE 01 (31) 亡靈之書（Book of the Damned）
+AF 01      骨灰甕（Cylinder of Ash）
+B0 01      骨灰甕（Cylinder of Ash）
+B1 01 (23) 墓穴之鑰（Tomb Key）
+B2 01 (31) 水妖之書（Book of the Sirens）
+B3 01      骨灰甕（Cylinder of Ash）(正)
+B4 01 (23) 迷失之鑰（Key of the Lost）
+B5 01 (23) 東方出口之鑰（East Exit Key）
+B6 01      煙管（Hooka Pipe）
+B7 01 (77) 線香（Incense）
+B8 01      瓶塞（Cork Bobber）
+B9 01      紙條（Special Message）
+BA 01      被塞住的瓶子（Bottle w/Cork）
+BB 01      放有紙條的瓶子（Bottle w/Msg）
+BC 01      紙條／塞子／瓶子（Botl w/Msg+Cork）
+BD 01 (77) 答案／塞子／瓶子（Botl w/Ans+Cork）
+BE 01      魚線（Fishline）
+BF 01      魚鉤（Fish Hook）
+C0 01 (77) 釣竿（Fishline w/Hook）
+C1 01 (23) 寶庫鑰匙（Vault Key）
+C2 01 (23) 死者之鑰（Key of the Dead）
+C4 01 (23) 骷髏鑰匙（Skeleton Key）
+C5 01 (23) 黑暗精靈之鑰（Key of Drows）
+C6 01 (23) 騎士之鑰（Key of Knights）
+C7 01 (23) 女武士之鑰（Key of Valkyries）
+C8 01 (23) 皇后之鑰（Key of Queens）
+C9 01 (23) 邪惡之鑰（Key of Devil）
+CD 01 (77) 鈴噹（Tinkerbell）
+CE 01 (77) 反映之石（Rock of Reflection）
+CF 01 (23) 決策之鑰（Key of Decision）
+D0 01 (23) 第一試驗之鑰（Key of 1st Test）
+D1 01 (23) 陰暗之鑰（Key of Quandry）
+D2 01 (23) 第一試驗之鑰（Key of 1st Test）
+D3 01 (23) 虛無之鑰（Key of Nothing）
+D4 01 (23) 最終之鑰（Key of Finality）
+D5 01 (23) 最終之鑰（Key of Finality）
+D6 01 (23) 青鑰鑰匙（B.D. Key）
+D7 01 (23) 星辰之鑰（Key of Stars）
+DF 01 (23) 法師洞穴之鑰（Key of Wizard Cave）
+E0 01      液態金屬（Liquid Metal）
+E2 01 (23) 北方出口之鑰（North Exit Key）
+
+有計數雜物編號（CC=0F，DD=77）：
+
+7D 01 (23) 鐵鑰匙（Iron Key）
+7E 01 (23) 紅銅鑰匙（Copper Key）
+80 01 (23) 黑桃鑰匙（Key of Spades）
+83 01 (23) 鉻鑰匙（Chrome Key）
+9F 01      烤玉米（Roasted Corn）
+C3 01 (77) 紅蘑菇（Red Mushroom）
+DA 01      玫瑰花辮（Rose Petals）
+DB 01      蕓薹（Rutabega）
+DC 01      蘋果（Apple）
+DD 01      魔法餅乾（Magic Cookie）
+DE 01      草藥餅（Herbal Patty）
+
+常用職業最佳裝備改法：
+
+1.武士
+
+武器：70 00 00 00 01 0A 00 04 (Zatoichi Bo)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：B1 00 00 00 06 44 00 00
+護甲：E1 00 00 00 07 45 00 00
+護腿：E2 00 00 00 08 46 00 00
+手套：8B 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+2.女戰士
+
+武器：6C 00 00 00 01 10 00 04 (Excaliber)x2
+飾物：07 01 00 00 05 1F 58 00
+頭盔：EC 00 00 00 06 60 00 00
+護甲：DF 00 00 00 07 1A 00 00
+護腿：E0 00 00 00 08 1B 00 00
+手套：D0 00 00 00 09 4A 63 00
+鞋子：D6 00 00 00 0A 4B 63 00
+
+3.忍者
+
+武器：41 00 00 00 01 10 00 04 (Bushido Blade)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：A0 00 00 00 06 5C 00 00 (保留原有即可)
+護甲：9E 00 00 00 07 5D 00 00 (保留原有即可)
+護腿：9F 00 00 00 08 5E 00 00 (保留原有即可)
+鞋子：E6 00 00 00 0A 4C 00 00
+
+4.詩人
+
+武器：58 00 00 00 01 36 00 04 (Cat'o Nine Tail)x2
+飾物：07 01 00 00 05 1F 58 00
+頭盔：AF 00 00 00 06 40 00 00
+護甲：B8 00 00 00 07 2A 00 00
+護腿：B9 00 00 00 08 2C 00 00
+手套：B3 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+樂器：59 00 00 00 0E 77 00 00
+
+5.牧師
+
+武器：73 00 00 00 01 0A 00 04 (Rammbus Staff)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：CD 00 00 00 06 40 00 00
+護甲：D0 00 00 00 07 3C 00 00
+護腿：D1 00 00 00 08 3D 00 00
+手套：B3 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+6.法師
+
+武器：18 00 00 00 01 0A 00 04 (Quarterstaff)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：CC 00 00 00 06 40 00 00
+護甲：D0 00 00 00 07 3C 00 00
+護腿：D1 00 00 00 08 3D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+
+攻略：（作者－青衫）
+
+*** 人物屬性說明
+
+力量（STR）：影響攻擊傷害力、攜重量、精力升級增量。
+智力（INT）：影響施法成功率、偵測陷阱效果。
+虔誠（PIE）：影響法力升級增量、法力恢復速度。
+活力（VIT）：影響生命升級增量、精力升級增量。
+敏捷（DEX）：影響攻擊次數、防護力、閃避機率。
+速度（SPD）：影響攻擊次數、防護力。
+個性（PER）：影響交易價格。
+命運（KAR）：無。
+
+*** 職業（Class）
+
+職業升級與屬性要求（升級所需經驗 = 升級基值*2^等級）：
+
+  職業    升級基值  力量  智力  虔誠  活力  敏捷  速度  個性  性別
+------------------------------------------------------------------
+  盜賊        900    －    －    －    －    12     8    －    －
+  戰士       1000    12    －    －    －    －    －    －    －
+  鍊金術士   1100    －    13    －    －    13    －    －    －
+  女戰士     1100    10    －    11    11    10    11     8    女
+  法師       1250    －    12    －    －    －    －    －    －
+  牧師       1250    －    －    12    －    －    －     8    －
+  詩人       1250    －    10    －    －    12     8    12    －
+  靈者       1250    10    14    －    14    －    －    10    －
+  流浪者     1400    10     8     8    11    10     8     8    －
+  領主       1400    12     9    12    12     9     9    14    －
+  武士       1400    12    11    －     9    12    14     8    －
+  僧侶       1400    13     8    13    －    10    13     8    －
+  主教       1500    －    15    15    －    －    －     8    －
+  忍者       1500    12    10    10    12    12    12    －    －
+
+職業說明：
+
+01.戰士（Fighter）：生命高，能用幾乎所有的武器防具，不會法術。初期很
+   有用，中後期便顯得用處不大，除非轉職成其他角色。
+02.法師（Mage）：生命低，可使用少數武器防具，會法師法術。法師法術的傷
+   害力在遊戲中是最大的，由於法師升級快，容易學到高階法術，因此幾乎是
+   隊伍不可或缺的角色。
+03.牧師（Priest）：可使用有限的武器防具，會牧師法術。治療用的牧師法術
+   在本遊戲也是相當重要，但若選了女戰士，此角色似乎便顯得比較不重要了。
+   不過初期很需要治療法術，而女戰士必須第3級以後才有法術，同時法力亦
+   較女戰士多，故仍值得考慮使用。
+04.盜賊（Thief）：能使用大半的武器防具，會開鎖、偷竊，不會法術。由於
+   升級最快，提升開鎖技巧後，較能開啟門與箱子。不過開鎖也可使用解鎖術，
+   成功機率比直接開鎖更高（除了結局三最後的門之外），因此其實可以不考
+   慮這個職業，或是改用吟遊詩人、流浪者、忍者等具有盜賊技能的角色。又，
+   由於最佳裝備的限制條件，盜賊最好由女性擔任。
+05.流浪者（Ranger）：能使用大半的武器（尤其是弓箭）和有限的防具，會盜
+   賊技能、鍊金術。升級慢，鍊金術用途亦不廣，不如選用詩人。
+06.鍊金術士（Alchemist）：可使用少數武器防具，會鍊金術。由於鍊金術效
+   用不大，大抵不用考慮。
+07.詩人（Bard）：可使用大半的武器防具，會盜賊技能、法師法術，能使用樂
+   器。在初期便相當好用的一個角色，不過技能一多便容易相互排擠，也可考
+   慮專職的人選。此外，由於最佳裝備的限制條件，詩人最好由女性擔任。
+08.靈者（Psionic）：可使用少數武器防具，會心靈法術。心靈法術的效用亦
+   不大，大抵不用考慮。
+09.女戰士（Valkyrie）：能用幾乎所有的武器防具，會牧師法術。升級速度略
+   遜於戰士，但差異不大，由於能學牧師法術，反較戰士值得。尤其是末期的
+   女神之槍，只有女戰士能用，因此隊伍最好配置一位。
+10.主教（Bishop）：可使用有限武器防具，同時會法師法術及牧師法術。由於
+   升級緩慢，且每升一級才學一項法術，非常不值得，不如選用法師或牧師等
+   專職角色，然後在中途轉職比較快些，生命與法力也會比較多。
+11.領主（Lord）：能力與女戰士相同，可使用的武器防具略遜於女戰士，升級
+   亦更慢，除非是男性轉職用，否則並不值得。
+12.武士（Samurai）：可使用有限的武器防具，會法師法術，也會致命一擊，
+   相當優秀的一位戰士。尤其是末期的村正妖刀，只有武士能用，因此隊伍最
+   好配置一位。
+13.僧侶（Monk）：能使用有限的武器與少數的防具，會心靈法術、致命一擊
+   （尤其是空手戰鬥），等級高時防護力自然加強。看起來似乎不錯，但心靈
+   法術效用不大，前排近戰或後排遠戰似乎都遜於其他專職角色，可以用但並
+   不非常推薦。
+14.忍者（Ninja）：可使用有限武器防具，會盜賊技能、鍊金術、致命一擊
+   （尤其是空手戰鬥），等級高時防護力自然加強，可說是本遊戲的終極戰士。
+   不過因為升級緩慢，因此技能提升得也慢，除非努力升級，否則其能力可能
+   無法表現。注意忍者裝備無法買到（只有末期時才有敵人會掉），若隊伍想
+   中途轉職成忍者，那麼初始時便要配上一位忍者來提供裝備。
+
+建議創建人物：
+
+女戰士、武士、忍者、詩人、牧師、法師
+
+*** 種族（Race）
+
+種族基本屬性（男性）：
+
+  種族    力量  智力  虔誠  活力  敏捷  速度  個性  總合  抗性
+-------------------------------------------------------------------
+  人類      9     8     8     9     9     8     8    59
+  精靈      7    10    10     7     9     9     8    60   催眠
+  矮人     11     6    10    12     7     7     7    60   毒／魔法
+  侏儒     10     7    13    10     8     6     6    60   魔法
+  小精靈    8     7     6     9    10     7    13    60   魔法
+  小妖精    5    11     6     6    10    14    12    64   魔法
+  蜥蜴人   12     5     5    14     8    10     3    57   酸／心靈
+  龍人     10     7     6    12    10     8     6    59   酸／魔法
+  貓人      7    10     7     7    10    12    10    63
+  狗人      8     6    12    10     8     8    10    62   冷
+  雪人     10    10     6    10     7     7     9    59   冷／魔法
+
+女性一律力量-2、個性+1、命運+1。由於力量屬性重要性遠高於個性和命運，
+因此除了女戰士、詩人、盜賊外，其餘職業最好都選男性。
+
+01.人類（Human）：屬性平均，沒什麼特別適合的職業，不值得選擇。
+02.精靈（Elf）：善用弓箭，流浪者的不二選擇（精靈弓），亦適合主教、僧侶。
+03.矮人（Dwarf）：屬性適合忍者、女戰士。
+04.侏儒（Gnome）：沒什麼特別適合的職業，不值得選擇。
+05.小精靈（Hobbit）：沒什麼特別適合的職業，不值得選擇。
+06.小妖精（Faerie）：天生有較高防禦力（AC-2）。屬性適合法師、鍊金術士、
+   詩人、盜賊、武士，但因無法使用大部份的裝備，因此除了法師、鍊金術士
+   外的角色，並不適合。如果中途還想轉職，那麼最好不要用小妖精。
+07.蜥蜴人（Lizardman）：屬性適合戰士。
+08.龍人（Dracon）：具吐酸能力，剛開始時未拿到中程武器，放在後排時有些
+   用處。屬性適合忍者、盜賊。
+09.貓人（Felpurr）：閃避機率高。屬性適合武士、詩人、忍者、盜賊、僧侶。
+10.狗人（Rawulf）：屬性適合領主、牧師。
+11.雪人（Mook）：屬性適合靈者。
+
+*** 種族與職業的搭配
+
+種族／職業所需額外屬性數值表（斜線左上為男性，右下為女性）：
+
+職業     人類  精靈  矮人 侏儒 小精靈 小妖精 蜥蜴人 龍人  貓人  狗人  雪人
+--------------------------------------------------------------------------
+戰士     3/5   5/7   1/3   2/4   4/6   7/9    0/2   2/4   5/7   4/6   2/4
+法師     4/4   2/2   6/6   5/5   5/5   1/1    7/7   5/5   2/2   6/6   2/2
+牧師     4/4   2/2   3/2   2/1   6/6   6/6   12/11  8/7   5/5   0/0   6/6
+盜賊     3/3   3/3   6/6   6/6   3/3   2/2    4/4   2/2   2/2   4/4   6/6
+流浪者   4/6   8/10  7/8   8/9   8/10 12/14  13/12  5/6   8/10  7/9   7/9
+鍊金術士 9/9   7/7  13/13 11/11  9/9   5/5   13/13  9/9   6/6  12/12  9/9
+詩人     9/8   7/6  15/14 15/14  6/6   2/2   18/17 11/10  4/3  10/9   9/8
+靈者    14/15 16/17 13/12 15/16 14/16 16/18  16/15 13/14 14/16 14/16  9/10
+女戰士   -/12  -/12  -/9   -/11  -/14  -/17   -/13  -/11  -/13  -/10  -/15
+主教    14/14 10/10 15/14 12/11 17/17 13/13  25/24 19/18 13/13 12/12 14/14
+領主    18/19 18/19 17/18 18/19 18/19 21/22  23/24 19/20 19/20 15/16 19/20
+武士    15/17 16/18 19/20 20/21 17/19 12/14  19/20 16/17 12/14 19/21 15/17
+僧侶    15/17 14/16 17/18 15/16 19/21 15/17  22/23 18/19 13/15 15/17 19/21
+忍者    17/19 16/18 15/17 17/19 21/23 19/21  16/18 15/17 15/17 18/20 18/20
+
+各職業建議使用的種族：
+
+01.戰士：蜥蜴人
+02.法師：小妖精（若想轉職，可改用貓人、雪人、矮人）
+03.牧師：狗人
+04.盜賊：女龍人、女貓人
+05.流浪者：精靈
+06.鍊金術士：小妖精（若想轉職，可改用貓人）
+07.詩人：女貓人
+08.靈者：雪人
+09.女戰士：女矮人
+10.主教：精靈
+11.領主：狗人
+12.武士：貓人
+13.僧侶：精靈
+14.忍者：龍人、矮人、貓人
+
+*** 技能說明
+
+1.武器技能（Weaponry）
+
+(1)手杖與匕首（Wand&Dagger）
+(2)刀劍類（Sword）
+(3)斧類（Axe）
+(4)釘頭鎚與連枷（Mace&Flail）
+(5)棍棒與長柄武器（Pole&Staff）
+(6)投擲類武器（Throwing）
+(7)投石器（Sling）
+(8)弓箭類（Bows）
+(9)盾牌（Shield）
+(10)空手戰鬥（Hands&Feet）
+
+武器技能可隨使用次數快速增加其技能值，故升級時並不必費心去增加。
+
+2.身體技能（Physical）
+
+(1)偵察（Scouting）：發現隱藏事件的能力，比較沒用處。
+(2)音樂（Music）：影響詩人演奏樂器造成的魔法等級。
+(3)吟頌（Oratory）：影響施法成功率（鍊金術除外），失敗可能會反彈法術。
+(4)竊盜（Legerdemain）：偷竊NPC身上的金錢或物品，比較沒用處。
+(5)開鎖（Skulduggery）：影響開鎖與解除陷阱成功率。
+(6)忍術（Ninjutsu）：影響隱藏自己的成功率。
+
+除偵察外，皆可隨使用次數逐漸增加技能值。不過一般在升級時，均會繼續強
+化開鎖的技能值，但除非是要玩結局三，不然放棄此一技能，直接用解鎖術會
+比較好些（打不開便讀回存檔重試即可）。
+
+3.學術技能（Academia）
+
+(1)物品知識（Artifacts）：影響使用物品法術的成功率，比較沒用處。
+(2)神話學（Mythology）：戰鬥時認出敵人的能力，隨遇敵次數自動增加。
+(3)卷軸知識（Scribe）：影響使用卷軸法術的成功率，比較沒用處。
+(4)鍊金術（Alchemy）：決定可學的鍊金法術。
+(5)神學（Theology）：決定可學的牧師法術。
+(6)心靈學（Theosophy）：決定可學的心靈法術。
+(7)魔法學（Thaumaturgy）：決定可學的法師法術。
+(8)刺擊術（Kirijutsu）：增加致命一擊的機率。
+
+鍊金術、神學、心靈學、魔法學無法自動增加，必須在升級時另行加入技能值，
+沒有持續加入的話，可能會造成升級時學不到新的法術。刺擊術必須在發生致
+命一擊時才會慢慢增加，速度非常緩慢，因此多半也會另行加入技能值來提升
+（很值得）。
+
+*** 武器攻擊模式
+
+攻擊模式        擊中率  穿透率  傷害率
+----------------------------------------------------
+揮砍（Swing）     －      －      －
+刺擊（Thrust）    -2      +1      +1
+重擊（Bash）      －      -2      +2（視力量而定）
+肉搏（Melee）     -4      -4      *2
+投擲（Throw）     -1      +1      －
+拳擊（Punch）     +1      -1      －
+飛踢（Kick）      -2      －      +2（視力量而定）
+鞭打（Lashing）   +2      -2      －
+射擊（Shoot）     －      +2      －
+
+當成功擊中敵人，並穿透敵人護甲時，才能造成傷害。
+
+*** 其他說明
+
+1.隊伍分成2排，前3人在前排，後3人在後排，因此前3人最好儘量安排戰士類
+  人物，法師等較弱的施法人員則安排到後3人。
+2.後排人物不能使用短程武器攻擊，必須改用其他武器：
+  (1)中程武器（長武器）：可攻擊前2群。
+  (2)投擲武器：可攻擊前3群。
+  (3)長程武器（射擊武器）：可攻擊任一群。
+3.負重的影響：
+  (1)50%～66%：擊中率-5%
+  (2)67%～75%（藍）：擊中率-10%，防護力-1
+  (3)76%～90%（黃）：擊中率-20%，防護力-2
+  (4)91%以上（紅）：擊中率-25%～-40%，防護力-4
+4.法術在初中後期均很好用，但末期許多敵人都對法術免疫，因此要多靠近戰
+  的人物。
+5.各層地圖請參閱<a href="bane\bane.htm">bane\bane.htm</a>。
+
+*** 城堡一樓（Castle Entrance Level）
+
+<IMG src="bane\Castle1.png">
+ 1.遊戲開始所在位置，先按Enter再選檢視（Review），然後選裝備（Equip），
+   將隊員武裝好。
+ 2.寶箱，標示先開啟我（Open Me First），打開後有一些治療用的藥水，以
+   及可施展復活術的生命項鍊（Amulet of Life）。
+ 3.寶箱，標示再開啟我（Open Me Second），打開後有金錢和刺擊之劍
+   （Sword of Striking）。可利用鑑定（Assay）來查看物品可使用的種族與
+   職業，若要知道武器的傷力，則必須施展靈系的鑑定術（Identify）。如果
+   未開#2的寶箱而先開這個寶箱，則是得到一些鐵鑰匙，以及魔法飛彈之杖
+   （Stave of Missiles）。
+ 4.恢復疲勞的泉水，可在此處先練功到3或4級後再冒險，比較好些。要遇敵，
+   只需一直按著右鍵或左鍵原地旋轉即可。
+ 5.這些門可讓盜賊練習開鎖，提升開鎖技能。開鎖前最好存一下檔，失敗時便
+   讀檔回來嘗試。萬一開鎖失敗卡死，也可以用鐵鑰匙（Iron Key）開啟，這
+   些鑰匙偶爾會在打敗敵人後得到。
+ 6.有陷阱寶箱，裡面有一些物品和方向之書（Book of Directions）。開前最
+   好存一下檔。試著開鎖（Pick），選擇檢查（Inspect）猜測陷阱類型，然
+   後拆解陷阱（Disarm），萬一觸動陷阱便讀檔重來。
+ 7.面北搜尋（Search）按下按鈕，可開啟旁邊的柵門。
+ 8.搜尋，得邪神之鑰（Key of Ramm）。從#a下樓。
+ 9.這個柵門必須從二樓跳下後，才會開啟。
+
+*** 城堡地下一樓（Castle Lower Level 1）
+
+<IMG src="bane\CastleB1.png">
+ 1.無用的泉水。
+ 2.有毒的泉水，喝了會中毒。
+ 3.奎格（Queequeg），可以跟他買賣物品，目前切勿殺了他。可和他交談，詢
+   問謠言（Rumor），得知法國人遺失了心愛物品（Beloved），再問船長的密
+   碼（Password），他會要求船長藏寶地點的訊息做為交換。最後打入再見
+   （Bye）結束對話。
+ 4.遭遇海盜群，算是初期的第一場硬仗。
+ 5.往南搜尋，按下按鈕打開密門。
+ 6.搜尋，得到鍊條甲（Chain Mail）和一些不錯的物品。
+ 7.可用鐵鑰匙開啟的門，儘量用來提升開鎖技能。
+ 8.搜尋，可得獄卒鑰匙（Jailer Key）。
+ 9.可用獄卒鑰匙打開的柵門，開完後，獄卒鑰匙便會消失。北邊的柵欄是無法
+   打開通過的。
+10.搜尋骷髏，可得死者日誌（Deadman's Log）與可以讓敵人發癢的樂器小風
+   琴（Harmonium）。
+11.搜尋，可得腐敗乳酪（Rotten Cheese）。
+12.搜尋，可得酒瓶（Wine Bottle）。
+13.南面牆寫著L'montes在找Snoopcheri。
+14.使用腐敗乳酪，一群老鼠破牆而出，也是一場硬仗。
+15.寶箱，有陷阱（以後皆然），可得玩具小狗（Stuffed Beagle）和一些不錯
+   的裝備。
+16.以下目前皆無法進入，現在可以從#B、#C、#D、#E等處一路上樓，逛逛各角塔。
+ F.通往魔法森林#f，注意該處的怪物很強，因此最好不要前往。
+
+*** 東南角塔
+
+  四樓
+<IMG src="bane\Castle4.png">
+    1.向門後的L'MONTES說〞雪莉〞（Beloved或Snoopcheri）即可進入，給他
+      玩具小狗可得到銀鑰匙（Silver Key）。
+
+*** 東北角塔
+
+  二樓
+<IMG src="bane\Castle2.png">
+    1.無法打開的門，另外有路可通到門後。
+    2.可用鐵鑰匙開啟的門，儘量用來提升開鎖技能。
+    3.搜尋，可得銅鑰匙（Copper Key）。
+  四樓
+<IMG src="bane\Castle4.png">
+    2.生物的屍體，選搜尋（Search）則屍體會爆炸，導致隊伍噁心，其餘選
+      項則沒事。
+    3.搜尋，可得短弓（Short Bow）和精靈箭（Elm Arrow）。
+
+*** 西北角塔
+
+  二樓
+<IMG src="bane\Castle2.png">
+    1.無法打開的柵門，另外有路可通到門後。
+  三樓
+<IMG src="bane\Castle3.png">
+    1.天花板掉下石塊砸傷隊員。
+  四樓
+<IMG src="bane\Castle4.png">
+    4.按下東牆的按鈕會出現一個寶箱。
+
+*** 西南角塔
+
+  四樓
+<IMG src="bane\Castle4.png">
+    5.遭受蝙蝠群攻擊。
+    6.搜尋，可得皮護胸（Leather Cuirass）。回一樓從#G上二樓。
+
+*** 城堡二樓（Castle Upper Level 1）
+
+<IMG src="bane\Castle2.png">
+ 1.無法打開的柵門，另外有路可通到門後。
+ 4.搜尋，可得兩支黑桃鑰匙（Key of Spades）。
+ 5.可用銅鑰匙（Coper）開啟的門，儘量用來提升開鎖技能。回一樓從#H上樓。
+
+*** 城堡六樓（Castle Lower Level 5）
+
+<IMG src="bane\Castle6.png">
+ 1.必須使用黑桃鑰匙開門，進入後和殭屍戰鬥，也是一場硬仗。
+ 2.寶箱，可得三支鉻鑰匙（Chrome Key）和一些物品。回到城堡二樓。
+
+*** 城堡二樓（Castle Upper Level 1）
+
+<IMG src="bane\Castle2.png">
+ 6.較難打開的門，可用鉻鑰匙開啟。雖然可用開鎖技能打開，但會殘留鉻鑰匙
+   而無法丟棄，故最好還是用鑰匙開門。
+ 7.只能用開鎖技能或開鎖術才能打開的門，開之前最好先存檔。
+ 8.按東牆的按鈕會出現寶箱，箱內有黑皮革製的胸罩（Stud-Cuir Bra+2）和
+   皮鞭（Bullwhip）。
+ 9.搜尋，選〞蹲低並且拉引線〞（Crouch Low），可發現寶箱，裡面有金鑰匙
+   （Gold Key）和魔王日記（King's Diary）。
+10.按下南牆的按鈕可以打開密門。
+11.按下西牆的按鈕可以打開密門。
+12.必須使用邪神之鑰才能打開的閘門。
+13.寶箱，裡面有山羊面具（Goat's Mask）和邪神匕首（Dagger of Ramm），
+   這些裝備都會吸血，最好不要裝備。
+14.有毒的泉水，喝了會中毒。
+15.恢復疲勞的泉水。到地下一樓從#a下樓。
+
+*** 城堡地下二樓（Castle Lower Level 2）
+
+<IMG src="bane\CastleB2.png">
+ 1.必須用金鑰匙開啟的門。
+ 2.踏上後，北邊#3會出現地洞。踏入任何一個地洞都會掉到地下三樓，打敗巨
+   蛇後，再從出口傳回本層#1。
+ 4.按下南牆的按鈕，可關閉#5的地洞。
+ 6.按下西牆的按鈕，可關閉#7的地洞。
+ 1.按下西牆的按鈕，可關閉#3的地洞。
+ 3.按下北牆的按鈕，會出現寶箱，可拿取邪神之書（Book of Ramm）和許多不
+   錯的裝備。使用邪神之書，由內容得知祭壇進入的方法。回到城堡二樓#16。
+
+*** 城堡二樓（Castle Upper Level 1）
+
+<IMG src="bane\Castle2.png">
+16.搜尋，選山羊頭顱（Goat's Head）、山羊頭顱、火燄之球（Flaming Orb）、
+   魔法權杖（Magic Stave）、火燄之球可開啟洞穴並跳下到一樓。打敗巨蛇
+   （硬仗），到地下一樓，從#H進入危險區域。
+
+*** 危險區域（Hazardous Area）
+
+<IMG src="bane\Hazard.png">
+ 1.搜尋，可得十字鎬（Miner's Pick）。
+ 2.搜尋，可得地牢鑰匙（Dungeon Key）。
+ 3.搜尋後，使用十字鎬敲開牆壁。
+ 4.寶箱，可不斷嘗試直到拿到好東西後再存檔。
+ 5.使用十字鎬開路。
+ 6.搜尋，可得鐘樓鑰匙（Bell Key）。
+ 7.目前暫時過不去。回到城堡地下一樓。
+
+*** 城堡地下一樓（Castle Lower Level 1）
+
+<IMG src="bane\CastleB1.png">
+16.必須使用地牢鑰匙開啟柵門。
+17.搜尋骨骸，可得裘利羅傑的解碼戒指（J.R. Decoder）。對死者日誌使用解
+   碼戒指，得知船長寶藏在巨人山。
+18.遭受食人植物攻擊。
+19.搜尋後，骨骸會變成殭屍攻擊隊伍。
+ 3.和奎格交談，告知寶藏在〞巨人山〞（Giant Mountain），他便會說出酒吧
+   密碼。記得買一瓶神秘油（Mystery Oil），以後會用到（如果想殺掉奎格，
+   便不必買）。在離開前必須決定要不要殺掉他（Fight），殺掉他，則之後
+   找到船長寶箱時，會有比較多的東西，若不殺他，便只能拿到一樣必要物品
+   了。殺掉奎格後，會得到神秘油與存根（Ticket Stub），對票根使用解碼
+   戒指，亦可得知密碼。
+20.詢問密碼時，回答〞骷髏水手〞（Skeleton Crew），即可進入酒吧。海盜
+   頭子會問喝酒（Drink）或戰鬥（Fight），若選擇喝酒，則要花錢買酒，在
+   #22開寶箱時，還是得戰鬥，不如一開始就直接戰鬥。這也是一場硬仗。
+21.使用銀鑰匙開啟柵門，進入後可得鋼鉤（Steel Hook）和一些裝備，其中眼
+   罩（Eye-Patch）和船長帽（Tricorne Hat）是有詛咒的，綠鸚鵡（Green Parrot）
+   可增加一點個性（PER）。
+22.寶箱，可得到骷髏匕首（Skull Dagger）。如果之前選擇喝酒，那麼開了寶
+   箱後，海盜頭子便會召集同伴來攻擊。回從城堡二樓，從#H上到鐘樓。
+
+*** 城堡六樓與鐘樓（Castle Upper Level 5 and Bell Tower）
+
+<IMG src="bane\Castle6.png">
+ 3.選擇〔嘗試盪過鐘樓〕（Swing Across），便有機會盪到對面。無論成功與
+   否，都會引來蝙蝠攻擊。
+ 4.必須使用鐘樓鑰匙開門，裡面的寶箱可取得粗重繩索（Hv. Rope），與鋼鉤
+   合併（Merge）成為繩鉤（Rope & Hook）。回危險區域#7。
+
+*** 危險區域（Hazardous Area）
+
+<IMG src="bane\Hazard.png">
+ 7.使用繩鉤即可攀越到對面。
+ 8.遭受食人花攻擊。
+ 9.昇降機，按下東牆按鈕可到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 1.昇降機，按下東牆按鈕可到危險區域。從#b進入礦坑第一層。
+
+*** 礦坑第一層（Mines Level 1）
+
+<IMG src="bane\Mines1.png">
+ 1.按下西牆按鈕可打開密門。
+ 2.寶箱，可得到礦工鑰匙（Key of a Minor）和一些不錯的裝備。從#D出礦坑，
+   回到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 2.遇到巨人要過路費，回答YES需付5000元，若回答NO便開打。#A處登上山頂
+   前最好施展飄浮術（Levitate），以免失敗掉落時受傷。
+
+*** 巨人山頂第二層（Giant Mountant Level 2）
+
+<IMG src="bane\Mount2.png">
+ 1.搜尋，拿取一個巨石（Hv. Boulder）。回到礦坑第一層。
+
+*** 礦坑（Mines）
+
+  第一層
+<IMG src="bane\Mines1.png">
+    a.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    1.史密特（Smitty），可跟他買中期較好的武器裝備。
+    2.按南牆的按鈕可打開密門。
+    3.寶箱。
+    4.打敗橡皮怪可得橡皮纖維（Rubber Strand）。由#B上到第一層。
+  第一層
+<IMG src="bane\Mines1.png">
+    c.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    5.泉水，可以恢復生命、法力和疲勞。
+    6.打敗橡皮怪可得橡皮纖維。可將兩條橡皮纖維合併在一起。由#D上到第
+      一層。
+  第一層
+<IMG src="bane\Mines1.png">
+    e.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    7.寶箱。
+    E.回到第一層。
+  第一層
+<IMG src="bane\Mines1.png">
+    f.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    8.按下南牆的按鈕可打開密門。
+    9.寶箱，可以拿到礦工鑿刀（Miner's Chisel）和一些其他物品。
+   10.寶箱。沿原路回到第一層#c。
+  第一層
+<IMG src="bane\Mines1.png">
+    g.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    a.由此處下到第三層。
+  第三層
+<IMG src="bane\Mines3.png">
+    a.由此處下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    1.面向西邊，使用礦工鑿刀鑿出一條裂縫。沿原路回到第二層的#a。
+  第二層
+<IMG src="bane\Mines2.png">
+    b.由此處下到第三層。
+  第三層
+<IMG src="bane\Mines3.png">
+    1.打敗橡皮怪可得橡皮纖維。沿原路回到第一層的#g。
+  第一層
+<IMG src="bane\Mines1.png">
+    h.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    c.由此處下到第三層。
+  第三層
+<IMG src="bane\Mines3.png">
+    2.寶箱，裡面有可施展祝福術（Bless）的樂器天使之舌（Angel's Tongue），
+      以及一些不錯的裝備。由#b下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    2.打敗橡皮怪可得橡皮纖維。可將所有橡皮纖維合併在一起，成為橡皮繩
+      （Rubber Band）。回到第三層的#b。
+  第三層
+<IMG src="bane\Mines3.png">
+    c.由此處下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    3.面向東邊，使用礦工鑿刀鑿出一條裂縫。沿原路回到第一層的#h。
+  第一層
+<IMG src="bane\Mines1.png">
+    i.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    d.由此處下到第三層。
+  第三層
+<IMG src="bane\Mines3.png">
+    3.使用礦工鑰匙開啟柵門。
+    4.寶箱。沿原路回到第一層的#i。
+  第一層
+<IMG src="bane\Mines1.png">
+    j.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+   11.打敗橡皮怪可得橡皮纖維。不過由於身上已有四條橡皮纖維，多了反成
+      累贅，很重又不能丟棄，不如不打這個橡皮怪。回到第一層的#j。
+  第一層
+<IMG src="bane\Mines1.png">
+    k.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+   12.寶箱。回到第一層的#k。
+  第一層
+<IMG src="bane\Mines1.png">
+    l.由此處下到第二層。
+  第二層
+<IMG src="bane\Mines2.png">
+    e.由此處下到第三層。
+  第三層
+<IMG src="bane\Mines3.png">
+    d.由此處下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    4.面向南邊，使用礦工鑿刀鑿出一條裂縫。回到第三層的#d。
+  第三層
+<IMG src="bane\Mines3.png">
+    e.由此處下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    5.使用礦工鑰匙開啟柵門。
+    6.寶箱。回到第三層的#e。
+  第三層
+<IMG src="bane\Mines3.png">
+    f.由此處下到第四層。
+  第四層
+<IMG src="bane\Mines4.png">
+    7.面向北邊，使用礦工鑿刀鑿破水晶牆。
+    8.搜尋骨骸，可得法師洞穴之鑰（Key of Wizard Cave）、法師戒指
+      （Wizard's Ring），以及其他一些物品。由#A處回到第二層的#a。
+  第二層
+<IMG src="bane\Mines2.png">
+    M.由此處上到第一層。
+  第一層
+<IMG src="bane\Mines1.png">
+    3.必須使用法師洞穴之鑰開啟的柵門。
+    4.一隻叫Mystaphaphas的蛇，可以得到一些資訊。由#E回到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 3.按下東牆的按鈕，然後使用神秘油，接著依次按下保險開關（Toggle Safety）、
+   液壓幫浦（Translux Pump）、啟動轆輪（Auto-Coilwrap）、拉起繩索
+   （Truss Drivers）、保險開關（Toggle Safety）、上緊發條（Spring Winder），
+   即可將橋放下前進。從#B登上山頂。
+
+*** 巨人山頂第三層（Giant Mountant Level 3）
+
+<IMG src="bane\Mount3.png">
+ 1.按北牆按鈕可以找到海盜船長的寶箱，裡面有小型飾物（Bauble & Trinkets），
+   如果之前有殺掉奎格的話，還會有一些其他物品（但不怎麼樣）。回到礦坑
+   第一層。
+
+*** 礦坑第一層（Mines Level 1）
+
+<IMG src="bane\Mines1.png">
+ c.由此處下到第二層繞到#D回到第一層，然後由#F回到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 4.搜尋，得到破裂齒輪（Broken Sprocket）。回到礦坑第一層。
+
+*** 礦坑第一層（Mines Level 1）
+
+<IMG src="bane\Mines1.png">
+ d.由此處下到第二層繞到#C回到第一層，然後由#a下到第二層。
+
+*** 礦坑第二層（Mines Level 2）
+
+<IMG src="bane\Mines2.png">
+ 1.將破裂齒輪交給（Give）Smitty，回答Yes花1000元修好。沿原路回到巨人山#4。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 4.使用齒輪和橡皮繩後，先選Abort離開並存檔。然後使用巨石，依次按下第
+   一個選項，即可投射出去，若未命中目標開通道路，便讀檔重來一次。從#C
+   登上山頂。
+
+*** 巨人山頂第三層（Giant Mountant Level 3）
+
+<IMG src="bane\Mount3.png">
+ 2.遭受巨人Frytz的攻擊。由#A上到第四層。
+
+*** 巨人山頂第四層（Giant Mountant Level 4）
+
+<IMG src="bane\Mount4.png">
+ 1.岩石守護神詢問時，回答Yes並打敗它，可得紅寶石之眼（Ruby Eyeball）。
+   回到第三層。
+
+*** 巨人山頂第三層（Giant Mountant Level 3）
+
+<IMG src="bane\Mount3.png">
+ 3.按西牆的按鈕，會滑落到巨人山#5。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 6.使用十字鎬可開通道路。
+ 7.沙堆，目前暫無用處。從#D上樓到金字塔地下一層。
+
+*** 金字塔（Pyramid）
+
+  地下一層
+<IMG src="bane\PyraB1.png">
+    A.由此處上到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    A.由此處上到第二層。
+  第二層
+<IMG src="bane\Pyra2.png">
+    b.由此處下到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    1.打敗黏液怪，可得黏膠（Gloop Sploch）。沿原路回到第一層#A。
+    C.由此處上到第二層。
+  第二層
+<IMG src="bane\Pyra2.png">
+    d.由此處下到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    2.寶箱，裡面有空袋子（Empty Sack）。沿原路回到第一層#C，再從#a回
+      到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 7.使用空袋子，成為沙袋（Bag of Sand）。回金字塔第一層#a。
+
+*** 金字塔（Pyramid）
+
+  第一層
+<IMG src="bane\Pyra1.png">
+    E.由此處上到第二層。
+  第二層
+<IMG src="bane\Pyra2.png">
+    A.由此處上到第三層。
+  第三層
+<IMG src="bane\Pyra3.png">
+    1.按下北牆的按鈕，可使西邊外面的路連接起來。
+    2.按下東牆的按鈕，可使北邊外面的路連接起來。從#b下到第二層。
+  第二層
+<IMG src="bane\Pyra2.png">
+    f.由此處下到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    3.按下北牆的按鈕，可打開密門。
+    4.按下北牆的按鈕，可使西邊外面的路連接起來。
+    5.會跑的寶箱，對任一凹槽使用黏膠，再去追寶箱，最後寶箱會被黏住，
+      即可開啟，裡面有骨鑰匙（Bone Key）和一些物品。回到第三層的#b。
+  第三層
+<IMG src="bane\Pyra3.png">
+    3.按下北牆的按鈕，可打開通往#4的密門。
+    4.按下北牆的按鈕，會滑落到第二層的#1，同時北邊的密門會打開。
+  第二層
+<IMG src="bane\Pyra2.png">
+    g.由此處下到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    b.由此處下到地下一層。
+  地下一層
+<IMG src="bane\PyraB1.png">
+    1.必須用骨鑰匙打開的柵門。
+    2.踩過此處，會重設本層的所有機關。
+    3.踩上地板後，後方#e與前方#f的地板會消失，分別掉到地下二層對應的
+      位置，可由#1按下南牆的按鈕傳回到本層的#4。
+    5.按下東牆的按鈕，可使#e和#f的地板恢復原狀。
+    6.按下東牆的按鈕，可打開#7的密牆。
+    7.按下西牆的按鈕，可解除#8的陷阱。
+    8.若沒有解除此處陷阱，則南方會滾落一塊大石頭，造成隊員蠻大的傷害。
+    9.踩上地板後，#g的地板會消失，會掉到地下二層對應的位置，可由#2按
+      下南牆的按鈕傳回到本層的#10。
+   11.按下南牆上的按鈕，#g的地板會回復，但#h的地板會消失。施展飄浮術
+      後跳下#h到地下二層。
+  地下二層
+<IMG src="bane\PyraB2.png">
+    3.按下西牆上的按鈕，傳送到地下一層的#12。
+  地下一層
+<IMG src="bane\PyraB1.png">
+    i.若跳下，會掉到地下二層對應的位置，可由#4按下東牆的按鈕傳回到本
+      層的#13。
+   14.按東牆的按鈕，#i的地板會回復原狀，北邊的柵門也會打開。
+   15.按下北牆的按鈕，可解除#16房間裡的陷阱。
+   16.若未解除陷阱，則每走一步便會中一次隨機陷阱，且到達柵門前時，柵
+      門亦會關閉。
+   17.踩上地板後，會啟動#20的陷阱。
+   18.按下西牆的按鈕，可打開密門。
+   19.按下西牆的按鈕，可解除#20的陷阱。
+   20.若未解除此處的陷阱，進入時會立即掉到地下二層的#j，可由#5按下南
+      牆的按鈕傳回本層的#21。若已解除陷阱，會發現神像，此時先選離開
+      （Leave），否則拿到神像後，會觸發毒煙陷阱並掉到地下二層。先存檔
+      後，使用沙袋，再選擇交換（Exchange），以成功拿取火神雕像
+      （Idol of Mau-Mu-Mu）且未觸動陷阱。萬一失敗的話，便讀檔再試一次。
+    k.跳下到地下二層。
+  地下二層
+<IMG src="bane\PyraB2.png">
+    6.按下東牆上的按鈕，傳送到地下一層的#11。
+  地下一層
+<IMG src="bane\PyraB1.png">
+   22.按下西牆的按鈕，可打開#23的密門。
+   23.按下西牆的按鈕，#h的地板會回復。回到第二層#g。
+  第二層
+<IMG src="bane\Pyra2.png">
+    C.由此處上到第三層。
+  第三層
+<IMG src="bane\Pyra3.png">
+    5.使用火神雕像開啟柵欄。從#A上到第四層。
+  第四層
+<IMG src="bane\Pyra4.png">
+    1.遇見女王，她問先問是不是要來拿石頭的，先回答No，否則會開打，如
+      此便無法買賣物品。接著她問有沒有帶貢品，要回答Yes，否則也是開打。
+      最後隨便給她一樣物品即可（先不要給小型飾物，給錢沒用）。
+      接著與瓦莉庫娜交易，務必要買防熱粉（Foot Powder）。
+    2.使用防熱粉再前進，否則每走一步都會受傷。
+    3.打敗火神，可得到紅寶石之眼（Ruby Eyeball）。
+    1.每到此處，女王都會來要貢品，由於女王身上有好物品，故最好開打。
+      此時可給她小型飾物，她會說那些珠寶是假的，要求道歉，接著回答NO
+      即開打（若回答Yes，則還要花3000元獻金才能不開打）。獲勝後可以拿
+      到死亡之矛（Spear of Death）與骨質項鍊（Bone Necklace）等好東西。
+      回到第三層#A。
+  第三層
+<IMG src="bane\Pyra3.png">
+    c.由此處下到第二層。
+  第二層
+<IMG src="bane\Pyra2.png">
+    e.由此處下到第一層。
+  第一層
+<IMG src="bane\Pyra1.png">
+    a.由此處下到地下一層。
+  地下一層
+<IMG src="bane\PyraB1.png">
+    d.由此處回到巨人山。
+
+*** 巨人山（Giant Mountain）
+
+<IMG src="bane\Mount.png">
+ 1.經升昇降機，回到城堡地下二樓。
+
+*** 城堡地下二樓（Castle Lower Level 2）
+
+<IMG src="bane\CastleB2.png">
+ 8.必須使用法師戒指開啟的柵門。
+ 9.寶箱。
+10.寶箱，可得法師日記（Wizard's Record）、塔樓鑰匙（Spire Key）。
+11.搜尋西牆可開啟密門。
+12.可得到月亮之杖（Stave of Moons）。按下北牆的按鈕可打開密門。
+13.寶箱，裡面有紅寶石護身符（Ruby Talisman）和一些物品。
+14.搜尋後可以找到六個按鈕和一根木桿，選擇Strike Stick會引發一場爆炸，
+   使得隊員受傷，但西牆也會打開，可通到礦坑第一層#H。不過不管它也可以，
+   反正已不需要再回礦坑了。回城堡第一層，從#I上到二樓。
+
+*** 城堡二樓（Castle Upper Level 1）
+
+<IMG src="bane\Castle2.png">
+17.必須使用塔樓鑰匙開啟的柵門。繼續往上到六樓。
+
+*** 城堡六樓（Castle Lower Level 5）
+
+<IMG src="bane\Castle6.png">
+ 5.必須使用黑桃鑰匙開門，進入後聽靈魂講完話，可得靈魂號角（Horn of Souls）。
+   回到地下二樓。
+
+*** 城堡地下二樓（Castle Lower Level 2）
+
+<IMG src="bane\CastleB2.png">
+15.使用兩個紅寶石之眼開啟柵欄，由#a下到冥河#A。
+
+*** 冥河（River Styx）
+
+<IMG src="bane\Styx.png">
+ 1.使用靈魂號角以召喚克朗（Charron），他會先問是否有骨灰甕要給他，回
+   答NO，接著他會問是否要渡河，回答YES，他會再問需要500金，再回答YES
+   即可渡河前往#2。
+ 3.此處可發現亡靈之書（Book of the Damned）與亡靈之鑰（Key of the Damned）。
+   亡靈之鑰可開啟#3以外附近的所有柵門（全開完即消失）。
+ 4.打敗惡魔，搜尋可得米諾斯之鑰（Key of Minos）、骨灰甕（Cylinder of Ash）
+   和一些裝備。
+ 5.搜尋可得骨灰甕和一些裝備。
+ 6.木筏，先不要使用（Leave the Raft Alone）。
+ 3.使用米諾斯之鑰開啟柵門。
+ 7.泉水，可恢復生命與體力。
+ 8.泉水，可恢復法力。
+ a.進入亡者之墓。
+
+*** 亡者之墓（Tomb of the Damned）
+
+<IMG src="bane\Tomb.png">
+ 1.箱子有墓穴鑰匙，用來開啟附近的柵欄。
+ 2.搜尋後會被攻擊。
+ 3.搜尋後會被攻擊，並得到一些裝備。
+ 4.搜尋後可得到一些裝備。
+ 5.搜尋後會被攻擊，並得到水妖之書（Book of the Sirens）和一些裝備。
+
+*** 冥河（River Styx）
+
+<IMG src="bane\Styx.png">
+ 6.使用木筏到#9，依水妖之書中回答〞就是瘋狂使我們無拘無束〞
+   （'Tis Madness makes us free），可得水翼鞋（Water Wings），使用後
+   便可在水面上行走。
+10.寶箱。
+11.搜尋可得迷失之鑰（Key of the Lost）。
+12.按上北邊牆上按鈕開啟密門。
+13.利用開鎖技能或施展開鎖術開門。
+14.使用迷失之鑰開啟柵欄。
+15.箱子有骨灰甕。
+18.瑪拉，有不少後期較好的武器裝備可以買。
+16.箱子有魚線（Fishline）、魚鉤（Fish Hook）、瓶塞（Cork Bobber）。將
+   魚線和魚鉤合成釣竿（Fishline w/Hook）。
+17.紅色X標記，往東三北一處使用釣竿，可得東方出口鑰匙（East Exit Key）。
+ B.前往沼澤地。
+
+*** 沼澤地（Swamp）
+
+<IMG src="bane\Swamp.png">
+ 1.使用東方出口鑰匙開啟柵欄。
+ 2.遇見毛蟲，他會問有沒有抽煙，回答YES或NO皆可，然後與他交談，問煙管
+   （Pipe），他會告知到冥河#18找瑪拉取回（Reclamation）。
+
+*** 冥河（River Styx）
+
+<IMG src="bane\Styx.png">
+18.跟瑪拉說〞取回〞（Reclamation），她會詢問〞提取密碼〞（Claim Number）。
+
+*** 沼澤地（Swamp）
+
+<IMG src="bane\Swamp.png">
+ 2.向毛蟲詢問〞提取密碼〞（Claim Number），可得紙條（Special Message）。
+   也可以跟他詢問〞神喻之瓶〞（Bottle Oracle），他會教你如何進行。離
+   開前，記得先向他買個線香（Incense）備用。
+
+*** 冥河（River Styx）
+
+<IMG src="bane\Styx.png">
+19.標示神喻之瓶之處。將紙條放入酒瓶，再放上瓶塞，最後在此處使用。
+20.得到塞有答案紙條的酒瓶，使用後得知提取密碼為38-23-36。
+18.跟瑪拉說〞取回〞（Reclamation），再回答〞38-23-36〞，她便會打開#21
+   的門，然後被裡面的巨人嚇走。如果還沒有買夠物品，必須在回答提取密碼
+   前買足。當然此處也可不管提取密碼是什麼，直接開打取得寶庫鑰匙（Vault Key）
+   開門，只是瑪拉不是很好打。
+22.箱子有煙管（Hookah Pipe）。
+
+*** 沼澤地（Swamp）
+
+<IMG src="bane\Swamp.png">
+ 2.與毛蟲交談，將煙管拿給他，他會詢問是否要變小，回答YES，可得紅蘑菇
+   （Red Mushroom），然後毛蟲離開。
+
+*** 冥河（River Styx）
+
+<IMG src="bane\Styx.png">
+ 1.再次使用靈魂號角召喚克朗，不要渡河，將骨灰甕交給他，但在#15得到的
+   骨灰甕他不收，然後給予死者之鑰（Key of the Dead）。
+23.使用死者之鑰開啟柵欄。
+ c.進入亡者殿堂。
+
+*** 亡者殿堂（Hall of the Dead）
+
+<IMG src="bane\Dead.png">
+ 1.使用骨灰甕可開啟#2的柵門。此時可再點燃線香，可去除#3到#5的陷阱和戰役。
+ 3.落石陷阱，#1有點燃線香便可去除。
+ 4.殭屍攻擊，#1有點燃線香便可去除。
+ 5.隊伍中沉默術，同時鬼魂攻擊，#1有點燃線香便可去除。
+ 6.隊伍中恐懼術。
+ 7.打敗瘋狂骷髏，可得骷髏之鑰（Skeleton Key）、高級上衣（Jazeraint Tunic）、
+   高級長裙（Jazeraint Skirt）。
+ 8.使用骷髏之鑰開啟柵欄。
+ 9.搜尋後打敗敵人，出現寶箱，箱子裡有黑暗精靈之鑰（Key of Drows）。
+10.搜尋火把可打開密門。
+11.使用黑暗精靈之鑰開啟柵欄。
+12.打敗黑暗精靈可得精靈弓（Elven Bow）、森林披風（Forest Cape）、硬質
+   護甲（Chamail Doublet）、硬質長褲（Chamail Pants）等流浪者最佳裝備。
+13.搜尋後打敗敵人，出現寶箱，箱子裡有騎士之鑰（Key of Knights）。
+14.泉水，可以恢復生命、體力、法力。
+15.使用騎士之鑰開啟柵欄。
+16.打敗黑暗騎士可得復仇者之刃（The Avenger）、黑檀木甲（Ebony Plate）、
+   黑檀木盔（Ebony Heaume）等戰士最佳裝備。
+17.搜尋後打敗敵人，出現寶箱，箱子裡有女武士之鑰（Key of Valkyries）。
+18.使用女武士之鑰開啟柵欄。
+19.打敗女武士可得女神之槍（Maenad's Lance）、螳螂手套（Mantis Gloves）、
+   螳螂靴（Mantis Boots）等女戰士最佳裝備。
+20.按下牆上按鈕可開啟通道。
+21.打敗日本武士大君可得村正妖刀（Muramasa Blade）、武士短刀+1（Wakizashi+1）、
+   高級護甲（Hi-Kane-Do）等武士最佳裝備。
+22.按下牆上按鈕可開啟柵欄。
+23.遇吸血魔王，無論回答什麼，到最後必定戰鬥，一直戰到他離開後，面向牆
+   壁搜尋，可得皇后之鑰（Key of Queens）。
+24.使用皇后之鑰開啟柵欄。
+25.搜尋後遇到皇后鬼魂，聽完她的故事後，可得邪惡之鑰（Key of Devil）及
+   銀十字架（Silver Cross）。
+26.按下牆上按鈕可開啟#27通道。
+28.使用邪惡之鑰開啟柵欄。注意，進入#29時，隊伍是否有銀十字架會影響結
+   局的劇情（可丟棄），若要玩多個結局，必須在此處先行備份存檔。
+29.遇見蕾貝嘉（Rebecca），隨便回答她的問題，最終都會被直接帶去#30見吸
+   血魔王。吸血魔王會吸取全部人的大部份生命，如果隊伍中有人身上有銀十
+   字架，會造成魔王受傷（將來會影響結局走向）。最後眾人昏迷至地牢#1。
+
+*** 地牢（Jail）
+
+<IMG src="bane\Jail.png">
+ 2.有毒的泉水，喝了會中毒。
+ 3.柵欄。此處有兩種方式脫困，一是在此處使用邪神匕首激怒守衛開門衝入並
+   打敗他們，一是在#4處使用紅蘑菇。
+ 4.搜尋西邊的牆，發現老鼠洞。使用紅蘑菇可變小穿到#5。
+
+*** 魔法森林（Forest）
+
+<IMG src="bane\Forest.png">
+ 1.戴上山羊面具進到此處，即可開啟柵欄，若沒有戴，則每次進入都會遇敵
+   （柵欄開啟後便不會遇敵了）。
+ 2.搜尋可得神聖木樁x3（Holy Stake of Wood）。
+ 3.按下東邊的牆開啟密門。
+ 4.搜尋可得聖水（Holy H2O+）、玉雕像（Jade Figurine）。
+ 5.真理之岩，使用十字鎬，可得反映之石x4（Rock of Reflection）。
+ 6.箱子有鈴噹（Tinkerbell）。
+ 7.使用鈴噹招喚仙靈女王，詢問〞傳言〞（Rumor），再問〞達飛〞（Delphi），
+   最後問〞告訴　達飛　什魔〞（How to talk to Delphi，注意要空白），
+   他的話即是要回答達飛的答案。也可直接殺了仙靈女王，得到Ring of Delphi，
+   也可得知這些答案，只是仙靈女王不太好打。
+ 8.達飛，依次回答〞我們是信仰者〞（We are fascination）、〞為了尋求預言〞
+   （We seek divination），最後回答YES給他所有的錢後，他便會告訴你殺
+   死魔王的步驟，並得到亞倫之杖（Staff of Aram）。
+
+*** 邪神神殿（Temple of Ramm）
+
+<IMG src="bane\Temple.png">
+ 1.裝備亞倫之杖之後才能通過斷橋，通過後記得卸下來（否則會不斷損血）。
+ 2.箱子有決策之鑰（Key of Decision）可開旁邊任一柵欄（選那邊都沒差）。
+ 3.傳送到#4。
+ 5.箱子有第一試驗之鑰（Key of 1st Test）可開附近柵欄。
+ 6.按下南邊牆按鈕會掉回#D。
+ 7.箱子有陰暗之鑰（Key of Quandry）可開旁邊任一柵欄（選那邊都沒差）。
+ 8.傳送到#9。
+10.傳送到#11。
+12.傳送到#13。
+14.箱子有最終之鑰（Key of Finality）可開附近柵欄。
+15.遇見索菲特斯，打敗他可得魔法長袍（Robe of Enchant）、神秘之戒
+   （Mystic's Ring），然後回答〞創世神筆〞（Cosmic Forge）即可通過。
+16.幻象牆，直接穿過。
+17.滑落到#18。
+18.按下南邊牆按鈕會掉回#D。若隊伍身上有銀十字架，那麼要先裝備好神聖木
+   樁、反映之石（前3人）、聖水（後3人），並備妥銀十字架。
+19.遇見吸血魔王，此時有不同的情況：
+   (1)隊伍無銀十字架
+      魔王會自殺，蕾貝嘉出現，回答〞我愛你〞（I Love You）可得鑽石戒指
+      （Diamond Ring），當她離去後可得青銅鑰匙（B.D. Key）、北方出口之
+      鑰（North Exit Key）、星辰之戒（Ring of Stars）、幻影披風
+      （Displacer Cloak）、劣質長袍（Vennal Robe）。
+   (2)隊伍有銀十字架，進入#19時放在第一人身上
+      開始與魔王戰鬥。需先使用銀十字架後才能傷害他，但也只有神聖木樁、
+      聖水、反映之石能傷害他。殺死後，蕾貝嘉出現說完後離去，可得星辰
+      之戒、北方出口之鑰、幻影披風、劣質長袍。
+   (3)隊伍有銀十字架，進入#19時未放在第一人身上
+      開始與魔王與蕾貝嘉戰鬥。需先使用銀十字架後才能傷害他們，但也只
+      有神聖木樁、聖水、反映之石能傷害他們。殺死後，兩人鬼魂依次說完
+      後離去，可得星辰之戒、北方出口之鑰、幻影披風、劣質長袍。
+20.回答〞命運之手〞（The Hand of Destiny）開柵欄（使用星辰之戒解讀魔
+   王日記可得知密碼）。
+21.創世神筆，回答YES拿取時，結果被別人先拿走，成為第一種結局，接著被
+   傳送到魔法森林#9。
+22.若在#19有拿到青銅鑰匙，可開啟此門，否則只能嘗試利用開鎖技能開門
+   （很困難，用開鎖術則必定失敗）。
+23.黑龍貝拉，此時有不同的情況：
+   (1)隊伍無銀十字架
+      貝拉會問是否想去探訪宇宙之主，回答YES，則和黑龍貝拉一起乘坐太空
+      船，成為第二種結局，接著被傳送到魔法森林#9。如果回答NO，貝拉會
+      留下星辰之鑰（Key of Stars）後，自己坐上太空船走了，此時便無法
+      完成任何結局了。
+   (2)隊伍有銀十字架
+      與黑龍貝拉戰鬥，打敗他後可得星辰之鑰（Key of Stars）、狼牙刀（Fang）、
+      寶石墜子（Cameo Locket）。
+24.按下牆上按鈕開啟密門。
+25.使用星辰之鑰開啟柵欄。
+26.太空船，只有隊伍有銀十字架時才看得到，此時只能回答YES坐上太空船，
+   成為第三種結局，接著被傳送到魔法森林#9。
+27.按下牆上按鈕傳送到魔法森林#10，成為沒有結局。據說這種存檔傳送到七
+   代玩時，出現的初始位置會比較好。
+
+*** 魔法森林（Forest）
+
+<IMG src="bane\Forest.png">
+11.使用北方出口鑰匙開啟柵欄，回到城堡地下一樓#F。
+
+
+*** 各期較佳武器列表
+
+初期較佳武器：
+  弧形劍（Bastard Sword）       3-9   (命中-1)
+  闊劍（Broadsword）            2-8
+  刺擊之劍（Sword of Striking） 1-8   (命中+2)
+  武士刀（Katana）              1-7   (命中+1)
+  骷髏匕首（Skull Dagger）      2-8   (次,命中+1,致命2%)
+  短劍（Short Sword）           1-6   (次)
+  忍者短刀（Wakizashi）         1-6   (次)
+  戟（Halberd）                 1-10  (長)
+  僧侶長棍（Bo）                1-6   (長,命中+1)
+  長矛（Spear）                 1-6   (長)
+  長棍（Quarterstaff）          1-5   (長)
+中期較佳武器：
+  火神之鎚（Vulcan Hammer）     7-16  (命中+2,擊殺10%)
+  忍者匕首（Sai）               4-8   (次,命中+1,致命5%)
+  尖頭鎚（Bec De Corbin）       3-7   (次,命中+1,擊殺5%)
+  死亡之矛（Spear of Death）    5-9   (長,命中+1,致命2%)
+  掃刀（Fauchard）              1-12  (長)
+  忍者掃刀（Naginata）          1-12  (長)
+  聖體杖（Monstrance）          1-8   (長,命中-1,擊殺5%)
+後期較佳武器：
+  死亡之刃（Blade Cuisinart）   6-18  (命中+2,致命5%)
+  武士之刃（Bushido Blade）     4-16  (命中+2,致命5%)
+  九尾鞭（Cat'o Nine Tail）     6-18  (長,命中+3)
+  神聖之杖（Holy Basher）       5-12  (長,命中+1,擊殺10%)
+末期較佳武器：
+  復仇者之刃（The Avenger）     7-28  (命中+3,致命10%)    (打敗黑暗騎士)
+  狼牙刀（Fang）               10-24  (命中+2,致命10%)    (打敗黑龍貝拉)
+  村正妖刀（Muramasa Blade）    7-25  (命中+4,致命15%)    (打敗日本武士大君)
+  武士短刀+1（Wakizashi+1）     2-10  (次,命中+1,致命2%)  (打敗日本武士大君)
+  女神之槍（Maenad's Lance）    2-24  (長,命中+3,致命10%) (打敗女武士)
+
+*** 法術列表（中文名稱後加*者表示可使用法術書學到）
+
+1.火系（Fire）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+能量爆擊  Energy Blast     法     1    2    1人    1-7傷/級
+眩目閃光* Blinding Flash   鍊     2    3   1人/級  失明
+火球術    Fire Ball        法     3    6   3人/級  2-10傷/級
+火之盾*   Fire Shield      法     3    8   隊伍    防火
+燃燒彈    Fire Bomb        鍊     4    8   4人/級  3-9傷/級
+閃電術    Lightning        牧     5    8   3人/級  1-10傷/級
+彩虹彈    Prismic Missle   法     5    9   3人/級  隨機效果
+烈焰風暴  Firestorm        法     6   12   範圍    數回合傷害
+核能爆彈  Nuclear Blast    法     7   16   敵全    5-25傷/級
+
+2.水系（Water）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+冷凍之觸* Chilling Touch  法      1    2    1人    1-6傷/級
+恢復精力* Stamina         牧靈鍊  1    2    1人    恢復精力
+威嚇術    Terror          法靈    1    3    1群    恐懼
+衰弱術*   Weaken          法靈    2    4   3人/級  衰弱
+遲緩術*   Slow            牧靈    2    4   3人/級  遲緩
+迅捷術    Haste           牧靈    3    5    己全   加快速度，可抵消遲緩
+治療麻痺  Cure Paralysis  牧靈鍊  3    6    1人    治療麻痺
+冰之盾*   Ice Shield      法      3    8   隊伍    防冰
+麻痺術    Paralyze        牧靈    4    5    1人    麻痺
+冰球術    Iceball         法      4    8   4人/級  3-12傷/級
+深層冷凍  Deep Freeze     法      5    6    1人    3-30傷/級
+
+3.風系（Air）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+毒擊術*   Poison          鍊      1    2    1人    1-5傷/級，中毒
+隱形盾*   Missile Shield  法      2    5   隊伍    防投射性武器
+臭氣彈    Stink Bomb      法鍊    3    4    3人    1-6傷/級，噁心
+沉默術*   Silence         牧靈    3    4   3人/級  無法施法
+空氣之袋* Air Pocket      法鍊    3    8   隊伍    防有害氣體
+毒雲術    Poison Gas      鍊      4    7   範圍    數回合傷害，中毒
+解毒術    Cure Poison     牧鍊    4    8    1人    治療中毒
+龍捲風    Whirlwind       牧      4    8   3人/級  1-7傷/級
+淨化空氣  Purify Air      牧鍊    5   10   隊伍    消除敵人風暴或毒氣
+致命毒擊* Deadly Poison   鍊      5   12    1人    3-15傷/級或死亡
+漂浮術*   Levitate        法      5   12   隊伍    避免跌入陷阱或深坑
+劇毒蒸氣  Toxic Vapors    鍊      6    8   範圍    2-6傷/級
+惡臭風暴  Noxious Fumes   法鍊    6   10   3人/級  1-6傷/級，噁心
+窒息術    Asphyxiation    法鍊    6   12    1群    死亡，無生命怪無效
+死亡氣息  Deadly Air      鍊      7   16   敵全    4-16/級
+
+4.土系（Earth）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+噴酸術    Acid Splash     鍊      1    2    1人    1-7傷/級
+致癢術    Itching Skin    鍊      1    2    3人    發癢
+防禦魔盾  Armor Shield    法      1    2    1人    降低防護等級AC
+魔法羅盤* Direction       法      1    3   隊伍    顯示隊伍面對的方向
+解鎖術*   Knock-Knock     法靈    2    6   門/箱   開鎖，可能觸發陷阱
+飛刀術    Blades          牧靈    3    6   3人/級  2-8傷/級
+魔法盔甲* Armorplate      牧      3    6   隊伍    降低防護等級AC
+魔力網    Web             法鍊    3    7    1人    困住敵人
+酸液炸彈  Acid Bomb       鍊      4    8   範圍    數回合傷害
+溶甲術*   Armormelt       法靈    4    8    1群    增加防護等級AC
+製造生命  Create Life     鍊      5   10   隊伍    召喚一群生物幫忙
+治療石化  Cure Stone      牧鍊    6   18    1人    治療石化（死亡並扣1活力）
+
+5.靈系（Mental）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+心靈攻擊  Mental Attack   靈      1    3    1人    1-7傷/級
+催眠術*   Sleep           法靈鍊  1    3   3人/級  昏睡
+祝福術    Bless           牧靈    1    4   隊伍    降低防護等級AC，提高命中率
+魅惑術*   Charm           牧靈鍊  1    5   1人/NPC 魅惑
+治療輕症* Cure Lesser Cnd 牧靈鍊  2    4    1人    治療恐懼、昏睡、盲目、噁心、發癢
+偵測陷阱  Divine Trap     牧靈    2    4   寶箱    偵測寶箱裡有那種陷阱
+偵測術*   Detect Secret   法靈    2    5   隊伍    偵測所在地是否有不尋東西
+鑑定術*   Identify        牧靈    2    8   1人/物  認出敵人或物品的能力
+束縛術    Hold Monsters   牧靈    3    6   3人/級  暫時麻痺
+讀心術    Mindread        靈      3    8    NPC    讀出NPC心思
+恢復神志* Sane Mind       牧靈    3   10    1人    治療瘋狂
+精神震爆  Psionic Blast   靈      4    8   3人/級  1-7傷/級，瘋狂
+幻影術    Illusion        靈      4   10   隊伍    造出幻影引開攻擊
+巫師之眼  Wizard's Eye    法靈    4   10   隊伍    俯瞰四週情形
+死亡之術  Death           牧靈    5   10    1人    死亡
+找尋物品  Locate Object   牧靈    6    8   隊伍    找出隱藏物品位置
+心靈爆破  Mind Flay       靈      7   18   敵全    5-25傷/級
+
+6.魔系（Magic）
+
+中文名稱  英文名稱        形態  難度 法力  目標    作用
+---------------------------------------------------------------
+造成傷勢  Make Wounds     牧      1    3    1人    1-7傷/級
+治療傷勢  Heal Wounds     牧靈鍊  1    4    1人    治療1-8傷/級
+魔法飛彈  Magic Missile   法      2    4   1人/級  1-7傷/級
+劍刃附法  Enchanted Blade 牧      2    4   隊伍    增加武器傷力與擊中率
+超渡術    Dispell Undead  牧      2    7   1人/級  超渡不死類怪物
+時空遁術  Blink           牧靈    3    7   施法者  未攻時消失，避免被攻擊
+魔法簾幕  Magic Screen    法      4    7   隊伍    防法術
+召喚術*   Conjuration     法牧    4   10   隊伍    召喚怪物幫忙
+反魔法*   Anti-Magic      法      5    7   施法敵  使敵人法術失效或反彈
+移去詛咒  Remove Curse    牧      5   10    1人    移去物品上的詛咒
+靈界之門  Astral Gate     法牧    6    8   1人/級  驅逐惡魔類怪物
+偷取生命  Lifesteal       牧靈    6   12    1人    4-6傷/級，轉移至施法者
+死亡真言  Word of Death   牧      7   18   敵全    4-16傷/級
+復活術    Resurrection    法牧靈  7   20    1人    復活死者（扣死者1活力）
+死亡之願  Death Wish      牧      7   20   敵全    死亡
+乾糧      Help Food       －      -    0   施法者  恢復生命與耐力
+魔法食物  Magic Food      －      -    0   施法者  恢復6系法力
+
+*** 物品列表
+
+請參閱<a href="bane\item.htm">bane\item.htm</a>。
+
+*** 改檔快速過關並玩多種結局法
+
+1.修改出下列物品：
+
+  A3 01 00 00 0E 77 01 00 (紅寶石之眼)
+  A4 01 00 00 0E 77 01 00 (紅寶石之眼)
+  E6 00 00 00 0A 4C 00 00 (水翼鞋)
+  C2 01 00 00 0E 23 01 00 (死者之鑰)
+  B3 01 00 00 0E 77 01 00 (骨灰甕)
+  B7 01 00 00 0E 77 01 00 (線香)
+  C8 01 00 00 0E 23 01 00 (皇后之鑰)
+  64 00 00 00 00 59 00 04 (邪神匕首)
+  81 01 00 00 06 55 00 00 (山羊面具)
+  CC 01 00 00 01 13 00 00 (亞倫之杖)
+
+2.到城堡地下二樓#15，使用紅寶石之眼開門前往冥河。
+3.在冥河#1使用水翼鞋走到#23用死者之鑰開門進入亡者殿堂。
+4.在亡者殿堂#1處放置骨灰甕並點燃線香，到#7拿鑰匙開#8，到#24用皇后之鑰
+  開門，搜尋#25再按#26，開#28到#29（銀十字架丟不丟棄都無所謂，玩第二
+  結局不想再改檔便丟棄，不想受傷就別丟棄）。
+5.地牢#3使用邪神匕首，魔法森林#1戴上山羊面具，進入邪神神殿。
+6.邪神神殿#1裝備亞倫之杖通過，一路到#18：
+  (1)想玩第二結局的，必須丟棄銀十字架，如果身上有銀十字架，找裝備編號
+     D8 01，將最後byte改成00便可以丟棄。
+  (2)想玩第三結局的，必須再修改出下列物品：
+
+     D8 01 00 00 05 4E 00 00 (銀十字架，如果已有便不用了)
+     CA 01 00 00 00 07 00 04 (神聖木樁)x3
+     CB 01 00 00 0C 20 63 04 (聖水)x3
+     D6 01 00 00 0E 23 01 00 (青銅鑰匙)
+</pre>
+</font>
+</body>
+</html>

@@ -1,0 +1,269 @@
+名稱：瓊斯博士視窗大冒險 (Indiana Jones and His Desktop Adventures，中文版)
+簡介：Lucas 1996年出品的動作冒險解謎遊戲，由松崗修改成中文版。每次遊
+      戲的地圖與謎題都不一樣，和百戰迷宮有異曲同工之妙。謎題並不難，
+      一般直覺便可解出，而且遊戲還附有全中文操作手冊，上手相當容易。
+      只是戰鬥的動作不易操控，是本遊戲最大的缺點。整體而言，這個遊戲
+      簡單而又有趣，雖然謎題不像一般Lucas出品的冒險遊戲那麼難，但也
+      頗值得一玩。
+保護：無。
+限制：只能在Windows系統上執行。
+備註：遊戲手冊檔名為DESKHELP.DOC，需用MS-Word開啟。
+
+ 
+Indiana Jones and his Desktop Adventures: FAQ by hempick
+Version: 1.5 | Last Updated: 2003-06-10 | View/Download Original File 
+
+Hosted by GameFAQs
+ Return to Indiana Jones and his Desktop Adventures (PC) FAQs & Guides 
+
+
+Would you recommend this FAQ? Yes No 
+ 
+  
+--------------------------------------------------------------------------------
+  _____           _ _                      __                        
+  \_   \_ __   __| (_) __ _ _ __   __ _    \ \  ___  _ __   ___  ___ 
+   / /\/ '_ \ / _` | |/ _` | '_ \ / _` |    \ \/ _ \| '_ \ / _ \/ __|
+/\/ /_ | | | | (_| | | (_| | | | | (_| | /\_/ / (_) | | | |  __/\__ \
+\____/ |_| |_|\__,_|_|\__,_|_| |_|\__,_| \___/ \___/|_| |_|\___||___/
+                                                                     
+                 _   _     _          ___          _    _              
+  __ _ _ __   __| | | |__ (_)___     /   \___  ___| | _| |_ ___  _ __  
+ / _` | '_ \ / _` | | '_ \| / __|   / /\ / _ \/ __| |/ / __/ _ \| '_ \ 
+| (_| | | | | (_| | | | | | \__ \  / /_//  __/\__ \   <| || (_) | |_) |
+ \__,_|_| |_|\__,_| |_| |_|_|___/ /___,' \___||___/_|\_\\__\___/| .__/ 
+                                                                |_|    
+   _       _                 _                       
+  /_\   __| |_   _____ _ __ | |_ _   _ _ __ ___  ___ 
+ //_\\ / _` \ \ / / _ \ '_ \| __| | | | '__/ _ \/ __|
+/  _  \ (_| |\ V /  __/ | | | |_| |_| | | |  __/\__ \
+\_/ \_/\__,_| \_/ \___|_| |_|\__|\__,_|_|  \___||___/
+(c) 1996 LucasArts Entertainment Company
+ 
+
+This document contains a general FAQ and some hints/tips about the game.
+
+
+First the Legal
+---------------
+This document is Copyright Joseph Visaggi (hempick) 2003.
+GameFAQs is the only site that is allowed to post this file.
+While I do not believe this guide will be stolen, 
+if anyone sees it on another site, please let me know.
+
+
+
+FAQ/Lists
+---------
+Indiana Jones and his desktop adventures 
+randomly generates quests every time you 
+play it.  Pretty much the only thing that 
+stays constant every time is the town.
+
+
+Town layout:
+The building above your starting point is 
+Marcus Brody's headquarters.  The building 
+to the left of that is the bar.  Below the 
+bar is Jose's market.  A little to the south 
+east of Jose's is Indy's temporary home.
+
+
+Indy's health meter is divided into four colors:
+Green  ----- When the meter is all green, Indy is at 100%.
+Yellow ----- Indy might want to heal soon.
+Red    ----- Indy's health is dangerously low.
+Black  ----- When the meter is all black, the game ends.
+
+
+Indy has multiple weapons at his disposal:
+Bow         ----- Found randomly
+Luger       ----- Found randomly
+Machete     ----- Found randomly
+Spear       ----- Found randomly
+Whip        ----- Always at Indy's house
+Aztec Sword ----- Quest related
+
+
+Weapon speed from 1 to 4 (1 being the fastest):
+Bow         ----- 2
+Luger       ----- 4
+Machete     ----- 1
+Spear       ----- 1.5
+Whip        ----- 3
+Aztec Sword ----- 3
+
+
+Healing items:
+Bananas       ----- Heals 1/4 of a color of health
+First Aid Kit ----- Heals 3/4 of a color of health
+Yerba Buena   ----- Heals 1/2 of a color of health
+
+
+Enemies:
+Aztecs/Mayans
+Leopards
+Mexicans
+Nacom (Quest related)
+Nazis
+Scorpions
+Snakes
+Tarantulas
+
+
+Other NPCs:
+Dr. Van Loon
+
+
+Quest Related Items:
+Alloy Key
+Aztec Mirror   ----- Quest ends when found
+Aztec Shield
+Bag of Sand
+Bamboo Pole
+Blasting Cap
+Bolt Cutter
+Bottle of Nitro
+Bucket
+Calendar Stone ----- Quest ends when found
+Can of Gas
+Chisel
+Clay Pot
+Coatlicue      ----- Quest ends when found
+Conchita
+Copper Key
+Crowbar
+Crude Lockpick
+Crystal Skull  ----- Quest ends when found
+Demon Mask
+Dynamite
+Eagle Dagger   ----- Quest ends when found
+Fake Map
+Funeral Mask   ----- Quest ends when found
+Gabriela       ----- Quest ends when rescued
+Gear
+Gold Key
+Gold Nugget
+Goddess Mask
+Hatchet
+Headdress
+Incense Burner
+Iron Key
+Jade Adze
+Jade Key
+Jade Flute
+Jaguar Codex   ----- Quest ends when found
+Jaguar Pendant
+Jaguar Statue
+Keg of Powder
+Ladder
+Lumber
+Map            ----- Appears in every game
+Marcus Brody   ----- Quest ends when rescued
+Metal File
+Metal Key
+Monkey Heart
+Nacom          ----- Quest ends when killed
+Necklace
+Obsidian Eye
+Obsidian Knife
+Old Key
+Pacal Hunac    ----- Quest ends when rescued
+Paddle
+Pepe
+Pewter Key
+Pickaxe
+Pile of Coins
+Plank
+Rock Drill
+Rope
+Sacred Mask
+Screwdriver
+Shovel
+Skeleton Key
+Skull
+Snake Pendant  ----- Quest ends when found
+Spanish Helmet
+Spanish Key
+Spark Plug
+Spider Lamp    ----- Quest ends when found
+Steel Key
+Stele          ----- Quest ends when found
+Tree Branch
+
+
+Ways to get to areas away from the main map:
+Blimp
+Canoe
+Cave
+Jeep
+Plane
+
+
+
+General Hints and Tips
+----------------------
+When you walk into Marcus Brody's house, 
+go to the refrigerator in the left room.
+Push up against the fridge to get a First 
+Aid Kit.
+
+
+Jose will only give you Yerba Buena if your 
+life meter has dropped significantly.
+(Also, he will not give you any if you already 
+have some in your inventory.)
+
+
+If you talk to Gabriela, the barmaid, 
+sometimes she will give you bananas or 
+tequila.  Both are random occurrances.  
+(Bananas heal you and tequila hurts you.)
+
+
+Moving blocks, stools, rocks, boulders, and 
+other things around often yields useful items.
+
+
+The map is almost always within one screen of the town.
+
+
+Teleporters can make traveling (or travelling) in larger
+maps more manageable.  Teleporters look like + signs on
+Indy's map.
+
+
+
+Credits/Thanks To:
+------------------
+LucasArts for making this game.
+My mom, for buying me this game in 1997.
+
+
+
+Versions of this document
+-------------------------
+1.5 ----- Minor updates
+1.4 ----- Updated the Quest Related Items list
+          Updated Credits/Thanks To section
+          Added Other NPCs section
+          Corrected grammar/spelling errors
+1.3 ----- Added Ways To Get To Areas Away From The Main Map section
+          Updated the Quest Related Items list
+1.2 ----- Added ASCII Art 
+          Added Quest Related Items list
+1.1 ----- Fixed some minor errors
+1.0 ----- Original Version
+--------------------------------------------------------------------------------
+
+
+Indiana Jones and his Desktop Adventures: FAQ by hempick
+Version: 1.5 | Last Updated: 2003-06-10 | View/Download Original File 
+
+Hosted by GameFAQs
+ Return to Indiana Jones and his Desktop Adventures (PC) FAQs & Guides 
+   
+
+   
+
+ 

@@ -1,0 +1,88 @@
+名稱：驚爆實感越野賽車 (Screamer Rally，英文版)
+簡介：Virgin 1997年出品的賽車遊戲。整個遊戲其實和驚爆實感賽車二代幾乎
+      沒什麼兩樣，只是變更了車子與場地的資料而已，有點舊酒裝新瓶的感
+      覺。然而喜歡驚爆實感賽車二代的玩家，也可以玩玩本遊戲，體驗一下
+      不同的車子與賽車場地。
+保護：光碟。
+備註：使用DosBox執行時，必須設定cycles=max，否則執行速度會不夠快，若
+      要執行SETUP.EXE，則還要再設定cputype=pentium_slow。
+備註：img子目錄為原版CD映像檔（含音軌），執行前先設定：
+         imgmount d <SRALLY.cue檔案位置> -t cdrom
+密技：在Main Selection畫面下，輸入以下的密碼：
+
+TRAMO 開啟所有跑道 
+CARBO 開啟所有賽車 
+LEALL 可參加所有冠軍爭奪賽
+
+操作：
+
+執行SETUP.EXE可設定控制鍵。
+
+F1 = 全視野
+F2 = 顯示車頭
+F3 = 顯示全車（近）
+F4 = 顯示全車（遠）
+F11 = （重播時）切換觀看車子
+
+1.Arcade：自由選擇場地與車子，進行練習賽
+2.Championship：冠軍爭奪賽
+3.Time Attack：挑戰最短時間繞完
+4.Options
+  (1)Transmition：冠軍爭奪賽為手排（Auto）或自排（Manual）
+  (2)Detail Level：景物精細度，由高而低為High、Medium、Low
+  (3)Number of Laps：比賽圈數
+  (4)Arcade Enemies Skill：練習賽對手等級，由高而低為Pro、Normal、Rookie
+  (5)Damage：撞擊時是否車子會損壞
+
+攻略：（作者－青衫）
+
+*** 車子性能
+
+車種       極速  驅動
+----------------------
+Sonel      115   FWD
+Kino       113   FWD
+Motrail    112   4WD
+Skendall   110   4WD
+Shield     120   4WD
+
+1.後輪驅動（RWD）：加速與速度快，適合平坦地面。
+2.前輪驅動（FWD）：省油，前輪抓地力高，雪地較不會打滑。
+3.四輪傳動（4WD）：耗油，越野專用，適合雪地、沙地、障礙物、陡坡等。
+4.Shield為秘密車子，必須完成Championship後才會開啟供選擇。
+
+*** 場地說明
+
+1.China（容易）：泥地、石地
+2.Canada（困難）：泥地、柏油路、草地
+3.Italy（普通）：泥地、柏油路、草地、石地
+4.Arizona（困難）：沙地、泥地
+5.Sweden（困難）：雪地
+6.Wales（容易）：柏油路、石地
+7.Stadium（困難）：柏油路、泥地
+
+Stadium必須完成Championship後才會開啟供選擇。
+
+*** 車體微調
+
+車體微調只有冠軍爭奪賽（Championship）或Time Attack時才能進行，且不能
+為秘密車子。選擇Standard便是使用內定值，否則可選擇Custom自行調整：
+
+1.方向盤（Handling）：影響轉彎的能力，值太高容易oversteer（甩尾過頭），
+  值太低則容易understeer（轉彎不足）。
+2.剎車（Brakes）：影響剎車效能，值愈高車子減速愈快，但猛然剎車亦容易
+  造成車子失控。
+3.輪胎（Tire Type）：Dry適合一般道路和碎石路，Wet適合泥地或沙地，Snow
+  適合雪地。
+4.胎壓（Tire Pressure）：值愈低，抓地力愈好，吸震效果亦愈高，但會因此
+  而減低速度。
+5.前懸吊系統（Front Suspensions）／後懸吊系統（Rear Suspensions）：值
+  愈高，相對應處的吸震效果愈好，但亦容易造成驅動系統反應過度而造成車
+  子打轉。
+
+可利用Time Attack嘗試對各種場地進行微調，找出最佳速度的調整方式。
+
+推薦攻略影片：
+
+1.Canada：http://www.youtube.com/watch?v=oNaXtGTiQUM
+
