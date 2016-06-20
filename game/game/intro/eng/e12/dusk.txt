@@ -1,90 +1,90 @@
-�W�١G�ѯ������� (Dusk of the Gods�A�^�媩)
-²���GInterstel 1993�~�X�~�������t�C���A��s�@�Z���K�O��SSI���q�]
-      �ɥl��C�����s�@�s�A�]���b�H���ɭ�������W�M�]�ɥl��t���h�ۦP�A
-      �ĥ�3D�ר��e���A��H�Y�ɾ԰����覡�i��C�����D�����ǥ����MNPC
-      ������J����r�~��Ѷ}�C�ҿ׽ѯ��������A�Y�_�گ��ܤ��N�����}��
-      �ȴ���ѯ��P�N�����c�����J�����@���ԧСA�ӳ��ԧШϱo���c���O�q
-      ��o�ūe���ӧQ�A�]����ӹC�����G�ơA�D�n�K�O�y�g�D���Q�ڤB�j��
-      �����A�|�B�_�I�A�H�D���ܥ_�ڽѯ��{�����H�ձ��p�A�i����o������
-      �Ъ��ӧQ�C�����C���̦n���@�ǥ_�گ��ܪ������A�����ĩ�@�����A
-      ���ëD���沈�n�C���L�^�婳�l�@�w�n���A�_�h�����b�@���ꪺ��ܤ��A
-      ��X���n������r�C��ӹC�����x���ץu���O�����A�T�֩��ٺ⤣���A
-      �O�ȱo���^�媺���a�@�����C���C
-�O�@�G��U�ϮסA�}�ѽX�G
+﻿名稱：諸神的黃昏 (Dusk of the Gods，英文版)
+簡介：Interstel 1993年出品的角色扮演遊戲，其製作班底便是原SSI公司魔
+      界召喚遊戲的製作群，因此在人機界面的風格上和魔界召喚差不多相同，
+      採用3D斜角畫面，單人即時戰鬥的方式進行。而謎題中有些必須和NPC
+      直接輸入關鍵字才能解開。所謂諸神的黃昏，即北歐神話中代表善良的
+      亞斯格諸神與代表邪惡的洛克間的一場戰役，該場戰役使得邪惡的力量
+      獲得空前的勝利，因此整個遊戲的故事，主要便是描寫主角被歐丁大神
+      指派，四處冒險，以求改變北歐諸神現有的劣勢情況，進而獲得此場戰
+      役的勝利。玩本遊戲最好有一些北歐神話的概念，比較能融於劇情中，
+      但並非絕對必要。不過英文底子一定要夠，否則很難在一長串的對話中，
+      找出必要的關鍵字。整個遊戲的困難度只能算是中等，娛樂性還算不錯，
+      是值得懂英文的玩家一玩的遊戲。
+保護：手冊圖案，破解碼：
       RUNTIME.1
         83 3E BE 36 04 75 0C
         C7 06 BE 36 04 00 90
-����G���C���L�k���`����ɡA�յ۰���DUSK ?�d�ݨ�ѼơA�ë��w�A�X����
-      �ܬɭ��M���Ĭɭ��A���n�Ѩt�Φ۰ʰ����C
-�ާ@�GO = ���ﶵ
-      P = �Ȱ�
-      T = ����
-      F9 = ���ֶ}��
-      Alt-A = �C�����s�}�l
-      Alt-C = �N�D������e������
-      Alt-Q = ���}�C��
-      1��6 = �Z������
-�𲤡G�]�@�̡ЫC�m�^
+限制：當遊戲無法正常執行時，試著執行DUSK ?查看其參數，並指定適合的顯
+      示界面和音效界面，不要由系統自動偵測。
+操作：O = 攻能選項
+      P = 暫停
+      T = 拿取
+      F9 = 音樂開關
+      Alt-A = 遊戲重新開始
+      Alt-C = 將主角移到畫面中央
+      Alt-Q = 離開遊戲
+      1～6 = 武器攻擊
+攻略：（作者－青衫）
 
-�@. �H���إ߻P�C���򥻷���
+一. 人物建立與遊戲基本概念
 
-���C���b�԰��W�S�O�����A�]���̦n�h�V�m�Ԥh��O�]Warrior Ability�^�C
-�ܩ�I�k�j������������O���M���ˡA�]���i�H���q����Freya���ߦn�סC��
-��ۦ�إߤH�������|�񤺫ؤH���n�]�����ɷ|����n�^�A�]���@�뱡�p�i��
-����ܤ��ؤH���Y�i�]��ĳ��Thorhild�^�C
+本遊戲在戰鬥上特別偏重，因此最好多訓練戰士能力（Warrior Ability）。
+至於施法大部份較偏重於燈光和療傷，因此可以儘量提升Freya的喜好度。由
+於自行建立人物未必會比內建人物好（但有時會比較好），因此一般情況可直
+接選擇內建人物即可（建議選Thorhild）。
 
-�b�H�����ݩʤW�A�Ԥh��O�M�t�̯�O�]Sage Ability�^�A�|�H�ۤɯŦӼW�[�A
-���ѯ����ߦn�׬O���|�W�[���C�ѯ����ߦn�ץu�O�v�T�k�N��o�ɡA�b������
-�ݩ^�m�����~�ƶq�A�o�b�C�������v�T�]���O�ܤj�A�]���I�k�����|�O�ܤp���C
-�H�U���U���^�m��ү�o�쪺�k�N�P�@�ΡA�U�᭱�̩һݪ��^�m���~�K�U�h�C
-�����`�N���O�A�^�m�ұo���k�N�O����ɶ�����A�]���n�����I�ΡC
+在人物的屬性上，戰士能力和聖者能力（Sage Ability），會隨著升級而增加，
+但諸神的喜好度是不會增加的。諸神的喜好度只是影響法術獲得時，在神殿所
+需奉獻的物品數量，這在遊戲中的影響也不是很大，因為施法的機會是很小的。
+以下為各神奉獻後所能得到的法術與作用，愈後面者所需的奉獻物品便愈多。
+必須注意的是，奉獻所得的法術是有其時間限制的，因此要儘早施用。
 
-(�@) �ڤB�]Odin�^
+(一) 歐丁（Odin）
 
-1.�ȮɼW�[�t�̯�O
-2.���ٳN
-3.�ܯT�N
-4.�g�ɳN
-5.�q�F�N
+1.暫時增加聖者能力
+2.火矛術
+3.變狼術
+4.狂暴術
+5.通靈術
 
-(�G) �h���]Thor�^
+(二) 多爾（Thor）
 
-1.���~�N
-2.�i�j�N
-3.�{�q�b
-4.�����N
-5.�h��������
+1.驚嚇術
+2.綑綁術
+3.閃電箭
+4.輕巧術
+5.多爾之鎚擊
 
-(�T) �����]Tyr�^
+(三) 提爾（Tyr）
 
-1.�H���y�X���~
-2.�ȮɼW�[�Ԥh��O
-3.���y�N
-4.����������
-5.�Z���[�j�N
+1.隨機造出物品
+2.暫時增加戰士能力
+3.火球術
+4.提爾之拳擊
+5.武器加強術
 
-(�|) �ܷ綮�]Freya�^
+(四) 芙瑞雅（Freya）
 
-1.�����N
-2.�ө��N
-3.�}���N
-4.�a�I�ಾ�N
-5.���γN
+1.醫療術
+2.照明術
+3.開門術
+4.地點轉移術
+5.隱形術
 
-�t�~�A�k�N�]�i�g�Ѿߨ쪺�ťۨӶi��I�k�A�H�U���U�ť۪��γ~�G
+另外，法術也可經由撿到的符石來進行施法，以下為各符石的用途：
 
-1.Algit - �O�@�N
-2.Ehwaz - ���޳N
-3.Hagalaz - �P���N
-4.Isa - �i�j�N
-5.Kano - �}���N
-6.Mannaz - �Ȯɴ��ɸt�̯�O
-7.Othila - �q�F�N
-8.Thurisaz - �a�I�ಾ�N
-9.Teiwaz - �Ȯɴ��ɾԤh��O
+1.Algit - 保護術
+2.Ehwaz - 火盾術
+3.Hagalaz - 致死術
+4.Isa - 綑綁術
+5.Kano - 破門術
+6.Mannaz - 暫時提升聖者能力
+7.Othila - 通靈術
+8.Thurisaz - 地點轉移術
+9.Teiwaz - 暫時提升戰士能力
 
-���~�A���C�����@�Ҩ��@��O�O�H�^�廡�����D���A��j�ץѧC�Ӱ������U�C
-�X�ءG
+此外，本遊戲的護甲防護能力是以英文說明為主的，其強度由低而高分為下列
+幾種：
 
  1.Unarmored
  2.Well-clad
@@ -103,515 +103,515 @@
 15.Invincible
 
 
-�G. Asgard�c��
+二. Asgard宮殿
 
-      �z�w�w�w�w�w�s�w�w�w�s�w�w�w���w�w�w�w�{
-  �z�w�}�z�w�w�w�{�x      �x                �x
-  �x    �xHoenir�x�x�|ĳ�U�x�z�w�w�w�w�{    �x
-  �x�z�w�r�w�s�w�}�|�w�w�w�}�xFrigga  �x    �x
-  �x�xHermod�x  Reginlief   �|�w�w�w�w�}    �x
-  �x�|�w�w�w�}  �z�w�w�w�w�{�z�w�w�w�w�w�w�{�x
-  ��   Ketil    �xOdin    �x�xSpearskogul �x�x
-  �x�z�w�w�w�{  �x        �x�|�w�w�w�w�w�w�}�x
-  �x�x Fulla�x  �|�w�w�w�w�}                �x
-  �x�x& Hlin�x              �z�w�w�w�w�w�{  �x
-  �x�|�w�w�s�r�w�{�z�w�w�w�{�x          �x  �x
-  �x      �x���\�x�xHrist �x�xSif       �x  �x
-  �|�w�w�{�|�w�w�}�u�w�w�w�t�|�w�w�w�w�w�}  �x
-        �x  Vale  �x      �|�w�w�w�w�w�w�w�w�}
-        �|�w�w�w�w�}
+      ┌─────┬───┬───門────┐
+  ┌─┘┌───┐│      │                │
+  │    │Hoenir││會議廳│┌────┐    │
+  │┌─┴─┬─┘└───┘│Frigga  │    │
+  ││Hermod│  Reginlief   └────┘    │
+  │└───┘  ┌────┐┌──────┐│
+  門   Ketil    │Odin    ││Spearskogul ││
+  │┌───┐  │        │└──────┘│
+  ││ Fulla│  └────┘                │
+  ││& Hlin│              ┌─────┐  │
+  │└──┬┴─┐┌───┐│          │  │
+  │      │馬廄││Hrist ││Sif       │  │
+  └──┐└──┘├───┤└─────┘  │
+        │  Vale  │      └────────┘
+        └────┘
 
-1.�C���@�}�l�AOdin�|��A�͸ܡA�»P�AEinherjor�ʸ��A�çi�D�A���[���N
-  �ӷ|���@�������̲ת�Ragnarok�ԧСA��Odin�w�w��Aesir�ѯ��N�|���ѡA
-  �]���Ʊ�A�ɤ@����k�Ӯ��Ϧ��@�H�աC�����n�����O�A�Q��k�h���
-  Fenrir�A�����L�k�ѻP���ԧСA�_�hOdin�N�|�Q�������C�]���A������좵
-  �����~�M��浹Thjasse-Volund�y�XGleipnir�H���Fenrir�A�o�������~��
-  �O���s���ڡ]mountain's root�^�B�ߪ��}�B�]cat's footfall�^�B�����f
-  ���]spittle of birds�^�B�������Y�]bear's senews�^�B�k�H���GŽ
-  �]woman's beard�^�H�γ����I�l�]breath of fish�^�C�̫��ٴ���n��^
-  Aesir���h��honor�C�{�b�X���bAsgard�c�����|�B�P�H��͡C
+1.遊戲一開始，Odin會跟你談話，授與你Einherjor封號，並告訴你不久的將
+  來會有一場正邪最終的Ragnarok戰役，而Odin已預見Aesir諸神將會落敗，
+  因此希望你盡一切方法來挽救此一劣勢。首先要做的是，想辦法去鎖住
+  Fenrir，讓它無法參與此戰役，否則Odin將會被它殺死。因此你必須找到６
+  項物品然後交給Thjasse-Volund造出Gleipnir以鎖住Fenrir，這６項物品分
+  別為山之根（mountain's root）、貓的腳步（cat's footfall）、鳥的口
+  水（spittle of birds）、熊的骨頭（bear's senews）、女人的鬍鬚
+  （woman's beard）以及魚的呼吸（breath of fish）。最後還提到要找回
+  Aesir失去的honor。現在出門在Asgard宮殿中四處與人交談。
 
-2.�bAsgard�c�����A�U���O�@�Ǥ�����n���H���͸ܤ��e�G
+2.在Asgard宮殿中，下面是一些比較重要的人的談話內容：
 
-  (1)Vale�GOdin����l�A�L�}���n����Hodur�C
-  (2)Ketil�GAsgardĵ�áA�L�i�D�A��������K�i����bear's senews�A�Ӧb
-     Asgard�n��Vigrid���쪺�a�観Vidard�˪L�A�٬�Mirkwood�A�̭��K��
-     �\�h���M�T�C�ë�ĳ�A�b���}Asgard�e���h��Inghen�A�L�|���Ѥ@�ǥ�
-     �ݫ~��Odin���Ԥh�C
-  (3)Fulla�GFrigga���ͤk�A�o�i�D�ABaldur���`���ơ]���GBaldur��Odin��
-     ��l�A���ѯ����̨��R�����@��A���Q���J���Ѯ`���A�̫�ɭPRagnarok
-     �ԧС^�A��Baldur��������h��Odin���B�͡A���bJotunheim��n���䪺
-     �k���HHyrokkin���J���̪��A�Ʊ�A�h���X�o�A�γ\��o�����U�C
-  (4)Hlin�GFrigga���ͤk�A�o�i�D�A�bMidgard�����Nitheri�L���k��Q
-     TreeSmiter�j���F�A�Ʊ�A��ϥX�L���k��C
-  (5)Hermod�GOdin����l�A�L�i�D�A�L���VHela�]���`���Z�^�n�D��Baldur
-     �_���A�ӳq�����`�@�ɪ��q���bJotunheim�̥_��A�ѽѯ����ĤHFroste
-     �v�z���a�ϡC���b�i�J���`�@�ɫe�A�����q�LValley of Thorns�M
-     River of Blades�A�p�G�S����Hel shoes�O�L�k�q�LValley of Thorns�A
-     �ӭn�q�LRiver of Blades�h��������~���|���ˡC�ӥL�O�M�FOdin����
-     �K�}��Sleipnir�~��L�Ʀa�q�L�o�ǻ�ê�A���o�����㦳Greybeard���
-     ���H�~���M���C�ܩ�Baldur���_���AHela�n�D�����ѯ������L���\�~�|
-     ���L�_���A��Thokk�o���@���L���\�A�H�PBaldur�l�׵L�k�_���C
-  (6)Hoenir�GOdin���S�̡AVanir���Ϊv�̡C�L�i�D�A�L�Ӧ��B�O���F�Ƹ�
-     Vanir�MAesir���誺�~�|�A�_�h�bRagnarok�ԧФ��AVanir�ѯ��N���|��
-     �UOdin�C���u�n��Mead of Consequence�A�L�K�i�H�U�AVanir�ѯ�����
-     �UOdin�A�]���Ʊ�A��qSurt���䰽�ӵ��L�C�P�ɥL�]����Surt�D�`��
-     Odin�A�]Odin��L���j�jGunlod�l�òױ�C
-  (7)Reginlief�GAsgardĵ�áA�L�i�D�AFrey�]�R�W�FGymir���k��Gerd�A��
-     �Q�NSword of Victory�浹Gymir�H�洫Gerd���R���A��Gymir�o�O
-     Asgard���ĤH�C�p�G�S���FSword of Victory�A�K�A�]�S���H����b
-     Ragnarok�ԧФ�����Surt�F�C
-  (8)Sif�GThor���d�l�A�O�o�b�o�ж����߰_�c�l�A�̭������~�i�����^�m��
-     �ΡC
-  (9)Spearskogul�G�o�Ʊ�A�����o����QOdin�}�T���j�jBrynhild�A�Ӧo�j
-     �j�N�|��A�����Ȧ��ܤj�����U�C
-  (10)�|ĳ�U�G�߰_�c�l�A�̭���Mimer's Head�A�N�ӷ|�Ψ�C
+  (1)Vale：Odin的兒子，他誓言要殺死Hodur。
+  (2)Ketil：Asgard警衛，他告訴你殺死熊後便可拿到bear's senews，而在
+     Asgard南方Vigrid平原的地方有Vidard森林，稱為Mirkwood，裡面便有
+     許多熊和狼。並建議你在離開Asgard前先去見Inghen，他會提供一些必
+     需品給Odin的戰士。
+  (3)Fulla：Frigga的侍女，她告訴你Baldur死亡的事（註：Baldur為Odin的
+     兒子，為諸神中最受愛戴的一位，但被洛克陰謀害死，最後導致Ragnarok
+     戰役），而Baldur的火葬船則由Odin的朋友，住在Jotunheim西南海邊的
+     女巨人Hyrokkin推入海裡的，希望你去拜訪她，或許能得到幫助。
+  (4)Hlin：Frigga的侍女，她告訴你在Midgard的國王Nitheri他的女兒被
+     TreeSmiter綁走了，希望你能救出他的女兒。
+  (5)Hermod：Odin的兒子，他告訴你他曾向Hela（死亡之后）要求讓Baldur
+     復活，而通往死亡世界的通路在Jotunheim最北邊，由諸神的敵人Froste
+     治理的地區。但在進入死亡世界前，必須通過Valley of Thorns和
+     River of Blades，如果沒有穿Hel shoes是無法通過Valley of Thorns，
+     而要通過River of Blades則必須有船才不會受傷。而他是騎了Odin給的
+     八腳馬Sleipnir才能無事地通過這些障礙，但卻必須具有Greybeard血統
+     的人才能騎它。至於Baldur的復活，Hela要求必須諸神均為他掉淚才會
+     讓他復活，但Thokk卻不願為他掉淚，以致Baldur始終無法復活。
+  (6)Hoenir：Odin的兄弟，Vanir的統治者。他告訴你他來此處是為了化解
+     Vanir和Aesir雙方的誤會，否則在Ragnarok戰役中，Vanir諸神將不會幫
+     助Odin。但只要有Mead of Consequence，他便可以勸服Vanir諸神來幫
+     助Odin，因此希望你能從Surt那邊偷來給他。同時他也提到Surt非常恨
+     Odin，因Odin對他的姐姐Gunlod始亂終棄。
+  (7)Reginlief：Asgard警衛，他告訴你Frey因愛上了Gymir的女兒Gerd，而
+     想將Sword of Victory交給Gymir以交換Gerd的愛情，但Gymir卻是
+     Asgard的敵人。如果沒有了Sword of Victory，便再也沒有人能夠在
+     Ragnarok戰役中殺死Surt了。
+  (8)Sif：Thor的妻子，記得在她房間中撿起箱子，裡面的物品可做為奉獻之
+     用。
+  (9)Spearskogul：她希望你能幫她釋放被Odin囚禁的姐姐Brynhild，而她姐
+     姐將會對你的任務有很大的幫助。
+  (10)會議廳：撿起箱子，裡面有Mimer's Head，將來會用到。
 
-3.�ͧ��ܫ�A�^��Odin�B�A�ݥL��Hyrokkin���A�L�|�i�D�A��Jotunheim��n
-  �@�ӥsWater Charm���s�}����o�C�ͧ���A�Ѧ��䪺���X�c���C
-
-
-�T. Asgard
-
-          �z�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-Skuld     �x        �z�w�w�w�{                   Brodar                 �x
-Urd       �x        �xBjort �x�z�w�w�{�z�w�w�w�w�{    �z�w�w�w�{        �x
-Verandi   �x        �xHlif  �x�xFrey�x�xSkirnir �x    �xSindre�x�z�w�w�{�x
-          �x        �|�w�w�w�}�|�w�w�}�|�w�w�w�w�}    �|�w�w�w�}�xThor�x�x
-          �x�z�w�w�{�z�w�w�w�{                                  �|�w�w�}�x
-    �z�w�w�t�x�ߩТx�xFreya �x    Eil  �z�w�w�w�w�w�w�{                 �x
-    �xGorm�x�|�w�w�}�|�w�w�w�}         �x            �x          Magni  �x
-    �|�w�w�r�w�w�w�w�w                 �xAsgard�c��  �x                 �x
-Heimdall             Olaf              �x            �xTyr�z�w�w�w�w�{  �x
-    �z�w�w�w�s�w�w�w�w                 �x            �x   �xThjasse �x  �x
-    �xEyvind�x           �z�w�w�w�w�w�{�|�w�w�w�w�w�w�}   �|�w�w�w�w�}  �x
-    �|�w�w�s�}           �x Heidhlief�x       Hodur                     �x
-          �x �z�w�w�w�w�{�|�w�w�w�w�w�} �z�w�w�w�{                      �x
-          �x �x Forsete�x               �xInghen�x      Vidard�˪L      �x
-          �x �|�w�w�w�w�}      Hrorik   �|�w�w�w�}                      �x
-          �|�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-1.�X�h��A���hInghen���䮳Leather Boot�BSpear�M����A�A��Urd�B���Y���B
-  �޵P�M���A�p������԰��|������P�ǡC���ۥ|�B�P�H��͡A�U���O�@��
-  �㦳���n�ʽ誺�H���G
-
-  (1)Eil�GFreya���ͤk�A�i�H�v���A�����ˡC
-  (2)Bjort�G�i���A���s�^�_���⪺�U�N��O�C
-  (3)Hlif�G�i���A�I�i�O�@�N�C
-  (4)Brodar�G�i�H���A���Ѳť۪��\�ΡC
-
-  �H�U�h�O�@�ǭ��n�H�����͸ܤ��e�G
-
-  (1)Forsete�GBaldur����l�A�L�i�D�ABaldur���M�O�QHodur���b�ұ��A��
-     �ƹ�W�o�O���J�ҳ]�p���A�ѩ�ѯ������̸ѡA�S�O�OVale�}���n����
-     Hodur��Baldur�_���A���bRagnarok�ԧ�Hodur�o�O���i�ʪ��A�]���L��
-     ��A�ள��Grendel��magic torc�A�H�v��Hodur�������A�p���L�K���P
-     �QVale�ұ��C
-  (2)Freya�G�o�Ʊ�A�����o����Brisingamen����C
-  (3)Frey�G�L�i�D�A�p�G�S��Gerd�b�L����A�L��b�L�߰ѻPRagnarok�ԧСA
-     ���p�G�S��Sword of Victory�A�bRagnarok�ԧСA�j���ܧ֫K�|�Ԧ��C
-  (4)Skirnir�G�L�|�i�D�AHela����Rod of Subduing����A�p�G�A�ள�쨺
-     �Ӥ���A�L�K�i�H�Q�Υ��Ө�Gerd�[�J�ڤ�A�p���K���Υ�X
-     Sword of Victory�h����Gerd���P���F�C
-  (5)Gorm�G�L�Ʊ�A���L����lRagnar��A�i�D�L��father���A���L���D
-     �L���˪������C
-  (6)Heimdall�G�L�|�i�D�A�bRagnarok�ԧХ�����^�R�B����Gjaller�A�_�h
-     �L�k�q���ѯ��i��ǳơC�P�ɧi�D�A���@�����_���Y��Hildegrim�b
-     Jotunheim�`�s���C
-  (7)Thjasse�G�L�|�i�D�A�L�ݭnStar of Muspell�ӥ[�j��Heimdall���@�ҡC
-  (8)Thor�G�L�|�i�D�A�L���}�YMjollnir�w�_����I�A�ثe�L�u�ѤU�`�Ӥw�A
-     �Ʊ�A�h�M��}�Y�����A�M�᮳��Sindre���s���y�C�ܩ�}�Y��������
-     �O�b�L�MHrungnir�bHolmgang�q�W�԰��ɿ򥢪��A���L�w�ѤF�b���̡A
-     �Y�ݥ��HSkor��Holmgang���γ\��o��@�Ǹ�T�C
-  (9)Skuld�G�o�|�i�D�A�AHeimdall�������ӱj�O���@�ҡA�_�h�bRagnarok��
-     �з|�Ԧ��C
-  (10)Verandi�G�o�|�i�D�A�����Q��k�j��Hymir�������u�A�N�@�ɤ��D
-      Jormungandr�j���A�_�hThor�N�L�k�Գӥ��C
-  (11)Tyr�G�L�|�i�D�A�bMidgard South�����Magnus��Ledling�MDromi�A�o
-      �������O���e�y�X�ΨӸj��Fenrir���A���o���Q���ò�F�C
-
-2.���U�ӫK�n�}�l�i�����m�\�A�����MOlaf��͡A�ͧ���K�}�l�԰��C�Ӧb
-  Hrorik�B�����ӤH�A�i�H���O�����L�̰����m�\��H�C�̫�bVidard�˪L�A
-  ���M���T����A�A�h�����C�O�o�b��������A�n�߰_�@��bear's senews�C
-  �p�G���F�ˮɡA�O�o��Eil�B�v���C
-
-3.�ѳ̦��䪺�m�i���XAsgard�A�X�h�e�O�o�n���I�U����C�i�J�s�}��A�M��
-  �ĤH�A�����n�X�s�}��Midgard Center�]���_�h��Midgard North�^�C
+3.談完話後，回到Odin處，問他”Hyrokkin”，他會告訴你到Jotunheim西南
+  一個叫Water Charm的山洞內找她。談完後，由西邊的門出宮殿。
 
 
-�|. Midgard Center
+三. Asgard
 
-�z�w�w�w�w�{                              �z�w�w�w�{
-�xTyr���� �x            (Mancharger)      �xDrifa �x
-�|�w�w�w�w�}                              �|�w�w�w�}
-                �z�w�w�{
-           Ghael�xOlof�x                 (Wolf Cloak)
-                �|�w�w�}
+          ┌──────────────────────────────┐
+Skuld     │        ┌───┐                   Brodar                 │
+Urd       │        │Bjort │┌──┐┌────┐    ┌───┐        │
+Verandi   │        │Hlif  ││Frey││Skirnir │    │Sindre│┌──┐│
+          │        └───┘└──┘└────┘    └───┘│Thor││
+          │┌──┐┌───┐                                  └──┘│
+    ┌──┤│貓房││Freya │    Eil  ┌──────┐                 │
+    │Gorm│└──┘└───┘         │            │          Magni  │
+    └──┴─────                 │Asgard宮殿  │                 │
+Heimdall             Olaf              │            │Tyr┌────┐  │
+    ┌───┬────                 │            │   │Thjasse │  │
+    │Eyvind│           ┌─────┐└──────┘   └────┘  │
+    └──┬┘           │ Heidhlief│       Hodur                     │
+          │ ┌────┐└─────┘ ┌───┐                      │
+          │ │ Forsete│               │Inghen│      Vidard森林      │
+          │ └────┘      Hrorik   └───┘                      │
+          └──────────────────────────────┘
+
+1.出去後，先去Inghen那邊拿Leather Boot、Spear和火把，再到Urd處拿頭盔、
+  盾牌和手斧，如此初期戰鬥會比較輕鬆些。接著四處與人交談，下面是一些
+  具有重要性質的人物：
+
+  (1)Eil：Freya的侍女，可以治療你受的傷。
+  (2)Bjort：可幫你重新回復火把的燃燒能力。
+  (3)Hlif：可幫你施展保護術。
+  (4)Brodar：可以幫你辨識符石的功用。
+
+  以下則是一些重要人物的談話內容：
+
+  (1)Forsete：Baldur的兒子，他告訴你Baldur雖然是被Hodur的箭所殺，但
+     事實上卻是洛克所設計的，由於諸神的不諒解，特別是Vale誓言要殺死
+     Hodur為Baldur復仇，但在Ragnarok戰役Hodur卻是不可缺的，因此他希
+     望你能拿到Grendel的magic torc，以治療Hodur的盲眼，如此他便不致
+     被Vale所殺。
+  (2)Freya：她希望你能幫她拿到Brisingamen項鍊。
+  (3)Frey：他告訴你如果沒有Gerd在他身邊，他實在無心參與Ragnarok戰役，
+     但如果沒有Sword of Victory，在Ragnarok戰役，大概很快便會戰死。
+  (4)Skirnir：他會告訴你Hela有個Rod of Subduing手杖，如果你能拿到那
+     個手杖，他便可以利用它來使Gerd加入我方，如此便不用交出
+     Sword of Victory去換取Gerd的感情了。
+  (5)Gorm：他希望你找到他的兒子Ragnar後，告訴他”father”，讓他知道
+     他父親的消息。
+  (6)Heimdall：他會告訴你在Ragnarok戰役必須找回命運號角Gjaller，否則
+     無法通知諸神進行準備。同時告訴你有一頂神奇的頭盔Hildegrim在
+     Jotunheim深山中。
+  (7)Thjasse：他會告訴你他需要Star of Muspell來加強給Heimdall的護甲。
+  (8)Thor：他會告訴你他的榔頭Mjollnir已斷成兩截，目前他只剩下柄而已，
+     希望你去尋找榔頭部份，然後拿給Sindre重新打造。至於榔頭部份應該
+     是在他和Hrungnir在Holmgang島上戰鬥時遺失的，但他已忘了在那裡，
+     若問巨人Skor”Holmgang”或許能得到一些資訊。
+  (9)Skuld：她會告訴你，Heimdall必須有個強力的護甲，否則在Ragnarok戰
+     役會戰死。
+  (10)Verandi：她會告訴你必須想辦法強化Hymir的釣魚線，將世界之蛇
+      Jormungandr綁住，否則Thor將無法戰勝它。
+  (11)Tyr：他會告訴你在Midgard South的國王Magnus有Ledling和Dromi，這
+      兩條鎖鍊是之前造出用來綁住Fenrir的，但卻都被它掙脫了。
+
+2.接下來便要開始進行初期練功，首先和Olaf交談，談完後便開始戰鬥。而在
+  Hrorik處的４個人，可以分別攻擊他們做為練功對象。最後在Vidard森林，
+  先清除狼之後，再去殺熊。記得在殺熊之後，要撿起一個bear's senews。
+  如果受了傷時，記得到Eil處治療。
+
+3.由最西邊的彩虹橋出Asgard，出去前記得要先點燃火把。進入山洞後，清掉
+  敵人，先往南出山洞到Midgard Center（往北則到Midgard North）。
+
+
+四. Midgard Center
+
+┌────┐                              ┌───┐
+│Tyr神殿 │            (Mancharger)      │Drifa │
+└────┘                              └───┘
+                ┌──┐
+           Ghael│Olof│                 (Wolf Cloak)
+                └──┘
   Bhori                        Hrak
-           �z�w�w�w�w�{
-           �xNitheri �x        Vahlir
-           �|�w�w�w�w�}
- �z�w�w�w�w�w�{
- �xTreeSmiter�x                Heildleik
- �|�w�w�w�w�w�}
-                                        �z�w�w�w�w�{
-         �z�w�w�w�w�{                   �xOdin�����x
-         �xBeowulf �x                   �|�w�w�w�w�}
-         �|�w�w�w�w�}
-�z�w�w�w�w�w�{         Unraveler
-�xFreya���� �x
-�|�w�w�w�w�w�}     Helge                  Timur
+           ┌────┐
+           │Nitheri │        Vahlir
+           └────┘
+ ┌─────┐
+ │TreeSmiter│                Heildleik
+ └─────┘
+                                        ┌────┐
+         ┌────┐                   │Odin神殿│
+         │Beowulf │                   └────┘
+         └────┘
+┌─────┐         Unraveler
+│Freya神殿 │
+└─────┘     Helge                  Timur
 
-1.�X�s�}��A�u�۹D�����n�A����A����ݨ�@��۬W�B�A�������񪺼ĤH�i
-  �o��̦n���޵PMancharger�A���i�H�[�֥D�������ʤΧ����t�סA�]���̦n
-  �@���˳ƥ��C
+1.出山洞後，沿著道路往南再往西，直到看到一堆石柱處，打死附近的敵人可
+  得到最好的盾牌Mancharger，它可以加快主角的移動及攻擊速度，因此最好
+  一直裝備它。
 
-2.�MDrifa��͡A�o�|�i�D�A�@�Ǫ��~���\�ΡG
-    Dragon's Heart - �i�M�����
-    Mandrake - �Ȯɴ��ɸt�̯�O
-    Balder's Brow - �Ѭr
-    Stonecrop - �{�q�޵P
-    Thunder Stone - �{�q�b
-    Apple of Vigor - �v��
-    Leifner's Flame - �Ȯɴ��ɾԤh��O
-    Battlebrue - �g�ɳN
-  �b�o�ж���������T�k�o��Wolf Cloak�A�i�Ȯ��ܦ��T���κA�A�N�ӷ|�Ψ�C
+2.和Drifa交談，她會告訴你一些物品的功用：
+    Dragon's Heart - 可和鳥交談
+    Mandrake - 暫時提升聖者能力
+    Balder's Brow - 解毒
+    Stonecrop - 閃電盾牌
+    Thunder Stone - 閃電箭
+    Apple of Vigor - 治傷
+    Leifner's Flame - 暫時提升戰士能力
+    Battlebrue - 狂暴術
+  在她房間附近殺死狼女得到Wolf Cloak，可暫時變成狼的形態，將來會用到。
 
-3.�MVahlir��͡A�L�|�i�D�AFrey���ӯ��_����sSkidbladnir�A�i�b���W��
-  ���W���A�]�i�q�LRiver of Blades�C�P�ɤ]�i�D�AMimer���C�Ө�l
-  Seven Sleeper���ơC�MMimer's Head��͡A�ݦo��Sleeper���A�o�|�i�D�A
-  �o��l��Golden Robe�A�������W�@�دS����M�~�ள���A�ӳo�Ӥ�M�b
-  Alfheim�F�n��Q��������a��C�^��Asgard�A�VFrey�߰ݡ�Skidbladnir���A
-  �L�|�N��ɵ��A�C
+3.和Vahlir交談，他會告訴你Frey有個神奇的船叫Skidbladnir，可在陸上或
+  海上航行，也可通過River of Blades。同時也告訴你Mimer的七個兒子
+  Seven Sleeper的事。和Mimer's Head交談，問她”Sleeper”，她會告訴你
+  她兒子有Golden Robe，必須戴上一種特殊手套才能拿取，而這個手套在
+  Alfheim東南方被樹木圍住的地方。回到Asgard，向Frey詢問”Skidbladnir”，
+  他會將船借給你。
 
-4.���_�M���Nitheri��͡A�L�|�Ʊ�A�qTreeSmiter�⤤�ϥX�L���k��
-  Thera�A���n����TreeSmiter�ߨ��_�Ͷ}����XThera�A�a�W���c�l�����@��
-  �CBlutgang�i�g�X���y�A���n�O�d�ӼC�����y�N�ѱN�ӿN��ϥΡC�̭��٦�
-  �i���Ϊ�Cloak of Obscurity�A�O�d����Hela�����`�@�ɨϥΡC�^�h�M���
-  Nitheri��͡A���oLifegiver�޵P�A�i�����_�ͩR�O�A���ɶ������C
+4.到西北和國王Nitheri交談，他會希望你從TreeSmiter手中救出他的女兒
+  Thera，往南打敗TreeSmiter撿取鑰匙開門放出Thera，地上的箱子內有一把
+  劍Blutgang可射出火球，但要保留該劍的火球術供將來燒樹使用。裡面還有
+  可隱形的Cloak of Obscurity，保留它到Hela的死亡世界使用。回去和國王
+  Nitheri交談，取得Lifegiver盾牌，可持續恢復生命力，但時間有限。
 
-5.���n�M���Beowulf��͡A�L�|�Ʊ�A�h�����@���sUnraveler���s�A�o��
-  �s�b��F�n�s����¶�B�A���ä��O�ܦn���A�̦n�˳ư_Blutgang�M��Υ��a
-  �]�ԳN�A���F�X�U��K�k�}�A�קK�Q�������y�ˮ`�C�p�G���ˤӦh�A�K�^��
-  Asgard��Eil�v�ˡC�j���Ӧ^�X��K�i�H�N�������F�C�p�G���Q����֡A�]
-  �i�H������Naglering�_�C��A�ӱ����C��������A�N�����Y�߰_�ӡA�öi
-  �J�����_�ޤ��������~�A�S�O�ODragon's Heart�N�ӷ|�Ψ�C�t�~�A
-  Dragon Blood���Ȯɥ[�j���@��O��̱j���ĪG�C�{�b��Odin�����^�m���~
-  �]���n�^�m�K���A�N�ӷ|�Ψ�^�A����o��q�F�N�A�I�i�q�F�N�MUnraveler
-  ��͡A���|�i�D�A�n�S�O�`�NOdin�@�}�l��A�����̫�@�y�ܡA���O���R
-  �B����Gjaller������Ҧb�C�̫�N�����Y�浹Beowulf����A�i�o��
-  Hrunting�_�C�C�o���_�C�����ˤO�]30�^�ä��pBlutgang�_�C�]40�^�A�@�}
-  �l����ɩҦC�����ˤO�O���䤺�t�k�N�����ˤO�A���k�N�Χ����ڱ��ˤO
-  �K�٭�F�C
+5.到西南和國王Beowulf交談，他會希望你去殺死一條叫Unraveler的龍，這條
+  龍在其東南山脈環繞處，但並不是很好打，最好裝備起Blutgang然後用打帶
+  跑戰術，打了幾下後便逃開，避免被它的火球傷害。如果受傷太多，便回到
+  Asgard找Eil治傷。大概來回幾趟便可以將它打死了。如果不想那麼累，也
+  可以等拿到Naglering寶劍後再來殺它。打死它後，將它的頭撿起來，並進
+  入它的巢穴中拿取物品，特別是Dragon's Heart將來會用到。另外，
+  Dragon Blood有暫時加強防護能力到最強的效果。現在到Odin神殿奉獻物品
+  （不要奉獻鐵幣，將來會用到），直到得到通靈術，施展通靈術和Unraveler
+  交談，它會告訴你要特別注意Odin一開始對你講的最後一句話，那是找到命
+  運號角Gjaller的關鍵所在。最後將它的頭交給Beowulf國王，可得到
+  Hrunting寶劍。這把寶劍的殺傷力（30）並不如Blutgang寶劍（40），一開
+  始拿到時所列的殺傷力是指其內含法術的殺傷力，等法術用完後實際殺傷力
+  便還原了。
 
-6.�{�b�^��q��Asgard���s�}���_����Midgard North�C
+6.現在回到通往Asgard的山洞往北走到Midgard North。
 
 
-��. Midgard North
+五. Midgard North
 
-                  �z�w�w�{                       �z�w�w�w�w�{
-                  �xIvar�x                       �xTyr���� �x
-                  �|�w�w�}                       �|�w�w�w�w�}
-           �z�w�w�w�w�{                             Modsognir
-           �xKnorhok �x                Landvoettir
-           �|�w�w�w�w�}
-                  �z�w�w�w�w�{                   �z�w�w�w�{
-                  �xThor�����x Mountain          �xGunnar�x
-                  �|�w�w�w�w�}   Mist            �|�w�w�w�}
-           �z�w�w�w�{           �z�w�w�w�w�{     �z�w�w�w�w�{
-  Ragnar   �xNithod�x           �xOdin�����x     �xBrynhild�x
-           �|�w�w�w�}           �|�w�w�w�w�}     �|�w�w�w�w�}
-�z�w�w�w�w�w�{
-�xFreya���� �x                          Hill
-�|�w�w�w�w�w�}
-        �z�w�w�w�{                    �z�w�w�{�z�w�w�{
-        �xGehlir�x                    �xEgil�x�xVala�x
-        �|�w�w�w�}                    �|�w�w�}�|�w�w�}
+                  ┌──┐                       ┌────┐
+                  │Ivar│                       │Tyr神殿 │
+                  └──┘                       └────┘
+           ┌────┐                             Modsognir
+           │Knorhok │                Landvoettir
+           └────┘
+                  ┌────┐                   ┌───┐
+                  │Thor神殿│ Mountain          │Gunnar│
+                  └────┘   Mist            └───┘
+           ┌───┐           ┌────┐     ┌────┐
+  Ragnar   │Nithod│           │Odin神殿│     │Brynhild│
+           └───┘           └────┘     └────┘
+┌─────┐
+│Freya神殿 │                          Hill
+└─────┘
+        ┌───┐                    ┌──┐┌──┐
+        │Gehlir│                    │Egil││Vala│
+        └───┘                    └──┘└──┘
 
-1.�MEgil��͡A�L�|�i�D�AHill�|�I�i�y�b�N�A������Elven Helm�~���ܦo
-  ���k�N�A�]���b�S������Elven Helm�e�A���n����Hill���ϰ�C
+1.和Egil交談，他會告訴你Hill會施展魅惑術，必須有Elven Helm才能對抗她
+  的法術，因此在沒有拿到Elven Helm前，不要走近Hill的區域。
 
-2.�M���Nithod��͡A�L�Ʊ�A��a���L����Weland�y�X�����N�~�A�L�|��
-  Naglering�_�C�M�A�洫�C
+2.和國王Nithod交談，他希望你能帶給他任何Weland造出的藝術品，他會用
+  Naglering寶劍和你交換。
 
-3.�MRagnar��͡A�L�|�i�D�A�����k��Ran���i�j�O�����A�����L��
-  ��father���A�L�|���ATorc of Odin�A�i�W�[Odin�ߦn�סC
+3.和Ragnar交談，他會告訴你海之女神Ran有張強力的網，之後對他說
+  ”father”，他會給你Torc of Odin，可增加Odin喜好度。
 
-4.�줤����y���s�}�A�i�J�MMountain Mist��͡A�L�|�i�D�A
-  breath of fish�u�����v����Aegir�~�൹�A�A���A�J��Aegir�ɥi�H�ݥL
-  ��fish���A�γ\�i�H�o�����U�C�P�ɥL�]�|���ASea Skimmer�޵P�A�i�b��
-  ���W�樫�C
+4.到中央湖泊游到山洞，進入和Mountain Mist交談，他會告訴你
+  breath of fish只有海洋之神Aegir才能給你，當你遇到Aegir時可以問他
+  ”fish”，或許可以得到幫助。同時他也會給你Sea Skimmer盾牌，可在水
+  面上行走。
 
-5.�MGunnar��͡A�L�|����L�ݨ�Mjollnir�_����I���ơA���L��{���o�䤣
-  �챼�U�Ӫ����@�I�A�]�\�Q�j�a���FLandvoettir�����F�A��Landvoettir�i
-  �ƨ�������Ϊ��A�n��쥦�]���e���C���_�M�ƨ������۪�Landvoettir
-  ��͡A�o��Mjollnir's Head�A�����٦��@���K���C�^Asgard�N
-  Mjollnir's Head�浹Sindre�C
+5.和Gunnar交談，他會提到他看到Mjollnir斷成兩截的事，但他到現場卻找不
+  到掉下來的那一截，也許被大地精靈Landvoettir拿走了，而Landvoettir可
+  化身成任何形狀，要找到它也不容易。到西北和化身成岩石的Landvoettir
+  交談，得到Mjollnir's Head，附近還有一個鐵幣。回Asgard將
+  Mjollnir's Head交給Sindre。
 
-6.�MIvar��͡A�L�|�浹�A�@�󥻹C�����̦n���Z�ҡA���@�ĪG�M�s�@�ҬۦP�A
-  �������A�N���O30���K���A�ثe�����ä����A�N�ӦA�ӶR�C
+6.和Ivar交談，他會賣給你一件本遊戲中最好的鎧甲，防護效果和龍護甲相同，
+  但較輕，代價是30個鐵幣，目前的錢並不夠，將來再來買。
 
-7.��F�_�s�}���A�MModsognir��͡A�L�Ʊ�A���^�Q���bAlfheim�����F
-  Docklefar������Sapphire�A�L�@�N��Brisingamen����洫�C
+7.到東北山洞內，和Modsognir交談，他希望你拿回被住在Alfheim的精靈
+  Docklefar偷走的Sapphire，他願意用Brisingamen項鍊交換。
 
-8.�b�F��������Фl�̭������K�OSpearskogul���j�jBrynhild�A�ثe�ٵL�k
-  �ϥX�o�C
+8.在東邊鎖住的房子裡面關的便是Spearskogul的姐姐Brynhild，目前還無法
+  救出她。
 
-9.�{�b�ǳƥX����L���a�_�I�A�H�U���U�j����²�ϡG
+9.現在準備出航到其他陸地冒險，以下為各大陸的簡圖：
 
                     Jotunheim
 
   Iceland   Aegir   Midgard North    Alfheim
-                    �w�w�w�w�w�w�w
+                    ───────
                     Midgard Center   Hrothgar
 
                     Midgard South
 
-  ������Midgard North���F����Alfheim�C
+  首先由Midgard North往東航行至Alfheim。
 
 
-��. Alfheim
+六. Alfheim
 
-   �·t���F �·t���F �·t���F �·t���F
-    �}�ޥ|    �}�ޤT  �}�ޤG   �}�ޤ@
+   黑暗精靈 黑暗精靈 黑暗精靈 黑暗精靈
+    洞穴四    洞穴三  洞穴二   洞穴一
 
-               �z�w�w�w�w�w�{
-               �xFreya���� �x
-               �|�w�w�w�w�w�}
- �z�w�w�w�w�w�{
- �xStrongBow �x
- �|�w�w�w�w�w�}
-        �z�w�w�w�{
-        �xWeland�x               �ʳ��˪L
-        �|�w�w�w�}
+               ┌─────┐
+               │Freya神殿 │
+               └─────┘
+ ┌─────┐
+ │StrongBow │
+ └─────┘
+        ┌───┐
+        │Weland│               封閉森林
+        └───┘
 
-1.�MWeland��͡A��15�T�K���R�U�L��Dragon Brooch�A�^��Midgard North�A
-  �NDragon Brooch�浹���Nithod�H���oNaglering�_�C�A�o���_�C�㦳�P�R
-  �@���k�N�A��ˮ`�O�O�۷��j���A���L���Ʀ����A�Y�D���n�A�i�d�b�D�J�j
-  �ĮɦA�ϥΡC�Y�O�Φb�@��ʪ������A��ˮ`�O�u�������Ӥw�C
+1.和Weland交談，用15枚鐵幣買下他的Dragon Brooch，回到Midgard North，
+  將Dragon Brooch交給國王Nithod以換得Naglering寶劍，這把寶劍具有致命
+  一擊法術，其傷害力是相當強的，不過次數有限，若非必要，可留在遭遇強
+  敵時再使用。若是用在一般性的攻擊，其傷害力只有４０而已。
 
-2.��F�n���Q���M�s�߳�����ʳ��˪L�A�Q��Blutgang�_�C�����y�N�N����
-  ��A�ΧQ��Wolf Cloak�b�T�P�H���ܴ��ɬ�L���A��̭����s�}�����ĤH
-  ����Mimer's Key�C���ɥ��X�Ө�Freya�����^�m���~������o�}���N�A�^��
-  �s�}�ϥί}���N�Ѷ}���W���k�N�A�A��Mimer's Key�}���A��̭������ĤH
-  ���oMimer's Gloves�BTorc of Thor�]�W�[Thor�ߦn�ס^�BGridarvold�k��
-  �]�����������^�BKano�ťۡB�@�ⵥ���~�C
+2.到東南角被樹木和山脈圍住的封閉森林，利用Blutgang寶劍的火球術燒掉樹
+  木，或利用Wolf Cloak在狼與人間變換時穿過樹木，到裡面的山洞打死敵人
+  拿到Mimer's Key。此時先出來到Freya神殿奉獻物品直到取得破門術，回到
+  山洞使用破門術解開門上的法術，再用Mimer's Key開門，到裡面打死敵人
+  取得Mimer's Gloves、Torc of Thor（增加Thor喜好度）、Gridarvold法杖
+  （提爾之拳擊）、Kano符石、護手等物品。
 
-3.��_��i�J�·t���F�}�ޤ@�A�b�Ģ��h�����ĤH�A����Elven Helm�C�^
-  Midgard North�A���WElven Helm�]�i�@�����ۡ^����Hill�A����
-  Huldres Key�A�i�J�o���s�}��Huldress Key�}���A����Battle Havoc�޵P
-  �]�˳ƫ�i�W�[�Ԥh�ޯ�^�BTorc of Freya�]�W�[Freya�ߦn�ס^�C
+3.到北方進入黑暗精靈洞穴一，在第２層殺死敵人，拿取Elven Helm。回
+  Midgard North，戴上Elven Helm（可一直戴著）殺死Hill，拿取
+  Huldres Key，進入她的山洞用Huldress Key開門，拿取Battle Havoc盾牌
+  （裝備後可增加戰士技能）、Torc of Freya（增加Freya喜好度）。
 
-4.�i�J�·t���F�}�ޤG�A�b�Ģ��h��������ĤH����Kano�ťۡA���̭��~��
-  ��Q�r���f�A�����n���쩳�A�b�̸̭����ж������ĤH���oCell Key�A��
-  Cell Key�}�ҫn�誺�U�ж��A�i���Shield Of Tyr�]�W�[Tyr�ߦn�ס^�C�^
-  �Q�r���f���訫�A�����ĤH����Iron Key�A�����ϥ�Kano�ť۸Ѷ}�k�N�A
-  �A��Iron Key�}���A�̭����@���]�k�_�CWelsung�A�������ˤO�MBlutgang
-  �_�C�ۦP�C
+4.進入黑暗精靈洞穴二，在第３層附近殺死敵人拿取Kano符石，往裡面繼續走
+  到十字路口，先往南走到底，在最裡面的房間殺死敵人取得Cell Key，用
+  Cell Key開啟南方的各房間，可找到Shield Of Tyr（增加Tyr喜好度）。回
+  十字路口往西走，打死敵人拿取Iron Key，對門鎖使用Kano符石解開法術，
+  再用Iron Key開門，裡面有一把魔法寶劍Welsung，它的殺傷力和Blutgang
+  寶劍相同。
 
-5.�i�J�·t���F�}�ޤT�A�b�Ģ��h�Ĥ@�ӤQ�r���f���n���A�����ĤH���o
-  Arms Room Key�MThurisaz�ťۡC�^��Q�r���f���F�A�b�ĤG�ӤQ�r���f��
-  �_���A��Arms Room Key�}���A�̭����@����Z���M�@���٤������@�ҡ]�M
-  �s�@�ҬۦP�ĪG�^�C���񬰳q��Ģ��h���ӱ�A�U�h�����ĤH����
-  Treasure Room Key�A�^��ĤT�h�ĤG�ӤQ�r�����n���A��
-  Treasure Room Key�}����̭�����Star of Muspell�C�NStar of Muspell
-  ���^Asgard�浹Thjasse�C
+5.進入黑暗精靈洞穴三，在第３層第一個十字路口往南走，打死敵人取得
+  Arms Room Key和Thurisaz符石。回到十字路口往東，在第二個十字路口往
+  北走，用Arms Room Key開門，裡面有一堆爛武器和一件還不錯的護甲（和
+  龍護甲相同效果）。附近為通到第４層的樓梯，下去打死敵人拿取
+  Treasure Room Key，回到第三層第二個十字路往南走，用
+  Treasure Room Key開門到裡面拿取Star of Muspell。將Star of Muspell
+  拿回Asgard交給Thjasse。
 
-6.�i�J�·t���F�}�ޥ|�A���b�Ģ��h��B���ġA���oStairway Key�B
-  Torc of Protection�]�i�@�����ۥH�[�j���@�O�^�BKano�ť۩MTeiwaz�ťۡC
-  ��F�n���ϥ�Kano�ť۫�A��Stairway Key�}���A�W��Ģ��h�A��������
-  ���ĤH���oBronze Key�MIsa�ťۡA�A��F���Bronze Key�}����Ģ��h��
-  ��Sapphire�MFlaming Javelin�]��ä[�ө��ĪG�A�i�ΨӨ��N����A�i�O
-  �H���X�h��ġA�_�h�K�S�F�^�C�^��Midgar North�A�NSapphire�浹
-  Modsognir�A�H���oBrisingamen����C�A�^��Asgard�NBrisingamen�����
-  ��Freya�A�o��cat's footfall�C
+6.進入黑暗精靈洞穴四，先在第１層到處殺敵，取得Stairway Key、
+  Torc of Protection（可一直戴著以加強防護力）、Kano符石和Teiwaz符石。
+  到東南角使用Kano符石後再用Stairway Key開門，上到第３層，先到西邊殺
+  死敵人取得Bronze Key和Isa符石，再到東邊用Bronze Key開門到第４層拿
+  取Sapphire和Flaming Javelin（具永久照明效果，可用來取代火把，可別
+  隨手丟出去攻敵，否則便沒了）。回到Midgar North，將Sapphire交給
+  Modsognir，以換得Brisingamen項鍊。再回到Asgard將Brisingamen項鍊交
+  給Freya，得到cat's footfall。
 
-7.���ɧA���K���ƶq���Ө���30�ӡA�i�H��Midgard North�VIvar�R�@�ҡA�H
-  ����q�C�p�G�K���٤����A�K�u�n���������F�A�h�R�C�{�b��
-  Midgard Center�V�F����Hrothgar�C
-
-
-�C. Hrothgar
-
-          �z�w�w�w�w�{
-          �xGrendel �x
-          �|�w�w�w�w�}
-  �z�w�w�w�w�{
-  �xHrothgar�x   �z�w�w�w�w�{       Grendel������
-  �|�w�w�w�w�}   �xSigurdh �x
-                 �|�w�w�w�w�}
-
-1.�M���Hrothgar��͡A�L�Ʊ�A���L����Grendel�C��F��PSigurdh��͡A
-  �L�|�i�D�AGrendel�����ή��Y�~�ॴ�����A�ΪZ���O�L�Ī��A��Grendel��
-  ���˧�F�`�A�����ϥΤ@�دS�����C�~������o�A�Ӧo�}�̪��_�ä����i�H
-  �����H�_�쪺Torc�C���_�������T�A�A���U�Z���i�ж��ή��Y����Grendel�C
-  �`�NGrendel�i��|���A���r�A�]���n�ƦnBalder's Brow�A�H�K�b�԰����
-  �r�C�^�h�M���Hrothgar��͡A�o��Hrothgar's Key�A�γo���_�Ͷ}�ҪF�n
-  �����_�ǡA����Torc of Tyr�MHagalaz�ťۡC
-
-2.�q���Hrothgar���ж����F�n����F�䪺�q�A�i�J�s�}������@�⥻�C��
-  ���̦n���_�CGreat Sword�]�@��ߤ@��]���o�l�^�A�M��X�ӱN���˳ư_
-  �ӡA�A�i�h����Grendel�����ˡC�`�NGrendel�����ˤ]�|���A���r�A�]���]
-  �n�ƥ��ǳƦnBalder's Brow�C����Grendel�����˫�A�߰_
-  Grendel's Mother Key�A����Kano�ť۸Ѯ����W���k�N�A�A��
-  Grendel's Mother Key�}����̭�����Torc of Sight�C�^��Asgard�A�N
-  Torc of Sight�浹Hodur�C
-
-3.�{�b��Midgar Center���n��Midgar South�C
+7.此時你的鐵幣數量應該足夠30個，可以到Midgard North向Ivar買護甲，以
+  減輕重量。如果鐵幣還不夠，便只好等收集夠了再去買。現在到
+  Midgard Center向東航行到Hrothgar。
 
 
-�K. Midgard South
+七. Hrothgar
 
-  �z�w�w�w�w�{                               �z�w�w�w�w�{
-  �xOdin�����x                               �xHrunding�x
-  �|�w�w�w�w�}                               �|�w�w�w�w�}
-  �z�w�w�w�{       �z�w�w�w�w�{   �z�w�w�w�w�w�{
-  �xMagnus�x       �xThor�����x   �xFreya���� �x
-  �|�w�w�w�}       �|�w�w�w�w�}   �|�w�w�w�w�w�}
-��
-  �z�w�w�w�w�{�z�w�w�w�{
-  �xTyr���� �x�xBorel �x       �s�}            Althojof
-  �|�w�w�w�w�}�|�w�w�w�}
+          ┌────┐
+          │Grendel │
+          └────┘
+  ┌────┐
+  │Hrothgar│   ┌────┐       Grendel的母親
+  └────┘   │Sigurdh │
+                 └────┘
 
-1.���n��P���Magnus��ͨ⦸,�L�|�}�l�����A�C�N�L�M�L����U������
-  ���]�]�A��̭����^�A�æb�����Ledling�BDromi�MTorc of Warrior
-  �]�W�[�Ԥh�ޯ�^�C
+1.和國王Hrothgar交談，他希望你幫他消滅Grendel。到東邊與Sigurdh交談，
+  他會告訴你Grendel必須用拳頭才能打死它，用武器是無效的，而Grendel的
+  母親更厲害，必須使用一種特殊的劍才能殺死她，而她洞裡的寶藏中有可以
+  讓盲人復原的Torc。往北先殺光狼，再卸下武器進房間用拳頭打死Grendel。
+  注意Grendel可能會讓你中毒，因此要備好Balder's Brow，以便在戰鬥後解
+  毒。回去和國王Hrothgar交談，得到Hrothgar's Key，用這把鑰匙開啟東南
+  的藏寶室，拿取Torc of Tyr和Hagalaz符石。
 
-2.�MBorel��͡A�L�|�i�D�AHarald��Hel Shoes�C���F����@�ӳQ���¶���s
-  �}�A�Q��Blutgang�_�C�����y�N�N���}�e���A�A�ΧQ��Wolf Cloak�b�T�P
-  �H���ܴ��ɬ�L���A�i�J����Harald�A�b�̭�����Balmung�_�C�]�{�q�ޡ^
-  �MHel Shoes�C�X�ӫ�AWolf Cloak�MBlutgang�_�C�����y�N�w�S����ΤF�A
-  �A�i�H��󥦭̡A�αN���̪��k�N�Χ��C
+2.從國王Hrothgar的房間往東南走到東邊的島，進入山洞後先找到一把本遊戲
+  中最好的寶劍Great Sword（一邊撿一邊跑給她追），然後出來將它裝備起
+  來，再進去殺掉Grendel的母親。注意Grendel的母親也會讓你中毒，因此也
+  要事先準備好Balder's Brow。殺死Grendel的母親後，撿起
+  Grendel's Mother Key，先用Kano符石解消門上的法術，再用
+  Grendel's Mother Key開門到裡面拿取Torc of Sight。回到Asgard，將
+  Torc of Sight交給Hodur。
 
-3.�MAlthojof��͡A�L�|�i�D�A�·t���F��Star of Muspell�]�ڭ̤w�g����
-  �F�^�C
-
-4.�MHrunding��͡A��10���K���R�UValknut Key�C�^��Midgar North�A��
-  Valknut Key�}���ϥXBrynhild�A�o�|���ABoots of Swiftness�]�[�ֳt�סA
-  �����ɶ�����^�MHrolte�_�C�]�����ˡ^�C
-
-5.�{�b��Midgard North����e��Aegir�q�C
+3.現在由Midgar Center往南到Midgar South。
 
 
-�E. Aegir
+八. Midgard South
 
-1.�o�䪺�q����p�@�ǡA�]���n�j�M�@�U�C�������@�Ӥp�q�A�������ӳQ��
-  ��¶���k�H�A�Y�O���v�k��Ran�C�M�o��͡A�o�Ʊ�A��a���oLedlung�M
-  Dromi�Ӹj�������FDark Deep�C�NLedlung�MDromi�浹�o�A�o�K���A
-  A Strand of Ran's Net�A�i�ΨӸj��Jormungandr�C
+  ┌────┐                               ┌────┐
+  │Odin神殿│                               │Hrunding│
+  └────┘                               └────┘
+  ┌───┐       ┌────┐   ┌─────┐
+  │Magnus│       │Thor神殿│   │Freya神殿 │
+  └───┘       └────┘   └─────┘
+船
+  ┌────┐┌───┐
+  │Tyr神殿 ││Borel │       山洞            Althojof
+  └────┘└───┘
 
-2.��Ran���p�q���_����Aegir���p�q�A�i�J�s�}��Ģ��h�MAegir��͡A�ݥL
-  ��fish���A�L�|�n�A�a��Froste's Cauldron�өM�L�洫breath of fish�C
+1.到西南方與國王Magnus交談兩次,他會開始攻擊你。將他和他的手下全部殺
+  光（包括船裡面的），並在船內拿取Ledling、Dromi和Torc of Warrior
+  （增加戰士技能）。
 
-3.�XAegir�q�~�򩹦��Iceland�C
+2.和Borel交談，他會告訴你Harald有Hel Shoes。往東走到一個被樹圍繞的山
+  洞，利用Blutgang寶劍的火球術燒掉洞前樹木，，或利用Wolf Cloak在狼與
+  人間變換時穿過樹木，進入殺掉Harald，在裡面拿取Balmung寶劍（閃電盾）
+  和Hel Shoes。出來後，Wolf Cloak和Blutgang寶劍的火球術已沒什麼用了，
+  你可以丟棄它們，或將它們的法術用完。
 
+3.和Althojof交談，他會告訴你黑暗精靈有Star of Muspell（我們已經拿到
+  了）。
 
-�Q. Iceland
+4.和Hrunding交談，花10個鐵幣買下Valknut Key。回到Midgar North，用
+  Valknut Key開門救出Brynhild，她會給你Boots of Swiftness（加快速度，
+  但有時間限制）和Hrolte寶劍（不怎麼樣）。
 
-                 �s�}�G
-
- �z�w�w�w�w�w�{�z�w�w�w�{
- �xFreya���� �x�xJokun �x   �s�}�@
- �|�w�w�w�w�w�}�|�w�w�w�}
-                          �z�w�w�w�w�{
-    Rhank        Jaike    �xOdin�����x
-                          �|�w�w�w�w�}
-
-1.����Vitkar���e���ĤH���oGodi Hall Key�A�A��Odin�����^�m���~���o�q
-  �F�N�A��s�}�@�I�i�q�F�N�M���̥�͡A�o���L�K�OIceland���Ϊv�̡A��
-  �ثe���Ϊv�̫K�OJokun�Q�Τ@�ӯ��_���G�l�ƨ����L���A�ño��@��
-  Godi Chamber Key�C���B�]�i�H���I�i�q�F�N�K�i�M���̥�͡A�u�n�N�ƹ�
-  �b���̨��W���񲾰ʩΫ��U�A���ɷ|���M�X�{��ܰO���A���U�K�i�H�M����
-  ��ͤF�C�X�s�}��Jokun�Ыe�A����Godi Hall Key�}�Ĥ@�D���A�A��
-  Godi Chamber Key�}�ĤG�D���A�i�J����Jokun�A�o��Woman's Beard�C
-
-2.��Freya�������n��A�Y�UDragon's Heart�M�ƨ�������Rhank��͡A���o
-  bird spittle�C
-
-3.�{�b�^��Midgard North���_����Jotunheim�C
+5.現在到Midgard North往西前往Aegir島。
 
 
-�Q�@. Jotunheim
+九. Aegir
 
-                  �s�}�G
+1.這邊的島比較小一些，因此要搜尋一下。首先找到一個小島，中間有個被樹
+  圍繞的女人，即是海洋女神Ran。和她交談，她希望你能帶給她Ledlung和
+  Dromi來綁住水精靈Dark Deep。將Ledlung和Dromi交給她，她便給你
+  A Strand of Ran's Net，可用來綁住Jormungandr。
 
-    �z�w�w�w�{
-    �xFroste�x                    �s�}�@
-    �|�w�w�w�}                  �z�w�w�w�{
-    Frozen Mane                 �xHymir �x
-                                �|�w�w�w�}
-                �z�w�w�w�{      �z�w�w�{
-                �xKulda �x      �xGrid�x         Holmgang
-    �z�w�w�{    �|�w�w�w�}      �|�w�w�}
-    �xSkor�x    �z�w�w�w�w�{
-    �|�w�w�}    �xWeather �x
-                �|�w�w�w�w�}
+2.由Ran的小島往北走到Aegir的小島，進入山洞到第２層和Aegir交談，問他
+  ”fish”，他會要你帶來Froste's Cauldron來和他交換breath of fish。
+
+3.出Aegir島繼續往西到Iceland。
+
+
+十. Iceland
+
+                 山洞二
+
+ ┌─────┐┌───┐
+ │Freya神殿 ││Jokun │   山洞一
+ └─────┘└───┘
+                          ┌────┐
+    Rhank        Jaike    │Odin神殿│
+                          └────┘
+
+1.殺死Vitkar門前的敵人取得Godi Hall Key，再到Odin神殿奉獻物品取得通
+  靈術，到山洞一施展通靈術和死者交談，得知他便是Iceland的統治者，而
+  目前的統治者便是Jokun利用一個神奇的鬍子化身成他的，並得到一把
+  Godi Chamber Key。此處也可以不施展通靈術便可和死者交談，只要將滑鼠
+  在死者身上附近移動或按下，有時會忽然出現對話記號，按下便可以和死者
+  交談了。出山洞到Jokun房前，先用Godi Hall Key開第一道門，再用
+  Godi Chamber Key開第二道門，進入殺死Jokun，得到Woman's Beard。
+
+2.到Freya神殿的南方，吃下Dragon's Heart和化身為鳥的Rhank交談，取得
+  bird spittle。
+
+3.現在回到Midgard North往北走到Jotunheim。
+
+
+十一. Jotunheim
+
+                  山洞二
+
+    ┌───┐
+    │Froste│                    山洞一
+    └───┘                  ┌───┐
+    Frozen Mane                 │Hymir │
+                                └───┘
+                ┌───┐      ┌──┐
+                │Kulda │      │Grid│         Holmgang
+    ┌──┐    └───┘      └──┘
+    │Skor│    ┌────┐
+    └──┘    │Weather │
+                └────┘
    Hyrokkin     Hilde & Grim
 
-1.���n���T�Ӭ}�ު������}�ޡA�PHyrokkin��͡A�o�|�i�D�A�n�j��Fenrir�A
-  Odin�һ������󪫫~�O�������A�٭n�[�WArrow of Pain�~��C
+1.到西南角三個洞穴的中央洞穴，與Hyrokkin交談，她會告訴你要綁住Fenrir，
+  Odin所說的６件物品是不夠的，還要加上Arrow of Pain才行。
 
-2.�MSkor��͡A�ݥL��Holmgang���A�L�|�i�D�A�QThor���Ѫ����HHrungnir�A
-  �L������O��Mountain's Root�����A��Holmgang�q�h�bJotunheim���F��C
-  �bSkor���a�U�����i����Mannaz�BIsa�BEihwaz���ťۡA�æb�Ģ��h���J��
-  Wickedness�A�o�|�i�D�A�����n���hrage of giants�C
+2.和Skor交談，問他”Holmgang”，他會告訴你被Thor打敗的巨人Hrungnir，
+  他的棒鎚是用Mountain's Root做的，而Holmgang島則在Jotunheim的東方。
+  在Skor的地下城中可拿到Mannaz、Isa、Eihwaz等符石，並在第３層中遇到
+  Wickedness，她會告訴你必須要除去rage of giants。
 
-3.����Frozen Mane���oGate Key�A��Gate Key�}���i�JFroste�����A�b�Ģ�
-  �h�B����Froste���oFroste's Key�A��Froste's Key�}�̭������A���o
-  Froste's Cauldron�MOthila�ťۡC��Aegir���q�NFroste's Cauldron�浹
-  Aegir�H����Fish Breath�C
+3.殺掉Frozen Mane取得Gate Key，用Gate Key開門進入Froste城堡，在第２
+  層處殺掉Froste取得Froste's Key，用Froste's Key開裡面的門，取得
+  Froste's Cauldron和Othila符石。到Aegir的島將Froste's Cauldron交給
+  Aegir以換取Fish Breath。
 
-4.��Weather�n�䪺�s�}���A����Hilde�MGrim���O���oHilde's Key�M
-  Grim's Key�A��̭������_�ǡA�i����Torc of Sage�]���ɸt�̯�O�^�B
-  Hildegrim�Y���]���~�N�^�MEhwaz�BFehu�BKano���ťۡC
+4.到Weather南邊的山洞內，殺掉Hilde和Grim分別取得Hilde's Key和
+  Grim's Key，到裡面的藏寶室，可拿到Torc of Sage（提升聖者能力）、
+  Hildegrim頭盔（驚嚇術）和Ehwaz、Fehu、Kano等符石。
 
-5.�i�J�s�}�@�A�̦����Ѣ��Ӧu�î����_�Ͷ}���A��̸̭������������J���A
-  ���hrage of giants�C
+5.進入山洞一，依次打敗４個守衛拿取鑰匙開門，到最裡面攻擊中央的雕像，
+  除去rage of giants。
 
-6.�MGrid��͡A�o�|���AWarrior Trews�@�L�]�W�[�Ԥh�ޯ�^��
-  Gloves of Strength�C
+6.和Grid交談，她會給你Warrior Trews護腿（增加戰士技能）及
+  Gloves of Strength。
 
-7.��Hymir���a�A�NStrand of Ran's Net��즳Hymir's Fishing Line���p��
-  �������a�W�C
+7.到Hymir的家，將Strand of Ran's Net放到有Hymir's Fishing Line的小房
+  間內的地上。
 
-8.��F�䪺Holmgang�q�A�߰_������Mountain's Root�C
+8.到東邊的Holmgang島，撿起中央的Mountain's Root。
 
-9.�i�J�s�}�G�A�e��Hela�����`�@�ɡC
+9.進入山洞二，前往Hela的死亡世界。
 
 
-�Q�G. Hela�����`�@��
+十二. Hela的死亡世界
 
-          Valley    River          �s�}�G
+          Valley    River          山洞二
             of        of
           Thorns   Blades
 
                               Modgud
 
-  Loke                           �z�w�w�{
-                                 �xHela�x
-  �s�}�@                         �|�w�w�}
+  Loke                           ┌──┐
+                                 │Hela│
+  山洞一                         └──┘
 
-1.��s�}�@����Arrow of Pain�A�M��^Asgard�N�Ψӳy�XGleipnir��������
-  �~�浹Thjasse�C
+1.到山洞一拿取Arrow of Pain，然後回Asgard將用來造出Gleipnir的７項物
+  品交給Thjasse。
 
-2.��WHel Shoes�Ψϥ�Ehwaz�ť۳q�LValley of Thorns�A�A����
-  Skidbladnir��q�LRiver of Blades�A�i�J�s�}�G��Glittering Plains�A
-  �b�����j�U�����WMimer's Gloves��A�H�K�����@��Golden Robe�C�i�J
-  Glittering Plains��_�誺�s�}�A�PGaunt��͡A�^����honor�����o
-  Key of Fate�A��Key of Fate���}�̭���������Gjaller Horn�C
+2.穿上Hel Shoes或使用Ehwaz符石通過Valley of Thorns，再乘坐
+  Skidbladnir船通過River of Blades，進入山洞二到Glittering Plains，
+  在中央大廳裡戴上Mimer's Gloves後，隨便拿取一件Golden Robe。進入
+  Glittering Plains西北方的山洞，與Gaunt交談，回答”honor”取得
+  Key of Fate，用Key of Fate打開裡面的門拿取Gjaller Horn。
 
-3.�i�JGlittering Plains�F�n�誺�s�}�A���PBaugi��͡A����Surt's Key�C
-  ���U��Ģ��h�i����Algit�ťۡA�Ģ��h�h�|�J��Surt�]�i��ͨé���y��
-  ����^�A�L�O���������A�]�����n�i�J�L���ж��C��Ģ��h��Surt's Key�}
-  ������Mead of Consequence�C�^��Asgard�A�NMead of Consequence�浹
-  Hoenir�C
+3.進入Glittering Plains東南方的山洞，先與Baugi交談，拿到Surt's Key。
+  往下到第２層可拿到Algit符石，第３層則會遇到Surt（可交談並放火球的
+  那位），他是殺不死的，因此不要進入他的房間。到第４層用Surt's Key開
+  門拿取Mead of Consequence。回到Asgard，將Mead of Consequence交給
+  Hoenir。
 
-4.�MModgud��͡A�L�|�]�A�w����Golden Robe�ӵ��AGjoll Key�A�ϥ�
-  Gjoll Key�}����Hela�j�U�A�qHela�]��⪺����^���ǰ����a�W��
-  Rod of Subduing�C�`�NHela�O���������A�]���̦n�ϥ�
-  Cloak of Obscurity�A�קK�M�o�԰��C�^��Asgard�NRod of Subduing�浹
-  Skirnir�C
+4.和Modgud交談，他會因你已拿到Golden Robe而給你Gjoll Key，使用
+  Gjoll Key開門到Hela大廳，從Hela（綠色的那位）身旁偷走地上的
+  Rod of Subduing。注意Hela是殺不死的，因此最好使用
+  Cloak of Obscurity，避免和她戰鬥。回到Asgard將Rod of Subduing交給
+  Skirnir。
 
-5.�NGjaller Horn�浹Heimdall�Y�����A���椧�e�O�o���s�ɡA�H�K�Y�Ǩƪ�
-  �ѤF���ӾɭP���Ѫ������C
+5.將Gjaller Horn交給Heimdall即結局，但交之前記得先存檔，以免某些事物
+  忘了做而導致失敗的結局。
 

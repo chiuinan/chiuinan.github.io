@@ -1,132 +1,132 @@
-�W�١G�U�q�p�^�����Ш���J���_��
-      (Monkey Island 2: LeChuck's Revenge�A�^�媩)
-²���GLucas 1991�~�X�~���_�I�����C���A�ѳn��@�ɥN�z�i�f�C�G�ƴy�g��
-      ��J�_����A�Q��D���\���Գ\�_���A��O�D�����g�d���U�W�A�ש�
-      ���F�o�f����A���L�C���������۷������A���ɦX�z�C�����D������
-      �ᰪ�A�n�Ѷ}�o�O�@�f�\�ҡC�����ߦn�_�I�C�������a�Ө��ALucas
-      ���q�X�~���_�I�C���i���O�~��O�ҡA����ȱo�@���C
-�O�@�G�ϧμƦr�K�X�A�}�Ѫk�G
+﻿名稱：猴島小英雄２－里察克的復仇
+      (Monkey Island 2: LeChuck's Revenge，英文版)
+簡介：Lucas 1991年出品的冒險解謎遊戲，由軟體世界代理進口。故事描寫里
+      察克復活後，想找主角蓋布拉許復仇，於是主角歷經千辛萬苦，終於平
+      息了這番恩怨，不過遊戲的結局相當的唐突，不盡合理。而謎題的難度
+      頗高，要解開得費一番功夫。但對於喜好冒險遊戲的玩家而言，Lucas
+      公司出品的冒險遊戲可說是品質保證，絕對值得一玩。
+保護：圖形數字密碼，破解法：
       MONKEY2.001
         6F 6B 83 68 4B
         -- -- 6F 6B --
-�𲤡G�]�@�̡ЫC�m�^
+攻略：（作者－青衫）
 
 Part 1 - The Largo Embargo
 
- 1.�b����d�ݼлySign�A�M�᮳�_�ӷ���lShovel�C
- 2.��h�ASwamp�A�ϥδç�Coffin�A�i�J�Ŭr�о«�A�d�ݮ�lTable�A����
-   ÷�lString�A�d���d�l�W��Jar�A����ݨ�Ashes-2-Life�A��Ŭr�Фh�͸ܡA
-   �ݥL��Ashes-2-Life���ơA�A�ݧŬr�������ơA�i���o�s�@�Ŭr�����һ�
-   ���~���M��C
- 3.��X�Ӱϳ̰����s�A���Largo�������X�ӡA����l�������Y�C
- 4.����y������KStick�C
- 5.��p���s�ϩ������@�i�ťկȡA��Wally��U����ɡA�����L������Monocle�C
- 6.�q�s�a�~��������i�J�s�a�p�СA������W���p�MKnife�C
- 7.��ȩ��Τp�M���_�j��Alligator��÷�l�A����Bowl�̭����_�qCheese�A�A
-   �i�JLargo���ж��A�����L�����v�C���ۨ�s�a���M���D��ѡA��Largo�R
-   ���A�ΪťկȱN�𮳤U�ӡC
- 8.��~�穱�A�����s�U�誺����Bucket�A����M���s�͸ܡA���@�Ǫ����C��
-   �ۥ��}�a�W�����l�A��W��K�A�j�W÷�l�A��J�_�q�A�����@�I���ѹ��i
-   �J��A�԰_÷�l�A�A���}���l��X�ѹ��C
- 9.�ѵ���i�J�s�a�p�СA�N�ѹ���J��l�C�X�өM�s�a���D�n���ܡA���۵�
-   ���L�n���U�u�@�A�i�p�Ы�ѵ���X�ӡC
-10.��h�A�ϥΤ����˨Ǫd�ڡA�^��p��Largo�ж��A���W���A�N���������W�C
-   ��Largo���}��A����~�穱�A�A�^Largo�ж��A���W���A�������W��Ticket�A
-   �A��~�穱��Largo����A�C
-11.��h�A��Ŭr���q���Ŭr�����A�A��Largo�ж��A�ϥΰw�b�Ŭr�����W�C
-12.��Peninsula�����A�NWally�����赹�L�A���۫K�X���F�C�X����A����
-   ���}�䪺�x�M�}�ƳU�A�A�i�h�M����͸ܡA����a�ϡC�{�b�X�o��Phatt
-   Island�C
+ 1.在橋邊查看標語Sign，然後拿起來當鏟子Shovel。
+ 2.到沼澤Swamp，使用棺材Coffin，進入巫毒教壇後，查看桌子Table，拿走
+   繩子String再查看櫃子上的Jar，直到看到Ashes-2-Life，跟巫毒教士談話，
+   問他關Ashes-2-Life的事，再問巫毒娃娃的事，可拿得製作巫毒娃娃所需
+   物品的清單。
+ 3.到墳墓區最高的山，找到Largo祖父的墳墓，用鏟子挖取骨頭。
+ 4.到海灘拿取樹枝Stick。
+ 5.到小鎮製圖店拿取一張空白紙，等Wally放下眼鏡時，拿走他的眼鏡Monocle。
+ 6.從酒吧外面的窗戶進入酒吧廚房，拿走桌上的小刀Knife。
+ 7.到旅店用小刀砍斷綁住Alligator的繩子，拿走Bowl裡面的起司Cheese，再
+   進入Largo的房間，拿走他的假髮。接著到酒吧店和店主聊天，等Largo吐
+   痰後，用空白紙將痰拿下來。
+ 8.到洗衣店，拿海盜下方的水桶Bucket，之後和海盜談話，拿一些金幣。接
+   著打開地上的盒子，放上樹枝，綁上繩子，放入起司，走遠一點等老鼠進
+   入後，拉起繩子，再打開盒子抓出老鼠。
+ 9.由窗戶進入酒吧廚房，將老鼠放入鍋子。出來和酒吧店主要湯喝，接著答
+   應他要接下工作，進廚房後由窗戶出來。
+10.到沼澤區用水桶裝些泥巴，回到小鎮Largo房間，關上門，將水桶放到門上。
+   等Largo離開後，先到洗衣店，再回Largo房間，關上門，拿取門上的Ticket，
+   再到洗衣店拿Largo的衣服。
+11.到沼澤找巫毒祭司做巫毒娃娃，再到Largo房間，使用針在巫毒娃娃上。
+12.到Peninsula找船長，將Wally的眼鏡給他，接著便出海了。出海後，先拿
+   取腳邊的鸚鵡飼料袋，再進去和船長談話，拿到地圖。現在出發到Phatt
+   Island。
 
 Part 2 - The Four Pieces
 
- 1.�@��Phatt�q��A�Y�Q�ɤJ�ʺ��C�԰_�ɾQ�A������ҡA�Q�Υ��h�Ĺj����
-   �u�\�C���_���Y�����Y�A�A�߰_�_�͡A�Y�i�}���X�h�C���_�[�W����Ӥ�
-   �ƥ]�A���}���X�̭����F��C
- 2.��X�YPier�M�����H����A�ݽֳ���j���Y�iĹ�o����C��Ϯ��]�A���}
-   ���䪺�p�O��A�a���̭�������C�A�h�M�޲z���͸ܡA�H�ӽйϮ��ҡC��
-   �Ш��A�h�ݬݮѥd�d�A����Distance�@�ѡA�A�qVoodoo�d�����t�@��
-   ����Recipe���ѡA�̫�A�H�K��@���ѡA����h��޲z�����ѡC
- 3.���`���a�G�ӡA�Ψ����S�Ϊ��ѩM�`���{�l�W���ѽմ��C
- 4.��Ϯ��]�U�誺�Ѥl�A���̭����H��Ĺ��A��ۥL��W�誺�Ѥl�C���L��
-   �}��A�h�V���A�^���L�Ĥ@����ժ�����ơA�Y�i�o��U�ս��L���X�C��
-   �U�誺�Ѥl�M�L��A�åΦP�˪��覡�̦�Ĺ�oParty�ܽШ�B��M���C��
-   �ۥX�o��Booty Island�C
- 5.����Booty�q�����f���A�R�U����i�H�R���F��C�䤤Parrot's Mirror��
-   �����R�USign About Parrot�A�M��N�x�M�}�ƳU����ťX��Hook�W�A�~��
-   �R��C�t�~�A�a�ϸH���ӶQ�F�A�u���Mad Monkey�Ӵ��C
- 6.��A�˩��A�N�ܽШ絹�����A����ѥ[�k����Party���A�ˡC
- 7.���W�A�ˡA��k�����a�᭱���p�СA���V�V���~���U�����A���p�v�ӽ|�A�C
-   ���ɩ��k¶�۩Фl�]�@��A�i�J�p�СA�����@�����C�^�k�����a�A������
-   �W���a�ϸH���A�X�h��Q��A���۩M�k�����͸ܡC�U�ӫ�ݨ�a�ϳQ�j��
-   �a�VCliff�A�W�Ӯ�����W����աA�U�Ӷ���a�����C
- 8.�^Phatt�q�N���浹�����H���o����A�A�^Booty�q���a�V�A�γ��񳨰_�a
-   �ϡA���S�Q���åo��j��C��j��B�A�N��ն��}�̡A���W��A���G��
-   �_�F�C
- 9.�^��Scab�q���K�ײz��աA���K�������Wally�C�A�h�s�a�R�T�ذs�A�P
-   �ɮ���@�ڧl�ޡC���۱N�������b�`�羹�W�A�a���U�l�C��~�穱�A�ο�
-   �l���_���s����}�A�A�]���K�B�A�a���K��M�v�l�C
-10.��Booty�q�A�MKate������A���K�n�@�i�ǳ�C�i��ç����A���V�L�n��
-   ��⩬�A�A�ХL���J�ç��i�ܤ@�U�A�������W�ç��A���K��M�v�l��L�v
-   �b�̭��C����Crypt Key�A�A���K��V�}���Ⱦ��A�����@�ǿ��C
-11.�h�ѥ[�R����ɡA������X�l����A�j�_�����C���D���H�]���A���t����
-   �X�l�C���۱N���s�M�Űs�զ���s�A�Χl�޳ܤ@�f�A�A��D���H���n�ѥ[
-   ���ɡC��Ptooie�R�A���Ъ���Ĺ����P�A�N���P�浹���f���A�o��6000���A
-   �M��h��Kate����C
-12.��Kate�N��}��Distance�Ѥ��������y�СA�M���ܼ��Dive�C�U����|
-   �ݨ�I��A�ޤU���Y���U�l�Y�A�A�ϥβ���W�ӡC�N�U�l�Y�����f������
-   �洫�a�ϸH���C�A��j��B�A�Q�Τ�ժ��W��A�a���W�����滷��A�çQ
-   �Ϊ��o�X�a�ϸH���C
-13.��Scab�q�Ӷ�A��Crypt�_�ͥ��}�Ӫ��A��즳�gRose���ç��A���}������
-   ����Ashes�C�^�Ŭr���q�B�A�i�D�L�A�ݭnAshes-2-Life�C�浹�LAshes�M
-   Recipe�ѡA�K�i�ջs�X�ӡC�^��Ӷ�A�N�ľ����bAshes�W�A�M�p�v�͸ܡA
-   �o���_�͡C����y�A���_�Ͷi�J�Фl�A���W�˴��A�A�^�өM�p�v�͸ܡA�o
-   ��a�ϸH���C
-14.��Phatt�q�A�NKate���ǳ�K���a������W�C��Kate�Q���A�i�J�ʺ��A��
-   ���å��}���ƥ]�A�o��@�~���ơC
-15.�����Water Fall�A�����W���A�εU�l���������C�V�L����A�g�L�U���D
-   ����y�W���Фl�C�M�̭����H��s�A���L���}��A�N�s�˦b��W�A�A�ⶼ
-   �ƭ˨�M�l���A��^��W�C���۹��K�ܾK�s�F�C�N�x�M��l�˦b��W��
-   ��ءA�A���}����C���X�Фl�A�N�滷����U�l�J���W�A�O�U�����g�b
-   ���ӿj�Y�W�C�i�J�Фl�A�Ԥ@�U���ӿj�Y�A���J�����СA�����u�\�H��W
-   ���a�ϸH���C
-16.�^Scab�q�A�N���Ӧa�ϸH���浹Wally�A�A��Ŭr���q�B�����ġA�å��}
-   JuJu Bag�C�^��Wally�B�A�o�{Wally�Q��F�C��h�A�B�A�i�J�c�l�A�H��
-   �JLeChuck�����C
+ 1.一到Phatt島後，即被補入監獄。拉起床鋪，拿取木棍，利用它去勾隔壁的
+   骷髏。拿起骨頭給狗吃，再撿起鑰匙，即可開門出去。拿起架上的兩個公
+   事包，打開取出裡面的東西。
+ 2.到碼頭Pier和釣魚人打賭，看誰釣到大魚即可贏得釣竿。到圖書館，打開
+   門邊的小燈塔，帶走裡面的鏡片。再去和管理員談話，以申請圖書證。申
+   請到後，去看看書卡櫃，先找Distance一書，再從Voodoo卡中找到另一本
+   關於Recipe的書，最後再隨便找一本書，之後去找管理員拿書。
+ 3.到總督家二樓，用那本沒用的書和總督肚子上的書調換。
+ 4.到圖書館下方的巷子，等裡面的人賭贏後，跟著他到上方的巷子。等他離
+   開後，去敲門，回答他第一次手勢的手指數，即可得到下組輪盤號碼。到
+   下方的巷子和他賭，並用同樣的方式依次贏得Party邀請函、船票和錢。接
+   著出發到Booty Island。
+ 5.先到Booty島的雜貨店，買下任何可以買的東西。其中Parrot's Mirror必
+   須先買下Sign About Parrot，然後將鸚鵡飼料袋掛到空出的Hook上，才能
+   買到。另外，地圖碎片太貴了，只能用Mad Monkey來換。
+ 6.到服裝店，將邀請函給店長，拿到參加女市長Party的服裝。
+ 7.換上服裝，到女市長家後面的廚房，先敲敲門外的垃圾桶，等廚師來罵你。
+   此時往右繞著房子跑一圈，進入廚房，拿走一條魚。回女市長家，拿取牆
+   上的地圖碎片，出去後被抓，接著和女市長談話。下樓後看到地圖被吹到
+   懸崖Cliff，上樓拿走牆上的船槳，下樓順手帶走狗。
+ 8.回Phatt島將魚交給釣魚人取得釣竿，再回Booty島的懸崖，用釣竿釣起地
+   圖，但又被海鷗叨到大樹。到大樹處，將船槳塞到洞裡，爬上樹，結果槳
+   斷了。
+ 9.回到Scab島找木匠修理船槳，順便鏡片拿給Wally。再去酒吧買三種酒，同
+   時拿到一根吸管。接著將香蕉掛在節拍器上，帶走猴子。到洗衣店，用鋸
+   子鋸斷海盜的木腳，再跑到木匠處，帶走鐵鎚和釘子。
+10.到Booty島，和Kate船長聊聊，順便要一張傳單。進到棺材店，先向他要白
+   色手帕，再請他跳入棺材展示一下，趕快關上棺材，用鐵鎚和釘子把他釘
+   在裡面。拿走Crypt Key，再用鐵鎚敲破收銀機，拿走一些錢。
+11.去參加吐痰比賽，先站到旗子附近，吹起號角。等主持人跑掉，迅速掉換
+   旗子。接著將黃酒和藍酒調成綠酒，用吸管喝一口，再跟主持人說要參加
+   比賽。選Ptooie吐，反覆直到贏到獎牌，將獎牌賣給雜貨店，得到6000元，
+   然後去跟Kate租船。
+12.請Kate將船開到Distance書中所講的座標，然後選擇潛水Dive。下海後會
+   看到沉船，拔下船頭的猴子頭，再使用船錨上來。將猴子頭給雜貨店老闆
+   交換地圖碎片。再到大樹處，利用木槳爬上樹，帶走上面的望遠鏡，並利
+   用狗叨出地圖碎片。
+13.到Scab島墓園，用Crypt鑰匙打開墓門，找到有寫Rose的棺材，打開它拿些
+   骨灰Ashes。回巫毒祭司處，告訴他你需要Ashes-2-Life。交給他Ashes和
+   Recipe書，便可調製出來。回到墓園，將藥劑撒在Ashes上，和廚師談話，
+   得到鑰匙。到海灘，用鑰匙進入房子，關上瓦斯，再回來和廚師談話，得
+   到地圖碎片。
+14.到Phatt島，將Kate的傳單貼到懸賞海報上。等Kate被抓後，進入監獄，拿
+   走並打開公事包，得到一瓶飲料。
+15.到水壩Water Fall，先往上走，用猴子關掉幫浦。越過水壩，經過下水道
+   到海灘上的房子。和裡面的人賭酒，等他離開後，將酒倒在樹上，再把飲
+   料倒到杯子內，放回桌上。接著對方便喝醉酒了。將鸚鵡鏡子裝在牆上的
+   鏡框，再打開窗戶。走出房子，將望遠鏡放到猴子雕像上，記下光束射在
+   那個磚頭上。進入房子，拉一下那個磚頭，掉入機關房，拿走骷髏人手上
+   的地圖碎片。
+16.回Scab島，將４個地圖碎片交給Wally，再到巫毒祭司處拿炸藥，並打開
+   JuJu Bag。回到Wally處，發現Wally被抓了。到沼澤處，進入箱子，以潛
+   入LeChuck城堡。
 
 Part 3 - LeChuck's Fortress
 
- 1.����c�Ч�Wally�͸ܡA�Q�Χۦb���𨺱i�ȤW���q�A�̦��i�J�ۦP���Y��
-   �Ǫ����A�Y�i��@�ӤW�F���ꪺ�j���C���}�����������A�����_�͡A���G
-   �Q��C
- 2.��LeChuck���}��A�l��ⶼ�ơA�R���ù��k�ݡB�D��������޵P���U��A
-   ���Ъ���R������C���۫K�Q����Dinky Island�C
+ 1.先到牢房找Wally談話，利用抄在有痰那張紙上的歌，依次進入相同骨頭排
+   序的門，即可到一個上了重鎖的大門。打開它中間的門，拿取鑰匙，結果
+   被抓。
+ 2.等LeChuck離開後，吸綠色飲料，吐往螢幕右端、主角左手邊盾牌的下方，
+   反覆直到吐中蠟燭。接著便被炸到Dinky Island。
 
 Part 4 - Dinky Island
 
- 1.��F�q�W��A���k�����_���y�W���~�l�A�M��Υ��Y���}���C���_�b����
-   Still�U���������}�M�A���I�����A�A�N�����˶i�b�������A�����b�F�y�i
-   ���}�M��A�A���_���}�M�C���}�x�M���񪺱��lBarrel�A���_�氮���x�M
-   �Y�A���K�|�i�D�A���q�����V�F���쮣�s���C����a���x�M�U����񪺧�
-   ��Crowbar�C
- 2.���訫�i��L�A���@���V�����즳�@�ʤj��B�A�ί}�����~�l�ί}��W��
-   �����A���U�@�ӻ氮���A�ΰ��}�M�������氮���W�|�o�����氮�C�N
-   �氮���������y�䪺�x�M�Y�A���|�A�i�D�A���q���s�V�_����۰�B���M
-   ���q�۰�V�F����j�A�B���C
- 3.�A���i��L�A���k��������A�������ǲ��l�W��÷�l�A�A�Χ����}���l�A
-   ����TNT���ġC���ۨ��x�M�һ������|����j�A�B�A������l���}���A�A��
-   �����I�UTNT���ġA��O�}�Q���}�F�C�U�h��ݨ�Big Whoop�N�b�ﭱ�A��
-   �ɧ���j�b÷�l�W�A�M�����M÷�l���}������A���۴N�|�ӱ���
-   �@�}�l���e���C
- 4.�D�����U��A�����U�e���k����񪺹q�O�}���A��OLeChuck�X�{�F�C����
-   ��B�ö]�A�����Lost Parents�A�N���˪��u�\�ޤU�ӡA�A�ݬݪ��񪺩�
-   �P�A�����̭����w�A�î�������U����������M�C�A���x�ëǡA��Ҧ��c
-   �l���}�A������y�B���Ŭr�����M�F�h�C�A��c������ж��A�ή�����
-   ��y�M��M���麡��A�ç�c����W���h���s�A�|���X�@�T�w���C��
-   LeChuck�h�߮ɡA���֥h���L������Underwear�C
- 5.��LeChuck�A�X�{�ɡA���֮��զ�⩬���L�C�̫��̥��䪺�ж���Big
-   Whoop�A�M��i�q�赥LeChuck�ӡC�L�@�ӮɡA���֩ԧ��Ұʹq�觨���L
-   ���G�l�þ߰_�ӡC�{�b�N���Ŭr�����B���˪��u�\�Y�B�զ�⩬�BLeChuck
-   ���ǩM�G�l��JJuJu Bag�A�K�i�y�X�Ŭr�����C�U�q���LeChuck�A�ΰw��
-   �Ŭr�����A�M��K�����F�C
+ 1.到了島上後，先右走拿起海灘上的瓶子，然後用石頭打破它。拿起淨水機
+   Still下的玻璃高腳杯，裝點海水，再將海水倒進淨水機內，等水淨了流進
+   高腳杯後，再拿起高腳杯。打開鸚鵡附近的桶子Barrel，拿起餅乾給鸚鵡
+   吃，它便會告訴你〞從池塘向東走到恐龍〞。順手帶走鸚鵡下方附近的扳
+   手Crowbar。
+ 2.往西走進樹林，先一直向左走到有一棵大樹處，用破掉的瓶子割破樹上的
+   玻璃，掉下一個餅乾盒，用高腳杯的水澆到餅乾盒上會得到兩片餅乾。將
+   餅乾都拿給海灘邊的鸚鵡吃，它會再告訴你〞從恐龍向北走到石堆處〞和
+   〞從石堆向東走到大ｘ處〞。
+ 3.再走進樹林，往右走到池塘，拿走池旁盒子上的繩子，再用扳手撬開盒子，
+   拿走TNT炸藥。接著依鸚鵡所說的路徑走到大ｘ處，先用鏟子挖開它，再用
+   火柴點燃TNT炸藥，於是洞被炸開了。下去後看到Big Whoop就在對面，此
+   時把扳手綁在繩子上，然後把扳手和繩子丟到洞的旁邊，接著就會承接到
+   一開始的畫面。
+ 4.主角掉下後，先按下畫面右邊附近的電燈開關，於是LeChuck出現了。接著
+   到處亂跑，先找到Lost Parents，將父親的骷髏拔下來，再看看附近的抽
+   屜，取走裡面的針，並拿走床邊垃圾桶內的手套。再找儲藏室，把所有箱
+   子打開，拿取氣球、假巫毒娃娃和沙士。再找販賣機的房間，用氦氣桶把
+   氣球和手套都灌滿氣，並扳販賣機上的退幣鈕，會掉出一枚硬幣。等
+   LeChuck去撿時，趕快去拿他的內褲Underwear。
+ 5.等LeChuck再出現時，趕快拿白色手帕給他。最後到最左邊的房間拿Big
+   Whoop，然後進電梯等LeChuck來。他一來時，趕快拉扳手啟動電梯夾住他
+   的鬍子並撿起來。現在將假巫毒娃娃、父親的骷髏頭、白色手帕、LeChuck
+   內褲和鬍子放入JuJu Bag，便可造出巫毒娃娃。下電梯找LeChuck，用針刺
+   巫毒娃娃，然後便結局了。
 

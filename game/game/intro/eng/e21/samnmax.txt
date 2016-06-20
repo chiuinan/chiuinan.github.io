@@ -1,199 +1,199 @@
-�W�١G�������q���Фj�}���� (Sam & Max Hit the Road�A�^�媩)
-²���GLucas 1993�~�X�~�A�ѪQ�^�N�z�i�f���_�I�C���A�D�n�y�g�j���Ǥj�}
-      �q�����Τ��k���A��Sam��Max���U���즹�@�ץ󪺹L�{�C�C�����٪��a
-      �����B�~��²���C���A�u�O�������n���C��ӹC�������D�������סA
-      �n�Ѷ}�o�O�@�f�\�ҡC���ߦn�_�I�C�������a�Ө��A�O�����|��L
-      Lucas���q�X�~���_�I�C�����C
-�O�@�G��U�ϮסA�}�ѽX�G
+﻿名稱：妙探闖通關－大腳之謎 (Sam & Max Hit the Road，英文版)
+簡介：Lucas 1993年出品，由松崗代理進口的冒險遊戲，主要描寫大雪怪大腳
+      從馬戲團中逃走，而Sam及Max受託偵辦此一案件的過程。遊戲中還附帶
+      不少額外的簡易遊戲，只是都不怎麼好玩。整個遊戲的謎題有些難度，
+      要解開得費一番功夫。對於喜好冒險遊戲的玩家而言，是絕不會放過
+      Lucas公司出品的冒險遊戲的。
+保護：手冊圖案，破解碼：
       SAM&MAX.EXE
         74 06 48 48 74
         EB -- -- -- --
-�𲤡G�]�@�̡ЫC�m�^
+攻略：（作者－青衫）
 
-���Bĵ��
+１、警局
 
-1.�q��U���ѹ��}��������Money�A�M���k�䮳���O�wBlack Light�C
-2.�U�Ө��W�A�ϥ�Max���䪺�ߡA���o�e�U��Order�C
-3.�ϥ�ĵ����F�_�誺������Carnival�C
+1.從牆下的老鼠洞拿取金錢Money，然後到右邊拿取燈泡Black Light。
+2.下樓到街上，使用Max於左邊的貓，取得委託單Order。
+3.使用警車到東北方的馬戲團Carnival。
 
-���B������
+２、馬戲團
 
-1.���Q�����t�̩e�U��Order�A�b�PKushman�@�}��ܫ�A�o�차���Τ@��C��
-  �ݨ�Day Pass�C
-2.�߰_�a�W�j�}����vBruno's Hair�A�î����J�f�B�����ˤ�
-  Jess Jame's Severed Hand�C
-3.�ѥ_�䪺�X�f�X�h�A�@��������Cone of Tradegy�A�P�ާ@����ͨín�D��
-  �ݬݡC
-4.��������A�ˬd�ۤv�����~�A�A�P�ާ@����͡A�o�쥢���M����^��
-  Lost and Found Claim Ticket�C
-5.�i�JWak-A-Rat�A�����������H�W���ѹ��AĹ����q��Flahlight�A�î�����
-  �W����j��Fishbowl Magnifying Lens�C
-6.�V�k����̥k�䥢���ۻ�B���^�����A�ˬd��o�{�h�F�Ӧ�World of Fish
-  �����KRefrigerator Magnet�A��O�a�Ϧh�X�F���@��World of Fish
-  �]���μлx�^�C
-7.�N�O�w��J��q�����A�M��V������̥��䪺Tunnel of Love�A���W���Z��
-  �i��̭��A�ϥΤ�q���ӫG����o�{��FuseBox�A����ϥ�Max�bFuseBox�W
-  �]�Y���ѭn�h�մX���^�A�ˬd�̥k�䪺���H�A�M��i�J�K���C�PDougie��͡A
-  �a�Ϸ|�X�{�½u�yBall of Twine�]�y�μлx�^�C�ϥ���W�����A���}��
-  ���Ψ�̪񪺤@�a�K�Q�ө��]�~���лx�^�C
+1.給噴火表演者委託單Order，在與Kushman一陣對話後，得到馬戲團一日遊招
+  待卷Day Pass。
+2.撿起地上大腳的毛髮Bruno's Hair，並拿取入口處的罐裝手
+  Jess Jame's Severed Hand。
+3.由北邊的出口出去，一路往左到Cone of Tradegy，與操作員交談並要求玩
+  看看。
+4.玩完之後，檢查自己的物品，再與操作員交談，得到失物尋找取回票
+  Lost and Found Claim Ticket。
+5.進入Wak-A-Rat，打中２０隻以上的老鼠，贏取手電筒Flahlight，並拿取牆
+  上的放大鏡Fishbowl Magnifying Lens。
+6.向右走到最右邊失物招領處取回失物，檢查後發現多了來自World of Fish
+  的磁鐵Refrigerator Magnet，於是地圖多出了魚世界World of Fish
+  （魚形標誌）。
+7.將燈泡放入手電筒中，然後向左走到最左邊的Tunnel of Love，坐上天鵝船
+  進到裡面，使用手電筒照亮直到發現到FuseBox，趕緊使用Max在FuseBox上
+  （若失敗要多試幾次），檢查最右邊的假人，然後進入密門。與Dougie交談，
+  地圖會出現麻線球Ball of Twine（球形標誌）。使用牆上的扳手，離開馬
+  戲團到最近的一家便利商店（漢堡標誌）。
 
-���B�K�Q�ө�
+３、便利商店
 
-1.�V�k���A�߰_�a�W���ȪMCup�C
-2.�i�J�ө��A�b�Ĥ@�ƪ��e�ݥi�����B�~�C���]�T�a�ө������P�^�A�b�ĤG��
-  ���ݥi����}�GCandy�A�M������ͶR�U�o�ǪF��C���۸߰ݥL�bSnuckey U.
-  ���ơ]�A���@�U�ݸ��^�A�M��ХL���}���ˤ�C�̫�V�L�߰ݴZ�ҡA���L��
-  ��Max�_�ͫ�A���򵲧���ܨ��X�ө��C��Max�X�{�ɡA�P�L��ͨ��o�Z���_
-  ��Gasp�C
-3.���}�ө��^�차���ΡC
+1.向右走，撿起地上的紙杯Cup。
+2.進入商店，在第一排的前端可拿到額外遊戲（三家商店均不同），在第二排
+  頂端可拿到糖果Candy，和店員交談買下這些東西。接著詢問他在Snuckey U.
+  的事（再按一下問號），然後請他打開罐裝手。最後向他詢問廁所，等他拿
+  給Max鑰匙後，趕緊結束對話走出商店。當Max出現時，與他交談取得廁所鑰
+  匙Gasp。
+3.離開商店回到馬戲團。
 
-���B������
+４、馬戲團
 
-1.�i�JTunnel of Love�A�PDougie��͡A���L�}�GCandy�A�o��Trixie�쨮��
-  �_��Key's Key�C
-2.���k���A�g�LCone of Tradegy�A��Dougie�����_�Ͷ}��Trixie���쨮�C�i
-  �J��A���}��W�����l���o��AStiltWalker's Costume�A�A���}���o�A��
-  �������ҰO���dGator Golf Scorecard�A��O�a�ϤW�h�X�F�����Ҳy��
-  Gator Golf�]�s���лx�^�C
-3.���}�����Ψ�½u�y�]�y�μлx�^�C
+1.進入Tunnel of Love，與Dougie交談，給他糖果Candy，得到Trixie拖車的
+  鑰匙Key's Key。
+2.往右走，經過Cone of Tradegy，用Dougie給的鑰匙開啟Trixie的拖車。進
+  入後，打開桌上的盒子取得衣服StiltWalker's Costume，再打開衣櫥，拿
+  取高爾夫記分卡Gator Golf Scorecard，於是地圖上多出了高爾夫球場
+  Gator Golf（鱷魚標誌）。
+3.離開馬戲團到麻線球（球形標誌）。
 
-���B�½u�y
+５、麻線球
 
-1.�V�k����q�l�����÷f���q�l���W�½u�y���A�V���i�J�\�U�A�P�k�䪺�]�k
-  �v��ͨ��o���C
-2.���}�½u�y�A�e�����@�ɡ]���μлx�^�C
+1.向右走到電纜車站並搭乘電纜車上麻線球頂，向左進入餐廳，與右邊的魔法
+  師交談取得扳手。
+2.離開麻線球，前往魚世界（魚形標誌）。
 
-���B���@��
+６、魚世界
 
-1.�߰_�a�W��������A�V�����A�Χ����P���J���������C���ۨϥγ��J���A
-  �A�ϥ�Max���J���W�A�g�L�@�q�ʵe��A�Ө�½u�y���C
-2.�ϥ�Max��½u���ݡA�o��÷�lTwine�C
-3.���}�½u�y�A�e�������Ҳy���]�s���лx�^�C
+1.撿起地上的魚桶後，向左走，用扳手扳鬆魚雕像的螺絲。接著使用魚雕像，
+  再使用Max於魚雕像上，經過一段動畫後，來到麻線球頂。
+2.使用Max於麻線尾端，得到繩子Twine。
+3.離開麻線球，前往高爾夫球場（鱷魚標誌）。
 
-���B�����Ҳy��
+７、高爾夫球場
 
-1.�V�����A�����x�l���������Ҳy���^��Retriever�C
-2.���_���A�i�JGator Golf�A�@�q�ʵe��A�߰_�a�W�������Ҳy�x�A���W���x�C
-  ���_�I�᪺�����Ҳy��A�u�ۨ�Max�����u�D���W�]�w�ؼСA�����s������
-  �]�̥_�����γ̫n�����U���ʢ����^�A�����s���Φ��@�ӳq�D�]����Max�|
-  �i�D�A�^�C
-3.���}����������Max�AMax�|���A�t�@���j�}����v�C���}�U��������A�|�o
-  �{�è��o�J�����}����Sno-Globe�A�P�ɦa�ϤW�]�X�{�����ۭ�
-  Mystery Vortex�]�ݸ��лx�^�C
-4.���}�����Ҳy���A�e�������ۭ��]���D�лx�^�C
+1.向左走，拿取籃子中的高爾夫球取回器Retriever。
+2.往北走，進入Gator Golf，一段動畫後，撿起地上的高爾夫球籃，換上魚籃。
+  拿起背後的高爾夫球桿，沿著到Max的直線道路上設定目標，誘使鱷魚移動
+  （最北２尾及最南２尾各移動２次），直到鱷魚形成一個通道（此時Max會
+  告訴你）。
+3.打開玻璃門釋放Max，Max會給你另一撮大腳的毛髮。打開下面的木門，會發
+  現並取得埃爾維陣風儀Sno-Globe，同時地圖上也出現神秘旋風
+  Mystery Vortex（問號標誌）。
+4.離開高爾夫球場，前往神秘旋風（問題標誌）。
 
-���B�����ۭ�
+８、神秘旋風
 
-1.�V�k���i�J�D�U�A�ϥΤ�������l�i�J�t�@�өж��A�o�䦳���B�šB������
-  ���A�Ψӱ���~�������O�_�i�i�J�C��զX���G
-    �z�w�w�w�s�w�w�s�w�w�s�w�w�s�w�w�s�w�w�s�w�w�s�w�w�s�w�w�{
-    �x      �x�����x�����x�����x�����x�Ū��x����x�ժ��x�ª��x
-    �u�w�w�w�q�w�w�q�w�w�q�w�w�q�w�w�q�w�w�q�w�w�q�w�w�q�w�w�t
-    �x�����x �} �x �} �x �} �x �� �x �� �x �� �x �} �x �� �x
-    �x�ŧ��x �� �x �� �x �} �x �� �x �} �x �} �x �} �x �� �x
-    �x�����x �� �x �} �x �� �x �} �x �� �x �} �x �} �x �� �x
-    �|�w�w�w�r�w�w�r�w�w�r�w�w�r�w�w�r�w�w�r�w�w�r�w�w�r�w�w�}
-  �Q��k���}�U���A����J��Shuv-Oohl����C�L�|�i�D�A�h�M�����Ӧa
-  �褧�����C��ۡA�o�Ǧa��i�ର�G
+1.向右走進入主廳，使用中央的鏡子進入另一個房間，這邊有紅、藍、黃３個
+  扳手，用來控制外面的門是否可進入。其組合為：
+    ┌───┬──┬──┬──┬──┬──┬──┬──┬──┐
+    │      │紅門│橙門│紫門│黃門│藍門│綠門│白門│黑門│
+    ├───┼──┼──┼──┼──┼──┼──┼──┼──┤
+    │紅扳手│ 開 │ 開 │ 開 │ 關 │ 關 │ 關 │ 開 │ 關 │
+    │藍扳手│ 關 │ 關 │ 開 │ 關 │ 開 │ 開 │ 開 │ 關 │
+    │黃扳手│ 關 │ 開 │ 關 │ 開 │ 關 │ 開 │ 開 │ 關 │
+    └───┴──┴──┴──┴──┴──┴──┴──┴──┘
+  想辦法打開各門，直到遇到Shuv-Oohl為止。他會告訴你去尋找位於兩個地
+  方之間的青蛙石，這些地方可能為：
     (1) The inexplicable valley of lights
     (2) The Enchanted Argyle forest
     (3) The Eternal Plane of Acid Rain
     (4) The Largest Stump in the World
     (5) Mount Badrich
-  �N�L������m�O�U�ӡC
-2.���}Shuv-Oohl�i��D�U�̸̭����ж��A�����j�}���t�@����v�C
-3.���}�����ۭ��A�e���½u�y�C
+  將他指的位置記下來。
+2.離開Shuv-Oohl進到主廳最裡面的房間，拿取大腳的另一撮毛髮。
+3.離開神秘旋風，前往麻線球。
 
-���B�½u�y
+９、麻線球
 
-1.��½u�y�U�����ж��A�N��Hand�����^��Retriever�W�A�A�N���KMagnet
-  ���⤤�A���ۨϥΨ��^���b�½u�y�W�H���o�٫��C
-2.�f���q�l�����\�U�A�N��j��Magnifying Lens��쥪�䪺�滷��W�A�M��
-  �԰_�a�W���q�u���滷��W�C�ϥα滷��A�b���U�誺���w���ƹ������
-  �k�䱱��ʪ��t�סA��������Shuv-Oohl�ҫ���Ӧa�褧�����C���
-  ����A���ɦa�ϤW�|�X�{�C���Frog Rock�]���Y�лx�^�C
-3.���}�½u�y�A�e�������ۭ��C
+1.到麻線球下面的房間，將手Hand放到取回器Retriever上，再將磁鐵Magnet
+  放到手中，接著使用取回器在麻線球上以取得戒指。
+2.搭乘電纜車到餐廳，將放大鏡Magnifying Lens放到左邊的望遠鏡上，然後
+  拉起地上的電線放到望遠鏡上。使用望遠鏡，在正下方的指針按滑鼠左鍵或
+  右鍵控制移動的速度，直到找到位於Shuv-Oohl所指兩個地方之間的青蛙石
+  為止，此時地圖上會出現青蛙石Frog Rock（石頭標誌）。
+3.離開麻線球，前往神秘旋風。
 
-�����B�����ۭ�
+１０、神秘旋風
 
-1.������Shuv-Oohl�ж��P����͡A���L�٫��o���]��Mystic Powder�C
-2.���}�����ۭ��A�e���C��ۡ]���Y�лx�^�C
+1.直接到Shuv-Oohl房間與之交談，給他戒指得到魔粉Mystic Powder。
+2.離開神秘旋風，前往青蛙石（石頭標誌）。
 
-�����B�C���
+１１、青蛙石
 
-1.�V�k���A�N�j�}��������v��쩥�ۤW�A�ü��U�]���A�g�L�@�}�ʵe��A�a
-  �ϤW�X�{Bumpusville�]�N�L�лx�^�C
-2.���}�C��ۡA�e��Bumpusville�]�N�L�лx�^�C
+1.向右走，將大腳的３撮毛髮放到岩石上，並撒下魔粉，經過一陣動畫後，地
+  圖上出現Bumpusville（吉他標誌）。
+2.離開青蛙石，前往Bumpusville（吉他標誌）。
 
-�����BBumpusville
+１２、Bumpusville
 
-1.�}���i�J�᩹�����A���U��W���e��Portrait of John Muir�C�V���i�J��
-  ���A�@�q�ʵe��A�^�Y��̥k�䪺�ж��A�����E�Y�A�A�Ψ��^��Retriever
-  �����Ѭ[�W���ѡC���ۨ�B�����������H�A�ϥθӮѦb�����H�W�A�M��N
-  �̥����Ŧ�u���W�]��Esc���}�^�C
-2.�i�J�F�_���u�éж��A�ϥε���������A�߰_�C�è��W�e�A�ϥμC�����s�o
-  ���_�͡]�Y���ѭn�q������H�ϥήѪ��a��}�l�A�ա^�C
-3.�^��j�}�Ҧb�ж��A�ϥ��_�Ͷ}��ĵ�ܨt�ΡA�b�@�}��ܫ�A�a�ϤW�|�X�{
-  ��l�O�L���]Savage Jungle Inn�]�s�μлx�^.
-4.���}Bumpusville�A�e����l�O�L���]�]�s�μлx�^�C
+1.開門進入後往左走，取下牆上的畫像Portrait of John Muir。向左進入房
+  間，一段動畫後，回頭到最右邊的房間，拿取枕頭，再用取回器Retriever
+  拿取書架上的書。接著到處走走找到機器人，使用該書在機器人上，然後將
+  最左邊藍色線接上（按Esc離開）。
+2.進入東北的守衛房間，使用虛擬機器後，撿起劍並走上前，使用劍殺死龍得
+  到鑰匙（若失敗要從對機器人使用書的地方開始再試）。
+3.回到大腳所在房間，使用鑰匙開閉警示系統，在一陣對話後，地圖上會出現
+  原始叢林旅館Savage Jungle Inn（山形標誌）.
+4.離開Bumpusville，前往原始叢林旅館（山形標誌）。
 
-�����B��l�O�L���]
+１３、原始叢林旅館
 
-1.�i�J���]�PEvelyn Morrison��͡A������A�o�|���A�@�Ӥp�U�l�A�d�ݸ�
-  �p�U�l�A�a�ϤW�|�X�{���s��a����Dinosaur Tarpit�]���s�лx�^�ΦW�H
-  ����ժ��]Celebrity Vegetable Museum�]���X�лx�^�C
-2.�N�Z���_��Gasp�浹���䪺�t�@��j�}�A�p���b���ˮɡA�L�|���A�@�ǫ�ĳ�C
-3.���}��l�O�L���]�A�e���W�H����ժ��]�]���X�лx�^�C
+1.進入旅館與Evelyn Morrison交談，結束後，她會給你一個小冊子，查看該
+  小冊子，地圖上會出現恐龍國家公園Dinosaur Tarpit（恐龍標誌）及名人
+  蔬菜博物館Celebrity Vegetable Museum（蕃茄標誌）。
+2.將廁所鑰匙Gasp交給旁邊的另一位大腳，如此在換裝時，他會給你一些建議。
+3.離開原始叢林旅館，前往名人蔬菜博物館（蕃茄標誌）。
 
-�����B�W�H����ժ��]
+１４、名人蔬菜博物館
 
-1.�V�k���쩳�A�����X�lEggplant�C�P���䪺�k�H��ͫ�A���L�e��Portrait�C
-2.���}�W�H����ժ��]�A�e�����s��a����]���s�лx�^�C
+1.向右走到底，拿取茄子Eggplant。與旁邊的女人交談後，給他畫像Portrait。
+2.離開名人蔬菜博物館，前往恐龍國家公園（恐龍標誌）。
 
-�����B���s��a����
+１５、恐龍國家公園
 
-1.�V�U������s�B�A�ϥ�Max�b����H�W�A�o���vHair�C
-2.�ϥμ��s�W�����n���A�����s���L���}�ɡA���U�ƹ��k��ϥ����L�O���}�ҡC
-  �ϥ�÷�l�b���s���L�A�A�ϥ�Max�b÷�l�W�A�i�o�����Tooth�C
-3.����̥_��f���q��쳻�ݡA�N�ȪM�����^���W�A�ϥμu��÷�⦸�]�Ĥ@
-  �����ˡ^�A�A�ϥΨ��^���b�f�o�����A�o��f�oTar�C
-4.���}���s��a����A�e���W�H����ժ��]�C
+1.向下走到暴龍處，使用Max在長毛象上，得到毛髮Hair。
+2.使用暴龍上的揚聲器，當暴龍的嘴打開時，按下滑鼠右鍵使它的嘴保持開啟。
+  使用繩子在暴龍的嘴，再使用Max在繩子上，可得到牙齒Tooth。
+3.走到最北邊搭乘電梯到頂端，將紙杯放到取回器上，使用彈跳繩兩次（第一
+  次換裝），再使用取回器在柏油池中，得到柏油Tar。
+4.離開恐龍國家公園，前往名人蔬菜博物館。
 
-�����B�W�H����ժ��]
+１６、名人蔬菜博物館
 
-1.�V�k���쩳�A�P�k�H��͡A���o��Ī��Gourd�C
-2.���}�e���W�H����ժ��]�A�e��Bumpusville�C
+1.向右走到底，與女人交談，取得葫蘆瓜Gourd。
+2.離開前往名人蔬菜博物館，前往Bumpusville。
 
-�����BBumpusville
+１７、Bumpusville
 
-1.������̥k�䪺�ж��A�ϥέX�lEggplant�bConroy�����v�W�A�o�찲�v
-  Toupee�C
-2.���}Bumpusville�A�e����l�O�L���]�C
+1.直接到最右邊的房間，使用茄子Eggplant在Conroy的假髮上，得到假髮
+  Toupee。
+2.離開Bumpusville，前往原始叢林旅館。
 
-�����B��l�O�L���]
+１８、原始叢林旅館
 
-1.�i�J���]�A�ϥάf�o�b��v�W�A�A�ϥΦb�A�ˤW�A�̫�A�ϥΦb���v�W�A�Y
-  �����j�}�A�ˡC�ϥΥ��bMax�W�A�u�����j�}�K�|���A�i�J�j�}�E�|�C
-2.������W���s�~�A�M��q�R�x�k�������X�h�C
-3.�����N��ЮǪ��w�B��Ice Pick�A�M��q�t�@�D���X�h�C���ۦb���~�c����
-  �Τj�}�A�ˡA�M��ϥ�Max�b�N��ФW�C�g�L�@�}��ܫ�A�Ө좳�ڬW�l��
-  �a��C�q�̥k�U���B�i�J�j�}��S�B�A�N��Ī�ʡB�����B�E�Y�浹�L�C
-4.���}��l�O�L���]�A�e���½u�y�C
+1.進入旅館，使用柏油在毛髮上，再使用在服裝上，最後再使用在假髮上，即
+  成為大腳服裝。使用它在Max上，守門的大腳便會讓你進入大腳聚會。
+2.拿取桌上的酒瓶，然後從舞台右側的門出去。
+3.拿取冷凍房旁的鑿冰器Ice Pick，然後從另一道門出去。接著在物品箱中使
+  用大腳服裝，然後使用Max在冷凍房上。經過一陣對話後，來到４根柱子的
+  地方。從最右下角處進入大腳領袖處，將葫蘆瓜、牙齒、枕頭交給他。
+4.離開原始叢林旅館，前往麻線球。
 
-�����B�½u�y
+１９、麻線球
 
-1.�f���q�l�����\�U�A�N�w�B��Ice Pick�浹�]�k�v�ܦ��n���_�l
-  Cork Screw�A�Q�γn���_�l���}�s�~�A�o��n���Cork�A�A�N�n����J
-  �J�����}����Sno-Globe���C
-2.���}�½u�y�A�e�������ۭ��C
+1.搭乘電纜車到餐廳，將鑿冰器Ice Pick交給魔法師變成軟木塞起子
+  Cork Screw，利用軟木塞起子打開酒瓶，得到軟木塞Cork，再將軟木塞放入
+  埃爾維陣風儀Sno-Globe中。
+2.離開麻線球，前往神秘旋風。
 
-�����B�����ۭ�
+２０、神秘旋風
 
-1.��D�U�̸̭����ж��A�ϥ�Mini Vortex�A�N�ϥήJ�����}����Sno-Globe�b
-  Mini Vortex���C
-2.���}�����ۭ��A�e����l�O�L���]�C
+1.到主廳最裡面的房間，使用Mini Vortex，將使用埃爾維陣風儀Sno-Globe在
+  Mini Vortex中。
+2.離開神秘旋風，前往原始叢林旅館。
 
-�����B��l�O�L���]
+２１、原始叢林旅館
 
-1.������j�}��S�B�A�N�J�����}����Sno-Globe�浹�L�Y�����C
+1.直接到大腳領袖處，將埃爾維陣風儀Sno-Globe交給他即結局。
 

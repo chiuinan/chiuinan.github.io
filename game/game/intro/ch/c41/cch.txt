@@ -1,49 +1,49 @@
-�W�١G�H�Ѥj�v���N�� (���媩)
-²���G���и�T1992�~�X�~�A�ѲĤT�i�N�z�o�檺�H�ѹC���C���C�����e���K
-      �O���ƵϦb�j�ǮɩҼ��g���H�ѵ{���A�����U�h�����q���H�Ѥ��ɫa�x�A
-      �bDOS�ɥN�i���O�̱j���H�ѹC���A��B���p�����q�H�W�C���M�w�񤣤W
-      �{�b���H�ѹC���ѤO�A���������Ѥ@��ѤͰV�m�ѤO�C��ӹC���ĥι�
-      ��D�Ԩ�A�H�ֿn�n�������ƦW�A�ӥB�p�G�ॴ�ѹC�������۾��ѤH�A
-      �q�L�ѤO�˩w�ԡA�h�i�N�s�ɸ�ƱH�����Ƶϡ]�n��g�쪩�C��������
-      �г�^�A�H�ӽФ��ضH�Ѩ�|�@�ŴѤO�ҮѡC�]���A���w�U�H�Ѫ����a
-      �O���i���L�o�ڹC�����C
-�O�@�G�ϧΡϼƦr�K�X�C�}�Ѥ�k���G
+﻿名稱：象棋大師３將族 (中文版)
+簡介：光譜資訊1992年出品，由第三波代理發行的象棋遊戲。本遊戲的前身便
+      是虞希舜在大學時所撰寫的象棋程式，曾拿下多屆的電腦象棋比賽冠軍，
+      在DOS時代可說是最強的象棋遊戲，初步估計有２段以上。雖然已比不上
+      現在的象棋遊戲棋力，但仍足夠供一般棋友訓練棋力。整個遊戲採用對
+      手挑戰制，以累積積分爭取排名，而且如果能打敗遊戲中的石壁老人，
+      通過棋力檢定戰，則可將存檔資料寄給虞希舜（要填寫原版遊戲中的申
+      請單），以申請中華象棋協會一級棋力證書。因此，喜歡下象棋的玩家
+      是不可錯過這款遊戲的。
+保護：圖形＋數字密碼。破解方法為：
       CCH.EXE
         75 06 46 83 FE 03
         -- 00 -- -- -- --
-      ��
+      或
         80 7E 36 75 0E
         -- -- -- EB --
-      ���ݥ���EXESHAPE������ߡA�n���۷����ջy�\�O�C
-�ק�G1.���ѵL��
+      但需先用EXESHAPE解壓剝殼，要有相當的組語功力。
+修改：1.悔棋無限
         CCH.EXE
           FF 0E A6 81 FF 36 84 B9
           90 90 90 90 -- -- -- --
-        ��
+        或
           FF 0E 92 B1 33 C0
           90 90 90 90 -- --
-      2.���Ƥ���
+      2.局數不限
         CCH.EXE
           FF 0E A8 B1 FF 36 82 B9
           90 90 90 90 -- -- -- --
-      3.�L�׳ӭt����ӡ]�۾��ѤH���~�^
+      3.無論勝負都算勝（石壁老人除外）
         CCH.EXE
           A1 00 AD 3D 01 00 74 0C
           C7 06 00 AD -- -- EB -- 
-        ��
+        或
           A1 EC AC 3D 01 00 74 0C
           C7 06 EC AC -- -- EB --
-      4.���ޤ��ư��C���i�H�D�ԡ]�۾��ѤH���~�^
+      4.不管分數高低都可以挑戰（石壁老人除外）
         CCH.EXE
           3D 01 00 74 07 3D 02 00 74 31
           -- -- -- -- 00 -- -- -- EB --
           39 97 3A 01 77 10 8B C6
           -- -- -- -- -- 00 -- --
-      5.�w���Ѫ�����٥i�H�A�D��
+      5.已打敗的對手還可以再挑戰
         CCH.EXE
           80 BF 66 B1 00 74 78
           -- -- -- -- -- -- 00
-�ק�G�s��SCORE.REC�A�H�U�H�Ĥ@��H���������G
+修改：存檔SCORE.REC，以下以第一位人物做說明：
 
 NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
 NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN 00
@@ -52,29 +52,29 @@ ST ST ST ST ST ST ST ST ST ST ST ST ST ST ST ST
 ST ST ST ST ST ST ST ST ST ST ST ST ST ST ST ST
 ST ST ST -- -- -- RK RK W1 W2 W3 -- -- -- -- --
 
-NN = �m�W
-DT = �إߤ��
-SC = ���ơA�令FF FF�Y�i�D�ԥ۾��ѤH
-PP = �H���Ϥ�
-ST = �U��⪬�A�A00=�w�Q���ѡA�L�k�A�U�A01=�i�U�ѡA02=���Ʈt���Ӥj�A���@�U��
-RK = �ƦW
-W1/W2/W3 = �ӡ��t���M������
+NN = 姓名
+DT = 建立日期
+SC = 分數，改成FF FF即可挑戰石壁老人
+PP = 人物圖片
+ST = 各對手狀態，00=已被打敗，無法再下，01=可下棋，02=分數差異太大，不願下棋
+RK = 排名
+W1/W2/W3 = 勝／負／和的局數
 
-�����G
+說明：
 
-1.��l�n����6000�A�����ֿn�n���F��45000�~��D�ԥ۾��ѤH�C�۾��ѤH�C��
-  ����Үɶ����@�����C
-2.�C�Ӥ@���i�W�[�n���A�C��@���h��ֿn���A�B�Q���Ѫ����L�k�A�U�A�]
-  ����ֿn���n�������A�Y�t���Ӧh�A�i��|�L�k�D�ԥ۾��ѤH�A�ƦܵL�k�D
-  �Կn�����������C
-3.�C�U�|���n���}�A�i�J�A�_�h�Ĥ����}�l�A�Y�K�Ӥ]�|�Q�����t�C
-4.�n���L�C�ɭP�L����@�N�U�ѡA�άO�v���ѥ۾��ѤH�H�~���Ҧ����A�h�|
-  �]�w�L���ӹC�������A�P�ɤH����ƥ�|�Q�R���C
-5.���ѥ۾��ѤH��A�|��ܢ����ҮѡA���ᤴ�i�P�����Ѫ�����~��U�A����
-  ���ѤH�K�L�k�A�D�ԲĤG���C�ӥB�p�G�U��L���ɡA���M�|�C�������çR
-  ���H����ơA�����S�O�`�N�C
+1.初始積分為6000，必須累積積分達到45000才能挑戰石壁老人。石壁老人每手
+  的思考時間約一分鐘。
+2.每勝一局可增加積分，每輸一局則減少積分，且被打敗的對手無法再下，因
+  此能累積的積分有限，若負局太多，可能會無法挑戰石壁老人，甚至無法挑
+  戰積分較高的對手。
+3.每下四局要離開再進入，否則第五局開始，即便勝也會被視為負。
+4.積分過低導致無對手願意下棋，或是己打敗石壁老人以外的所有對手，則會
+  因已無對手而遊戲結束，同時人物資料亦會被刪除。
+5.打敗石壁老人後，會顯示１級證書，之後仍可與未打敗的對手繼續下，但石
+  壁老人便無法再挑戰第二次。而且如果下到無對手時，仍然會遊戲結束並刪
+  除人物資料，必須特別注意。
 
-���Ʀ�]�G
+對手排行榜：
 
 1-4 Bob Ju           1076 *
 2-5 Bogey            1943 *

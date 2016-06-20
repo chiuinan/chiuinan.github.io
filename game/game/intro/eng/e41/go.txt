@@ -1,81 +1,81 @@
-�W�١G��� (The Many Faces of GO�A�^�媩)
-²���GIshi Press 1991�~�X�~����ѹC���A�i�U���㢰�����ѽL�C���L�ѤO
-      ��b�����ˡA�j���u�������ť��k�A���ѤO�y���@�I�����a�A�X�G
-      �@�L�i���A�u����@���i�ɶ��ΦӤw�C���C���b�κA�W���j�A����B��
-      ���P���x�h���z�A��ѤO���ӥi�H�󰪡A�u�O�������Ӥ�ޮɤ�ޡA�y
-      ���j�u���ܦ��j�H�աC���M�p���A�b���㢵�ťH�U���Ѥ͡A���i�H�b��
-      �C�����Ǩ�@�Ǳ`�����κA�C�ӥ��C���\��D�`�����A��ζզ��⪺��
-      �G�]�ܦ��Ѧһ��ȡA�]���]��A�X�Ѥͥ��ШϥΡC
-�O�@�G�L
-�Ƶ��G�������ѩҸ��A���C���̰��ѤO��15�šC
-�����G
+﻿名稱：圍棋 (The Many Faces of GO，英文版)
+簡介：Ishi Press 1991年出品的圍棋遊戲，可下９～１９路棋盤。不過棋力
+      實在不怎麼樣，大約只有２０級左右，對於棋力稍高一點的玩家，幾乎
+      毫無可取，只能當作消磨時間用而已。本遊戲在形態上較強，攻殺、死
+      活與收官則較弱，其棋力應該可以更高，只是往往不該手拔時手拔，造
+      成大優勢變成大劣勢。雖然如此，在４～６級以下的棋友，仍可以在本
+      遊戲中學到一些常見的形態。而本遊戲功能非常齊全，其形勢估算的結
+      果也很有參考價值，因此也頗適合棋友打譜使用。
+保護：無
+備註：按說明書所載，本遊戲最高棋力為15級。
+說明：
 
-�@. �]�w����
+一. 設定說明
 
-1.�ϧμҦ��]Graphics type�^
-2.�ѽL�j�p�]Board Size�^�G��9,11,13,15,17,19�������ؿ�ܡC
-3.���l�ơ]Handicap�^�G9���̦h��3�l�A19���̦h29�l�C
-4.�q������]Computer plays�^
-  black = �q�����¡A���a����
-  white = �q�����աA���a����
-  neither = �¥����賣�Ѫ��a����
-  both = �¥����賣�ѹq������
-5.�q���ѤO�]Playing level�^�G1��20�A�ƭȷU�j�A�q���ѤO�U���A����Ҥ]�U�[�C
-6.�s�Y�����]Beep for atari�^
-7.���l�����]Beep for move�^
-8.�Хܫe�@��]Highlight last move�^
-9.�H�����l�]Randomize move�^�G���L������إH�W���Ȭ۷����ۤ�ɡA�q���O�_�|�H����@�ءC
-10.��ѳW�h�]Rule�^
-  Chinese = ����p�I��]���l�ɥi�ۥѿ�ܦ�m�^
-  Japanese = �饻�p�ب�]���l�ɧ��b�T�w��m�^
-11.�w�۫��ɡ]Joseki tutor�^�G�U19���ɡA�O�_�i�H�ɤ��_���ɡA�եΩw�ۡC
-12.�۰��x�s�ѧ��]Archive game�^
-13.���L�Y�e���]Skip intro screen�^
+1.圖形模式（Graphics type）
+2.棋盤大小（Board Size）：有9,11,13,15,17,19路等五種選擇。
+3.讓子數（Handicap）：9路最多讓3子，19路最多29子。
+4.電腦角色（Computer plays）
+  black = 電腦持黑，玩家持白
+  white = 電腦持白，玩家持黑
+  neither = 黑白雙方都由玩家控制
+  both = 黑白雙方都由電腦控制
+5.電腦棋力（Playing level）：1～20，數值愈大，電腦棋力愈高，但思考也愈久。
+6.叫吃提醒（Beep for atari）
+7.落子提醒（Beep for move）
+8.標示前一手（Highlight last move）
+9.隨機落子（Randomize move）：當盤面有兩種以上價值相當的著手時，電腦是否會隨機選一種。
+10.圍棋規則（Rule）
+  Chinese = 中國計點制（讓子時可自由選擇位置）
+  Japanese = 日本計目制（讓子時均在固定位置）
+11.定石指導（Joseki tutor）：下19路時，是否可隨時中斷棋賽，試用定石。
+12.自動儲存棋局（Archive game）
+13.跳過頭畫面（Skip intro screen）
 
-�H�W�]�w�ק��A�����A��F4��~�|�x�s�C�H�U�O�D�e��������ާ@�G
+以上設定修改後，必須再按F4鍵才會儲存。以下是主畫面的按鍵操作：
 
-F1 = �ާ@�����]Setup Help�^
-F2 = �e�@�ﶵ�]Previous Choice�^
-F3 = �U�@�ﶵ�]Next Choice�^
-F4 = �x�s�]�w�]Save Setup�^
-F5 = ���J�´ѧ��~��U�]Restore Game�^
-F6 = ���С]View Game�^
-F7 = �״ѡ]Problems�^
-F8 = �оǡ]Go Tutorial�^
-F9 = �U�ѡ]Play Go�^
-F10 = ���}�C���]Quit�^
+F1 = 操作說明（Setup Help）
+F2 = 前一選項（Previous Choice）
+F3 = 下一選項（Next Choice）
+F4 = 儲存設定（Save Setup）
+F5 = 載入舊棋局繼續下（Restore Game）
+F6 = 打譜（View Game）
+F7 = 詰棋（Problems）
+F8 = 教學（Go Tutorial）
+F9 = 下棋（Play Go）
+F10 = 離開遊戲（Quit）
 
-�G. ��ѳN�y���^��ӡG
+二. 圍棋術語中英對照：
 
-aji = �~��
-atari = �s�Y
-Baduk��Paduk = ��ѡ]���y�o���^
-dame = ��x
-dan = �q��
-eye = ����
-fuseki = �ǽL
-Go = ��ѡ]��y�o���^
-gote = ���
-hane = ��
-hoshi = �P��
-invade = ���J
-jigo = �M��
-joseki = �w��
-kakari = ����
-keima = �������B
-ko = �T
-komi = �K��
-kyu = �Ŧ�
-ladders = ���l
-miai = ���X
-moyo = �Ҽ�
-nets = ���Y
-oiotoshi = �����k
-punnuki = ��
-seki = ����
-semeai = ���
-sente = ����
-snapback = �ϼ�
-tunuki = ���
-tsuke = �s����
-Weichi��Weiqi = ��ѡ]����o���^
+aji = 外勢
+atari = 叫吃
+Baduk／Paduk = 圍棋（韓語發音）
+dame = 單官
+dan = 段位
+eye = 眼位
+fuseki = 序盤
+Go = 圍棋（日語發音）
+gote = 後手
+hane = 踢
+hoshi = 星位
+invade = 打入
+jigo = 和棋
+joseki = 定石
+kakari = 掛角
+keima = 飛／馬步
+ko = 劫
+komi = 貼目
+kyu = 級位
+ladders = 征子
+miai = 見合
+moyo = 模樣
+nets = 門吃
+oiotoshi = 接不歸
+punnuki = 花
+seki = 雙活
+semeai = 攻殺
+sente = 先手
+snapback = 反撲
+tunuki = 手拔
+tsuke = 連／粘
+Weichi／Weiqi = 圍棋（中文發音）

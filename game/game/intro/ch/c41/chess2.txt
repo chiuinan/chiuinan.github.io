@@ -1,9 +1,9 @@
-�W�١G����H�Ѥ���v�ѽg (���媩)
-²���GOxford 1994�~�X�~����v�ѹC���A�����b����H��The 10 Games�̡A��
-      ���º��]Proware�^�N�z�o��C��Ԩ���i���缾�a�ιq���A�ô��ѵL��
-      �������ѡA�]�i�H�ħڤ����A�Ʀܹq����ҤӤ[�A�]�i�H�ʫP�ߨ�U�l�A
-      ��L�٥]�A�ۦ�]�w�ݧ��P�s���ɵ��\��A�ܤ�K���Ӿǲ߻P�V�m��v
-      �ѴѤO�C�u�O�q�����ѤO�ä����A�U�Ѫ��t�פ]�C�A�p�G�Q��q����ԡA
-      �̦n���`���ݪ��߲z�ǳơC
-�O�@�G�L�C
-����G�u�A�Ω�Windows�t�ΡC
+﻿名稱：中國象棋之西洋棋篇 (中文版)
+簡介：Oxford 1994年出品的西洋棋遊戲，收錄在中國象棋The 10 Games裡，由
+      普威爾（Proware）代理發行。對戰角色可任選玩家或電腦，並提供無限
+      次的悔棋，也可以敵我互換，甚至電腦思考太久，也可以催促立刻下子，
+      其他還包括自行設定殘局與存取檔等功能，很方便拿來學習與訓練西洋
+      棋棋力。只是電腦的棋力並不高，下棋的速度也慢，如果想跟電腦對戰，
+      最好有常等待的心理準備。
+保護：無。
+限制：只適用於Windows系統。

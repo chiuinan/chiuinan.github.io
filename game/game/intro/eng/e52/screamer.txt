@@ -1,12 +1,12 @@
-�W�١G���z��P�ɨ� (Screamer�A�^�媩)
-²���GVirgin 1995�~�X�~���ɨ��C���A�L���n���ĪG�B���u�סB�t�׷P���A�b
-      ���ɳ��O���Ū��A�P�������t�ַP�@�N�ڥ��L�i�����A���֪��a���O�]
-      ���o�ӹC���Ӱg�W�ɨ��C���C�����ᷥ�t�ַP�G�N�S�O���}�l�ϥ�3D�[
-      �t�d�A��_���l�äj�T�W�e�A���C���t�C�ܧִN�ܨS���F�C���M�H�{��
-      ���n���޳N�Ӭݳo�ӹC���w����X��A���b����CPU�t�פ��֡B�S���w��
-      �[�t�B�O����Q�S�֪����p�U�A��F��p�����n���ĪG�A�T��D�`���e
-      ���C�O�@�ڭȱo�^�����g��C���C
-�O�@�G���СA�}�ѽX�G
+﻿名稱：驚爆實感賽車 (Screamer，英文版)
+簡介：Virgin 1995年出品的賽車遊戲，無論聲光效果、擬真度、速度感等，在
+      當時都是頂級的，同期的極速快感一代根本無可比擬，不少玩家都是因
+      為這個遊戲而迷上賽車遊戲。但之後極速快感二代特別版開始使用3D加
+      速卡，急起直追並大幅超前，本遊戲系列很快就變沒落了。雖然以現今
+      的聲光技術來看這個遊戲已不算出色，但在當時CPU速度不快、沒有硬體
+      加速、記憶體貴又少的情況下，能達到如此的聲光效果，確實非常不容
+      易。是一款值得回味的經典遊戲。
+保護：光碟，破解碼：
       STARTH.EXE
         00 00 75 10 BB 01
         -- -- EB -- -- --
@@ -15,52 +15,52 @@
         -- -- EB -- -- --
         F6 05 40 CE 01 00
         -- -- EB -- -- --
-�Ƶ��G�ϥ�DosBox����ɡA�����]�wcycles=max�A�_�h����t�׷|�����֡A�Y
-      �n����SETUP.EXE�A�h�٭n�A�]�wcputype=pentium_slow�C���ɭY�@����
-      �b�Y�B�A�i�����C�ѪR�ת�VGA���L�A���^�ӡC
-�K�ޡG�b���e���U�A��J�H�U���K�X�]���\�ɷ|���y���^�G
+備註：使用DosBox執行時，必須設定cycles=max，否則執行速度會不夠快，若
+      要執行SETUP.EXE，則還要再設定cputype=pentium_slow。玩時若一直當
+      在某處，可換成低解析度的VGA玩過再換回來。
+密技：在選單畫面下，輸入以下的密碼（成功時會有語音）：
 
-VTELO �}�ҩҦ��]�D
-INVER ���o����]�D
-MONTY ��ê���Ϲ��ܧ�
-JOINT �W�[��ê���Ϲ�
-CLOCK ��������
-TAZOR �o��l�u�ɨ�
-UPDOW �ϧΤW�U�A��
-MIRRO ��g�Ҧ�
-ABURN ��L���l�ܦ��l�u�ɨ�
+VTELO 開啟所有跑道
+INVER 取得反轉跑道
+MONTY 障礙物圖像變更
+JOINT 增加障礙物圖像
+CLOCK 關掉時鐘
+TAZOR 得到子彈賽車
+UPDOW 圖形上下顛倒
+MIRRO 鏡射模式
+ABURN 其他車子變成子彈賽車
 
-�ާ@�G
+操作：
 
-����SETUP.EXE�i�]�w������C
+執行SETUP.EXE可設定控制鍵。
 
-F1 = ������
-F2 = ��������
-F3 = ��ܨ��l�]��^
-F4 = ��ܨ��l�]���^
+F1 = 全視野
+F2 = 車內視野
+F3 = 顯示車子（近）
+F4 = 顯示車子（遠）
 
-1.Normal game�G�ۥѿ�ܳ��a�P���l�A�i��m����
-2.Championship�G�u�����ɡA���e�T�W��U�@��
-3.Special modes�]�M�ۤv���ɡ^
-  (1)Time Attack�G�D�Գ̵u�ɶ�¶��
-  (2)Cone Carnage�G���}�Ҧ��T���P
-  (3)Slalom�G��V��ê������
+1.Normal game：自由選擇場地與車子，進行練習賽
+2.Championship：真正比賽，取前三名到下一場
+3.Special modes（和自己比賽）
+  (1)Time Attack：挑戰最短時間繞完
+  (2)Cone Carnage：撞開所有三角碓
+  (3)Slalom：穿越障礙物中間
 4.Options
-  (1)Detail�G��ӫסA�Ѱ��ӧC��Hi�BMid�BLow
-  (2)Diff.�G�x���סA�Ѱ��ӧC��Pro�BNormal�BRookie
-  (3)Lap Number�G���ɰ��
+  (1)Detail：精細度，由高而低為Hi、Mid、Low
+  (2)Diff.：困難度，由高而低為Pro、Normal、Rookie
+  (3)Lap Number：比賽圈數
 
-�𲤡G�]�@�̡ЫC�m�^
+攻略：（作者－青衫）
 
-*** ���l�ʯ�
+*** 車子性能
 
-Automatic Transmission�G�۱�
-Manual Transmission�G���
-Max Speed�G�̰��t��
-Grip�G��a�O
-Acceleration�G�[�t��
+Automatic Transmission：自排
+Manual Transmission：手排
+Max Speed：最高速度
+Grip：抓地力
+Acceleration：加速度
 
-����      ��Ʒ��t  �۱Ʒ��t  ��a�O  �[�t��
+車種      手排極速  自排極速  抓地力  加速度
 ---------------------------------------------
 SHADOW      343       340     ***     **
 TIGER       340       336     ****    ***
@@ -70,58 +70,58 @@ PANTHER     332       329     **      ****
 YANKEE      343       338     **      *
 BULLET      ---       357     *****   *****
 
-1.SHADOW�G�t�׳̧֪����ءA�u�O�[�t�רä���z�Q�A�i�Ҽ{�������ˡC
-2.TIGER�G�t�׶Ȳ�����SHADOW�MYANKEE�A���[�t�׻P��a�O���u�A�O�ȱo���
-  ���@�Ө��ءC
-3.HAMMER�G���M�t�פ���O�̧֪����ءA���۷��u�}���[�t�׻P��a�O�A����
-  ��ܤ��̼��������ءC
-4.RISING SUN�G�[�t�׳̧֪����ءA�i����a�O�Ӯt�A�ܮe�����ơA�B�t�פ]
-  �O�̺C���A�ä��ӾA�X���ɨϥΡC���]�ѩ��a�O�t�A�ܾA�X�쪱�̨ӽm��
-  �ϧ��ʧ@�A���]�Z���쪺�C
-5.PANTHER�G�����O�ɱ������ڤ��@�A�[�t���u�}�A��a�O�|�i�A�t�׫h�y���C
-  �F�I�C���M���O�ܱ��˪���ܨ��ءA���]���H���n�����A�åH���o�a�C
-6.YANKEE�G���M�]�O�t�׳̧֪����ءA����a�O�M�[�t�׳��t�A���ȱo��ܡC
-7.BULLET�G�����S�����o�~���ܪ����ءA�L�׳t�סB��a�O�Υ[�t�׳��O��
-  �u�q�A�j���������a�X�G���O²��N����ӡA���L�D�ԩʡC
+1.SHADOW：速度最快的車種，只是加速度並不算理想，可考慮但不推薦。
+2.TIGER：速度僅略遜於SHADOW和YANKEE，但加速度與抓地力均優，是值得選擇
+  的一個車種。
+3.HAMMER：雖然速度不算是最快的車種，但相當優良的加速度與抓地力，成為
+  選擇中最熱門的車種。
+4.RISING SUN：加速度最快的車種，可惜抓地力太差，很容易打滑，且速度也
+  是最慢的，並不太適合比賽使用。但也由於抓地力差，很適合初玩者來練習
+  甩尾動作，其實也蠻有趣的。
+5.PANTHER：曾為保時捷熱門款之一，加速度優良，抓地力尚可，速度則稍嫌慢
+  了點。雖然不是很推薦的選擇車種，但也有人偏好此車，並以此得冠。
+6.YANKEE：雖然也是速度最快的車種，但抓地力和加速度都差，不值得選擇。
+7.BULLET：必須特殊取得才能選擇的車種，無論速度、抓地力或加速度都是最
+  優秀，大部份的場地幾乎都是簡單就能取勝，較無挑戰性。
 
-*** �l�u�ɨ��]BULLET�^���o�k
+*** 子彈賽車（BULLET）取得法
 
-1.���Championship�i����ɡA����Rookie�]��ǡ^�BAmateur�]�~�l�^�BPro
-  �]¾�~�^�T�ص��ũһݪ����ơC
-  (1)�U���ť����b6�ؤ��P�����a�U���ɤ@���C
-  (2)���ɵ��G�����b�e�T�W���A�Ĥ@�W�o9���A�ĤG�W�o7���A�ĤT�W�o5���C
-  (3)Rookie��6�����ɥ���42���~��ʦ�Amateur�Ť��ɡC
-  (4)Amateur��6�����ɥ���46���~��ʦ�Pro�Ť��ɡC
-  (5)Pro��6�����ɥ���50���]����54�^�~��i��Bullet�Ť��ɡC
-2.�i�JBullet�Ť��ɡA�P�l�u�ɨ��i��@��@���ɡA6�س��a���Ӫ��ܡA�K�i��
-  �o�l�u�ɨ��ѿ�ܡC
-3.�αK�ޤ]�i���e�z���G�C
+1.選擇Championship進行比賽，完成Rookie（初學）、Amateur（業餘）、Pro
+  （職業）三種等級所需的分數。
+  (1)各等級必須在6種不同的場地各比賽一場。
+  (2)比賽結果必須在前三名內，第一名得9分，第二名得7分，第三名得5分。
+  (3)Rookie級6場比賽必須42分才能晉至Amateur級比賽。
+  (4)Amateur級6場比賽必須46分才能晉至Pro級比賽。
+  (5)Pro級6場比賽必須50分（滿分54）才能進行Bullet級比賽。
+2.進入Bullet級比賽，與子彈賽車進行一對一比賽，6種場地均勝的話，便可取
+  得子彈賽車供選擇。
+3.用密技也可有前述結果。
 
-*** ��X����
+*** 綜合提示
 
-1.���q��ܤ�ơA�òߺD���ɡC�p�G�Q���P�����A��۱Ƥ]�ëD���i�C
-2.���x�U�ӳ��a�A�S�O�O�s�D����m�B���׻P����覡�C�i�h�Q��Time Attack
-  ���ۤv�����x��ӳ��a�P���l���ޱ��ޥ��A�M��A�Q��Normal Game�i��m��
-  �ɡA����Pro�ŧx���׳���²�殳�a��A�~�}�l�u����Championship���ɡC
-3.���s�ɭn�q�~�����D�}�l��_�A�V�ۤ������D�e�i�A�����p�n���즸�ӧC�t
-  �ɡ]�Y�O�s����s�D�i��n�����ɡ^�C��¶�L�b�Ӧh���s�D�ɡA�K�i���^��
-  ���t�ɨå[�t�e�i�C�����n�I�b�󤰻�ɭԫ��U���k��i����V�A�Ӧ��|��
-  �������@��A�ӺC�|�����~���@��C�۱ƨ��L�k���ɡA�u���t�]���A����
-  ��t�h�֡A���n����C��t�ɰO�o��}�[�t��C
-4.���s�D���q�Χ�a���s�k�]Grip�^�e�i�A�u�S�檺�s�D�h�i�ϥΥϧ����s�k
-  �]Drift�^�e�i�C�l�u�ɨ��]��a�O�Ӧn�A�����ϧ��A���I�h�s�D�����a�|��
-  ���Y�O�A���q��t�]���C
-5.��p�ɾ��q�O�������@��A�t�׷|�j��A�e���Q�L���W�V�C�U�@���p��½���A
-  ���X�G�O���ѩw���C
-6.�p�G���ᨮ�n�l�W�ɡA�]�i���ʨ����h����誺���Y�A�����½���A�קK��
-  �W�V�]�S�O�O�P�l�u�C���@��@���ɮɡ^�C
+1.儘量選擇手排，並習慣換檔。如果想輕鬆玩玩，選自排也並非不可。
+2.熟悉各個場地，特別是彎道的位置、角度與應對方式。可多利用Time Attack
+  讓自己先熟悉整個場地與車子的操控技巧，然後再利用Normal Game進行練習
+  賽，直到Pro級困難度都能簡單拿冠後，才開始真正的Championship比賽。
+3.轉彎時要從外側車道開始轉起，向著內側車道前進，視情況要換到次個低速
+  檔（若是連續急彎道可能要降兩檔）。等繞過半個多的彎道時，便可切回原
+  高速檔並加速前進。它的要點在於什麼時候按下左右鍵進行轉向，太早會擦
+  撞內側護欄，太慢會擦撞外側護欄。自排車無法換檔，只能減速因應，但應
+  減速多少，不好控制。減速時記得放開加速鍵。
+4.長彎道儘量用抓地轉彎法（Grip）前進，短又急的彎道則可使用甩尾轉彎法
+  （Drift）前進。子彈賽車因抓地力太好，不易甩尾，應付多彎道的場地會比
+  較吃力，儘量減速因應。
+5.行駛時儘量別擦撞到護欄，速度會大減，容易被他車超越。萬一不小心翻車，
+  那幾乎是失敗定局。
+6.如果有後車要追上時，也可移動車尾去撞對方的車頭，讓對方翻車，避免它
+  超越（特別是與子彈列車一對一比賽時）。
 
-���˧𲤼v���G
+推薦攻略影片：
 
-1.Palm Town�]01:20:25�^�Ghttp://www.youtube.com/watch?v=QDZoI6udIYw
-2.Lake Valley�]02:04:61�^�Ghttp://www.youtube.com/watch?v=crJ_7nqRrnU
-3.Lindburg�]02:10:69�^�Ghttp://www.youtube.com/watch?v=JtTpnSk_Jvw
-4.Palm Town Night�]02:04:61�^�Ghttp://www.youtube.com/watch?v=frXfah2PtgQ
-5.Sunbeach Hill�]04:30:62�^�Ghttp://www.youtube.com/watch?v=cLOvuDcvdfk
-6.Sandrock�]02:45:52�^�Ghttp://www.youtube.com/watch?v=tZzUatOfxK8
-7.Bullet�Ghttp://www.youtube.com/watch?v=CVrXEOCiVTY
+1.Palm Town（01:20:25）：http://www.youtube.com/watch?v=QDZoI6udIYw
+2.Lake Valley（02:04:61）：http://www.youtube.com/watch?v=crJ_7nqRrnU
+3.Lindburg（02:10:69）：http://www.youtube.com/watch?v=JtTpnSk_Jvw
+4.Palm Town Night（02:04:61）：http://www.youtube.com/watch?v=frXfah2PtgQ
+5.Sunbeach Hill（04:30:62）：http://www.youtube.com/watch?v=cLOvuDcvdfk
+6.Sandrock（02:45:52）：http://www.youtube.com/watch?v=tZzUatOfxK8
+7.Bullet：http://www.youtube.com/watch?v=CVrXEOCiVTY

@@ -1,2197 +1,2197 @@
-�W�١G�T��ӭ^�Ƕ� (���媩)
-²���G�饻KOEI���a���q1995�~�X�~�B�ѲĤT�i�N�z�o�檺���������t�C���A
-      �b�x�W�������@�ɡC�G�Ʒ��M�b�y�z�Q���d�T��A�Ѹs���Q�︳���}�l�A
-      ���������Q��A�_���~�ǡC���F�����d���᪺�����~�A�j�P�̤T��t
-      �q���@���Ӧ�C���̥D�n��t�B�ơA�b���Ԫ��L�{���A�Z�N�|�v�@���[
-      �J�A�̫�F��M�d���Q�������C���Ԫ��D�u�j�P�T�w�A�����Ǥ�u�|�H
-      ��ܪ����P�Ӧ��Үt���C�C���ԧЦh�b�������ê���D�ƥ�Ϊ��~�A��
-      �ǾԧЪ��x�����٬۷����A�Y�S���n�n���p�e�A�����|���ѭ��ӡC����
-      �Ө��A�o�ӹC�����T�֩ʬ۷������A�S���L�O���I�i���C
-�O�@�G�Ʀr�K�X�A�}�Ѫk�G
+﻿名稱：三國志英傑傳 (中文版)
+簡介：日本KOEI光榮公司1995年出品、由第三波代理發行的策略角色扮演遊戲，
+      在台灣曾紅極一時。故事當然在描述魏蜀吳三國，由群雄討伐董卓開始，
+      直到擊敗魏國，復興漢室。除了後期伐吳之後的部份外，大致依三國演
+      義的劇情而行。玩者主要扮演劉備，在征戰的過程中，武將會逐一的加
+      入，最後達到和吳伐魏的結局。征戰的主線大致固定，但有些支線會隨
+      選擇的不同而有所差異。每場戰役多半有些隱藏的單挑事件及物品，有
+      些戰役的困難度還相當高，若沒有好好的計畫，往往會落敗重來。整體
+      而言，這個遊戲的娛樂性相當的高，沒玩過是有點可惜。
+保護：數字密碼，破解法：
       MAIN.EXE
         0B C0 74 06 47 83 FF 03
         31 -- -- -- -- -- -- --
-      ��
+      或
         5B 0B C0 74 06 47 83
         -- -- -- EB -- -- --
         0B C0 74 0F 9A 56 9C
         -- -- EB -- -- -- --
-      ��
+      或
         9A 7A 9F F6 0C 0B C0 74 0F
         EB 03 90 90 90 -- -- EB --
-�Ƶ��G1.�����Ĥ@�s�ɬ��}�l���A�w�]�t�Ҧ��i�ۭ��H���A�B����99�šA���W
-        �������̱j���~�A�Q�ֳt�L���̡A�i�[�H�Q�ΡC
-      2.bak\BAKDATA.R3�w�N�j�������v��N���ݩʧ��令�̰��C
-�K�ޡG1.�ηƹ��@���I�B�ƪ��y�]�������U�^�A����X�{�e�T����t�R�O��
-        ���f���T���A���e�O�f����A�I��e�����W�����I�A�h�B�Ƶ����ܦ�
-        �����A�����]�ܦ������������C����i�I�����W�]�l�A�B�ƪ��ݩʷ|
-        �����ܦ��̰��F��i�I�����W�]�l�U�誺�Ĥl�A�h�\����|�h�X�@
-        �ӭ��֪��ɶ��A�i�Y��C�����Ҧ������ֻP���ġC�����i�@���I�A�_
-        �h�|�ܺG�C
-      2.�R��ESAVE*.*�A�i�O�d���ŤΪ��~���Y�A���A�����Фαi�������b��
-        �W�A�_�h���Y�}�l�ɡA���b���W���H�|�ܦ��L�k�����ʡC���~�A�[
-        �J�e�쬰�ĤH�̡A�p�Q�����A���A���H�ĤH�����X�{�b�Գ��ɡA�䵥
-        �ŷ|�Q���m�C
+備註：1.本版第一存檔為開始關，已包含所有可招降人物，且均為99級，身上
+        均戴有最強物品，想快速過關者，可加以利用。
+      2.bak\BAKDATA.R3已將大部份的己方將領屬性均改成最高。
+密技：1.用滑鼠一直點劉備的臉（約７０下），直到出現〔禁止的隱含命令模
+        式〕的訊息，按〔是〕之後再點選畫面左上角的點，則劉備等級變成
+        ９９，金錢也變成１００００。之後可點擊左上珠子，劉備的屬性會
+        全部變成最高；亦可點擊左上珠子下方的勾子，則功能選單會多出一
+        個音樂的時間，可欣賞遊戲中所有的音樂與音效。但不可一直點，否
+        則會很慘。
+      2.刪除ESAVE*.*，可保留等級及物品重頭再玩，但關羽及張飛必須在隊
+        上，否則重頭開始時，不在隊上的人會變成無法控制行動。此外，加
+        入前原為敵人者，如魏延等，當再次以敵人身份出現在戰場時，其等
+        級會被重置。
 
-�ק�G
+修改：
 
-���ɮ�MSAVE*.R3S�A�C��Z�N��18 Byte�A�Ĥ@�쬰�B�ơA��l���w�C
+找檔案MSAVE*.R3S，每位武將佔18 Byte，第一位為劉備，其餘不定。
 
-    1.���� - 1 byte
-    2.���� - 4 byte�A�̫�@�өT�w��64h
-    3.�L�O - 2 byte
-    4.�L�� - 1 byte�A�Ԧp��z
-    5.���� - 1 byte
-    6.�g�� - 1 byte
-    7.�D�� - 8 byte�A�C�ӹD���1 byte�AFFh���S��
+    1.所屬 - 1 byte
+    2.不明 - 4 byte，最後一個固定為64h
+    3.兵力 - 2 byte
+    4.兵種 - 1 byte，詳如後述
+    5.等級 - 1 byte
+    6.經驗 - 1 byte
+    7.道具 - 8 byte，每個道具佔1 byte，FFh表沒有
 
-���ݧg�D�N�X�G
+所屬君主代碼：
 
-    80 �B��         81 ���         82 �]�v         83 ���]��
-    84 �K��         85 ����         86 �K�N         87 �f��
-    88 ����         89 �B��         8A �B��         8B �B��
-    8C ����         8D �տ�         8E �L����
+    80 劉備         81 曹操         82 孫權         83 公孫瓚
+    84 袁紹         85 董卓         86 袁術         87 呂布
+    88 陶謙         89 劉表         8A 劉璋         8B 劉璋
+    8C 馬騰         8D 孔融         8E 無所屬
     
-�L�ئC���G
+兵種列表：
 
-    00 �u�L         01 ���L         02 �Ԩ�         03 �}�L
-    04 �s���L       05 �o�ۨ�       06 ���M�L       07 ���M�L
-    08 ��ö�       09 �s��         0A �c��         0B �q��
-    0C �x�ֶ�       0D �r�~�x��     0E �Z�N�a��     0F ���N�v
-    10 ������       11 ����         12 �B�鶤
+    00 短兵         01 長兵         02 戰車         03 弓兵
+    04 連弩兵       05 發石車       06 輕騎兵       07 重騎兵
+    08 近衛隊       09 山賊         0A 惡賊         0B 義賊
+    0C 軍樂隊       0D 猛獸軍團     0E 武術家隊     0F 妖術師
+    10 異民族       11 民眾         12 運輸隊
 
-�D��C���]FF���L���~�^�G
+道具列表（FF表無物品）：
 
-    00 �P�ҤѮ�     01 �C�n��       02 ���j��      *03 �]�l�L�k
-    04 �s�w�s��     05 �������s     06 ���c        *07 ���߰�
-   *08 ��â         09 �ʤѼC       0A �D��         0B �C�P�C
-    0C �C�s����M   0D �T�y�M       0E ��ѵe�u     0F �D��
-    10 �}�N���n��   11 ���N���n��   12 �C�N���n��   13 ���j
-    14 �B�L��       15 �s��         16 �o�ۨ�       17 ���Z
-    18 ����Z       19 �L��믫     1A �L�q�믫     1B �s
-    1C �S�Űs       1D �Ѱs         1E ��           1F ��
-    20 ��           21 ����         22 ���ۮ�       23 �s�Y��
-    24 �s�x��       25 �x����       26 �B�y��       27 ���S��
-    28 �J����       29 ���s��       2A �r����       2B �@����
-    2C �p�}�B��     2D ���B��       2E ������       2F ������
-    30 ���x��       31 �����       32 �����       33 �i���
-    34 ����         35 ����         36 ��           37 �j�R��
-    38 ���x���i     39 �۶����C     3A �^�����C    *3B �Q�����C
-    3C ����         3D �T��         3E �d�l�L�k
+    00 遁甲天書     01 青囊書       02 鼓吹具      *03 孫子兵法
+    04 孟德新書     05 黃爪飛龍     06 的盧        *07 赤兔馬
+   *08 玉璽         09 倚天劍       0A 蛇矛         0B 七星劍
+    0C 青龍偃月刀   0D 三尖刀       0E 方天畫戟     0F 蛇矛
+    10 弓術指南書   11 馬術指南書   12 劍術指南書   13 長槍
+    14 步兵車       15 連弩         16 發石車       17 馬鎧
+    18 近衛鎧       19 無賴精神     1A 俠義精神     1B 酒
+    1C 特級酒       1D 老酒         1E 豆           1F 麥
+    20 米           21 炸藥         22 落石書       23 山崩書
+    24 山洪書       25 漩渦書       26 濁流書       27 海嘯書
+    28 焦熱書       29 火龍書       2A 猛火書       2B 濃霧書
+    2C 雷陣雨書     2D 豪雨書       2E 援隊書       2F 援部書
+    30 援軍書       31 平氣書       32 活氣書       33 勇氣書
+    34 傷藥         35 中藥         36 茶           37 赦命書
+    38 援軍報告     39 雌雄雙劍     3A 英雄之劍    *3B 霸王之劍
+    3C 六韜         3D 三略         3E 吳子兵法
 
-�ק�G�O����
+修改：記憶體
 
-1.�Z�N�ݩʸ�T�A�C��2Ch=44 byte
+1.武將屬性資訊，每位2Ch=44 byte
 
   BL -- -- -- -- 64 SN SN TY LV EX IT IT IT IT IT
   IT IT IT -- -- -- -- -- -- -- -- -- -- -- -- --
   -- -- -- -- -- -- -- -- -- -- -- --
 
-BL = ���ݧg�D
-SN = �ثe�h�L��
-TY = �L��
-LV = ����
-EX = �g��
-IT = �D��
+BL = 所屬君主
+SN = 目前士兵數
+TY = 兵種
+LV = 等級
+EX = 經驗
+IT = 道具
 
-2.�Z�N�Գ���T�A�C��0Eh=14 byte
+2.武將戰場資訊，每位0Eh=14 byte
 
   NO XX YY FF 00 00 -- IN SS HA BR ST -- --
 
-NO = ���ǽs��
-XX,YY = �y�С]���W����0,0�^�A���i�ק�
-IN = �X�{���p�A<02���|���X�{�A02=�w�X�{�A>03=�M���Գ�
-SS = ���A�A80h=�w��ʹL�A20h=0���_ŧ
-HA = �i�_�ޱ��A07=�v�x�A01=�ͭx
-BR = �ثe�h���
-ST = �ثe������
+NO = 順序編號
+XX,YY = 座標（左上角為0,0），不可修改
+IN = 出現情況，<02表尚未出現，02=已出現，>03=撤離戰場
+SS = 狀態，80h=已行動過，20h=0表奇襲
+HA = 可否操控，07=己軍，01=友軍
+BR = 目前士氣值
+ST = 目前策略值
 
-�ק�GBAKDATA.R3
+修改：BAKDATA.R3
 
-1.�D���T�A��m0D00h�}�l�A�C�Ӧ�16 byte
+1.道具資訊，位置0D00h開始，每個佔16 byte
 
   NN NN NN NN NN NN NN NN NN NN NN NN 00 PP NM TY
 
-NN = �W�١A�H00�r��������
-PP = ����A���10��
-NM = �W��ƶq�Τ��
-TY = �D�㫬�A
-       00 = �W�[�����O
-       01 = ��¾�ιD��
-       02 = �����ιD��
-       03 = ��_�ιD��
-       04 = �W�[���ʤO
-       05 = �W�[���m�O
+NN = 名稱，以00字元做結束
+PP = 價格，單位10金
+NM = 增減的數量或比例
+TY = 道具型態
+       00 = 增加攻擊力
+       01 = 轉職用道具
+       02 = 攻擊用道具
+       03 = 恢復用道具
+       04 = 增加移動力
+       05 = 增加防禦力
 
-2.�Z�N�ݩʸ�T�A��m1100h�}�l�A�C���21 byte
+2.武將屬性資訊，位置1100h開始，每位佔21 byte
 
   NN NN NN NN NN NN -- -- -- -- -- -- -- -- FA --
   MP S3 S1 S2 --
 
-NN = �m�W
-FA = ��ͤ����Y��
-MP = �@���ɪ��H���ϥ�
-S1 = �Z�O
-S2 = ���O
-S3 = �αs�O
-
-3.�Z�N��l��T�A��m3080h�}�l�A�C���18 byte�A�榡�P�e��MSAVE*.R3S�ҭz
-
-�𲤡G�]�@�̡ЫC�m�^
-
-�z�w�w�w�w�{
-�x²�����ܢx
-�|�w�w�w�w�}
-
-�@�B�p��m�\
-
-  1.�����]�t�����ʵ����^�G���㢰��
-  2.���h�ĭx�G���㢴��
-  3.���h����G����
-  4.�D�����ʵ����G��
-
-�ѩ�v�x���ŭY��ĭx�C���ťH�W�ɡA�����i�o��g��ȧ��W�L���A�]������
-�����|����e���ɯšA�S�O�O�N�ĭx���h�ɡA�Ʀܥi��o�����I�g��ȡC�Y�O
-���ŻP�ĭx�ۮt���h�Χ󰪮ɡA�����ү�o�쪺�g��ȫK�ֱo�i���A�Q�Φp�o
-��B�E�y�B���U�B�������������C�^�X������I�g��ȡA�h����e���ɯšC�]
-���C���ԧ����b����^�X���A���q�Q�Φ��I�����������̦h���g��ȡC��
-�ѩ����h����A�L�פv�x���Ŭ���A���i��o�����I�g��ȡA�]�����⪺�̫�
-�@���A�̦n�d�����Ÿ������v�x�����C���~�A�Z�O����D�ƥ�A�H�δݾl����
-�[�����I�g��Ȫ��ӧQ����A�@�w�n�h�F���A�p���ɯŷ|��֨ǡC
-
-�G�B�L�ػ���
-
-1.�L�]�u�L�B���L�B�Ԩ��^�G���m�O�̰��A�����O���q�A�h�����������@�ϥΡA
-  �H�O�@�����z���L�ءA��}�L�����[�����ˤO�C
-2.�}�]�}�L�B�s���L�B�o�ۨ��^�G�����O�̰��A�L�O�B���m�O�P���ʤO���C�A
-  �h�����������ΡA���M�L�����[�����ˤO�C
-3.�M�]���M�L�B���M�L�B��ö��^�G�L�O�B�����O�P���ʤO�̰��A���m�O�礣
-  ���A�h���������D�O�A���L�k��V�˪L�A�F�a�h���ʺC�A�郞�L�����[����
-  �ˤO�C
-4.���N�v�G�𨾯�O�̧C�A���|���j�����������P��_�����A�۷��n�ΡC
-5.�x�ֶ��G�L�O�P�𨾯�O�̧C�A�i�����Ū��@�w��ҡA��_��F���̪�����
-  �ȡ]���׼ħڡ^�A�ݭn�m�\�ɥi�ΡA���]�i�ǥμĤ誺�x�ֶ��ӫ�_�A�]��
-  �ëD���沈�n�C
-6.�B�鶤�G�L�O�B�𨾯�O�̧C�A�|�Ҧ���_�p�A�����ʤO�̧C�A�����򤣤W
-  ����}�B�C���]�i�Q�Ψ�L�L�ء]�S�O�O���N�v�^�ӫ�_�L�O�A�]���èS
-  ���Ӥj���n�C
-
-�]�H�U�L�صL�k�Q����¾�D����¾�Ӧ��^
-
-7.��]�s��B�c��B�q��^�G�𨾯�O���q�A�������O�A�i��V�s�a�A���s
-  �C�Ԫ��D�O�A���ѩ�s�a�@�Ԫ����|�ܤ֡A�Ϥ��p�Z�N�a���n�ΡC
-8.�Z�N�a���G�L�O�B�𨾯�O�B���ʤO�������A�������O�A�i��V�s�a�A�L
-  �פs�a�ԡB����ԡB�˪L�ԡB�F�a�ԧ��n�ΡC
-9.�r�~�x�ΡG�����O�̰��A�����m�O��C�A���i��V�s�a�A���γ~�ä��j�C
-10.�����ڡG���m�O�̰��A�����O�P�L�O��ᰪ�A�i���S�����������A�u���b��
-  �_ŧ���ɷ|�ȮɥX�{�C
-
-�T�B�m�\�H��
-
-  �L - �i��B�B�ơB�k���B�B�ʡB���y�B�S��
-  �} - ���Y�B���{�B²�l�B����
-  �M - ���СB�����B�����B���W�B�i��
-  �� - �Ѹ��G�B�e��
-  �� - �P��
-  �Z - �Q���Bÿ�c
-
-�䤤�P�ܡB�����Y����U���аk�������ԡA�]���b�L�̥[�J��n�V�O�a�V�m�A
-�L�F�����ԫ�K�i�����ޥL�̤F�Cÿ�c�B�S�ڡB���µ��H������v�x���D�O�A
-�b���O�Y���ԫe���n�n�[�H�V�m�A����i�����p�����ݩʪ��Z�N�V�m�C�ר�
-�O�S�ڡA�����������_ŧ�����D�O�A�P�ɥ�O���@�e�ΧK��ܤ��ԾԦ������O
-�Z�N�A�]���i�H���ܡA�̦n���{�V�m�|����n�ǡA���M�L���ݩʭȹ�b�����
-�ˡC�M�Ԯɥi�D����H�A���F���X���B�ƩM�Ѹ��G�~�A�i�q�W�z�H�襤�D�X
-���Ϊ������W�Y�i�C���СB�����B���W�B�i��������D�ƥ󪺢��H�̦n���X���A
-�}�L���]�o�ۨ��^�ܤ֤]�n���X���H�C
-
-�����B�Y�C��H�̫�|���`�A�ҥH�N�����m�L�̤F�]�i���F�n�ݩʡ^�C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ǳ�  �s���_�L�Q�I�����x
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-�Ƶ��G�H���ƦC���ǥH�T���ݩʭ��`�M���ǡA�B�Ƥ��C�A�䤤�[�A���̬����@
-      �w���A�����u�өw�C
-
-����
-
-  �D��G�S�Űs�B���B���ġB����ѡB����ѡB������
-  �ƥ�G1.�M���]�Х�͡A�h���]�Х[�J�ǳ��Ҧ��ԧ�
-        2.�M������͡A�h�����[�J�ǳ��Ҧ��ԧ�
-        3.�M���Х�Ͷi�J����������
-  �����G���F�����g��ȡA�̦n���n�M���]�Фγ�����͡C
-
-���Т�����������
-
-  ���X�G���СB�i��
-  �^�X�G����
-  ����G�ض��Q����
-  ���~�G���]�W�^�B���������]���W�^
-  ��D�G���гӵض��]���Фɤ@�š^
-  ����G�����i�J��c������
-
-���Т���c������
-
-  ���X�G���СB�i��
-  �^�X�G����
-  ����G�f���h�o
-  ���~�G���]�k�U�^�B�J���ѡ]�k�W�^
-  ��D�G�i���ӧf���]�i���ɤ@�š^
-  �ƥ�G�Ģ����^�X�f���}�l�D�ʥX���C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�Ĥ@���Ĥ@��  �ɾ����Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �_���D��G�s�B���B�@����
-  �ƥ�G1.�X����ĳ���U�A�i�J�A�P²�l��͡A²�l�[�J�C
-        2.�P�Ϫ̥�͡A�A�P���Х�͡A��ܫH�����ԩμs�t���ԡC
-  �[�J�G²�l�]�}3�^
-  �����G�̦n��H�����ԡA��ùÿ�c���n�A�B�i�W�[���h�g��ȡC
-
-���Т��Т��H������
-
-  ��03�G���СB�i���B²�l
-  �^�X�G����
-  ����G1.�E�_ã�h�o
-        2.�B�ƨ�F�����]�ݾl�����[�����g��ȡ^
-  ���~�G�s�]�U�^�B���������]�W�^
-  ��D�G�i���ӲE�_ã�]�i���ɤ@�š^
-
-�H��
-
-  �D��G�s�B���B���ġB�J���ѡB�x���ѡB���ۮ�
-  �ƥ�G�iĳ���U�P���Х�͡A��ܥ������ԩβM�e���ԡC
-  �[�J�Gÿ�c(�Z4)
-  �����G�̦n�泌�����ԡA���M�����A���i�W�[�H���������h�g��ȡA�t�~
-        �b�ɾ����Ԥ]������P�ǡC
-
-���Т��Т��s�t����
-
-  ��03�G���СB�i���B²�l
-  �^�X�G����
-  ����G�{���h�o
-  ���~�G���]�k�^�B���������]�U�^
-  ��D�G���гӳ{���]���Фɤ@�š^
-
-�s�t
-
-  �D��G�s�B���B����
-  �ƥ�G�P���Х�͡A��ܥ������ԩβM�e���ԡC
-  �[�J�G���A�]�s4�^�B���^�]�u4�^
-  �����G�̦n�泌�����ԡA���M�����A���i�W�[�H���������h�g��ȡA�t�~
-        �b�ɾ����Ԥ]������P�ǡC
-
-���Т��Т���������
-
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)
-  �^�X�G����
-  ����G1.�i���h�o
-        2.�B�ƨ�F�����S�]�ݾl�����[�����g��ȡ^
-  ���~�G��
-  ��D�G�i�����C�}�]�i���ɤ@�š^
-  �ƥ�G1.�Ģ��^�X�ɡA�ĤH���x�X�{�b���W��A�v�贩�x�X�{�b�k��C
-        2.�B�Ƭ�L�k�W�����U��ɡA�ĭx�|���O����B�ƫe�i�C
-  �[�J�G����(�}4)�B�ժZ(�u4)
-  ����G�����i�J�ɾ�����
-  �����G�n�S�O�`�N�Ĥ��L���������ۤ��p�A�̦n���ݼĤ贩�x�X�{�øѨM
-        ��A�~���F���ʡC
-
-���Т��Т��M�e����
-
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)
-  �^�X�G����
-  ����G��q�Q����
-  ���~�G�s�]���^�B���������]�U�^
-  ��D�G���г���q�]���Фɤ@�š^
-  �ƥ�G�Ģ��^�X�ɡA�ĤH���x�X�{�b�W��C
-  ����G�����i�J�ɾ�����
-
-���Т��Т��ɾ�����
-
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)�B(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�K�аh�o
-        2.�B�ƹܨ��Ĥ�L³�w�]�ݾl�����[�����g��ȡ^
-  �ĭx�G�e���t�@���g�L���ԧСA��D�N�|�֨쥻�ԧФ��ӡC
-  ���~�G���s�ѡ]���U�^�B���j�]�U�^�B���]�W�^�B�s���]�k�W�^
-  ��D�G�i���Ӥ���]�i���ɤ@�š^
-  �ƥ�G1.���v���L�Գ��U�褤���ɡA�K�г����}�l�X���C
-        2.���v���F�L³�w�e�ɡA�Ĥ�|���O�^���L³�w�C
-  �����G�p�G���e��M�e���Ԫ��ܡA���򥻾ԧз|�ܱo����x���ǡC
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�Ĥ@���ĤG��  �䴩�_���B�}�{�x
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �_���D��G�s�B���B�@����
-  �H���D��G�s�B���B���ġB�J���ѡB�x���ѡB���ۮ�
-  �ƥ�G1.�P�S�ǥ�͡A�A�P���Х�͡A��_���P���]�Х�͡A�����[�J�C
-        2.�^����ĳ���U�P�S�ǥ�͡A�i�J�_�����ԡC
-  �[�J�G����(��11)
-
-���Т��Т��_������
-
-  ���X�G����
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)�B(����)�B(�ժZ)
-  �^�X�G����
-  ����G�ޥ�Q����
-  ���~�G�S�Űs�]�W�^�B����ѡ]�U�^
-  ��D�G�����Ӻޥ�]�����ɤ@�š^
-  �ƥ�G���v���L�Գ��U�褤���ɡA�տĳ����K�}���X���C
-
-�_��
-
-  �D��G�s�B���B���ġB�J���ѡB�x���ѡB���ۮѡB���u
-  �ƥ�G1.�տ��٧U���������C
-        2.�P���Х�͡A�i�J�}�{���ԡC
-
-���Т��Т��}�{����
-
-  ���X�G����
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)�B(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�ĭx����
-        2.�B�ƶi�J�}�{���]�ݾl�����[�����g��ȡ^
-  ��D�G���гӤ_�T�]���Фɤ@�š^
-  �ƥ�G�Ģ��^�X�ɡA�v�贩�x�ӥv�O�b���U�X�{�C
-
-�}�{
-
-  �D��G�s�B���B���ġB����ѡB������
-  �ƥ�G�P������͡A�A�M�w�P���Щαi����͡C�Y�P���Х�͡A�h�i�J�p�K
-        ���ԡA�P�i����͡A�h���L�p�K���ԡC
-  �����G�i�J�p�K���ԡA���i�o�g��ȡA���ܦ����A�Ӳ��L�p�K���ԫh�i�o��
-        �۶����C�A�U����Q���C
-
-���Т��Т��p�K����
-
-  ���X�G����
-  ��04�G���СB�i���B(ÿ�c)�B(���^)�B²�l�B(���A)�B(����)�B(�ժZ)
-  �^�X�G�����]���Ģ����^�X��ޫK�|�۰ʹ��h�^
-  ����G��ްh�o
-  ��D�G�i���ӮL�J�W�]�i���ɤ@�š^
-  �ƥ�G��8�^�X�ɡA��ޭx�����D�ʥX���C
-
-�}�{
-
-  �ƥ�G1.�P������͡A�Y���e���L�p�K���ԡA�h�i�o��۶����C�C
-        2.�P�]����͡A�]���[�J�A�ñN����a�ܤp�K�C
-  �[�J�G�]��(��10)
-
-�p�K
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�J���ѡB�x���ѡB���ۮ�
-  �ƥ�G�P������͡A�������h�C
-  ���}�G����
-  �����G�������h�e�A�O�o���R�Ӱ��Z���L�C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�Ĥ@���ĤT��  �j��f���ӳX�x
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�p�K
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�J���ѡB�x���ѡB���ۮ�
-  �ƥ�G�P²�l��͡A�A�P���Х�͡A��ܮ��s���ԡB�L�C���ԩδ^�����ԡC
-
-���Т��Т����s����
-
-  ��06�G���СB�i���B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B�]���B
-        (����)�B(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�Ĥ����
-        2.�����뭰
-  ���~�G���ۮѡ]�W�^�B���u�]�U�^
-  �ƥ�G�����b�P�B�Ʊ�Ĳ��Y�뭰�[�J�]�B�Ƥɤ@�š^
-  �[�J�G����(�r12)
-  ����G��ܦ^�p�K�B�L�C���ԩδ^������
-
-���Т��Т��L�C����
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(���^)�B²�l�B(���A)�B�]���B
-        (����)�B(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�Ĥ����
-        2.����뭰
-  ���~�G�x����
-  �ƥ�G����b�P�B�Ʊ�Ĳ��Y�뭰�[�J�]�B�Ƥɤ@�š^
-  �[�J�G����(�j12)
-  ����G��ܦ^�p�K�B���s���ԩδ^������
-
-���Т��Т��^������
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �]���B(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�Ĥ����
-        2.����뭰
-  ���~�G�C�N���n��
-  �ƥ�G����b�P�B�Ʊ�Ĳ��Y�뭰�[�J�]�B�Ƥɤ@�š^
-  �[�J�G����(�j12)
-  ����G��ܦ^�p�K�B���s���ԩήL�C����
-
-�p�K
-
-  �ƥ�G1.���W�z�ԧЪ��ѻP�ƥءA�̦��W�[�o����������B�B�y�ѡB�}�N��
-          �n�ѡC
-        2.�M²�l��ͫ�A��}�{�x��A�S�ǻP�S�ڥ[�J�C
-        3.��ĳ���U�P�S�ǥ�͡A�P�f����͢����A�P�S�ڥ�͡A�P�]����͡A
-          �P�Ϫ̥�͡A�P�S�ǥ�͡A�P���Х�͡A�i�J�a�n���ԡC
-  �[�J�G�S��(�x13)�B�S��(�u13)
-
-���Т��Т��a�n����
-
-  ��08�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�Ĥ����
-        2.�B�ƨ�F��_�諰���]�ݾl�����[�����g��ȡ^
-  ���~�G�r����
-  �ƥ�G1.�Ģ��^�X�ĤH���x�b�W��X�{�C
-        2.���B�Ʊ����n�İ}�ɡA�Ĥ���x�|�H�B�Ƭ������ؼСC
-  ��D�G���гӱi��]���Фɤ@�š^
-  �����G�y�����@���A�������������������L���A�M�ᬣ���Цb�n����Y����
-        �f�����x�A�]�����䴩�A��l�����������h�ĭx�A�̫�B�Ʃ���_��
-        �����A��l�����h�^���m�g��C���������i����ɯŦ����M�L�C
-
-�\��
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�s�B�S�Űs�B���B����
-  �ƥ�G�P��ޥ�ͫ�A�Xĳ�|�U�i�J�k��x��C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�Ĥ@���ĥ|��  �Q��f�����Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�p�K
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�J���ѡB�x���ѡB���ۮ�
-  �ƥ�G�P��ޥ�ͫ�A�A�M�w�P���{�γ��ť�͡C�Y�P���{��͡A�h�i�J�L
-        �C���ԡA�P���ť�͡A�h�i�J�^�����ԡC
-  �����G�̦n�P���{��Ϳ�ܮL�C���ԡA�o�g��ȷ|���h�C
-
-���Т��Т��L�C����
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�i��h�o
-  ���~�G��������
-  �ƥ�G1.�Ģ��^�X�Ĥ�S�O��ʶ��X�{�b����C
-        2.�i��@�J�����ЧY�۰ʰh�o�]�ݾl�����[�����g��ȡ^
-  ����G�i�J�}�{��
-
-���Т��Т��^������
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�����h�o
-  ���~�G���Z
-  ��D�G�i���Ӱ����]�i���ɤ@�š^
-  ����G�i�J�}�{��
-
-�}�{
-
-  �D��G�s�B���B���ġB����ѡB������
-  �ƥ�G�P��ޥ�͡A�P���n��͡A�P��ޥ�͡A�P���Х�͡A�i�J�U�򤧾ԡC
-
-���Т��Т��U�򤧾�
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�f���Q����
-  ���~�G���߰��]���^�B��ѵe�u�]�k�^
-  �ƥ�G1.�J���B�Q��B�������H�@�P�B�Ʊ�Ĳ��Y�뭰�Ѥϡ]�B�ƦU�ɤ@�š^
-        2.���J���B�Q��B���������H���뭰�Ѥϫ�A�B�ƨ�F�����A�Q���Y
-          ��U�C
-        3.�Ģ����^�X�ɡA�Q����|�۰ʩ�U�C
-  ��D�G���гӱi��]���Фɤ@�š^
-
-�U��
-
-  �D��G���B���B����ѡB�����ѡB���u
-  �ƥ�G�iĳ���U�P��ޥ�͡B�A�P�f����͡B�L�׿墨�ӿﶵ�A�f�������k
-        �@���C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�Ĥ@���Ĥ���  �}�{�𨾾Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�\��
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�s�B�S�Űs�B���B����
-  �ƥ�G1.�P�i����͡A�P�Ϫ̥�͡A�iĳ���U�P��ޥ�͡A��c���P�m�ҥ�
-          �͢����A�^�ۤv�x��P�x�O��͡A��c���P�m�ҥ�͢����A�o���
-          �a�C
-        2.�^�ۤv�x��P���Щαi����͡A��a���������|�ҡA�A�쥪����
-          �x��A�Ĥ@������A�ĤG��������e�����f�A�_�h����|�Q������
-          �����C���C���۵N�s�׭^���K�i�H�K��C
-        3.�^�ۤv�x��P���Х�͡A�A�P���ӥ�͡A�M���e���L�ݡf�C�P��
-          �Х�͡A��ĳ���U�P���d��͡A��e���Q��K�N�Q�X���f�A�^�ۤv
-          �x��A�A��c���A�A�^�ۤv�x��P���Х�͡A�Y�i�J�s�����ԡC
-
-���Т��Т��s������
-
-  ��06�G���СB�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�K�N�Q����
-  ���~�G���������]�W�^�B�C�P�C�]�k�^
-  ��D�G�i���Ӭ��F�]�i���ɤ@�šA�ño��T�y�M�^
-
-�U��
-
-  �D��G���B���B����ѡB�����ѡB���u
-  �ƥ�G�iĳ���U�P�S�ڥ�͡A�P�S�ǥ�͡A�P���Х�͡A�i�J�}�{���ԡC
-  ���}�G���СB�i��
-
-���Т��Т��}�{����
-
-  ��06�G(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B
-        (����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�]�@�^���`�Q����
-        �]�G�^�B�ƶi�J�}�{��
-        �]�T�^1.��ްh�o
-              2.�B�ƨ�F��n�����]�ݾl�����[�����g��ȡ^
-  �ƥ�G�B�Ƥ@�i�J�}�{���A��ޤj�x�Y�X�{�ä��G�b��_��_�褧���C
-  �����G�y�����@���A�̦n���B�Ʊa�ۨ��߰��A�����`�Q������A�Ҧ�������
-        �W�����A���b�����n��A�̫�A���B�ƶi�J�}�{���C����ޤj�x�X�{
-        ��A�B�ƥߧY����n�������ʡA�K�i���Q�k�X�C
-
-��
-
-  �ƥ�G�iĳ���U�M�K�Х�͡A�i�J�ĤG���C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤG���Ĥ@��  �x�礧�Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-��
-
-  ��D��G���j�B�s���B���Z�B�L��믫�B�S�Űs�B���B���B����
-  �հ��D��G�J���ѡB�x���ѡB�B�y�ѡB���ۮѡB�@����
-  �ƥ�G1.�M�]����͡A��հ���ĳ���U�M�K�Х�͡A��ܡe���I���H���O��
-          �Сf�]�_�h�|�Q�B���^�C
-        2.�^�󫰩x��M²�l��͡A�M�S�ڥ�͡A�M�Ϫ̥�͡A��ĳ���U�M�K
-          �Х�͡A��ܡe�o��ڬO��ު��p�ѡf�]�_�h�|�Q�B���^�C
-        3.�^�x��M�S�ǥ�͡A�M�]����͡A��ĳ���U�M�K�Х�͡A�^�x��M
-          �]����͡A�i�J�^�{���ԡC
-  �����G�ѩ�^�{���Ի����A�̦n���h�R�ǹD��ƥΡC
-
-���Т��Т��^�{����
-
-  ���X�G����
-  ��08�G(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B
-        (����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.���ϰh�o
-        2.�B�ƨ�F��n�������]�ݾl�����[�����g��ȡ^
-  ���~�G���u�]�W�^�B���]�U�^
-  �ƥ�G1.�԰��}�l�e�A�����[�J�C
-        2.�Ģ��^�X�A�ĤH�j�崩�x�X�{�b��_��A��n��]�X�{�ֳ\�ĭx�C
-  ��D�G�����ӱi���]�����ɤ@�š^
-  �����G�������@���A�ĤH�S�h�S�j�A�n���ѳ��ϬO�D�`�x�����ơA�̦n�H��
-        �n�������ؼаk���C�����N���Q�m�\���v�訤�ⷵ��A�êu�~���U��
-        ���׼ĭx�A����l�����h�Ǧ^�X����n�k�C�����������h��n�Ӫ���
-        �H�A�~���|�Q�᭱���ĭx�l�W�C�B�ƾ��i�ण�n���U�Ӿ԰��A�u�n�k
-        ���n�����Y�i�A��l�����h���b���~�����P�ĭx�԰��A�h���Ǹg
-        ��ȡC�Y���W���D�㪺�ܡA�����[��ϥΡC
-
-�^�{
-
-  �ƥ�G�P�]����͡A�i�J�j�����ԡC
-  �[�J�G����
-
-���Т��Т��j������
-
-  ��06�G�����B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB
-        �]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G���D�H�H�H���u����
-  ���~�G�C�N���n�ѡ]�k�U�^�B�s�Y�ѡ]���U�^�B�S�Űs�]�U�^
-  �ƥ�G�ڤ賡���P�Ĥ譺�ⱵĲ�A�άO�N�Ĥ譺�����h�A�Y�i���D��u���ءC
-
-�j��
-
-  �ƥ�G�P�]����͡A�P�S�ǥ�͡A�P�i����͡A�i�J�o�t���ԡC
-  �[�J�G�i��
-
-���Т��Т��o�t����
-
-  ���X�G���СB����(��22)�B�P��(�c22)
-  ��07�G�����B�i���B(����)�B(ÿ�c)�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�����Q����
-  ���~�G�s�x��
-  �ƥ�G�Ģ��^�X�ɡA���е��v�贩�x�X�{�b���W���C
-  ��D�G���гӽ����]���Фɤ@�š^
-
-�o�{
-
-  �ƥ�G�P���Х�͡A��ܨ������άO�즼�n�C
-  �[�J�G�P�ܡB����
-  �����G���F����g��ȡA�̦n��즼�n�Ա�ޡC
-
-���n
-
-  �D��G�J���ѡB���s�ѡB�x���ѡB�B�y�ѡB���ۮѡB�s�Y��
-  �ƥ�G�P�B�@��͡A�P�]����͡A�춰�|�һP������͡A�^ĳ���U�P�B�@��
-        �͡A�P���Х�͡A�i�J���n���ԡC
-
-���Т��Т����n����
-
-  ���X�G�]��
-  ��08�G���СB�����B�����B�i���B�P�ܡB(����)�B(ÿ�c)�B(����)�B(���^)�B
-        ²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�䤯�h�o
-        2.�B�ƨ�F��n�����]�ݾl�����[�����g��ȡ^
-  ���~�G���j��
-  �ƥ�G�Ģ��^�X�ɡA�]���X�{�b�Գ��W��C
-  ��D�G������\�u�]�����ɤ@�šA�\�u���h�o�^
-  �[�J�G�B�@(�c23)
-  ����G�k������
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤG���ĤG��  ����s���x
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �D��G���j�B�s���B���Z�B�L��믫�B�S�Űs�B���B���ġB���u
-  �ƥ�G1.�Y���e���즼�n�Ա�ޡA�h�o�����������C
-        2.�P�B����͢�����A��s�����C
-
-�s��
-
-  �ƥ�G�iĳ���U��A�춰�|�һP���y��͡A���y�[�J�A�A��s�]�P�B�ʥ�͡A
-        �B�ʥ[�J�C�^��ĳ���U�A�P���y��͡A�P���Х�͢����A�i�J���L��
-        �ԡC
-  �[�J�G���y(��23)�B�B��(��23)
-
-���Т��Т����L����
-
-  ��08�G���СB�����B�����B�i���B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        ���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G����
-  ����G�i�Z�Q����
-  ���~�G�B�L���]�U�^�B���������]�k�U�^�B�L�q�믫�]�k�W�^
-  ��D�G1.�i���ӳ��]�]�i���ɤ@�š^
-        2.�����ӱi�Z�]�����ɤ@�šA�ño�쪺�c�^
-
-�s��
-
-  ���L�D��G���s�ѡB�B�y�ѡB�s�Y�ѡB�@���ѡB�p�}�B��
-  �����D��G���j�B�s���B���Z�B�L��믫�B�S�Űs�B���B���ġB���u
-  �ƥ�G1.�������M�B����͡A�^�s���M������͡A�M�B�a��͡A�M���y��͡A
-          ��s�]�M�q������͡A�iĳ���U�C
-        2.�충���M���l��͡A�M���Х�͡A�^�s���J�}�f�[�J�C
-        3.�충���M���l��͡A�M�Ѹ�����͢����A�^�s���M�}�f��͡A�M��
-          �Х�͡A�i�J�n�����ԡC
-  �[�J�G�}�f(��26)
-  �����G�O�o�h�R�ǹD��Ѫ����Y���ԨϥΡC
-
-���Т��Т��n������
-
-  ���X�G�}�f
-  ��08�G���СB�����B�����B�i���B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        ���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G����
-  ����G�䤯�h�o�]�Yť�q�}�f����ĳ�A�h�ݾl�����[�����g��ȡ^
-  ��D�G1.�i���ӧf���]�i���ɤ@�š^
-        2.�����ӧf�m�]�����ɤ@�š^
-  �ƥ�G1.�Yť�q�}�f����ĳ�A�q�̸̭���J�}���A�h�Ĥ�h�𧡤U���@�b�A
-          �B���h����C
-        2.�Y�Ѩ�L�a���J�}���A�h�Ĥ����}�l�D�ʧ����C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤG���ĤT��  �Ѹ��թ��X�s�x
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�s��
-
-  �ƥ�G�M�}�f��͢����A�}�f���h�A�M�i����͡A�M�}�f��͡A�M�i����͡A
-        �충���M���l��͡A�M���Х�͡A�M���l��͢����A�̦��ﻡ�A�B�o
-        �ݡBť���B�o�ݡB���_�A�Ѹ��G�[�J�C
-  ���}�G�}�f
-  �[�J�G�Ѹ��G(��30)
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤG���ĥ|��  ��ޫn���x
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-�s��
-
-  �ƥ�G�P�Z�x��͡A�M�Ѹ��G��͡A�Y�A�P�Ѹ��G��͡A�h�i�J�ձ�Y���ԡA
-        �Y�P�i����͡A�h�i�J�s�����ԡC
-  �����G�̦n�P�Ѹ��G��Ϳ�ձ�Y���ԡA�����P�P�K��o��\�h�g��ȡC
-
-���Т��Т��ձ�Y����
-
-  ���X�G���СB�����B�Ѹ��G�B�����B�i���B�P�ܡB�B�ʡB²�l
-  ��05�G(�B�@)�B(����)�B(ÿ�c)�B���y�B(����)�B(���^)�B(���A)�B�S�ڡB
-        �]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G�L�J���h�o�]�Y�̱q�Ѹ��G���p�ѡA�h�ݾl�����[�����g��ȡ^
-  �ƥ�G���ѻ�����˪L�f�޻��ĭx�i�J�l���A��L�H���b��������q�D���A
-        ���L�J���i�J�l���ɡA�K�|���z���p�A�ĭx�L�O�Τh��|�j�T���C��
-        �V�áA�Ӥv���L��|�X�{�b�������W��ΤU��C
-  ��D�G���гӧ���]���Фɤ@�š^
-  ����G�i�J�s����
-
-���Т��Т��s������
-
-  ���X�G�Ѹ��G�B�i��
-  ��08�G���СB�����B�����B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB���y�B
-        (����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G�����]���Ģ����^�X�ɼĤH�K�|�M�x�^
-  ����G1.�L�J���h�o
-        2.�Ѹ��G�ܨ��ĭx���L³�w�]�ݾl�����[�����g��ȡ^
-  �ƥ�G�Ģ��^�X�ɡA�ĤH���x�X�{�b����C
-  ����G�i�J�s����
-  �����G�������@���ԧСA�@�}�l�n���u�F���M�n���A���L�Ա���ӫ�A����
-        �����L�K�i��ӡA�_�h�n���L�����^�X�i���e���C
-
-�s��
-
-  �ƥ�G�M������͡A�M�Ѹ��G��͡A�M�Ϫ̥�͡A�M�Ѹ��G��͡A��ܨ���
-        ���Ψ즿�L�C�Y�������A�h�i�J�������ԡA�Y�樂�L�A�h�����i�J��
-        ���Y���Ԥ@�C
-  ���}�G���СB���y
-  �����G�̦n���������ԡA���F�i�h�ȸg��ȥ~�A�٥i����ʤѼC�C
-
-���Т��Т���������
-
-  ��11�G�����B�Ѹ��G�B�����B�i���B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        (����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G�����]���Ģ����^�X�ɤv�x�K�����M�h�^
-  ����G1.����Q�����]�ݾl�����[�����g��ȡ^
-        2.�v�x�`���h
-  ���~�G���]�W�^�B�ʤѼC�]�k�W�^�B�r���ѡ]���^
-  ��D�G�����ӱi���]�����ɤ@�š^
-  ����G�����i�J�����Y���Ԥ@
-
-���Т��Т������Y���Ԥ@
-
-  ���X�G�Ѹ��G
-  ��10�G�����B�����B�i���B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB(����)�B
-        (���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�����k��F�n�����]�ݾl�����[�����g��ȡ^
-        2.��ްh�o
-  ����G�����i�J�����Y���ԤG�]����s�ɡ^
-  �����G�۷��x�����@���ԧСA�̦n��Ʀ��@��D��C�������驹������V�k�A
-        ���X�Ӹ��j���Z�N�G�}�b�����_��A��L�Z�N�h�L�����ԡA�`�N����
-        �����ʤO�u�����A�d�U���n��n�צ��L�̪��h���C���C�����������z
-        �|�L�̡A�i�ΨӾצ���ޭx���e�i�A�u�ݯd�U�@�ӥ��������Y�i�C��
-        ���������L����A�b���_�䪺�Z�N�n���t�h������n�ݡA�_�h�ܮe��
-        �K�Q���h�o�C�n�S�O�`�N���O�������藍��h�o�A�_�h�b�����Y��
-        �ԤG����D�ƥ�K�S�F�C�Y�n�m�g��ȮɡA�i���@�ӳ̱j���Z�N�צb
-        �����n�ݡA�����@��Z�N���������A�u�n�������i�J�����A���ԧЫK
-        ���|�����C���]�n�`�N���O�A���ԧФ��ޥΥh�h�ֵ����ȩηl���h��
-        �L�O�A�U�@���ԧг����|�^�_�A�ӼĤH�o�|���s�^�_�ΥX�{�A�]����
-        ���O�d�@�ǹ�O�b�U���ԧФ��C
-
-���Т��Т������Y���ԤG
-
-  ���X�G�e���ԧдݾl����
-  �^�X�G�����]�]�t�e���ԧФw���Ӫ��^�X�ơ^
-  ����G1.�����k���_�����]�ݾl�����[�����g��ȡ^
-        2.��ްh�o
-  ��D�G�����ӮL�J���]�����ɤ@�šA�ño��C���C�^
-  �����G��[�x�����ԧСA�̦n�N�����a��U������G�}�A�u�n����������^
-        �X�A�����K�i�k���_�����F�C�p�G��b�פ����Ĥ誺��աA�]�i��
-        �u�Ӿ��I�A�u�n�B�Ƥ��h�o�ӥ�����k���A�K������F�C�ܩ��ݯd
-        �h�ֳ�����o�g��ȡA���S�O�t�~�@�^�ƤF�C
-
-���L
-
-  �ƥ�G�P�B�a��͡A�P�|�¥�͡A�P�Ѹ��G��͡C
-  �[�J�G���СB���y
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤT���Ĥ@��  ��{�n�����A�Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-���L
-
-  �D��G���s�ѡB�B�y�ѡB�s�Y�ѡB�@���ѡB�p�}�B��
-  �ƥ�G�P�Ѹ��G��͢����A�i�J�������ԡC
-
-���Т��Т���������
-
-  ��08�G���СB�����B�Ѹ��G�B�����B�i���B�P�ܡB(�B�@)�B(����)�B(ÿ�c)�B
-        �B�ʡB���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B
-        �S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.���^�X���������B�]�ݾl�����[�����g��ȡ^
-        2.�P��h�o
-  ���~�G�}�N���n��
-  ��D�G�����ӥ̹�]�����ɤ@�š^
-
-����
-
-  �����D��G�S�Űs�B���B���ġB����ѡB����ѡB������
-  ���L�D��G���s�ѡB�B�y�ѡB�s�Y�ѡB�@���ѡB�p�}�B��
-  �����D��G���j�B�s���B���Z�B�L��믫�B�S�Űs�B���B���ġB���u
-  �ƥ�G1.�P�|�¥�͡A�P�Ѹ��G��͡A�즿�L�s�]�P�ӤH��͡A�춰�|�һP
-          ���}��͡A���}�M���k�[�J�C
-        2.�^����ĳ���U�P�i�}��͡A�P�Ѹ��G��͡A��ܧ𥴪Z���B�s����
-          �۶��C
-  �[�J�G���}(��30)�B���k(�x30)
-  ���}�G���СB�����B�i��
-
-���Т��Т��Z������
-
-  ��06�G�Ѹ��G�B�����B���}�B�P�ܡB���k�B(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        ���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G����
-  ����G1.���۳Q����
-        2.�d�ӫq�ܡ]�ݾl�����[�����g��ȡ^
-  ���~�G��۾��]�W�^�B���������]�k�^
-  �ƥ�G�d�Ӥ@��Ĳ��B�ơA�K�|�뭰�q�ܡC
-  ��D�G�P�ܳӪ��ۡ]�P�ܤɤ@�š^
-  �[�J�G�d�ӡ]�o31�^
-  ����G�^������
-
-���Т��Т��s������
-
-  ��06�G�Ѹ��G�B�����B���}�B�P�ܡB���k�B(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        ���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�B�׳Q����
-        2.�B�ק뭰�]�ݾl�����[�����g��ȡ^
-  ���~�G������
-  �ƥ�G1.���v�賡���V�L����������A�D�D�a�a�⪺�S�򶤫K�|�X�{�b�F�n
-          ��C
-        2.�B�פ@��Ĳ��B�ơA�K�|�뭰�C
-  ��D�G�����Ө��D�a�]�����ɤ@�š^
-  ����G�^������
-
-���Т��Т��۶�����
-
-  ��06�G�Ѹ��G�B�����B���}�B�P�ܡB���k�B(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB
-        ���y�B(����)�B(���^)�B²�l�B(���A)�B�S�ڡB�]���B(����)�B�S�ǡB
-        (����)�B(�ժZ)
-  �^�X�G����
-  ����G1.���d�Q����
-        2.���d�뭰�]�ݾl�����[�����g��ȡ^
-  ���~�G�B�y��
-  �ƥ�G1.���v�賡���V�L�k�������A�Ĥ贩�x�K�|�X�{�b�������F�_��C
-        2.���d�@��Ĳ��B�ơA�K�|�뭰�C
-  ��D�G�B�ʳ��j�s�]�B�ʤɤ@�š^
-  ����G�^������
-
-����
-
-  �ƥ�G�P���}��͡A�P�Ѹ��G��͡A�i�J���F���ԡC
-  �[�J�G���СB�����B�i��
-
-���Т��Т����F����
-
-  ��10�G���СB�����B�Ѹ��G�B�����B�i���B���}�B�P�ܡB���k�B(�B�@)�B
-        (����)�B(ÿ�c)�B�B�ʡB���y�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.���ȳQ����
-        2.�Q���ϫq�]�Y�O�g�ѼB�Ʊ�Ĳ�뭰�A�h�ݾl�����[�����g��ȡ^
-  ���~�G�^�����C�]�k�W�^�B�C�N���n�ѡ]�U�^
-  �ƥ�G1.���v�賡���V�L������ɡA�Ĥ�K�|�I�i���p�A�y���v��L�O���l
-          ���@�b�A�Ĥ�h�𧡷l���@�b�C
-        2.�Q���@��Ĳ��B�ơA�K�|�뭰�ϫq�C
-        3.���лP������D��A�Q����|�뭰�ϫq�C
-  ��D�G���гӶ����]���Фɤ@�š^
-
-���F
-
-  �D��G����ѡB����ѡB�����ѡB�����ѡB�x���ѡB�B�y��
-  �ƥ�G�P�Q����͡A�Q���[�J�A��x��P������͡A�����[�J�C
-  �[�J�G����(��33)�B�Q��(�Z33)
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤT���ĤG��  ��{�Ҧ��v���ɪ��x
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �ƥ�G1.�P�Ѹ��G��͡A�P��x��͡A�P�|�¥�͡A��������A�P�Ѹ��G��
-          �͡C
-        2.�P�Ѹ��G��͢����A�i�J���w���ԡC
-
-���Т��Т����w����
-
-  ���X�G�Ѹ��G
-  ��10�G���СB�����B�����B�����B�i���B�Q���B���}�B�P�ܡB���k�B(�B�@)�B
-        (����)�B(ÿ�c)�B�B�ʡB���y�B(����)�B(���^)�B²�l�B(���A)�B
-        �S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)
-  �^�X�G����
-  ����G1.�P��h�o
-        2.�Ĥ贩�x�X�{�e���⢳�ӳ�ֹ�]�ݾl�����[�����g��ȡ^
-  ���~�G���j��]���^�B���S�ѡ]�_�^
-  �ƥ�G1.���v�賡������ĭx�ɫK�|�Q�o�{�A���ɼĤ贩�x�X�{�b�k��A��
-          �}�l�����X���C
-        2.�Ģ����^�X�Ĥ贩�x�X�{�b�k��C
-  ��D�G���гӧf�X�]���Фɤ@�š^
-  �����G�����ӳt�׸��֪��H�h���⢳�ӳ�ֹ�Y�i�C
-
-����
-
-  �ƥ�G1.�P�Ѹ��G��͡A�P��x��͡A�P�Ѹ��G��͡A���������|�һP���{
-          ��͡A���{�[�J�A�즿�L�s�]�P�O�m��͡A�O�m�[�J�C
-        2.�^����ĳ���U�A�P�e�Υ�͡A�P�]����͡A�P�e�Υ�͡A�P��x��
-          �͡A�P�i����͡A��Զ����P�x�t��͡A�P�e�Υ�͡A�iĳ���U�P
-          �e�Υ�͡A�e�Υ[�J�C
-  �[�J�G�e��(��34)�B���{(�o30)�B�O�m(�o30)
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤT���ĤT��  �q�{�𲤾Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �����D��G�S�Űs�B���B���ġB����ѡB����ѡB������
-  ���L�D��G���s�ѡB�B�y�ѡB�s�Y�ѡB�@���ѡB�p�}�B��
-  �����D��G���j�B�s���B���Z�B�L��믫�B�S�Űs�B���B���ġB���u
-  ���F�D��G����ѡB����ѡB�����ѡB�����ѡB�x���ѡB�B�y��
-  �ƥ�G�P�i�Q��͡A�P�Ѹ��G��͡A�P�k����͡A�P�e�Υ�͡A�P�Ѹ��G��
-        �͡A�k���[�J�A�ña�ⶤ���ܫ��C
-  �[�J�G�k��(��34)
-  ���}�G���СB�����B�Ѹ��G�B�i���B���y�B²�l
-  �����G�b�������}�e�A�̦n�h�R�ǫ�_�Ϊ��D�㵹���СA�H�K�b�����ԾԦ�
-        �F�C
-
-��
-
-  �ƥ�G�P�B����͡A��e���iĳ���U�C
-
-�e
-
-  �D��G�S�Űs�B���B���ġB���s�ѡB���j�B�s���B���Z�B���u
-  �ƥ�G�P�Q����͡A�P�Ϫ̥�͡A�P�e�Υ�͢����A�i�J�ܤ��Ԥ@
-  �����G�Y�i�H���ܡA���ѻP�ܤ��ԫO�@�e�Ϊ��Z�N�h�ǹD��A��U�e�ΧK��
-        �Ԧ��C
-
-���Т��Т��ܤ��Ԥ@
-
-  ���X�G�e��
-  ��09�G�����B�����B�Q���B���{�B���}�B�P�ܡB�k���B���k�B(�B�@)�B
-        (����)�B(ÿ�c)�B�B�ʡB(����)�B(���^)�B(���A)�B�S�ڡB(�d��)�B
-        �]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G1.�B�Q�h�o
-        2.�Ģ��^�X�ɡA�v�x���h
-        3.�e�Φ��`
-  �����G�e�Ϊ��ͦ����C�@�}�l�e�γQ�ĤH����A�n�a���䢲��Z�N�O�@�A��
-        �n����L���ʡA�@�ӥ[�j���@�O�A�G�Ӥ]�׶}�M�L���������C�e�ε�
-        �藍��Ԧ��A�_�h�᭱�K�S�L�F�C�p�G���䢲��Z�N�����Ť����A��
-        �n�O���}����A�Z�N��������ǬO�ܭ��n���A�䨭��X�{���Z�N�O�b
-        �Ģ��B���B���쪺�I��A�Q�γo�Ǹ��j�Z�N���L���^�X�K���\�F�C
-
-�e
-
-  �ƥ�G1.�P������͡A�����P�P�����h�C
-        2.�P�Z�x��͡A�P�i����͡A�P�Y�C��͡A�Y�C�[�J�A�P�e�Υ�͡A
-          �i�J�ܤ��ԤG�C
-  ���}�G�����B�P��
-  �[�J�G�Y�C(��34)
-
-���Т��Т��ܤ��ԤG
-
-  ���X�G�����B�Ѹ��G�B���y�B²�l
-  ��08�G�����B�Y�C�B�e�ΡB�i���B�Q���B���{�B���}�B�k���B���k�B(�B�@)�B
-        (����)�B(ÿ�c)�B�B�ʡB(����)�B(���^)�B(���A)�B�S�ڡB(�d��)�B
-        �]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�B�Q�Q����
-  �ƥ�G1.�Ģ��^�X�ɡA�Ѹ��G���v�贩�x�X�{�b���U��C
-        2.�Ģ����^�X�A�Τv�x�G�񫰳��ɡA�Ĥ贩�x�X�{�b�W��C
-        3.�d�t�B�p�ɡB�O�[�B�d���B���Y���H�@�J��B�ƫK�뭰�]�B�ƦU��
-          �@�šA�ӧd���B���Y�|�d�U�������԰��^�C
-  ��D�G�i���ӱi���]�i���ɤ@�š^
-  �[�J�G���Y(�o36)�B�d��(��37)�B�d�t(�o37)�B�p��(��37)�B�O�[(��36)
-
-�e
-
-  �ƥ�G�P�Ϫ̥�͡A�P�Ѹ��G��͢����A�i�J���������ԡC
-  ���}�G�Ѹ��G
-
-���Т��Т�����������
-
-  ���X�G�i��
-  ��08�G�����B�����B�Y�C�B�e�ΡB�Q���B(���Y)�B���{�B(�d��)�B(�d�t)�B
-        (�p��)�B���}�B�k���B���k�B(�B�@)�B(����)�B(ÿ�c)�B�B�ʡB���y�B
-        (����)�B(���^)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B
-        (����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�i�|�h�o
-  ���~�G���x���i
-  �ƥ�G���v�賡���i�J���������̭��I�J�ɡA�Ĥ谨�W���x�X�{�b���~�U��C
-  ��D�G�i���Ӱ��W�]�i���ɤ@�šA�P�ɰ��W�v�⪺�����������h�^
-
-������
-
-  �ƥ�G�P�Ѹ��G��͡A�P���W��͢����A�M�w�O�_�浹���W��C�Y�浹���W
-        ��A�h���L�������ԡA�����i�J�ĤT���ĥ|���A�ño��������s�C�_
-        �h�i�J�e���C
-  �[�J�G�Ѹ��G�A���W(��41)�B����(��40)
-  �����G�̦n��ܦ������ԡA���M�l���������s�A���o�i���B�Ƥ@���ɳ\�h��
-        �šC
-
-�e
-
-  �ƥ�G�P�Ѹ��G��͡A�i�J�������ԡC
-
-���Т��Т���������
-
-  ��08�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B(�B�@)�B
-        (����)�B(ÿ�c)�B�B�ʡB���y�B(����)�B(���^)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m
-  �^�X�G����
-  ����G1.�B���h�o
-        2.�B���뭰�]�ݾl�����[�����g��ȡ^
-  ���~�G�o�ۨ��]���W�^�B�B�L���]���U�^
-  �ƥ�G1.�s�F�B���v�B�N�m�B�d�Z�B�����B�F���i���H�@��Ĳ��B�ƫK�|��
-          ���]�B�ƦU�ɤ@�šA�B�Ҧ��뭰�Z�N���d�U�������԰��^�C
-        2.�B���@��Ĳ��B�ƫK�|�뭰�C
-  �[�J�G�s�F(��37)�B���v(��38)�B�N�m(�r37)�B�F���i(��37)�B�d�Z(�o36)�B
-        ����(�Z36)
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤT���ĥ|��  �~���𨾾Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �D��G�B�L���B�o�ۨ��B����Z�B�L�q�믫�B�S�Űs�B�Ѱs�B���B����
-  �ƥ�G�P�Z�x��͡A�P�Ѹ��G��͡A�i�J�ˤf�����ԡC
-
-���Т��Т��ˤf�����Ԥ@
-
-  ��11�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�i���h�o
-  ��D�G�i���ӹp�ɡ]�p�ɰh�o�^
-  ����G�����i�J�ˤf�����ԤG�]����s�ɡ^
-  �����G�]�U���ԧФv�x�������ȻP�L�O�����|���s�^�_�A�]���n�O�d�@�Ǩ�
-        �U���ԧШϥΡC
-
-���Т��Т��ˤf�����ԤG
-
-  ���X�G�e���ԧдݾl����
-  �^�X�G�����]���]�A�e���ԧФw���Ӫ��^�X�ơ^
-  ����G�i���h�o
-  ���~�G�r���ѡ]���W�^�B�j�R�ѡ]���^
-  ��D�G�i���ӹp�ɡ]�p�ɰh�o�^
-
-�ˤf��
-
-  �ƥ�G�P�Ѹ��G��͡A��ܼW���������ζi��w�x�s�C
-  �����G�o�䪺��ܷ|�v�T�᭱���@�Ը��u�A�`�@���|�ءG
-          1.�������B�ѿ��s���@�A�~��
-          2.�������B�w�x�s�A�~��
-          3.�w�x�s�B�ѿ��s���G�A�~��
-          4.�w�x�s�B�~��
-
-���Т��Т�����������
-
-  ��09�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�L�J�w�Q����
-  ���~�G���S�ѡ]���W�^�B�̡]���U�^�B�Ѱs�]�k�W�^�B����Z�]�k�U�^
-  �ƥ�G�Ģ��B�����B�����^�X�U�|�X�{���ӼĤ贩�x�����A�W�袰�ӡA�U��
-        ���ӡC
-  ��D�G�Y�C�ӮL�J�w�]�Y�C�ɤ@�š^
-
-������
-
-  �ƥ�G�P�Ѹ��G��͡A��ܤѿ��s���Ԥ@�Ωw�x�s���ԡC
-
-���Т��Т��w�x�s����
-
-  ��12�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�L�J�W�h�o
-  ���~�G�C�n�ѡ]�W�^�B���������]�U�^�B�s�Y�ѡ]�k�W�^
-  �ƥ�G1.�Ģ��^�X�ɡA�}�̵����x�X�{�b����C
-        2.�����@��Ĳ��B�ƧY�뭰�]�B�Ƥɤ@�šA�����ïd�U���U�@�ԡ^�C
-  ��D�G�����ӮL�J�W�]�����ɤ@�š^
-  �[�J�G����(��42)
-  �����G�@�}�l�������b�������񪺢��Ӽĭx�����A�M��ߧY�����G�}�b��L
-        ���A���ĤH���x�@�X�{�A�Y���t�N�������A�̫ᵥ�ݼĤ�D�O�����e
-        �ӧY�i�C
-
-�w�x�s
-
-  �ƥ�G�P�Ѹ��G��͡A�Y���e���g�������A�h��ܤѿ��s���ԤG�κ~�����ԡA
-        �_�h�i�J�~�����ԡC
-
-���Т��Т� �ѿ��s���Ԥ@
-
-  ��11�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�}�̰h�o
-  ���~�G����
-  �ƥ�G1.�Ģ��^�X�ɡA�L�J�W�����x�X�{�b�k�U�C
-        2.�����@��Ĳ��B�ƧY�뭰�]�B�Ƥɤ@�šA�����ïd�U���U�@�ԡ^�C
-  ��D�G�����ӮL�J�W�]�����ɤ@�š^
-  �[�J�G����(��42)
-
-�ѿ��s
-
-  �ƥ�G�P�Ѹ��G��͡A�i�J�~�����ԡC
-
-���Т��Т� �ѿ��s���ԤG
-
-  ��09�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m
-  �^�X�G����
-  ����G�L�J�w�Q����
-  ���~�G����
-  ��D�G�Y�C�ӮL�J�w�]�Y�C�ɤ@�š^
-
-�ѿ��s
-
-  �ƥ�G�P�Ѹ��G��͡A�i�J�~�����ԡC
-
-���Т��Т��~������
-
-  ��12�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m
-  �^�X�G����
-  ����G��x�h�o
-  ���~�G���]�W�^�B�����������]�k�U�^
-  �ƥ�G�Ģ����^�X�ɡA������x�X�{�b�k�W�C
-  ��D�G����ӧd���]�d���h�o�^
-
-�~��
-
-  �ƥ�G�P�Ѹ��G��͡A�i�J���������ԡC
-
-���Т��Т�����������
-
-  ��13�G�����B�����B�Y�C�B�Ѹ��G�B�e�ΡB���W�B�i���B�Q���B(���Y)�B
-        ���{�B(�d��)�B(�s�F)�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m
-  �^�X�G����
-  ����G��ްh�o
-  ���~�G���N���n��
-  ��D�G���W���e�w�]���W�ɤ@�šA���e�w���h�o�^
-
-�~��
-
-  �ƥ�G�P�Ѹ��G��͢����A��e�O�f�A�i��~�����C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĤT���Ĥ���  ���~�ذ�x
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-���Т��Т�������
-
-  ���X�G���СB�����B�P�ܡB���j(��40)�B����(�o40)�B����(��40)
-  �^�X�G����
-  ����G1.�ĤH����
-        2.���Ш�F�谼����
-        3.���Ц��`
-  ���~�G���x�ѡ]�k�^�B���x�ѡ]�U�^�B���]���^
-  �ƥ�G�Ģ��^�X�ɡA�Ĥ贩�x�X�{�b�k��C
-  �����G���Ъ��ͦ����C�ѩ�o��L�k����Z�N�A�]���s�[�J�����j��������
-        �H���۹��񢴢��Ū��ĭx�A��o�۷����z�A�u�వ���ΨӼȮɾצ�
-        �ĭx�e�i���ΡC�Ӥ��e�Y���n�n�V�m�����B�P�ܪ��ܡA�H���Ť���
-        ���������p�A��u��R�����ǡC���Y�ϧV�O�V�m�A�]�u�b�����X�ť�
-        �k�A�n�O�J�ĤH�]�۷��x���C�̦n����k�K�O���Q�Τ��j���H�N���
-        �ĤH�o��b�����˪L�k���]�Q�δ˪L�[�j���@�^�A�Ӧb���j���H�Q��
-        ���e�A���е��T�H���q���e�ġA�æ�����U�P�ܲo�̲Ĥ@�i�e��ĭx�C
-        �M��A�γѤU�������o�̳̫�@�i�ĭx�A�p�����Ф~�����|�k�X�C�`
-        ���A���ԧ����е��藍��Ԧ��A�_�h�᭱�K�S�L�F�C
-
-����
-
-  �ƥ�G�P�Z�x��͡A�P�Ѹ��ԥ�͢����A�M�w�O�_�����A�Y�ﵲ���h�o��]
-        �l�L�k�A�ê����i�J�ĥ|���A�_�h�����i�J�賮���ԡA�P�ɻ����B��
-        ���G�B���W�B�������}�C
-  ���}�G�����B�Ѹ��G�B���W�B����
-
-���Т��Т��賮����
-
-  ���X�G����(��41)�B�i�c(��41)�B�B�I(��41)
-  ��08�G�����B�Y�C�B�e�ΡB�i���B�Q���B(���Y)�B���{�B(�d��)�B(�s�F)�B
-        (����)�B(�d�t)�B(�p��)�B���}�B�k���B���k�B(���v)�B(�N�m)�B
-        (�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B(�d�Z)�B(����)�B
-        (���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B
-        (����)�B�S�ǡB(����)�B(�ժZ)�B�O�m
-  �^�X�G����
-  ����G�]�ٰh�o
-  ��D�G1.�����ӧ����]�����ɤ@�š^
-        2.�i�c���±ܡ]�i�c�ɤ@�š^
-  �[�J�G�����B�i�c�B�B�I
-
-�賮
-
-  �D��G���s�ѡB�B�y�ѡB�s�Y�ѡB�S�Űs�B���B���ġB�����ѡB�����
-  �ƥ�G�P�Ѹ��ԥ�͢����A�M�w�O�_�����A�Y�ﵲ���h�o��d�l�L�k�A�ê�
-        ���i�J�ĥ|���A�_�h�����i�J�U�����ԡC
-  �����G�U�����Ԩä��n���A�i�H���ܿﵲ�����n�A�Y�n�i�J�U�����ԡA�̦n
-        ���ѾԤH���h�a�ǫ�_�L�O�Τh�𪺹D��C
-
-���Т��Т��U������
-
-  ��14�G�����B�Y�C�B�����B�e�ΡB�i���B�Q���B(���Y)�B���{�B(�d��)�B
-        (�s�F)�B�i�c�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B���k�B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �^�X�G����
-  ����G�����h�o
-  ��D�G�P���ӨF���i�]�F���i�Q�����`�^
-  ����G�����i�J�ĥ|��
-  �����G�۷��x�����@���ԧСA�@�}�l�v�x���J���p�ӾɭP�L�O�P�h��j�T��
-        �C�A�]���������X��j�T��_�L�O�P�h�𪺰��}�B�]���B�e�ΡB�S��
-        ���H�A�ӧ�x�����O�A������Z�N�Q���j�}�G���n��A�]�������J
-        �ӿ�ܧG�󦹦a���Z�N�A�_�h���O�Q���������C�o����Z�N�������
-        �Ǭ��Ģ��B���B���B���B������A�B�ܤ֭n�����W��u�ѨΪ��Z�N�A
-        �H�΢��W���_�L�O�Τh�𪺪Z�N�C�ܩ�G�󥪤W�誺�Z�N�A�]�q�D
-        �U�����b�@�ΡA�u�ݢ��W�Z�N�Y�i�צ������A�]���i���f�W�}�A�M��
-        �b��趰�����U��_�L�O�Τh��Y�i�C�`�N���ԧФ���ԱѡA�_�h�K
-        �C�������F�C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĥ|���Ĥ@��  �ܦ^��{�x
-�|�w�w�w�w�w�w�w�w�w�w�w�}
-
-����
-
-  �ƥ�G1.�Y���e���L�賮���ԡA�h�@�}�l�����B�i�c�B�B�I���H�[�J�C
-        2.�P�Ѹ��G��͢����A��ܬO�_�����_ŧ���C
-        3.�P���}��͡A�즿���C
-  �[�J�G����(��41)�B�i�c(��41)�B�B�I(��41)
-  �����G��ܬO�_�����_ŧ���A�|�v�T��᭱���e�i���u�C�Y��ܬ����A�h��
-        ��N�Ȯɥ��h�����B�e�ε������W�Z�N�A���o�i�ۭ��쫸���A�H�ή�
-        �줻���B�T�����n�F��A�P�������B�P�ܵ��H�]�|�k���C�ߤ@�`�N��
-        �O�A�_ŧ���b�ۭ��}�f���e���ॢ�ѡA�_�h�K�ۭ�����F�C�Y�O���
-        �������_ŧ���K�S���o�ӧx�Z�C���Y�i�H���ܡA�٬O��������n�ǡC
-
-����
-
-  �D��G���s�ѡB�B�y�ѡB���S�ѡB�s�Y�ѡB�s�x�ѡB�����ѡB����ѡB�i���
-  �ƥ�G1.�P�]�v��͡A�P�Ѹ��G��ͨ⦸�A�M�w�O�_�Ю]�v��X��A�Y���ܽСA
-          �h�]�v���U�����������C
-        2.�P�Ѹ��G��͡A�i�J�������ԡC
-  �����G�Y�Ю]�v��X��A�h�{���Ԥ@�N�ٲ��A���F��o���h���g��ȡA��
-        �O���ܽФ���n�C
-
-���Т��Т���������
-
-  ���X�G�Ѹ��G
-  ��06�G�����B�����B�Y�C�B�����B�e�ΡB���W�B�i���B�Q���B(���Y)�B���{�B
-        (�d��)�B(�s�F)�B�i�c�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-        �B�ʡB���y�B²�l�B�S�ڡB�S�ǵ������H�C
-  �^�X�G����
-  ����G�䤯�Q����
-  ���~�G���]�W�^�B�C�n�ѡ]�k�W�^�B���N���n�ѡ]���^
-  �ƥ�G���ڭx�ĤJ�����ɡA�ĤH���x�X�{�b�k�U���A�Y���Х����`�ɡA�v��
-        ���x�Z�N�H�H�H�X�{�b���U���C
-  ��D�G�H�H�H�ӱ䤯�]�ݾl�����[�����g��ȡ^
-
-����
-
-  �D��G�B�L���B�o�ۨ��B����Z�B�L�q�믫�B�r���ѡB�Ѱs�B�̡B��
-  �ƥ�G1.�iĳ���U�P�Ѹ��G��͡A�P������͢����A��ܽг����h�𥴫n�p
-          �ηs���C
-        2.�P�Ѹ��G��͡A�Y���e��ܫn�p�A�h�i�J�s�����ԡA�_�h�i�J�n�p
-          ���ԡC
-  �����G��ܽг����h�𥴫n�p�|������P�ǡC
-
-���Т��Т��s������
-
-  ���X�G�Ѹ��G
-  ��08�G�����B�����B�Y�C�B�����B�e�ΡB���W�B�i���B�Q���B(���Y)�B���{�B
-        (�d��)�B(�s�F)�B�i�c�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-        �B�ʡB���y�B²�l�B�S�ڡB�S�ǵ������H�C
-  �^�X�G����
-  ����G1.�_�T�h�o
-        2.�ڭx����L³�w�]�ݾl�����[�����g��ȡ^
-  ���~�G�i���
-  �ƥ�G�Ģ��^�X�ɡA�Ĥ贩�x�X�{�b�W��Υ��U�C
-  ��D�G�i���Ӥ_�T�]�i���ɤ@�š^
-
-�s��
-
-  �ƥ�G�P�Ѹ��G��͡A�Y���e���ܽЮ]�v��X��A�h�i�J�{���Ԥ@�A�_�h�i
-        �J�{���ԤG�C
-  �[�J�G�B�^(��38)�B�}��(��39)�B��Ρ]��40�^�B�̹�]�r40�^
-
-���Т��Т��n�p����
-
-  ���X�G�Ѹ��G
-  ��08�G�����B�����B�Y�C�B�����B�e�ΡB���W�B�i���B�Q���B(���Y)�B���{�B
-        (�d��)�B(�s�F)�B�i�c�B(����)�B(�d�t)�B(�p��)�B���}�B�k���B
-        �����B���k�B(���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B
-        �B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B
-        (���A)�B�S�ڡB(�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B
-        �O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-        �B�ʡB���y�B²�l�B�S�ڡB�S�ǵ������H�C
-  �^�X�G����
-  ����G1.�}�̰h�o
-        2.�����^�X��������y��ֹ�]�ݾl�����[�����g��ȡ^
-  ���~�G���S�ѡ]���W�^�B�����������]�k�W�^�B�����ѡ]�W�^
-  �ƥ�G�Ģ����^�X�ɡA�Ĥ�I�i���p�A�ڤ�L�O�Τh�𧡷|��b�A�ӼĤ贩
-        �x�X�{�b�W��A�ö}�l�D�ʥX���C
-  ��D�G�i�c�ӮL�J�|�]�i�c�ɤ@�š^
-  �����G�Q�b�����^�X��������y��ֹ��b�����F�ǡA���p��í��í�����覡
-        �i��C
-
-�n�p
-
-  �ƥ�G�P�Ѹ��G��͡A�Y���e���ܽЮ]�v��X��A�h�i�J�{���Ԥ@�A�_�h�i
-        �J�{���ԤG�C
-  �[�J�G�B�^(��38)�B�}��(��39)�B��Ρ]��40�^�B�̹�]�r40�^
-
-���Т��Т��{���Ԥ@
-
-  ���X�G�Ѹ��G
-  ��08�G�����B�����B�Y�C�B�����B�e�ΡB���W�B�̹�B�i���B�Q���B(���Y)�B
-        ���{�B��ΡB(�d��)�B(�s�F)�B�i�c�B(����)�B�B�^�B(�d�t)�B
-        (�p��)�B���}�B�k���B�����B���k�B�}���B(���v)�B(�N�m)�B(�B�@)�B
-        (����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B
-        (����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B(����)�B
-        �S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-       �B�ʡB���y�B²�l�B�S�ڡB�S�ǵ������H�C
-  �^�X�G����
-  ����G�i��h�o
-  ���~�G�����ѡ]���^�B���u�]�k�U�^�B�r���ѡ]�W�^
-  �ƥ�G1.�Ģ��^�X�ɡA�Ĥ贩�x�X�{�b�k��C
-        2.�Ģ����^�X�ɡA�Ĥ贩�x�X�{�b�W��C
-  ��D�G�i���ӱi��]�i���ɤ@�š^
-  ����G�����i�J�{���ԤG
-  �����G���N�����a��k�U��������G�}�A���Ĥ@��Ĥ贩�x�X�{�ɥ[�H�����A
-        �A��ӳB���ĤG��Ĥ贩�x����ӡC
-
-���Т��Т��{���ԤG
-
-  ���X�G�Ѹ��G
-  ��08�G�����B�����B�Y�C�B�����B�e�ΡB���W�B�̹�B�i���B�Q���B(���Y)�B
-        ���{�B��ΡB(�d��)�B(�s�F)�B�i�c�B(����)�B�B�^�B(�d�t)�B
-        (�p��)�B���}�B�k���B�����B���k�B�}���B(���v)�B(�N�m)�B(�B�@)�B
-        (����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B(�d�Z)�B(����)�B(���^)�B
-        (����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B(����)�B
-        �S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-        �B�ʡB���y�B²�l�B�S�ڡB�S�ǵ������H�C
-  �^�X�G�����]�Y���L�{���Ԥ@�A�h�^�X�Ƨאּ�����^
-  ����G�L�J���Q����
-  ���~�G�P�ҤѮѡ]���U�^�B�C�N���n�ѡ]�k�W�^�B���N���n�ѡ]�k�U�^
-  �ƥ�G1.�ڭx�i���a�b�k��Q���ɡA�Q���Y�|��U�C
-        2.�ڭx����L�J���ɡA�Y���Х����`�A�h���ХX�{�ê����i���D�C
-  ��D�G1.�i���Ӯ}�̡]�i���ɤ@�š^
-        2.���гӮL�J���]���Фɤ@�š^
-  �[�J�G���С]�Y�����_ŧ���A�h�����B�P�ܡB���j�B���֡B���ƥ�|�[�J�^
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĥ|���ĤG��  ����M���Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�{
-
-  �D��G�Ѱs�B�̡B���B�r���ѡB���S�ѡB�s�x�ѡB�p�}�B�ѡB���B��
-  �ƥ�G�P�Ѹ��G��͡A�Y���e�����_ŧ���A�h�i�J���ܤ��ԡA�_�h�i�J����
-        ���ԡC
-
-���Т��Т����ܤ���
-
-  ���X�G�����B�e�ΡB���W�B�Q���B�k���B�B�ʡB���y�B²�l�B�S�ڡB�S��
-  �^�X�G����
-  ����G1.�q�L�Q����
-        2.�e�ΰh�o�]���ѡ^
-  ���~�G�����]�W�^�B�}�N���n�ѡ]�k�W�^�B�T���]�k�^
-  �ƥ�G1.�{�w�B�i��B���a���@�H�@��Ĳ�차�W�A�Y�뭰�ïd�U�������԰�
-          �]���W�ɤ@�š^�C
-        2.�����@��Ĳ�ڭx�A�Y�뭰�ïd�U�������԰��C
-  ��D�G�Q���Ӱq�L�]�Q���ɤ@�š^
-  �[�J�G����(��50)�B�{�w�B�i��B���a
-  ����G���ѮɡA�i�J�\�����Ԥ@�A�_�h�����i�J���w���ԡ]����s�ɡ^
-  �����G�ѩ�U���ԧФv�x�������Ȥ��|��_�A�]���n�d�@�ǨѤU���ԧШϥΡC
-
-���Т��Т����w����
-
-  ���X�G�e���ԧдݾl����
-  �^�X�G�����]�t�e���ԧФw���Ӧ^�X�ơ^
-  ����G1.��u�Q����
-        2.�e�ΰh�o�]���ѡ^
-  ���~�G���x��
-  �ƥ�G�}�f�@��Ĳ�ڭx�A�Y�뭰�ïd�U�������԰��C
-  ��D�G�����ӱi���]�����ɤ@�š^
-  �[�J�G�}�f(��52)
-  ���}�G�{�w�B�i��B���a
-  ����G���ѮɡA�i�J�\�����Ԥ@�A�_�h�i�J�\�����ԤG
-
-���Т��Т���������
-
-  ���X�G�Ѹ��G
-  ��08�G���СB�����B�����B�Y�C�B�����B�e�ΡB���W�B�̹�B�i���B�Q���B
-        (���Y)�B���{�B��ΡB(�d��)�B(�s�F)�B�i�c�B(����)�B�B�^�B
-        (�d�t)�B(�p��)�B���}�B�k���B�����B���k�B�}���B(���v)�B(�N�m)�B
-        (�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B(�d�Z)�B(����)�B
-        (���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B
-        (����)�B�S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �^�X�G����
-  ����G��u�Q����
-  ���~�G���x�ѡ]���W�^�B�����������]�W�^
-  �ƥ�G�}�f�@��Ĳ�ڭx�����Y�뭰�C
-  ��D�G�i���ӱi���]�i���ɤ@�š^
-  �[�J�G�}�f(��54)
-  ����G�����i�J�\�����Ԥ@
-
-���Т��Т��\�����Ԥ@
-
-  ���X�G�Ѹ��G
-  ��08�G���СB�����B(����)�B�����B�Y�C�B�����B�e�ΡB(����)�B���W�B
-        �̹�B(�}�f)�B�i���B�Q���B(���Y)�B���{�B��ΡB(�d��)�B(�s�F)�B
-        �i�c�B(����)�B�B�^�B(�d�t)�B(�p��)�B���}�B(�P��)�B�k���B�����B
-        ���k�B�}���B(���v)�B(���j)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B
-        (�F���i)�B(����)�B�B�ʡB(����)�B���y�B(�d�Z)�B(����)�B(���^)�B
-        (����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B(����)�B
-        �S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �Ƶ��G�Y��ܬ����_ŧ���A�h�W�z���h�������B�e�ΡB���W�B�Q���B�k���B
-        �B�ʡB���y�B²�l�B�S�ڡB�S�ǡB�}�f�������H�C
-  �^�X�G����
-  ����G�q���t�h�o
-  ���~�G�}�N���n�ѡ]���^�B�C�N���n�ѡ]�k�^
-  �ƥ�G�Y�����_ŧ�����ѡA�h�b�Ģ����^�X�ɡA�e�ΡB�����B���W�B�Q���B
-        �������H�|�X�{�b���W���C
-  ��D�G������\�u�]�����ɤ@�šA�\�u���h�o�^
-  ����G�����i�J�\�����Ԥ@
-
-���Т��Т��\�����ԤG
-
-  ���X�G�Ѹ��G
-  ��11�G���СB�����B(����)�B�����B�e�ΡB���W�B�̹�B
-        (�}�f)�B�i���B�Q���B(���Y)�B���{�B��ΡB(�d��)�B(�s�F)�B�i�c�B
-        (����)�B�B�^�B(�d�t)�B(�p��)�B���}�B�k���B�����B���k�B�}���B
-        (���v)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B(�F���i)�B�B�ʡB���y�B
-        (�d�Z)�B(����)�B(���^)�B(����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB
-        (�d��)�B�]���B(����)�B�S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �^�X�G����
-  ����G(�@)�ڭx������F����
-        (�G)�q���t�h�o
-  ���~�G��â
-  �ƥ�G1.�i��@��Ĳ�����ЧY�뭰�]���Х[�@�š^�C
-        2.�v�x�@��F�����A�����B�Y�C�Y��J�}���A����������]�X�{�F��
-          ���L�C
-  �[�J�G�i��(��62)
-  ���`�G�����B�Y�C
-  �����G�@�}�l�v�x�Q��������A����O��ܲĢ��B���B���B���B���B������
-        ���Z�N�@����A�k��h���ѤU������]�]�A�Ѹ��G�μB�ơ^�A�]���n
-        �������G�}�C�ѩ�Ĥ�o�ۨ��G�m���D�`�����A�̦n���k�U�G�@�ӵo
-        �ۨ��N���M���A�_�h�b��𤧤U�A���z���Z�N�ܥi��@�}�l�N�h�o�F�C
-        �ѩ�i��u�b����A�]���n�N���ЧG�}�b����A�H�K�ۭ��C
-
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x�ĥ|���ĤT��  ���Q�̫�M�Ԣx
-�|�w�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-�\��
-
-  �\���D��G�Ѱs�B�̡B���B���x�ѡB���j�B�s���B���Z�B�L��믫
-  �����D��G�B�L���B�o�ۨ��B����Z�B�L�q�믫�B�r���ѡB�Ѱs�B�̡B��
-  �����D��G�B�L���B�o�ۨ��B����Z�B�L�q�믫�B�S�Űs�B�Ѱs�B���B����
-  �����D��G���s�ѡB�B�y�ѡB���S�ѡB�s�Y�ѡB�s�x�ѡB�����ѡB����ѡB
-            �i���
-  �{�D��G�Ѱs�B�̡B���B�r���ѡB���S�ѡB�s�x�ѡB�p�}�B�ѡB���B��
-  �ƥ�G�M�Ѹ��G��͡A�i�J�󤧾Ԥ@�C
-
-���Т��Т��󤧾Ԥ@
-
-  ���X�G�Ѹ��G
-  ��13�G���СB�����B(����)�B(�i��)�B�Ѹ��G�B�����B�e�ΡB(����)�B���W�B
-        �̹�B(�}�f)�B�i���B�Q���B(���Y)�B���{�B��ΡB(�d��)�B(�s�F)�B
-        �i�c�B(����)�B�B�^�B(�d�t)�B(�p��)�B���}�B(�P��)�B�k���B�����B
-        ���k�B�}���B(���v)�B(���j)�B(�N�m)�B(�B�@)�B(����)�B(ÿ�c)�B
-        (�F���i)�B(����)�B�B�ʡB(����)�B���y�B(�d�Z)�B(����)�B(���^)�B
-        (����)�B²�l�B(�O�[)�B(���A)�B�S�ڡB(�d��)�B�]���B(����)�B
-        �S�ǡB(����)�B(�ժZ)�B�O�m�B�B�I
-  �^�X�G����
-  ����G��A�Q����
-  ���~�G���x�ѡ]���W�^�B�Q�����C�]�k�W�^
-  ��D�G1.�i�c�ӱ���]�i�c�ɤ@�š^
-        2.�����ӱ�ӡ]�����ɤ@�š^
-  ����G�����i�J�󤧾ԤG�]����s�ɡ^
-  �����G�q���ԧж}�l�A�����@�s���W�T���M�ԾԧСA�]���n��ӶR���D�㳣
-        �R���F�A�ì��X�̱j���Z�N�C�Ӧb�Գ��W�A�����ȯ�`�٫K�`�٤@�ǡA
-        �H�ѫ᭱�ϥΡC�ѩ󥻾ԧЬD�諸�Z�N���ǡA�|�v�T�᭱���Z�N���G�A
-        �]���n�n�n���D��C�H�U���U������Ǧb�᭱�ԧХX�{����m�G
-            ���п󤧾ԤG�G�󥪡A�󤧾ԤT�G�󥪡]��ĳ�����A����D�^
-            ���п󤧾ԤG�G��k�A�󤧾ԤT�G�󥪡]��ĳ���W�A����D�^
-            ���п󤧾ԤG�G�󥪡A�󤧾ԤT�G��k�]��ĳ�i���A����D�^
-            ���п󤧾ԤG�G��k�A�󤧾ԤT�G�󥪡]��ĳ�e�ΡA��_�Ρ^
-            ���п󤧾ԤG�G�󤤡A�󤧾ԤT�G�󥪡]��ĳ���С^
-            ���п󤧾ԤG�G�󥪡A�󤧾ԤT�G��k�]��ĳ�o�ۨ��A�U��^
-            ���п󤧾ԤG�G��k�A�󤧾ԤT�G�󥪡]��ĳ�o�ۨ��A�U��^
-            ���п󤧾ԤG�G�󤤡A�󤧾ԤT�G��k�]�Y�٦��o�ۨ��^
-            ���п󤧾ԤG�G�󥪡A�󤧾ԤT�G��k�]��ĳ�Ԩ��A��_�Ρ^
-          �����п󤧾ԤG�G��k�A�󤧾ԤT�G��
-          �����п󤧾ԤG�G�󤤡A�󤧾ԤT�G��
-          �����п󤧾ԤG�G�󥪡A�󤧾ԤT�G�󥪡]��ĳ�Ԩ��A��_�Ρ^
-          �����п󤧾ԤG�G��k�A�󤧾ԤT�G��
-        ���~�A�ѩ�󤧾ԤT����i�t�׫ܭ��n�A�]���̦n�N���ǵ����C���o
-        �ۨ��ϥΡC
-
-���Т��Т��󤧾ԤG
-
-  ���X�G�e���ԧгѾl����
-  �^�X�G����
-  ����G�q���t�h�o
-  ���~�G���x�ѡ]���^�B���x�ѡ]���^�B�i��ѡ]���W�^�B�i��ѡ]�k�^
-  �ƥ�G�q���t�@�}�l�Y�b��������A�ɭP�ħ�����L�O����֤@�b�C
-  ����G�����i�J�󤧾ԤT�]����s�ɡ^
-  �����G�@�}�l�ɡA�ڭx�Q�������ӳ����A���䬰��ܲĢ��B���B���B���B
-        �����쪺�Z�N�A�����O�B�ơB�Ѹ��G�ο�ܲĢ��B���B�����쪺�Z�N�A
-        �k��h����ܲĢ��B���B���B�����B�������Z�N�C�ѩ󳡶������Ӽ�
-        ��o�ۨ����h�A�n�S�O�p�߳Q���h�o�A�ר�O�b�������Z�N�C�̦n
-        ���ⰼ�v�x��ӫ�A�A�@�_���h�������ĤH�C
-
-���Т��Т��󤧾ԤT
-
-  ���X�G�e���ԧгѾl����
-  �^�X�G����
-  ����G��޳Q����
-  �ƥ�G1.�Ģ��^�X�ɡA��޶}�l����C
-        2.�Ģ��^�X�ɡA����Ĥ@�ӳq�D�Q������C
-        3.�Ģ����^�X�ɡA����ĤG�ӳq�D�Q������C
-        4.�Ģ����^�X�ɡA����ĤT�ӳq�D�Q������C
-        5.�Ģ����^�X�ɡA�k��̫�@�ӳq�D�Q������C
-  ��D�G1.�i���ӳ\�u�]�i���ɤ@�š^
-        2.�����ӧ���]�����ɤ@�š^
-        3.���гӱi��]�i�񥼳Q�ۭ��ɡA���Фɤ@�š^
-        4.���W�Ӽֶi�]���W�ɤ@�š^
-  ����G����
-  �����G�@�}�l�ɡA�ڭx�Q�������ӳ����A���䬰��ܲĢ��B���B���B���B���B
-        �����B�����B�����B�����쪺�Z�N�A��l�h�b�k��C�ѩ�q�D�|�Q��
-        ����A�]�����䳡�������ʳt�׭n���֡A�_�h�K�|�Q�פU�ӦӵL�k�e
-        �h�𥴱�ޤF�]���Ţ����^�C�t�~�A�ѩ����B�ֶi�b����A�]����
-        ���M���W�n�G����A�ӳ\�u�b�k��A�]���i���n�G��k��C
-
-�z�w�w�w�w�w�{
-�x�ݩʱƦ���x
-�|�w�w�w�w�w�}
-
-�@�B�`�Ʀ�
-
-  ���СB�����B�����B�i��B�����B�Y�C�B�Ѹ��G�B�����B�e�ΡB�����B�B�ơB
-  ���W�B�̹�B�}�f�B�i���B�Q���B���Y�B���{�B��ΡB�d���B�s�F�B�i�c�B
-  �����B�B�^�B�d�t�B�p�ɡB���}�B�P�ܡB�k���B�����B���k�B�}���B���v�B
-  ���j�B�N�m�B�B�@�B�����Bÿ�c�B�F���i�B���֡B�B�ʡB���ơB���y�B�d�Z�B
-  ����B���^�B�����B²�l�B�O�[�B���A�B�S�ڡB�d�ӡB�]���B����B�S�ǡB
-  ���¡B�ժZ�B�O�m�B�B�I
-
-�G�B¾�~�����Ʀ�
-
-  �L - �i��B�����B�Y�C�B�B�ơB�s�F�B�����B�B�^�B�k���B�}���B���v�B
-       ���j�B�B�ʡB���ơB���y�B���^�B�O�[�B�S�ڡB�ժZ�B�B�I
-  �} - ���Y�B���{�B�d�t�B���֡B�d�Z�B²�l�B���¡B�O�m
-  �M - ���СB�����B�����B�����B�����B���W�B�i���B��ΡB�d���B�i�c�B
-       �p�ɡB����
-  �� - �Ѹ��G�B�e�ΡB�}�f
-  �� - ���k�B�S��
-  �� - ���}�B�]��
-  �� - �P�ܡB�B�@�B����B���A�B����
-  �Z - �Q���Bÿ�c�B����
-  �~ - �̹�B�N�m�B����
-  �� - �F���i
-
-�z�w�w�w�w�w�w�{
-�x�Z�N�ݩʦC���x
-�|�w�w�w�w�w�w�}
-
-���G�Z�O�v�T�����O�A�αs�O�v�T���m�O�A���O�h�v�T�����Ȧh��A�H�άI�p
-    �γQ�I�p�����\�v�P�ĪG�C
-���F������=(25+2.5*����)*���O/100
-
-�Z�N     �Z  ��  �s
+NN = 姓名
+FA = 對談中的頭像
+MP = 劇情時的人物圖示
+S1 = 武力
+S2 = 智力
+S3 = 統御力
+
+3.武將初始資訊，位置3080h開始，每位佔18 byte，格式同前面MSAVE*.R3S所述
+
+攻略：（作者－青衫）
+
+┌────┐
+│簡易提示│
+└────┘
+
+一、如何練功
+
+  1.攻擊（含攻擊性策略）：４～１６
+  2.擊退敵軍：５～５０
+  3.擊退首領：５０
+  4.非攻擊性策略：８
+
+由於己軍等級若比敵軍低３級以上時，攻擊可得到經驗值均超過８，因此直接
+攻擊會比較容易升級，特別是將敵軍擊退時，甚至可獲得５０點經驗值。若是
+等級與敵軍相差不多或更高時，攻擊所能得到的經驗值便少得可憐，利用如牽
+制、激勵、援助、假情報等策略每回合獲取８點經驗值，則比較容易升級。因
+此每場戰役應在限制的回合內，儘量利用此點讓隊伍獲取到最多的經驗值。而
+由於擊退首領，無論己軍等級為何，均可獲得５０點經驗值，因此首領的最後
+一擊，最好留給等級較高的己軍部隊。此外，凡是有單挑事件，以及殘餘部隊
+加５０點經驗值的勝利條件，一定要去達成，如此升級會更快些。
+
+二、兵種說明
+
+1.兵（短兵、長兵、戰車）：防禦力最高，攻擊力普通，多集結做為防護使用，
+  以保護後方較弱的兵種，對弓兵類有加乘殺傷力。
+2.弓（弓兵、連弩兵、發石車）：攻擊力最高，兵力、防禦力與移動力都低，
+  多做為後方攻擊用，對騎兵類有加乘殺傷力。
+3.騎（輕騎兵、重騎兵、近衛隊）：兵力、攻擊力與移動力最高，防禦力亦不
+  錯，多做為攻擊主力，但無法穿越森林，沙地則移動慢，對車兵類有加乘殺
+  傷力。
+4.妖術師：攻防能力最低，但會絕大部份的攻擊與恢復策略，相當好用。
+5.軍樂隊：兵力與攻防能力最低，可按等級的一定比例，恢復其鄰接者的策略
+  值（不論敵我），需要練功時可用，但也可藉用敵方的軍樂隊來恢復，因此
+  並非絕對必要。
+6.運輸隊：兵力、攻防能力最低，會所有恢復計，但移動力最低，往往跟不上
+  隊伍腳步。其實也可利用其他兵種（特別是妖術師）來恢復兵力，因此並沒
+  有太大必要。
+
+（以下兵種無法利用轉職道具轉職而成）
+
+7.賊（山賊、惡賊、義賊）：攻防能力普通，具反擊能力，可穿越山地，為山
+  丘戰的主力，但由於山地作戰的機會很少，反不如武術家隊好用。
+8.武術家隊：兵力、攻防能力、移動力均不錯，具反擊能力，可穿越山地，無
+  論山地戰、平原戰、森林戰、沙地戰均好用。
+9.猛獸軍團：攻擊力最高，但防禦力頗低，雖可穿越山地，但用途並不大。
+10.異民族：防禦力最高，攻擊力與兵力亦頗高，可惜沒有正式隊員，只有在派
+  奇襲隊時會暫時出現。
+
+三、練功人選
+
+  兵 - 張遼、劉備、法正、劉封、伊籍、糜芳
+  弓 - 李嚴、蔣琬、簡雍、關純
+  騎 - 關羽、趙雲、關平、馬超、張飛
+  妖 - 諸葛亮、龐統
+  賊 - 周倉
+  武 - 魏延、藩宮
+
+其中周倉、關平係為協助關羽逃離麥之戰，因此在他們加入後要努力地訓練，
+過了麥之戰後便可不必管他們了。藩宮、糜芳、關純等人為初期己軍的主力，
+在長板坡之戰前應好好加以訓練，之後可視情況換更高屬性的武將訓練。尤其
+是糜芳，不但為關中奇襲隊的主力，同時亦是防護龐統免於雒之戰戰死的有力
+武將，因此可以的話，最好全程訓練會比較好些，雖然他的屬性值實在不怎麼
+樣。決戰時可挑選１５人，除了必出的劉備和諸葛亮外，可從上述人選中挑出
+較佳的１３名即可。關羽、趙雲、馬超、張飛等有單挑事件的４人最好都出場，
+弓兵隊（發石車）至少也要派出２人。
+
+黃忠、嚴顏兩人最後會死亡，所以就不必練他們了（可惜了好屬性）。
+
+┌───────────┐
+│序章  群雄起兵討付董卓│
+└───────────┘
+
+備註：人物排列順序以三個屬性值總和為準，劉備不列，其中加括號者為不一
+      定有，視路線而定。
+
+江陵
+
+  道具：特級酒、麥、中藥、平氣書、活氣書、援隊書
+  事件：1.和公孫瓚交談，則公孫瓚加入序章所有戰役
+        2.和陶謙交談，則陶謙加入序章所有戰役
+        3.和關羽交談進入汜水關之戰
+  說明：為了爭取經驗值，最好不要和公孫瓚及陶謙交談。
+
+０－１汜水關之戰
+
+  必出：關羽、張飛
+  回合：３０
+  條件：華雄被消滅
+  物品：豆（上）、金１００（左上）
+  單挑：關羽勝華雄（關羽升一級）
+  後續：直接進入虎牢關之戰
+
+０－２虎牢關之戰
+
+  必出：關羽、張飛
+  回合：３０
+  條件：呂布退卻
+  物品：豆（右下）、焦熱書（右上）
+  單挑：張飛勝呂布（張飛升一級）
+  事件：第１８回合呂布開始主動出擊。
+
+┌───────────┐
+│第一章第一幕  界橋之戰│
+└───────────┘
+
+平原
+
+  北平道具：酒、豆、濃霧書
+  事件：1.出平原議事廳再進入，與簡雍交談，簡雍加入。
+        2.與使者交談，再與關羽交談，選擇信都之戰或廣川之戰。
+  加入：簡雍（弓3）
+  說明：最好選信都之戰，網羅藩宮較好，且可增加較多經驗值。
+
+１－１－１信都之戰
+
+  選03：關羽、張飛、簡雍
+  回合：３０
+  條件：1.淳于瓊退卻
+        2.劉備到達城門（殘餘部隊加５０經驗值）
+  物品：酒（下）、金１００（上）
+  單挑：張飛勝淳于瓊（張飛升一級）
+
+信都
+
+  道具：酒、豆、傷藥、焦熱書、漩渦書、落石書
+  事件：進議事廳與關羽交談，選擇巨鹿之戰或清河之戰。
+  加入：藩宮(武4)
+  說明：最好選巨鹿之戰，雖然較難，但可增加人手並獲取較多經驗值，另外
+        在界橋之戰也比較輕鬆些。
+
+１－１－２廣川之戰
+
+  選03：關羽、張飛、簡雍
+  回合：３０
+  條件：逢紀退卻
+  物品：豆（右）、金１００（下）
+  單挑：關羽勝逢紀（關羽升一級）
+
+廣川
+
+  道具：酒、豆、傷藥
+  事件：與關羽交談，選擇巨鹿之戰或清河之戰。
+  加入：郭適（山4）、韓英（短4）
+  說明：最好選巨鹿之戰，雖然較難，但可增加人手並獲取較多經驗值，另外
+        在界橋之戰也比較輕鬆些。
+
+１－１－３巨鹿之戰
+
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)
+  回合：３０
+  條件：1.張郃退卻
+        2.劉備到達西方堡壘（殘餘部隊加５０經驗值）
+  物品：麥
+  單挑：張飛勝顏良（張飛升一級）
+  事件：1.第３回合時，敵人援軍出現在左上方，己方援軍出現在右方。
+        2.劉備穿過右上村落下方時，敵軍會全力阻止劉備前進。
+  加入：關純(弓4)、耿武(短4)
+  後續：直接進入界橋之戰
+  說明：要特別注意敵方賊兵部隊的落石之計，最好等待敵方援軍出現並解決
+        後，才往東移動。
+
+１－１－４清河之戰
+
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)
+  回合：３０
+  條件：趜義被消滅
+  物品：酒（左）、金１００（下）
+  單挑：關羽勝趜義（關羽升一級）
+  事件：第７回合時，敵人援軍出現在上方。
+  後續：直接進入界橋之戰
+
+１－１－５界橋之戰
+
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)、(關純)、(耿武)
+  回合：４０
+  條件：1.袁紹退卻
+        2.劉備奪取敵方兵糧庫（殘餘部隊加５０經驗值）
+  敵軍：前面另一未經過的戰役，其主將會併到本戰役中來。
+  物品：火龍書（左下）、長槍（下）、麥（上）、連弩（右上）
+  單挑：張飛勝文醜（張飛升一級）
+  事件：1.當己方穿過戰場下方中央時，袁紹部隊開始出擊。
+        2.當己方到達兵糧庫前時，敵方會全力回防兵糧庫。
+  說明：如果之前選清河之戰的話，那麼本戰役會變得比較困難些。
+
+┌──────────────┐
+│第一章第二幕  支援北海、徐州│
+└──────────────┘
+
+平原
+
+  北平道具：酒、豆、濃霧書
+  信都道具：酒、豆、傷藥、焦熱書、漩渦書、落石書
+  事件：1.與糜竺交談，再與關羽交談，到北平與公孫瓚交談，趙雲加入。
+        2.回平原議事廳與糜竺交談，進入北海之戰。
+  加入：趙雲(輕11)
+
+１－２－１北海之戰
+
+  必出：趙雲
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)、(關純)、(耿武)
+  回合：３０
+  條件：管亥被消滅
+  物品：特級酒（上）、平氣書（下）
+  單挑：趙雲勝管亥（趙雲升一級）
+  事件：當己方穿過戰場下方中央時，孔融部隊便開城出擊。
+
+北海
+
+  道具：酒、豆、傷藥、焦熱書、漩渦書、落石書、炸彈
+  事件：1.孔融贊助金５００。
+        2.與關羽交談，進入徐州之戰。
+
+１－２－２徐州之戰
+
+  必出：趙雲
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)、(關純)、(耿武)
+  回合：３０
+  條件：1.敵軍全滅
+        2.劉備進入徐州城（殘餘部隊加５０經驗值）
+  單挑：關羽勝于禁（關羽升一級）
+  事件：第５回合時，己方援軍太史慈在左下出現。
+
+徐州
+
+  道具：酒、豆、傷藥、平氣書、援隊書
+  事件：與陶謙交談，再決定與關羽或張飛交談。若與關羽交談，則進入小沛
+        之戰，與張飛交談，則略過小沛之戰。
+  說明：進入小沛之戰，雖可得經驗值，但很有限，而略過小沛之戰則可得到
+        雌雄雙劍，各有其利弊。
+
+１－２－３小沛之戰
+
+  必出：趙雲
+  選04：關羽、張飛、(藩宮)、(韓英)、簡雍、(郭適)、(關純)、(耿武)
+  回合：３０（但第１０回合曹操便會自動徹退）
+  條件：曹操退卻
+  單挑：張飛勝夏侯淵（張飛升一級）
+  事件：第8回合時，曹操軍全部主動出擊。
+
+徐州
+
+  事件：1.與陶謙交談，若之前略過小沛之戰，則可得到雌雄雙劍。
+        2.與孫乾交談，孫乾加入，並將隊伍帶至小沛。
+  加入：孫乾(輸10)
+
+小沛
+
+  道具：長槍、連弩、馬鎧、無賴精神、焦熱書、漩渦書、落石書
+  事件：與趙雲交談，趙雲離去。
+  離開：趙雲
+  說明：趙雲離去前，記得先買個馬鎧給他。
+
+┌─────────────┐
+│第一章第三幕  餓虎呂布來訪│
+└─────────────┘
+
+小沛
+
+  道具：長槍、連弩、馬鎧、無賴精神、焦熱書、漩渦書、落石書
+  事件：與簡雍交談，再與關羽交談，選擇泰山之戰、夏丘之戰或彭城之戰。
+
+１－３－１泰山之戰
+
+  選06：關羽、張飛、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、孫乾、
+        (趙何)、(關純)、(耿武)
+  回合：４０
+  條件：1.敵方全滅
+        2.李明投降
+  物品：落石書（上）、炸彈（下）
+  事件：李明在與劉備接觸後即投降加入（劉備升一級）
+  加入：李明(猛12)
+  後續：選擇回小沛、夏丘之戰或彭城之戰
+
+１－３－２夏丘之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(韓英)、簡雍、(郭適)、孫乾、
+        (趙何)、(關純)、(耿武)
+  回合：３０
+  條件：1.敵方全滅
+        2.董梁投降
+  物品：漩渦書
+  事件：董梁在與劉備接觸後即投降加入（劉備升一級）
+  加入：董梁(強12)
+  後續：選擇回小沛、泰山之戰或彭城之戰
+
+１－３－３彭城之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        孫乾、(關純)、(耿武)
+  回合：３０
+  條件：1.敵方全滅
+        2.趙何投降
+  物品：劍術指南書
+  事件：趙何在與劉備接觸後即投降加入（劉備升一級）
+  加入：趙何(強12)
+  後續：選擇回小沛、泰山之戰或夏丘之戰
+
+小沛
+
+  事件：1.按上述戰役的參與數目，依次增加得到金５００、濁流書、弓術指
+          南書。
+        2.和簡雍交談後，到徐州官邸，糜竺與糜芳加入。
+        3.到議事廳與糜竺交談，與呂布交談２次，與糜芳交談，與孫乾交談，
+          與使者交談，與糜竺交談，與關羽交談，進入淮南之戰。
+  加入：糜竺(軍13)、糜芳(短13)
+
+１－３－４淮南之戰
+
+  選08：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：３０
+  條件：1.敵方全滅
+        2.劉備到達西北方城堡（殘餘部隊加５０經驗值）
+  物品：猛火書
+  事件：1.第６回合敵人援軍在上方出現。
+        2.當劉備接近西南敵陣時，敵方全軍會以劉備為攻擊目標。
+  單挑：關羽勝張遼（關羽升一級）
+  說明：稍難的一關，應先儘快讓全部部隊過橋，然後派關羽在南方橋頭堵住
+        呂布援軍，孫乾做支援，其餘部隊往西擊退敵軍，最後劉備往西北城
+        堡走，其餘部隊則回防練經驗。關羽應儘可能先升級成重騎兵。
+
+許昌
+
+  道具：長槍、連弩、馬鎧、無賴精神、酒、特級酒、豆、傷藥
+  事件：與曹操交談後，出議會廳進入右邊官邸。
+
+┌─────────────┐
+│第一章第四幕  討伐呂布之戰│
+└─────────────┘
+
+小沛
+
+  道具：長槍、連弩、馬鎧、無賴精神、焦熱書、漩渦書、落石書
+  事件：與曹操交談後，再決定與荀彧或郭嘉交談。若與荀彧交談，則進入夏
+        丘之戰，與郭嘉交談，則進入彭城之戰。
+  說明：最好與荀彧交談選擇夏丘之戰，得經驗值會較多。
+
+１－４－１夏丘之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：３０
+  條件：張遼退卻
+  物品：金４００
+  事件：1.第５回合敵方特別行動隊出現在左方。
+        2.張遼一遇到關羽即自動退卻（殘餘部隊加５０經驗值）
+  後續：進入徐州城
+
+１－４－２彭城之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：３０
+  條件：高順退卻
+  物品：馬鎧
+  單挑：張飛勝高順（張飛升一級）
+  後續：進入徐州城
+
+徐州
+
+  道具：酒、豆、傷藥、平氣書、援隊書
+  事件：與曹操交談，與陳登交談，與曹操交談，與關羽交談，進入下坯之戰。
+
+１－４－３下坯之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４５
+  條件：呂布被消滅
+  物品：赤兔馬（左）、方天畫戟（右）
+  事件：1.侯成、魏續、宋謙等人一與劉備接觸後即投降謀反（劉備各升一級）
+        2.當侯成、魏續、宋謙等３人均投降謀反後，劉備到達城門，吊橋即
+          放下。
+        3.第３０回合時，吊橋亦會自動放下。
+  單挑：關羽勝張遼（關羽升一級）
+
+下坯
+
+  道具：豆、麥、平氣書、援隊書、炸彈
+  事件：進議事廳與曹操交談、再與呂布交談、無論選那個選項，呂布都難逃
+        一死。
+
+┌────────────┐
+│第一章第五幕  徐州攻防戰│
+└────────────┘
+
+許昌
+
+  道具：長槍、連弩、馬鎧、無賴精神、酒、特級酒、豆、傷藥
+  事件：1.與張飛交談，與使者交談，進議事廳與曹操交談，到宮殿與獻帝交
+          談２次，回自己官邸與官吏交談，到宮殿與獻帝交談２次，得到玉
+          帶。
+        2.回自己官邸與關羽或張飛交談，到靠城門的集會所，再到左邊曹操
+          官邸，第一次任選，第二次必須選〔不讓〕，否則之後會被殺死而
+          結束遊戲。接著煮酒論英雄便可隨便選。
+        3.回自己官邸與關羽交談，再與董承交談，然後選〔讓他看〕。與關
+          羽交談，到議事廳與滿寵交談，選〔為討伐袁術想出征〕，回自己
+          官邸，再到宮殿，再回自己官邸與關羽交談，即進入廣陵之戰。
+
+１－５－１廣陵之戰
+
+  選06：關羽、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：３０
+  條件：袁術被消滅
+  物品：金４００（上）、七星劍（右）
+  單挑：張飛勝紀靈（張飛升一級，並得到三尖刀）
+
+下坯
+
+  道具：豆、麥、平氣書、援隊書、炸彈
+  事件：進議事廳與糜芳交談，與糜竺交談，與關羽交談，進入徐州之戰。
+  離開：關羽、張飛
+
+１－５－２徐州之戰
+
+  選06：(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、
+        (趙何)、糜竺、(關純)、(耿武)
+  回合：５０
+  條件：（一）車冑被消滅
+        （二）劉備進入徐州城
+        （三）1.曹操退卻
+              2.劉備到達西南村落（殘餘部隊加５０經驗值）
+  事件：劉備一進入徐州城，曹操大軍即出現並分佈在西北到北方之間。
+  說明：稍難的一關，最好讓劉備帶著赤兔馬，當車冑被消滅後，所有部隊往
+        上集結，堵在橋的南方，最後再讓劉備進入徐州城。等曹操大軍出現
+        後，劉備立即往西南村落移動，便可順利逃出。
+
+鄴
+
+  事件：進議事廳和袁紹交談，進入第二章。
+
+┌───────────┐
+│第二章第一幕  官渡之戰│
+└───────────┘
+
+鄴
+
+  鄴道具：長槍、連弩、馬鎧、無賴精神、特級酒、豆、麥、傷藥
+  白馬道具：焦熱書、漩渦書、濁流書、落石書、濃霧書
+  事件：1.和孫乾交談，到白馬城議事廳和袁紹交談，選擇〔不！那人不是關
+          羽〕（否則會被處死）。
+        2.回鄴城官邸和簡雍交談，和糜芳交談，和使者交談，到議事廳和袁
+          紹交談，選擇〔這實際是曹操的計謀〕（否則會被處死）。
+        3.回官邸和糜竺交談，和孫乾交談，到議事廳和袁紹交談，回官邸和
+          孫乾交談，進入兗州之戰。
+  說明：由於兗州之戰頗難，最好先多買些道具備用。
+
+２－１－１兗州之戰
+
+  必出：趙雲
+  選08：(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、
+        (趙何)、糜竺、(關純)、(耿武)
+  回合：４５
+  條件：1.郭圖退卻
+        2.劉備到達西南的城堡（殘餘部隊加５０經驗值）
+  物品：炸彈（上）、茶（下）
+  事件：1.戰鬥開始前，趙雲加入。
+        2.第４回合，敵人大批援軍出現在西北方，西南方也出現少許敵軍。
+  單挑：趙雲勝張郃（趙雲升一級）
+  說明：頗難的一關，敵人又多又強，要打敗郭圖是非常困難的事，最好以西
+        南城堡為目標逃走。首先將不想練功的己方角色殿後，並沿途停下來
+        阻擋敵軍，讓其餘部隊多些回合往西南逃。必須儘快擊退西南來的敵
+        人，才不會被後面的敵軍追上。劉備儘可能不要停下來戰鬥，只要逃
+        到西南村落即可，其餘部隊則停在中途的草原與敵軍戰鬥，多拿些經
+        驗值。若身上有道具的話，不必吝於使用。
+
+兗州
+
+  事件：與孫乾交談，進入古城之戰。
+  加入：趙雲
+
+２－１－２古城之戰
+
+  選06：趙雲、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、糜芳、
+        孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４０
+  條件：知道？？？的真面目
+  物品：劍術指南書（右下）、山崩書（左下）、特級酒（下）
+  事件：我方部隊與敵方首領接觸，或是將敵方首領擊退，即可知道其真面目。
+
+古城
+
+  事件：與孫乾交談，與糜竺交談，與張飛交談，進入穎川之戰。
+  加入：張飛
+
+２－１－３穎川之戰
+
+  必出：關羽、關平(重22)、周倉(惡22)
+  選07：趙雲、張飛、(李明)、(藩宮)、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：３０
+  條件：蔡陽被消滅
+  物品：山洪書
+  事件：第８回合時，關羽等己方援軍出現在左上角。
+  單挑：關羽勝蔡陽（關羽升一級）
+
+穎州
+
+  事件：與關羽交談，選擇到襄陽或是到汝南。
+  加入：周倉、關平
+  說明：為了獲取經驗值，最好選到汝南戰曹操。
+
+汝南
+
+  道具：焦熱書、火龍書、漩渦書、濁流書、落石書、山崩書
+  事件：與劉辟交談，與孫乾交談，到集會所與趙雲交談，回議事廳與劉辟交
+        談，與關羽交談，進入汝南之戰。
+
+２－１－４汝南之戰
+
+  必出：孫乾
+  選08：關羽、趙雲、關平、張飛、周倉、(李明)、(藩宮)、(董梁)、(韓英)、
+        簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４０
+  條件：1.曹仁退卻
+        2.劉備到達西南城堡（殘餘部隊加５０經驗值）
+  物品：鼓吹具
+  事件：第３回合時，孫乾出現在戰場上方。
+  單挑：趙雲對許褚（趙雲升一級，許褚未退卻）
+  加入：劉辟(惡23)
+  後續：逃到襄陽
+
+┌───────────┐
+│第二章第二幕  隱伏新野│
+└───────────┘
+
+襄陽
+
+  道具：長槍、連弩、馬鎧、無賴精神、特級酒、麥、傷藥、炸彈
+  事件：1.若之前不到汝南戰曹操，則得金２０００。
+        2.與劉表交談２次後，到新野城。
+
+新野
+
+  事件：進議事廳後，到集會所與伊籍交談，伊籍加入，再到酒館與劉封交談，
+        劉封加入。回到議事廳，與伊籍交談，與關羽交談２次，進入江夏之
+        戰。
+  加入：伊籍(長23)、劉封(長23)
+
+２－２－１江夏之戰
+
+  選08：關羽、趙雲、關平、張飛、周倉、(劉辟)、(李明)、(藩宮)、劉封、
+        伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：４０
+  條件：張武被消滅
+  物品：步兵車（下）、金４００（右下）、俠義精神（右上）
+  單挑：1.張飛勝陳孫（張飛升一級）
+        2.趙雲勝張武（趙雲升一級，並得到的盧）
+
+新野
+
+  江夏道具：火龍書、濁流書、山崩書、濃霧書、雷陣雨書
+  襄陽道具：長槍、連弩、馬鎧、無賴精神、特級酒、麥、傷藥、炸彈
+  事件：1.到襄陽和劉表交談，回新野和趙雲交談，和劉琦交談，和伊籍交談，
+          到酒館和司馬徽交談，進議事廳。
+        2.到隆中和童子交談，和關羽交談，回新野遇徐庶加入。
+        3.到隆中和童子交談，和諸葛均交談２次，回新野和徐庶交談，和關
+          羽交談，進入南陽之戰。
+  加入：徐庶(妖26)
+  說明：記得多買些道具供長阪坡之戰使用。
+
+２－２－２南陽之戰
+
+  必出：徐庶
+  選08：關羽、趙雲、關平、張飛、周倉、(劉辟)、(李明)、(藩宮)、劉封、
+        伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：４０
+  條件：曹仁退卻（若聽從徐庶的建議，則殘餘部隊加５０經驗值）
+  單挑：1.張飛勝呂翔（張飛升一級）
+        2.趙雲勝呂曠（趙雲升一級）
+  事件：1.若聽從徐庶的建議，從最裡面攻入陣中，則敵方士氣均下降一半，
+          且失去控制。
+        2.若由其他地方攻入陣中，則敵方全體開始主動攻擊。
+
+┌─────────────┐
+│第二章第三幕  諸葛孔明出山│
+└─────────────┘
+
+新野
+
+  事件：和徐庶交談２次，徐庶離去，和張飛交談，和徐庶交談，和張飛交談，
+        到隆中和童子交談，和關羽交談，和童子交談２次，依次選說服、發
+        問、聽說、發問、哭泣，諸葛亮加入。
+  離開：徐庶
+  加入：諸葛亮(妖30)
+
+┌───────────┐
+│第二章第四幕  曹操南征│
+└───────────┘
+
+新野
+
+  事件：與武官交談，和諸葛亮交談，若再與諸葛亮交談，則進入博望坡之戰，
+        若與張飛交談，則進入新野之戰。
+  說明：最好與諸葛亮交談選博望坡之戰，輕輕鬆鬆便能得到許多經驗值。
+
+２－４－１博望坡之戰
+
+  必出：關羽、趙雲、諸葛亮、關平、張飛、周倉、劉封、簡雍
+  選05：(劉辟)、(李明)、(藩宮)、伊籍、(董梁)、(韓英)、(郭適)、糜芳、
+        孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４０
+  條件：夏侯惇退卻（若依從諸葛亮的計謀，則殘餘部隊加５０經驗值）
+  事件：先由趙雲到森林口引誘敵軍進入峽谷，其他人躲在村落左方通道中，
+        等夏侯惇進入峽谷時，便會引爆火計，敵軍兵力及士氣會大幅降低並
+        混亂，而己方伏兵亦會出現在村落的上方及下方。
+  單挑：關羽勝李典（關羽升一級）
+  後續：進入新野城
+
+２－４－２新野之戰
+
+  必出：諸葛亮、張飛
+  選08：關羽、趙雲、關平、周倉、(劉辟)、(李明)、(藩宮)、劉封、伊籍、
+        (董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：４０（但第３０回合時敵人便會撤軍）
+  條件：1.夏侯惇退卻
+        2.諸葛亮奪取敵軍的兵糧庫（殘餘部隊加５０經驗值）
+  事件：第８回合時，敵人援軍出現在左方。
+  後續：進入新野城
+  說明：頗難的一場戰役，一開始要死守東門和南門，等夏候惇到來後，集中
+        攻擊他便可獲勝，否則要撐過３０回合可不容易。
+
+新野
+
+  事件：和宋忠交談，和諸葛亮交談，和使者交談，和諸葛亮交談，選擇到襄
+        陽或到江夏。若選襄陽，則進入襄陽之戰，若選江夏，則直接進入長
+        阪坡之戰一。
+  離開：關羽、伊籍
+  說明：最好選襄陽之戰，除了可多賺經驗值外，還可拿到倚天劍。
+
+２－４－３襄陽之戰
+
+  選11：趙雲、諸葛亮、關平、張飛、周倉、(劉辟)、(李明)、(藩宮)、劉封、
+        (董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：２０（但第１５回合時己軍便必須撤退）
+  條件：1.蔡瑁被消滅（殘餘部隊加５０經驗值）
+        2.己軍總徹退
+  物品：茶（上）、倚天劍（右上）、猛火書（左）
+  單挑：趙雲勝張允（趙雲升一級）
+  後續：直接進入長阪坡之戰一
+
+２－４－４長阪坡之戰一
+
+  必出：諸葛亮
+  選10：趙雲、關平、張飛、周倉、(劉辟)、(李明)、(藩宮)、劉封、(董梁)、
+        (韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：７０
+  條件：1.民眾逃到東南村落（殘餘部隊加５０經驗值）
+        2.曹操退卻
+  後續：直接進入長阪坡之戰二（不能存檔）
+  說明：相當困難的一場戰役，最好能備有一堆道具。首先全體往橋的方向逃，
+        讓幾個較強的武將佈陣在橋的北方，其他武將則過橋等候，注意民眾
+        的移動力只有３，千萬不要剛好擋住他們的去路。較慢的民眾不必理
+        會他們，可用來擋住曹操軍的前進，只需留下一個民眾部隊即可。當
+        民眾部隊過橋後，在橋北邊的武將要迅速退到橋的南端，否則很容易
+        便被圍攻退卻。要特別注意的是趙雲絕對不能退卻，否則在長阪坡之
+        戰二的單挑事件便沒了。若要練經驗值時，可讓一個最強的武將擋在
+        橋的南端，並讓一位武將佔住村落，只要民眾不進入村落，本戰役便
+        不會結束。但也要注意的是，本戰役不管用去多少策略值或損失多少
+        兵力，下一場戰役都不會回復，而敵人卻會重新回復及出現，因此必
+        須保留一些實力在下場戰役中。
+
+２－４－５長阪坡之戰二
+
+  必出：前場戰役殘餘部隊
+  回合：９９（包含前場戰役已消耗的回合數）
+  條件：1.民眾逃到西北的橋（殘餘部隊加５０經驗值）
+        2.曹操退卻
+  單挑：趙雲勝夏侯恩（趙雲升一級，並得到青釭劍）
+  說明：更加困難的戰役，最好將部隊帶到下方村落佈陣，只要能堅持１４回
+        合，民眾便可逃到西北的橋了。如果實在擋不住敵方的攻勢，也可棄
+        守該據點，只要劉備不退卻而民眾能逃離，便算剛關了。至於能殘留
+        多少部隊獲得經驗值，那又是另外一回事了。
+
+江夏
+
+  事件：與劉琦交談，與魯肅交談，與諸葛亮交談。
+  加入：關羽、伊籍
+
+┌──────────────┐
+│第三章第一幕  荊州南部征服戰│
+└──────────────┘
+
+江夏
+
+  道具：火龍書、濁流書、山崩書、濃霧書、雷陣雨書
+  事件：與諸葛亮交談２次，進入江陵之戰。
+
+３－１－１江陵之戰
+
+  選08：關羽、趙雲、諸葛亮、關平、張飛、周倉、(劉辟)、(李明)、(藩宮)、
+        劉封、伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、
+        糜竺、(關純)、(耿武)
+  回合：３０
+  條件：1.８回合內消滅陳矯（殘餘部隊加５０經驗值）
+        2.周瑜退卻
+  物品：弓術指南書
+  單挑：趙雲勝甘寧（趙雲升一級）
+
+江陵
+
+  江陵道具：特級酒、麥、中藥、平氣書、活氣書、援隊書
+  江夏道具：火龍書、濁流書、山崩書、濃霧書、雷陣雨書
+  襄陽道具：長槍、連弩、馬鎧、無賴精神、特級酒、麥、傷藥、炸彈
+  事件：1.與魯肅交談，與諸葛亮交談，到江夏酒館與商人交談，到集會所與
+          馬良交談，馬良和馬驥加入。
+        2.回江陵議事廳與張良交談，與諸葛亮交談，選擇攻打武陵、零陵或
+          桂陽。
+  加入：馬良(輸30)、馬驥(軍30)
+  離開：關羽、趙雲、張飛
+
+３－１－２武陵之戰
+
+  選06：諸葛亮、關平、馬良、周倉、馬驥、(劉辟)、(李明)、(藩宮)、劉封、
+        伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：３５
+  條件：1.金旋被消滅
+        2.鞏志叛變（殘餘部隊加５０經驗值）
+  物品：投石器（上）、金５００（右）
+  事件：鞏志一接觸到劉備，便會投降叛變。
+  單挑：周倉勝金旋（周倉升一級）
+  加入：鞏志（發31）
+  後續：回江陵城
+
+３－１－３零陵之戰
+
+  選06：諸葛亮、關平、馬良、周倉、馬驥、(劉辟)、(李明)、(藩宮)、劉封、
+        伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：３５
+  條件：1.劉度被消滅
+        2.劉度投降（殘餘部隊加５０經驗值）
+  物品：援隊書
+  事件：1.當己方部隊越過中央村落後，刑道榮帶領的特遺隊便會出現在東南
+          方。
+        2.劉度一接觸到劉備，便會投降。
+  單挑：關平勝邢道榮（關平升一級）
+  後續：回江陵城
+
+３－１－４桂陽之戰
+
+  選06：諸葛亮、關平、馬良、周倉、馬驥、(劉辟)、(李明)、(藩宮)、劉封、
+        伊籍、(董梁)、(韓英)、簡雍、(郭適)、糜芳、孫乾、(趙何)、糜竺、
+        (關純)、(耿武)
+  回合：３５
+  條件：1.趙範被消滅
+        2.趙範投降（殘餘部隊加５０經驗值）
+  物品：濁流書
+  事件：1.當己方部隊越過右邊村落後，敵方援軍便會出現在村落的東北方。
+        2.趙範一接觸到劉備，便會投降。
+  單挑：劉封勝鮑龍（劉封升一級）
+  後續：回江陵城
+
+江陵
+
+  事件：與馬良交談，與諸葛亮交談，進入長沙之戰。
+  加入：關羽、趙雲、張飛
+
+３－１－５長沙之戰
+
+  選10：關羽、趙雲、諸葛亮、關平、張飛、馬良、周倉、馬驥、(劉辟)、
+        (李明)、(藩宮)、劉封、伊籍、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４０
+  條件：1.韓玄被消滅
+        2.魏延反叛（若是經由劉備接觸投降，則殘餘部隊加５０經驗值）
+  物品：英雄之劍（右上）、劍術指南書（下）
+  事件：1.當己方部隊越過左邊橋時，敵方便會施展水計，造成己方兵力均損
+          失一半，敵方士氣均損失一半。
+        2.魏延一接觸到劉備，便會投降反叛。
+        3.關羽與黃忠單挑後，魏延亦會投降反叛。
+  單挑：關羽勝黃忠（關羽升一級）
+
+長沙
+
+  道具：平氣書、活氣書、援隊書、援部書、漩渦書、濁流書
+  事件：與魏延交談，魏延加入，到官邸與黃忠交談，黃忠加入。
+  加入：黃忠(戰33)、魏延(武33)
+
+┌───────────────┐
+│第三章第二幕  荊州所有權的紛爭│
+└───────────────┘
+
+江陵
+
+  事件：1.與諸葛亮交談，與文官交談，與魯肅交談，選哭４次，與諸葛亮交
+          談。
+        2.與諸葛亮交談２次，進入公安之戰。
+
+３－２－１公安之戰
+
+  必出：諸葛亮
+  選10：關羽、趙雲、黃忠、關平、張飛、魏延、馬良、周倉、馬驥、(劉辟)、
+        (李明)、(藩宮)、劉封、伊籍、(董梁)、(韓英)、簡雍、(郭適)、
+        糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)
+  回合：４０
+  條件：1.周瑜退卻
+        2.敵方援軍出現前佔領４個鹿砦（殘餘部隊加５０經驗值）
+  物品：鼓吹具（中）、海嘯書（北）
+  事件：1.當己方部隊接近敵軍時便會被發現，此時敵方援軍出現在右邊，並
+          開始全面出擊。
+        2.第１５回合敵方援軍出現在右邊。
+  單挑：關羽勝呂蒙（關羽升一級）
+  說明：派４個速度較快的人去佔領４個鹿砦即可。
+
+江陵
+
+  事件：1.與諸葛亮交談，與文官交談，與諸葛亮交談，到襄陽集會所與蔣琬
+          交談，蔣琬加入，到江夏酒館與費煒交談，費煒加入。
+        2.回江陵議事廳，與龐統交談，與孫乾交談，與龐統交談，與文官交
+          談，與張飛交談，到耒陽縣與官差交談，與龐統交談，進議事廳與
+          龐統交談，龐統加入。
+  加入：龐統(妖34)、蔣琬(發30)、費煒(發30)
+
+┌────────────┐
+│第三章第三幕  益州攻略戰│
+└────────────┘
+
+江陵
+
+  江陵道具：特級酒、麥、中藥、平氣書、活氣書、援隊書
+  江夏道具：火龍書、濁流書、山崩書、濃霧書、雷陣雨書
+  襄陽道具：長槍、連弩、馬鎧、無賴精神、特級酒、麥、傷藥、炸彈
+  長沙道具：平氣書、活氣書、援隊書、援部書、漩渦書、濁流書
+  事件：與張松交談，與諸葛亮交談，與法正交談，與龐統交談，與諸葛亮交
+        談，法正加入，並帶領隊伍到雒城。
+  加入：法正(戰34)
+  離開：關羽、趙雲、諸葛亮、張飛、伊籍、簡雍
+  說明：在關羽離開前，最好多買些恢復用的道具給關羽，以免在麥之戰戰死
+        了。
+
+雒
+
+  事件：與劉璋交談，到涪城進議事廳。
+
+涪
+
+  道具：特級酒、麥、中藥、火龍書、長槍、連弩、馬鎧、炸彈
+  事件：與魏延交談，與使者交談，與龐統交談２次，進入雒之戰一
+  說明：若可以的話，給參與雒之戰保護龐統的武將多些道具，協助龐統免於
+        戰死。
+
+３－３－１雒之戰一
+
+  必出：龐統
+  選09：黃忠、關平、魏延、蔣琬、馬良、周倉、法正、馬驥、(劉辟)、
+        (李明)、(藩宮)、劉封、(董梁)、(韓英)、(郭適)、糜芳、(鞏志)、
+        孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：３０
+  條件：1.劉貴退卻
+        2.第８回合時，己軍徹退
+        3.龐統死亡
+  說明：龐統的生死關。一開始龐統被敵人圍住，要靠身邊３位武將保護，最
+        好往樹林移動，一來加強防護力，二來也避開騎兵隊的攻擊。龐統絕
+        對不能戰死，否則後面便沒他了。如果身邊３位武將的等級不高，最
+        好是離開重選，武將選取的次序是很重要的，其身邊出現的武將是在
+        第１、４、５位的點選，利用這些較強武將撐過７回合便成功了。
+
+涪
+
+  事件：1.與關平交談，關平與周倉離去。
+        2.與武官交談，與張飛交談，與嚴顏交談，嚴顏加入，與龐統交談，
+          進入雒之戰二。
+  離開：關平、周倉
+  加入：嚴顏(戰34)
+
+３－３－２雒之戰二
+
+  必出：趙雲、諸葛亮、伊籍、簡雍
+  選08：黃忠、嚴顏、龐統、張飛、魏延、蔣琬、馬良、法正、馬驥、(劉辟)、
+        (李明)、(藩宮)、劉封、(董梁)、(韓英)、(郭適)、糜芳、(鞏志)、
+        孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：４０
+  條件：劉貴被消滅
+  事件：1.第２回合時，諸葛亮等己方援軍出現在左下方。
+        2.第１３回合，或己軍逼近城堡時，敵方援軍出現在上方。
+        3.吳懿、雷銅、費觀、吳蘭、李嚴等人一遇到劉備便投降（劉備各升
+          一級，而吳蘭、李嚴會留下來幫忙戰鬥）。
+  單挑：張飛勝張任（張飛升一級）
+  加入：李嚴(發36)、吳蘭(近37)、吳懿(發37)、雷銅(近37)、費觀(戰36)
+
+涪
+
+  事件：與使者交談，與諸葛亮交談２次，進入葭萌關之戰。
+  離開：諸葛亮
+
+３－３－３葭萌關之戰
+
+  必出：張飛
+  選08：趙雲、黃忠、嚴顏、龐統、魏延、(李嚴)、蔣琬、(吳蘭)、(吳懿)、
+        (雷銅)、馬良、法正、馬驥、(劉辟)、(李明)、(藩宮)、劉封、伊籍、
+        (董梁)、(韓英)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、
+        (趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：３０
+  條件：張魯退卻
+  物品：援軍報告
+  事件：當己方部隊進入葭萌關往裡面侵入時，敵方馬超援軍出現在關外下方。
+  單挑：張飛勝馬超（張飛升一級，同時馬超率領的部隊全部徹退）
+
+葭萌關
+
+  事件：與諸葛亮交談，與馬超交談２次，決定是否交給馬超辦。若交給馬超
+        辦，則略過成都之戰，直接進入第三章第四幕，並得到黃爪飛龍。否
+        則進入涪城。
+  加入：諸葛亮，馬超(近41)、馬岱(近40)
+  說明：最好選擇成都之戰，雖然損失黃爪飛龍，但卻可讓劉備一次升許多等
+        級。
+
+涪
+
+  事件：與諸葛亮交談，進入成都之戰。
+
+３－３－４成都之戰
+
+  選08：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、(劉辟)、
+        (李明)、(藩宮)、劉封、伊籍、(董梁)、(韓英)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒
+  回合：４０
+  條件：1.劉璋退卻
+        2.劉璋投降（殘餘部隊加５０經驗值）
+  物品：發石車（左上）、步兵車（左下）
+  事件：1.孟達、黃權、霍峻、吳班、陳式、沙摩可等人一接觸到劉備便會投
+          降（劉備各升一級，且所有投降武將均留下來幫忙戰鬥）。
+        2.劉璋一接觸到劉備便會投降。
+  加入：孟達(戰37)、黃權(戰38)、霍峻(猛37)、沙摩可(異37)、吳班(發36)、
+        陳式(武36)
+
+┌────────────┐
+│第三章第四幕  漢中攻防戰│
+└────────────┘
+
+成都
+
+  道具：步兵車、發石車、近衛鎧、俠義精神、特級酒、老酒、麥、中藥
+  事件：與武官交談，與諸葛亮交談，進入瓦口關之戰。
+
+３－４－１瓦口關之戰一
+
+  選11：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：４０
+  條件：張郃退卻
+  單挑：張郃勝雷銅（雷銅退卻）
+  後續：直接進入瓦口關之戰二（不能存檔）
+  說明：因下場戰役己軍的策略值與兵力均不會重新回復，因此要保留一些供
+        下場戰役使用。
+
+３－４－２瓦口關之戰二
+
+  必出：前場戰役殘餘部隊
+  回合：４０（不包括前場戰役已消耗的回合數）
+  條件：張郃退卻
+  物品：猛火書（左上）、赦命書（中）
+  單挑：張郃勝雷銅（雷銅退卻）
+
+瓦口關
+
+  事件：與諸葛亮交談，選擇增援葭萌關或進攻定軍山。
+  說明：這邊的選擇會影響後面的作戰路線，總共有四種：
+          1.葭萌關、天蕩山之一，漢水
+          2.葭萌關、定軍山，漢水
+          3.定軍山、天蕩山之二，漢水
+          4.定軍山、漢水
+
+３－４－３葭萌關之戰
+
+  選09：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：３５
+  條件：夏侯德被消滅
+  物品：海嘯書（左上）、米（左下）、老酒（右上）、近衛鎧（右下）
+  事件：第５、１０、１５回合各會出現３個敵方援軍部隊，上方１個，下方
+        ２個。
+  單挑：嚴顏勝夏侯德（嚴顏升一級）
+
+葭萌關
+
+  事件：與諸葛亮交談，選擇天蕩山之戰一或定軍山之戰。
+
+３－４－４定軍山之戰
+
+  選12：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：３５
+  條件：夏侯淵退卻
+  物品：青囊書（上）、金８００（下）、山崩書（右上）
+  事件：1.第８回合時，徐晃等援軍出現在左邊。
+        2.王平一接觸到劉備即投降（劉備升一級，王平並留下幫助作戰）。
+  單挑：黃忠勝夏侯淵（黃忠升一級）
+  加入：王平(戰42)
+  說明：一開始先消滅在村落附近的４個敵軍部隊，然後立即往左佈陣在樹林
+        內，等敵人援軍一出現，即迅速將之消滅，最後等待敵方主力部隊前
+        來即可。
+
+定軍山
+
+  事件：與諸葛亮交談，若之前未經葭萌關，則選擇天蕩山之戰二或漢水之戰，
+        否則進入漢水之戰。
+
+３－４－５ 天蕩山之戰一
+
+  選11：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：４０
+  條件：徐晃退卻
+  物品：中藥
+  事件：1.第８回合時，夏侯淵等援軍出現在右下。
+        2.王平一接觸到劉備即投降（劉備升一級，王平並留下幫助作戰）。
+  單挑：黃忠勝夏侯淵（黃忠升一級）
+  加入：王平(戰42)
+
+天蕩山
+
+  事件：與諸葛亮交談，進入漢水之戰。
+
+３－４－６ 天蕩山之戰二
+
+  選09：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒
+  回合：４０
+  條件：夏侯德被消滅
+  物品：中藥
+  單挑：嚴顏勝夏侯德（嚴顏升一級）
+
+天蕩山
+
+  事件：與諸葛亮交談，進入漢水之戰。
+
+３－４－７漢水之戰
+
+  選12：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒
+  回合：４０
+  條件：曹洪退卻
+  物品：茶（上）、金１０００（右下）
+  事件：第１０回合時，曹彰援軍出現在右上。
+  單挑：曹彰勝吳蘭（吳蘭退卻）
+
+漢水
+
+  事件：與諸葛亮交談，進入陽平關之戰。
+
+３－４－８陽平關之戰
+
+  選13：趙雲、黃忠、嚴顏、諸葛亮、龐統、馬超、張飛、魏延、(李嚴)、
+        蔣琬、(吳蘭)、(孟達)、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒
+  回合：４５
+  條件：曹操退卻
+  物品：馬術指南書
+  單挑：馬超對龐德（馬超升一級，但龐德未退卻）
+
+漢中
+
+  事件：與諸葛亮交談２次，選〔是〕，進位漢中王。
+
+┌───────────┐
+│第三章第五幕  蜀漢建國│
+└───────────┘
+
+３－５－１麥之戰
+
+  必出：關羽、關平、周倉、王甫(戰40)、趙累(發40)、廖化(戰40)
+  回合：５０
+  條件：1.敵人全滅
+        2.關羽到達西側城堡
+        3.關羽死亡
+  物品：援軍書（右）、援軍書（下）、茶（左）
+  事件：第２回合時，敵方援軍出現在右邊。
+  說明：關羽的生死關。由於這邊無法選取武將，因此新加入的王甫等４０級
+        人物相對於近５０級的敵軍，顯得相當的弱，只能做為用來暫時擋住
+        敵軍前進之用。而之前若未好好訓練關平、周倉的話，以等級不到
+        ３０的情況，更只能充做炮灰。但即使努力訓練，也只在４０幾級左
+        右，要力克敵人也相當困難。最好的方法便是先利用王甫等人將後方
+        敵人牽制在中央森林右側（利用森林加強防護），而在王甫等人被消
+        滅前，關羽等三人儘量往前衝，並伺機丟下周倉牽絆第一波前方敵軍。
+        然後再用剩下的關平牽絆最後一波敵軍，如此關羽才有機會逃出。總
+        之，本戰役關羽絕對不能戰死，否則後面便沒他了。
+
+成都
+
+  事件：與武官交談，與諸葛謹交談２次，決定是否結盟，若選結盟則得到孫
+        子兵法，並直接進入第四章，否則直接進入西陵之戰，同時趙雲、諸
+        葛亮、馬超、馬岱離開。
+  離開：趙雲、諸葛亮、馬超、馬岱
+
+３－５－２西陵之戰
+
+  必出：關興(近41)、張苞(近41)、劉禪(戰41)
+  選08：黃忠、嚴顏、龐統、張飛、魏延、(李嚴)、蔣琬、(吳蘭)、(孟達)、
+        (王平)、(吳懿)、(雷銅)、馬良、法正、馬驥、(黃權)、(霍峻)、
+        (劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、(吳班)、(董梁)、
+        (韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、
+        (趙何)、糜竺、(關純)、(耿武)、費煒
+  回合：４０
+  條件：孫桓退卻
+  單挑：1.關興勝李異（關興升一級）
+        2.張苞勝謝旌（張苞升一級）
+  加入：關興、張苞、劉禪
+
+西陵
+
+  道具：火龍書、濁流書、山崩書、特級酒、麥、中藥、援部書、活氣書
+  事件：與諸葛謹交談２次，決定是否結盟，若選結盟則得到吳子兵法，並直
+        接進入第四章，否則直接進入彝陵之戰。
+  說明：彝陵之戰並不好打，可以的話選結盟較好，若要進入彝陵之戰，最好
+        讓參戰人員多帶些恢復兵力及士氣的道具。
+
+３－５－３彝陵之戰
+
+  選14：黃忠、嚴顏、關興、龐統、張飛、魏延、(李嚴)、蔣琬、(吳蘭)、
+        (孟達)、張苞、(王平)、(吳懿)、(雷銅)、馬良、法正、馬驥、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒、劉禪
+  回合：５０
+  條件：陸遜退卻
+  單挑：周泰勝沙摩可（沙摩可被殺死亡）
+  後續：直接進入第四章
+  說明：相當困難的一場戰役，一開始己軍陷入火計而導致兵力與士氣大幅降
+        低，因此必須派出能大幅恢復兵力與士氣的馬良、孫乾、龐統、糜竺
+        等人，而更困難的是，有５位武將被火隔開佈於西南方，因此必須仔
+        細選擇佈於此地的武將，否則難保被全部消滅。這５位武將的選取次
+        序為第３、４、８、９、１４位，且至少要有２名攻守俱佳的武將，
+        以及３名能恢復兵力及士氣的武將。至於佈於左上方的武將，因通道
+        狹窄擠在一團，只需２名武將即可擋住攻擊，因此可輪番上陣，然後
+        在後方集體幫助恢復兵力及士氣即可。注意本戰役不能戰敗，否則便
+        遊戲結束了。
+
+┌───────────┐
+│第四章第一幕  奪回荊州│
+└───────────┘
+
+成都
+
+  事件：1.若之前略過西陵之戰，則一開始關興、張苞、劉禪等人加入。
+        2.與諸葛亮交談２次，選擇是否派遣奇襲隊。
+        3.與馬良交談，到江陵。
+  加入：關興(近41)、張苞(近41)、劉禪(戰41)
+  說明：選擇是否派遣奇襲隊，會影響到後面的前進路線。若選擇派遣，則隊
+        伍將暫時失去趙雲、龐統等１０名武將，但卻可招降到姜維，以及拿
+        到六韜、三略等好東西，同時關平、周倉等人也會歸隊。唯一注意的
+        是，奇襲隊在招降徐庶之前不能失敗，否則便招降不到了。若是選擇
+        不派遣奇襲隊便沒有這個困擾。但若可以的話，還是派遣比較好些。
+
+江陵
+
+  道具：火龍書、濁流書、海嘯書、山崩書、山洪書、援部書、活氣書、勇氣書
+  事件：1.與孫權交談，與諸葛亮交談兩次，決定是否請孫權攻合淝，若不邀請，
+          則孫權援助金２０００。
+        2.與諸葛亮交談，進入襄陽之戰。
+  說明：若請孫權攻合淝，則宛之戰一將省略，為了能得到更多的經驗值，還
+        是不邀請比較好。
+
+４－１－１襄陽之戰
+
+  必出：諸葛亮
+  選06：趙雲、黃忠、嚴顏、關興、龐統、馬超、張飛、魏延、(李嚴)、蔣琬、
+        (吳蘭)、(孟達)、張苞、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+        劉封、伊籍、簡雍、糜芳、糜竺等１０人。
+  回合：４０
+  條件：曹仁被消滅
+  物品：茶（上）、青囊書（右上）、馬術指南書（左）
+  事件：當我軍衝入城內時，敵人援軍出現在右下角，若關羽未死亡時，己方
+        援軍武將？？？出現在左下角。
+  單挑：？？？勝曹仁（殘餘部隊加５０經驗值）
+
+襄陽
+
+  道具：步兵車、發石車、近衛鎧、俠義精神、猛火書、老酒、米、茶
+  事件：1.進議事廳與諸葛亮交談，與陸遜交談２次，選擇請陸遜去攻打南郡
+          或新野。
+        2.與諸葛亮交談，若之前選擇南郡，則進入新野之戰，否則進入南郡
+          之戰。
+  說明：選擇請陸遜去攻打南郡會比較輕鬆些。
+
+４－１－２新野之戰
+
+  必出：諸葛亮
+  選08：趙雲、黃忠、嚴顏、關興、龐統、馬超、張飛、魏延、(李嚴)、蔣琬、
+        (吳蘭)、(孟達)、張苞、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+        劉封、伊籍、簡雍、糜芳、糜竺等１０人。
+  回合：４０
+  條件：1.于禁退卻
+        2.我軍攻佔兵糧庫（殘餘部隊加５０經驗值）
+  物品：勇氣書
+  事件：第８回合時，敵方援軍出現在上方及左下。
+  單挑：張飛勝于禁（張飛升一級）
+
+新野
+
+  事件：與諸葛亮交談，若之前未邀請孫權攻合淝，則進入宛之戰一，否則進
+        入宛之戰二。
+  加入：丁奉(戰38)、徐盛(戰39)、凌統（近40）、甘寧（猛40）
+
+４－１－３南郡之戰
+
+  必出：諸葛亮
+  選08：趙雲、黃忠、嚴顏、關興、龐統、馬超、張飛、魏延、(李嚴)、蔣琬、
+        (吳蘭)、(孟達)、張苞、(王平)、(吳懿)、(雷銅)、馬良、法正、
+        馬岱、馬驥、(黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、
+        劉封、伊籍、(吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、
+        (郭適)、糜芳、(鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、
+        費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+        劉封、伊籍、簡雍、糜芳、糜竺等１０人。
+  回合：４０
+  條件：1.徐晃退卻
+        2.１０回合內攻佔２座鹿砦（殘餘部隊加５０經驗值）
+  物品：海嘯書（左上）、金２０００（右上）、援隊書（上）
+  事件：第１０回合時，敵方施展水計，我方兵力及士氣均會減半，而敵方援
+        軍出現在上方，並開始主動出擊。
+  單挑：張苞勝夏侯尚（張苞升一級）
+  說明：想在１０回合內攻佔２座鹿砦實在太難了些，不如採穩紮穩打的方式
+        進行。
+
+南郡
+
+  事件：與諸葛亮交談，若之前未邀請孫權攻合淝，則進入宛之戰一，否則進
+        入宛之戰二。
+  加入：丁奉(戰38)、徐盛(戰39)、凌統（近40）、甘寧（猛40）
+
+４－１－４宛之戰一
+
+  必出：諸葛亮
+  選08：趙雲、黃忠、嚴顏、關興、龐統、馬超、甘寧、張飛、魏延、(李嚴)、
+        蔣琬、凌統、(吳蘭)、(孟達)、張苞、(王平)、丁奉、(吳懿)、
+        (雷銅)、馬良、法正、馬岱、馬驥、徐盛、(黃權)、(霍峻)、(劉辟)、
+        (李明)、(藩宮)、(沙摩可)、劉封、伊籍、(吳班)、(董梁)、(韓英)、
+        (陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、(趙何)、
+        糜竺、(關純)、(耿武)、費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+       劉封、伊籍、簡雍、糜芳、糜竺等１０人。
+  回合：４０
+  條件：張遼退卻
+  物品：援隊書（中）、炸彈（右下）、猛火書（上）
+  事件：1.第８回合時，敵方援軍出現在右方。
+        2.第１０回合時，敵方援軍出現在上方。
+  單挑：張飛勝張遼（張飛升一級）
+  後續：直接進入宛之戰二
+  說明：先將部隊帶到右下村落附件佈陣，等第一批敵方援軍出現時加以消滅，
+        再於該處等第二批敵方援軍的到來。
+
+４－１－５宛之戰二
+
+  必出：諸葛亮
+  選08：趙雲、黃忠、嚴顏、關興、龐統、馬超、甘寧、張飛、魏延、(李嚴)、
+        蔣琬、凌統、(吳蘭)、(孟達)、張苞、(王平)、丁奉、(吳懿)、
+        (雷銅)、馬良、法正、馬岱、馬驥、徐盛、(黃權)、(霍峻)、(劉辟)、
+        (李明)、(藩宮)、(沙摩可)、劉封、伊籍、(吳班)、(董梁)、(韓英)、
+        (陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、(趙何)、
+        糜竺、(關純)、(耿武)、費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+        劉封、伊籍、簡雍、糜芳、糜竺等１０人。
+  回合：３０（若略過宛之戰一，則回合數改為５０）
+  條件：夏侯惇被消滅
+  物品：遁甲天書（左下）、劍術指南書（右上）、馬術指南書（右下）
+  事件：1.我軍進城靠在右邊吊橋時，吊橋即會放下。
+        2.我軍接近夏侯惇時，若關羽未死亡，則關羽出現並直接進行單挑。
+  單挑：1.張飛勝徐晃（張飛升一級）
+        2.關羽勝夏侯惇（關羽升一級）
+  加入：關羽（若派遣奇襲隊，則關平、周倉、王甫、趙累、廖化亦會加入）
+
+┌────────────┐
+│第四章第二幕  中原決死戰│
+└────────────┘
+
+宛
+
+  道具：老酒、米、茶、猛火書、海嘯書、山洪書、雷陣雨書、豪雨書
+  事件：與諸葛亮交談，若之前有派奇襲隊，則進入陳倉之戰，否則進入洛陽
+        之戰。
+
+４－２－１陳倉之戰
+
+  必出：趙雲、龐統、馬超、魏延、法正、劉封、伊籍、簡雍、糜芳、糜竺
+  回合：３０
+  條件：1.郝昭被消滅
+        2.龐統退卻（失敗）
+  物品：六韜（上）、弓術指南書（右上）、三略（右）
+  事件：1.程德、張獲、高蒼任一人一接觸到馬超，即投降並留下來幫忙戰鬥
+          （馬超升一級）。
+        2.姜維一接觸我軍，即投降並留下來幫忙戰鬥。
+  單挑：魏延勝郝昭（魏延升一級）
+  加入：姜維(近50)、程德、張獲、高蒼
+  後續：失敗時，進入許昌之戰一，否則直接進入長安之戰（不能存檔）
+  說明：由於下場戰役己軍之策略值不會恢復，因此要留一些供下場戰役使用。
+
+４－２－２長安之戰
+
+  必出：前場戰役殘餘部隊
+  回合：６０（含前場戰役已消耗回合數）
+  條件：1.曹真被消滅
+        2.龐統退卻（失敗）
+  物品：援軍書
+  事件：徐庶一接觸我軍，即投降並留下來幫忙戰鬥。
+  單挑：趙雲勝張郃（趙雲升一級）
+  加入：徐庶(妖52)
+  離開：程德、張獲、高蒼
+  後續：失敗時，進入許昌之戰一，否則進入許昌之戰二
+
+４－２－３洛陽之戰
+
+  必出：諸葛亮
+  選08：關羽、趙雲、黃忠、嚴顏、關興、龐統、馬超、甘寧、張飛、魏延、
+        (李嚴)、蔣琬、凌統、(吳蘭)、(孟達)、張苞、(王平)、丁奉、
+        (吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、徐盛、(黃權)、(霍峻)、
+        (劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、(吳班)、(董梁)、
+        (韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、
+        (趙何)、糜竺、(關純)、(耿武)、費煒、劉禪
+  回合：４０
+  條件：曹真被消滅
+  物品：援軍書（左上）、金２０００（上）
+  事件：徐庶一接觸我軍部隊即投降。
+  單挑：張飛勝張郃（張飛升一級）
+  加入：徐庶(妖54)
+  後續：直接進入許昌之戰一
+
+４－２－４許昌之戰一
+
+  必出：諸葛亮
+  選08：關羽、趙雲、(姜維)、黃忠、嚴顏、關興、龐統、(關平)、馬超、
+        甘寧、(徐庶)、張飛、魏延、(李嚴)、蔣琬、凌統、(吳蘭)、(孟達)、
+        張苞、(王平)、丁奉、(吳懿)、(雷銅)、馬良、(周倉)、法正、馬岱、
+        馬驥、徐盛、(黃權)、(王甫)、(霍峻)、(劉辟)、(李明)、(藩宮)、
+        (沙摩可)、(趙累)、劉封、(廖化)、伊籍、(吳班)、(董梁)、(韓英)、
+        (陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、(趙何)、
+        糜竺、(關純)、(耿武)、費煒、劉禪
+  備註：若選擇派遣奇襲隊，則上述須去除趙雲、龐統、馬超、魏延、法正、
+        劉封、伊籍、簡雍、糜芳、糜竺、徐庶等１１人。
+  回合：４０
+  條件：司馬懿退卻
+  物品：弓術指南書（左）、劍術指南書（右）
+  事件：若關中奇襲隊失敗，則在第１２回合時，龐統、趙雲、馬超、魏延、
+        姜維等人會出現在左上角。
+  單挑：關興對許褚（關興升一級，許褚未退卻）
+  後續：直接進入許昌之戰一
+
+４－２－４許昌之戰二
+
+  必出：諸葛亮
+  選11：關羽、趙雲、(姜維)、關興、龐統、馬超、甘寧、
+        (徐庶)、張飛、魏延、(李嚴)、蔣琬、凌統、(吳蘭)、(孟達)、張苞、
+        (王平)、丁奉、(吳懿)、(雷銅)、馬良、法正、馬岱、馬驥、徐盛、
+        (黃權)、(霍峻)、(劉辟)、(李明)、(藩宮)、(沙摩可)、劉封、伊籍、
+        (吳班)、(董梁)、(韓英)、(陳式)、簡雍、(費觀)、(郭適)、糜芳、
+        (鞏志)、孫乾、(趙何)、糜竺、(關純)、(耿武)、費煒、劉禪
+  回合：４０
+  條件：(一)我軍部隊到達城門
+        (二)司馬懿退卻
+  物品：玉璽
+  事件：1.張遼一接觸到關羽即投降（關羽加一級）。
+        2.己軍一到達城門，黃忠、嚴顏即潛入開門，但城門附近也出現了敵
+          方伏兵。
+  加入：張遼(戰62)
+  死亡：黃忠、嚴顏
+  說明：一開始己軍被分成兩邊，左邊是選擇第１、３、５、７、９、１１位
+        的武將共６位，右邊則為剩下的７位（包括諸葛亮及劉備），因此要
+        妥善的佈陣。由於敵方發石車佈置的非常巧妙，最好左右各佈一個發
+        石車將之清掉，否則在圍攻之下，較弱的武將很可能一開始就退卻了。
+        由於張遼守在左邊，因此要將關羽佈陣在左邊，以便招降。
+
+┌─────────────┐
+│第四章第三幕  蜀魏最後決戰│
+└─────────────┘
+
+許昌
+
+  許昌道具：老酒、米、茶、援軍書、長槍、連弩、馬鎧、無賴精神
+  襄陽道具：步兵車、發石車、近衛鎧、俠義精神、猛火書、老酒、米、茶
+  成都道具：步兵車、發石車、近衛鎧、俠義精神、特級酒、老酒、麥、中藥
+  江陵道具：火龍書、濁流書、海嘯書、山崩書、山洪書、援部書、活氣書、
+            勇氣書
+  宛道具：老酒、米、茶、猛火書、海嘯書、山洪書、雷陣雨書、豪雨書
+  事件：和諸葛亮交談，進入鄴之戰一。
+
+４－３－１鄴之戰一
+
+  必出：諸葛亮
+  選13：關羽、趙雲、(姜維)、(張遼)、諸葛亮、關興、龐統、(關平)、馬超、
+        甘寧、(徐庶)、張飛、魏延、(李嚴)、蔣琬、凌統、(吳蘭)、(孟達)、
+        張苞、(王平)、丁奉、(吳懿)、(雷銅)、馬良、(周倉)、法正、馬岱、
+        馬驥、徐盛、(黃權)、(王甫)、(霍峻)、(劉辟)、(李明)、(藩宮)、
+        (沙摩可)、(趙累)、劉封、(廖化)、伊籍、(吳班)、(董梁)、(韓英)、
+        (陳式)、簡雍、(費觀)、(郭適)、糜芳、(鞏志)、孫乾、(趙何)、
+        糜竺、(關純)、(耿武)、費煒、劉禪
+  回合：４０
+  條件：曹丕被消滅
+  物品：援軍書（左上）、霸王之劍（右上）
+  單挑：1.張苞勝曹彰（張苞升一級）
+        2.關興勝曹植（關興升一級）
+  後續：直接進入鄴之戰二（不能存檔）
+  說明：從本戰役開始，必須一連打上三場決戰戰役，因此要把該買的道具都
+        買齊了，並派出最強的武將。而在戰場上，策略值能節省便節省一些，
+        以供後面使用。由於本戰役挑選的武將次序，會影響後面的武將分佈，
+        因此要好好的挑選。以下為各選取次序在後面戰役出現的位置：
+            １－鄴之戰二佈於左，鄴之戰三佈於左（建議趙雲，有單挑）
+            ２－鄴之戰二佈於右，鄴之戰三佈於左（建議馬超，有單挑）
+            ３－鄴之戰二佈於左，鄴之戰三佈於右（建議張飛，有單挑）
+            ４－鄴之戰二佈於右，鄴之戰三佈於左（建議龐統，恢復用）
+            ５－鄴之戰二佈於中，鄴之戰三佈於左（建議關羽）
+            ６－鄴之戰二佈於左，鄴之戰三佈於右（建議發石車，助攻）
+            ７－鄴之戰二佈於右，鄴之戰三佈於左（建議發石車，助攻）
+            ８－鄴之戰二佈於中，鄴之戰三佈於右（若還有發石車）
+            ９－鄴之戰二佈於左，鄴之戰三佈於右（建議戰車，恢復用）
+          １０－鄴之戰二佈於右，鄴之戰三佈於左
+          １１－鄴之戰二佈於中，鄴之戰三佈於左
+          １２－鄴之戰二佈於左，鄴之戰三佈於左（建議戰車，恢復用）
+          １３－鄴之戰二佈於右，鄴之戰三佈於左
+        此外，由於鄴之戰三的行進速度很重要，因此最好將馬匹給較慢的發
+        石車使用。
+
+４－３－２鄴之戰二
+
+  必出：前場戰役剩餘部隊
+  回合：４０
+  條件：司馬懿退卻
+  物品：援軍書（左）、援軍書（中）、勇氣書（左上）、勇氣書（右）
+  事件：司馬懿一開始即在城中放火，導致敵我雙方兵力均減少一半。
+  後續：直接進入鄴之戰三（不能存檔）
+  說明：一開始時，我軍被分成３個部份，左邊為選擇第１、３、６、９、
+        １２位的武將，中間是劉備、諸葛亮及選擇第５、８、１１位的武將，
+        右邊則為選擇第２、４、７、１０、１３的武將。由於部隊分散而敵
+        方發石車眾多，要特別小心被圍攻退卻，尤其是在中間的武將。最好
+        等兩側己軍到來後，再一起擊退中間的敵人。
+
+４－３－３鄴之戰三
+
+  必出：前場戰役剩餘部隊
+  回合：５０
+  條件：曹操被消滅
+  事件：1.第４回合時，曹操開始放火。
+        2.第８回合時，左邊第一個通道被火阻塞。
+        3.第１８回合時，左邊第二個通道被火阻塞。
+        4.第２８回合時，左邊第三個通道被火阻塞。
+        5.第３４回合時，右邊最後一個通道被火阻塞。
+  單挑：1.張飛勝許褚（張飛升一級）
+        2.趙雲勝李典（趙雲升一級）
+        3.關羽勝張遼（張遼未被招降時，關羽升一級）
+        4.馬超勝樂進（馬超升一級）
+  後續：結局
+  說明：一開始時，我軍被分成２個部份，左邊為選擇第１、２、４、５、７、
+        １０、１１、１２、１３位的武將，其餘則在右邊。由於通道會被火
+        阻塞，因此左邊部隊的移動速度要夠快，否則便會被擋下來而無法前
+        去攻打曹操了（等級７７）。另外，由於李典、樂進在左邊，因此趙
+        雲和馬超要佈於左邊，而許褚在右邊，因此張飛要佈於右邊。
+
+┌─────┐
+│屬性排行表│
+└─────┘
+
+一、總排行
+
+  關羽、趙雲、姜維、張遼、黃忠、嚴顏、諸葛亮、關興、龐統、關平、劉備、
+  馬超、甘寧、徐庶、張飛、魏延、李嚴、蔣琬、凌統、吳蘭、孟達、張苞、
+  王平、丁奉、吳懿、雷銅、馬良、周倉、法正、馬岱、馬驥、徐盛、黃權、
+  王甫、霍峻、劉辟、李明、藩宮、沙摩可、趙累、劉封、廖化、伊籍、吳班、
+  董梁、韓英、陳式、簡雍、費觀、郭適、糜芳、鞏志、孫乾、趙何、糜竺、
+  關純、耿武、費煒、劉禪
+
+二、職業分類排行
+
+  兵 - 張遼、黃忠、嚴顏、劉備、孟達、王平、丁奉、法正、徐盛、黃權、
+       王甫、劉封、廖化、伊籍、韓英、費觀、糜芳、耿武、劉禪
+  弓 - 李嚴、蔣琬、吳懿、趙累、吳班、簡雍、關純、費煒
+  騎 - 關羽、趙雲、姜維、關興、關平、馬超、張飛、凌統、吳蘭、張苞、
+       雷銅、馬岱
+  妖 - 諸葛亮、龐統、徐庶
+  樂 - 馬驥、糜竺
+  輸 - 馬良、孫乾
+  賊 - 周倉、劉辟、董梁、郭適、趙何
+  武 - 魏延、藩宮、陳式
+  獸 - 甘寧、霍峻、李明
+  異 - 沙摩可
+
+┌──────┐
+│武將屬性列表│
+└──────┘
+
+註：武力影響攻擊力，統御力影響防禦力，智力則影響策略值多寡，以及施計
+    或被施計的成功率與效果。
+註；策略值=(25+2.5*等級)*智力/100
+
+武將     武  智  御
 --------------------------
-�B��     75  64  91
-����     98  80 100
-�i��     99  42  83
-����     89  54  78
-�f��    100  21  80
-�ض�     90  29  88
-����     25  90  77
-�տ�     58  83  67
-���     75  94  98
-�K��     58  47  71
-�]��     90  62  81
-�K�N     79  43  71
-���]��   71  55  67
-�{��     69  81  73
-���\     86  66  74
-����     53  61  42
-�L�J��   95  60  87
-�L�J�W   90  52  86
-�䤯     80  62  79
-��x     74  47  74
-����     54  68  50
-�J�H     58  30  37
-����     72  46  60
-���v     45  84  72
-�F�E     36  80  27
-���]�V   60  47  58
-��\     52  24  52
-����     63  25  57
-�f��     51  40  47
-����     88  70  85
-���     65  84  54
-����     68  35  62
-�}��     82  30  75
-����     78  60  41
-�F���i   91  18  74
-���n     45  70  39
-��ŧ     57  52  50
-���j     52  73  74
-����     60  70  51
-�B��     64  43  59
-�i��     57  26  48
-�]��     65  72  70
-�K�N     25  59  23
-�i�c     92  37  83
-����     60  42  59
-���M     70  62  70
-���R     63  42  49
-����     61  33  59
-�}�a     54  38  38
-����     45  90  88
-�q��     60  85  71
-�C�}     87  32  84
-����     91  19  86
-����     98  84  87
-�{��     54  82  66
-�\��     45  61  40
-���_     35  65  32
-�ժZ     44  53  32
-����     42  61  32
-�Y��     66  45  60
-�T�q     73  39  65
-����     36  97  32
-�_�T     60  52  62
-�]��     38  74  34
-�S��     40  64  36
-���n     36  70  25
-�ִN     70  51  67
-�\�u     97  25  94
-���{     37  96  62
-���F     70  35  70
-���L     52  62  48
-����     68  42  62
-����     56  60  63
-�Q��     72  46  68
-����     59  45  50
-���c     54  80  85
-����     40  94  60
-�{�R     25  90  85
-�}��     91  49  83
-�i��     90  80  87
-�J��     67  42  65
-�S��     63  25  59
-²�l     42  74  36
-���d     27  68  30
-�\��     23  78  20
-����     32  54  29
-�q��     60  51  46
-���     70  57  66
-�]�[     67  49  62
-���`     72  60  70
-�d�Z     65  47  64
-�f�t     71  67  73
-����     34  76  31
-���H     40  96  81
-�B��     70  65  70
-���F     74  35  69
-���L     65  42  61
-����     94  53  89
-���Y     23  80  55
-����     55  37  53
-�B��     35  85  73
-�i¸     74  53  68
-�i��     90  62  88
-����     75  50  72
-���r     65  43  61
-�E�_ã   73  62  68
-���_     72  41  60
-����     58  54  56
-����     79  63  57
-�±�     69  63  74
-����     59  48  54
-�}�f     44  97  85
-����     70  68  67
-���y     21  84  72
-�B�a     30  63  50
-����     72  47  73
-�B��     63  57  59
-�i�Z     64  18  52
-���]     65  14  51
-�ǶV     29  74  26
-�B�z     59  52  52
-��u     84  24  78
-����     40  58  36
-�f�m     73  25  68
-�f��     57  23  70
-�Ѹ��G   44 100  94
-�Q��     92  51  80
-����     80  74  78
-�L�J��   72  53  70
-���E     62  45  59
-�i��     59  60  50
-���^     28  58  24
-�e��     51  98  88
-���T     30  70  28
-����     33  41  29
-�L�J��   60  62  58
-�˩�     62  34  59
-����     65  43  61
-�JĲ     65  34  61
-�i�n     56  46  47
-�L�J��   72  31  55
-�]�v     86  87  80
-�P��     75  95  88
-�|��     61  95  78
-�i�L     32  92  29
-�Ѹ��@   55  91  46
-�E�A     45  78  52
-�̹�     91  54  84
-�f�X     84  91  80
-�ӥv�O   94  67  81
-����     80  95  85
-�j�s     34  62  30
-����     53  39  40
-����     51  36  30
-�P��     85  40  82
-�U�l     18  72  17
-��½     40  78  32
-�B�c     25  65  20
-����     35  62  31
-���Z     32  68  27
-�Yڭ     25  71  24
-����     67  64  62
-�P��     87  53  78
-����     65  56  63
-�B�^     75  65  70
-�}��     72  70  59
-���     81  65  71
-���Z     69  55  58
-���k     57  49  48
-����     95  67  90
-����     82  35  73
-���B     20  74  18
-���     60  51  54
-���     75  39  72
-���}     45  90  73
-�B��     53  55  48
-�B��     58  58  49
-���D�a   78  30  70
-���d     52  54  49
-����     63  20  53
-����     52  27  40
-�d��     44  63  40
-����     57  35  46
-����     48  51  47
-�]��     64  52  60
-�f�d     30  72  25
-�i�Q     34  86  30
-�k��     52  87  66
-�B��     52  51  47
-���W     97  44  88
-�s�F     73  70  71
-����     23  80  21
-����     70  88  72
-�B�Q     51  60  47
-�N�c     66  23  64
-�i��     87  69  84
-�H��     69  65  66
-���h     75  44  71
-���K     59  43  56
-�d�t     71  69  70
-�d��     88  43  85
-�p��     86  43  81
-�Y�C     86  71  87
-����     84  47  74
-�i�|     72  80  73
-�i��     72  35  62
-����     45  57  24
-�N�m     67  65  62
-����     67  28  60
-�L�J�|   70  60  68
-�L�J�w   69  59  67
-���     81  42  93
-��A     68  65  65
-�q���t   48  99  95
-���     72  65  72
-�e�w     94  65  81
-�ޥ�     68  14  52
-�ֶi     74  39  74
-���K     60  22  45
-���M     64  40  60
-ÿ�c     62  52  71
-�Ыh     23  46  30
-�P��     66  53  61
-����     55  47  41
-����     67  28  76
-����     28  67  76
-�J��     65  44  59
-����     58  54  53
-����     69  32  60
-����     73  11  38
-�Y��     70  48  50
-���d     51  68  32
-�d��     42  60  45
-�s��     69  31  52
-�{�w     70  56  51
-�i��     78  61  63
-���a     72  56  48
-���O     64  30  58
-���     15  78  13
-�q���v   65  87  79
-�q���L   66  85  75
-��u     74  66  88
-�q�L     68  88  91
-����     90  94  80
-���^     61  44  55
-���A     35  63  50
-����     58  66  55
-�B�@     67  59  65
-�B�`     58  44  52
-���Q     45  57  26
-����     29  85  28
-����     72  67  72
-�B�I     22  20  18
-���Y     75  74  72
-�O�[     49  45  58
-����     56  38  45
-����     70  48  72
-���{     60  85  73
-�O�m     23  80  25
+劉備     75  64  91
+關羽     98  80 100
+張飛     99  42  83
+董卓     89  54  78
+呂布    100  21  80
+華雄     90  29  88
+李儒     25  90  77
+孔融     58  83  67
+曹操     75  94  98
+袁紹     58  47  71
+孫堅     90  62  81
+袁術     79  43  71
+公孫瓚   71  55  67
+程普     69  81  73
+黃蓋     86  66  74
+陶謙     53  61  42
+夏侯惇   95  60  87
+夏侯淵   90  52  86
+曹仁     80  62  79
+曹洪     74  47  74
+李肅     54  68  50
+胡軫     58  30  37
+楊昂     72  46  60
+黃權     45  84  72
+閻圃     36  80  27
+公孫越   60  47  58
+曹豹     52  24  52
+趙岑     63  25  57
+呂建     51  40  47
+關興     88  70  85
+馬謖     65  84  54
+李豐     68  35  62
+徐商     82  30  75
+廖化     78  60  41
+沙摩可   91  18  74
+荀爽     45  70  39
+杜襲     57  52  50
+王甫     52  73  74
+趙累     60  70  51
+劉岱     64  43  59
+張邈     57  26  48
+孫桓     65  72  70
+袁胤     25  59  23
+張苞     92  37  83
+韓當     60  42  59
+朱然     70  62  70
+李傕     63  42  49
+郭汜     61  33  59
+徐榮     54  38  38
+田豐     45  90  88
+沮授     60  85  71
+顏良     87  32  84
+文醜     91  19  86
+趙雲     98  84  87
+逢紀     54  82  66
+許攸     45  61  40
+陳震     35  65  32
+耿武     44  53  32
+關純     42  61  32
+嚴綱     66  45  60
+麴義     73  39  65
+郭嘉     36  97  32
+于禁     60  52  62
+孫乾     38  74  34
+糜竺     40  64  36
+陳登     36  70  25
+樂就     70  51  67
+許褚     97  25  94
+荀彧     37  96  62
+紀靈     70  35  70
+董昭     52  62  48
+陳紀     68  42  62
+高順     56  60  63
+魏續     72  46  68
+宋憲     59  45  50
+陳宮     54  80  85
+荀攸     40  94  60
+程昱     25  90  85
+徐晃     91  49  83
+張遼     90  80  87
+侯成     67  42  65
+糜芳     63  25  59
+簡雍     42  74  36
+滿寵     27  68  30
+許汜     23  78  20
+王楷     32  54  29
+郝萌     60  51  46
+曹性     70  57  66
+孫觀     67  49  62
+車冑     72  60  70
+吳班     65  47  64
+審配     71  67  73
+郭圖     34  76  31
+賈詡     40  96  81
+劉表     70  65  70
+朱靈     74  35  69
+路昭     65  42  61
+馬騰     94  53  89
+陳琳     23  80  55
+王忠     55  37  53
+劉瞱     35  85  73
+張繡     74  53  68
+張郃     90  62  88
+高覽     75  50  72
+韓猛     65  43  61
+淳于瓊   73  62  68
+蔣奇     72  41  60
+馬忠     58  54  56
+李異     79  63  57
+謝旌     69  63  74
+辛明     59  48  54
+徐庶     44  97  85
+蔡瑁     70  68  67
+伊籍     21  84  72
+劉琦     30  63  50
+李典     72  47  73
+劉封     63  57  59
+張武     64  18  52
+陳孫     65  14  51
+蒯越     29  74  26
+劉琮     59  52  52
+文聘     84  24  78
+王威     40  58  36
+呂曠     73  25  68
+呂翔     57  23  70
+諸葛亮   44 100  94
+魏延     92  51  80
+關平     80  74  78
+夏侯蘭   72  53  70
+韓浩     62  45  59
+張允     59  60  50
+李珪     28  58  24
+龐統     51  98  88
+王粲     30  70  28
+宋忠     33  41  29
+夏侯恩   60  62  58
+晏明     62  34  59
+馬延     65  43  61
+焦觸     65  34  61
+張南     56  46  47
+夏侯傑   72  31  55
+孫權     86  87  80
+周瑜     75  95  88
+魯肅     61  95  78
+張昭     32  92  29
+諸葛瑾   55  91  46
+闞澤     45  78  52
+甘寧     91  54  84
+呂蒙     84  91  80
+太史慈   94  67  81
+陸遜     80  95  85
+鮑龍     34  62  30
+蔡陽     53  39  40
+蔡中     51  36  30
+周倉     85  40  82
+顧雍     18  72  17
+虞翻     40  78  32
+步騭     25  65  20
+薛綜     35  62  31
+陸績     32  68  27
+嚴畯     25  71  24
+蔣欽     67  64  62
+周泰     87  53  78
+蔡勳     65  56  63
+丁奉     75  65  70
+徐盛     72  70  59
+凌統     81  65  71
+陳武     69  55  58
+毛玠     57  49  48
+黃忠     95  67  90
+牛金     82  35  73
+陳矯     20  74  18
+曹純     60  51  54
+潘璋     75  39  72
+馬良     45  90  73
+劉度     53  55  48
+劉賢     58  58  49
+邢道榮   78  30  70
+趙範     52  54  49
+陳應     63  20  53
+金旋     52  27  40
+鞏志     44  63  40
+韓玄     57  35  46
+楊齡     48  51  47
+孫瑜     64  52  60
+呂範     30  72  25
+張松     34  86  30
+法正     52  87  66
+劉璋     52  51  47
+馬超     97  44  88
+孟達     73  70  71
+王累     23  80  21
+李恢     70  88  72
+劉貴     51  60  47
+冷苞     66  23  64
+張任     87  69  84
+鄧賢     69  65  66
+楊懷     75  44  71
+高沛     59  43  56
+吳懿     71  69  70
+吳蘭     88  43  85
+雷銅     86  43  81
+嚴顏     86  71  87
+馬岱     84  47  74
+張魯     72  80  73
+張衛     72  35  62
+楊任     45  57  24
+霍峻     67  65  62
+陳式     67  28  60
+夏侯尚   70  60  68
+夏侯德   69  59  67
+曹彰     81  42  93
+曹丕     68  65  65
+司馬懿   48  99  95
+曹休     72  65  72
+龐德     94  65  81
+管亥     68  14  52
+樂進     74  39  74
+王鐵     60  22  45
+蔣然     64  40  60
+藩宮     62  52  71
+羽則     23  46  30
+周比     66  53  61
+趙何     55  47  41
+楊彥     67  28  76
+楊綱     28  67  76
+侯累     65  44  59
+陳蔣     58  54  53
+董梁     69  32  60
+李雄     73  11  38
+嚴雙     70  48  50
+朱康     51  68  32
+吳祖     42  60  45
+孟肅     69  31  52
+程德     70  56  51
+張獲     78  61  63
+高蒼     72  56  48
+宋費     64  30  58
+曹植     15  78  13
+司馬師   65  87  79
+司馬昭   66  85  75
+曹真     74  66  88
+郝昭     68  88  91
+姜維     90  94  80
+韓英     61  44  55
+郭適     35  63  50
+楊玄     58  66  55
+劉辟     67  59  65
+劉循     58  44  52
+楊松     45  57  26
+楊修     29  85  28
+王平     72  67  72
+劉禪     22  20  18
+李嚴     75  74  72
+費觀     49  45  58
+韓暹     56  38  45
+李明     70  48  72
+蔣琬     60  85  73
+費煒     23  80  25
 
-�z�w�w�w�w�{
-�x�L�ئC���x
-�|�w�w�w�w�}
+┌────┐
+│兵種列表│
+└────┘
 
-1.�ݩ�
+1.屬性
 
-          �L�O    ���ŧL�O  �����O  ���ŧ����O  ���m�O  ���Ũ��m�O  ���ʤO  �Ƶ�
+          兵力    滿級兵力  攻擊力  滿級攻擊力  防禦力  滿級防禦力  移動力  備註
 ------------------------------------------------------------------------------------------------------------
-�u�L      500+50    5400    308+28    3052      308+28    3052         4
-���L      500+50    5400    352+32    3488      352+32    3488         4
-�Ԩ�      500+50    5400    352+32    3488      396+36    3924         5
-�}�L      500+40    4420    286+26    2834      308+28    3052         4
-�s���L    500+40    4420    352+32    3488      308+28    3052         4
-�o�ۨ�    500+40    4420    396+36    3924      330+30    3270         3
-���M�L    500+60    6380    352+32    3488      286+26    2834         6    ��a���ʤO��b�A�L�k��V�˪L
-���M�L    500+60    6380    374+34    3706      330+30    3270         5    ��a���ʤO��b�A�L�k��V�˪L
-��ö�    500+60    6380    396+36    3924      352+32    3488         6    ��a���ʤO��b�A�L�k��V�˪L
-�s��      800+40    4720    330+30    3270      308+28    3052         4    �i��V�s�a�A�|����
-�c��      800+40    4720    352+32    3488      330+30    3270         4    �i��V�s�a�A�|����
-�q��      800+40    4720    374+34    3706      352+32    3488         4    �i��V�s�a�A�|����
-�x�ֶ�    300+40    4220    264+24    2616      264+24    2616         4    ��a�P�˪L���ʤO��b
-                                                                            �F�����������ħڨC�^�X�ɥR������=(����/10)+1
-�r�~�x��  400+50    5300    396+36    3924      286+26    2834         4    �i��V�s�a
-�Z�N�a��  600+50    5500    374+34    3706      352+32    3488         5    �i��V�s�a�A�|����
-���N�v    300+50    5200    264+24    2616      264+24    2616         4
-������    700+60    5600    374+34    3706      396+36    3924         5    �i��V�s�a
-�B�鶤    300+40    4220    264+24    2616      264+24    2616         3    ��a�P�˪L���ʤO��b
+短兵      500+50    5400    308+28    3052      308+28    3052         4
+長兵      500+50    5400    352+32    3488      352+32    3488         4
+戰車      500+50    5400    352+32    3488      396+36    3924         5
+弓兵      500+40    4420    286+26    2834      308+28    3052         4
+連弩兵    500+40    4420    352+32    3488      308+28    3052         4
+發石車    500+40    4420    396+36    3924      330+30    3270         3
+輕騎兵    500+60    6380    352+32    3488      286+26    2834         6    荒地移動力減半，無法穿越森林
+重騎兵    500+60    6380    374+34    3706      330+30    3270         5    荒地移動力減半，無法穿越森林
+近衛隊    500+60    6380    396+36    3924      352+32    3488         6    荒地移動力減半，無法穿越森林
+山賊      800+40    4720    330+30    3270      308+28    3052         4    可穿越山地，會反擊
+惡賊      800+40    4720    352+32    3488      330+30    3270         4    可穿越山地，會反擊
+義賊      800+40    4720    374+34    3706      352+32    3488         4    可穿越山地，會反擊
+軍樂隊    300+40    4220    264+24    2616      264+24    2616         4    荒地與森林移動力減半
+                                                                            鄰接部隊不分敵我每回合補充策略值=(等級/10)+1
+猛獸軍團  400+50    5300    396+36    3924      286+26    2834         4    可穿越山地
+武術家隊  600+50    5500    374+34    3706      352+32    3488         5    可穿越山地，會反擊
+妖術師    300+50    5200    264+24    2616      264+24    2616         4
+異民族    700+60    5600    374+34    3706      396+36    3924         5    可穿越山地
+運輸隊    300+40    4220    264+24    2616      264+24    2616         3    荒地與森林移動力減半
 
-���G
+註：
 
-(1)�L�O�B�����O�B���m�O����Ӽƾڤ��O���ܲĤ@�Ū���l�ȡA�H�ΨC�ɤ@��
-   ���W�[�ȡC
-(2)��ڧ����O�ݭ��W�Z�O/100�C
-(3)��ڨ��m�O�ݭ��W�αs�O/100�C
-(4)�����ɡA�����O��b�C
+(1)兵力、攻擊力、防禦力的兩個數據分別表示第一級的初始值，以及每升一級
+   的增加值。
+(2)實際攻擊力需乘上武力/100。
+(3)實際防禦力需乘上統御力/100。
+(4)反擊時，攻擊力減半。
 
-2.��O
+2.能力
 
-        �����d��  ���ťi�ǵ���
+        攻擊範圍  等級可學策略
 -----------------------------------------------------------------------------------------
-�u�L        1     06=�J��    12=������
-���L       1+2    18=���s    24=�E�y    28=���U
-�Ԩ�       1+2
-�}�L       2+3    06=�x��    12=������
-�s���L    2+3+4   18=�B�y    24=�E�y    28=���U
-�o�ۨ�   2+3+4+5
-���M�L      1     08=�o��    12=�E�y
-���M�L      1     20=�D��
-��ö�      1
-�s��        1     01=����    08=�s�Y    08=�o��    12=������  16=�E�y    20=���U
-�c��       1+2    16=�s�x    24=�j����
-�q��       1+2    32=�j�s�Y
-�x�ֶ�      1     01=�E�y    08=�䴩    16=���R    24=�j�E�y  32=�j�䴩  40=�j���R
-�r�~�x��   1+2    01=������  08=���L    24=����
-                  01=�o��    16=�D��    32=����
-�Z�N�a��   1+2    01=�J��    08=���s    16=�r��    24=�j�J��  32=�j���s
-���N�v      1     01=�J��    04=���s    12=�r��    22=�j�J��  32=�j���s
-                  01=�x��    04=�B�y    12=���S    24=�j�x��  34=�j�B�y
-                  01=����    06=�s�Y    14=�s�x    26=�j����  36=�j�s�Y
-                  01=������  06=���L    14=����
-                  01=�o��    08=�D��    16=����
-                  01=���@    08=�v¡    16=�ϩR
-                  18=�j�E�y  28=�j�䴩  38=�j���R
-                  20=�j���U  30=�j�ɵ�  40=�j����
-������     1+2    01=�x��    08=�B�y    16=���S    24=�j�x��  32=�j�B�y
-�B�鶤     1+2    01=���U    08=�ɵ�    16=����    24=�j���U  32=�j�ɵ�  40=�j����
+短兵        1     06=焦熱    12=假情報
+長兵       1+2    18=火龍    24=激勵    28=援助
+戰車       1+2
+弓兵       2+3    06=漩渦    12=假情報
+連弩兵    2+3+4   18=濁流    24=激勵    28=援助
+發石車   2+3+4+5
+輕騎兵      1     08=牽制    12=激勵
+重騎兵      1     20=挑撥
+近衛隊      1
+山賊        1     01=落石    08=山崩    08=牽制    12=假情報  16=激勵    20=援助
+惡賊       1+2    16=山洪    24=大落石
+義賊       1+2    32=大山崩
+軍樂隊      1     01=激勵    08=支援    16=鼓舞    24=大激勵  32=大支援  40=大鼓舞
+猛獸軍團   1+2    01=假情報  08=偽兵    24=偽裝
+                  01=牽制    16=挑撥    32=欺壓
+武術家隊   1+2    01=焦熱    08=火龍    16=猛火    24=大焦熱  32=大火龍
+妖術師      1     01=焦熱    04=火龍    12=猛火    22=大焦熱  32=大火龍
+                  01=漩渦    04=濁流    12=海嘯    24=大漩渦  34=大濁流
+                  01=落石    06=山崩    14=山洪    26=大落石  36=大山崩
+                  01=假情報  06=偽兵    14=偽裝
+                  01=牽制    08=挑撥    16=欺壓
+                  01=看護    08=治癒    16=救命
+                  18=大激勵  28=大支援  38=大鼓舞
+                  20=大援助  30=大補給  40=大救濟
+異民族     1+2    01=漩渦    08=濁流    16=海嘯    24=大漩渦  32=大濁流
+運輸隊     1+2    01=援助    08=補給    16=救濟    24=大援助  32=大補給  40=大救濟
 
-�d��Ʀr�Хܦp�U�G
+範圍數字標示如下：
 
-�E�E�E�E�E�E�E�E�E
-�E�E�E�E���E�E�E�E
-�E�E�����������E�E
-�E�E�����������E�E
-�E���������������E
-�E�E�����������E�E
-�E�E�����������E�E
-�E�E�E�E���E�E�E�E
-�E�E�E�E�E�E�E�E�E
+‧‧‧‧‧‧‧‧‧
+‧‧‧‧５‧‧‧‧
+‧‧５４３４５‧‧
+‧‧４２１２４‧‧
+‧５３１０１３５‧
+‧‧４２１２４‧‧
+‧‧５４３４５‧‧
+‧‧‧‧５‧‧‧‧
+‧‧‧‧‧‧‧‧‧
 
-3.�L�O�ƦW
+3.兵力排名
 
-��ö�    6380
-������    5600
-�Z�N�a��  5500
-�Ԩ�      5400
-�r�~�x��  5300
-���N�v    5200
-�q��      4720
-�o�ۨ�    4420
-�x�ֶ�    4220
-�B�鶤    4220
+近衛隊    6380
+異民族    5600
+武術家隊  5500
+戰車      5400
+猛獸軍團  5300
+妖術師    5200
+義賊      4720
+發石車    4420
+軍樂隊    4220
+運輸隊    4220
 
-4.�����O�ƦW
+4.攻擊力排名
 
-��ö�    3924
-�o�ۨ�    3924
-�r�~�x��  3924
-������    3706
-�Z�N�a��  3706
-�q��      3706
-�Ԩ�      3488
-���N�v    2616
-�x�ֶ�    2616
-�B�鶤    2616
+近衛隊    3924
+發石車    3924
+猛獸軍團  3924
+異民族    3706
+武術家隊  3706
+義賊      3706
+戰車      3488
+妖術師    2616
+軍樂隊    2616
+運輸隊    2616
 
-5.���m�O�ƦW
+5.防禦力排名
 
-������    3924
-�Ԩ�      3924
-��ö�    3488
-�Z�N�a��  3488
-�q��      3488
-�o�ۨ�    3270
-�r�~�x��  2834
-���N�v    2616
-�x�ֶ�    2616
-�B�鶤    2616
+異民族    3924
+戰車      3924
+近衛隊    3488
+武術家隊  3488
+義賊      3488
+發石車    3270
+猛獸軍團  2834
+妖術師    2616
+軍樂隊    2616
+運輸隊    2616
 
-�z�w�w�w�w�{
-�x�D��C���x
-�|�w�w�w�w�}
+┌────┐
+│道具列表│
+└────┘
 
-���G�D�㩱�H�C���馬�ʡA����10�������Ƨ��h���C
+註：道具店以七五折收購，不足10金的尾數均去除。
 
-1.�˳ƩʹD��
+1.裝備性道具
 
-�D��        ����  �@��
+道具        價格  作用
 ---------------------------------------------------
-�Q�����C    2550  �����O+24%
-�^�����C    2550  �����O+22%
-�C���C      2550  �����O+20%
-��ѵe�u    2550  �����O+18%
-�۶����C    2550  �����O+16%
-�ʤѼC      2550  �����O+14%
-�C�s����M  2550  �����O+12%
-�D��        2550  �����O+10%
-�C�P�C      2550  �����O+10%
-�T�y�M      2550  �����O+10%
-�]�l�L�k    2550  ���m�O+22%
-�d�l�L�k    2550  ���m�O+20%
-�s�w�s��    2550  ���m�O+15%
-����        2550  ���m�O+15%
-�T��        2550  ���m�O+15%
-���߰�      2550  ���ʤO+3
-���c        2550  ���ʤO+2
-�������s    2550  ���ʤO+1
-��â        2550  �C�^�X��_150-250�L�O��10-20�h��
-���x���i    2550  �C�^�X��_150-250�L�O
-�թR��      2550  �C�^�X��_10-20�h��
+霸王之劍    2550  攻擊力+24%
+英雄之劍    2550  攻擊力+22%
+青釭劍      2550  攻擊力+20%
+方天畫戟    2550  攻擊力+18%
+雌雄雙劍    2550  攻擊力+16%
+倚天劍      2550  攻擊力+14%
+青龍偃月刀  2550  攻擊力+12%
+蛇矛        2550  攻擊力+10%
+七星劍      2550  攻擊力+10%
+三尖刀      2550  攻擊力+10%
+孫子兵法    2550  防禦力+22%
+吳子兵法    2550  防禦力+20%
+孟德新書    2550  防禦力+15%
+六韜        2550  防禦力+15%
+三略        2550  防禦力+15%
+赤兔馬      2550  移動力+3
+的盧        2550  移動力+2
+黃爪飛龍    2550  移動力+1
+玉璽        2550  每回合恢復150-250兵力及10-20士氣
+援軍報告    2550  每回合恢復150-250兵力
+敕命書      2550  每回合恢復10-20士氣
 
-���G�ݩʥ[�j�D��u���[���̰��̬��ǡC
+註：屬性加強道具只取加乘最高者為準。
 
-2.��¾�ιD��
+2.轉職用道具
 
-�D��        ����  �@��
+道具        價格  作用
 ---------------------------------------------------
-�C�N���n��  2550  �ܧ�¾�~���u�L�]�B�Ƥ��A�Ρ^
-�}�N���n��  2550  �ܧ�¾�~���}�L�]�B�Ƥ��A�Ρ^
-���N���n��  2550  �ܧ�¾�~�����M�L�]�B�Ƥ��A�Ρ^
-���j��      2550  �ܧ�¾�~���x�ֶ��]�B�Ƥ��A�Ρ^
-�C�n��      2550  �ܧ�¾�~���B�鶤�]�B�Ƥ��A�Ρ^
-�P�ҤѮ�    2550  �ܧ�¾�~�����N�v�]�B�Ƥ��A�Ρ^
-���j         300  ���Ţ����H�W���u�L��¾�����L
-�B�L��       600  ���Ţ����H�W�����L��¾���Ԩ�
-�s��         350  ���Ţ����H�W���}�L��¾���s���L
-�o�ۨ�       700  ���Ţ����H�W���s���L��¾���o�ۨ�
-���Z         400  ���Ţ����H�W�����M�L��¾�����M�L
-����Z       800  ���Ţ����H�W�����M�L��¾����ö�
-�L��믫     200  ���Ţ����H�W���j�s��¾���c��
-�L�q�믫     400  ���Ţ����H�W���c����¾���q��
+劍術指南書  2550  變更職業為短兵（劉備不適用）
+弓術指南書  2550  變更職業為弓兵（劉備不適用）
+馬術指南書  2550  變更職業為輕騎兵（劉備不適用）
+鼓吹具      2550  變更職業為軍樂隊（劉備不適用）
+青囊書      2550  變更職業為運輸隊（劉備不適用）
+遁甲天書    2550  變更職業為妖術師（劉備不適用）
+長槍         300  等級１５以上的短兵轉職成長兵
+步兵車       600  等級３０以上的長兵轉職成戰車
+連弩         350  等級１５以上的弓兵轉職成連弩兵
+發石車       700  等級３０以上的連弩兵轉職成發石車
+馬鎧         400  等級１５以上的輕騎兵轉職成重騎兵
+近衛鎧       800  等級３０以上的重騎兵轉職成近衛隊
+無賴精神     200  等級１５以上的強盜轉職成惡賊
+俠義精神     400  等級３０以上的惡賊轉職成義賊
 
-3.�������ĹD��
+3.策略等效道具
 
-�D��        ����  �@��
+道具        價格  作用
 ----------------------------
-�s            50  �E�y
-�S�Űs       100  �䴩
-�Ѱs         200  ���R
-�����       250  �j�E�y
-�����       500  �j�䴩
-�i���      1000  �j���R
-��           100  ���U
-��           200  �ɵ�
-��           400  ����
-������       500  �j���U
-������      1000  �j�ɵ�
-���x��      2000  �j����
-����         300  ���@
-����         600  �v¡
-��          1200  �ϩR
-�J����        50  �J��
-���s��       100  ���s
-�r����       200  �r��
-�x����        80  �x��
-�B�y��       160  �B�y
-���S��       320  ���S
-���ۮ�       100  ����
-�s�Y��       200  �s�Y
-�s�x��       400  �s�x
-�@����        50  ������
-�p�}�B��     100  ���L
-���B��       200  ����
+酒            50  激勵
+特級酒       100  支援
+老酒         200  鼓舞
+平氣書       250  大激勵
+活氣書       500  大支援
+勇氣書      1000  大鼓舞
+豆           100  援助
+麥           200  補給
+米           400  救濟
+援隊書       500  大援助
+援部書      1000  大補給
+援軍書      2000  大救濟
+傷藥         300  看護
+中藥         600  治癒
+茶          1200  救命
+焦熱書        50  焦熱
+火龍書       100  火龍
+猛火書       200  猛火
+漩渦書        80  漩渦
+濁流書       160  濁流
+海嘯書       320  海嘯
+落石書       100  落石
+山崩書       200  山崩
+山洪書       400  山洪
+濃霧書        50  假情報
+雷陣雨書     100  偽兵
+豪雨書       200  偽裝
 
-4.��L�D��
+4.其他道具
 
-�D��        ����  �I�ζZ��    �@�νd��    �@��
+道具        價格  施用距離    作用範圍    作用
 --------------------------------------------------------------------
-���u         500  1+2+3       0           ���1500�L�O�B15�h��
+炸彈         500  1+2+3       0           減少1500兵力、15士氣
 
-�z�w�w�w�w�{
-�x�����C���x
-�|�w�w�w�w�}
+┌────┐
+│策略列表│
+└────┘
 
-����      ������  �I�ζZ��    �@�νd��    �@��
+策略      策略值  施用距離    作用範圍    作用
 --------------------------------------------------------------------
-�E�y           4  0+1+2       0           ��_30�h��
-�䴩           8  0+1+2+3     0           ��_40�h��
-���R          12  0+1+2+3+4   0           ��_50�h��
-�j�E�y        16  0           0+1+2       ��_30�h��
-�j�䴩        24  0           0+1+2+3     ��_40�h��
-�j���R        32  0           0+1+2+3+4   ��_50�h��
-���U           6  0+1+2       0           ��_600�L�O
-�ɵ�          10  0+1+2+3     0           ��_1200�L�O
-����          14  0+1+2+3+4   0           ��_1800�L�O
-�j���U        24  0           0+1+2       ��_600�L�O
-�j�ɵ�        32  0           0+1+2+3     ��_1200�L�O
-�j����        40  0           0+1+2+3+4   ��_1800�L�O
-���@          12  0+1+2       0           ��_600�L�O�B30�h��
-�v¡          20  0+1+2+3     0           ��_1200�L�O�B40�h��
-�ϩR          28  0+1+2+3+4   0           ��_1800�L�O�B50�h��
-�J��           4  1+2         0           ���400�L�O
-���s           8  1+2+3       0           ���800�L�O
-�r��          12  1+2+3+4     0           ���1200�L�O
-�j�J��        16  0           1+2         ���400�L�O
-�j���s        20  0           1+2+3       ���800�L�O
-�x��           6  1+2         0           ���600�L�O
-�B�y          10  1+2+3       0           ���1000�L�O
-���S          14  1+2+3+4     0           ���1400�L�O
-�j�x��        18  0           1+2         ���600�L�O
-�j�B�y        22  0           1+2+3       ���1000�L�O
-����           8  1+2         0           ���800�L�O
-�s�Y          12  1+2+3       0           ���1200�L�O
-�s�x          16  1+2+3+4     0           ���1600�L�O
-�j����        20  0           1+2         ���800�L�O
-�j�s�Y        24  0           1+2+3       ���1200�L�O
-������         8  1+2         0           �Ϲ��V��
-���L          16  1+2+3+4     0           �Ϲ��V��
-����          24  0           1+2         �Ϲ��V��
-�o��           4  1+2         0           ���20�h��
-�D��           8  1+2+3       0           ���30�h��
-����          16  1+2+3+4     0           ���40�h��
+激勵           4  0+1+2       0           恢復30士氣
+支援           8  0+1+2+3     0           恢復40士氣
+鼓舞          12  0+1+2+3+4   0           恢復50士氣
+大激勵        16  0           0+1+2       恢復30士氣
+大支援        24  0           0+1+2+3     恢復40士氣
+大鼓舞        32  0           0+1+2+3+4   恢復50士氣
+援助           6  0+1+2       0           恢復600兵力
+補給          10  0+1+2+3     0           恢復1200兵力
+救濟          14  0+1+2+3+4   0           恢復1800兵力
+大援助        24  0           0+1+2       恢復600兵力
+大補給        32  0           0+1+2+3     恢復1200兵力
+大救濟        40  0           0+1+2+3+4   恢復1800兵力
+看護          12  0+1+2       0           恢復600兵力、30士氣
+治癒          20  0+1+2+3     0           恢復1200兵力、40士氣
+救命          28  0+1+2+3+4   0           恢復1800兵力、50士氣
+焦熱           4  1+2         0           減少400兵力
+火龍           8  1+2+3       0           減少800兵力
+猛火          12  1+2+3+4     0           減少1200兵力
+大焦熱        16  0           1+2         減少400兵力
+大火龍        20  0           1+2+3       減少800兵力
+漩渦           6  1+2         0           減少600兵力
+濁流          10  1+2+3       0           減少1000兵力
+海嘯          14  1+2+3+4     0           減少1400兵力
+大漩渦        18  0           1+2         減少600兵力
+大濁流        22  0           1+2+3       減少1000兵力
+落石           8  1+2         0           減少800兵力
+山崩          12  1+2+3       0           減少1200兵力
+山洪          16  1+2+3+4     0           減少1600兵力
+大落石        20  0           1+2         減少800兵力
+大山崩        24  0           1+2+3       減少1200兵力
+假情報         8  1+2         0           使對方混亂
+偽兵          16  1+2+3+4     0           使對方混亂
+偽裝          24  0           1+2         使對方混亂
+牽制           4  1+2         0           減少20士氣
+挑撥           8  1+2+3       0           減少30士氣
+欺壓          16  1+2+3+4     0           減少40士氣
 
-���G
+註：
 
-(1)���t�����@�Φa�ΡG����B���B�����B�˪L�]�[���^�A�B�ѵL�k�ϥΡC
-(2)���t�����@�Φa�ΡG����B���١]�[���^�A�B�Ѧ��[���ĪG�C
-(3)�s�t�����@�Φa�ΡG��a�B�s�a�]�[���^�C
-(4)�@�θ̩ҦC���ƭȡA���D��ϥήɤj�����ƭȡA��ڬI�i�����ɪ��@�ΡA
-   �|�]���O�h��Ӧ��ҼW��A�̦h�i�ۮt��@���C
+(1)火系策略作用地形：平原、草原、城池、森林（加乘），雨天無法使用。
+(2)水系策略作用地形：平原、橋樑（加乘），雨天有加乘效果。
+(3)山系策略作用地形：荒地、山地（加乘）。
+(4)作用裡所列的數值，為道具使用時大約的數值，實際施展策略時的作用，
+   會因智力多寡而有所增減，最多可相差近一倍。
 
-�Z�����d��Ʀr�Хܦp�U�G
+距離／範圍數字標示如下：
 
-�E�E�E�E�E�E�E�E�E
-�E�E�E�E���E�E�E�E
-�E�E�����������E�E
-�E�E�����������E�E
-�E���������������E
-�E�E�����������E�E
-�E�E�����������E�E
-�E�E�E�E���E�E�E�E
-�E�E�E�E�E�E�E�E�E
+‧‧‧‧‧‧‧‧‧
+‧‧‧‧５‧‧‧‧
+‧‧５４３４５‧‧
+‧‧４２１２４‧‧
+‧５３１０１３５‧
+‧‧４２１２４‧‧
+‧‧５４３４５‧‧
+‧‧‧‧５‧‧‧‧
+‧‧‧‧‧‧‧‧‧

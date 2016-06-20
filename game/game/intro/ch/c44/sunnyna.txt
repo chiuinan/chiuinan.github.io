@@ -1,30 +1,30 @@
-�W�١G�I�s���Ԥh (Legend of Pong Long Fighter Sunnyna�A���媩)
-²���G�Ѱ�1995�~�X�~�������T�q���C���A�@���y�g�]�k�v�不�����ѧ@��
-      ���������ȤΨ�|�W��U�����ݡC���C���i���O�j�I�ΡB�±N�M�����
-      �t�C������X��A�b�e���]���������ɡA�ĥ������j�I�Ϊ��H����B�e
-      �i�覡�A�ӾD�J�ĤH�ɡA�h�ĥ������±N���@�Ԥ覡���ӭt�C�b�@�Գ�
-      �Q��A�]�����������t���ɯŨ�A�H���ɥͩR�O�P�]�k�O�C�u�O�C��
-      �b�o�T�譱���s�@���ǡA�H�Φⱡ�Ϥ������u�W�A���O�ݩ�G�y���ǡA
-      �]���o�ӹC�����M�s�o�A���o�����n���C
-�O�@�G�C��K�X�A�}�ѽX�G
+﻿名稱：碰龍美戰士 (Legend of Pong Long Fighter Sunnyna，中文版)
+簡介：天堂鳥1995年出品的１８禁益智遊戲，劇情描寫魔法師莎尼雅打敗作亂
+      的雪爾維亞及其四名手下的事蹟。本遊戲可說是大富翁、麻將和角色扮
+      演遊戲的綜合體，在前往魔王的城堡時，採用類似大富翁的隨機選步前
+      進方式，而遭遇敵人時，則採用類似麻將的作戰方式分勝負。在作戰勝
+      利後，也有類似角色扮演的升級制，以提升生命力與魔法力。只是遊戲
+      在這三方面的製作水準，以及色情圖片的美工上，都是屬於二流水準，
+      因此這個遊戲雖然新穎，但卻不怎麼好玩。
+保護：顏色密碼，破解碼：
       SUNNY.EXE
         88 46 F4 8A 46 F4
         8A -- EC 88 -- --
-�ާ@�G
+操作：
 
-�ƹ����� = �e�i��������N�P����P
-�ƹ��k�� = �\����
+滑鼠左鍵 = 前進／停止／摸牌／棄牌
+滑鼠右鍵 = 功能選單
 
-���±N�ɡA�u�n�T�դT�i�ۦP���P�Y��J�P�C�U�����U��檺�\��G
+打麻將時，只要三組三張相同的牌即算胡牌。下面為各選單的功能：
 
-Attack = �J�P
-Tri    = �I�P
-Reach  = ť�P
-Sea Through  = �ݹ�誺�P
-Miracle Pass = �w���X�P
-God Grace    = �ߨ�ۺN
+Attack = 胡牌
+Tri    = 碰牌
+Reach  = 聽牌
+Sea Through  = 看對方的牌
+Miracle Pass = 安全出牌
+God Grace    = 立刻自摸
 
-�J�P�ɭY���M�@��A�h���S���ĪG�C�䤤�E���s�����O�̱j�A�E�~���Ĥ��i�j
-�T�ɥR�ͩR�O�A�E�~���Ĥ��i�j�T�ɥR�k�O�C��L�[���ĪG���A�u���ѭJ�B��
-�M�ۺN�B�H��ť�P�[�䵥�T���Ӥw�C
+胡牌時若為清一色，則有特殊效果。其中九條龍攻擊力最強，九瓶紅藥水可大
+幅補充生命力，九瓶綠藥水可大幅補充法力。其他加成效果的，只有天胡、門
+清自摸、以及聽牌加賭等三項而已。
 

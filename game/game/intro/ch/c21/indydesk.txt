@@ -1,13 +1,13 @@
-�W�١Gã���դh�����j�_�I (Indiana Jones and His Desktop Adventures�A���媩)
-²���GLucas 1996�~�X�~���ʧ@�_�I�����C���A�ѪQ�^�ק令���媩�C�C���C
-      �����a�ϻP���D�����@�ˡA�M�ʾ԰g�c�������P�u�����C���D�ä����A
-      �@�몽ı�K�i�ѥX�A�ӥB�C���٪���������ާ@��U�A�W��۷��e���C
-      �u�O�԰����ʧ@�����ޱ��A�O���C���̤j�����I�C����Ө��A�o�ӹC��
-      ²��ӤS����A���M���D�����@��Lucas�X�~���_�I�C���������A���]
-      ��ȱo�@���C
-�O�@�G�L�C
-����G�u��bWindows�t�ΤW����C
-�Ƶ��G�C����U�ɦW��DESKHELP.DOC�A�ݥ�MS-Word�}�ҡC
+﻿名稱：瓊斯博士視窗大冒險 (Indiana Jones and His Desktop Adventures，中文版)
+簡介：Lucas 1996年出品的動作冒險解謎遊戲，由松崗修改成中文版。每次遊
+      戲的地圖與謎題都不一樣，和百戰迷宮有異曲同工之妙。謎題並不難，
+      一般直覺便可解出，而且遊戲還附有全中文操作手冊，上手相當容易。
+      只是戰鬥的動作不易操控，是本遊戲最大的缺點。整體而言，這個遊戲
+      簡單而又有趣，雖然謎題不像一般Lucas出品的冒險遊戲那麼難，但也
+      頗值得一玩。
+保護：無。
+限制：只能在Windows系統上執行。
+備註：遊戲手冊檔名為DESKHELP.DOC，需用MS-Word開啟。
 
  
 Indiana Jones and his Desktop Adventures: FAQ by hempick

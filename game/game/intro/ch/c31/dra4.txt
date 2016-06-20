@@ -1,339 +1,339 @@
-�W�١G�s�M�h�� (Dragon Knight 4�A���媩)
-²���GElf 1994�~�X�~�������T���������t�C���A���w�ֲ��ק令���媩��
-      �N�z�o��C�@���y�g�]�ɥ|�j�Ѥ����@�������A���R�������㦳����
-      ��Ϊ��d�ͺ��A��O�d�ͺ��ն���ܸ����A���o�������ѡA�����ܦ�
-      �@�����A�d�ͺ���O�^��L�h�A��U�ۤv��������򪺬G�ơC��ӹC��
-      ���@���ٺ��Z�������A�u�O�԰��W���I�x���A�S�O�O�U���d��������^
-      �X�ƨä��h�A�j���v��D�o���t�D�ʥX�����i�A�ϱo�ĤH�o�H�H�h�ݳҡC
-      ���~�A���d�ͺ��^��L�h��A�Ҧ����ݩʷ|�A���m�@���A��O���e��
-      �m�\�ұo�����I�Ѭy���A���M�X�z�A���o���Hı�o�ܤ��n�C����Ө��A
-      �o�ڹC���٬O���Z�������A�����쪺���a�i�H�����ݡC
-����G�����w�˦bC:\DRA4�ؿ��U�C
-�O�@�G�����C
-�𲤡G�]�@�̡Ч��ӧQ�A�C�m�ɥR�^
+﻿名稱：龍騎士４ (Dragon Knight 4，中文版)
+簡介：Elf 1994年出品的１８禁策略角色扮演遊戲，由歡樂盒修改成中文版並
+      代理發行。劇情描寫魔界四大天王之一的路西佛，受命欲殺死具有神族
+      血統的卡凱爾，於是卡凱爾組隊對抗路西佛，但卻不幸失敗，為改變此
+      一結局，卡凱爾於是回到過去，協助自己消滅路西佛的故事。整個遊戲
+      的劇情還算蠻不錯的，只是戰鬥上有點困難，特別是各關卡給的限制回
+      合數並不多，強迫己方非得迅速主動出擊不可，使得敵人得以以逸待勞。
+      此外，當卡凱爾回到過去後，所有攻防屬性會再重置一次，於是先前的
+      練功所得完全付諸流水，雖然合理，但卻讓人覺得很不爽。整體而言，
+      這款遊戲還是算蠻不錯的，有興趣的玩家可以玩玩看。
+限制：必須安裝在C:\DRA4目錄下。
+保護：不明。
+攻略：（作者－杜勝利，青衫補充）
 
-�z�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-�x   ��   ��   ��   ��   �@   ��   ��         ���СЭ��n�D��        �x
-�u�w�w�s�w�w�w�w�w�w�w�s�w�w�s�w�w�w�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�t
-�x    �x �m       �W  �x�ʧO�x ��  ��  ��  ��   �x �[  �J  �a  ��   �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x ���d �� ��   �x �k �x  �C �h           �x                  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x ���� �|      �x �k �x  �� ��(�s �M �h) �x  Ĭ �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x ���J �S      �x �k �x  �C �h           �x  �p �X �h �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x �g �R �S     �x �k �x  �] �� �v        �x  �� �� �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x �d �| �F ��  �x �k �x  �C �h           �x  �� �� �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x ���R �� �L   �x �k �x  �] �� �v        �x  �� �� �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x �d ��        �x �k �x  �M �h           �x  �� �G �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x �i ��        �x �k �x  �M �h           �x  �� �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x��  �x �g �� ã     �x �k �x  �C �h           �x  �� �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x ���� �� �� �g�x �k �x  �} �b           �x  �S �Q �w �A ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �� �� ��  �x �k �x  �} �b           �x  �N �� �h �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �J �� �� ��  �x �k �x  �} �b           �x  �N �� �h �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �w ��     �x �k �x  �C �h           �x  �N �� �h �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �s �F ��     �x �k �x  �� ��           �x  �� �i �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �d �O �Z     �x �k �x  �j ��           �x  �� �i �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �w �d     �x �k �x  �M �h           �x  �� �i �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �� ��     �x �k �x  �� ��           �x  �� �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �R �� ��     �x �k �x  �] �� �v        �x  �� �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x ù �� �Y �w  �x �k �x  �j ��           �x  �� �� �� ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �N �R        �x �k �x  �u �@           �x  �� �� �S ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �C �|     �x �k �x  �u �@           �x  �� �� �S ��     �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �� �S     �x �k �x  �u �@           �x  �� �C �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �� ��     �x �k �x  �u �@           �x  �� �C �� �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �| �d     �x �k �x  �j ��           �x  �F �� �F �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �� �g ��     �x �k �x  �� ��           �x  �F �� �F �� ��  �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x �h �| �|     �x �k �x  �s �M �h        �x  �s �� ��        �x
-�u�w�w�q�w�w�w�w�w�w�w�q�w�w�q�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�t
-�x�����x ù �� �y     �x �k �x  �C �h           �x  �B �� �� ��     �x
-�|�w�w�r�w�w�w�w�w�w�w�r�w�w�r�w�w�w�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�}
+┌─────────────────────────────────┐
+│   我   方   部   隊   一   覽   表         ★－－重要主角        │
+├──┬───────┬──┬─────────┬─────────┤
+│    │ 姓       名  │性別│ 部  隊  類  型   │ 加  入  地  方   │
+├──┼───────┼──┼─────────┼─────────┤
+│１  │ ★卡 凱 爾   │ 男 │  劍 士           │                  │
+├──┼───────┼──┼─────────┼─────────┤
+│２  │ ★謝 魯      │ 男 │  戰 斧(龍 騎 士) │  蘇 尼 亞 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│３  │ ★埃 特      │ 男 │  劍 士           │  雷 蒙 多 王 國  │
+├──┼───────┼──┼─────────┼─────────┤
+│４  │ 妮 麗 特     │ 女 │  魔 導 師        │  尤 里 西 斯 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│５  │ 卡 魯 達 斯  │ 男 │  劍 士           │  尤 里 西 斯 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│６  │ ★娜 塔 夏   │ 女 │  魔 導 師        │  尤 里 西 斯 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│７  │ 卡 隆        │ 男 │  騎 士           │  第 二 場 戰 役  │
+├──┼───────┼──┼─────────┼─────────┤
+│８  │ 可 倫        │ 男 │  騎 士           │  拉 比 亞 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│９  │ 妮 布 瓊     │ 女 │  劍 士           │  拉 比 亞 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│１０│ ★瑪 爾 蕾 妮│ 女 │  弓 箭           │  特 利 安 農 村  │
+├──┼───────┼──┼─────────┼─────────┤
+│１１│ 梅 伊 菲 雅  │ 女 │  弓 箭           │  吉 堡 士 後 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│１２│ 克 拉 莉 絲  │ 女 │  弓 箭           │  吉 堡 士 後 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│１３│ 潘 德 拉     │ 女 │  劍 士           │  吉 堡 士 後 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│１４│ 山 達 斯     │ 男 │  忍 者           │  隆 波 尼 王 國  │
+├──┼───────┼──┼─────────┼─────────┤
+│１５│ 卡 力 班     │ 男 │  大 砲           │  隆 波 尼 王 國  │
+├──┼───────┼──┼─────────┼─────────┤
+│１６│ 碧 安 卡     │ 女 │  騎 士           │  隆 波 尼 王 或  │
+├──┼───────┼──┼─────────┼─────────┤
+│１７│ 賽 依 拉     │ 女 │  忍 者           │  米 謝 爾 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│１８│ 娜 曼 莎     │ 男 │  魔 導 師        │  米 謝 爾 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│１９│ 羅 瑟 琳 德  │ 女 │  大 砲           │  米 謝 爾 街     │
+├──┼───────┼──┼─────────┼─────────┤
+│２０│ 吉 娜        │ 女 │  工 作           │  何 畢 特 村     │
+├──┼───────┼──┼─────────┼─────────┤
+│２１│ 皮 耶 魯     │ 男 │  工 作           │  何 畢 特 村     │
+├──┼───────┼──┼─────────┼─────────┤
+│２２│ 拉 比 特     │ 男 │  工 作           │  布 列 斯 港 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│２３│ 帕 威 路     │ 男 │  工 作           │  布 列 斯 港 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│２４│ 巴 魯 卡     │ 男 │  大 砲           │  達 斯 達 港 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│２５│ 塔 妮 亞     │ 女 │  忍 者           │  達 斯 達 港 街  │
+├──┼───────┼──┼─────────┼─────────┤
+│２６│ 多 魯 魯     │ 男 │  龍 騎 士        │  龍 之 堡        │
+├──┼───────┼──┼─────────┼─────────┤
+│２７│ 羅 伊 頓     │ 男 │  劍 士           │  丁 諾 港 街     │
+└──┴───────┴──┴─────────┴─────────┘
 
-�C�������A�b�C�ӫ������Φb�Գ��W�A���i���O�q�B�u�úؤl�A�ۤv�h���o�C
-�ӹC���s�ɡA���������Ĥ@���ԧФ���A�H��b�C�ӫ������N���ӡ��g�ѤH��
-ù��y�i�s�ɡC
+遊戲當中，在每個城鎮中或在戰場上，都可找到力量、守衛種子，自己去找囉。
+而遊戲存檔，必須打完第一場戰役之後，以後在每個城鎮中就有個〞寫書人〞
+羅伊頓可存檔。
 
-��ƹ��b���U�衪�]�l�����U���I��A�h�X�{�C�����\����ΨϥΪ��~�C
-�Ѣ�������СШ��t������ܡ��e���C
+把滑鼠在中下方〞珠子〞的下方點選，則出現遊戲的功能選單及使用物品。
+Ｃｔｒｌ鍵－－迅速結束對話＆畫面。
 
-�b�Գ����A�u�n�����쭫�n�D�������䤤�@��}�`�άO�W�L����^�X�ơA�N
-�բϢۢ�  �ݢ�Ӣ�C�b����^�X������ĤH�Ψ�F�ﭱ�����A�h�����ԧСC
+在戰場中，只要★五位重要主角★中其中一位陣亡或是超過限制回合數，就
+ＧＡＭＥ  ＯＶＥＲ。在限制回合內殲滅敵人或到達對面城鎮，則結束戰役。
 
-�C��������@�춤���}�`�K�|�q������h�A�]���n�S�O�p�߳Q���P���C��
-��u����ϧ@�Գ���������Ĥ誺���泡���A�]�����藍�n���L�̰}�`�F�C
+遊戲中任何一位隊員陣亡便會從隊伍中除去，因此要特別小心被圍攻致死。尤
+其只有兩棲作戰部隊能攻擊敵方的飛行部隊，因此絕對不要讓他們陣亡了。
 
-�b�C�������ީҿ諸�����O�����A��̤j���t�O�u�O���L����m�e�����Ӥv�A
-�ҥH���w�ݹϪ��N��k���͡A�o�˼@�����T�I�A���p�G�b�Գ��W�}�`���H�A�h
-�᭱���@���N���A�X�{�F�A�ҥH�n�n�۬����F�C�H�U���𲤬y�{�A�D�n�O�g�b
-�������ҭn�䪺����H���A�����P��͸ܨ�L�ܥi������A�ӥH�m�n�A�_����
-�ܬO��m���Y�άY�ǨơA�p���Q���O�ɶ��A�i�H���h�z�|�C�p����|���@���A
-�N�ۤv�V�O�F�C
+在遊戲中不管所選的部隊是那隊，其最大的差別只是有無〞精彩畫面〞而己，
+所以喜歡看圖的就選女隊友，這樣劇情較豊富，但如果在戰場上陣亡的人，則
+後面的劇情就不再出現了，所以要好自為之了。以下的攻略流程，主要是寫在
+城鎮中所要找的關鍵人物，必須與其談話到無話可說為止，而以《》括起的表
+示是精彩鏡頭或某些事，如不想浪費時間，可以不去理會。如有遺漏的劇情，
+就自己努力了。
 
-�@�B�Ǩ�
-    �g�L�h�骺�İ��A�ש󻡪A�����S�R�A�d�ͺ��ץN���X���A��W�_�I����
-    �{�C
+一、序言
+    經過多日的奮鬥，終於說服母親露娜，卡凱爾終代父出征，踏上冒險的旅
+    程。
 
-�G�BĬ���ȵ�
-    �m�b���B���U�誺���ڴ������g�á����b�W�躡�γ��O�ɪ��k���鷺�A
-      �o��O�q�ؤl�A��_���e�i����u�úؤl�n
-    �i�а�䡪�Z���A�n�A����h���R�w���a�����p��T�Ԩ����A�q�k�W��i
-    �캿�R�w���a�亿�R�w�A�|�|���R�w�����R�N�i�𨫩Ԩ����F�]����b�C
-    �ӫ������i�ݨ�o��p�Ⱝ�Ԩ����^�C�^�h�䡪�Z���A�h��l�¾|�[�J�A
-    �q�k��X����p�X�h����C
+二、蘇尼亞街
+    《在此處左下方的洛巴斯玩捉迷藏→躲在上方滿屋都是床的右方草堆內，
+      得到力量種子，西北草堆前可拿到守衛種子》
+    進教堂找〞班〞，要你幫其去瑪麗安之家趕走小色狼拉那斯，從右上方進
+    到瑪麗安之家找瑪麗安，嚐嚐瑪麗安的母愛就可氣走拉那斯了（往後在每
+    個城鎮都可看到這位小色鬼拉那斯）。回去找〞班〞，則其子謝魯加入，
+    從右方出城到雷蒙多王國。
 
-�T�B�p�X�h����
-    �m��k�W��P�H��ͫ�A�A��ӳB�ߨ�֧��A���n�P�H��ͥ��٥֧��A
-      �o�u�úؤl�C�A�P�L��ͦܥL���}�A��̭����o�O�q�ؤl�C�n
-    �i�W����c�������͸ܡ]���ܦ������ƨӡ^�A��k��X���f���¾|�A��
-    �¦��@�Ҩk�l�J�S�[�J�A�X���i�J�Ĥ@���Գ��СC
+三、雷蒙多王國
+    《到右上方與人交談後，再於該處撿到皮夾，到西南與人交談交還皮夾，
+      得守衛種子。再與他交談至他離開，到裡面取得力量種子。》
+    進上方王宮內找國王談話（直至有黑霧飄來），到右方出城口找謝魯，穿
+    黑衣護甲男子埃特加入，出城進入第一場戰場役。
 
-�|�B�ר��贵��
-    �m�̥k�W����ѫΤ����_�ݦ��u�úؤl�A���U�Ϊ��~���W�B���O�q�ؤl�C�n
-    �ܤW��αϩg�R�S�A�A�ܥ��U�Χ�h�|�´��A��x���[�J�A�����ӭx���i
-    �ѿ�ܡA���u�i��@���]��k�l����A�֨Ƹ��h�^�G
-      ���B�C�h�Хd�|�F���]�k�^
-    �����B�]�ɮv�Щg�R�S�]�k�^�С֦p�S���ϩg�R�S�A�������N���|�X�{
-    �q�k��X���A�J�d���Ϧ^�C���˰����]�ɮv�R��L�]�[�J�^�A�X���A�i�J
-    �ĤG���ԧС]�Գ����d���[�J�^�C
+四、尤里西斯街
+    《最右上方長老屋內的北端有守衛種子，左下屋門外的凹處有力量種子。》
+    至上方屋救妮麗特，再至左下屋找多魯黑斯，找軍隊加入，有２個軍隊可
+    供選擇，但只可選一隊（選女子隊伍，樂事較多）：
+      １、劍士－卡魯達斯（男）
+    ˇ２、魔導師－妮麗特（女）－＞如沒先救妮麗特，此部隊就不會出現
+    從右方出城，遇卡隆救回青梅竹馬的魔導師娜塔夏（加入），出城，進入
+    第二場戰役（戰場中卡隆加入）。
 
-���B�Ԥ�ȵ�
-    �m���U�Ϊ��~�פl���O�q�ؤl�A�k�W���Ԩ������ᦳ�u�úؤl�C���W�ݩg
-      �R�S�n
-    �ܥ��W�Χ䳡���[�J
-      ���B�M�h�Хi�ۡ]�k�^
-    �����B�C�h�Щg��ã�]�k�^
-    �q�k��X���A�Q�J�S�s�^�h�ΡA�]�̨���J�S�P�R��L�շ|�A�ݤ�A�X��
-    �i�J�ĤT���ԧСC
+五、拉比亞街
+    《左下屋門外棚子有力量種子，右上角拉那斯身後有守衛種子。左上看妮
+      麗特》
+    至左上屋找部隊加入
+      １、騎士－可倫（男）
+    ˇ２、劍士－妮布瓊（女）
+    從右方出城，被埃特叫回去睡，夜裡見到埃特與娜塔夏幽會，翌日，出城
+    進入第三場戰役。
 
-���B�S�Q�w�A��
-    �m�J�f�U�䰪�[�W���u�úؤl�A���W�Τ��c�l���O�q�ؤl�A�k�W�ΪF��p
-      �Φ��O�q�ؤl�C�n
-    �@�i�A���Y�ϱo�������g�A�i�k�W�Χ亿�����g�]�[�J�^�A�A��W�褫��
-    �ݺ������g�O�D�A�k����֡C�X���i�J�ĥ|���ԧСC
-    �m�b�Գ��W�A�i�ܥk�U�p�αϱϳQ���ƪ�����ᶮ�n
+六、特利安農村
+    《入口下邊高架上有守衛種子，左上屋內箱子有力量種子，右上屋東邊小
+      屋有力量種子。》
+    一進農村即救得瑪爾蕾妮，進右上屋找瑪爾蕾妮（加入），再到上方井邊
+    看瑪爾蕾妮淋浴，吻之後Ｈ。出城進入第四場戰役。
+    《在戰場上，可至右下小屋救救被蹂躝的梅伊菲雅》
 
-�C�B�N���h���
-    �m�W��ж������W���O�q�ؤl�A��w�ԫΥk����~�c�l���u�úؤl�A���U
-      �ݩԨ������g�R�S�A���W�άݮR��L�A�k�W�ݮJ�S���g��ã�n
-    �ܥ��U�Χ�x���[�J
-    �����B�}�b�б���ᶮ�]�k�^
-      ���B�}�b�ЧJ�Բ����]�k�^
-    �A�ܤ��U��Χ��w�ԡA�åh�o���ж��]�[�J�^�A�W������A����ܥd
-    �ԥ����C
+七、吉堡士後街
+    《上方房間內左上有力量種子，潘德拉屋右邊門外箱子有守衛種子，左下
+      看拉那斯＆妮麗特，左上屋看娜塔夏，右上看埃特＆妮布瓊》
+    至左下屋找軍隊加入
+    ˇ１、弓箭－梅伊菲雅（女）
+      ２、弓箭－克拉莉絲（女）
+    再至中下方屋找潘德拉，並去她的房間（加入），上船找船長，乘船至卡
+    拉布港街。
 
-�K�B�d�ԥ����
-    �ܤ��W�Χ�d�R�]���ܥd�R�����^�A���U�Τ���J�S�α���ᶮ�A�Υ~��
-    �s�F���]���ܤs�F�������^�A��k�W��J�S�B�R��L�A�X���i�J�Ĥ�����
-    �СC
+八、卡拉布港街
+    至中上屋找卡娜（直至卡娜走掉），中下屋內找埃特及梅伊菲雅，屋外找
+    山達斯（直至山達斯走掉），到右上找埃特、娜塔夏，出城進入第五場戰
+    役。
 
-�E�B���i������
-    �m���U�Υ~�c�l���O�q�ؤl�C���W���~�ݩԨ����P�g��ã�����R�n
-    �@�i���Y�����R�R�ӭn�D���H�h�Ϩ�j�����A�ܥ��W�Χ�x��
-    �����B�Ԫ̡Фs�F���]�k�^
-      ���B�j���Хd�O�Z�]�k�^
-    �A�i�W����c�������A�k��X���f�䤽�D�Ѧw�d�]�[�J�^�A�k�U��J�S�A
-    �k�W�亿�����g�]���P��͸ܡ^�A�X���i�J�Ĥ����ԧСC
-    �m�b�Գ��W�A�i�ܥk�W�p�αϱϳQ���ƪ������n
+九、隆波尼王國
+    《中下屋外箱子有力量種子。左上窗外看拉那斯與妮布瓊的母愛》
+    一進城即見海麗娜來要求眾人去救其姐蕾雅，至左上屋找軍隊
+    ˇ１、忍者－山達斯（男）
+      ２、大砲－卡力班（男）
+    再進上方王宮內找國王，右方出城口找公主碧安卡（加入），右下找埃特，
+    右上找瑪爾蕾妮（須與其談話），出城進入第六場戰役。
+    《在戰場上，可至右上小屋救救被蹂躝的蕾雅》
 
-�Q�B���º���
-    �m���U�Τ��k���d�l���u�úؤl�A�k�W���g�R���լd�n
-    �i���W�Χ�x���[�J
-      ���B�]�ɮv�ЮR�Ҳ�]�k�^
-    �����B�Ԫ̡��ɨ̩ԡ]�k�^
-    �A�ܥk��X���f��ù��Y�w�]�[�J�^�A�X���i�J�ĤC���ԧСC
+十、米謝爾街
+    《左下屋內右邊櫃子有守衛種子，右上幫妮麗雅調查》
+    進左上屋找軍隊加入
+      １、魔導師－娜曼莎（男）
+    ˇ２、忍者－賽依拉（女）
+    再至右方出城口找羅瑟琳德（加入），出城進入第七場戰役。
 
-�Q�@�B�󲦯S��
-    �m���W�ݮJ�S���Ѧw�d�A�ݧ���A�P�J�S�͸ܡA�������g�N�ӦV�A������
-      �R�A�k�U�άݩԨ�������w�ԡA�i�k�誺�a�}���i���u�úؤl�M�O�q
-      �ؤl�n
-    �i���W�Χ�x���[�J
-      ���B�u�@�Х֭C�|�]�k�^
-    �����B�u�@�ЦN�R�]�k�^
-    �X���i�J�ĤK�ԧСC
-    �m�b�Գ��W�A�i�ܥk�W�����ϱϮ��R�R�n
+十一、何畢特村
+    《左上看埃特＆碧安卡，看完後再與埃特談話，瑪爾蕾妮就來向你散播母
+      愛，右下屋看拉那斯＆潘德拉，進右方的地洞內可找到守衛種子和力量
+      種子》
+    進左上屋找軍隊加入
+      １、工作－皮耶魯（男）
+    ˇ２、工作－吉娜（女）
+    出城進入第八戰役。
+    《在戰場上，可至右上城堡救救海麗娜》
 
-�Q�G�B���C�����
-    �m�k�W�������c�l���O�q�ؤl�A�W����l���O�q�ؤl�A�k�W�άݩԨ�����
-      ����ᶮ�A���W����쯫�_��L�A���h���k�U�����ӤH�~�o�|�A�o�j�O
-      �ġA�A�ܥk�U�Χ���R�R�n
-    �i���U�Χ�x���[�J
-    �����B�u�@�ЩԤ�S�]�k�^
-      ���B�u�@�Щ��¸��]�k�^
-    �A�ܥk���������X���A�@�X���Y�D�s�M�hŧ���A���H�y�����q�C
+十二、布列斯港街
+    《右上角中央箱子有力量種子，上邊桶子有力量種子，右上屋看拉那斯＆
+      梅伊菲雅，左上角找到神奇算盤，拿去給右下角的商人漢得魯，得強力
+      藥，再至右下屋找海麗娜》
+    進左下屋找軍隊加入
+    ˇ１、工作－拉比特（男）
+      ２、工作－帕威路（男）
+    再至右方找船長乘船出海，一出海即遭龍騎士襲擊，眾人流落到荒島。
 
-�Q�T�B��q
-    �b��q�W���k���A��C����͸ܡA���ܥ��W��P�J�S�͸ܡC�b��q�W�v
-    �ΡC
-    ���դ�
-    �ܤ�����~�窺�R��L�A�A�ܤW��亿�����g�A�A�ܥ��U�F�y���¾|�A�A
-    �ܤW���A��x��J�S���Z�C
-    ���ߤW
-    �ܥk�W�Χ�J�S���R��L�A�A�ܤU��F�y���¾|��ù��Y�w�A�A�^�k�W�ΡC
-    ��ı�F�C
-    ���դ�
-    �k�W����¾|�A�k�U��亿�����g�A�k�W�Τ���R��L�A�A���A��x��J
-    �S�C�ݨ���A�Q�Ϧ^�ܹF���F���C
+十三、荒島
+    在荒島上往右走，跟每位伙伴談話，直至左上方與埃特談話。在荒島上築
+    屋。
+    □白天
+    至中央找洗衣的娜塔夏，再至上方找瑪爾蕾妮，再至左下沙灘找謝魯，再
+    至上方瞭望台找埃特換班。
+    □晚上
+    至右上屋找埃特＆娜塔夏，再至下方沙灘找謝魯＆羅瑟琳德，再回右上屋。
+    睡覺了。
+    □白天
+    右上方找謝魯，右下方找瑪爾蕾妮，右上屋內找娜塔夏，再至瞭望台找埃
+    特。看見船隻，被救回至達斯達港街。
 
-�Q�|�B�F���F���
-    �m���W���d�l���O�q�ؤl�A�k��X�f�e���c�l���O�q�ؤl�C���W�Τ��ݮJ
-      �S���ɨ̩ԡn
-    ���ܥk��Υ~��ߤk��g�ȡ]�Q�s���@���š^�A�i�k��Τ����g�Ƚլd�A
-    �A�ܤ��W�Χ�x���[�J
-    �����B�Ԫ̡ж�g�ȡ]�k�^�С֤����h���g�ȡA�h���������|�X�{
-      ���B�j���Фھ|�d�]�k�^
-    �A�ܲ�W�亿�����g�͸ܡ]�ͦܥs�A�ǳƾ԰��^�A�X���i�J�ĤE�ԧСC
+十四、達斯達港街
+    《左上屋櫃子有力量種子，右邊出口前的箱子有力量種子。左上屋內看埃
+      特＆賽依拉》
+    先至右方屋外找貓女塔妮亞（被盜走護身符），進右方屋內找塔妮亞調查，
+    再至中上屋找軍隊加入
+    ˇ１、忍者－塔妮亞（女）－＞不先去找塔妮亞，則此部隊不會出現
+      ２、大砲－巴魯卡（男）
+    再至船上找瑪爾蕾妮談話（談至叫你準備戰鬥），出城進入第九戰役。
 
-�Q���B���h�i��
-    �m���U�c�l���u�úؤl�A������襤���O�q�ؤl�A�k����м�w�ԡ��U�y
-      �����º��A�k�U����W��ù��Y�w���U�y���h�w�ҡA���U��кѦw�d��
-      �U�y���h�Ԭ_�A�b�̥k�W�観�Ӧa�}�]�b�������g�k�誺��L�i��V��
-      ���a�}�^�i�J�i���O�q�ؤl�B�u�úؤl�n
-    �ܥk�W�����������g��������U�y���Գ���A�X���i�J�ĤQ�ԧСC
+十五、索多姆村
+    《左下箱子有守衛種子，中間草堆中有力量種子，右中方－潘德拉＆下流
+      的瑪黑爾，右下城牆上－羅瑟琳德＆下流的多德曼，左下方－碧安卡＆
+      下流的多拉柯，在最右上方有個地洞（在瑪爾蕾妮右方的樹林可穿越至
+      此地洞）進入可找到力量種子、守衛種子》
+    至右上方幫瑪爾蕾妮趕走３位下流的拉都西，出城進入第十戰役。
 
-�Q���B�s����
-    ���¾|
-    �ܤ����Pù��Y�w�ͧ��ܫ�A�ܥk�W��d�ͺ��A�A�ܥ��W�����s�Դ��d
-    ���]�Դ��d���N�|�����^�A�i�J��h�|�|�Ϊ��Ѩȥi���]�h�|�|�[�J�A��
-    �|�ܦ��s�M�h�^�C
-    ���d�ͺ�
-    �ߤW�i�k��s�}��N�R�A�A���ܥk��X�f�A��ı�F�C�ݤ�A�X���i�J�ĤQ
-    �@�ԧСC
+十六、龍之堡
+    □謝魯
+    至中央與羅瑟琳德談完話後，至右上找卡凱爾，再至左上方找白龍拉斯卡
+    斯（拉斯卡斯就會讓路），進入找多魯魯及長老亞可普（多魯魯加入，謝
+    魯變成龍騎士）。
+    □卡凱爾
+    晚上進右方山洞找吉娜，再走至右方出口，睡覺了。翌日，出堡進入第十
+    一戰役。
 
-�Q�C�B�h�˩Ծ|��
-    �m�J�f�U��c�l���O�q�ؤl�A���U�c�l���u�úؤl�A�k�U�c�l���u�úؤl�C�n
-    �ܤW��亿�����g�A�X���i�J�ĤQ�G�ԧСC
+十七、多瓦拉魯村
+    《入口下方箱子有力量種子，中下箱子有守衛種子，右下箱子有守衛種子。》
+    至上方找瑪爾蕾妮，出城進入第十二戰役。
 
-�Q�K�B�_�̴��
-    �m�k�U�Τ��c�l���u�úؤl�A�k�W�Ϊ��ǽc�l���u�úؤl�A�k�W�Υ��W��
-      �c�l���O�q�ؤl�A�J�f�W��c�l���O�q�ؤl�C�k�U�Τ����¾|��ù��Y
-      �w�n
-    ����k���W�亿�����g�A�A�ܥ��W���R��L�B�J�S�]�i���w����^�A
-    �A���W�亿�����g�A����X���ܤB�մ��C
+十八、寶依港街
+    《右下屋內箱子有守衛種子，右上屋門旁箱子有守衛種子，右上屋左上角
+      箱子有力量種子，入口上方箱子有力量種子。右下屋內看謝魯＆羅瑟琳
+      德》
+    先到右方船上找瑪爾蕾妮，再至左上方找娜塔夏、埃特（告知已找到船），
+    再到船上找瑪爾蕾妮，乘船出海至丁諾港街。
 
-�Q�E�B�B�մ��
-    �m�k�W�Ρ�ù��Y�w�A�k�U�Ρ��Ѧw�d�n
-    ���W�Χ�g�ѤHù��y�]�[�J�^�A�A�ܥk���J�S�B�R��L�A�X���i�J��
-    �Q�T�ԧ�
+十九、丁諾港街
+    《右上屋＆羅瑟琳德，右下屋＆碧安卡》
+    左上屋找寫書人羅伊頓（加入），再至右方找埃特、娜塔夏，出城進入第
+    十三戰役
 
-�G�Q�B���|�J����
-    �m���W�νc�l���O�q�ؤl�A�X�f�W��˪L���O�q�ؤl�C���U�褫��ݩԨ�
-      �����ɨ̩ԡn
-    �ܤ�����L��J�S�B�R��L�A�X���i�J�ĤQ�|�ԧСC
+二十、馬魯克斯村
+    《左上屋箱子有力量種子，出口上方森林有力量種子。中下方井邊看拉那
+      斯＆賽依拉》
+    至中間樹林找埃特、娜塔夏，出城進入第十四戰役。
 
-�G�Q�@�B�O�m��
-    �m���W����ᶮ�ж��c�l���O�q�ؤl�A���f�c�l���u�úؤl�A�k�U�ήǽc
-      �l���O�q�ؤl�A���W��ù��y���ɨ̩ԡn
-    �ܥk���J�S�B�������g�]�������g���}����W�ۥX���h�^�A��k�W�Χ�
-    �R��L�A�X���i�J�ĤQ���ԧСC
+二十一、力衫街
+    《中上梅伊菲雅房間箱子有力量種子，門口箱子有守衛種子，右下屋旁箱
+      子有力量種子，中上屋羅伊頓＆賽依拉》
+    至右方找埃特、瑪爾蕾妮（瑪爾蕾妮離開隊伍獨自出城去），到右上屋找
+    娜塔夏，出城進入第十五戰役。
 
-�G�Q�G�B�ܩi�L����
-    �m�k�U�νc�l���O�q�ؤl�A���U�ΧɤW���u�úؤl�A���U�ΧɤW���O�q��
-      �l�A���W�ΧɤW�M�d�l�����O�q�ؤl�A�k�W�νc�l���u�úؤl�C�n
-    ��J�S�A�i���c��������A�Q�}�T�A���ӡ]�]�����L�F�h�֦~�F�A�d��
-    ���v���j���H�F�^��A�b�������g�����U�U�^��L�h���p�X�h�����W
-    �]���즹�N�i���D�J�S�ץd�ͺ��^�C
+二十二、萊姆林王國
+    《右下屋箱子有力量種子，中下屋床上有守衛種子，左下屋床上有力量種
+      子，左上屋床上和櫃子都有力量種子，右上屋箱子有守衛種子。》
+    找埃特，進王宮內找路西佛，被囚禁，醒來（也不知過了多少年了，卡凱
+    爾己長大成人了）後，在瑪爾蕾妮的幫助下回到過去的雷蒙多王國街上
+    （玩到此就可知道埃特＝卡凱爾）。
 
-    �^��p�X�h����᪺�@���P�e�����@���j�P�ۦP�A�i�H���O�����@���A��
-    ���P���B���D�������J�S�A����m�e�����]�������P�A�H�U�N�z�P�e����
-    �P���B�F�C�ӫe�����P�J�S�o�͡���m�e�������A�]�i�h�����¹ڤ@�f�C
-    �p�S�ԭz���N�O�P�e���ۦP�C
+    回到雷蒙多王國後的劇情與前面的劇情大致相同，可以說是重玩一次，而
+    不同之處→主角換成埃特，〞精彩畫面〞也略有不同，以下就述與前面不
+    同之處了。而前面有與埃特發生〞精彩畫面〞的，也可去重溫舊夢一番。
+    如沒敘述的就是與前面相同。
 
-�G�Q�T�B�ר��贵��
+二十三、尤里西斯街
 
-�G�Q�|�B�Ԥ�ȵ�
-    �ܥ��W�Χ䳡���[�J�A�A�ܥk�W�Χ�R��L�C
+二十四、拉比亞街
+    至左上屋找部隊加入，再至右上屋找娜塔夏。
 
-�G�Q���B�S�Q�w�A��
-    �m�b�Գ��W�A�i�ܥk�U�p�αϱϳQ���ƪ��J�Բ����n
+二十五、特利安農村
+    《在戰場上，可至右下小屋救救被蹂躝的克拉莉絲》
 
-�G�Q���B�N���h���
-    �ܥ��U�Χ�x���[�J�A���U��Χ��w�ԡ]�[�J�^�A�U���d�ͺ��A��W
-    �亿�����g�A�W������A����ܥd�ԥ����C
+二十六、吉堡士後街
+    至左下屋找軍隊加入，中下方屋找潘德拉（加入），下方找卡凱爾，船上
+    找瑪爾蕾妮，上船找船長，乘船至卡拉布港街。
 
-�G�Q�C�B�d�ԥ����
-    �ܤ��W�Χ亿�����g�A��k�W��R��L�C
+二十七、卡拉布港街
+    至中上屋找瑪爾蕾妮，到右上找娜塔夏。
 
-�G�Q�K�B���i������
-    ���W�Χ�x���[�J�A�����d�ͺ��A�k���d�ͺ��]���D�Ѧw�d�[�J�^�A
-    �k�W�亿�����g�A�k�U��R��L�C
+二十八、隆波尼王國
+    左上屋找軍隊加入，左方找卡凱爾，右方找卡凱爾（公主碧安卡加入），
+    右上找瑪爾蕾妮，右下找娜塔夏。
 
-�G�Q�E�B���º���
-    �i���W�Χ�x���[�J�A���U���d�ͺ��B�R��L�]�d�ͺ�����A�A�P�R��
-    �L�͸ܡ^�A�k�W��d�ͺ��B�g�R�S�A�k�U�亿�����g�A�k�X���f��d�ͺ�
-    �]ù��Y�w�[�J�^�C
+二十九、米謝爾街
+    進左上屋找軍隊加入，中下方找卡凱爾、娜塔夏（卡凱爾走後，再與娜塔
+    夏談話），右上找卡凱爾、妮麗特，右下找瑪爾蕾妮，右出城口找卡凱爾
+    （羅瑟琳德加入）。
 
-�T�Q�B�󲦯S��
-    �i���W�Χ�x���[�J�A���W���Ѧw�d�A�k���d�ͺ��C
+三十、何畢特村
+    進左上屋找軍隊加入，左上方找碧安卡，右方找卡凱爾。
 
-�T�Q�@�B���C�����
-    �i���U�Χ�x���[�J�A���W��d�ͺ��A������d�ͺ��B�R��L�]�d�ͺ���
-    ��A�A�P�R��L�͸ܡ^�A�k�U�Χ�d�ͺ��A�k�W�亿�����g�A�����C
+三十一、布列斯港街
+    進左下屋找軍隊加入，左上找卡凱爾，中央找卡凱爾、娜塔夏（卡凱爾走
+    後，再與娜塔夏談話），右下屋找卡凱爾，右上找瑪爾蕾妮，找船長。
 
-�T�Q�G�B��q
-    ���P�d�ͺ��͸ܡA�A���k����C����͸ܡA���ܥ��W��P�d�ͺ��͸ܡC
-    �b��q�W�v�ΡC
-    ���դ�
-    ���ߤW
-    �ܥk�W�Χ�R��L�]���ƹ�^�C��ı�F�C
-    ���դ�
+三十二、荒島
+    先與卡凱爾談話，再往右走跟每位伙伴談話，直至左上方與卡凱爾談話。
+    在荒島上築屋。
+    □白天
+    □晚上
+    至右上屋找娜塔夏（說事實）。睡覺了。
+    □白天
 
-�T�Q�T�B�F���F���
-    ���W�Τ����ɨ̩ԡA�ܥk��Υ~��d�ͺ��B�ߤk��g�ȡA�i�k��Τ����
-    �g�ȡ��d�ͺ��A�A�ܤ��W�Χ�x���[�J�C�A�ܲ�W�亿�����g�͸ܡC
+三十三、達斯達港街
+    左上屋內找賽依拉，至右方屋外找卡凱爾、貓女塔妮亞，進右方屋內找塔
+    妮亞＆卡凱爾，再至中上屋找軍隊加入。再至船上找瑪爾蕾妮談話。
 
-�T�Q�|�B���h�i��
-    �m����Υ~�ЦN�R���U�y���h�w�ҡB�g�R�S���U�y���h�w�ҡn
-    �ܥk�W�����R��L��������U�y������ԡC
+三十四、索多姆村
+    《左方屋外－吉娜＆下流的多德曼、妮麗特＆下流的多德曼》
+    至右上屋幫娜塔夏趕走３位下流的瑪西拉。
 
-�T�Q���B�s����
-    ���¾|�]�i���L�����`�^
-    ���J�S
-    �ߤW�A��d�ͺ��]�����^�A���U�s�}�亿�����g�A�i�k��s�}��d�ͺ���
-    �N�R�A�A���ܥk��X�f�A��ı�F�C
+三十五、龍之堡
+    □謝魯（可跳過此情節）
+    □埃特
+    晚上，找卡凱爾（走掉），左下山洞找瑪爾蕾妮，進右方山洞找卡凱爾＆
+    吉娜，再走至右方出口，睡覺了。
 
-�T�Q���B�h�˩Ծ|��
-    �m���U�Υ~��R��L�n
+三十六、多瓦拉魯村
+    《中下屋外找娜塔夏》
 
-�T�Q�C�B�_�̴��
-    �m�̤W��d�ͺ�����w�ԡn
-    �ܥ��W���R��L�B�d�ͺ��]�d�ͺ�����A�P�R��L�͸ܡ^�A�A���W��
-    �������g�A���W�x��X���ܤB�մ��C
+三十七、寶依港街
+    《最上方卡凱爾＆潘德拉》
+    至左上方找娜塔夏、卡凱爾（卡凱爾走後再與娜塔夏談話），再到船上找
+    瑪爾蕾妮，到船上掌舵出海至丁諾港街。
 
-�T�Q�K�B�B�մ��
-    ��W�亿�����g�A���W�Χ�g�ѤHù��y�]�[�J�^�A�A�ܥk���R��L�A
-    �k�U�Χ�d�ͺ����Ѧw�d�A�k�W�Χ�d�ͺ���ù��Y�w�A�X���C
+三十八、丁諾港街
+    船上找瑪爾蕾妮，左上屋找寫書人羅伊頓（加入），再至右方找娜塔夏，
+    右下屋找卡凱爾＆碧安卡，右上屋找卡凱爾＆羅瑟琳德，出城。
 
-�T�Q�E�B���|�J����
-    �ܤ�����L�������g�C
+三十九、馬魯克斯村
+    至中間樹林瑪爾蕾妮。
 
-�|�Q�B�O�m��
-    �ܥk��亿�����g�]�������g�S���}����^�A��k�W�Χ�R��L�C
+四十、力衫街
+    至右方找瑪爾蕾妮（瑪爾蕾妮沒離開隊伍），到右上屋找娜塔夏。
 
-�|�Q�@�B�ܩi�L����
-    ��d�ͺ��A�i���c������R��L�A�A��d�ͺ��i�J���c�]���H�o��������
-    �g��O�]���̨��J�����k�Х쫽�^�C�F�������A�J�S�]�V�d�ͺ�������
-    ���Ӯ����C
+四十一、萊姆林王國
+    找卡凱爾，進王宮內先找娜塔夏，再找卡凱爾進入王宮（眾人得知瑪爾蕾
+    妮原是魔王米那克斯之女－伊娃）。幹掉路西佛，埃特也向卡凱爾表明身
+    份而消失。
 

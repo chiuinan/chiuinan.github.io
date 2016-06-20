@@ -1,45 +1,45 @@
-�W�١G�u�l�i�]Solid State Pinball: Tristan�A�^�媩�^
-²���GAmtex 1992�~�X�~���u�]�i�C���C��Ӽu�]�i���b�@�ӵe�����A���ݭn
-      �H�u�]����m���Ӳ��h�A������|�Y������A�����I�K�O��r�����ݲM�C
-      �Ӿ�ӹC���u���@�Ӽu�]�i�A�ܤƩʥ粤����դF�ǡC
-�O�@�G�Ǹ�+�K�X�A�}�ѽX�p�U�]���N�Ǹ��ҥi�q�L�^�G
-      TRIST256.EXE��TRIST16.EXE
+﻿名稱：彈子檯（Solid State Pinball: Tristan，英文版）
+簡介：Amtex 1992年出品的彈珠檯遊戲。整個彈珠檯都在一個畫面中，不需要
+      隨彈珠的位置移來移去，比較不會頭昏眼花，但缺點便是文字不易看清。
+      而整個遊戲只有一個彈珠檯，變化性亦略嫌單調了些。
+保護：序號+密碼，破解碼如下（任意序號皆可通過）：
+      TRIST256.EXE或TRIST16.EXE
         55 8B EC 81 EC 52
         CB -- -- -- -- --
         38 07 75 09
         -- -- 90 90
-�ާ@�G
+操作：
 
-Esc = ���}�C��
-F2 = �Ȱ��C��
-Enter = �u�g�u�]
-���kShift = ����u����
-Space = �n�i�A�n�Ӧh���i���|�ɱ�
+Esc = 離開遊戲
+F2 = 暫停遊戲
+Enter = 彈射彈珠
+左右Shift = 控制彈擊棒
+Space = 搖檯，搖太多次檯面會傾斜
 
-�����G
+說明：
 
-�@. �C���\����A�ѥ���k���G
+一. 遊戲功能表，由左到右為：
 
-1.���}�C��
-2.�N�̰����O���g���ɮפ�
-3.���}��������z
-4.�C���H��
-5.�}�l�C��
+1.離開遊戲
+2.將最高分記錄寫到檔案中
+3.打開／關關喇叭
+4.遊戲人數
+5.開始遊戲
 
-�G. �u�l�i�S��
+二. 彈子檯特性
 
-1.�B�~��o�u�l�ơG���U���W���Ĥ@�բ��ӵP�A�k�WExtra Ball�O�|�G�_�A�A
-  �q�L�ӿO�Y�i�h�[�@�Ӽu�l�ơC
-2.�h�u�l�G
-  (1)���U���W���ĤG�բ��ӵP�A�W��Lock�O�|�G�_�A�A�N�u�l���iLock�}�A�Y
-     �i����Ӽu�l�A�í��s��o�@�Ӽu�l�C
-  (2)���u�l�q�L���W�q�D�A�Y�i�����������u�l�C
-  (3)����Ӽu�l�P�ɶi��C���ɡA�p����|�[���p���A�P��Jackpot�O�|�G�_�A
-     �q�L�ӿO�Y�i�[�@�ʸU���C
-3.�[���p���G�̤W�袲�ӳq�D���q�L�ɡA�Ҧ����Ƨ��[���p���C
-4.�S�O�p���G���U���䢳�ӵP�ATristan Bonus�O�|�G�_�A�A���i�Ӭ}�A�i��o
-  �S�O�p���C�Y��Ӽu�l�P�ɶi��C���ɡA���p���Y�H�ʸU�p�C
-5.�B�~�p���G���U�k�䢳�ӵP�ATristan Bonus�MCollect Bonus�O�|�G�_�A��
-  �J���@�}�A���i��o�B�~�p���C
-6.�����]�k�G�N���䢳�ӵP�����ˢ����A���}Magic�Ҧ��O�A����Jackpot�O�|
-  �G�_�A�q�L�ӿO�Y�i�ݨ�@�q�]�k�C
+1.額外獲得彈子數：打下左上角第一組３個牌，右上Extra Ball燈會亮起，再
+  通過該燈即可多加一個彈子數。
+2.多彈子：
+  (1)打下左上角第二組３個牌，上方Lock燈會亮起，再將彈子打進Lock洞，即
+     可鎖住該彈子，並重新獲得一個彈子。
+  (2)當彈子通過左上通道，即可釋放原鎖住的彈子。
+  (3)當兩個彈子同時進行遊戲時，計分欄會加重計分，同時Jackpot燈會亮起，
+     通過該燈即可加一百萬分。
+3.加倍計分：最上方３個通道都通過時，所有分數均加倍計分。
+4.特別計分：打下左邊４個牌，Tristan Bonus燈會亮起，再打進該洞，可獲得
+  特別計分。若兩個彈子同時進行遊戲時，此計分係以百萬計。
+5.額外計分：打下右邊４個牌，Tristan Bonus和Collect Bonus燈會亮起，打
+  入任一洞，均可獲得額外計分。
+6.完成魔法：將左邊４個牌全打倒５次，打開Magic所有燈，此時Jackpot燈會
+  亮起，通過該燈即可看到一段魔法。

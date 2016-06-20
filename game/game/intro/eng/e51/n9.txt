@@ -1,77 +1,77 @@
-¦WºÙ¡G¶W¯Å¬P¦¡¤E¸¹ (Nova 9¡A­^¤åª©)
-Â²¤¶¡GDynamix 1991¦~¥X«~ªº3D®gÀ»¹CÀ¸¡A¬G¨Æ©µÄò¶W¯Å¬P¦¡¤C¸¹¡A´y¼g
-      Draxon±²¤g­«¨Ó­n©ºªA¦a²y¡A¦Ó¥D¨¤¾r¾p¬P¦¡¤E¸¹±N¤§ªý¤îªº¹Lµ{¡C¥Ñ
-      ©ó¾ã­Ó¹CÀ¸¬O±Ä3DµøÄ±§e²{¡A¦b¼Ä¤H³ò§ð®É©¹©¹µLªk­º§À­ÝÅU¡A¨Ï±o¹C
-      À¸¨ã¦³¬Û·íªº§xÃø«×¡C¤£¹L¥»¥N¤w§ï¶i¥ª¥kÂà¦V®É¶¡¶Z¹L¤jªº°ÝÃD¡A¤ñ
-      ¸û®e©öÂê©w¼Ä¤H®gÀ»¡AªZ¾¹ªº´£¨Ñ¤]¦h¤F³\¦h¡A¦]¦¹§xÃø«×¤w¤£¹³¬P¦¡
-      ¤C¸¹¨º»òÃø¡C¦¹¥~¡A¹CÀ¸¤]¼W¥[¤F³\¦hÁ¼ÃD¡A¦³¨Ç¥²¶·¸Ñ¶}¤~¯à¶i¨ì¤U
-      ¤@Ãö¡A¨Ï±o¹CÀ¸§ó´I¦³¬D¾Ô©Ê¡CµM¦Ó¬°¤F¸Ñ¶}Á¼ÃD¡A©¹©¹¥²¶·¨ì³BÂ¶¦æ
-      ¬d¬Ý¡A§K¤£¤F³y¦¨3D¹CÀ¸±`¨£ªº·w¯t²{¶H¡A¯S§O¬O¦b¬Y¨Ç³õ´º¤S¦³©ü·t
-      ¤S¦³°{¥úªº±¡ªp¤U¡C¦pªGª±®aµLªk§Ô¨ü³oºØµh­W¡AÁÙ¬O¤£­nª±³oÃþ3D®g
-      À»¹CÀ¸¤ñ¸û¦n¨Ç¡C
-«OÅ@¡G¤£©ú¡C
-­×§ï¡GNOVA.EXE
-        1.ªZ¾¹¤£´î¡]¦n¹³µL®Ä¡^
+ï»¿åç¨±ï¼šè¶…ç´šæ˜Ÿå¼ä¹è™Ÿ (Nova 9ï¼Œè‹±æ–‡ç‰ˆ)
+ç°¡ä»‹ï¼šDynamix 1991å¹´å‡ºå“çš„3Då°„æ“ŠéŠæˆ²ï¼Œæ•…äº‹å»¶çºŒè¶…ç´šæ˜Ÿå¼ä¸ƒè™Ÿï¼Œæå¯«
+      Draxonæ²åœŸé‡ä¾†è¦å¾æœåœ°çƒï¼Œè€Œä¸»è§’é§•é§›æ˜Ÿå¼ä¹è™Ÿå°‡ä¹‹é˜»æ­¢çš„éŽç¨‹ã€‚ç”±
+      æ–¼æ•´å€‹éŠæˆ²æ˜¯æŽ¡3Dè¦–è¦ºå‘ˆç¾ï¼Œåœ¨æ•µäººåœæ”»æ™‚å¾€å¾€ç„¡æ³•é¦–å°¾å…¼é¡§ï¼Œä½¿å¾—éŠ
+      æˆ²å…·æœ‰ç›¸ç•¶çš„å›°é›£åº¦ã€‚ä¸éŽæœ¬ä»£å·²æ”¹é€²å·¦å³è½‰å‘æ™‚é–“è·éŽå¤§çš„å•é¡Œï¼Œæ¯”
+      è¼ƒå®¹æ˜“éŽ–å®šæ•µäººå°„æ“Šï¼Œæ­¦å™¨çš„æä¾›ä¹Ÿå¤šäº†è¨±å¤šï¼Œå› æ­¤å›°é›£åº¦å·²ä¸åƒæ˜Ÿå¼
+      ä¸ƒè™Ÿé‚£éº¼é›£ã€‚æ­¤å¤–ï¼ŒéŠæˆ²ä¹Ÿå¢žåŠ äº†è¨±å¤šè¬Žé¡Œï¼Œæœ‰äº›å¿…é ˆè§£é–‹æ‰èƒ½é€²åˆ°ä¸‹
+      ä¸€é—œï¼Œä½¿å¾—éŠæˆ²æ›´å¯Œæœ‰æŒ‘æˆ°æ€§ã€‚ç„¶è€Œç‚ºäº†è§£é–‹è¬Žé¡Œï¼Œå¾€å¾€å¿…é ˆåˆ°è™•ç¹žè¡Œ
+      æŸ¥çœ‹ï¼Œå…ä¸äº†é€ æˆ3DéŠæˆ²å¸¸è¦‹çš„æšˆçœ©ç¾è±¡ï¼Œç‰¹åˆ¥æ˜¯åœ¨æŸäº›å ´æ™¯åˆæœ‰æ˜æš—
+      åˆæœ‰é–ƒå…‰çš„æƒ…æ³ä¸‹ã€‚å¦‚æžœçŽ©å®¶ç„¡æ³•å¿å—é€™ç¨®ç—›è‹¦ï¼Œé‚„æ˜¯ä¸è¦çŽ©é€™é¡ž3Då°„
+      æ“ŠéŠæˆ²æ¯”è¼ƒå¥½äº›ã€‚
+ä¿è­·ï¼šä¸æ˜Žã€‚
+ä¿®æ”¹ï¼šNOVA.EXE
+        1.æ­¦å™¨ä¸æ¸›ï¼ˆå¥½åƒç„¡æ•ˆï¼‰
           89 87 7A 02 8B 1E
           90 90 90 90 -- --
-        2.¤j¯¥³sµo
+        2.å¤§ç ²é€£ç™¼
           FF 06 52 2A 83
           90 90 90 90 --
-        3.¨¾Å@¤£´î
+        3.é˜²è­·ä¸æ¸›
           29 87 A4 4E 7D
           90 90 90 90 --
-¾Þ§@¡GCtrl+Alt+Esc = µ²§ô¹CÀ¸
-      1234 = ¿ï¾ÜªZ¾¹
+æ“ä½œï¼šCtrl+Alt+Esc = çµæŸéŠæˆ²
+      1234 = é¸æ“‡æ­¦å™¨
       QWE
-      A D = ¿ï¾Ü»²§U¤õ¤O
+      A D = é¸æ“‡è¼”åŠ©ç«åŠ›
       ZXC
-§ð²¤¡G¡]§@ªÌ¡Ð«C­m¡^
+æ”»ç•¥ï¼šï¼ˆä½œè€…ï¼é’è¡«ï¼‰
 
 
-1.¶Ç°eÂI
+1.å‚³é€é»ž
 
-  µµ¦â  ¡Ð¶Ç¦^°ò¦a¡A¥i¥H­×´_·lÃa¨Ã¼W±jªZ¾¹»P¨¾¿m¤O¡C
-  ·t¬õ¦â¡Ð¶Ç°e¨ì¥»Ãö¥t¤@¦aÂI¡C
-  ¶À¦â  ¡Ð¥´±Ñ¦uÃö¥DÄ¥®É¥X²{¡A«e¶i¨ì¤U¤@Ãö¡C
+  ç´«è‰²  ï¼å‚³å›žåŸºåœ°ï¼Œå¯ä»¥ä¿®å¾©æå£žä¸¦å¢žå¼·æ­¦å™¨èˆ‡é˜²ç¦¦åŠ›ã€‚
+  æš—ç´…è‰²ï¼å‚³é€åˆ°æœ¬é—œå¦ä¸€åœ°é»žã€‚
+  é»ƒè‰²  ï¼æ‰“æ•—å®ˆé—œä¸»è‰¦æ™‚å‡ºç¾ï¼Œå‰é€²åˆ°ä¸‹ä¸€é—œã€‚
 
 2.Kryon
 
-  ¦uÃö¥DÄ¥¥²¶·®gÀ»¨ä°¼­±©Î­I­±¤~¦³®Ä¡C
+  å®ˆé—œä¸»è‰¦å¿…é ˆå°„æ“Šå…¶å´é¢æˆ–èƒŒé¢æ‰æœ‰æ•ˆã€‚
 
 3.Hydros
 
-  ¥»Ãö¦³¤@­Óµµ¦â¶Ç°eÂI¦^¨ì°ò¦a¡C¦uÃö¥DÄ¥ª½±µ®gÀ»§Y¥i¡C
+  æœ¬é—œæœ‰ä¸€å€‹ç´«è‰²å‚³é€é»žå›žåˆ°åŸºåœ°ã€‚å®ˆé—œä¸»è‰¦ç›´æŽ¥å°„æ“Šå³å¯ã€‚
 
 4.Sauria
 
-  ¦uÃö¥DÄ¥­n¦b¥¦±i¶}¤f®É®gÀ»¥¦ªº¼L¤Ú¡C
+  å®ˆé—œä¸»è‰¦è¦åœ¨å®ƒå¼µé–‹å£æ™‚å°„æ“Šå®ƒçš„å˜´å·´ã€‚
 
 5.Searon
 
-  ¥»Ãö¦³¤@­Óµµ¦â¶Ç°eÂI¦^¨ì°ò¦a¡A¥²¶·¸Ñ¶}Á¼ÃD¤~¯à¶i¤J¡C¦Ó¦uÃö¥DÄ¥¥²¶·
-  ¦^¨ì°ò¦a«á¤~¯à¥´±Ñ¡A¦b¥¼¦^¨ì°ò¦a«e¡A¦uÃö¥DÄ¥¬O¥´¤£¦ºªº¡C
+  æœ¬é—œæœ‰ä¸€å€‹ç´«è‰²å‚³é€é»žå›žåˆ°åŸºåœ°ï¼Œå¿…é ˆè§£é–‹è¬Žé¡Œæ‰èƒ½é€²å…¥ã€‚è€Œå®ˆé—œä¸»è‰¦å¿…é ˆ
+  å›žåˆ°åŸºåœ°å¾Œæ‰èƒ½æ‰“æ•—ï¼Œåœ¨æœªå›žåˆ°åŸºåœ°å‰ï¼Œå®ˆé—œä¸»è‰¦æ˜¯æ‰“ä¸æ­»çš„ã€‚
 
 6.Pestula
 
-  ¦uÃö¥DÄ¥ª½±µ®gÀ»§Y¥i¡C
+  å®ˆé—œä¸»è‰¦ç›´æŽ¥å°„æ“Šå³å¯ã€‚
 
 7.Typhieus
 
-  ¥»Ãö¦³¤@­Óµµ¦â¶Ç°eÂI¦^¨ì°ò¦a¡C¦uÃö¥DÄ¥ª½±µ®gÀ»µL®Ä¡A¥²¶·§ä¨ì¢³­Ó¹q
-  ¶ð¨Ã±N¤§ºR·´¡A¦uÃö¥DÄ¥«K·|¦Û°Ê®ø¥¢¡C
+  æœ¬é—œæœ‰ä¸€å€‹ç´«è‰²å‚³é€é»žå›žåˆ°åŸºåœ°ã€‚å®ˆé—œä¸»è‰¦ç›´æŽ¥å°„æ“Šç„¡æ•ˆï¼Œå¿…é ˆæ‰¾åˆ°ï¼”å€‹é›»
+  å¡”ä¸¦å°‡ä¹‹æ‘§æ¯€ï¼Œå®ˆé—œä¸»è‰¦ä¾¿æœƒè‡ªå‹•æ¶ˆå¤±ã€‚
 
 8.Teflar
 
-  ¦uÃö¥DÄ¥³Q®gÀ»«á·|¤£Â_¤Àµõ¡A¤@ª½®gÀ»¨ì¦U¤Àµõ«áªº¤p³æ¦ì³£³Q®ø·À¬°¤î¡C
+  å®ˆé—œä¸»è‰¦è¢«å°„æ“Šå¾Œæœƒä¸æ–·åˆ†è£‚ï¼Œä¸€ç›´å°„æ“Šåˆ°å„åˆ†è£‚å¾Œçš„å°å–®ä½éƒ½è¢«æ¶ˆæ»…ç‚ºæ­¢ã€‚
 
 9.Matricon
 
-  ¥»Ãö¦³¤@­Óµµ¦â¶Ç°eÂI¦^¨ì°ò¦a¡C¦Ó¦uÃö¥DÄ¥¥²¶·¦b¸Ñ¶}¢³­ÓÁ¼ÃD¤§«á¤~·|
-  ¹J¤W¡A¦p¦ó¸ÑÁ¼½Ð¦Û¦æ¹Á¸Õ¡C¦b¹J¨ì¦uÃö¥DÄ¥®É¡Aª½±µ®gÀ»¥¦§Y¥i¡C
+  æœ¬é—œæœ‰ä¸€å€‹ç´«è‰²å‚³é€é»žå›žåˆ°åŸºåœ°ã€‚è€Œå®ˆé—œä¸»è‰¦å¿…é ˆåœ¨è§£é–‹ï¼”å€‹è¬Žé¡Œä¹‹å¾Œæ‰æœƒ
+  é‡ä¸Šï¼Œå¦‚ä½•è§£è¬Žè«‹è‡ªè¡Œå˜—è©¦ã€‚åœ¨é‡åˆ°å®ˆé—œä¸»è‰¦æ™‚ï¼Œç›´æŽ¥å°„æ“Šå®ƒå³å¯ã€‚
 
 10.Malevolon
 
-  ¥»Ãö²×©ó©MGir Draxon¹ï¨M¤F¡C¤@¶}©l¥²¶·¥ýºR·´¥¦ªº¤ô´¹¡A¤§«á¦b­I«á©ñ
-  ¤Umine¦A®gÀ»Draxon¡ADraxon·|§Q¥Î¶Ç°e¾¹¶Ç°e¨ì§Aªº­I­±¡A¦¹®Émine­è¦n
-  ¥i¥HºR·´¥¦ªº¶Ç°e¾¹¡C³Ì«á¦Aª½±µ®gÀ»¥¦«K¥i¥´±Ñ¥¦¤F¡C
+  æœ¬é—œçµ‚æ–¼å’ŒGir Draxonå°æ±ºäº†ã€‚ä¸€é–‹å§‹å¿…é ˆå…ˆæ‘§æ¯€å®ƒçš„æ°´æ™¶ï¼Œä¹‹å¾Œåœ¨èƒŒå¾Œæ”¾
+  ä¸‹mineå†å°„æ“ŠDraxonï¼ŒDraxonæœƒåˆ©ç”¨å‚³é€å™¨å‚³é€åˆ°ä½ çš„èƒŒé¢ï¼Œæ­¤æ™‚mineå‰›å¥½
+  å¯ä»¥æ‘§æ¯€å®ƒçš„å‚³é€å™¨ã€‚æœ€å¾Œå†ç›´æŽ¥å°„æ“Šå®ƒä¾¿å¯æ‰“æ•—å®ƒäº†ã€‚
 

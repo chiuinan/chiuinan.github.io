@@ -1,28 +1,28 @@
-�W�١G�������� (SimAnt - The Electronic Ant Colony�A�^�媩)
-²���GMaxis 1991�~�X�~�������C���A���a��1991�~����X���Ө�|�{�o�̨�
-      �Ш|�n����γ̨μ������C���̥i�g�ѥ��C���F�ѦU�ؿ��ƪ��ͬ��ߩʡA
-      �C�����]�����B�¿��ƹ�ܪ��v���C���A�u�O��ӹC�����Ш|�ʽ�����A
-      �Q�g�Ѧ��C����o�T�֪����̥i��|���I����C
-�O�@�G�L�C
-���ޡGERAD: ���C������ƪ��ͩR�O�C
-      FRED: ��ܹC�����������C
-      HOLE: �����B�~���ƥޡC
-      JEFF: �b�C�Ӧa�賣�[�J�@�Ӷ��Ƹs�C
-      JENN: �������ƵL���ͩR�O�C
-      JOKE: ��ܯ��ܡC
-      JUST: �W�[10���ݭ����k���ơC
-      MICK: �ϻj�啕�Ϥ�V���C
-      OOPS: �W�[�Ĥ�10���ݭ����k���ơC
-      QEEN: �W�[�@���k���ơC
-      RAND: �ɨ������ƥͩR�O�C
-      SUSI: �����Ƹs�L���ͩR�O�C
-      WILL: �϶¿��ƥ��w���Ѭ����ơC
-�ާ@�G������Ƭ��ۤv�ޱ������ơA���F�����W���ﶵ�~�A�i�b������ƤW��
-      �U�ƹ�����i�X�{�U�C�ﶵ�G
-          1.Recruit ... - �����h�ְ�����
-          2.Release ... - ����h�ְ�����
-          3.Exchange    - �󴫭n�ޱ�������
-      �p�G�n�h�����A���������ƫ�A�A�쭹���B����A���񪺿��ƫK�|�۰�
-      �h�h�����C�p�G�n�����A����������ƫ�A�A��ĤH�B����A���񪺿�
-      �ƫK�|�۰ʥh�����ĤH�C
+﻿名稱：模擬螞蟻 (SimAnt - The Electronic Ant Colony，英文版)
+簡介：Maxis 1991年出品的模擬遊戲，曾榮獲1991年美國出版商協會頒發最佳
+      教育軟體獎及最佳模擬獎。玩者可經由本遊戲了解各種螞蟻的生活習性，
+      遊戲中也有黃、黑螞蟻對抗的競爭遊戲，只是整個遊戲的教育性質較重，
+      想經由此遊戲獲得娛樂的玩者可能會有點失望。
+保護：無。
+秘技：ERAD: 降低黃色螞蟻的生命力。
+      FRED: 顯示遊戲結束片尾。
+      HOLE: 產生額外的蟻穴。
+      JEFF: 在每個地方都加入一個黑蟻群。
+      JENN: 給黃螞蟻無限生命力。
+      JOKE: 顯示笑話。
+      JUST: 增加10隻待飛的女王蟻。
+      MICK: 使蜘蛛往反方向走。
+      OOPS: 增加敵方10隻待飛的女王蟻。
+      QEEN: 增加一隻女王蟻。
+      RAND: 補足黃螞蟻生命力。
+      SUSI: 給黑蟻群無限生命力。
+      WILL: 使黑螞蟻必定打敗紅螞蟻。
+操作：黃色螞蟻為自己操控的螞蟻，除了視窗上的選項外，可在黃色螞蟻上按
+      下滑鼠左鍵可出現下列選項：
+          1.Recruit ... - 集結多少隻螞蟻
+          2.Release ... - 釋放多少隻螞蟻
+          3.Exchange    - 更換要操控的螞蟻
+      如果要搬食物，先集結螞蟻後，再到食物處釋放，釋放的螞蟻便會自動
+      去搬食物。如果要攻擊，亦先集結螞蟻後，再到敵人處釋放，釋放的螞
+      蟻便會自動去攻擊敵人。
 

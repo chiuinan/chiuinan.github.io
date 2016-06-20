@@ -1,24 +1,24 @@
-¦WºÙ¡GÃz¯º¥XÀ» (¤¤¤åª©)
-Â²¤¶¡G¤j¦t1992¦~¥X«~ªº®gÀ»¹CÀ¸¡A³y«¬Ãz¯º¦³½ì¡A¤£¹L¥Ñ©ó¤v¾÷³Q¼Ä¤è¤@À»
-      ¤¤«K¦º¡A­n¹LÃö¨Ã«D©ö¨Æ¡C¦ý¾ãÅé¦Ó¨¥¡A³o¬O¤@´Ú­È±o¤@ª±ªº®gÀ»¹CÀ¸¡C
-ª`·N¡G­YµLªk¥¿±`°õ¦æ¡A¥²¶·°õ¦æSETUP.EXE­«·s³]©wÀô¹Ò¡C
-«OÅ@¡G¤£©ú¡A®³¨ì®É¤w¯}¸Ñ¡C¯}¸Ñ¤èªk¬°¡G
-      MEO.EXE (¥ý¥ÎUNLZEXE¸Ñ¶})
+ï»¿åç¨±ï¼šçˆ†ç¬‘å‡ºæ“Š (ä¸­æ–‡ç‰ˆ)
+ç°¡ä»‹ï¼šå¤§å®‡1992å¹´å‡ºå“çš„å°„æ“ŠéŠæˆ²ï¼Œé€ åž‹çˆ†ç¬‘æœ‰è¶£ï¼Œä¸éŽç”±æ–¼å·±æ©Ÿè¢«æ•µæ–¹ä¸€æ“Š
+      ä¸­ä¾¿æ­»ï¼Œè¦éŽé—œä¸¦éžæ˜“äº‹ã€‚ä½†æ•´é«”è€Œè¨€ï¼Œé€™æ˜¯ä¸€æ¬¾å€¼å¾—ä¸€çŽ©çš„å°„æ“ŠéŠæˆ²ã€‚
+æ³¨æ„ï¼šè‹¥ç„¡æ³•æ­£å¸¸åŸ·è¡Œï¼Œå¿…é ˆåŸ·è¡ŒSETUP.EXEé‡æ–°è¨­å®šç’°å¢ƒã€‚
+ä¿è­·ï¼šä¸æ˜Žï¼Œæ‹¿åˆ°æ™‚å·²ç ´è§£ã€‚ç ´è§£æ–¹æ³•ç‚ºï¼š
+      MEO.EXE (å…ˆç”¨UNLZEXEè§£é–‹)
          3B 06 2A 00 75 04
          A1 2A 00 90 90 90
-      ©Î
-         75 04 (¦@¤T²Õ)
+      æˆ–
+         75 04 (å…±ä¸‰çµ„)
          -- 00
-      ©Î
+      æˆ–
       AIR.EXE
          80 3E 06 00 01 74 23
          C6 06 -- -- -- EB --
-­×§ï¡G¥H¤UÀÉ®×§¡»Ý¥ÎUNLZEXE¸ÑÀ£ÁY¦A¦æ­×§ï¡C
-      1.°¦¼ÆµL­­¡]¹CÀ¸¤@¶}©l¥ý¥h¼²¾À§Y¥i¡^¡G
+ä¿®æ”¹ï¼šä»¥ä¸‹æª”æ¡ˆå‡éœ€ç”¨UNLZEXEè§£å£“ç¸®å†è¡Œä¿®æ”¹ã€‚
+      1.éš»æ•¸ç„¡é™ï¼ˆéŠæˆ²ä¸€é–‹å§‹å…ˆåŽ»æ’žå£å³å¯ï¼‰ï¼š
         AIR1-1.EXE
           FF 0E C1 03 C3 80
           -- -- C2 -- -- --
-      2.ªZ¾¹¤£´î¡G
+      2.æ­¦å™¨ä¸æ¸›ï¼š
         AIR1-1.EXE
           C6 87 E4 03 00 A0
           90 90 90 90 90 --
@@ -40,14 +40,14 @@
         AIR7.EXE
           C6 87 84 03 00 A0
           90 90 90 90 90 --
-      ¥Ø«e¥»¹CÀ¸¥u­×§ï¦¨°¦¼Æ¤£­­¡C
-±K§Þ¡G
+      ç›®å‰æœ¬éŠæˆ²åªä¿®æ”¹æˆéš»æ•¸ä¸é™ã€‚
+å¯†æŠ€ï¼š
 
-Tab+H = ¥[99°¦
-Tab+F3 = ¸õÃö
+Tab+H = åŠ 99éš»
+Tab+F3 = è·³é—œ
 
-¾Þ§@¡G
+æ“ä½œï¼š
 
-Shift-Q = ¦^¨ìDOS
-Shift+F9 = ¥[³t
-Shift+F8 = ÅÜ¦^­ì³t
+Shift-Q = å›žåˆ°DOS
+Shift+F9 = åŠ é€Ÿ
+Shift+F8 = è®Šå›žåŽŸé€Ÿ

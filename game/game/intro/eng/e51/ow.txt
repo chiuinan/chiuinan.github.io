@@ -1,48 +1,48 @@
-�W�١G�Q���ľW�j (Operation Wolf�A�^�媩)
-²���GTAITO 1989�~�X�~���g���C���A�Ѥj���q�����ӦӨӡA���ӮĪG�٤����C
-      ���̥D�n��t���������A�`�J�ĤH�Ҥ��m�ϤH��ó]�k��X�C�C���Ĩ�
-      �Ĥ@�H�ٵ����A�D�`������ҡC�C�����٦��@�ǽީάO���]�Ӷ]�h�A�g
-      �����̷|���˳ƥX�{�A���ڹC�������F�ʤ@�ɡC�u�O���ɪ��j���q����
-      �t���ޱ��Ϊ��j�A�b�˷ǻP�g���W�������t�ǽT�A���Ӧ�PC�����ɨϥ�
-      �ƹ��ޱ��A�b�ۥѫפW�K���t�F�C�]���Y�Ϧb�j���q���W�i����X�p��
-      �������H�Ӫ��o�ӹC���A�j���]�����F�X���C�t�~�A�o�ӹC���Ҳ��Ӫ�
-      �������ĤG�N�A�]�N�O��g���u�T�w�A�����H�N��ܡC
-�O�@�G�Ϥ��C
-�ާ@�G
+﻿名稱：烏茲衝鋒槍 (Operation Wolf，英文版)
+簡介：TAITO 1989年出品的射擊遊戲，由大型電玩移植而來，移植效果還不錯。
+      玩者主要扮演突擊隊員，深入敵人境內搶救人質並設法脫出。遊戲採取
+      第一人稱視角，非常身歷其境。遊戲中還有一些豬或是雞跑來跑去，射
+      擊它們會有裝備出現，此款遊戲當時轟動一時。只是當時的大型電玩備
+      配有操控用的槍，在瞄準與射擊上較為迅速準確，移植至PC版本時使用
+      滑鼠操控，在自由度上便較差了。因此即使在大型電玩上可玩到幾小時
+      不死的人來玩這個遊戲，大概也撐不了幾關。另外，這個遊戲所移植的
+      版本為第二代，也就是行經路線固定，不能隨意選擇。
+保護：磁片。
+操作：
 
-�ƹ�����/Space = �o�g�l�u
-�ƹ��k��/Enter = ���Y���u
-F1 = �Ȱ�
-F2 = ���ֶ}��
-F3 = ���Ķ}��
-F4 = �����ù��C��
-F10 = �����C��
+滑鼠左鍵/Space = 發射子彈
+滑鼠右鍵/Enter = 投擲炸彈
+F1 = 暫停
+F2 = 音樂開關
+F3 = 音效開關
+F4 = 切換螢幕顏色
+F10 = 結束遊戲
 
-�����G
+說明：
 
-���d�T�w���G
+關卡固定為：
 
-1.�إ߳q�T���]Communication Setup�^
-2.�O�L�]Jungle�^
-3.�����]Village�^�G�e����ˡC
-4.�u�Įw�]Powder Magazine�^�G�e�����o�u�ġC
-5.������]Concentration Camp�^�G�ѱϤH��C
-6.�����]Airport�^�G�@�e�H��C
+1.建立通訊站（Communication Setup）
+2.叢林（Jungle）
+3.村落（Village）：容易醫傷。
+4.彈藥庫（Powder Magazine）：容易取得彈藥。
+5.集中營（Concentration Camp）：解救人質。
+6.機場（Airport）：護送人質。
 
-�����ɭn�H�ɪ`�N���W���l�u�ƻP�j�h�u�ơA�ĤH�L�h�ɥi�o�g�j�h�u�ӸѨM�C
-�k�U���|��ܳѤU���h�L�B�Z�J�B���@���ƶq�C�e���W�i��X�{�����~�]�g��
-�Y��߰_�^�G
+闖關時要隨時注意身上的子彈數與槍榴彈數，敵人過多時可發射槍榴彈來解決。
+右下角會顯示剩下的士兵、坦克、直昇機數量。畫面上可能出現的物品（射到
+即算撿起）：
 
-1.�u�ĵ��G�W�[30���l�u
-2.�j�h�u�G�W�[�j�h�u
-3.���ġG�����a�W�Ҧ��ĤH
-4.�Ĳ~�G��_5��ˮ`
-5.�W�ž��j�G10�����s�g
+1.彈藥筒：增加30顆子彈
+2.槍榴彈：增加槍榴彈
+3.炸藥：消滅地上所有敵人
+4.藥瓶：恢復5格傷害
+5.超級機槍：10秒鐘連射
 
-��L�`�N�ƶ��G
+其他注意事項：
 
-1.�b������������X�{���H��A���i�������A�̤֭n���@�ӤH�w���q�L�A�_�h
-  ���Ȥ��⥢�ѡC
-2.�e���W���p�ʪ��i�H���A�|�����Ϊ����~�C
-3.�g���ʩm�����@�H���|�Q�����C
-4.�Ʀ�]�Y�H�R���v���ǡA�ӫD���ơC
+1.在集中營／機場出現的人質，不可全殺掉，最少要讓一個人安全通過，否則
+  任務仍算失敗。
+2.畫面上的小動物可以殺，會掉有用的物品。
+3.射殺百姓或醫護人員會被扣分。
+4.排行榜係以命中率為準，而非分數。

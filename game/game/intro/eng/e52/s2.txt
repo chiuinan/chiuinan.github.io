@@ -1,140 +1,140 @@
-�W�١G���z��P�ɨ��� (Screamer 2�A�^�媩)
-²���GVirgin 1996�~�X�~���ɨ��C���A�L���n���ĪG�B���u�׵��A�b���ɳ��O
-      ���Ū��C�M�@�N���P���O�A���D���A�O���Z���D���A�}�l����a�B���a�B
-      �F�a�������P���a�ΡA�s�D�]�ܱo����h�A���I���O�V���ɨ��A�]���t
-      �׷P������@�N�C���~�A�G�N�]�ޤJ�l�a�������A�P�ɥ礹�\���a�L��
-      ����A�������ܱo�����C�Ӭ��F�l�D��u�A�b��L�ޱ��W��_�@�N�x��
-      ���֡A�]�����Ǫ��a��ĳ�ϥ�Gamepad���ɨ���V�L�ӱ���C�������n��
-      �]���q����P�쨮�ۦP�A���n�����C�_�񦳨ǥ��H�A�t�W�L�k����q
-      �����֡A��b�O�����Z�H�C���L�צp��A���N���O�@�ڭȱo�^�����g��
-      �C���C
-�O�@�G���СC
-�Ƶ��G�ϥ�DosBox����ɡA�����]�wcycles=max�A�_�h����t�׷|�����֡A�Y
-      �n����SETUP.EXE�A�h�٭n�A�]�wcputype=pentium_slow�C
-�Ƶ��Gimg�l�ؿ����쪩CD�M���ɡ]�t���y�^�A����e���]�w�G
-         imgmount d <Screamer2.cue�ɮצ�m> -t cdrom
-      �Y�Qť�ۤv���w�����֡A�]�i�]�w�G
-         mount d <���ЩҦb�Ϻо�>:\ -t cdrom -usecd 0
-      �M��b���ɩ�J����CD��ť�C
-�K�ޡG�bOption Room�e���U�A��J�H�U���K�X�G
+﻿名稱：驚爆實感賽車２ (Screamer 2，英文版)
+簡介：Virgin 1996年出品的賽車遊戲，無論聲光效果、擬真度等，在當時都是
+      頂級的。和一代不同的是，車道不再是平坦的道路，開始有草地、雪地、
+      沙地等等不同的地形，彎道也變得比較多，有點像是越野賽車，因此速
+      度感略遜於一代。此外，二代也引入損壞的概念，同時亦允許玩家微調
+      車體，複雜度變得較高。而為了追求仿真，在鍵盤操控上比起一代困難
+      不少，因此有些玩家建議使用Gamepad或賽車方向盤來控制。引擎的聲音
+      也儘量做到與原車相同，但聲音高低起伏有些平淡，配上無法控制音量
+      的音樂，實在是噪音擾人。但無論如何，本代仍是一款值得回味的經典
+      遊戲。
+保護：光碟。
+備註：使用DosBox執行時，必須設定cycles=max，否則執行速度會不夠快，若
+      要執行SETUP.EXE，則還要再設定cputype=pentium_slow。
+備註：img子目錄為原版CD映像檔（含音軌），執行前先設定：
+         imgmount d <Screamer2.cue檔案位置> -t cdrom
+      若想聽自己喜歡的音樂，也可設定：
+         mount d <光碟所在磁碟機>:\ -t cdrom -usecd 0
+      然後在玩時放入音樂CD來聽。
+密技：在Option Room畫面下，輸入以下的密碼：
 
-MRTRK �}�ҩҦ����a�C
-TACAR ��CONDORS�]���N�^�����A�h�X���lBLACK CLAW�C
-TBCAR ��ANGLES�]�Ѩϡ^�����A�h�X���lAPHRODITE�C
-TCCAR ��WASP�]�����^�����A�h�X���lHORNET�C
-TDCAR ��ZEUS�]�{�q�^�����A�h�X���lTHUNDER�C
-CHMPA �a�x�����ɡ]Championship�^�Ҧ������a���i��ܡC 
+MRTRK 開啟所有場地。
+TACAR 選CONDORS（黑鷹）車隊，多出車子BLACK CLAW。
+TBCAR 選ANGLES（天使）車隊，多出車子APHRODITE。
+TCCAR 選WASP（黃蜂）車隊，多出車子HORNET。
+TDCAR 選ZEUS（閃電）車隊，多出車子THUNDER。
+CHMPA 冠軍爭奪賽（Championship）所有的場地都可選擇。 
 
-�ާ@�G
+操作：
 
-����SETUP.EXE�i�]�w������C
+執行SETUP.EXE可設定控制鍵。
 
-F1 = ������
-F2 = ��������
-F3 = ��ܨ��Y
-F4 = ��ܥ���
-F9 = �]�����ɡ^�B�~�����Y
-F11 = �]�����ɡ^�����[�ݨ��l
+F1 = 全視野
+F2 = 車內視野
+F3 = 顯示車頭
+F4 = 顯示全車
+F9 = （重播時）額外的鏡頭
+F11 = （重播時）切換觀看車子
 
-1.Arcade�G�ۥѿ�ܳ��a�P���l�A�i��m����
-2.Championship�G�a�x������
-3.Time Attack�G�D�Գ̵u�ɶ�¶��
+1.Arcade：自由選擇場地與車子，進行練習賽
+2.Championship：冠軍爭奪賽
+3.Time Attack：挑戰最短時間繞完
 4.Options
-  (1)Transmition�G�a�x�����ɬ���ơ]Auto�^�Φ۱ơ]Manual�^
-  (2)Detail Level�G������ӫסA�Ѱ��ӧC��High�BMedium�BLow
-  (3)Number of Laps�G���ɰ��
-  (4)Arcade Enemies Skill�G�m���ɹ�ⵥ�šA�Ѱ��ӧC��Pro�BNormal�BRookie
-  (5)Damage�G�����ɬO�_���l�|�l�a
+  (1)Transmition：冠軍爭奪賽為手排（Auto）或自排（Manual）
+  (2)Detail Level：景物精細度，由高而低為High、Medium、Low
+  (3)Number of Laps：比賽圈數
+  (4)Arcade Enemies Skill：練習賽對手等級，由高而低為Pro、Normal、Rookie
+  (5)Damage：撞擊時是否車子會損壞
 
-�𲤡G�]�@�̡ЫC�m�^
+攻略：（作者－青衫）
 
-*** ��ܨ���
+*** 選擇車隊
 
-�@�}�l������ܩҭn�N���������A���F�����лx�~�A������Championship�A�K
-�|�h�X�@�����K���l�ѿ�ܡC���P��������o�쪺���K���l�����P�G
+一開始必須選擇所要代表的車隊，除了做為標誌外，當完成Championship，便
+會多出一輛秘密車子供選擇。不同的車隊能得到的秘密車子均不同：
 
-1.CONDORS�]���N�^���GBLACK CLAW
-2.ANGLES�]�Ѩϡ^���GAPHRODITE
-3.ZEUS�]�{�q�^���GTHUNDER
-4.WASP�]�����^���GHORNET
+1.CONDORS（黑鷹）隊：BLACK CLAW
+2.ANGLES（天使）隊：APHRODITE
+3.ZEUS（閃電）隊：THUNDER
+4.WASP（黃蜂）隊：HORNET
 
-�U���K���l���ʯ�Ш���z�C
+各秘密車子的性能請見後述。
 
-*** ���l�ʯ�
+*** 車子性能
 
-1.����X�ʡ]RWD�^�G�[�t�P�t�ק֡A���Y�O���j�A���s�b�|���p
-2.�e���X�ʡ]FWD�^�G�٪o�A�e����a�O���A���a�����|����
-3.�|���ǰʡ]4WD�^�G�Ӫo�A�V���M�ΡA�A�X���a�B�F�a�B��ê���B�~�Y��
+1.後輪驅動（RWD）：加速與速度快，爬坡力較強，轉彎半徑較小
+2.前輪驅動（FWD）：省油，前輪抓地力高，雪地較不會打滑
+3.四輪傳動（4WD）：耗油，越野專用，適合雪地、沙地、障礙物、陡坡等
 
-�C�Ө�������4�Ӱ򥻨��بѿ�ܡG
+每個車隊都有4個基本車種供選擇：
 
-����       ���t  �X��  �ҥ骺��ڨ���
+車種       極速  驅動  模仿的實際車種
 -----------------------------------------
 RADIANCE   122   RWD   Porsche 911
 SPARK      121   FWD   Mazda Miata (MX-5)
 NEBULA     120   4WD   Honda NSX
 HORIZON    120   4WD   Toyota Supra
 
-�U���������K���l�G
+各車隊的秘密車子：
 
-����       ���t  �X�� 
+車種       極速  驅動 
 ----------------------
 BLACK CLAW 131   RWD
 APHRODITE  129   FWD
 THUNDER    129   4WD
 HORNET     123   4WD
 
-1.RADIANCE�G�t�׳̧֡A���ޱ��W���x���A���t���s�ɡA�����e���ϹL�Y�A��
-  �s�b�|�礣�p�C
-2.SPARK�G�[�t�שM�ޱ��ʳ��۷������A�����t���s�ɮe���ܦ�����A�]���n��
-  �t�]���C
-3.NEBULA�G�ޱ��ʳ̦n�����ءA���t�׸��C�C
-4.HORIZON�G�MNEBULA�ۮt�L�X�C
-5.BLACK CLAW�G�t�׶W�֡A�����s�b�|��j�A���t���s���w����A�]���ϧ���
-  �����e�C
-6.APHRODITE�G�ޱ��ʫD�`�n�����ءA���t���s�e���A�����s�|����·ШǡC
-7.THUNDER�G�MAPHRODITE�۷��A�[�t�׫h���n�C
-8.HORNET�G�t�ײ��C�A�����s�b�|�̤p�C
+1.RADIANCE：速度最快，但操控上較困難，高速轉彎時，車尾容易甩過頭，轉
+  彎半徑亦不小。
+2.SPARK：加速度和操控性都相當平均，但高速轉彎時容易變成打轉，因此要降
+  速因應。
+3.NEBULA：操控性最好的車種，但速度較慢。
+4.HORIZON：和NEBULA相差無幾。
+5.BLACK CLAW：速度超快，但轉彎半徑亦大，高速轉彎必定撞牆，因此甩尾必
+  須提前。
+6.APHRODITE：操控性非常好的車種，高速轉彎容易，但急彎會比較麻煩些。
+7.THUNDER：和APHRODITE相當，加速度則較好。
+8.HORNET：速度略慢，但轉彎半徑最小。
 
-*** ���a����
+*** 場地說明
 
-1.England�]�e���^�G��f�o���B��a
-  ��ĳ���ءG����򥻨��ءBAPHRODITE
-2.Egypt�]���q�^�G�F�a�B�d�g
-  ��ĳ���ءGNEBULA�BTHUNDER/HORNET
-3.California�]���q�^�G�f�o���B�d��
-  ��ĳ���ءGRADIANCE/SPARK�BAPHRODITE
-4.Finland�]���q�^�G���a
-  ��ĳ���ءGNEBULA/HORIZON�BTHUNDER/HORNET
-5.Switzerland�]�x���^�G�f�o���B��۸�
-  ��ĳ���ءG����򥻨��ءBAPHRODITE
-6.Colombia�]�x���^�G�d��
-  ��ĳ���ءGNEBULA/HORIZON�BTHUNDER/HORNET
-7.The Tunnel�]�x���^�G�f�o��
-  ��ĳ���ءGSPARK/NEBULA�BAPHRODITE
+1.England（容易）：濕柏油路、草地
+  建議車種：任何基本車種、APHRODITE
+2.Egypt（普通）：沙地、泥土
+  建議車種：NEBULA、THUNDER/HORNET
+3.California（普通）：柏油路、泥路
+  建議車種：RADIANCE/SPARK、APHRODITE
+4.Finland（普通）：雪地
+  建議車種：NEBULA/HORIZON、THUNDER/HORNET
+5.Switzerland（困難）：柏油路、圓石路
+  建議車種：任何基本車種、APHRODITE
+6.Colombia（困難）：泥路
+  建議車種：NEBULA/HORIZON、THUNDER/HORNET
+7.The Tunnel（困難）：柏油路
+  建議車種：SPARK/NEBULA、APHRODITE
 
-The Tunnel��������Championship��~�|�}�Ҩѿ�ܡC
+The Tunnel必須完成Championship後才會開啟供選擇。
 
-*** ����L��
+*** 車體微調
 
-����L�եu���a�x�����ɡ]Championship�^��Time Attack�ɤ~��i��A�B����
-�����K���l�C���Standard�K�O�ϥΤ��w�ȡA�_�h�i���Custom�ۦ�վ�G
+車體微調只有冠軍爭奪賽（Championship）或Time Attack時才能進行，且不能
+為秘密車子。選擇Standard便是使用內定值，否則可選擇Custom自行調整：
 
-1.��V�L�]Handling�^�G�v�T���s����O�A�ȤӰ��e��oversteer�]�ϧ��L�Y�^�A
-  �ȤӧC�h�e��understeer�]���s�����^�C
-2.�b���]Brakes�^�G�v�T�b���į�A�ȷU�����l��t�U�֡A���r�M�b����e��
-  �y�����l�����C
-3.���L�]Tire Type�^�GDry�A�X�@��D���M�H�۸��AWet�A�X�d�a�ΨF�a�ASnow
-  �A�X���a�C
-4.�L���]Tire Pressure�^�G�ȷU�C�A��a�O�U�n�A�l�_�ĪG��U���A���|�]��
-  �Ӵ�C�t�סC
-5.�e�a�Q�t�Ρ]Front Suspensions�^�����a�Q�t�Ρ]Rear Suspensions�^�G��
-  �U���A�۹����B���l�_�ĪG�U�n�A����e���y���X�ʨt�Τ����L�צӳy����
-  �l����C
+1.方向盤（Handling）：影響轉彎的能力，值太高容易oversteer（甩尾過頭），
+  值太低則容易understeer（轉彎不足）。
+2.剎車（Brakes）：影響剎車效能，值愈高車子減速愈快，但猛然剎車亦容易
+  造成車子失控。
+3.輪胎（Tire Type）：Dry適合一般道路和碎石路，Wet適合泥地或沙地，Snow
+  適合雪地。
+4.胎壓（Tire Pressure）：值愈低，抓地力愈好，吸震效果亦愈高，但會因此
+  而減低速度。
+5.前懸吊系統（Front Suspensions）／後懸吊系統（Rear Suspensions）：值
+  愈高，相對應處的吸震效果愈好，但亦容易造成驅動系統反應過度而造成車
+  子打轉。
 
-��ĳ�ȡG
+建議值：
 
-���a         ����     �]�w
+場地         車種     設定
 -----------------------------------
 England      Nebula   4 3 B 3 3 3
 Egypt        Nebula   5 3 B 2 2 2
@@ -144,9 +144,9 @@ Switzerland  Spark    4 3 A 4 2 2
 Colombia     Horizon  3 3 B 2 5 5
 The Tunnel   Spark    5 3 A 5 4 3
 
-���˧𲤼v���G
+推薦攻略影片：
 
-1.England�Ghttp://www.youtube.com/watch?v=DTlJJ6pBbgE
-2.California�Ghttp://www.youtube.com/watch?v=XSIQNbrUF8I
-3.Finland�Ghttp://www.youtube.com/watch?v=Pi7RA_e5fcE
-4.Switzerland�Ghttp://www.youtube.com/watch?v=7EaVzIFm4iM
+1.England：http://www.youtube.com/watch?v=DTlJJ6pBbgE
+2.California：http://www.youtube.com/watch?v=XSIQNbrUF8I
+3.Finland：http://www.youtube.com/watch?v=Pi7RA_e5fcE
+4.Switzerland：http://www.youtube.com/watch?v=7EaVzIFm4iM

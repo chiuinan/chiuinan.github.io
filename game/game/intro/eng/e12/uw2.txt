@@ -1,587 +1,587 @@
-�W�١G�a�U�Х@�����Ц�������
-      (Ultima Underworld 2 - Labyrinth of Worlds�A�^�媩)
-²���GOrigin 1992�~�X�~�������t�C���A�G�Ƥw�����Ĥ@�N�@�˿W���@��A
-      �ӧ�u�۳Х@���t�CAvatar���Guardian���@���A�i���O�Х@���t�C��
-      ����C��ӹC�����uŧ�Ĥ@�N�A�ĥ�3D�Ĥ@�H�ٵ�ı�e�{�A��H�Y�ɾ�
-      ���C�C�����ü����X��ӯu�ꪺ�@�ɡA�]�A�Ⱦj�B�h�ҡB���t�B���q�B
-      �Z���i�l�����A�ᬰ�G�u�A�ӭI�����֤]�۷�����ť�C�ĤH������Y��
-      �A�X�{�A���|���J�����@���m�\���W�o�C�M�@�N���P���a��O�A��O��
-      �ɯŧ�ѱM�H�V�m�A�ӫD�g�t�Ŭ�ë�C��ӹC�����x���׶��ݩ󤤵��A
-      �D�ԩʤ��Ⱚ�A�����O�Z�������@�ӹC���A�ȱo�@���C
-�O�@�G�L
-����GJ        = �V�W���D �]�t�X�]�B�i���󻷡^
-      Shift-J  = �V�e���D
-      E        = ����ɤW�@
-      Q        = ����ɤU��
-      1        = �V�W��
-      2        = ����
-      3        = �V�U��
-      F1       = �԰��Ҧ�����
-      F9       = �l�ܧޯ�ϥΤ���
+﻿名稱：地下創世紀２－次元之旅
+      (Ultima Underworld 2 - Labyrinth of Worlds，英文版)
+簡介：Origin 1992年出品的角色扮演遊戲，故事已不似第一代一樣獨成一格，
+      而改沿自創世紀系列Avatar對抗Guardian的劇情，可說是創世紀系列的
+      分支。整個遊戲仍沿襲第一代，採全3D第一人稱視覺呈現，單人即時戰
+      鬥。遊戲中並模擬出整個真實的世界，包括饑餓、疲勞、明暗、重量、
+      武器磨損等等，頗為逼真，而背景音樂也相當的動聽。敵人殺完後即不
+      再出現，不會陷入必須一直練功的苦惱。和一代不同的地方是，能力的
+      升級改由專人訓練，而非經聖符祈禱。整個遊戲的困難度僅屬於中等，
+      挑戰性不算高，但仍是蠻不錯的一個遊戲，值得一玩。
+保護：無
+按鍵：J        = 向上跳躍 （配合跑步可跳更遠）
+      Shift-J  = 向前跳躍
+      E        = 飛行時上昇
+      Q        = 飛行時下降
+      1        = 向上看
+      2        = 平視
+      3        = 向下看
+      F1       = 戰鬥模式切換
+      F9       = 追蹤技能使用切換
 
-�𲤡G�]�@�̡ЫC�m�^
+攻略：（作者－青衫）
 
-�гy�H���ɡA�̦n�O�O�q�̰��A�䦸�����z�C�Z���̦n��μC�A�i�ѼA���C
-��O���FAttack�BDefence�BSword�BCasting�BMana�~�A�����O�ܻݭn�C��ĳ
-���Easy�Ҧ��C
+創造人物時，最好是力量最高，其次為智慧。武器最好選用劍，可供劈砍刺。
+能力除了Attack、Defence、Sword、Casting、Mana外，均不是很需要。建議
+選用Easy模式。
 
-�@�B�}�l - Britannia�@��
+一、開始 - Britannia世界
 
-1.�@�}�l���b�ۤv�ж����Ǹ˳ơA�O�o�ж��_�䦳�ӱK���A�i�J��i�����ť�
-  �U�M�@�ǲťۡC�_�䪺���Ȥ��n�X�h�C��L���n���˳Ƭ�Dupre�ж����@��
-  Short Sword�MWooden Shield�A������̦n���Z���FIolo�Ф����Q�r�}�M�b�A
-  �i�Ψӱ����̡FGeoffrey�Ф��c�l���U�l�M��M�FNelson�Ф������⪺��
-  �r���FLady Tory�Ф���oil flask�A�N�ӥi�Φb�o�O�W�FNystul�Ф�������
-  ����_�ͩR���C�b����U�ж��˳ƫe���n��Throne Room�h�A�_�h�MLord
-  British�ͧ���A�U�H���|�^�СA�����e�������C�����˳ƫ�A�h�MLord
-  British�ͽ͡A����A�M��L�H�ͽ͡A�H�F�ѱ��p�A�S�O�ONelson�BNystul
-  �MDupre�C�qDupre�͸ܤ��i�������a�U�g�c��Key�C����Key����A���h�V�m
-  �ۤv����O�CGeoffrey�i�V�m�����M���m��O�ASyria�i�V�m�C�N�A�o�X��
-  �O����̭��n����O�C��Syria�V�m�����ɳt�׸��C�A�̦n��Killorn Keep
-  ������Lobar�CNystul�i���ɪk�O�M�I�k��O�A���I�k�����n�ʦb������p�A
-  ���]���i�ʤ֡A�i�����p�[�j�C���ɥ���Nystul���a�U�ж��]���i�̤�����
-  �ʶǰe�^�A�������⾯�B�L�⾯�]��_�k�O�^�A���⾯�]�@���N�^�M�@�ǲ�
-  �۫�A�����[�W��box�A�̭��٦��@�ǲťۡC���U���s�}���������A�M�ᥴ
-  �}����Щ�X�Ǫ��m�m�\�C���U�ӫK�I�U����A�Ѧۤv�ж��_�䪺���X�h�A
-  ¶¶�����|�P�A�N�U�B�K�����}�A�H��K�X�J�]���~�|�J��@���ѹ������^�C
-  �F�_�p�Цa�U�Ǧ��ܦh�����A�������a�Ӧh�A�u�~�����ܦh�ɵ��C���U�ӫK
-  �O�}�Ҧ�_���������a�U�g�c���]��key�}���N�i�H��F�^�C
-2.�@�U�h�g�c�K�|�D�J�\�h�Χ����A�]���n���i�J�԰����A�C�u�ۤJ�f�|�P�N
-  �Ҧ��ĤH��������A���F���A�b�Ĥ@�ӧø��k��|�J��@�ӥsFissif���p���A
-  ��L�͸ܫ�i���^�Q�������h���A���o���h���γB���j�A���ݱa�ۡC�M��N
-  �L�e�ɡA�z�ѬO�ȥL�|�b�a�U�����]�Ⱦj�M�e�f�Ӧ��A�p���L�N���Level 1
-  ���ʺ��A�H��i�M�L�ǲߤ@�ǧޯ�CFissif���]�]����LOR�ť۩M�@���N��
-  �⾯�C�a�W�]����oil flask�A���K�N���߰_�C�~��X�ө��F��ĤG�ӧø�
-  �k��A�o�̭�����ӵL�Y�H�A�O������j���ĤH�C�̦n�ܤU���⾯��A��L
-  ���A�����@�ӫ���^�h���ɯ�O�M�𮧡A�A�H�P�ˤ覡���ĤG�ӡC������A
-  ����i���Leather legging�Mchain boot�����n���˳ơC�a�W�]���ǿ��A
-  �N���̾߰_�ӡC���M�]�_�b�t�@�Ӧ����@�ɦ��γB�A�]���n���q�����C�~��
-  �X�ӦV�F���A���Ӭ]���׵ۡA����U�@�h�������̤���n�ǡA�_�h���p��
-  ���U�h�|���쥦�������C�������̥i�U�h��a��Ƥ��f�B�A�i�J�i���o�@
-  ���]�k���b�k���C�^��Level 3�A�u�۬]�����_���a�O���B�{�ɡA�ֳt�ĥX
-  �k��H¶��t�@�ӥi�}�Ҫ��]���A�}�ҫ�q�t�@��}�ҭ�Ӫ��]���H��K�X
-  �J�C
-3.�q�]�����_���A�b�F�_�B��2��coin�A�����~����ӳ����A�Ĥ@�ӷ|����
-  Level 4���t�@�Ӧa��A������I�A�̦n�׶}�C�ĤG�ӫh���^��Ӧ�����
-  �������C���Ĥ@�ӡA�u�n�p�ߺC�C���A�K�|�ݨ�a�O��M�U���]�b�ਤ
-  �B�^�A�������L�h�Y�i�C���ĤG�ӡA�J��a�O�U���ɡA���^���@�q�Z���A
-  ���e���A��U���a�O�S�|�^�_�A�K�i�L�h���o2��coin�A���L�^�Ӯɤ��M�|
-  ����������C�n���n���ۤv��ܧa�C���F�_�~�����@���n��u�A�̭����Ⱖ
-  ���]�A�۷������A��OBritannia�@�ɲĤG�j���ĤH�]�]�����|�b���B���]
-  �k���A�^�C�p�G�A���B�N���̥����A����o��i����@�Ӧ��r�L�⾯�B14��
-  coin�BEx�ťۡBchain��M�B�o�O�]���ɤ���i���@�ǤF�^�B�@�Ӥj�V��
-  �N���b�M�@���_�ۡA��ì���סA���M���Ť]�|���ɤ��֡C���B�٦��@�Ө��A
-  �G�����a�A�̦n���n�����Y�W�A�H�K���ˡC��ĳ�̦n���L�B�����A���ɤF
-  ���ŨðV�m�L��A�ӥ��o�Ⱖ���]�C
-4.�q�]�����n���A�|�Ө�@�Ӧ��ɭ����Y�����W�D���A�����Y�ɤW�Ӯɪ����u
-  �۹D�����A���}�U�ж������m�m�\�C�U�ж���������W�ӡA�]���̦n�ή��Y
-  �N�����}�]�μC�|�i�l�^�A�����@�Ӫ��O�����}���]�Х�massive�^�A�t��
-  ���|�i�i�J�өж��A�Ȥ��κޥ��C�b�L�{���i����@�Ӥ��ȵL�⾯�B9 coin�B
-  badly worn helmet�B�M�@�ӸѬr�Ϊ�leech�C�䤤�w���a����helmet���ۦ�
-  ���n���b�Y�W�]���@�O�Ӯt�^�A�i����N�Ӯ���״_�k���Υi�H�ϥέ״_�k
-  �N�ɦA�N���״_���W�C���U�ӯ���U�B�ɭ����Y�W�A�����ܤ������׮ɡA��
-  �ݦ��L���̡A�Y���̦n���N�������]�@�@�Ⱖ�^�A�H�K�U����B���C�b
-  �F�n�����Ӥ��D�i�J�A�i�����@�Ǫ��~�A�̭��]���@�����̡C�]�i�H����
-  �q���ਤ�B���ɭ��۩����A�ݨ�@���r���������n��A�����|��F�@�B
-  �ɭ��ۡC�W�h�ᵥ���Y�����ɰ_�ɡA�b�n��i�ݨ�@���q���A���L���Y�S��
-  �����׵ۡA�o�Ӫ��H��~��Key�}�A�]�������κޥ��C�~�򩹦��A�|�ݨ�
-  �@���q���A�W�h�ᦳ�ӥi�}�����i�i�J����Q����������ж��A�u���L�o��
-  �ж����S����n�F��C�A�q�r�����_��K�i�ݨ�q���U�@�h���ӱ�C�H��p
-  �G���Ű��ɡA�i�I�i����N�θ��D�N���W�r���A�̭����@������A���˥���
-  �b���񦳤@�i��N��chain helmet�A��Repel Undead���b�C
-5.�i�JLevel 4��A����F�䥴���ѹ��A�b�F�_�o���襤�i�o��@�Ѭr���b�A
-  �b�����B�i�o��@�Ө����Ϊ����⾯�]�H��|�Ψ�A�n�n�n�O�d�^�A�@�Ӥ�
-  �a�M�@����{�N���b�C�~�򩹪F�n��V�e�i�A�b�@�Ӫh�A�B�|�J�WBritannia
-  �@�ɤ��̱j���ĤH���A�{�b�̦n���n�h�S���A�����Ű��F��A�ӥ��A�_�h
-  �|���o�����ݡC�^�Y����訫�A�|��FGoblin�����a��A�i�H�M�L�̽ͽ͡C
-  �b��n������䮳�@�ڳ����A�����K���αa�F�A�H�ᦳ�����a�賨���K���o
-  �Y�C�b��_�観�@��Short Sword�A�p�G�A���C�w�g�i�l�A�i�H������n���C
-  �~�򩹪F�_���A�|�Ө�@�Ӫ��m���a��A¶�ۤ����B�����A���N�Ҧ��ĤH
-  ���h�]�̦n�]�Q��k�N���򤤪����̤]�@�_�����^�C�u�����\�h�Ѭr�Ϊ�
-  leech�A�̦n�h���ǳƥΡC�F�_�B���O�����Ӥp�����N���b�A�]���@�ө��W
-  �h���ӱ�A���W�h�]�S����F��i�ݡC�A�����_���A�|����ӧø��A���k��
-  ���@��r�j��A�i�o��@�ө]���N���b�C�O�o�n���ӻj��J�A�H��αo�ۡC
-  ���������@��L�Y�H�A�̭��i�o��14��coin�]2�Ӧb�L�Y�H���W�^�B3��oil
-  flask�B�o�O�Bmail legging�M�@�ӹp�q�N�k���]�i�Ψӱ����^�C���۱q
-  ���_��V���n���򤤪��p�q�i�o�{���U�@�h���ӱ�C
-6.Level 5�@�i�J�᩹�U���A��F�@�ӥ�Black Gem�Ҧb�B�C�o�䪺�ĤH�����j�A
-  �ܮe�������C�b�F�_��B���@�����Ϊ�Deadly Seeker���b�C�n��q�D�i�J
-  �ᦳ�ӧø��A���V�k���A�ѨM��Ӱ����A�i�o��Gem�B���M�M�@�Ө�����
-  ���⾯�C�~�򩹤����A���i���̴��t�@����i�o��chain cowl�BPor�ťۡB
-  �M�@�Ӥ���N���b�C�q�r���U�ӫ�A�i��L�r����̭����a�]�ΨϥΤ���
-  �N�^�A�b�̭��i�o��@�Ӷ��⾯�C�^��i�J�I�᩹�t�@���ø����A�b���䪺
-  �p�����]�۷����K�^�i���@�ӻs�y�������k���C�~�򩹤����A�K�i�o�{
-  �q�������a�U�Ǫ��ӱ�A�H��Ѧ��i�X�K��K�F�C�{�b���^�����V�m��O�A
-  �M���Miranda�͸ܡA�o�|�n�A�MNystul�BPetterson�ͽ͡C�ͧ�����K�i�H
-  �ǳƥh���������F�C
-7.��I���A�i�ϥΤ���N���b�����W�A�A�Q�ιp�q�N�k���F���A�`�N���n�Z
-  ���ӻ��A�_�h�ĪG�|��z�C�̦n��b�o�Ǫk���Χ����e�N�������A�_�h�K�u
-  �n�A�M�������若�C���A���ѤF����A�b�̸̭����U�h�i����Ӯc�Z���Ǫ�
-  Key�A�b�����٦�11 coin�B1 gem�M�@�Ӧa�_�N���b�]�a�_�N��VAS POR YLEM�A
-  �����ѤW���O���^�B�H�Τ@��Major Damage�����C�C�o����C�̦n�a�ۡA�N
-  �Ӯ���VAS�ť۫�A�i��Enchantment�k�N�N���W�j��Unsurpassed Damage��
-  �C�A��Broad Sword��n�ΡC�{�b�^�h���˳Ƨa�I�b�Ӯc�Z���ǥi�o��Tower
-  Shield�BBroad Sword�MBreast Plate�A���𨾯�O����۪����ɡC�O�o
-  �٭n����rock hammer�A�H��|�αo��C�{�b�^��Level 5�����۳B�A�N���W
-  ��coin�Mgem���d�b����a�W�H�ƨ��L�����@�ɮɨ��ΡA���n�O�o�a20
-  coin�A�M��쥨�ۥ_�詹�n�ݡA�i�H�ݨ즳�@�����G���t�A�����G�ɪ��ܥi
-  �H�i�J�Ӧ����@�ɡC�{�b�N�i�J�Ĥ@�Ӧ����@��Prison Tower�a�C
+1.一開始先在自己房間拿些裝備，記得房間北邊有個密門，進入後可拿取符石
+  袋和一些符石。北邊的門暫不要出去。其他較好之裝備為Dupre房間有一把
+  Short Sword和Wooden Shield，為初期最好之武器；Iolo房內有十字弓和箭，
+  可用來殺潛伏者；Geoffrey房內箱子有帽子和手套；Nelson房內有紅色的解
+  毒劑；Lady Tory房內有oil flask，將來可用在油燈上；Nystul房內有黃色
+  的恢復生命劑。在拿到各房間裝備前不要到Throne Room去，否則和Lord
+  British談完後，各人均會回房，較不容易偷取。拿完裝備後再去和Lord
+  British談談，之後再和其他人談談，以了解情況，特別是Nelson、Nystul
+  和Dupre。從Dupre談話中可拿取往地下迷宮的Key。拿到Key之後，先去訓練
+  自己的能力。Geoffrey可訓練攻擊和防禦能力，Syria可訓練劍術，這幾個
+  是初期最重要的能力。但Syria訓練的提升速度較慢，最好找Killorn Keep
+  次元的Lobar。Nystul可提升法力和施法能力，但施法的重要性在初期較小，
+  但也不可缺少，可視情況加強。此時先到Nystul的地下房間（走進最內間自
+  動傳送），拿取黃色劑、無色劑（恢復法力），紫色劑（耐擊術）和一些符
+  石後，拿取架上的box，裡面還有一些符石。按下按鈕開門往內走，然後打
+  開實驗房放出怪物練練功。接下來便點燃火把，由自己房間北邊的門出去，
+  繞繞城堡四周，將各處密門打開，以方便出入（中途會遇到一隻老鼠攻擊）。
+  東北廚房地下室有很多食物，但不必帶太多，沿途都有很多補給。接下來便
+  是開啟西北的巨門往地下迷宮走（此key開完就可以丟了）。
+2.一下去迷宮便會遭遇許多蟲攻擊，因此要先進入戰鬥狀態。沿著入口四周將
+  所有敵人都殺死後，往東走，在第一個岔路右轉會遇到一個叫Fissif的小偷，
+  跟他談話後可取回被偷走的懷錶，但這個懷錶用處不大，不需帶著。然後將
+  他逮補，理由是怕他會在地下城中因饑餓和疾病而死，如此他將轉至Level 1
+  的監獄，以後可和他學習一些技能。Fissif的包包內有LOR符石和耐擊術紫
+  色劑。地上也有個oil flask，順便將之撿起。繼續出來往東到第二個岔路
+  右轉，這裡面有兩個無頭人，是初期較強的敵人。最好喝下紫色劑後再跟他
+  打，打死一個後先回去提升能力和休息，再以同樣方式打第二個。打完後，
+  附近可找到Leather legging和chain boot等較好之裝備。地上也有些錢，
+  將它們撿起來。錢和珠寶在另一個次元世界有用處，因此要儘量收集。繼續
+  出來向東走，有個柵門擋著，先到下一層殺掉潛伏者比較好些，否則不小心
+  掉下去會受到它的攻擊。殺掉潛伏者可下去游泳到排水口處，進入可取得一
+  個魔法之箭法杖。回到Level 3，沿著柵門往北等地板都浮現時，快速衝出
+  右轉以繞到另一個可開啟的柵門，開啟後從另一邊開啟原來的柵門以方便出
+  入。
+3.從柵門往北走，在東北處有2個coin，但中途有兩個陷阱，第一個會掉到
+  Level 4的另一個地方，比較凶險，最好避開。第二個則掉回原來有潛伏者
+  的水池。對於第一個，只要小心慢慢走，便會看到地板突然下陷（在轉角
+  處），直接跳過去即可。對於第二個，遇到地板下陷時，往回走一段距離再
+  往前走，原下陷地板又會回復，便可過去拿這2個coin，不過回來時仍然會
+  掉到水池中。要不要拿自己抉擇吧。往東北途中有一往南支線，裡面有兩隻
+  眼魔，相當難打，算是Britannia世界第二強的敵人（因為它會在高處用魔
+  法打你）。如果你幸運將它們打死，那麼這邊可拿到一個有毒無色劑、14個
+  coin、Ex符石、chain手套、油燈（此時火把可丟到一旁了）、一個大混亂
+  術卷軸和一顆寶石，收穫頗豐，當然等級也會提升不少。此處還有一個受詛
+  咒的王冠，最好不要戴到頭上，以免受傷。建議最好到其他處走走，提升了
+  等級並訓練過後再來打這兩隻眼魔。
+4.從柵門往南走，會來到一個有升降石頭的水上道路，等石頭升上來時直接沿
+  著道路走，打開各房間的門練練功。各房間的門都鎖上來，因此最好用拳頭
+  將之打開（用劍會磨損），但有一個門是打不開的（標示massive），另有
+  路徑可進入該房間，暫不用管它。在過程中可拿到一個止饑無色劑、9 coin、
+  badly worn helmet、和一個解毒用的leech。其中已快壞掉的helmet拿著但
+  不要戴在頭上（防護力太差），可等到將來拿到修復法杖或可以使用修復法
+  術時再將之修復戴上。接下來站到各處升降石頭上，等降至水面高度時，看
+  看有無潛伏者，若有最好都將之殺光（一共兩隻），以便下水到處游游。在
+  東南角有個水道進入，可拿取一些物品，裡面也有一隻潛伏者。也可以直接
+  從橋轉角處的升降石往西游，看到一個瀑布後先往西南游，首先會到達一處
+  升降石。上去後等石頭完全升起時，在南方可看到一條通路，不過盡頭又有
+  巨門擋著，這個門以後才有Key開，因此先不用管它。繼續往西游，會看到
+  一條通路，上去後有個可開的門可進入原先被巨門鎖住的房間，只不過這個
+  房間內沒什麼好東西。再從瀑布往北游便可看到通往下一層的樓梯。以後如
+  果等級夠時，可施展水行術及跳躍術跳上瀑布，裡面有一隻鬼魂，打倒它後
+  在附近有一勇氣術之chain helmet，及Repel Undead卷軸。
+5.進入Level 4後，先到東邊打打老鼠，在東北廢物堆中可得到一解毒卷軸，
+  在鼠王處可得到一個防火用的紫色劑（以後會用到，要好好保留），一個王
+  冠和一個顯現術卷軸。繼續往東南方向前進，在一個沼澤處會遇上Britannia
+  世界內最強的敵人樹精，現在最好不要去惹它，等等級夠了後再來打，否則
+  會死得很難看。回頭往西方走，會到達Goblin住的地方，可以和他們談談。
+  在西南方水池邊拿一根釣杆，食物便不用帶了，以後有水的地方釣魚便有得
+  吃。在西北方有一支Short Sword，如果你的劍已經磨損，可以換支較好的。
+  繼續往東北走，會來到一個空曠的地方，繞著水湖到處走走，先將所有敵人
+  除去（最好也想辦法將水湖中的潛伏者也一起殺死）。沿岸有許多解毒用的
+  leech，最好多拿些備用。東北處草叢中有個小醫療術卷軸，也有一個往上
+  層的樓梯，但上去也沒什麼東西可看。再往正北走，會有兩個岔路，往右走
+  有一堆毒蜘蛛，可得到一個夜視術卷軸。記得要拿個蜘蛛蛋，以後用得著。
+  往左走有一堆無頭人，裡面可得到14個coin（2個在無頭人身上）、3個oil
+  flask、油燈、mail legging和一個雷電術法杖（可用來殺樹精）。接著從
+  正北方向往南游到湖中的小島可發現往下一層的樓梯。
+6.Level 5一進入後往下走，到達一個巨Black Gem所在處。這邊的敵人都不強，
+  很容易殺死。在東北方處有一攻擊用的Deadly Seeker卷軸。南方通道進入
+  後有個岔路，先向右走，解決兩個鬼魂後，可得到Gem、金杯和一個防火的
+  紫色劑。繼續往內走，跳進水裡游到另一岸後可得到chain cowl、Por符石、
+  和一個日光術卷軸。從瀑布下來後，可穿過瀑布到裡面游游泳（或使用水行
+  術），在裡面可得到一個黃色劑。回到進入點後往另一條岔路走，在水邊的
+  小草旁邊（相當隱密）可找到一個製造食物的法杖。繼續往內走，便可發現
+  通往城堡地下室的樓梯，以後由此進出便方便了。現在先回城堡訓練能力，
+  然後找Miranda談話，她會要你和Nystul、Petterson談談。談完之後便可以
+  準備去殺那隻樹精了。
+7.對付樹精，可使用水行術站在水面上，再利用雷電術法杖轟它，注意不要距
+  離太遠，否則效果會減弱。最好能在這些法杖用完之前將之打死，否則便只
+  好再和它直接對打。當你打敗了它後，在最裡面跳下去可拿到皇宮武器室的
+  Key，在附近還有11 coin、1 gem和一個地震術卷軸（地震術為VAS POR YLEM，
+  說明書上未記載）、以及一把Major Damage的長劍。這把長劍最好帶著，將
+  來拿到VAS符石後，可用Enchantment法術將之增強至Unsurpassed Damage長
+  劍，比Broad Sword更好用。現在回去換裝備吧！在皇宮武器室可得到Tower
+  Shield、Broad Sword和Breast Plate，對於攻防能力有顯著的提升。記得
+  還要拿個rock hammer，以後會用得到。現在回到Level 5的巨石處，將身上
+  的coin和gem等留在附近地上以備到其他次元世界時取用，但要記得帶20
+  coin，然後到巨石北方往南看，可以看到有一面忽亮忽暗，當它亮時表示可
+  以進入該次元世界。現在就進入第一個次元世界Prison Tower吧。
 
-�G�BPrison Tower����
+二、Prison Tower次元
 
-1.Prison Tower�O�Ψ����@�ǤϹ�Guardian���H���a��A�𤤥R���FGoblin��
-  �u�áC
-2.�i�J����ή��Y���}���A�b�a�W���T��oil flask�i���ӳƥΡ]���]���h�F�A
-  ���ӥΤ����F�^�C�����a�W��box��|�o�{�@�ӵ��scroll�A�N���a�b���W�C
-  �W�Ӹ����@�Ӧu�ý͸ܡA�i�D�L�A�O�e�F���p�Ъ��A�ñN�o�ӵ�浹�L
-  �ݡA��O�L�K�|�}�����A�i�J����C�b���𤤦��Ӧu�áA��L�͸ܨø��L
-  �]�����L15 coin�A�����A�[5 coin�^�A�L�|�i�D�A�i�J���覡�������@��
-  �~��A�}�@���C�]���}���Ĥ@�Ӫ��i�J��A���N�����W�A�M��A�}�ĤG�Ӫ�
-  �W��Level 3�C
-3.Level 3���u�å𮧳B�A�����ޥL�̡A�����W��Level 4�p�СC����̸̭��|
-  �J�W�@��Felix���H���A�L�|�ЧA�����ӤU���u�í���Freemis�A�Ȯɥ�����
-  �L�C�~�򩹼ӤW���A�@�WLevel 5���o���襤���@�ӷө��N���k���C�A�W�h
-  Level 6�i�JCaptain's Quarters�|�J�WGoblin������Born�A��L�͸ܡA�L
-  �|�~�{�A�OLorca Batan�A�ͤF�@�|��~�o�{���O�A��O�}�l�԰��C�����L
-  ��i�o��blackrock gem�B�@��key�M�@�Ӥϧ�g�Z�����b�C��Key���}�t�@
-  �ӼХܦM�I���ж���X�W�r��Garg��Troll�A��X��Ҧ���Goblin���|�Q�L
-  �����A�]���K�����ۤv�@�Ӥ@�ӥh���F�C���M�p�G�A�n�ɨ��԰����ֽ�A��
-  ���N�Ҧ�Goblin�������H��A�h��X�L�C���U�ӫK�O��ӤU�U�h�j�A�ԧQ�~�A
-  �i�o��85 coin�]���t�A���X�h��coin�^�M1 gem�C�O�o�a���fraznium
-  gauntlets�A�@�Ʀۤv���A�@�ƥΨӱϤH�C�p�G�A�ƥ��bLevel 5�K�K�B���o
-  Fraznium Gauntlets�����W���ܡABorn�K���|��ı�A�ӵ��A�@�ձK�X�A�M��
-  �A�h��Level 4��Janar�ͽ͡A��i���o�o������Garg��Key�C��Level 4�M
-  Felix�͸ܡA�L�|�]Freemis�w���ӷP�E�A�A�õ��A�@�ӻs�y�������c�l�C�o
-  �ӽc�l�C�����}���|�y�X�@�������A�����Ʀ����C���}�Z���Ǫ����A�̭��|
-  ���@��Scroll�A�W���g��REL SANCT YLEM���״_�k�N�]�����ѤW�S�O�����^�C
-  �]���ϥγo�Ӫk�N�N�ۤv���W���˳Ƴ��צ�excellent�A�åB�N�a�b���W��
-  �a����helmet�]�צn���ˤW�C�`�N�Aexcellent�Mserviable���ĪG�t�ܤj��A
-  �ר�O����j�j���ĤH�ɡC
-4.�~��W��Level 7�A�ԤUchain�}�]���i�J�A�b�F����W��ԤUchain�H�K�W
-  ��Level 8�C�bLevel 8�Ĥ@�өж��|�J��W��Milenus��Goblin�A�L�|���@
-  �ǨƱ����Ať�C�M�����Wfraznium gauntlets�H��L�O���A��t�@�өж��P
-  Bishop�͸ܡA�õ��L�t�@��fraznium gauntlets�U�L�k��C�p������������
-  �w�i�@�q���A�i�H�^Britannia�@�ɤF�C�O�o�U��Level 7��n���ԤU�F����
-  �W��chain�~��^��Level 6�C
-5.�^��Britannia�@�ɡA�����J��Miranda�A�o�|�n�A�MNystul�ANanna�͸ܡC
-  �PNystul�͸ܡA�ñNblackrock gem���L�A�L�|�N���[�����ٵ��A�]�H��o
-  �쪺blackrock gem���n�浹�L�[���^�C�A�h�PNanna�͸ܡA�o�|�Ʊ�A�h��
-  Lord British���סA�ϥθ����L�����r���Ӻ٩I�o�A���n���ӥ�����Q�I��
-  ��h�C�A�h��Lord British�ͽ͡A�L���|�Ҽ{�o��ơC���U�Ӧ^�쥨�۳B�A
-  �ϥ�blackrock gem�A�hPrison Tower�������J�f�|�ܦ����G�A�H��i�J�K
-  �������쥦�G�_�ӤF�C�P�ɥ��������Ӧ����J�f�]�|���G���t�A���i�J��
-  �䪺�Ĥ@�J�f�i�JKillorn Keep�����@�ɡC
+1.Prison Tower是用來關一些反對Guardian的人的地方，塔中充滿了Goblin的
+  守衛。
+2.進入後先用拳頭打開門，在地上有三個oil flask可拿來備用（但也夠多了，
+  應該用不完了）。拿走地上的box後會發現一個菜單scroll，將之帶在身上。
+  上樓跟任何一個守衛談話，告訴他你是送東西到廚房的，並將這個菜單給他
+  看，於是他便會開門讓你進入內塔。在內塔中有個守衛，跟他談話並賄賂他
+  （先給他15 coin，不夠再加5 coin），他會告訴你進入的方式為先關一門
+  才能再開一門。因此開完第一個門進入後，先將之關上，然後再開第二個門
+  上到Level 3。
+3.Level 3為守衛休息處，不必管他們，直接上到Level 4廚房。走到最裡面會
+  遇上一個Felix的人類，他會請你殺死樓下的守衛首領Freemis，暫時先答應
+  他。繼續往樓上走，一上Level 5的廢物堆中有一個照明術的法杖。再上去
+  Level 6進入Captain's Quarters會遇上Goblin的首領Born，跟他談話，他
+  會誤認你是Lorca Batan，談了一會後才發現不是，於是開始戰鬥。打死他
+  後可得到blackrock gem、一串key和一個反投射武器卷軸。用Key打開另一
+  個標示危險的房間放出名字為Garg的Troll，放出後所有的Goblin均會被他
+  殺死，因此便不必自己一個一個去打了。當然如果你要享受戰鬥的樂趣，不
+  妨將所有Goblin全打死以後再去放出他。接下來便是到樓下各層搜括戰利品，
+  可得到85 coin（不含你給出去的coin）和1 gem。記得帶兩副fraznium
+  gauntlets，一副自己戴，一副用來救人。如果你事先在Level 5鐵匠處取得
+  Fraznium Gauntlets並戴上的話，Born便不會察覺，而給你一組密碼，然後
+  再去跟Level 4的Janar談談，亦可取得這把釋放Garg的Key。到Level 4和
+  Felix談話，他會因Freemis已死而感激你，並給你一個製造食物的箱子。這
+  個箱子每次打開均會造出一份食物，但次數有限。打開武器室的門，裡面會
+  找到一個Scroll，上面寫著REL SANCT YLEM的修復法術（說明書上沒記載的）。
+  因此使用這個法術將自己身上的裝備都修成excellent，並且將帶在身上快
+  壞掉的helmet也修好換裝上。注意，excellent和serviable的效果差很大唷，
+  尤其是面對強大的敵人時。
+4.繼續上到Level 7，拉下chain開柵門進入，在東方牆上亦拉下chain以便上
+  到Level 8。在Level 8第一個房間會遇到名為Milenus的Goblin，他會說一
+  些事情給你聽。然後戴上fraznium gauntlets以穿過力場，到另一個房間與
+  Bishop談話，並給他另一份fraznium gauntlets助他逃脫。如此本次元的事
+  已告一段落，可以回Britannia世界了。記得下到Level 7後要先拉下東方牆
+  上的chain才能回到Level 6。
+5.回到Britannia世界，首先遇到Miranda，她會要你和Nystul，Nanna談話。
+  與Nystul談話，並將blackrock gem給他，他會將之加熱後還給你（以後得
+  到的blackrock gem都要交給他加熱）。再去與Nanna談話，她會希望你去跟
+  Lord British爭論，使用較為尊重的字眼來稱呼她，不要像個奴隸般被呼來
+  喚去。再去跟Lord British談談，他說會考慮這件事。接下來回到巨石處，
+  使用blackrock gem，則Prison Tower的次元入口會變成恆亮，以後進入便
+  不必等到它亮起來了。同時它的左邊兩個次元入口也會忽亮忽暗，先進入左
+  邊的第一入口進入Killorn Keep次元世界。
 
-�T�BKillorn Keep����
+三、Killorn Keep次元
 
-1.Killorn Keep�MBritannia�@�ɫ������A���@�A�qGuardian���ӫ��C
-2.�i�J��A�O�b�@�Ӥj�U���A�i�H�M�X�ӤH�ͽ͸ܡC�䤤Merzan�i�H���A����
-  ���~�M�ɥR�k����q�A�]��@�ǸɥR�ͩR�O�M�k�O���ľ��A���O�Υi���C�A
-  �]���j�A�Ӫ����K���ΤF�C�t�~�A�]�i�H��175 coin�R��Repel Undead�k�N�G
-  AN KAL CORP�M�R��Ūk�N�GIN TYM JUX�C���M�A�w�g���D�F�K���ζR�F�C
-  �o�䦳�ӶR�ľ�������k�G�MMerzan���n�R�ľ��A���������ݥL�椰���ľ��A
-  ��β�3�ӿﶵ�A�M���JRestore Mana��Greater Heal�A�p��Merzan�ҽ�
-  ������K�|�K�y�ܦh�A�p�G��������L1�B2���ﶵ�A�������K�|��0 coin�I
-  �u�n�H�K����1 coin�K�i�R�~�ľ��A�i�H�ɸɥR�k�O�M�ͩR�O�A�h�n�r�I��
-  �n���O���ӫa�ɡA�L���A�ľ��A�������ӫa�A��i�H���ұ������R�ľ��I��
-  ��|�A�J��@��Relk���H�A�L�|�n�A��F�n��L���줽�ǥh�A�̦n�ߨ�N�h�C
-  �i�J��M�L�͸ܡA��ӥL�OGuardian������A��O�K�}�l�����C�����L��i
-  �o��12 coin�C�b�L���c�l���]�i�H���@�Ӷ��⾯�M�@�ӻĲG�k���C�p�G
-  �A�S����L���줽�ǦӪ������}�o�Ӧ����@�ɡA�h�U���i�ӫ�A�L�|�b�j�U
-  ���������A�C�p�G�A�������ܡA��L�H�]�|�[�J�԰��C���ɳ̦n�N�L�ި�L
-  ���줽�ǡA�p���K�S���H�|�z�Z�A�F�C
-2.����Relk��A�b�F��}�itrilkhun���a�観�@���W��Blackie��trilkhun�A
-  �򥦽͸ܡA���|�Ʊ�A�౴�����̺رڪ��L�h�M��i�D���C�F�_�観�@����
-  �۪����A�i�H�ή��Y�N�����}�A�u���L�S����n�F��C���ۨ�F�_���s���h�A
-  �M�@����kKintara�͸ܡA�O�o�ݦo�q���̨Ӫ��A�o�|�i�D�A�L�Ӧ�Javra�A
-  ���n�e��Mashan�C�P�ɦo�]�|�V�A�°⨾�����s�־c�l�A�ӥB�u��@���A�U
-  ���A�͸ܮɫK���A��F�C���O�p�G�A�V�o�R���ܡA�o���X�Ӫ��o�O�@�몺��
-  ���c�A�ڥ��������I�����O�{�����D�٬O�o�G�N�F�H�A�ϥ������V�o�R�C��
-  �۩MOgri�ͽ͡A�L�Ʊ�A��a�^Banner of Killorn���L�A�L�~�|��A�z�S
-  �ӫ������K�C�b�s�����ٷ|�J��Lobar�A�L�|�i�D�AGuardian��8�Ӭ��w�O��
-  ��C���ۨ�Throne Room�M���a�����Lord Thibris�ͽͤѡC��_�観�@��
-  Mystell�A�o�|���ݧA�@�ǰ��D�A�A�i�H�F�o�A���W�r�sAraham Lincoin�A
-  �M��A�^���Ӧ�Javra�A�n�e��Mashan���ͷN�A�̫�^����7�Ӭ��w�OSilence�A
-  ��O�o�K�|�H���A�A�Ʊ�A�չ�Altara��Guardian���ҾڡA�����˵����o�C
-3.Altara�bMystell���j���A�L�h�M�o�ͤѡA�çi�D�oMystell�w�b�h�æo�C��
-  �O�o�K�H���A�A�çi�D�ABritannia�@�ɦ�Guardian�������b�ʵ��A�õ��A
-  �@�ӥΨӱ������p�c�]��dagger�A�ӥB�u���o��dagger�~��}�ҷ�����C
-  Britannia�@�ɰߤ@�������𪺦a��bLevel 4�A��O�^��Britannia�@�ɡA
-  �qLevel 4�򤤤p�q���n��K�i�ݨ�@���p���A�u�ۤp�����W���K�i�ݨ췻
-  ���𪺳q���A�˳Ʀn�o��dagger��i�h�����C����A�^�Ӹ�Altara���i�A�o
-  �|���A�@��black pearl�A�çƱ�A���j��J�Mamethyst rod�H�K�y�X��
-  ��Guardian���Z���A�̫�A���AAn�BCorp�BQuas���T�ӲťۡC���}�o���ж�
-  �e�i�H�q�o���c�l����6 coin�A�M�a�W�G�~���⾯�M�@�~���⾯�]��⾯��
-  �r���A���αa�^�A�u�n�o�������A�Y�i�C��n�謰�u�å𮧫ǡA���@��۪�
-  ���A���̭��S����F��C�u�ê��c�l�̤]�S������Ȫ��F��A�]�������@�@
-  �N�����}�C
-4.���ۥѪF�_��p�жi�JLevel 2�A�u���@�Ǧѹ��M�X���j��Ӥw�C�b�n��B
-  �i�o��@�ӸѬr���b�B�]�k�b�k���B�ϧ�g�Z���O�@���⾯�B�Q�A�G���٫��B
-  ���a����plate boot�M�@��Key�]�H��|�Ψ�A�n�n�n�O�s�^�C�Nplate boot
-  �צn�ᴫ�ˤW�ӡC���F�訫�|�J��@�ӵL�k�}�Ҫ��]���A�F�_��ж����_��
-  ���K���A�i�J��Ө�@�Ӳ��¡A���J���«K�|�i�JGuardian��������A����
-  �a�ϨS���@�ΡC�`�N�A�b�����@�ɤ��}�`��A���|�bBritannia�@�ɥ��ۮ�
-  ���ӡA���g��ȷ|�������֡A�]�����D���n�A�}�`��̦n���s���J���ӡC�i
-  �J���«�A�������諸�O�@�Ǥɭ�������A�̦n���s�ɡA�]�����B���u�Q�u
-  �\�Y�צ��A�ݤ��ӲM���A�ܮe���Q�������C�o�Ǥɭ���j�P�H���j���覡�s
-  �b�A�]�N�O�ɭ���e�����@�Ӥ��ɭ����a�O�A�i�b�ӳB���ԡC������k�४
-  �ৡ�i�A���|�q��P�@�q�D�A��ĳ�O�k��A�ɭ�����֡C�̫�X�f�O�b�@��
-  �B�A���U�ӫ�i�ݨ�\�h���y�q�����𥴥X�ӡA���ɳ̦n�ܤU���������⾯�A
-  �i��C���y�������ˮ`�C�ֳt¶��t�@���A�^�Y�i�ݨ���W���T�ӫ��s�C�n
-  �W�ɭ���N�T�ӫ��s�����U�A�ɭ���K�|���U�ӡA�q�ɭ�����U�ӫK�|�ݨ�
-  �@�ӥX�f�C�ѸӥX�f�X�h�|���\�h�p�c�]���]�k�b�����A�A���κ޳o�Ǥp�c
-  �]�]�j���b���B�A������^�A�����~�򩹤����C��F�t�@�Ӧ�������A�i��
-  �k�Ω����i�J�������A�p���K�|���^��Ӫ�Level 2�C�Y���J�����������A
-  �|�^���T�ӫ��s���a�譫�ӡC
-5.���^Level 2��A���Ⱖ�L�Y�H�A�N���̸ѨM��A�b�a�W�i���@��gem�M
-  blackrock gem�C�o���٦���ؤ覡�i�H�i�J�o�Ӧa����oblackrock gem�A
-  �@�جO�ϥζ}���N�}�ҤW�����]������U�A�t�@�ؤ覡�K�O���}���¤W4��
-  ����A�p���K���|�i�JGuardian��������C����blackrock gem��AKillorn
-  Keep�����w�ȧi�@�q���A�i�H�^Britannia�@�ɤF�C�^��Britannia�@�ɡA
-  Miranda�|�n�A��Feridwyn�MDupre�ͽ͡A���S����Ʊ��A�u�O�J�{�Ӥw�A�w
-  ���@�U�K�S�ƤF�C�N�o�쪺blackrock gem��Nystul�[���A�쥨�۳B�ϥΡA
-  �H�T�wKillorn Keep�����C���۫K�i�H�i�J���䪺Ice Caverns�����@�ɤF�C
+1.Killorn Keep和Britannia世界很類似，為一服從Guardian的皇城。
+2.進入後你是在一個大廳中，可以和幾個人談談話。其中Merzan可以幫你辨識
+  物品和補充法杖能量，也賣一些補充生命力和法力的藥劑，但費用可不低，
+  因此搜括來的錢便有用了。另外，也可以用175 coin買到Repel Undead法術：
+  AN KAL CORP和靜止之符法術：IN TYM JUX。當然，已經知道了便不用買了。
+  這邊有個買藥劑的投機法：和Merzan說要買藥劑，但不直接問他賣什麼藥劑，
+  選用第3個選項，然後輸入Restore Mana或Greater Heal，如此Merzan所賣
+  的價格便會便宜很多，如果都不曾選過1、2的選項，那麼價格便會為0 coin！
+  只要隨便給個1 coin便可買瓶藥劑，可隨時補充法力和生命力，多好呀！更
+  好的是給皇冠時，他給你藥劑，但不收皇冠，更可以為所欲為的買藥劑！附
+  近會再遇到一個Relk的人，他會要你到東南方他的辦公室去，最好立刻就去。
+  進入後和他談話，原來他是Guardian的殺手，於是便開始攻擊。殺掉他後可
+  得到12 coin。在他的箱子中也可以找到一個黃色劑和一個酸液法杖。如果
+  你沒有到他的辦公室而直接離開這個次元世界，則下次進來後，他會在大廳
+  直接攻擊你。如果你還擊的話，其他人也會加入戰鬥。此時最好將他引到他
+  的辦公室，如此便沒有人會干擾你了。
+2.殺掉Relk後，在東邊飼養trilkhun的地方有一隻名為Blackie的trilkhun，
+  跟它談話，它會希望你能探知它們種族的過去然後告訴它。東北方有一個鎖
+  著的門，可以用拳頭將之打開，只不過沒什麼好東西。接著到東北的酒店去，
+  和一位婦女Kintara談話，記得問她從那裡來的，她會告訴你他來自Javra，
+  正要前往Mashan。同時她也會向你兜售防火的龍皮鞋子，而且只賣一次，下
+  次再談話時便不再賣了。但是如果你向她買的話，她拿出來的卻是一般的皮
+  革鞋，根本不防火！不知是程式問題還是她故意騙人，反正不必向她買。接
+  著和Ogri談談，他希望你能帶回Banner of Killorn給他，他才會跟你透露
+  該城的秘密。在酒店中還會遇到Lobar，他會告訴你Guardian的8個美德是什
+  麼。接著到Throne Room和當地的國王Lord Thibris談談天。西北方有一個
+  Mystell，她會先問你一些問題，你可以騙她你的名字叫Araham Lincoin，
+  然後再回答來自Javra，要前往Mashan做生意，最後回答第7個美德是Silence，
+  於是她便會信任你，希望你調察Altara反Guardian的證據，先假裝答應她。
+3.Altara在Mystell的隔壁，過去和她談天，並告訴她Mystell已在懷疑她。於
+  是她便信任你，並告訴你Britannia世界有Guardian的爪牙在監視，並給你
+  一個用來殺那隻小惡魔的dagger，而且只有這隻dagger才能開啟溶岩牆。
+  Britannia世界唯一有溶岩牆的地方在Level 4，於是回到Britannia世界，
+  從Level 4湖中小島往南游便可看到一條小路，沿著小路往上走便可看到溶
+  岩牆的通路，裝備好這隻dagger後進去殺它。之後再回來跟Altara報告，她
+  會給你一個black pearl，並希望你找到蜘蛛蛋和amethyst rod以便造出對
+  抗Guardian的武器，最後再給你An、Corp、Quas等三個符石。離開她的房間
+  前可以從她的箱子拿取6 coin，和地上二瓶紅色劑和一瓶黃色劑（綠色劑為
+  毒劑，不用帶），只要她不攻擊你即可。西南方為守衛休息室，有一鎖著的
+  門，但裡面沒什麼東西。守衛的箱子裡也沒什麼價值的東西，因此不必一一
+  將之打開。
+4.接著由東北方廚房進入Level 2，只有一些老鼠和幾隻蜘蛛而已。在南方處
+  可得到一個解毒卷軸、魔法箭法杖、反投射武器保護紫色劑、被詛咒的戒指、
+  快壞掉的plate boot和一個Key（以後會用到，要好好保存）。將plate boot
+  修好後換裝上來。往東方走會遇到一個無法開啟的柵門，東北方房間的北邊
+  有密門，進入後來到一個祭壇，走入祭壇便會進入Guardian的考驗場，此時
+  地圖沒有作用。注意，在次元世界內陣亡後，都會在Britannia世界巨石旁
+  醒來，但經驗值會扣掉不少，因此除非必要，陣亡後最好重新載入重來。進
+  入祭壇後，首先面對的是一些升降的牆壁，最好先存檔，因為此處視線被骷
+  髏頭擋住，看不太清楚，很容易被牆壓死。這些升降牆大致以間隔的方式存
+  在，也就是升降牆前都有一個不升降的地板，可在該處等候。直走後右轉左
+  轉均可，都會通到同一通道，建議是右轉，升降牆較少。最後出口是在一高
+  處，跳下來後可看到許多火球從溶岩牆打出來，此時最好喝下防火的紫色劑，
+  可減低火球擊中的傷害。快速繞到另一面，回頭可看到牆上有三個按鈕。登
+  上升降牆將三個按鈕都按下，升降牆便會停下來，從升降牆跳下來便會看到
+  一個出口。由該出口出去會有許多小惡魔用魔法箭攻擊你，不用管這些小惡
+  魔（大都在高處，打不到），直接繼續往內走。到達另一個有溶岩牆，可往
+  右或往左進入溶岩中，如此便會掉回原來的Level 2。若掉入中央的溶岩，
+  會回到原三個按鈕的地方重來。
+5.掉回Level 2後，有兩隻無頭人，將它們解決後，在地上可找到一個gem和
+  blackrock gem。這邊還有兩種方式可以進入這個地方取得blackrock gem，
+  一種是使用開門術開啟上面的柵門後跳下，另一種方式便是拿開祭壇上4根
+  蠟燭，如此便不會進入Guardian的考驗場。拿到blackrock gem後，Killorn
+  Keep次元已暫告一段落，可以回Britannia世界了。回到Britannia世界，
+  Miranda會要你跟Feridwyn和Dupre談談，但沒什麼事情，只是焦慮而已，安
+  撫一下便沒事了。將得到的blackrock gem給Nystul加熱再到巨石處使用，
+  以固定Killorn Keep次元。接著便可以進入左邊的Ice Caverns次元世界了。
 
-�|�BIce Caverns����
+四、Ice Caverns次元
 
-1.Ice Caverns�O�Ӻ��G�B�����@�ɡA��J�쪺�H�ܤ֡C���b�B�W�����ٷ|�}
-  �B�ӱ�������A�]���̦n�ϥΤ���N�C���Ǹ��ƪ��B�Y���ӧַ|���e������
-  ��i��V�A���ɥ����C�C���~��C
-2.�@�i�J�᩹�k���|�J�W�@�Ǿu�\�H�A�b�ӳB�i�o��Wis�ťۡB����N���b�B
-  Map Area���b�Bpole�]�H��|�Ψ�^�A�t�������Ӱϰ�a�ϡA�����ϥΧY��
-  ����A���a�ϤW�C�������h�|�J�WYeti�]���H�H�^�A�b�ӳB�i�o��4 coin�A
-  �L�⾯�M���⾯�C�b�F�n��i�o��8 coin�M�@��Thick Skin�����b�]���G�o
-  �Ӫk�N��IN SANCT�A�����ѤW�å��O���^�A�n�観���U�@�h���ӱ�C
-3.Level 2����観�Ӧ��Y�i�ͽ͸ܡA���L�L�ͪ��O�̫�@�Ӧ����@�ɪ����p�A
-  �ثe�Oť���������C�F�_�観�Ӷ��⾯�A�n��b�֤J���B�����a�W��
-  blackrock gem�C�F�_�観�WLevel 1���ӱ�A�W�ӱ��|���J��@��Sentinel
-  868���B�H�A�N��������o��@Key�A�ΨӶ}�����᪺���C�~�򩹤����ð���
-  ���L�e�y�K�|�Ө�Dam Control Access�A�W�����|�ӱ���s�C�a�W���i�ȱ��A
-  �O�ѳo����������A�ۤv�h�q�q�ݧa�C�����N�|�ӱ���s���ը쥼���U����
-  �A�A�i�J�O����A�b�g�c���i���@��Key�C���ۦ^�ӱN���Fchain�H�~���T
-  �ӱ���s�����U�A�A�i�J�g�c�K�i�����C�ϥ�Key�}����A�A�ԤU�̭���
-  chain�A�o�Ӱg�c�K��ѨM�F�C�^�{�ɤ������J�e������_���}�f�i�J�A��
-  �̸̭����Ӭ}�ޡA�̭��i���7 coin�B1 gem�M�@�ӫO�@�Ϊ��٫��C
-4.�^��Level 1���ӱ�f�A�o�{��Ӫ��B���w�ѭᦨ�e�y�A�賓�]�X�{�F�@��
-  �q�D�C�I�i����N����賓�A�~�򩹤����A�K�i���B�ʤw�[��Anodunos���C
-  �o�ӫ��u�Ѥ@�Ӱ���A��L�͸ܡA�L�|�Ʊ�A��ѱϥL�̲���Guardian����
-  ��C�ܩ�U�ж��A�ܦh���O��W�L�k�}�Ҫ��A���n�o�Ǫ����]���S���򭫭n
-  �˳ơA�]�����i�h�]���|��ˡC�D�n�i���쪺�F�謰14 coin�B2 gem�B���a
-  ����plate legging�BThick Skin�����⾯�C�Nplate legging�״_�n�ᴫ��
-  �W�h�C�_��ӱ�i�J���a�U�ǩж��i����Smited Undead���k���B�H�Τ@�i
-  �O���k�N���ȱ��A�䤤�������ѥ��O����Locate�k�N�GBET WIS EX�C�b�ж�
-  ���٦��@�ӱK���A�ϥζ}���N�}�ҡA�̭��i�o��X�Ӳť۩M1�ӸɥR�k�O��
-  Screptre�C�ܦ��AIce Caverns�����@�ɤw�S����n�}���A�i�H�^Britannia
-  �@�ɤF�C
-5.�^Britannia�@�ɡAMiranda���n�M�A���ܮɡA�çL�]�ӳ��i��Lady Tory�Q
-  ���F�A��OMiranda�Ʊ�A�h�լd���ơC�M��L�H�ͽ͡A�u�����������H�I
-  �q�A���O�֤��d���X�ӡC���N���쪺blackrock gem��Nystul�[���A�^�쥨
-  �۳B�T�wIce Caverns�����C���ɫ᭱�S���X�Ӧ����i�i�J�F�A�ڭ̥��i�J
-  ���䪺Talorus�����C
+1.Ice Caverns是個滿佈冰雪的世界，能遇到的人很少。走在冰上偶爾還會破
+  冰而掉到水中，因此最好使用水行術。有些較滑的冰若走太快會不容易控制
+  行進方向，此時必須慢慢走才行。
+2.一進入後往右走會遇上一些骷髏人，在該處可得到Wis符石、水行術卷軸、
+  Map Area卷軸、pole（以後會用到），另有部份該區域地圖，直接使用即拷
+  貝到你的地圖上。往左走則會遇上Yeti（雪人？），在該處可得到4 coin，
+  無色劑和紅色劑。在東南方可得到8 coin和一個Thick Skin的卷軸（註：這
+  個法術為IN SANCT，說明書上並未記載），南方有往下一層的樓梯。
+3.Level 2中西方有個老頭可談談話，不過他談的是最後一個次元世界的情況，
+  目前是聽不太懂的。東北方有個黃色劑，南方在快入水處的陸地上有
+  blackrock gem。東北方有上Level 1的樓梯，上樓梯後會先遇到一個Sentinel
+  868的冰人，將它打死後得到一Key，用來開它身後的門。繼續往內走並高空
+  跳過河流便會來到Dam Control Access，上面有四個控制鈕。地上有張紙條，
+  是解這個謎的關鍵，自己去猜猜看吧。首先將四個控制鈕都調到未按下的狀
+  態，進入力場後，在迷宮中可找到一把Key。接著回來將除了chain以外的三
+  個控制鈕都按下，再進入迷宮便可找到門。使用Key開門後，再拉下裡面的
+  chain，這個迷宮便算解決了。回程時不妨跳入河中往西北的洞口進入，到
+  最裡面有個洞穴，裡面可找到7 coin、1 gem和一個保護用的戒指。
+4.回到Level 1的樓梯口，發現原來的冰面已解凍成河流，對岸也出現了一個
+  通道。施展水行術走到對岸，繼續往內走，便可找到冰封已久的Anodunos城。
+  這個城只剩一個鬼魂，跟他談話，他會希望你能解救他們脫離Guardian的控
+  制。至於各房間，很多都是鎖上無法開啟的，幸好這些門內也都沒什麼重要
+  裝備，因此不進去也不會怎樣。主要可拿到的東西為14 coin、2 gem、快壞
+  掉的plate legging、Thick Skin的紫色劑。將plate legging修復好後換裝
+  上去。北方樓梯進入的地下室房間可拿到Smited Undead的法杖、以及一張
+  記錄法術的紙條，其中有說明書未記載的Locate法術：BET WIS EX。在房間
+  內還有一個密門，使用開門術開啟，裡面可得到幾個符石和1個補充法力的
+  Screptre。至此，Ice Caverns次元世界已沒什麼好逛的，可以回Britannia
+  世界了。
+5.回Britannia世界，Miranda正要和你說話時，衛兵跑來報告說Lady Tory被
+  殺了，於是Miranda希望你去調查此事。和其他人談談，只知城堡中有人背
+  叛，但是誰仍查不出來。先將拿到的blackrock gem給Nystul加熱，回到巨
+  石處固定Ice Caverns次元。此時後面又有幾個次元可進入了，我們先進入
+  左邊的Talorus次元。
 
-���BTalorus����
+五、Talorus次元
 
-1.Talorus�������I�����q���t�ΩΤH�����g�t�ΡA�̭������٬�Talorid�A
-  �C��Talorid������M�q�\��C
-2.�i�J�������@�ɮɡA�A�|�������b�@�Ӥj�U�����A�|�B���\�h�͵���Vorz�C
-  ���ѩ�N�ӥL�̷|�ܦ��ĤH�A�]���ݨ�N���a�A�ϥ��L�̫ܮz�C����B�}�}�A
-  ����Vorz�A�A�Q�ζ��⪺etched brass�a�O�ϼu����|�P�����������A�o��
-  �ж��̦��@��Talorid�C������n���Historian�ͽ͡A���|�i�D�A�o�ӥ@��
-  �����v�A�çi�D�AGuardian���Ӧ��B�ק�s�y���̪���]�A�ӭ�Ӫ���]�i
-  �b�U�h���A�s����E0Y2�C�A�P��n�誺Futurian�ͽ͡A�L�|�i�D�A�p���
-  �^�L�̭�Ӱ�]���T�󥲶��~�G�@�O��Ӫ���]E0Y2�A�@�O����{���A�N�b
-  �L�̭����x�ëǤ��A�t�@�ӫh�ODelgnizator�C�çi�D�A��������Bliy Skup
-  Ductonsnore�~��i�JBily Skup Chamber�ק��]�A�ܩ�p��ϥ�
-  Delgnizator�A�h�����߰�Data Integrator�C�ͧ���A�Ҧ���Vorz�J��A�K
-  �|�}�l�����C���i�h�����x�ëǮ����ȱ��g��"For Avatar"��Crystal�A�s
-  ����M4Y8�C�̭��٦���curious implement�A�����G�S���γB�C�F�n�観��
-  �ӥ��y�A������N���ө��סA�Χ��F�٥i��b�өж�������a�O�A���U���s
-  �R�q�A�u�i�����[�׸��u�C
-3.���ۨ�_��ж�����amethyst rod�A�A�q���䪺�}�ޤU�hLevel 2�]�F�䪺
-  �]�i�H�^�A�b�_�詤��i���E0Y2��Crystal�C�b�̥_��̭����@�Ӿ_�i�N
-  ��screptre�A�����ϥ�Telekinesis�k�N�����C��̫n����W�i�o�{
-  Delgnizator�CLevel 2�������������K�Oblackrock gem���Ҧb�B�A����
-  �粒��]��AHistorian�|�P�E�A�ӱN�A�ǰe��ӳB�A�]���������h���C
-4.�^��Level 1�A��F�_��Data Integrator�ͽͦp��ϥ�Delgnizator�A����
-  �@���n�A�����ըǡC��O�^�h��Futurian�ͽ͡A�L�n�A�h��Dialogician�C
-  ���_��б�Dialogician�A��O���K���A�Ө��b�A�ݬݨ��b���e��A�h��
-  Data Integrator�ͽ͡A���K�|�i�D�A�N���]��b����a�O�A����{����
-  �b����a�O�ADelgnizator��b�����Ŧ��餺�A�̫�ԤU�ж�������chain
-  �Y�i�C��O���FBliy Skup Ductonsnore�i�JBliy Skup Chamber�A�̷�Data
-  Integrator�һ����覡�K�i�y�X���`��Ductonsnore�F�C���ۻPHistorian��
-  �͡A���K�N�A�ǰe��blackrock gem���Ҧb�B�A���_blackrock gem�M���W
-  ����a�O�K�|�X�{�@�y���A�i�����q���V�L�����^�ӡC
-5.���}Talorus������Killorn Keep�����A�Nblack pierl�B�j��J�Bamethyst
-  rod����Altara�s���k���A�û��������ϥΦ��k���bGuardian�I�k�B�A�H��
-  �_Guardian�~��q�U�����l����q�C�o�]�|�i�D�AEnchantment�k�N�GVAS
-  ORT YLEM�A�o�Ӫk�N�i�H�W�j�˳ƩΪZ�����]�k��O�A�]��������VAS�ť�
-  ��A�̦n���N���W���]�k�˳ƼW�j��Unsurpassed���{�סC����Altara�k��
-  ��A����Prinsor Tower�����A�bLevel 8�O�����ϥ�Altara�k���Y�i���_��
-  �����PGuardian���sô�C�b���}�e�O�o�A�h�MGarg�ͽ͡A�L�|���ABishop�d
-  �U�Ӫ��r���A�r�����g�ۤ@�w�n�h��@��Zoranthus���H�ͽ͡C�P�˦a�A��
-  Ice Caverns�����B��Anodunos�������������B�ϥ�Altara�k���A�H���_��
-  �����PGuardian���sô�A����Beatrice�|�V�A�D�µM������C�~���Talorus
-  �����A�bBliy Skup Chamber���ϥ�Altara�k�����_�Ӧ����PGuardian���s
-  ô�C
-6.�^��Britannia�@�ɡA�N�qTalorus�������쪺blackrock gem��Nystul�[���A
-  �M��A�ϥΨ쥨�ۤW�C�����~�򩹤U�Ӧ����GScintillus Academy Final
-  Exam�e�i�C
+1.Talorus次元有點類似電腦系統或人的神經系統，裡面的單位稱為Talorid，
+  每個Talorid均有其專司功能。
+2.進入本次元世界時，你會先掉落在一個大廳中央，四處有許多友善的Vorz。
+  但由於將來他們會變成敵人，因此看到就打吧，反正他們很弱。先到處逛逛，
+  殺殺Vorz，再利用黃色的etched brass地板反彈跳到四周較高的部份，這些
+  房間裡有一些Talorid。首先到南方找Historian談談，它會告訴你這個世界
+  的歷史，並告訴你Guardian曾來此處修改製造它們的基因，而原來的基因可
+  在下層找到，編號為E0Y2。再與西南方的Futurian談談，他會告訴你如何改
+  回他們原來基因的三件必須品：一是原來的基因E0Y2，一是控制程式，就在
+  他裡面的儲藏室內，另一個則是Delgnizator。並告訴你必須殺掉Bliy Skup
+  Ductonsnore才能進入Bily Skup Chamber修改基因，至於如何使用
+  Delgnizator，則必須詢問Data Integrator。談完後，所有的Vorz遇到你便
+  會開始攻擊。先進去它的儲藏室拿走紙條寫著"For Avatar"的Crystal，編
+  號為M4Y8。裡面還有個curious implement，但似乎沒有用處。東南方有兩
+  個光球，有日光術的照明度，用完了還可放在該房間的黃色地板，按下按鈕
+  充電，只可惜持久度較短。
+3.接著到北方房間拿取amethyst rod，再從西邊的洞穴下去Level 2（東邊的
+  也可以），在北方岸邊可找到E0Y2的Crystal。在最北邊裡面有一個震波術
+  的screptre，必須使用Telekinesis法術拿取。到最南邊牆上可發現
+  Delgnizator。Level 2溶岩正中央其實便是blackrock gem的所在處，但修
+  改完基因後，Historian會感激你而將你傳送到該處，因此不必急於去拿。
+4.回到Level 1，到東北找Data Integrator談談如何使用Delgnizator，但它
+  一直要你說明白些。於是回去找Futurian談談，他要你去找Dialogician。
+  到西北方請教Dialogician，於是它便給你個卷軸，看看卷軸內容後再去找
+  Data Integrator談談，它便會告訴你將原基因放在紫色地板，控制程式放
+  在黃色地板，Delgnizator放在中央藍色圓圈內，最後拉下房間角落的chain
+  即可。於是殺了Bliy Skup Ductonsnore進入Bliy Skup Chamber，依照Data
+  Integrator所說的方式便可造出正常的Ductonsnore了。接著與Historian談
+  談，它便將你傳送到blackrock gem的所在處，拿起blackrock gem然後踏上
+  黃色地板便會出現一座橋，可直接從橋越過溶岩回來。
+5.離開Talorus次元到Killorn Keep次元，將black pierl、蜘蛛蛋、amethyst
+  rod拿給Altara製成法杖，並說明必須使用此法杖在Guardian施法處，以切
+  斷Guardian繼續從各次元吸收能量。她也會告訴你Enchantment法術：VAS
+  ORT YLEM，這個法術可以增強裝備或武器的魔法能力，因此當拿到VAS符石
+  後，最好均將身上的魔法裝備增強成Unsurpassed的程度。拿到Altara法杖
+  後，先到Prinsor Tower次元，在Level 8力場中使用Altara法杖即可切斷該
+  次元與Guardian的連繫。在離開前記得再去和Garg談談，他會給你Bishop留
+  下來的字條，字條中寫著一定要去找一個Zoranthus的人談談。同樣地，到
+  Ice Caverns次元冰封Anodunos城中央的水源處使用Altara法杖，以切斷該
+  次元與Guardian的連繫，鬼魂Beatrice會向你道謝然後消失。繼續到Talorus
+  次元，在Bliy Skup Chamber內使用Altara法杖切斷該次元與Guardian的連
+  繫。
+6.回到Britannia世界，將從Talorus次元拿到的blackrock gem給Nystul加熱，
+  然後再使用到巨石上。接著繼續往下個次元：Scintillus Academy Final
+  Exam前進。
 
-���BScintillus Academy Final Exam����
+六、Scintillus Academy Final Exam次元
 
-1.Scintillus Academy Final Exam�������ΨӴ���k�v���������D�A�@�@��8
-  �D�]��n���F8��Level�^�C
-2.�i�J������}�K���A���e���|���J��@�ӤH�A�L�|��A�z���o�Ӧ����@�ɪ�
-  �ơA���ۥ��}���ժ����i�J�}�l���աC�`�N�b���չL�{���L�k��_�k�O�A�]
-  ���n�`�ٵۥΡA�����i�𮧫�_�ͩR�O�C�����i�a�h�@�ǡC���N�a�W������
-  ��줤������O�A�H�K�}�ҳ̥k�䪺�]���i�J�A�Y����L����O�|�}�Ҩ�
-  �L���]���A���i�J���ܦ����J�P�A�X���ӤF�C�i�J�]����A���n����W����
-  �s�A�����~�򩹫e���A�i�JLevel 2�C���V�k����ߤ@�����a�A�M�����t
-  �@���b�e�y�W�����a�H��L�e�y�C�L�e��u��������A�b�����B�|�ߨ�@��
-  Cause Fear�k���C�~�򩹥_���K�|�Ө�@�����a�A���U��W�����s�H�}�ҧ�
-  �_�誺�]���C�a�W��Paralyze�k���M�@�ӥ[�t�N�Ħ⾯�C�A���_���A�q�L�]
-  ���V�F����@�Ӥɭ���q�D�C�b�ɭ���q�D�W���@�S�Ϊ��k���A�����h�ߡA
-  ������L�ɭ���q�D�K�i�i�JLevel 3�C
-3.�@�i��Level 3�A�a�W���ө��ʳN�k���i�ϥΡA���o�Ӫk���a�����A�@���}
-  Level 3�A�k���Y�k���C�q�̰��B����U�W�W�A���N�Ĥ@�ƨⰼ����W��
-  �s���U�C�����ϥΩ��ʳN�b�e�@�ӬW�N�����U�A�_�h�a�𪺬W�l�|���U�ӡA
-  �������W�����^�ӡC���ۤ@���䰪�W���_���K�i�ݨ�X�f�i�JLevel 4�A�b
-  �X�f�B���t�@���a��W�l�W�٦��@�ڪk���CLevel 4�����ּĤH�A�]���n�O
-  ���԰����A�C�b�F�n�����@��Key�A������䦳�@��Mass Confusion�k���A
-  ��_���W�������N���b�M�@��Key�C�̫��F�_���ϥγo���Key�}���Y�i�i
-  �JLevel 5�CLevel 5�j�U�W���T�ӨS�Ϊ����s�A�����ޥL�̡A�t�@�i�}�Ҫ�
-  ���Q�]���צ��A��W���@chain�A���ԤF��|�X�{�u�\�H�����C�a�W�i����
-  Moon Stone�M�@��Fire Ball�k���C�t�@�䦳�@����W�����A���M�Х�
-  massive�A���ϧΫo�O����A���ӼЬ�sturdy�~��A�i��O�{���W�����D�C
-  �Q�ή��Y�N�����}�A�i�J����L�a�V�i����Key�C�^�{�ɩ��U���A�ѨM�L�Y
-  �H��b�a�W�i����]���N�L�⾯�M����N���b�C�Q�αo�쪺Key�}�Ҭ]���Y
-  �i�i�JLevel 6�C
-4.Level 6�j�U��������Key�A�����ױq���@�ӤJ�f�i�J�A�I�᳣�|�X�{�@�ӵL
-  �Y�H�A����Key�ɷ|�g�X�b�ӡC�a�W�]�]�����@���������k���M���⾯�C��
-  ��Key�}���᩹�����A�|�Ө�@�Ӷǰe�g�c�A�o�Ӱg�c���S���ĤH�A�]���|
-  �i�J���J�P�A�]���Цۤv���աC�䤤���Ƕǰe�I�ä��T�w�Ǩ�Y�Ӧ�m�C�o
-  �̥u���@�Ӵ��ܡG���i�J��Ω�g�����q�D�ɡA���F�n���ǰe�I�A�A���J�F
-  �_�ĤG�Ӷǰe�I�Y�i���}�o�Ӱg�c�A�i�JLevel 7�C���~���@�ӱK���A�ζ}
-  ���N�}�ҫ�A�̭����ӴĦ⾯�C��Level 7�ɡA���]�k���h���������̡A
-  �A�U����_����oKey�A�F�観�@�Ӷ��⾯�C�^�쩤�W�b��i�J���a��̦�
-  �H�F�B�F�B�_�B�_�B��B�_�B�_�B�F�B�F�B�F�B�n�B�n��V���A�Y�i��F�X
-  �f�i�J Level 8�C
-5.Level 8�]�O�@�Ӷǰe�g�c�A���J���諸�ǰe�I�|�Ǧ^�i�J�B�åX�{�ĤH��
-  ���C�����J���ǰe�I���O����B�n�B�n��B�_��A�̫�K����յ����X�f�C
-  �X�ӫ����U�ж��j�A�F��A�j�P�i����Deadly Seeker�k���B���⾯�BSheet
-  Lightning���b�BDispel Hunger���b�M�@��Key�]�b�ɪ�����^�C�`�N�F��
-  ���ж������ӱK���A�����ϥζ}���N���}�A�̭����@��fraznium circlet�A
-  �@�Τ����C�n��j�U�����@�Ӳ��¡A�����U�ť۩M�a�W��blackrock gem�A
-  �æb�ӳB�ϥ�Altara�k���A���_�PGuardian���sô�C
-6.�Χ�쪺Key�}�ҪF�n�誺���A�|�ݨ�@�ӥզ����A�i�J��Y��Either Void
-  �Ŷ��A���ɦa�Ϥw�L�k�@�ΡC�u�ۥ۪O�����A�A�θ�Key�}�ҲĤ@�D���C�~
-  �򩹫e���A�H�K��ӪF��H�}�a�w�����šA�A�~�򩹫e���A�ϥΩ��ʳN���U
-  �k�价�誺���s�}�Ҫ��C�~��A�������A�|�J��e�y�A�ϥΤ���N�������A
-  �S�J�쥨���׸��A���B�����ϥζ}���N�}�ҡ]���ɭn�h�մX���^�C�i�J���
-  �̭������A�i�ݨ�@��chain�A�N���ԤU�Y�i�}�ҤU�@�D���C���U����|��
-  ��@�Ӭ������A�i�J��|�Ө�@�Ӻ��G�������B�C�o�Ӧa�観�Ⱖ�j�c�]�A
-  �i���Ӧn�L�A�n�h�Q�Φs�ɡC�ܤU�����N�ľ���A���쥪�䪺sturdy���}��
-  ������p�c�]�A�ԤUchain�A�H�}�Ҥ�����massive���C�A�줤�����ж�����
-  �j�c�]��𮧤@�U�A�~���t�@��sturdy���i�J�����j�c�]�H���oKey�C�^
-  �줤���ж��A�ϥ�Key�}���i�J��|����@�Ӥ����C��W�۪O����A�K�ۥ�
-  �䨫�|�i��@�ӱK�Ǥ��A�c�l����2��Basilisk oil���L�⾯�]�H��|�αo
-  ��^�B����coin�M2��FLAM�ťۡA�O�o�n�O�d�@��FLAM�U�ӡA���n������
-  �۳U�F�C�o�өж������٦��@���K�ǡA���L�ݭn���Wfraznium gauntlets�~
-  ��i�J�C���}�ж��������۪O�a�A�i�o��VAS�BTYM���ťۡC���}�ж��~��
-  �����K�|�ǰe��Either Void���i�J�I�C�^��Scintillus Academy Final
-  Exam�����A�q��n��ж��^��Level 1���J�f�B�^��Britannia�@�ɡC
-7.�^��Britannia�@�ɫ�A��Miranda�ͽ͡A�L�|�i�D�ACharles���Ƨ�A�C��
-  �O��Charles�ͽ͡A�L�|���A�@��i�}��Britannia Level 3�n�䥨����Key�A
-  �̭��i�o��moon stone�B���ʳN���b�MNOX�ťۡC�`�N�A�o��ƪ��o�ͮɾ�
-  �ä��@�w�A�]�������`�`�^�ӻP�U�H�ͽ͡C�p�G�����o�͡A�h�i�ϥζ}���N
-  ���b�Ӷ}�o�Ӫ��A�άO�ϥζǰe�N���b�i�J�o�өж��ABritannia�@�ɬO�L
-  �k�ϥβĤ����H�W���k�N���C�{�b�w�����moon stone�A�u�n�N�@�ө�b
-  ���W�A�A�N�@�ө�b�Y�B�A�I�i����ǰe�N�Y�i�����ǰe��moon stone��m
-  ���a��A�ᬰ��K�C�Nblockrock gem��Nystul�[����ϥΨ쥨�ۤW�A���U
-  �ӫK�O�n�i�J���䪺Pits of Carnage�����C
+1.Scintillus Academy Final Exam次元為用來測驗法師的期末考題，一共有8
+  題（剛好佔了8個Level）。
+2.進入後先打開密門，往前走會先遇到一個人，他會跟你述說這個次元世界的
+  事，接著打開測試的門進入開始測試。注意在測試過程中無法恢復法力，因
+  此要節省著用，但仍可休息恢復生命力。食物可帶多一些。先將地上的金盒
+  放到中間的踏板，以便開啟最右邊的柵門進入，若放到其他的踏板會開啟其
+  他的柵門，但進入後變成死胡同，出不來了。進入柵門後，不要按牆上的按
+  鈕，直接繼續往前走，進入Level 2。先向右走到唯一的陸地，然後跳到另
+  一片在河流上的陸地以穿過河流。過河後沿著牆壁走，在中央處會撿到一個
+  Cause Fear法杖。繼續往北走便會來到一片陸地，按下牆上的按鈕以開啟更
+  北方的柵門。地上有Paralyze法杖和一個加速術棕色劑。再往北走，通過柵
+  門向東走到一個升降牆通道。在升降牆通道上有一沒用的法杖，不必去撿，
+  直接穿過升降牆通道便可進入Level 3。
+3.一進到Level 3，地上有個念動術法杖可使用，但這個法杖帶不走，一離開
+  Level 3，法杖即歸原位。從最高處跳到各柱上，先將第一排兩側的牆上按
+  鈕按下。必須使用念動術在前一個柱將之按下，否則靠牆的柱子會降下來，
+  必須走上溶岩回來。接著一路找高柱往北跳便可看到出口進入Level 4，在
+  出口處的另一側靠牆柱子上還有一根法杖。Level 4有不少敵人，因此要保
+  持戰鬥狀態。在東南角有一個Key，西方牆邊有一個Mass Confusion法杖，
+  西北角上有隱身術卷軸和一把Key。最後到東北角使用這兩個Key開門即可進
+  入Level 5。Level 5大廳上有三個沒用的按鈕，不必管他們，另一可開啟的
+  門被柵門擋住，牆上有一chain，但拉了後會出現骷髏人攻擊。地上可拿到
+  Moon Stone和一個Fire Ball法杖。另一邊有一個鎖上的門，雖然標示
+  massive，但圖形卻是木門，應該標為sturdy才對，可能是程式上的問題。
+  利用拳頭將之打開，進入後跳過懸崖可拿到Key。回程時往下跳，解決無頭
+  人後在地上可拿到夜視術無色劑和水行術卷軸。利用得到的Key開啟柵門即
+  可進入Level 6。
+4.Level 6大廳中央有把Key，但不論從那一個入口進入，背後都會出現一個無
+  頭人，拿走Key時會射出箭來。地上包包內有一偵測陷阱法杖和黃色劑。使
+  用Key開門後往內走，會來到一個傳送迷宮，這個迷宮內沒有敵人，也不會
+  進入死胡同，因此請自己嘗試。其中有些傳送點並不固定傳到某個位置。這
+  裡只給一個提示：當進入圓形放射狀的通道時，往東南的傳送點，再走入東
+  北第二個傳送點即可離開這個迷宮，進入Level 7。中途有一個密門，用開
+  門術開啟後，裡面有個棕色劑。到Level 7時，先設法除去水中的潛伏者，
+  再下水到北方取得Key，東方有一個黃色劑。回到岸上在剛進入的地方依次
+  以東、東、北、北、西、北、北、東、東、東、南、南方向跳，即可到達出
+  口進入 Level 8。
+5.Level 8也是一個傳送迷宮，走入不對的傳送點會傳回進入處並出現敵人攻
+  擊。應走入的傳送點分別為西、南、南西、北西，最後便到測試結束出口。
+  出來後先到各房間搜括東西，大致可拿到Deadly Seeker法杖、黃色劑、Sheet
+  Lightning卷軸、Dispel Hunger卷軸和一把Key（在床的後邊）。注意東方
+  的房間內有個密門，必須使用開門術打開，裡面有一個fraznium circlet，
+  作用不明。南方大廳中有一個祭壇，拿取各符石和地上的blackrock gem，
+  並在該處使用Altara法杖，切斷與Guardian的連繫。
+6.用找到的Key開啟東南方的門，會看到一個白色月門，進入後即到Either Void
+  空間，此時地圖已無法作用。沿著石板路走，再用該Key開啟第一道門。繼
+  續往前走，隨便丟個東西以破壞定身之符，再繼續往前走，使用念動術按下
+  右邊遠方的按鈕開啟門。繼續再往內走，會遇到河流，使用水行術往內走，
+  又遇到巨門擋路，此處必須使用開門術開啟（有時要多試幾次）。進入後到
+  裡面亂闖，可看到一個chain，將之拉下即可開啟下一道門。往下跳後會看
+  到一個紅色月門，進入後會來到一個滿佈溶岩之處。這個地方有兩隻大惡魔，
+  可不太好過，要多利用存檔。喝下防火術藥劑後，先到左邊的sturdy門開啟
+  後殺掉小惡魔，拉下chain，以開啟中間的massive門。再到中間的房間殺掉
+  大惡魔後休息一下，繼續到另一個sturdy門進入殺掉大惡魔以取得Key。回
+  到中間房間，使用Key開門進入後會掉到一個水池。游上石板路後，貼著左
+  邊走會進到一個密室中，箱子內有2個Basilisk oil的無色劑（以後會用得
+  到）、不少coin和2個FLAM符石，記得要保留一個FLAM下來，不要都放到符
+  石袋了。這個房間角落還有一間密室，不過需要戴上fraznium gauntlets才
+  能進入。移開房間中間的石板地，可得到VAS、TYM等符石。離開房間繼續往
+  內走便會傳送到Either Void的進入點。回到Scintillus Academy Final
+  Exam次元，從西南方房間回到Level 1的入口處回到Britannia世界。
+7.回到Britannia世界後，跟Miranda談談，他會告訴你Charles有事找你。於
+  是跟Charles談談，他會給你一把可開啟Britannia Level 3南邊巨門的Key，
+  裡面可得到moon stone、念動術卷軸和NOX符石。注意，這件事的發生時機
+  並不一定，因此必須常常回來與各人談談。如果都未發生，則可使用開門術
+  卷軸來開這個門，或是使用傳送術卷軸進入這個房間，Britannia世界是無
+  法使用第五環以上的法術的。現在已找到兩個moon stone，只要將一個放在
+  身上，再將一個放在某處，施展月門傳送術即可直接傳送到moon stone放置
+  的地方，頗為方便。將blockrock gem給Nystul加熱後使用到巨石上，接下
+  來便是要進入左邊的Pits of Carnage次元。
 
-�C�BPits of Carnage����
+七、Pits of Carnage次元
 
-1.Pits of Carnage�����O�@�ӱR�Z���@�ɡA������ɪ��K�O�W�v�޳��W�@�M
-  �ͦ��A�]���i�J�e�Цh�h�V�m�ۤv���𨾯�O�C
-2.�@�i�JPits of Carnage������A�|���J��W��Krilner���H�A�L�n�D�A���n
-  ���L�A�L�i�H���A�������A���M�O�����L�աC���ۧA�K�i�H�ݰݥL�o�ӥ@��
-  �����v�A�ño��blackrock gem�b���a�̱j���Z�hDorstag���W�C�n���o�L��
-  �W��blackrock gem����ؤ覡�A�@�O�����ѲĤG�j��Zaria�A�L�~�����A��
-  �D�ԡA�ԳӤF�۵M�i�o��blackrock gem�C���L���O�ܦn�����A�i���O���
-  �a�U�Х@�������Ƥ@�ƤG���j��A���F�𨾯�O�n���A���ŭn���A�٥�����
-  �Τ@����⾯�H�ɸɥR�ͩR�O�A�~�i��N�����ˡC�t�@�ؤ覡�O��Level 3
-  ��Troll���A�A�p�����Υ��K�i�o��blackrock gem�A����٨ơC
-3.���b�����}�}�A���S����n�F��i���A�b�F�_�����@�ǰe�N���b�C���h�D��
-  Zaria�A�H�K�����o���W�M�ж������ť۩M�ľ��A�@�i�o����⾯�BBasilisk
-  oil���L�⾯�B�]�k�b�k���BFlame Wind���b�C�b�F��ж��i�ݨ�@�ӯȱ��A
-  �W���g�Ѥ��K���Ū��k�N��In An Flam�C�t�j�����@�W��Zogith���H�A��L
-  ��ĳ���bAir Arena���A�L�|�i�D�ADorstag�ж��t���@�K���åL���_�áA��
-  �Ʊ�A�൹�L�@��FLAM�ťۡC�NFlam�ťۮ���Zogith�A�L�|��A���@��Valor
-  �k�N�GQuas An Corp�A�i�W�j�����O�C�t�@�өж���Jospur�A�i��5 coin�P
-  �L���m�\�A�i���ɸg��Ȩ��ȿ��C���۫K��F�_�誺�ӱ�U��Level 2�C
-4.Level 2�i�J�j�U����n�観1 gem�M�@�Ӥ���N�k���C�u�ۥ_�誺�p�����_
-  ���A��̥_�誺�K���i�h�̭����զ⾯�M�Ħ⾯�B2 gem�B16 coin��1�Ӫ�
-  �M�C��_�観�@�״_�k���B9 coin�C����F�n��ɫK�OZoranthus���Ҧb�a�A
-  ���F���|���\�h�]���A��W�����s�Ψӱ���]���A�վ���s�H�i�J�̭���
-  Zoranthus�ͽ͡C�ܩ�����ǫ��s�A�ۤv�էa�A�ä����A�C�ӫ��s������X
-  �Ӭ]�����ɭ��CZoranthus���ܭn�J��ť�A�L�|�i�D�A�l���c�]��q����k�G
-  ���ήe����Ice Cave Level 2�F�n�誺�h�A���X�a��Filamium�����A�M��M
-  Basilisk oil�V�X�A�A���lava�[���Y�i�A�̫�A�Φ��e������c�]�C�çi
-  �D�A�L�w���@�Ӯ��]�A���n�A�h��Screptre of Deadly Seeker��L�洫�C
-  ���L�Lĵ�i���ADjinn�u��bEthereal Void������Sigil of Binding���~��
-  ����C�A���_�䨫�A�|�J��@�Ӵc�]�A���O�ܦn���A�n�n�n���I�C�~�򩹤�
-  ���Y��Level 3�C
-5.Level 3��_��ж��Ω��ʳN�ԤUchain�i�}�Ҭ]���A�A���U���s�i�}�ҲĤG
-  �D�]���A�̭���37 coin�M�@�ӵL�Ϊ�Screptre�A�]���������C��観�@��
-  �]�k���A�]�O�۷��������@�ӡA�n�n�n�a�`�N�A�̦n�ƥ��s�ɡC�����]�k
-  ����A�����H���i�Ψӵo�X�{�q�N�C�Ω��V�V�H�׸����۶��A�i��̭��i
-  �o��@���]�k�b�k���BHeal���b�BIron Flesh���⾯�B�MVAS�ťۡ]�b���Y
-  �᭱�^�C�n�誺�ж����W��Blog��Troll�A���b�a�W�H�K���Ӷ¥۩Υե۸�
-  �L���X���ߥ��Y���C���A�L�K�|�{���A�O�@�ӫܦn���B�͡C�A��L�n�@�ӯS
-  �������Y�A�û����u��Dorstag���A�L�K�|�n�A�h��Dorstag�n�A�L�|���A���C
-  �F�䦳�@�ӱK���A�ϥζ}���N���}�A�̭����������A�]�O���e����I���@��
-  ���C�N��������A�i�o��l��N�k���BReveal ���b�MFLAME�ťۡC�b�F��
-  �����ϥ�Reveal�k�N�Ψ��b�|�X�@���q�D�A�̭���3��Basilisk oil�C
-6.�^��Level 1��Dorstag�nblackrock gem�A���L�ڵ��A�ɡA�o��Blog�X�{�F�A
-  �sDorstag�@�w�n���X�ӡADorstag�]�ȥL�A�u�n�ĨĦa�浹Blog�C���ɦA��
-  Blog�͸ܡA�L�K��blackrock gem�浹�A�C�Q�ζ}���N�N�ӫǱK�����}�A�i
-  �h�i����Ѭr�N�k���BFire Ball���b�M�@�ǯ]�_�CDorstag�M�L����U����
-  ��A���]Blog�b���A�]������A��ˡA�A�]�i�H�@�Ӥ@�ӱN�L�̱����C�̫�
-  ��Level 1�̥_���ж��ϥ�Altara�k���A�H���_�������PGuardian�sô�C
-7.�^��Britannia�@�ɡAMiranda�|�n�A�h��Nelson�ͽ͡A���GNelson���n���X
-  �i��blackrock�����K�k�N�ɡAPatterson�K�N�����F�A���Patterson�K�O
-  �I�q�̡C�NPatterson�����A���ɷ|�i�Ө�Ӧu�áA�N���p�i�D�L�̫�A�A
-  ��blockrock gem��Nystul�[���èϥΨ쥨�ۤW�C�öi�J�U�Ӧ����GTomb of
-  Praecor Loth�C
+1.Pits of Carnage次元是一個崇武的世界，有什麼紛爭便是上競技場上一決
+  生死，因此進入前請多多訓練自己的攻防能力。
+2.一進入Pits of Carnage次元後，會先遇到名為Krilner的人，他要求你不要
+  殺他，他可以當你的奴隸，當然是答應他啦。接著你便可以問問他這個世界
+  的歷史，並得知blackrock gem在當地最強的武士Dorstag身上。要取得他身
+  上的blackrock gem有兩種方式，一是先打敗第二強的Zaria，他才接受你的
+  挑戰，戰勝了自然可得到blackrock gem。但他不是很好打的，可說是整個
+  地下創世紀２中數一數二的強手，除了攻防能力要夠，等級要高，還必須備
+  用一堆黃色劑隨時補充生命力，才可能將之打倒。另一種方式是請Level 3
+  的Troll幫你，如此不用打便可得到blackrock gem，比較省事。
+3.先在城內逛逛，但沒什麼好東西可拿，在東北角有一傳送術卷軸。先去挑戰
+  Zaria，以便拿取她身上和房間內的符石和藥劑，共可得到黃色劑、Basilisk
+  oil的無色劑、魔法箭法杖、Flame Wind卷軸。在東方房間可看到一個紙條，
+  上面寫解火焰之符的法術為In An Flam。另隔壁有一名為Zogith的人，跟他
+  建議應在Air Arena打，他會告訴你Dorstag房間另有一密室藏他的寶藏，並
+  希望你能給他一份FLAM符石。將Flam符石拿給Zogith，他會跟你講一個Valor
+  法術：Quas An Corp，可增強攻擊力。另一個房間有Jospur，可用5 coin與
+  他對賭練功，可提升經驗值並賺錢。接著便到東北方的樓梯下到Level 2。
+4.Level 2進入大廳的西南方有1 gem和一個日光術法杖。沿著北方的小路往北
+  走，到最北方的密門進去裡面有白色劑和棕色劑、2 gem、16 coin及1個金
+  杯。西北方有一修復法杖、9 coin。走到東南方時便是Zoranthus的所在地，
+  往東走會有許多柵門，牆上的按鈕用來控制柵門，調整按鈕以進入裡面跟
+  Zoranthus談談。至於按那些按鈕，自己試吧，並不難，每個按鈕都控制幾
+  個柵門的升降。Zoranthus的話要仔細聽，他會告訴你吸收惡魔能量的方法：
+  先用容器到Ice Cave Level 2東南方的沼澤取出帶有Filamium的水，然後和
+  Basilisk oil混合，再放到lava加熱即可，最後再用此容器抓取惡魔。並告
+  訴你他已抓到一個氣魔，但要你去找Screptre of Deadly Seeker跟他交換。
+  不過他警告說，Djinn只能在Ethereal Void次元的Sigil of Binding中才能
+  釋放。再往北邊走，會遇到一個惡魔，不是很好打，要好好應付。繼續往內
+  走即到Level 3。
+5.Level 3西北方房間用念動術拉下chain可開啟柵門，再按下按鈕可開啟第二
+  道柵門，裡面有37 coin和一個無用的Screptre，因此不必拿。西方有一個
+  魔法樹精，也是相當難打的一個，要好好地注意，最好事先存檔。打死魔法
+  樹精後，它的碎片可用來發出閃電術。用岩敲敲碎擋路的石塊，進到裡面可
+  得到一個魔法箭法杖、Heal卷軸、Iron Flesh紫色劑、和VAS符石（在骨頭
+  後面）。南方的房間有名為Blog的Troll，先在地上隨便拿個黑石或白石跟
+  他玩幾次撿石頭的遊戲，他便會認為你是一個很好的朋友。再跟他要一個特
+  殊的石頭，並說明只有Dorstag有，他便會要你去跟Dorstag要，他會幫你的。
+  東邊有一個密門，使用開門術打開，裡面有隻鬼王，也是不容易對付的一個
+  對手。將它打死後，可得到吸血術法杖、Reveal 卷軸和FLAME符石。在東面
+  牆附近使用Reveal法術或卷軸會出一條通道，裡面有3個Basilisk oil。
+6.回到Level 1找Dorstag要blackrock gem，當他拒絕你時，這時Blog出現了，
+  叫Dorstag一定要拿出來，Dorstag也怕他，只好乖乖地交給Blog。此時再跟
+  Blog談話，他便把blackrock gem交給你。利用開門術將該室密門打開，進
+  去可拿到解毒術法杖、Fire Ball卷軸和一些珠寶。Dorstag和他的手下雖生
+  氣，但因Blog在場，也不敢對你怎樣，你也可以一個一個將他們殺死。最後
+  到Level 1最北的房間使用Altara法杖，以切斷本次元與Guardian連繫。
+7.回到Britannia世界，Miranda會要你去找Nelson談談，結果Nelson正要說出
+  可使blackrock的秘密法術時，Patterson便將之殺了，原來Patterson便是
+  背叛者。將Patterson殺掉，此時會進來兩個守衛，將情況告訴他們後，再
+  拿blockrock gem給Nystul加熱並使用到巨石上。並進入下個次元：Tomb of
+  Praecor Loth。
 
-�K�BTomb of Praecor Loth����
+八、Tomb of Praecor Loth次元
 
-1.Tomb of Praecor Loth������Praecor Loth�Ҹ����B�A�̭��i�ݨ줣�ְ���A
-  �]�����־����A����������8�i�a�ϫ�~��i�J��̤��h�C
-2.�i�J��@����8�ӳq�D�C��_��Ω��V�N�۶��V�H��A�b�̸̭��i�o��
-  blackrock gem�A�a�W�٦��Ӱ��Y�A�N���߰_�ӡA�æb���B�ϥ�Altara�k���A
-  �H���_�������PGuardian�sô�C��観3��golem�A�N�L�̱�����i�o�@���a
-  �ϡA�N��������ۤv�a�ϤW�C��n�観�@��������A���N�Ҧ����s����U���A
-  �A���U���䪺���s�}���A�̭����@�i�a�ϡC�n�観�u�\�H�A���N�L�̳�����
-  ��A�A�h���̭����a�ϡA�_�h�@���a�ϡA�L�̫K�|���A�C�F�n������W��
-  �T�ӬW�l�A������̫n�誺�W�l�A�N�@�ǭ������a�O�W�]��10Kg�^�A�H�K
-  �}�Ҭ]���A�b�ж����i�o��a�ϡC�F�観�Ӥ������A�N�����˥i�o��@�i�a
-  �ϡC�F�_��]���@����������A���̭��S����F��A�D�n�O�b�����񦳤@��
-  �K���A�}���i�J�i�o��@�i�a�ϡC�_�観�W�Ӫ��ӱ�A���񦳤@���s�A���U
-  ���s�b�t�@��|�X�{�@�i�a�ϡC
-3.�i�JLevel 2�A�b�n����񪺩ж������@��Trystey������A�N�ߨ쪺���Y��
-  �٦o�A���o�èS������i���Ѫ������C�F�_��bcave-in�B�I�i�ǰe�B�i��
-  �F�@�ӳQ�ʦ����a��A�̭���Flame Wind�k���C��̫n�誺�ж��A�|�J��
-  Praecor Loth���ѱCHelena�A�o�Ʊ�A���o�Ǹܵ�Praecor Loth�A���M�n��
-  ���o�աC�F�n��]�����}��A�a�W���Ӷ}���N���b�A�M��Level 3���ӱ�C
-  ���ثe�u��7�i�a�ϡA�ڻ��]�u����7�i�A�]���u�n��Level 3�W�h�ݬݡC
-4.�W�hLevel 3��A�|�J��@��Silanus������A���NGuardian signet rign��
-  �W�A�A��L�͸ܡA�L�|�i�D�A���@��Key�b�F�_��������A�i�ΨӪ����V�L
-  �e��Ӱ����CLevel 3���F�F�_�M�_�観�P�R�����y�M�{�q�H�~�A�j�P�S��
-  �򳴨��A�]�������ϥΨ����N�C���B�]�����ְ}�`��Guardian��U�үd�U��
-  ������˳ơA�n���n�H�K�A�]���M�̦n�O��B�ݬݡA�n�Ϊ��N���^�C���h�D
-  �n���q�D�b��F�_��A����F�n�観�T��Lever�B�A�b�_��ж��禳�@Lever�A
-  �����U��Lever�A�A���U���k���Lever�A�̫�A��������Lever�A�H�}�ұ�
-  ��ǫe���]���A�i�J����ǫ��ULever�H�����F�_�����|�}�C��F�_���@�B
-  ������A�b����i���K���A�ζ}���N�i�J��i����ƯB�N���b�M�@��Key�C
-  �o��Key�p��V�L�e��Ӱ����A�ثe�����D�C�ζ}���N�}�ҪF�_��K������
-  ��_��X�f�WLevel 4�C
-5.�WLevel 4��A�ԤUchain�⦸�}���i�J�A�J��Ĥ@�Ӱ����A�ͤ]�S�ΡA���a�I
-  �b�F�観�@�K���A�i�J��b�a�W���c�l�A�̭����@��key�A�����F�|���r�A
-  �o��Key�@�Υ礣���C�ή��Y���}�F�誺���A�}�ҫ�|���r�b�g�X�A�|���r�A
-  �i�J�ᦳ�@��Lever�A���U�i�}�ҤU�@�D���C�~��ѲĤ@�Ӱ����B���n���A
-  �}����|���J����K���šA�ϥθѤ��K���Ūk�N�N���Ѱ��A�άO���]�k���b
-  �g�h��i�A�i�J��J��ĤG�Ӱ����C������A�i����VAS�MFLAM�ťۡC�b�n
-  ��|��outer space�׵ۡA����F��B�A�@���|�ƬW�l�A�ѥ_�ӫn�s���H
-  4-3-3-4�覡����t�@��]�O�o���ϥΨ����N�^�A�H�K�����@������H�}�a
-  ���¡C�^��찭���ж��i�o�{�����n�q�D�A�~��e�i�|�ݨ�̫�@�Ӱ����C
-  �o�Ӱ����i���n���A�n�p�ߡC����������F�A�I�i����N��L�r���A�|���@
-  �j��ĤH���ۧA�A�ϥ�Level 3�o�Ӫ�Key�]�����c�]�]�|�o��ۦP��Key�^
-  �}�Ҹ̭������A�ԤUchain�}�ҩ��n���q�D�C�~�򩹫n���A�|���@Lava�׵ۡA
-  ���U���\�h�������A�������@�Ӭݤ��������C�i�յۤU�h�������̡A�Ϊ���
-  ���n�h��Praecor Loth�C��L�͸ܡA�L�|���AHorn of Praecor Loth�C�̭�
-  �ж��]��Banner of Killorn Keep�A�M�@��Freeze time���b�C�blava���
-  �����B���@���]�k�O�@��Tower Shield�C
-6.�^��Killorn Keep�����A�NBanner of Killorn Keep�浹Ogri�A�L�|�i�D�A
-  �b�u�éЦa�U�Ǧ��@�өж��A�̭�����өǪ��伵Killorn Keep�B�b�Ť��A
-  �Y�N�������N�|�R��Killorn Keep�C��u�éЪF�n��B�}�ұK���A�i�J�a�U
-  �ǡA�|���J��@�Ӧu�áA�N�������A��ӥ��O�c�]�ܨ����C�ϥΦb������
-  Level 2�ҧ�쪺Key�}���A�i�J��ϥ�Altara�k���A���_�PGuardian���sô�C
-  �ж����J���Ⱖ���ǡA�����n�����̡A�]���٭n�b�������R�R�F��C�Y�N��
-  �����A�U���i�ӮɡA�Ҧ����H���|�����F�C
-7.�^��Britannia�@�ɡAMiranda�|�n�A�h��Nystul�ͽ͡ANystul�|�i�D�A�i�H
-  �ϥ�Horn of Praecor Loth�ӯ}�aLevel 5�����ۡA�]��������X�p��ϥ�
-  �o��Horn�C���U�ӫK�i�J�̫�@�Ӧ����GEthereal Void�C
+1.Tomb of Praecor Loth次元為Praecor Loth所葬之處，裡面可看到不少鬼魂，
+  也有不少機關，必須先取到8張地圖後才能進入到最內層。
+2.進入後共分為8個通道。西北方用岩敲將石塊敲碎後，在最裡面可得到
+  blackrock gem，地上還有個骨頭，將之撿起來，並在此處使用Altara法杖，
+  以切斷本次元與Guardian連繫。西方有3個golem，將他們殺掉後可得一份地
+  圖，將之拷貝到自己地圖上。西南方有一鎖住的門，先將所有按鈕切到下面，
+  再按下門邊的按鈕開門，裡面有一張地圖。南方有骷髏人，先將他們都打倒
+  後，再去拿裡面的地圖，否則一拿地圖，他們便會圍攻你。東南方水面上有
+  三個柱子，先跳到最南方的柱子，將一些重物放到地板上（約10Kg），以便
+  開啟柵門，在房間內可得到地圖。東方有個火元素，將之打倒可得到一張地
+  圖。東北方也有一個鎖住的門，但裡面沒什麼東西，主要是在門附近有一個
+  密門，開門進入可得到一張地圖。北方有上樓的樓梯，附近有一按鈕，按下
+  按鈕在另一邊會出現一張地圖。
+3.進入Level 2，在南方附近的房間內有一個Trystey的鬼魂，將撿到的骨頭交
+  還她，但她並沒有什麼可提供的消息。東北方在cave-in處施展傳送處可到
+  達一個被封死的地方，裡面有Flame Wind法杖。到最南方的房間，會遇到
+  Praecor Loth的老婆Helena，她希望你幫她傳話給Praecor Loth，當然要答
+  應她啦。東南方柵門打開後，地上有個開門術卷軸，和往Level 3的樓梯。
+  但目前只有7張地圖，據說也只能找到7張，因此只好往Level 3上去看看。
+4.上去Level 3後，會遇到一個Silanus的鬼魂，先將Guardian signet rign戴
+  上，再跟他談話，他會告訴你有一把Key在東北方水池中，可用來直接越過
+  前兩個鬼王。Level 3除了東北和北方有致命的火球和閃電以外，大致沒什
+  麼陷阱，因此必須使用防火術。此處也有不少陣亡的Guardian手下所留下來
+  的精美裝備，要不要隨便你（當然最好是到處看看，好用的就拿）。本層主
+  要的通道在於東北方，先到東南方有三個Lever處，在北方房間亦有一Lever，
+  先按下該Lever，再按下左右兩個Lever，最後再按中央的Lever，以開啟控
+  制室前的柵門，進入控制室按下Lever以關閉東北角的坑洞。到東北角一處
+  水附近，在西邊可找到密門，用開門術進入後可找到飄浮術卷軸和一把Key。
+  這把Key如何越過前兩個鬼王，目前不知道。用開門術開啟東北方密門直接
+  到北方出口上Level 4。
+5.上Level 4後，拉下chain兩次開門進入，遇到第一個鬼王，談也沒用，殺吧！
+  在東方有一密門，進入後在地上有箱子，裡面有一把key，但拿了會中毒，
+  這把Key作用亦不明。用拳頭打開東方的門，開啟後會有毒箭射出，會中毒，
+  進入後有一個Lever，按下可開啟下一道門。繼續由第一個鬼王處往南走，
+  開門後會先遇到火焰之符，使用解火焰之符法術將之解除，或是用魔法之箭
+  射去亦可，進入後遇到第二個鬼王。殺死後，可拿到VAS和FLAM符石。在南
+  方會有outer space擋著，先到東方處，共有四排柱子，由北而南編號以
+  4-3-3-4方式跳到另一邊（記得先使用防火術），隨便拿走一個蠟燭以破壞
+  祭壇。回到原鬼王房間可發現有往南通道，繼續前進會看到最後一個鬼王。
+  這個鬼王可不好打，要小心。打死後先往東，施展水行術穿過瀑布，會有一
+  大堆敵人等著你，使用Level 3得來的Key（殺死惡魔也會得到相同的Key）
+  開啟裡面的門，拉下chain開啟往南的通道。繼續往南走，會有一Lava擋著，
+  底下有許多火元素，中間有一個看不見的橋。可試著下去殺殺它們，或直接
+  往南去找Praecor Loth。跟他談話，他會給你Horn of Praecor Loth。裡面
+  房間也有Banner of Killorn Keep，和一個Freeze time卷軸。在lava兩端
+  的高處有一個魔法保護的Tower Shield。
+6.回到Killorn Keep次元，將Banner of Killorn Keep交給Ogri，他會告訴你
+  在守衛房地下室有一個房間，裡面有兩個怪物支撐Killorn Keep浮在空中，
+  若將之殺死將會摧毀Killorn Keep。到守衛房東南方處開啟密門，進入地下
+  室，會先遇到一個守衛，將之殺死，原來它是惡魔變身的。使用在本次元
+  Level 2所找到的Key開門，進入後使用Altara法杖，切斷與Guardian的連繫。
+  房間內遇有兩隻腦怪，先不要殺它們，因為還要在此次元買買東西。若將之
+  殺死，下次進來時，所有的人都會死掉了。
+7.回到Britannia世界，Miranda會要你去找Nystul談談，Nystul會告訴你可以
+  使用Horn of Praecor Loth來破壞Level 5的巨石，因此必須找出如何使用
+  這個Horn。接下來便進入最後一個次元：Ethereal Void。
 
-�E�BEthereal Void����
+九、Ethereal Void次元
 
-1.Ethereal Void�������@�ӵ�ۥ@�ɡA�b���@�ɤ��a�ϨS���@�ΡC���B����
-  �H�j���|�b�Ť��L�ۡA�]�������H�ɷǳƭ���N�԰��C�ѩ�԰������A�G��
-  ���ǳƤj�q�����⾯�M�L�⾯�ѥͩR�O�M�k�O�ɥR�ϥΡ]�i��Killorn Keep
-  ������Merzan�ʶR�^�C�b�i�J�e�̦n�N�ۤv���U���԰��P�k�N�ޯೣ���ɨ�
-  �̰��I�A����e���s���C
-2.�@�i�JEthereal Void�������[�K�����]�M�p�c�]�������A�]�������H�ɷ�
-  �ƾ԰��C�����u�۶i�Ӫ��D�����e���A�q���B���U�A�b��|���C�⪺��W
-  �����Y���^��Britannia�@�ɪ��D���C�b���񨫨��|�J��Iolo�A�L�|�i�D�A
-  �n�䪺screptre�bVanquish the Red Destroyer��W�C�b����������A��
-  ��Mokpo�A�L�|�i�D�A�����g��4���C����A�z�L����h��X��5�ػ��A
-  �H��FShrine of Spirituality�ATime Lord�K���b���̡C�ë�ĳ�A�n�q��
-  �����i�J��Red Hell�ݬݡCShrine of Spirituality�b�@�i�Ӫ��I��B�A
-  �ϥέ���N�M�ǰe�N�i�J�̭�����blackrock gem�A�èϥ�Altara�k���A��
-  �_�PGuardian���sô�C�^��Britannia�@�ɡA�Nblackrock gem��Nystul�[��
-  ��A�ϥΦb���ۤW�A�A�^�h��Nystul�|�i�D�A�̫᪺�u�@�K�O�}�a���ۡC
-3.�A�׶i�JEthereal Void�����A�ǳƶi�J�������C�i�J�������e�����I
-  �i�����N�A�_�h�|�ܧְ}�`�C�i�J��|�Ө캡���������B�]����ǰe�I�C��
-  �����Ӥ@�ˡA�h�i�J�X���Y�i�^�A�����n�ޤ������A��������������̸̭�
-  ����Vanquish the Red Destroyer�A�î���sreptre��A���W������}�C��
-  �B�ĤH�۷��h�A���Ӯe����I�C�g�L�X�Ӥ���ǰe��]�����L�{�����ּĤH�A
-  ����h���A�_�h�K�k�^�A�K�|��Fthe Sigil of Binding�A�H�ᥲ���Ө즹
-  �B�A�ݰO�o�C�A�Q�Τ���ǰe�ܶi�Ӥ��B�A���^��Pits of Carnage������
-  Zoranthus��Djinn��A�^�ӡC�~���ھ�Zoranthus�����k�A��Ice Caverns��
-  ��Level 2�F�n��̲`�B��filanium���h�A�A�NBasilisk oil��J�h�A���A
-  �A�U���h�w�w�A�̫�ϥΨ����N��lava�N�N�C
-4.����������A�i�J��@�Ӥg��g�c���A�������]�᮳�����b�a�W���Ⱖ��
-  ���A�A�q�Ŧ����i�J���@�ӥsPrinx���H�C�N�����浹�L�A�L�|���A�@
-  �ӭ���N���b�C���񦳤@�ΰ����A�i�ݥLtrilkhun���ơA�ݥL�^����A�^�h
-  �i�DKillorn Keep������Blackie�A�L�|�i�D�AMors Gotha���ơC�������
-  ���A�|�J��Blog�A���ݤ��X����F��C�u�۽b�Y���A�|�i�J�@�Ӧ����Х@��
-  �a�U�g�c���a��A�̫�S��Fthe Sigil of Binding�C�]�|�ئ⪺������i
-  �즹�B�A�������ѥt�@�إզ����i�J�̪���²���^�C
-5.��Fthe Sigil of Binding��A���I�iIron Flesh�k�N�A�A�NDjinn��b��
-  ���P�~�������A�μC�N����}����X���]�çl�����餺�ӡC�@�^��Britannia
-  �@�ɡA�K�ݨ�\�h�qKillorn Keep�����Ӫ��h�L�����A�A�N����������A��
-  Killorn Keep�����ݬݡC�b�h�L�𮧳B�_��ж��A�|�J��Gaurdian��UMors
-  Gotha�A�N�o�ǼĤH�ѨM��]Mors Gotha�|�k���^�A�����a�W���]�k�ѡA��
-  �^��Britannia�@�ɥ浹Nystul�CNystul�|�ݧABritannia�@�ɨ��ʪ����T��
-  ���M�a�I�A��Nell�ݰݡA�o�|�i�D�A�a�I�bThrone Room�A�ɶ�����4�G00�C
-  �N�o�Ǹ�T�i�DNystul��A����Mors Gotha�A�ץX�{�A�N��������A����
-  Throne Room�Y�i�J�����CMors Gotha�i���n��I�A���a�U�Х@�����̱j��
-  �ĤH�A�n�S�O�p�ߡC���L�즹�B�ɡA���W�˳������O�̺�}���F�A���I�L��
-  �����C
-
-
-*** �̨ΪZ���Ҧb�I
-
-�C�GBroadsword of Great Damage�AEthereal Void�����Ŧ�ϵ������U�C
-��GAxe of Great Damage�ATomb of Praecor Loth����Level 1��_�B�C
-��GMace of Unsurpassed Damage�ATomb of Praecor Loth����Level 4�C
+1.Ethereal Void次元為一個虛幻世界，在此世界中地圖沒有作用。此處的敵
+  人大都會在空中盤旋，因此必須隨時準備飛行術戰鬥。由於戰鬥不易，故必
+  須準備大量的黃色劑和無色劑供生命力和法力補充使用（可跟Killorn Keep
+  次元的Merzan購買）。在進入前最好將自己的各項戰鬥與法術技能都提升到
+  最高點，比較容易存活。
+2.一進入Ethereal Void次元不久便有眼魔和小惡魔的攻擊，因此必須隨時準
+  備戰鬥。首先沿著進來的道路往前走，從高處跳下，在塗有四種顏色的牆上
+  中央即為回的Britannia世界的道路。在附近走走會遇到Iolo，他會告訴你
+  要找的screptre在Vanquish the Red Destroyer手上。在紅色月門附近，亦
+  有Mokpo，他會告訴你必須經由4種顏色領域，透過月門去找出第5種領域，
+  以到達Shrine of Spirituality，Time Lord便關在那裡。並建議你要從紅
+  色月門進入到Red Hell看看。Shrine of Spirituality在一進來的背後處，
+  使用飛行術和傳送術進入裡面拿取blackrock gem，並使用Altara法杖，切
+  斷與Guardian的連繫。回到Britannia世界，將blackrock gem給Nystul加熱
+  後，使用在巨石上，再回去時Nystul會告訴你最後的工作便是破壞巨石。
+3.再度進入Ethereal Void次元，準備進入紅色月門。進入紅色月門前必須施
+  展防火術，否則會很快陣亡。進入後會來到滿布溶岩之處（月門傳送點每次
+  都不太一樣，多進入幾次即可），先不要管火元素，直接跳離溶岩到最裡面
+  殺掉Vanquish the Red Destroyer，並拿取sreptre後，跳上月門離開。此
+  處敵人相當多，不太容易對付。經過幾個月門傳送後（之間過程有不少敵人，
+  能殺則殺，否則便逃），便會到達the Sigil of Binding，以後必須來到此
+  處，需記得。再利用月門傳送至進來之處，先回到Pits of Carnage次元跟
+  Zoranthus換Djinn後再回來。途中根據Zoranthus的說法，到Ice Caverns次
+  元Level 2東南方最深處有filanium的沼澤，將Basilisk oil丟入沼澤中，
+  再下水去泡泡，最後使用防火術到lava烤烤。
+4.先到黃色月門，進入到一個土牆迷宮內，殺掉眼魔後拿取掉在地上的兩隻眼
+  睛，再從藍色月門進入後找一個叫Prinx的人。將眼睛交給他，他會給你一
+  個飛行術卷軸。附近有一團鬼火，可問他trilkhun的事，待他回答後再回去
+  告訴Killorn Keep次元的Blackie，他會告訴你Mors Gotha的事。往紫色月
+  門，會遇到Blog，但問不出什麼東西。沿著箭頭走，會進入一個早期創世紀
+  地下迷宮的地方，最後又到達the Sigil of Binding。（四種色的月門均可
+  到此處，但直接由另一種白色月門進入最直接簡易）。
+5.到達the Sigil of Binding後，先施展Iron Flesh法術，再將Djinn放在五
+  角星芒的中央，用劍將之砍破釋放出氣魔並吸收到體內來。一回到Britannia
+  世界，便看到許多從Killorn Keep次元來的士兵攻擊你，將之全殺死後，到
+  Killorn Keep次元看看。在士兵休息處北方房間，會遇到Gaurdian手下Mors
+  Gotha，將這些敵人解決後（Mors Gotha會逃走），拿走地上的魔法書，並
+  回到Britannia世界交給Nystul。Nystul會問你Britannia世界受封的正確時
+  間和地點，找Nell問問，她會告訴你地點在Throne Room，時間約為4：00。
+  將這些資訊告訴Nystul後，此時Mors Gotha再度出現，將之殺死後，走到
+  Throne Room即進入結局。Mors Gotha可不好對付，為地下創世紀２最強的
+  敵人，要特別小心。不過到此處時，身上裝備應都是最精良的了，應付他應
+  不難。
 
 
-*** �k�N�@����
+*** 最佳武器所在點
 
-�k�N�b���C���O�H�ť۲զX�Ӧ��A�H�U�������e�X�U�ť۪��Ϊ��P�W�١G
+劍：Broadsword of Great Damage，Ethereal Void次元藍色區紫色月門下。
+斧：Axe of Great Damage，Tomb of Praecor Loth次元Level 1西北處。
+錘：Mace of Unsurpassed Damage，Tomb of Praecor Loth次元Level 4。
 
-    |\\   AN    �פ�     B   BET  �p        �H   CORP ���`
-    |X|   DES   ���U     M   EX   �ۥ�      |��  FLAM ���K
-    X     GRAV  ��q     P   HUR  ��        |    IN   �ް_
-    ��    JUX   �ˮ`     |�� KAL  �l��      |\   LOR  ��
-    ��    MANI  �ͩR     �R  NOX  �r        |�p  ORT  �]�k
-    K     POR   ����     |�� QUAS �۶H      R    REL  ����
-    ��    SANCT �O�@     ��  TYM  �ɶ�      �F   UUS  �@�_
-    �N    VAS   ���j     N   WIS  ����    ������ YLEM ����
 
-��b�ť۳U�W���ƦC���G
+*** 法術一覽表
+
+法術在本遊戲是以符石組合而成，以下先約略畫出各符石的形狀與名稱：
+
+    |\\   AN    終止     B   BET  小        人   CORP 死亡
+    |X|   DES   降下     M   EX   自由      |╯  FLAM 火焰
+    X     GRAV  能量     P   HUR  風        |    IN   引起
+    中    JUX   傷害     |╮ KAL  召喚      |\   LOR  光
+    門    MANI  生命     卜  NOX  毒        |︾  ORT  魔法
+    K     POR   移動     |╯ QUAS 幻象      R    REL  改變
+    ㄣ    SANCT 保護     ↑  TYM  時間      Γ   UUS  昇起
+    Λ    VAS   巨大     N   WIS  知識    ╒╤╕ YLEM 物質
+
+其在符石袋上的排列為：
 
     A B C D
     E F G H
@@ -590,96 +590,96 @@
     Q R S T
     U V W Y
 
-�]���u�ݰO�䭺�r�Y�i�C�U���k�N�p�U�G
+因此只需記其首字即可。各環法術如下：
 
-�Ĥ@��
+第一環
 
-    IMY    �s�y���� Create Food
-    WJ     �������� Detect Trap
-    IL     �ө��N Light
-    BOI    ���B�N Luck
-    OJ     �]�k���b Magic Arrow
-    BIS    �@���N Resist Blows
+    IMY    製造食物 Create Food
+    WJ     偵測陷阱 Detect Trap
+    IL     照明術 Light
+    BOI    幸運術 Luck
+    OJ     魔法之箭 Magic Arrow
+    BIS    耐擊術 Resist Blows
 
-�ĤG��
+第二環
 
-    QC     ���߳N Cause Fear
-    OWJ    �P�R�l�� Deadly Seeker
-    UP     ���D�N Jump
-    IBM    �p�����N Lesser Heal
-    IFJ    ���K���� Rune of Flame
-    RDP    �w���N Slow Fall
+    QC     恐懼術 Cause Fear
+    OWJ    致命追擊 Deadly Seeker
+    UP     跳躍術 Jump
+    IBM    小醫療術 Lesser Heal
+    IFJ    火焰之符 Rune of Flame
+    RDP    緩落術 Slow Fall
 
-�ĤT��
+第三環
 
-    JM     �l��N Bleeding
-    AN     �Ѭr�N Cure Poison
-    AJO    �X������ Dispel Rune
-    OG     �p�q�N Lightning
-    QL     �]���N Night Vision
-    RTP    �[�t�N Speed
-    YP     ���W�樫�N Water Walk
+    JM     吸血術 Bleeding
+    AN     解毒術 Cure Poison
+    AJO    驅除之符 Dispel Rune
+    OG     雷電術 Lightning
+    QL     夜視術 Night Vision
+    RTP    加速術 Speed
+    YP     水上行走術 Water Walk
 
-�ĥ|��
+第四環
 
-    IM     �����N Heal
-    GSP    ��g�Z���O�@�N Missile Protection
-    NJY    �Z���r�ƳN Poison Weapon
-    AJ     �Ѱ����� Remove Trap
-    SF     �����N Resist Fire
-    WM     �Ǫ���s Study Monster
+    IM     醫療術 Heal
+    GSP    投射武器保護術 Missile Protection
+    NJY    武器毒化術 Poison Weapon
+    AJ     解除陷阱 Remove Trap
+    SF     防火術 Resist Fire
+    WM     怪物研究 Study Monster
 
-�Ĥ���
+第五環
 
-    UHP    �ƯB�N Levitate
-    PF     ���y�N Fireball
-    OWY    �u�W�N Name Enchantment
-    EY     �}�ҳN Open
-    ACM    ���������Ǫ� Smite Undead
-    OPY    ���ʳN Telekinesis
+    UHP    飄浮術 Levitate
+    PF     火球術 Fireball
+    OWY    真名術 Name Enchantment
+    EY     開啟術 Open
+    ACM    消滅不死怪物 Smite Undead
+    OPY    念動術 Telekinesis
 
-�Ĥ���
+第六環
 
-    QRW    �g�b�N Charm
-    VIL    ����N Daylight
-    VRP    ����ǰe�N Gate Travel
-    VIM    �j�����N Greater Heal
-    VSL    ���γN Invisibility
-    AEP    �·��N Paralyze
-    VOG    �x�߹p�q Sheet Lightning
+    QRW    迷惑術 Charm
+    VIL    日光術 Daylight
+    VRP    月門傳送術 Gate Travel
+    VIM    大醫療術 Greater Heal
+    VSL    隱形術 Invisibility
+    AEP    麻痺術 Paralyze
+    VOG    掌心雷電 Sheet Lightning
 
-�ĤC��
+第七環
 
-    OPG    �]�k�ìP Magic Satellite
-    VAW    �V�óN Confusion
-    OAQ    ��{�N Reveal
-    VEY    �ǰe�N Portal
-    JJ     �_�i�N Shockwave
+    OPG    魔法衛星 Magic Satellite
+    VAW    混亂術 Confusion
+    OAQ    顯現術 Reveal
+    VEY    傳送術 Portal
+    JJ     震波術 Shockwave
 
-�ĤK��
+第八環
 
-    VHP    ����N Fly
-    FH     ���K���� Flame Wind
-    AT     �ɥ��ᵲ�N Freeze Time
-    IVS    ���K���� Iron Flesh
-    VM     �٭�N Restoration
-    OPW    �H�N��ݳN Roaming Sight
-    VPY    �a�_�N Tremor
+    VHP    飛行術 Fly
+    FH     火焰之風 Flame Wind
+    AT     時光凍結術 Freeze Time
+    IVS    鋼鐵之軀 Iron Flesh
+    VM     還原術 Restoration
+    OPW    隨意察看術 Roaming Sight
+    VPY    地震術 Tremor
 
-��L�k�N
+其他法術
 
-    VKC    �����N Armageddon
-    WE     �s�ϳN Map
-    RSY    �״_�N Mend
-    IS     �p���N Thick Skin
-    AS     �A�G�N Curse (�����L)
-    KM     �c�]�l��N Summon Monster (�����L)
-    IAF    �Ѱ����K���� Repel Rune of Flame
-    QAC    �i��N Valor
-    VOY    �]�k�[�j�N Enchantment
-    AKC    �X�������Ǫ� Repel Undead
-    ITJ    �R��� Rune of Freeze Time
-    ATO    �Ѱ��R��� Repel Rune of Freeze Time
+    VKC    毀滅術 Armageddon
+    WE     製圖術 Map
+    RSY    修復術 Mend
+    IS     厚膚術 Thick Skin
+    AS     詛咒術 Curse (未測過)
+    KM     惡魔召喚術 Summon Monster (未測過)
+    IAF    解除火焰之符 Repel Rune of Flame
+    QAC    勇氣術 Valor
+    VOY    魔法加強術 Enchantment
+    AKC    驅除不死怪物 Repel Undead
+    ITJ    靜止之符 Rune of Freeze Time
+    ATO    解除靜止之符 Repel Rune of Freeze Time
 
-�i�I�k�����ƤW�������š����A�ҶO���k�O�I�Ƭ����ơ����C
+可施法的環數上限為等級／２，所費的法力點數為環數＊３。
 

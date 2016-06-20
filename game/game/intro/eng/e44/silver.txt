@@ -1,14 +1,14 @@
-�W�١G�Ȧ�u�]�i (Silver Ball�A�^�媩)
-²���GEPIC 1993�~�X�~���u�]�i�C���A�ѷs���N�z�i�f�C��ӹC���ĥ��ù�
-      �������ʦ��e���A���L�ثe���u�]�i�C���j�h�p���A�t�O�u�O�@�ǵe��
-      �P�y�D�W���]�p�Ӥw�A�õL�S�����B�C
-�O�@�G�C��K�X�A�}�ѽX�G
+﻿名稱：銀色彈珠檯 (Silver Ball，英文版)
+簡介：EPIC 1993年出品的彈珠檯遊戲，由新藝代理進口。整個遊戲採全螢幕
+      垂直捲動式畫面，不過目前的彈珠檯遊戲大多如此，差別只是一些畫面
+      與軌道上的設計而已，並無特殊之處。
+保護：顏色密碼，破解碼：
       SILVER.EXE
         3B 46 F4 74 19
         -- -- -- EB --
-�Ƶ��G���������\�઩�C
-�K�ޡG�b�C�������UEsc��A�{���|�ݧA�O���O�n���}�C���A�o�ɦA���U�G
+備註：本版為全功能版。
+密技：在遊戲中按下Esc鍵，程式會問你是不是要離開遊戲，這時再按下：
 
-1.B+N�G�̪ű��U�@���y�ӡA�C���@���N���@���A�i�H�L������C
-2.J+N�G�i�Τ�V��n���y�C
+1.B+N：憑空掉下一顆球來，每按一次就掉一顆，可以無限制的玩。
+2.J+N：可用方向鍵搖控球。
 

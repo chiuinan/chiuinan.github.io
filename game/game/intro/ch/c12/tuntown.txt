@@ -1,2073 +1,2073 @@
-�W�١G���ߪ��� (���媩)
-²���G�j�t1998�~�X�~�������t�C���A�H2D�e���e�{�A�Ĺζ��Y�ɤ覡�԰��C
-      �@���y�g�i�P�ʪ���ͪ��D���ּ֡A�����@��������M���A�v�⪯�s�P
-      �߸s��ܡA�i�Ӳv��ߪ���ܨӦۤj���|�����c���߮a�C��ӳ]�p�۷�
-      �s�o�A�Z������]�ĥά�o���զX�覡�ӥͲ��A�P�ǲΪ������t�j���A
-      �G�ƫh�ᬰ���ɥ禳�Фƻ��ȡA��O�@�ڬ۷��������C���C
-�O�@�G���СA��DosBox���ɡA���]�w�G
-        mount d <���ЩҦb�Ϻ�>:\ -t cdrom -usecd 0
-      �αN������Ч��N�����ɮס]��ƲV���y�^�A�A���������СA�Y�i�קK
-      �ϥι�ڥ���
-�w�ˡG�������A��TUNTOWN�ؿ��U��INT.EXE�ɡC
-�ק�G���C���s�ɫD�έ�ƭȡA���H�ק�A�i�Q��Game Master���j�M�O����
-      �ק�C
-�K�ޡG�b�԰�����ĤH����ѤU�@���ɡA��R��Ӱk���Գ��A�ϧڤ�ѤU�@�H�ɡA
-      �A��ѤU�������ĤH�����A�g��ȴN�|�o��ܦh�A�s���k�����P��]
-      �|�o��A�p���K�i�ֳt���ɽm�\���ŤF�C
-�𲤡G�]�@�̡Ч��ӧQ�A�C�m�׭q�W�ɡ^
+﻿名稱：阿貓阿狗 (中文版)
+簡介：大宇1998年出品的角色扮演遊戲，以2D畫面呈現，採團隊即時方式戰鬥。
+      劇情描寫可與動物交談的主角樂樂，為維護木桶鎮的和平，率領狗群與
+      貓群對抗，進而率領貓狗對抗來自大都會的邪惡野心家。整個設計相當
+      新穎，武器防具也採用研發／組合方式來生產，與傳統的角色扮演迴異，
+      故事則頗為溫馨亦有教化價值，算是一款相當不錯的遊戲。
+保護：光碟，用DosBox玩時，應設定：
+        mount d <光碟所在磁碟>:\ -t cdrom -usecd 0
+      或將兩片光碟均燒錄成檔案（資料混音軌），再模擬成光碟，即可避免
+      使用實際光碟
+安裝：執行光碟A的TUNTOWN目錄下的INT.EXE檔。
+修改：本遊戲存檔非用原數值，難以修改，可利用Game Master等搜尋記憶體
+      修改。
+密技：在戰鬥中把敵人打到剩下一隻時，按R鍵來逃離戰場，使我方剩下一人時，
+      再把剩下的那隻敵人殺掉，經驗值就會得到很多，連剛剛逃走的同伴也
+      會得到，如此便可快速提升練功等級了。
+攻略：（作者－杜勝利，青衫修訂增補）
 
-  ������������������������������������������������������������������
-  �x                              B                   C         �~�t
-  �x                    �z�w14�w�w�q�w�w�w�w�s�w15�w�w�q�w�w�w�s���x
-  �x �i ����� ���� �j  �x        �x        �x        �x      �x  �x
-  �x                    �u�w�w�w�w�q�w13�w�w�t        16    17��  �x
-  �x                    �x        �x        �x      �~�r�w�w��    �x
-  �x                    �u�w�w�w�w�q�w12�w�w�t      �x            �x
-  �x                    �x        �x        �x      �x            �x
-  �x                    �u�w�w�w�w�q�w11�w�w�t    �~��            �x
-  �x                    �x        �x        �x  �~��              �x
-  �x                �~9 �r�w�w�w�w�r�w10�w�w�r�w�t                �x
-  �x               7��          A               18                �x
-  �u�w�w5 ��      �x          �~��            �~��                �x
-  �x      �x      �u�w8       �x              �x      �~�wE       �x
-  �x      �u�w4 �w�t        �~1               �u�w�w�s20   �E     �x
-  �u�w�w6 ��      ��3       �x               19     �x     �L�E   �x
-  �x                ����  �~�t          �~�w�w�t    �x       �G   �x
-  �x                  ��2 ���x          �x�~�w�r��  �x       �G   �x
-  �x                        ����  �~21�w�q�t  D �u23�t       �G   �x
-  �x                          ���s��    �x���w�q��  �x       �E�E �x
-  �x                            ����    ���w�w�t    24         F  �x
-  �x                              ���w��      22    �x            �x
-  �x                                  ��25�w�w�q�w���x            �x
-  �x                                          �x  ����            �x
-  �x                       28               �~�r�w27              �x
-  �x                        ���w�w�w�w�w26�w��    ���w            �x
-  ������������������������������������������������������������������
-  �x 1�G��������   2�G���O��������   3�G�j�L��      4�G�г���     �x
-  �x 5�G�F������   6�G�C�󤽸�       7�G�J�|�n��    8�G�e��Ŧa   �x
-  �x 9�G�J�|�_��  10�G������        11�G�R����     12�G�M����     �x
-  �x13�G������    14�G���w�@��      15�G���w�G��   16�G���H������ �x
-  �x17�G��ë��    18�G�o�O��        19�G�o�O��     20�G�����     �x
-  �x21�G�ѷݸ�    22�G�w�w��        23�G���ָ�     24�G�ڤ���     �x
-  �x25�G����    26�G�]����        27�G������     28�G�]���s     �x
-  �x A�G����       B�G����Ǯ�       C�G�а�        D�G�����s��   �x
-  �x E�G�����     F�G����q                                      �x
-  ������������������������������������������������������������������
+  ╒═══════════════════════════════╕
+  │                              B                   C         ╭┤
+  │                    ┌─14──┼────┬─15──┼───┬╯│
+  │ 【 木桶鎮 略圖 】  │        │        │        │      │  │
+  │                    ├────┼─13──┤        16    17╯  │
+  │                    │        │        │      ╭┴──╯    │
+  │                    ├────┼─12──┤      │            │
+  │                    │        │        │      │            │
+  │                    ├────┼─11──┤    ╭╯            │
+  │                    │        │        │  ╭╯              │
+  │                ╭9 ┴────┴─10──┴─┤                │
+  │               7╯          A               18                │
+  ├──5 ╮      │          ╭╯            ╭╯                │
+  │      │      ├─8       │              │      ╭─E       │
+  │      ├─4 ─┤        ╭1               ├──┬20   ‧     │
+  ├──6 ╯      ╰3       │               19     │     ‥‧   │
+  │                ╰╮  ╭┤          ╭──┤    │       ：   │
+  │                  ╰2 ╯│          │╭─┴╮  │       ：   │
+  │                        ╰╮  ╭21─┼┤  D ├23┤       ：   │
+  │                          ╰┬╯    │╰─┼╯  │       ‧‧ │
+  │                            ╰╮    ╰──┤    24         F  │
+  │                              ╰─╮      22    │            │
+  │                                  ╰25──┼─╮│            │
+  │                                          │  ╰╯            │
+  │                       28               ╭┴─27              │
+  │                        ╰─────26─╯    ╰─            │
+  ╞═══════════════════════════════╡
+  │ 1：約翰的路   2：不是約翰的路   3：大兵路      4：田野路     │
+  │ 5：東部公路   6：青草公路       7：蛋糕南路    8：河邊空地   │
+  │ 9：蛋糕北路  10：釣魚路        11：愛神街     12：決鬥街     │
+  │13：哈哈街    14：早安一路      15：早安二路   16：偉人紀念路 │
+  │17：祁禱路    18：這是橋        19：這是路     20：金砂路     │
+  │21：老爺路    22：泡泡街        23：音樂路     24：夢之路     │
+  │25：圓圈路    26：魔王路        27：鬼哭路     28：魔王山     │
+  │ A：鬼屋       B：木桶學校       C：教堂        D：中央廣場   │
+  │ E：木桶港     F：不毛島                                      │
+  ╘═══════════════════════════════╛
 
-  �����ޢ�G��������������������������������������������������������
-  �x�ϡG�C�����b�C�ӳ������A�p�o�d�B��W�B�a���������a��A���i���x
-  �x    �@�Ǫ��~�A�ҥH�C��@�ӳ�����A�����|�B�j���A�������֪�����x
-  �x�СG�C�������ѤF�@�ء�ޢҢϲզX�]�����ϡ^�ζ}�o�\��]�����С^�x
-  �x    �A�o�i�H�}�o�X�\�h�j�j�����~�B�Z���Ψ��ơA�Ӧ��ǪF��ä��O�x
-  �x    �ζR�δM�_�i�o���A�ҥH���Φ��@�\��A��C�����i��O�����j���x
-  �x    �U�q���C                                                  �x
-  �x�ѡG�u�ޢҢϲզX�v�}�o�\��A��D�n�Ҽ{���]���A�b�󵥯šB�զX�Ңx
-  �x    �ݪ����~�귽�B�����γзN�I�ơF�ӳзN�I�ƪ���o�A�O�b�԰��Ӣx
-  �x    �Q��Y�i��o�A�ҥH�n�}�o�X�j�j�����~�A���i�o�h�h�m�\�Ӫ@�Ţx
-  �x    ���Ȩ��зN�I�ƤF�C                                        �x
-  �x�ҡG�C�����������D�u���ȤΤ�u���ȡA�Y�n���t�������C���A���Ǥ�x
-  �x    �u���ȥi�����h����I�I�H�U�𲤤����u�I�v�̡A�Y����u���ȡC�x
-  �x    �Ӥ�u���Ȫ��i��A�i�H�ɥh����A�i�������`�H�U���𲤨Ӷi��x
-  ������������������������������������������������������������������
+  ╒═ＰＳ：═══════════════════════════╕
+  │Ａ：遊戲中在每個場景中，如櫥櫃、樹上、地面等等的地方，都可找到│
+  │    一些物品，所以每到一個場景後，不妨四處搜索，必有不少的收獲│
+  │Ｂ：遊戲中提供了一種～ＰＤＡ組合（附表Ａ）及開發功能（附表Ｂ）│
+  │    ，這可以開發出許多強大的物品、武器及防備，而有些東西並不是│
+  │    用買或尋寶可得的，所以善用此一功能，對遊戲的進行是有莫大的│
+  │    助益的。                                                  │
+  │Ｃ：「ＰＤＡ組合」開發功能，其主要考慮的因素，在於等級、組合所│
+  │    需的物品資源、金錢及創意點數；而創意點數的獲得，是在戰鬥勝│
+  │    利後即可獲得，所以要開發出強大的物品，那可得多多練功來昇級│
+  │    及賺取創意點數了。                                        │
+  │Ｄ：遊戲中有分為主線任務及支線任務，若要儘速的完成遊戲，有些支│
+  │    線任務可不必去執行！！以下攻略中有「＠」者，即為支線任務。│
+  │    而支線任務的進行，可隨時去執行，可不必遵循以下的攻略來進行│
+  ╘═══════════════════════════════╛
 
-  �~��������������������������������
-  ��  ��   ���G                   ��
-  ����������������������������������
-    �̹H�F���~�A�ֲּש�S�^��o���g�d�U�F�\�\�h�h�ȱo�h���B�B�R����
-�ɦ^�Ъ��p����u������v�C
+  ╭═══════════════╮
+  ║  序   言：                   ║
+  ╰═══════════════╯
+    睽違了五年，樂樂終於又回到這曾經留下了許許多多值得懷念、且充滿兒
+時回憶的小鎮～「木桶鎮」。
 
-    ���A�j�^���������ּ֡A�Y�Pı�촺�����¡B�H�Ƥw�D�F�@�����Ӥ~�o
-�{�ߨ�S�O�h�C�~�訫�F�X�B���A�Y�ݨ��³��u�Ǧǡv���Q�߸s�ۭ�ۡC����
-�����A�ּ֧Y��W�e�f�ϡu�Ǧǡv�A�ýШD���ߤ��n�ˮ`�e�A���������ߵL�k
-���q�A�b�ߦѤj�u������ĥ�v���@�n�ܥO�U�A���߳��l�r�L�ӤF�C���դ�����
-�ּ֡A�u�n���R���b�]�C
+    但，甫回到木桶鎮的樂樂，即感覺到景物依舊、人事已非；一路走來才發
+現貓兒特別多。才剛走了幾步路，即看見麻雀「灰灰」正被貓群欺凌著。見此
+情景，樂樂即刻上前搭救「灰灰」，並請求眾貓不要傷害牠，但那知眾貓無法
+溝通，在貓老大「黃金戰艦」的一聲喝令下，眾貓竟追咬過來了。見勢不妙的
+樂樂，只好拼命的奔跑。
 
-    �N�b���զM��U�A����n�͡u���d�v�Y�ɥX�{�ӤƸѦM���A�׶��Q������
-�I�ҨӨ�F��D�W�C�H��Ө�F��D���Y�A�u���d�v�ѻ��F�o�X�~�u������v
-�ҵo�ͪ��Ʊ��C
+    就在情勢危急下，昔日好友「阿康」即時出現來化解危機，終順利的脫離
+險境來到了街道上。隨後來到了街道盡頭，「阿康」解說了這幾年「木桶鎮」
+所發生的事情。
 
-    �b�P�u���d�v��ĳ��A�M�w���դp���ӫO�áu������v�A�åH����������
-�a������a�A���ɼּ֤~�����������w�L�@�h�~�F�C
+    在與「阿康」商議後，決定重組小隊來保衛「木桶鎮」，並以約翰叔叔的
+家做為基地，此時樂樂才知約翰叔叔已過世多年了。
 
-    �Ө�����������a�]���Ρ^�A�b���~�J���U���������ɤѪ��p�ѨϡA���o
-�{�ҵL�\�F�Ӧ��h�h�~�����������A�]�������N���R�W���i���O���������j�A
-�~�]�ӽ�𤣪֤W�Ѱ�C�b�P���������@�}�H�٫�A�ּ֦V�����ɩж�����a�A
-�����]�Y�M�����F�A�ӡu���d�v�]�X�h��u���N�v�^�ӬۧU�]���ɦs���ɥ\��
-�}�ҡ^�C
+    來到約翰叔叔的家（鬼屋），在門外遇見勸約翰叔叔升天的小天使，但卻
+徒勞無功；而死去多年的約翰叔叔，因為鎮長將路命名為【不是約翰的路】，
+才因而賭氣不肯上天堂。在與約翰叔叔一陣寒喧後，樂樂向叔叔借房間當基地，
+約翰也欣然答應了，而「阿康」也出去找「阿吉」回來相助（此時存取檔功能
+開啟）。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M������������_��      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-�@�Ӱ��Τj�U�G�Ʋz��ơA�N���ơA������ơA������ơC
-�@�Ӱ��μp�СG���ԡA�ͤƭ�ơA�����ơA�q�O��ơA�Ʋz��ơC
-�G�Ӱ��Ψ��Y�G�Ʋz��ơA�����ơA�C�ơA�۷Q��ơC
-�G�Ӱ��ΥD�שСG���C
-�G�Ӱ��ΪשС]���^�G�N���ơA�֧��J�A�q�O��ơA������ơA�ɪŭ�ơA
-�Ʋz��ơA���ݭ�ơC
-�G�ӴZ�ҡG�K��l�A�s��A�Ψm�C
-�G�Ӱ��ΪשС]�k�^�G�����ơA�֧��J�A�ͤƭ�ơA�ɪŭ�ơA�۷Q��ơA
-�^�a�A�X����ơC
+  ╓┬─────────────┬╖
+  ║│  尋找約翰叔叔的寶藏      │║
+  ╙┴─────────────┴╜
+一樓鬼屋大廳：料理原料，冷氣原料，醫療原料，機器原料。
+一樓鬼屋廚房：辣椒，生化原料，熱能原料，電力原料，料理原料。
+二樓鬼屋走廊：料理原料，熱能原料，顏料，幻想原料。
+二樓鬼屋主臥房：布。
+二樓鬼屋臥房（左）：冷氣原料，皮夾克，電力原料，機器原料，時空原料，
+料理原料，金屬原料。
+二樓廁所：鐵刷子，酒精，肥皂。
+二樓鬼屋臥房（右）：熱能原料，皮夾克，生化原料，時空原料，幻想原料，
+繃帶，合成原料。
 
-    �b�ӤU�̥k��B�A�o�{�F�@�D�W�ꪺ���A�g���������i���~���ح���m�F
-�@�j�c�l�_�áA���L�w�g�ѰO�_�ͩ�b��B�F�C
+    在樓下最右邊處，發現了一道上鎖的門，經約翰叔叔告知才知裏面放置了
+一大箱子寶藏，但他已經忘記鑰匙放在何處了。
 
-    ���U�ӤU�@�f��A�b�ӱ�U�ݨ��F�@�T�e�A���������o�~�Q�_���e�P�_��
-����m�B�������s�A�ӵe�������H���N�O�Υ~���Ǫ���L�J���C��O�K���X��
-�~�A������Ǫ��J���U��F�@�餧��A���������y�ɤɰ_�F�@�L�j�J���A��
-�󶶧Q���b�j�J���W���F�ж��_�͡C
+    環顧樓下一番後，在樓梯下看見了一幅畫，約翰叔叔這才想起此畫與鑰匙
+的放置處有所關連，而畫中的景象不就是屋外門旁的兩尊雕像。於是便走出屋
+外，順手把兩旁的雕像各轉了一圈之後，水池中央頓時升起了一尊大雕像，終
+於順利的在大雕像上找到了房間鑰匙。
 
-���Τ��x�G�ˤl�C
+鬼屋中庭：竹子。
 
-    �^��Τ��}�Ҥ@�ӥk�����ж��A�o��@�c�������C���ɡA�u���d�v�P�u��
-�N�v�]�^�ӤF�A�T�H�����F����ĳ�A�M�w�H���骺�i����p���j���W�A�ӫO��
-�o�p���������C���N�t�d��s�}�o�A���d�t�d�P��������դu�@�A�ּ֫h�t�d
-�M���񪺤u�@�C
+    回到屋內開啟一樓右側的房間，得到一箱的金幣。此時，「阿康」與「阿
+吉」也回來了，三人瞬間達成協議，決定以昔日的【木桶小隊】之名，來保衛
+這小鎮的寧鎮。阿吉負責研究開發，阿康負責與鎮民的協調工作，樂樂則負責
+尋找伙伴的工作。
 
-�@�Ӱ��έܮw�G�ˤl�j�A�N���ơC
+一樓鬼屋倉庫：竹子槍，冷氣原料。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���W�䪯�����        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���H���Y�i��ۤv���u�@��A�ּ֤]���}��a�]���Ρ^���g�u���������v
-�A�Ө�F�u���O���������v�i�}�M�䪯����񪺤u��F�@�����ۨ��ۡA�J���F
-�����u�j�̡v�A�e�����@�N�[�J�A�ӥB���@�h�C�����Ѥj�u�y�v�v���u�@�C
+  ╓┬─────────────┬╖
+  ║│  到街上找狗當伙伴        │║
+  ╙┴─────────────┴╜
+    眾人分頭進行自己的工作後，樂樂也離開基地（鬼屋）路經「約翰的路」
+，來到了「不是約翰的路」展開尋找狗當伙伴的工伴；一路走著走著，遇見了
+狗伙伴「大米」，牠不但願意加入，而且志願去遊說狗老大「獵師」的工作。
 
-���������G�ɪŭ�ơA�_��A�ȡA�ͤƭ�ơA���ݭ�ơA������ơA��ǭ�ơA
-�_��C
-���O���������G����C
-�A���D�H���a�G�N���ơC
-�A���D�H���a�p�СG�۷Q��ơA�����ơA�ѯ��C
-�A���D�H���a�ж��]���^�G�ɪŭ�ơA�ȡA�X����ơC
-�A���D�H���a�m�����G�ͤƭ�ơA���ݭ�ơA�K�v�C
-�w�C�C���a�G���M�A��ֵ��A��y����j�C
-�w�C�C���שСG��ǭ�ơA�Ʋz��ơC
-�ު١G������ơA�ᶵ��A�ڽ��C
-�p�^�p�����a�G��y����j�A�����A�q�O��ơC
-�p�^���ж��G������ơA���ġA�ᶵ��A��u�C
-�p�����ж��G�Ʋz��ơC
+約翰的路：時空原料，稻草，紙，生化原料，金屬原料，機器原料，醫學原料，
+稻草。
+不是約翰的路：木材。
+農場主人的家：冷氣原料。
+農場主人的家廚房：幻想原料，熱能原料，麵粉。
+農場主人的家房間（左）：時空原料，紙，合成原料。
+農場主人的家置物間：生化原料，金屬原料，鐵釘。
+安婆婆的家：拳套，橡皮筋，改造玩具槍。
+安婆婆的臥房：醫學原料，料理原料。
+豬舍：機器原料，花項圈，蘿蔔。
+小琴小蘭的家：改造玩具槍，香蕉，電力原料。
+小琴的房間：機器原料，火藥，花項圈，毛線。
+小蘭的房間：料理原料。
 
-    �b�u�j�̡v���h����A�ּ��~�򩹫e���A�J���F���h�B�@�ǳf���n�^��a
-���u���N�v�A��O�K���u���N�v�@�_�N�f���h�^��a�C�^���a��A�u���N�v
-�i���L�o�{�F�ޢҢϤ��ȥi�d�\��ơA�ӥB�٥i�H�[�J�L�u�q�\��Ϊ��~�զX
-�\��A����T�H�N�i�H�ɳz�L�ޢҢϵL�u�q���p���F�C
+    在「大米」離去之後，樂樂繼續往前走，遇見了正搬運一些貨物要回基地
+的「阿吉」，於是便幫「阿吉」一起將貨物搬回基地。回到基地後，「阿吉」
+告知他發現了ＰＤＡ不僅可查閱資料，而且還可以加入無線電功能及物品組合
+功能，往後三人就可隨時透過ＰＤＡ無線電來聯絡了。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���W��j��            �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �V�u���N�v�D�O��A�ּ����}��a�Ө�u���O���������v�A�A������u�j
-�̡v�A���ѩ�u�j�̡v�ε��������C���U�A���Ѥj�u�y�v�v�ڵ��F�X�@���Y�A
-�L�`�U�u�n���ܡu�j�̡v�[�J����A�A�Q�䥦��k�F�C
+  ╓┬─────────────┬╖
+  ║│  到街上找大米            │║
+  ╙┴─────────────┴╜
+    向「阿吉」道別後，樂樂離開基地來到「不是約翰的路」，再次見到「大
+米」，但由於「大米」用詞不當的遊說下，狗老大「獵師」拒絕了合作關係，
+無奈下只好先邀「大米」加入隊伍，再想其它辦法了。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �a�j�̦^��a���[        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��[�J��������u�j�̡v�A�Q���ݬݰ�a���˦a�A��O�K�M�w���a�u�j
-�̡v�^��a�@��]�O�o���j�̸˳ơ^�C
+  ╓┬─────────────┬╖
+  ║│  帶大米回基地參觀        │║
+  ╙┴─────────────┴╜
+    初加入隊伍之中的「大米」，想先看看基地的樣地，於是便決定先帶「大
+米」回基地一趟（記得幫大米裝備）。
 
-    ��{���~���A�b�u���O���������v�M�u�����v����e���f�B�A�J���F�@
-�}�B�G�}�o��ߩj�f�A���ӵL�ƪ��A���������j�L���u�j�̡v�o���g�����V�G
-�j�f�s�ԡA�E�_�F�e�̪��Ԥ��A�԰��]�@Ĳ�Y�o�F�C
+    返程的途中，在「不是約翰的路」和「圓圈路」的交叉路口處，遇見了一
+咪、二咪這對貓姐妹，本來無事的，但那知那大嘴的「大米」發神經似的向二
+姐妹叫戰，激起了牠們的戰火，戰鬥也一觸即發了。
 
-    ���ѿ߫}��j�f��]�ԱѤ]�L�ҿס^�A�^�찭�Ϊ��f�ɡA�J�����b�P�³�
-�u�Ǧǡv�H�����ѨϡA���M�o��ֻּP�ߥ��[���ƫܤ��̸ѡA�����M����v�n
-��~�԰��Ҩ����ˡC
+    打敗貓咪兩姐妹後（戰敗也無所謂），回到鬼屋門口時，遇見正在與麻雀
+「灰灰」嘻戲的天使，雖然她對樂樂與貓打架的事很不諒解，但仍然為其治好
+剛才戰鬥所受的傷。
 
-    �^���a��P���H�|�X��A�U�H�U�۳��i�ۤw���u�@�i�סA�ӡu���N�v�S
-���ޢҢϼW�[�F�@�Ӷ}�o�\��A����Y�i�z�L�ޢҢϤξA��������Ӷi��Ͳ�
-�F�C
+    回到基地後與眾人會合後，各人各自報告自已的工作進度，而「阿吉」又
+替ＰＤＡ增加了一個開發功能，往後即可透過ＰＤＡ及適當的條件來進行生產
+了。
 
-    �U�H�A�צ^��F�ۤv���u�@�^���A�ּ֤]���A�t�_�M���񪺤u�@�F�C
+    各人再度回到了自己的工作崗位後，樂樂也須再負起尋找伙伴的工作了。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���W�~�����        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}��a��A�ּ֤S�Ө�F�u���O���������v���̥��ݮɡ]�u�~�i�����p
-�ߡB�p���m�m�\�^�A�J���F�u�~�������v�Ρu�g�Y�v�A�����N�۶Ҩe�̡A���S
-�Q�j�L���u�j�̡v�d�{�A�B�S�S��F�L�̦Ӥj���X��C�u�~�������v�Ρu�g�Y�v
-���Ѱk����A�ּ��~��V�e�ڶi�A�Ө�F�u�j�L���v�C
+  ╓┬─────────────┬╖
+  ║│  到街上繼續找伙伴        │║
+  ╙┴─────────────┴╜
+    離開基地後，樂樂又來到了「不是約翰的路」的最左端時（沿途可打打小
+貓、小狗練練功），遇見了「漢堡走路」及「土頭」，本有意招募牠們，但又
+被大嘴的「大米」搞砸，且又惹怒了他們而大打出手。「漢堡走路」及「土頭」
+落敗逃離後，樂樂繼續向前邁進，來到了「大兵路」。
 
-���N�a�p�ΡG�C�ơC
-���N�a�p���\�U�G���A�v���A���C
-���N�a�p�εe�ǡG�ۦǡA�C�ơC
-�ռӤp�ΡG�����C
-�ռӤp�έܮw���G�Ʋz��z�A�q�O��ơA���J�A������s��A���ġC
-�ռӡG�T�y�A�K���A�ˤl�C
-�Ѭ��椽�]�G���ġA�q�O��ơA�����C
-�Ѭ��檺�שСG�ϰv�C
-�Ѭ��椽�]�a���G�X����ơA�ȡA�氮�C
-�p�ڥ������a�G�J�U�C
-�p�ڥ������ж��G��y����j�A�氮�C
-�p�ڥ������ު١G�ѯ��A���ġC
-��⪺�p�ۡG�X����ơA�����ơA�ͤƭ�ơA���m�ġC
-�k���J���ж��Gī�G�A�N���ơA������ơC
-�ég�򪺩ж��G�ɪŭ�ơA�����A���ݭ�ơC
+藝術家小屋：顏料。
+藝術家小屋餐廳：布，洋蔥，布。
+藝術家小屋畫室：石灰，顏料。
+閣樓小屋：膠水。
+閣樓小屋倉庫間：料理原理，電力原料，雞蛋，國王的新衣，火藥。
+閣樓：汽球，鐵片，竹子。
+老約瑟公館：火藥，電力原料，膠水。
+老約瑟的臥房：圖釘。
+老約瑟公館地窖：合成原料，紙，餅乾。
+小歐尼爾的家：蛋榚。
+小歐尼爾的房間：改造玩具槍，餅乾。
+小歐尼爾的豬舍：麵粉，火藥。
+綠色的小窩：合成原料，熱能原料，生化原料，貓瀉藥。
+法蘭克的房間：蘋果，冷氣原料，機器原料。
+珍妮佛的房間：時空原料，牛奶，金屬原料。
 
-�b�u�j�L���v�W�J���u�j�̡v�f���һ����x�p�S�Ϊ��u�����֡v�A�g��f���o
-�������ĤG����u�լܡv��u�y�v�v����ɯ�O���Ҥ����A�ӱ��a��@�Ǫ���
-�}������ۦ�o�i���ơC
+在「大兵路」上遇見「大米」口中所說最膽小沒用的「香蕉皮」，經其口中得
+知狗中第二高手「白眉」對「獵師」的領導能力有所不滿，而欲帶領一些狗離
+開木桶鎮自行發展之事。
 
-�j�L���G�����A���J�C
-���S�ҩd�a�G�ѯ��A�^�a�C
-���S�ҩd�שСG���J�A��ǭ�ơC
-���S�ҩd�a�ռӡG���ԡA�ݼ֡A��u�C
+大兵路：香蕉，雞蛋。
+韓特夫妻家：麵粉，繃帶。
+韓特夫妻臥房：雞蛋，醫學原料。
+韓特夫妻家閣樓：辣椒，芭樂，毛線。
 
-    ����A�u�ۡu�j�L���v�~��e�i�A�Y�J���F�u�լܡv�A���u�լܡv���H��
-�֦���������O�ӹ�ܿ߸s�A��O�K�U�F�Ԯѭn�ݬݼּ֪���O�C���F�n���Q
-�����ⴤ��Ĺ�u�լܡv�A��O�ּ֫K�ǵۢޢҢϵL�u�q�P�u���N�v�p�����o��
-�U�C�g��Ӫ����G�A�u���N�v�n�u�ּ֡v���K���^�h���L�A�H��˫B�ʨӼW�[
-������O�C
+    之後，沿著「大兵路」繼續前進，即遇見了「白眉」，但「白眉」不信樂
+樂有足夠的能力來對抗貓群，於是便下了戰書要看看樂樂的實力。為了要有十
+足的把握打贏「白眉」，於是樂樂便藉著ＰＤＡ無線電與「阿吉」聯絡取得協
+助。經協商的結果，「阿吉」要「樂樂」找鐵絲回去給他，以改裝雨傘來增加
+攻擊能力。
           
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���K���^��a����N      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���F�M���K���A�ּ֥i�˳z�����F�C���b�����q���_���ɡA���}�Ө�
-�u���O���������v�ɡA�ݨ����Y�p�޺��b�@��k�Ī��᭱�A�n�_���X�ϤU�A
-�K�W�e�@�ݡA�~���k�ĦW�s�p�^�A�ín�ּ֦b�T�p�ɤ������u�j�L���v��C
-���p�ޡC�b�����p�^���ШD��A�K���t���u�j�L���v�F�C
+  ╓┬─────────────┬╖
+  ║│  拿鐵絲回基地找阿吉      │║
+  ╙┴─────────────┴╜
+    為了尋找鐵絲，樂樂可傷透腦筋了。正在不知從何找起之時，閒逛來到
+「不是約翰的路」時，看見兩頭小豬緊跟在一位女孩的後面，好奇心驅使下，
+便上前一問，才知女孩名叫小琴，並要樂樂在三小時內幫其到「大兵路」抓七
+隻小豬。在答應小琴的請求後，便火速往「大兵路」了。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I��j�L�����p�^���p��    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�j�L���v�K�i�ݨ��C�Y�p�ި�B�ö]�A��O�K�i�}�u���ަ�ʡv
-�]�u�n�a��p�ާY�i����^�C�����F�C�Y�p�ޫ�A�^��u���O���������v�浹
-�p�^�A�p�^���P�·N�A�K���F�K������§�C�b�o���K���åH�L�u�q�q���u���N�v
-��A�K���^��a�N�K���浹�u���N�v�C�L�Q���K����y�B�ʡA�ín�ּ֦b�@�p
-�ɫ�A�^�Ӯ��C
+  ╭┬─────────────┬╮
+  ││＠到大兵路為小琴捉小豬    ││
+  ╰┴─────────────┴╯
+    來到「大兵路」便可看見七頭小豬到處亂跑，於是便展開「捕豬行動」
+（只要靠近小豬即可捉到）。捉齊了七頭小豬後，回到「不是約翰的路」交給
+小琴，小琴為感謝意，便給了鐵絲當謝禮。在得到鐵絲並以無線電通知「阿吉」
+後，便趕回基地將鐵絲交給「阿吉」。他利用鐵絲改造雨傘，並要樂樂在一小
+時後再回來拿。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���e�a��e��            �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i�����N�a�p�Ρ]�u���O���������v�̥��誺�Τl�^���X�e�a�A�e�a�Y�|
-�ШD����M��@�T�L�w��X���e���A�o�~���L���O�I�c�K�X�æb�e�����C
+  ╭┬─────────────┬╮
+  ││＠幫畫家找畫像            ││
+  ╰┴─────────────┴╯
+    進到藝術家小屋（「不是約翰的路」最左方的屋子）拜訪畫家，畫家即會
+請求幫其尋找一幅他已賣出的畫像，這才知他的保險箱密碼藏在畫像內。
 
-    ���}���N�a�p�ΨӨ�u�j�L���v�A�i��u�Ѭ��椽�]�v�]�u�j�L���v�k�G
-�С^���a�����A�Y�i���e���çۤU�F�O�I�c�K�X�C�^��u���O���������v�A
-�i���N�a�p�αN�K�X�i�D�e�a�A�Y�i�o��10�I�зN�I�Ƥ�100���C
+    離開藝術家小屋來到「大兵路」，進到「老約瑟公館」（「大兵路」右二
+房）的地窖中，即可找到畫像並抄下了保險箱密碼。回到「不是約翰的路」，
+進藝術家小屋將密碼告訴畫家，即可得到10點創意點數及100金。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���k���J�ݤp�����ͤ�    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-��u��⪺�p�ۡv�Τ���u�k���J�v�A�L�мּ����L��u���O���������v��p
-�^�ݤp�����ͤ�C��u�p���p�^���Τl�v���p�^�A�o���p�����ͤ�C�A��
-�u�j�L���v��u�k���J�v�i���p�����ͤ�A�ç��@���u�k���J�v���C
+  ╭┬─────────────┬╮
+  ││＠幫法蘭克問小蘭的生日    ││
+  ╰┴─────────────┴╯
+到「綠色的小窩」屋內找「法蘭克」，他請樂樂幫他到「不是約翰的路」找小
+琴問小蘭的生日。到「小蘭小琴的屋子」找到小琴，得知小蘭的生日。再到
+「大兵路」找「法蘭克」告知小蘭的生日，並志願幫「法蘭克」找花。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���k���J�R��            �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u���O���������v�H���Q���V������᪺�ѮV�C�C�R�o������A�A�^��
-�u�j�L���v�N�����ᵹ�u�k���J�v�A�Y�i��o�Q�I�зN�I�ơC
+  ╭┬─────────────┬╮
+  ││＠幫法蘭克買花            ││
+  ╰┴─────────────┴╯
+    到「不是約翰的路」以五十元向賣海芋花的碧姬婆婆買得海芋花，再回到
+「大兵路」將海芋花給「法蘭克」，即可獲得十點創意點數。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�e���������j�L�����g�g  �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�Ѭ��椽�]�v�Τ���Ѭ������諸�]�k�u�g�g�v�A�o���o�Q�n�v����
-�]�p�䤣��g�g�A���h����H�ΦѬ����ͽ͡A�Y�i�b�u�Ѭ��椽�]�v�Τ����
-�F�^�A�ño���p���B�p�^���ܦh�v�����C��u���O���������v��u�p���v�Y�i
-�o�캵�_�_�����C
+  ╭┬─────────────┬╮
+  ││＠送布娃娃給大兵路的妮妮  ││
+  ╰┴─────────────┴╯
+    到「老約瑟公館」屋內找老約翰公爵的孫女「妮妮」，得知她想要洋娃娃
+（如找不到妮妮，那多跟路人或老約翰談談，即可在「老約瑟公館」屋內找到
+了），並得知小蘭、小琴有很多洋娃娃。到「不是約翰的路」找「小蘭」即可
+得到熊寶寶娃娃。
 
-    ��u�j�L���v�Ѭ������]�N�������浹�u�g�g�v�A�Y�i��o���������Ĥ��C
-�^�u���O���������v�N�������浹�u�g�g�v�@�Ƨi�D�u�p���v�A�Y�i��o���r
-���C
+    到「大兵路」老約翰公館將布娃娃交給「妮妮」，即可獲得阿摩尼亞藥水。
+回「不是約翰的路」將布娃娃交給「妮妮」一事告訴「小蘭」，即可獲得消毒
+水。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^��a�V���N���j�Ƴ�    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@�p�ɹL��A�^���a��u���N�v�A�K�i����j�ƫB�ʡF���F�s���Z���A
-���۫K�O��u�լܡv�D�ԤF�C
+  ╓┬─────────────┬╖
+  ║│  回基地向阿吉拿強化傘    │║
+  ╙┴─────────────┴╜
+    一小時過後，回到基地找「阿吉」，便可拿到強化雨傘；有了新的武器，
+接著便是找「白眉」挑戰了。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j�L����լܬD��      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}��a�Ө�u���O���������v�ɡA�J���F�u�~�������v�Ρu�g�Y�v�A��
-�G�Y���A�骺�å�A�����n��լܥ������q�L�e�̳o���C���g�O��U�ѱN���e
-�̡A���M���O���F�C
+  ╓┬─────────────┬╖
+  ║│  到大兵路找白眉挑戰      │║
+  ╙┴─────────────┴╜
+    離開基地來到「不是約翰的路」時，遇見了「漢堡走路」及「土頭」，此
+二頭不服輸的傢伙，竟說要找白眉必須先通過牠們這關。曾經是手下敗將的牠
+們，當然不是對手了。
 
-    �u�~�������v�Ρu�g�Y�v���Ѱk����A�ּ֥ߧY�H�L�u�q�p���u���N�v�A
-�i���j�O�ʪ��¤O�ýХL���u�j�̡v�]�p�Z���A�u���N�v�K�n�ڭ̥��^�h�A��
-�s�ݬݡC
+    「漢堡走路」及「土頭」落敗逃走後，樂樂立即以無線電聯絡「阿吉」，
+告知強力傘的威力並請他幫「大米」設計武器，「阿吉」便要我們先回去再研
+究看看。
 
-    �^���a��u���N�v�A���u���N�v�ȮɷQ������u�j�̡v�]�p����s�Z���A
-���o���u�j�̡v�o���F�@�ۡu�j�̺u�J�v�����ޡC���۫K��u�j�L���v��u��
-�ܡv�D�ԤF�C�u�լܡv�Աѫ�A�]�L�N�[�J������A�ҥH�u�n�A�~��M���
-��F�C
+    回到基地找「阿吉」，但「阿吉」暫時想不到替「大米」設計什麼新武器，
+但卻為「大米」發明了一招「大米滾蛋」的絕技。接著便到「大兵路」找「白
+眉」挑戰了。「白眉」戰敗後，也無意加入隊伍之中，所以只好再繼續尋找伙
+伴了。
 
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���W�~�����        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �u�ۡu�j�L���v�~�򩹫e���A�Ө�F�u�г����v�C
+  ╓┬─────────────┬╖
+  ║│  到街上繼續找伙伴        │║
+  ╙┴─────────────┴╜
+    沿著「大兵路」繼續往前走，來到了「田野路」。
     
-�Ⱦ��s�j�a�x�G�氮�C
-�L�o���a�G�K�����C
-�L�o���a�ܮw���G�߭��A���ġA���K�C
-�L�o���a�ռӡG�����A�߭��A���ġA�T�o�A�]���C
-�г����G�ɽu�A������ơA��ǭ�ơA����A�߭��A�_��H�A��x2�A�ˤl�A
-�ݼ֡A����A�_��H�C
-�q�����a�G�۴֡A�����A�X����סC
-�q�����שСG���L�R�A�T�y�A���J�A�q���A�ȡC
-�q�����a�m�����G�ȡA���ġA�Ψm�A�ѯ��A����A���ġA�����A�T�y�A������
-ۣ�C
-�n�ʶ�ު١G�ۦǡA�T�y�A���ġA�T�o�C
-�n�ʳժ��]�G�K���A�K�v�A�o���C
-�n�ʳժ��]�ж��]�k�^�G�n�ʡA�B���y�C
-�n�ʳժ��]�ж��]���^�G�n�ʡA�ȡC
-�n�ʳժ��]�Z�ҡG�۷Q��ơA�X����ơA���ݭ�ơA�ɪŭ�ơC
+亞歷山大家庭：餅乾。
+林得的家：鐵指環。
+林得的家倉庫間：貓食，火藥，磁鐵。
+林得的家閣樓：膠水，貓食，火藥，汽油，鉛筆。
+田野路：銅線，機器原料，醫學原料，木材，貓食，稻草人，樹葉x2，竹子，
+芭樂，野花，稻草人。
+通哥的家：石棉，膠水，合成樹脂。
+通哥的臥房：維他命，汽球，雞蛋，電池，紙。
+通哥的家置物間：紙，火藥，肥皂，麵粉，木材，火藥，香蕉，汽球，蛤蟆菌
+菇。
+南瓜園豬舍：石灰，汽球，火藥，汽油。
+南瓜博物館：鐵罐，鐵釘，油漆。
+南瓜博物館房間（右）：南瓜，冰水球。
+南瓜博物館房間（左）：南瓜，紙。
+南瓜博物館廁所：幻想原料，合成原料，金屬原料，時空原料。
 
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I��F���������^�p���h�h  �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i�u�n�ʳժ��]�v��u�L�}�v�A��мּ������u�F�������v��^�p���h
-�h�C
+  ╭┬─────────────┬╮
+  ││＠到東部公路捉回小雞多多  ││
+  ╰┴─────────────┴╯
+    進「南瓜博物館」找「黛咪」，其請樂樂幫其到「東部公路」找回小雞多
+多。
     
-    �X�u�n�ʳժ��]�v�A��������u�F�������v�A�i�ݨ��@���p����ۤ@�s�n
-�l�b�]�A���p���N�O�h�h�F�]�p�䤣��A���b����U�Y�i���^�A�N�e�����A
-�^�u�n�ʳժ��]�v�浹�u�L�}�v�A�Y�i�o��u�������ȡv�Ĥ��C
-
-��o���a�Gī�G�A�p�U�N�u�AĬ�����C
-��o���a�p�СG�氮�A�o���A�㥽�C
-�ު١G�ڽ��A�ˤl�C
-�F�������G��ֵ��A�X����ơA����A��ǭ�ơA�ͤƭ�ơA�K���C
-�~�˪��a�G���J�C
-�~�˪��שСG�^�a�A�s��C
-�~�˪��a�ռӡG�q���A�K��x2�C
-�t���ѤH���a�G�۷Q��ơA�����C
-�t���ѤH���a�ж��]���^�G�B���y�A�K���C
-�t���ѤH���a�ж��]���^�G���s���A���ġA���ơA�C�ơC
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I��s�i�a�M��ù�R���q�Ʀr�x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �������}�u�г����v�Ө�F�u�C�󤽸��v�A�i�u�s�i�a�v��u��ù�R�v��
-�q�Ʀr�C���]�p�ǹC�����A�������N��F�^�A�q��F�N�i�o��@�~���r���C
-
-�s�i�a�G�J�Ԭ��u�A�ۦǡC
-�s�i���שСG�ȡAī�G�A�B���y�C
-��ù�R���שСG�r�᯻�A�ϰv�A�u®�C
-�C�󤽸��]�k�^�G�𸭡A������ۣ�A���J�A�K���C
-
-    �X�u�s�i�a�v�B�~��u�ۡu�C�󤽸��v���A�J���F���ǳƩM�u�լܡv���}
-�p�����u�Υ֡v�B�u�L�͡v�B�u���l�v�Ρu�ԴA�v�A�b�@�����X�U�K���F�_
-�ӡA�������u�L�͡v���r������D�`�F�`�A�S��U�u�ּ֡v�Y�ѤU�}�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M����r�����u          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���ѫ᪺�u�ּ֡v���W�H�L�u�q�p���u���N�v��ĳ�A�L��ĳ�M����r����
-�u�Ӵ��u�L�͡v�~�~���]�\�N��Ĺ�A��O�K�}�l�M����r�����u����ơG����
-���Ȥή��r���F�C�q��u������o��A�Q�΢ޢҢϥ\��N��զX�����r�����u�A
-�A���h��u�L�͡v�M�ԡA�@�����r�����u�Y�N�u�L�͡v�\���C
-
-�C�󤽸��]���^�G�K�v�A�𸭡A�Ʋz��ơC
-�˺��h�a�G�K�����A�p�U�N�u�A�K���C
-�˺��h�a�ж��]���^�G�K���A����A�ȡC
-�˺��h�a�ж��]�k�^�G���L�R�A��u�C
-�x�ëǡG�_��A���ġA�ѯ��A�v���C
-�L�W�ѯR�a�G�q�O��ơA�����ơA�N���ơA�ͤƭ�ơC
-�L�W�ѯR�a�p�СG�㥽�A�߭��A�J�ԯ��A���ԡA�Ψm�A�ѯ��C
-
-    �N�u�L�͡v���ѫ�A�K���^�u�г����v�A���u�J�|�n���v�e�i�A�J���F
-�u�T�C�ȡv�Ρu�����֡v�A�q�e�̤f���o���u�~�������v�����X�F�@�Ǫ��b
-�u�F�������v�ǳƷm�H�������A��O�K���t���e���u�F�������v����u�~����
-���v�����D�@��A�ӡu�T�C�ȡv�]�[�J�F��ʦ�C�C
-
-�����դp�ΡG��u�A�Ʋz��ơC
-�����ժשСG���ԡC
-�������\�U�G�J�Ԭ��u�C
-�J�|�n���G������ۣ�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��F����������~������  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���^���g�u�г����v�Ө�F�u�F�������v�A�G�u����u�~�������v���b��
-��u���v�߷ǳƷm�ܤH���������A���U��ť���u�~�������v�A�ݨӥu�n�H�Z�O
-�ӭ��A�F�C
-
-    ���ѡu�~�������v��A�u�T�C�ȡv�Y�����^�h�V�u�y�v�v���i���ơA��
-�u�ּ֡v�h�t�d��u�լܡv�Ӫ���u�~�������v���èӡC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��լܪ���~���������èӢx��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}�u�F�������v�A�g�u�г����v�Ө�F�u�C�󤽸��v�A�ש���F�u��
-�ܡv�C�u�լܡv�b��x�u�~�������v���b�u�j�L���v�èӤ��ƫ�A�ߧY���b��
-�h�A�u�ּ֡v�]�H���h�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j�L���Ϻ~������      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�j�L���v��A�u���u�g�Y�v�w�Q�Ӿ��������H���ˤF�A�ӡu�~����
-���v������w�k���ԤԤF�C��O�u�ּ֡v�K�Ϫv�˭����u�g�Y�v�A�u�g�Y�v�P
-�E���l�A�E�ַN���[�J�u����p���v��C�A�ӡu�j�̡v��ĳ���a�u�g�Y�v�^��
-�a���[�@�f�C
-
-    �a�u�g�Y�v���[����a��A�u�ּ֡v�S�o�A�~����񪺤u�@�F�C�@���X
-��a�Y�J���u�D���v�B�u�G���v�A�q�e�̤f���o�����Ѥj�u�y�v�v�b�u�J�|�n
-���v���J�u�ּ֡v�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��J�|�n�������Ѥj�y�v  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b����u�y�v�v���q�ܫ�A�K���W�����u�J�|�n���v�|���u�y�v�v�C�q
-�u�y�v�f���o���e�̥���@�|��J�p���_���ܦ^���ݩ󪯪��a�L�A�ín�u�ּ֡v
-�������C�b�����u�y�v�v���ШD��A�u�y�v�v�]����e���u�J�|�_���v�A��
-�u�T�C�ȡv�]�[�J�u�ּ֡v��������C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��J�|�_���ѥ[�}�v�j�|  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �u�ۡu�J�|�n���v����F�u�J�|�_���v�A�ѥ[�F�u�y�v�v�|�쪺�}�v�j�|
-��A�K�ǳƶ}�l�i�}�ܦ^�_�Ϧa�L���ԤF�C
-
-�J�|�_���G���A�K���A�������C
-�������p�ΡG���ġA�Ψm�C
-�������a�שСG�����ơC
-�j���o�a�ު١G���A�K�v�C
-�j���o���a�G�C�ơC
-�j���o�a�ܮw�G�B���y�C
-�j���o���שСG�������C
-�~��|�G���Ĥ��A�^�a�A�ͤƭ�ơC
-�~��|�ް�G�ѯ��C
-�P����v�a�G������ơA�ɪŭ�ơC
-�P����v�שСG�������C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��U����Ĺ�_�Ϥj��      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �}�v�j�|������A�u�ۡu�J�|�_���v����F�u�������v�A�ݨ��u���l�v
-���b�P�߹�ԡA��O�K�W�e�ۧU�A���h�u�@�}�v�B�u�G�}�v�C���ۦA�~��V�e
-��A�ݨ��߷R�A�L�֪��u�D���v�B�u�G���v�A�ݨӨe�̹惡�_�Ϥj�Ԧ��G�z��
-�b�G�C
-
-�������]���^�G��ֵ��A�ˤl�A����Aī�G�A�u®�A����A�K���A�E�Y�A�K���A
-�N���ơC
-�l���G�����ơC
-�s�a�G�ͤƭ�ơC
-���v�T�����q�G�ɪŭ�ơC
-���v�T�����q�G�ӡG�X����ơA�����q���C
-���v�T�����q�T�ӡG�X����ơA���ݭ�ơC
-���v�T���J�١G�ۦǡA�۷Q��ơC
-���v�T���J�٪שСG���C
-
-    ���ۦA���W����u�R����v�A�ݨ����b�W�Ԥ����u�����֡v�A�K�W�e�ۧU
-���h���s�A�ñq�u�����֡v�f���o���u�y�v�v���b�u������v�Q���C��O�K
-���W�@�����g�u�M����v�A�Ө�F�u������v�C
-
-�R����Gī�G�A�B���y�A�K���A�r�᯻�A�ͤƭ�ơA�{��j�A�K�v�A���ġA��
-���ơA�J�Ԭ��u�A���s���C
-����ѫ��G�o���C
-�ѩ�����a�G�X����ơC
-�ѩ�����a���Y�G�q�O��ơA�r�᯻�C
-�ѩ�����a�שСG������ơA���ġC
-�ѩ�����a�p�СG��ǭ�ơC
-�e�R�ΡG�۷Q��ơA�^�a�C
-�귽��խܮw�G�N���ơA������ۣ�C
-�M����G�N�C�A���A�q�O��ơA�C�ơA�J�ԯ��A��u�A�T�y�A�ڽ��A������
-ۣ�A�����C
-�c���G�㥽�C
-�c�����Y�G��ǭ�ơC
-�c���שС]���^�G���D�A���ݭ�ơC
-�c���שС]�k�^�G���ԡA�֭��C
-���f�S�̪��a�G�X����ơA�Ʋz��ơC
-���f�S�̪��a�p�СG�v���A�q���C
-���f�S�̪��a���Y�G�ȡA�T�o�C
-���f�S�̪��a�שС]���^�G�𸭡A������ơC
-���f�S�̪��a�שС]�k�^�G�۷Q��ơA�]���C
-�֤M�i�T���a�G�۴֡A�ɪŭ�ơC
-�֤M�i�T���a�p�СG�_��A�ͤƭ�ơC
-�֤M�i�T���a�שСG�ɽu�A�߭��C
-�֤M�i�T���a���U�G���K�C
-�֤M�i�T���a�m�����G���L�R�C
-
-    ��F�u������v�A�o���u�y�v�v�H�@�����O���h�F�߸s�A�ñq�u�y�v�v�f
-���o���߸s�I�ᦳ�ӥs�u�ߤ��v���å�b��ɨe�̡A�o�~�|�Ͽ߸s����O�ܱj�C
-
-    ���U�ӡA�u�y�v�v�t�d�^�Y�۶Ҩ䥦�����A�ӡu�ּ֡v�h�~��t�d�d����
-�u�@�C
-
-������G�N�C�A���Y���u�A�ˤl�A�X����סA���D�A�X����סA�����~�A�Ʋz
-��ơA�r�᯻�A�����^�a�A�s��A���ġAī�G�C
-��������a�G�K���C
-��������a�שС]���^�G���ݭ�ơC
-��������a�שС]�k�^�G����j�A����C
-��������G�Ʋz��ơC
-��������줽�ǡG�ȡA�i�֡C
-��������`�g�z�ǡG�۷Q��ơC
-�n�Y�\�U�G�J�Ԭ��u�A�Ʋz��ơC
-�귽��դ��ߡG��ǭ�ơA���Y���u�C
-�\�U�p�v���a�j�U�G�u®�C
-�\�U�p�v���a�p�СG�E�Y�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�P���J�������x��        �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�u������v���W�P���J�]���Y�v����^�͸ܡA�ѥ[�L�������x���A��G
-�ӵ��׳��^���u�n�ʡv�A�Y�i��o�����}�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�P�N�̪����g��          �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �A�P�u������v���W���u�N�̡v�]�����診��^�͸ܡA�P�L�����g�áA�M
-����_�Ӫ��p�ġ]�@���T��^�C
-
-    �u�p����v���b�u�M����v�P�u������v��|�B����U�F�u���J�v���b
-�u������v�P�u���w���v��|�B���\�U�Ǿ�U�F�u�N�̡v���b�u������v�̥�
-�䪺��U�C����T���A�A�P�u�N�̡v�͸ܡA�Y�i��o����ī�G�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�R�~�����N��            �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �A���P�u�N�̡v�͸ܡA�L�|�n�D�A�ХL�Y�~���F��u������v�P�u���w���v
-��|�B���n�Y�\�U�H�@�ʤ��R�o�S�s�~�����\�A�A�����u�N�̡v�A�Y�i�o���p
-�����������A�i�b�U�Ȩ��I�ɡA���\�U��L���������C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�M����������k�઺�٫�  �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i�u�n�Y�\�U�v��u�N�̡v�������]���������ҤH�^���������A�o������
-�������a���k�઺�٫��A�ӱ����Ա��A�i����������Խ͡C
-
-    ���۶i��u��������v����������A���U����M��L�L�w���٫������ȡF
-�A���W��u�N�̡v�]�p�G�O�ߤW�F�A�N������a�Y�i���^�A�o��@�T�٫��A
-�ño���t�@�T�٫����b�\�U�p�СC�^�����N�٫��浹�����A�o�좴����������C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�M��L�L�w������٫�    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �P��������d�x���u�L�L�w�v�͸ܡ]�p�G�L�U�Z�F�A�N����a���Y�i���^�A
-�o�|�ЧA���o�M��t�@�T����٫��C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���\�U�p�v�����ǿ�      �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�n�Y�\�U�v���p�С]�\�U�b���W�~�|�}�ҡ^��p�v�A�o���������ۧ�
-�����ǿ߷|�b�U�Ȩ��I���X�{�A�ýШD���L�����ǿߡC
-
-    ��F�U�Ȩ��I���ɡA�A�i�\�U�Y�i�ݨ��ǿߡA�N�e�~����A�o��@�T����
-�٫��A�ûP�p�v�͸ܡA�o�좲����������C�A�N����٫����h���u�L�L�w�v�A
-�o�좲����������C
-
-    ���ۡA�~�򩹤W����F�u���w�@���v�A�Y�ݨ����b�O�Կ߸s���u����v�A
-��O�K�W�e�ۧU���h�߸s�A���u����v���G�ä��ⱡ�C�~�򩹥k����u���w�@
-���v�P�u���w�G���v����|�B�A�J���F�u��j�v�A�@�f��ͫ�A���ɥi�ݨ���
-�Ѥj�u������ĥ�v�w�ߩ�@�ǡC
-
-    ���Q������ߦѤj�ӱ����Ӿԧ��A�������u������ĥ�v��ݵ�ʡu��j�v�A
-�Ϩ�ϫq�����U�߸s�F�C�@�}�E�ԱN�u��j�v���ѫ�A�~��V�e�Ө�F�u���w
-�G���v�C
-
-���w�@���G����A�r�᯻�A���ݭ�ơA�K�v�A��ֵ��A����j�A�K���A�u®�A
-������ۣ�A���L�R�A����C
-�ԯZ���a�G�������C
-�ԯZ���a�p�СGĬ�����A���ġC
-�ԯZ���a�שСG�q���A���C
-����ЬӤ��a�G����A�J�ԯ��C
-����ЬӤ��a�שСG�����ơA����C
-����ЬӤ��a�a���G�^�a�A�ȡC
-�ǵL�P�ѩ��G�q�O��ơA���C
-�ǵL�P�ѩ��שСG�����A�ѯ��C
-���v�G���A�q�O��ơC
-���v�p�СG�Ψm�A�����C
-���v�שСG�T�y�A�ͤƭ�ơC
-�Цa���ưȩҡG�]���A�q���A�𸭡C
-�u�ڪ��a�G�㥽�A�K���A���D�C
-�u�ڤ����שСG�ۦǡA�C�ơC
-�u�ڪ��a���Y�G�ɪŭ�ơC
-�u�ڪ��שСG�_��C
-�u�ڤ��˪��ѩСG�������C
-�u�ڪ��a�p�СG�B���y�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���˿ߦѤj������ĥ      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@��u���w�G���v�Y�f�W�F�u������ĥ�v�A���ɡu�y�v�v�]�e�ӧU�}�F�@
-�}�E�ԫ�A�u������ĥ�v���ѧY�Ȥ��j�N�A���_�Ϥj�Ԫ��s�w��o�������ӧQ
-�F�C
-
-    ���_�a�L��A�u�y�v�v�b�C�Ӹ��f���w�m�F�u�áA�H����߸s���iŧ�A��
-�u�g�Y�v�]�e���u�������v�q���u����v�}�u�F�u�T�C�ȡv�h�e���u�����v
-�䴩�u�έ��v�B�u�G���v�}�u�F�ܩ�u�ּ֡v�P�u�j�̡v�h�t�d�h�U�A�u�լܡv
-���^�����}��C
-
-���w�G���]���^�G�q�O��ơA�𸭡A�q�O��ơA�^�a�A�v���A���ġC
-�s�a�������a�G�����~�C
-�s�a�������a�ռӡG�T�o�C
-�s�a�������a���U�G�Ʋz��ơA�ڽ��C
-�s�a�������a�שС]���^�G�K�v�A�K���A�������C
-�s�a�������a�שС]�k�^�G����A�E�Y�C
-�K���s�a�G�����~�A�����C
-����ǳN���c�G�N�ѡA���D�A���ԡC
-�ܮw�����a�G�X����ơA��u�C
-�ܮw�����a�שСG�߭��C
-�ܮw�����a�G�J�Ԭ��u�A�X����סC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���A�լܭ��^�����}��    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���ۡA�@�����^����u�J�|�_���v�ɡA�A�J���u�g�Y�v�A��S�^��F����
-����C�C�A�@������u�г����v�ɡA�J���u���d�v�P�n�ʺ޲z���u�q���v�A
-�u�q���v���ܻ��n�ʶ餺�ѹ����A��O�K���u�g�Y�v���U�u�q���v�h�����n
-�ʶ骺�ѹ��A�ӡu���d�v�b�o�����s��o�_�Ϥj�ԳӧQ��A�]�[�J�����C�A
-�@�P�M��u�լܡv�C
-
-    �A�~�򩹦^����u�j�L���v�J���u���l�v�A�q��f���o���u�լܡv����
-�����s�b�u�e��Ŧa�v�A��O�K���t���g�u�J�|�n���v�Ө�F�u�e��Ŧa�v�A
-�ק��u�լܡv�C���u�լܡv��󭫪𪯪��}��@�ơA���ܻݭn�P�����Ӷq�@
-�U�~�వ���СA��O�u�ּ֡v�K�M�w�^�h��u�y�v�v�A���J�u�լܡv�����СC
-
-�e��Ŧa�G�N���ơA�p�U�N�u�A�r�᯻�A�ͤƭ�ơA�氮�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�����R��ո߰ݤj���o    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�J�|�n���v�P�u���R��աv��ͦh���A����ܻ��u�J�|�_���v���u�j
-���o�v�ɱ`���a�o�C�A��u�J�|�_���v���u�j���o�a�v�ݡu�j���o�A�o�~����
-�O�u���R��աv���骺�k�͡A���u���R��աv���ä߯f�ӭ��A�ӾɭP�믫��i
-�����A�ݨӦ��ơu�ּ֡v�O�����W���F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^�h���y�v���J�լܪ����Тx��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@������Ө�u�J�|�_���v�ɡA�Y���u�y�v�v�M���������b���A��ӿ߸s
-���᪺�¤��u�ߤ��v�w�g�X�{�F�C
-
-    �����P�u�y�v�v��ĳ���ɡA�u�ߤ��v���Ӫ��Ϫ̡u�Ԫ̿ߡv�e�ӧi����
-�u�ߤ��v�w�b�u�������v���J�F�C�ʫ檺�u���r�s�v�@ť�Y�ĤF�L�h�A�ݨө�
-���o�O�ӳ����A�]�n�e���@���F�C
-
-    �Ө�u�������v�ɡA�Y�J�W�F�u�ߤ��v�A�ӡu���r�s�v�]�Q��Ү��F�C��
-�����u�ߤ��v�ݲ����Ө�ɡA�ϥοE�N�k�N�����ަܫ��A�ǳƨӭӳv�@���}�A
-�u�ּ֡v�]�X���N�u���r�s�v�ϥX�A�ýбo�u���r�s�v�[�J�����C�A����
-�u�լܡv�]�v�����e�ӬۧU�A�������H�K�D�F���L�̡A�@�ɵL�kť�q�u�ּ֡v
-�������A�]�O�@�ѫl�����e�ĤF�L�h�A�ݨӱo�[��}�B��W�~��F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���ߤ��å��˥L        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �u�ۡu�������v�@�����A�Y�J�W�F���ʤ��諸�u�~�������v�S�b����m�H
-���������D�N�A���b��u�~�������v��H�j�N���ڡA�@�s�߸s�X�{�d���A�N��
-���ѫ�A�o���i�b�u���H�������v���u�ߤ��v�C
-
-�������]�k�^�G�q�O��ơA�氮�AĬ�����A�������A������
-���v�T���J�١G��ǭ�ơA�������
-���v�T���J�٪שСG�ѥ]
-���v�T���J�ټp�СG�Ʋz���
-
-    �u�u�������v�@�����k����F�u���H�������v�A�ݨ����W���G�ӷ|�ʪ��c
-�l�A���}�@�ݤ~���O�u�έ��v�B�u�G���v�C���ɤS�X�{�@�s�ߡA�N�e�̥��ѫ�A
-�u�έ��v�B�u�G���v�]�ۻ{�O���x�p�����A�ӭn�~����b�c�l�ءA�u�O�ѵ��e
-�̤F�C
-
-���H�������G�����q���A����j�A��ֵ��A�K���A����A�K���A���ԡA�u®�C
-�o�o�ѯR���a�G������ơA�ѯ��C
-�o�o�ѯR���a�שС]���^�G�p�U�N�u�A�E�Y�C
-�o�o�ѯR���a�שС]�k�^�G��ǭ�ơA�K�v�C
-����դh�a�G�ͤƭ�ơA���Ĥ��C
-����դh�a�שС]�k�^�G�Ʋz��ơC
-����դh�a�שС]���^�G���K�C
-���v�G����A�۷Q��ơC
-���v�p�СG�^�a�C
-���v�שСG�ɽu�C
-���㩱�G�����C
-�o�o���ĩ��G�X����ơC
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�����R�L���ݳǦ褧��    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i��u���H�������v�̥k�䪺���ĩ��⩱���u���R�L���v�A��ШD���o��
-�u�@�ϥ@�ɨ�|�v�ݡu�Ǧ�v���ơF�A����ĩ����䪺�u�@�ϥ@�ɨ�|�v�ݲM
-��u�u���R�v�A�o���u�Ǧ�v��t�@��a�U�ԡA�ܤ��U�������F�C�N��������
-�Ʀ^�h�i�D�u���R�L���v�a�C
-
-    ���۩��U����F�u��ë���v�A�ݨ��u�լܡv���P�u�ߤ��v��ԡA��O�K��
-�t�W�e�U�}�A���u�ߤ��v���դS�����Ȩ��F�A�ѤU�@�Ǥp�����ԡC�N�@�s�p��
-���ѫ�A�u�լܡv���O�@�����ʤl�A�S��W���l�u�ߤ��v�h�F�C
-
-��ë���G���ġA�۴�x2�A������ۣ�A�C�ơA���D�A�K���A��u�A�����A�s��A
-���A���K�A�T�y�A�J�ԯ��A���D�A�ڽ��A�K���D�N�C�A���ġA������ۣ�C
-���S�f���a�GĬ�����A�ۦǡC
-���S�f���a�p�СG�����ơA�Ʋz��ơC
-���S�f���a�שСG�N���ơA������ơC
-���v�]���^�G�ɪŭ�ơC
-���v�שС]���^�G�ѥ]�A�n�ʡC
-���v�שС]���^�G���Y���u�A�������C
-�ܮw�]���^�G�K���A�q�O��ơC
-���v�]�k�^�G�Ψm�A���C
-���v�Z�ҡG���A�X����ơC
-���v�שСG�B���y�A�s��C
-�ܮw�]�k�^�G���ġC
-�����G�������C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�������B��w��ù���ݰQ����������]�x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i��u���S�f���a�v��Ѥj�u�����B�v�A�����u�w��ù���v�ݰQ������
-����]�F�A��j�����v����u�w��ù���v�]�p�䤣��A�i�찶�H���������^�A
-�ݩ���Q����������]��A�i�o�зN�I�ƤQ�I�C
-
-    ����A�u�ۡu��ë���v���W����F�u���w�G���v�J���F�u����v�A���Q��
-�e�a���M��u�ߤ��v�A���]�@�����X�ӵo�;Ԥ��C
-
-    �u����v�������h��A�u�ּ֡v�~�򩹫e���A�J���Q�u�ߤ��v���Ѫ��u��
-���֡v�Ρu���l�v�A�o���u�ߤ��v���b�u���H�������v�C���ɤS�X�{�߸s�d
-���A�N�e�̥��]��A�K���t�������u���H�������v�C
-
-���w�G���]�k�^�G�K���A�T�o�A�ۦǡA�N���ơA��ֵ��C
-���̨ưȩҡG�۷Q��ơA�֭��C
-���̨ưȩҪשСG�۷Q��ơA�s��C
-���i�a�G���A�o���C
-���i�a�שСG�۴֡A�v���C
-���i�a�p�СG�N�C�A�T�o�C
-�귽��խܮw�G��ǭ�ơA�n�ʡC
-�z�e�|�G�ɪŭ�ơA�X����סA�Ψm�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �O�ԡu�ߤ��v            �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u���H�������v�ɡA�Y����欰�޲����u�ߤ��v�D��Wĵ���L�ߡA��
-�L�̨��O�u�ߤ��v�����A�@�O�n�ʬ��N���Wĵ���F���F�C���ɡu�y�v�v�]
-�Ө�P�u�ּ֡v�֪ӡA�@�P�O�ԡu�ߤ��v�C
-
-    �@���E�ԫ�A�ױN�u�ߤ��v���ѤF�A�ϱo�_�Ϥj����o�������ӧQ�A�_��
-�S�A�צ^�쪯���դO�d��C�Ӭ��F�i��W�U�A�M�w�P�u�ߤ��v�e�M�H�u�����v
-�M�u�o�O���v���ɭ��A���褬���I�ǡC
-
-    �X�ѫ�A�u�ߤ��v�G�M�u�աA���A�絛�s�o�ʫIŧ�F�ӡu�y�v�v�]�l����
-����u�e��Ŧa�v�|�X�A�ýСu�ּ֡v�B�u���d�v�Ρu���N�v�e���C
-
-    �Ө�u�e��Ŧa�v��A�u�y�v�v�]�ť��N���Ѥj����m�����u�ּ֡v�A�b
-�L�ұ��㪺���p�U�A�u�ּ֡v�]�Y�M�������o��¾��C�ۦ��A����������s�A
-�ײΤ@�A�ӨC�����]�����ۤw���u�@¾�ȤF�C
-
-    �b�w�y�n�������A�u�ּ֡v�]�^���a�y���𮧡A�ӡu�j�̡v�]�a�ۤp
-���u�����v�B�u�ʥʡv�e�ӥ[�J�����C�C���ɡu���������v�i�����N����p
-�����ơA�V���a��ĵ��������|�A�H�Q���᪺��ʡC
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�ƸѺ~�ˤҰ����ߵ�      �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�u�F�������v�W�P�u�~�ˡv���Ӥӽ͸ܦh���]�p�䤣��A�N��~�˪��a
-��^�A�o����P�V�ҵL�k���q�A�A��u�~�ˡv��ͦh���]�b���W�Ψ�a���Y�i
-���^�A�ƸѨ�Ұ��Ǫ��ߵ��A�Y�i��o�зN�I�ƤQ�I�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�䯫���v����o���Ưf    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�u�F�������v�W�P�u��o�v�Ӥӽ͸ܡA�o����V�ҡu��o�v�o�F�Ưf�A
-�ño���а󪺯�����N���W�C
-
-    �g�ѡu���H�������v���W����F�u���w�G���v�A�i�J�u�а�v�ݯ����v��
-�u��o�v�Ưf����k�F�������u��o�v���W�����@�ǡA��O�K���F�@����l��
-�����v������k�C
-
-    �^�u�F�������v�W�P�u��o�v�͸ܡA�v�n�L���Ưf�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �찶�H�����ިæV�s��ĵ���ݦn�x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �g�ѡu�������v�Ө�F�u���H�������v�J���F�u�s�ӡvĵ���F�g�u�s�ӡv
-�������A�o�~���s�Ǵ��S�}�l�F�A�ݨӤ]�o��Ǯդ@��F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �����Ǯդ@��          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-
-    ��u���w�@���v�A�b�i�ǮդJ�f�B�P�u�p���i�v��ͱo���u����Ьӡv��
-�b��[���W�Ǫ��u���d�v�B�u���N�v��H�A�ݨӱo���^��a��u���d�v�B�u��
-�N�v��ĳ�@�U�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^���Χ���N�B���d��ĳ  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@�����^����u�������v�P�u�J�|�_���v���f�ɡA�J���@��ѤH�A��ͫ�
-�~���L�N�O�H�١i����Ьӡj���u�h�֡v�Ѯv�C�����S��y�A�]������N�ӥO
-���E���Ьӱ������I�����Ш|�A�u�ּ֡v�����դ����A�E�s�u�j�̡v�a�ۤp
-���������}�C���ɡu�Ьӡv�~���u�ּ֡v�P�u���d�v�B�u���N�v�O�@�_���A�K
-�s�u�ּ֡v�ǸܡA�s�u���N�v�B�u���d�v���Ѧ^�Ǯճ���C
-
-    �\��ФH���u����Ьӡv��A�@������u�J�|�n���v�A�J���F�u�j�̡v��
-�u�T�C�ȡv���ܨ�[�J����C
-
-    �^�찭�ΡA�P�u���d�v�Ρu���������v��ĳ�����G�A�T�H�M�w����ǥb��
-���A��O�u�ּ֡v�K�t�d�e����u����Ьӡv�A�i����Ǥ��ơC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �����Ь�,�i����Ǥ��� �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}���Ϋ�A�@������u�J�|�n���v�ɡA�J�W���U�n�N�u�ּ֡v�T�H�j��
-��ܾǮդW�Ǫ��u�s�ӡvĵ���C�g�L�@�f�ѻ���A�u�s�ӡv���@�N���u�ּ֡v
-�ۦ��Ǯջ�����Ǥ��ơC
-
-    ���ۨ���u���w�@���v�A�i��Ǯղק��u����Ьӡv�C�ЬӤ@ť��Ǥ�
-�ơA�G�ܤ����K����I�楴���Ш|�F�C�ЬӪ����@�G�M�F�`�A��T�U�N��u��
-�֡v��A�F�A���o�u�s�ӡvĵ���ήɫe�Ӫ���A�o�~�o�H�����樭�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^���Χ���N            �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@�X�ǮաA�Y�b�ժ��f�J���F����g�Z�O�̡u�ԯZ�v�A��i���o���g�Z�N
-���ɤ�������Ш|���D�D�A�]���K���Q�u����Ьӡv�ʤ��ʴN��I�����Ш|��
-�{�H�C
-
-    �^�찭�Ϋ�A���T�L�k��I�u����Ьӡv�ɡA�u���������v�N�Ьөȭ���
-�����z�I�i���A�ר�O�֤k����ë���@�q�A��������W�����ֲ����b�Ʀ~�e�N
-�Q�N�o�@���G�b�A�p���N�u�ѱЬӪ��ӤӦb���ɰ����O�s���@�u�F�C�ݨӱo��
-�u���w�@���v���X�u�h�֤ҤH�v�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �즭�w�@����h�֤ҤH    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}���Ψ���u���������v�ɡA�Y���u�y�v�v�W���]�ӧi���A���Ҧ�����
-���Q�H�����F�C��O�u�y�v�v�]�[�J����A�@�P�e���լd���ơC
-
-    �Ө�u���O���������v�ɡA�J���F�������A�o�~�����@�ѤH�]�ݨӬO���
-�Ьӧa�^���|�����|�ër�H�A�ӥO�F���U�O�N������ŽסA�H�_���g���f���R
-�O�C�Ӯ������]�@�N�n�N�u�y�v�v�B�u�j�̡v�����A�o���M����٨�N�F�C
-
-    �N���������]��A���ƺA�Y���A�K���W�H�L�u�q�P�u���N�v��ĳ�A�`��
-�D�o���֧��Q�������C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M��Q���������������U���x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@���j�M�Ө�u�J�|�n���v�A���ƧK�Q�����u����v�A�o������������
-�b�Ǯժ���A�ӡu����v�]�[�J�F������C
-
-    �Ө�u�������v�ɡA�J���F�u�h�֤ҤH�v�Ρu�s�ӡvĵ���A�u�h�֤ҤH�v
-�]�Ϲ��V�Ҫ��Ҭ��A�ҥH�K���Q���o��F���ֲ������A�Ӥ����������Ҭ���
-�u�s�ӡv�A�M�w�h�p�������ӸѱϪ��s�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��Ǯժ��f�N�Ҧ�����X  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��F�Ǯժ��f�A�ק��F���������A���ѩ󮷪������F�`�A�S��U�Y���x
-�ШS�F�A�ӡu�y�v�v�B�u�j�̡v�]�ҳQ�����F�C�ݨӨƺA���Y���F�A��O�K��
-�t���^���λP�u���N�v�Ӷq�ϡu���v���k�C
-
-�Ǯը��Y�G�J�Ԭ��u�A�^�a�C
-�ЫǢ��Gī�G�C
-�ЫǢ��G�ˤl�C
-�Ϯ��]�G���D�A���Ĥ��A�����~�A�p�U�N�u�C
-�����ж��G���Y���u�A������ۣ�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^���νШD���N�䴩      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �^�찭�Ϋ�A�N���־����浹�u���N�v�A�զX���@�ӧ��㪺���ֲ��A����
-�K�P�u���N�v�B�u���d�v�@�P�e���Ǯձϡu���v�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �N�����������P��ϥX    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�����Ǯժ��~���A�Ө�u�J�|�n���v�ɡA���J���F�u����Ьӡv�A���
-���u�ּ֡v�T�H�A���Ѥ����K�n�����I�����Ш|�C���n�����ֲ��b���A�@��
-�X���ֲ���A�u����Ьӡv�K�S���Ӹ��W�ӥh�F�C
-
-    ����K�@���Ө�ǮաA�A�׹J�W���������A���רs���O�L������A�T�H��
-�Q���i�ЫǤ��Ϭ١C
-
-    �����T�H���椧�ڡA���~�g�J�@�D�ԥ��A����p�k�ĤѨϥX�{�ϤF�u�ּ֡v
-�T�H�C�Q��X�᪺�u�ּ֡v�T�H�A�ߧY�����������B�A�ݨ�u�s�ӡv�a������
-����������A����������Q�������s�A�u�ּ֡v�T�H�����ɾ��A�����}������
-�X���s�ɡA�u����Ьӡv�o�ѹx�T�S�X�{������楴���Ш|�A�u���d�v�B�u��
-�֡v�]�b���饴�U�A���F�L�h�C
-
-    ���ɡB�N�b���������U���ڡA�u�ߤ��v�v�ⲳ�߸s�A�ɥX�{�A�ϥX�F��
-���s�A�ñN���������X�F���~�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �b��|�̳}�}            �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���ֹL�h�ӳQ�e����|���u�ּ֡v�B�u���d�v�A�b�ǳ\�����A�u�ּ֡v
-���d���L�ӤF�A��O�K�b��|�̶��}�C
-
-    �@���X�f�ЧY�ݨ��@��n�[���Ұ��A�A���i�j�����f�Ыh�ݨ��f�ɤW����
-�@��M�p�ѨϪ����ܹ����k�ġA���b��ä��ڡA�p�ѨϥX�{�����F�@���C
-
-    ��ӯf�ɤW���k�ĥ��O�p�ѨϪ�����A�]���o�ͤF���צӳQ�e�즹�B�A��
-�M�f�w�g�v�n�F�A���]���o�������Ѥѧn�[�B�n���B�A�ҥH�o�~��𤣪ֿ��ӡA
-�Ӧb�f�Х~�n�[���Ұ����O�ѨϪ������A��O�K�������Ѩϥh���A�o�������k
-��n�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���Ѩϻ��A�������k��n  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�f�Х~�A�b�O�F�@�f��H�j�q�������U�A�׻��A�Ѩϡu�u�ڡv������
-���k��n�A�u�u�ڡv�]�Y�M�d���L�ӡA�@�a�λE�F�C
-
-    ���ɡu���d�v�]���ӤF�A�ñq�����B�o�������w�N����ЬӶ}���F�A�Ӥ�
-���ЬӸg���Ƥ]���b�����N�A���b�а��b���A�u�ּ֡v�M�u���d�v�]����^
-���ΤF�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���W�}�}              �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �g�L�X�Ѥ���A�u�ּ֡v�]�i���F�믫�A�K�M�u���d�v���W�}�}�C�@��
-����u���O���������v�ɡA�J���W�����u���̡v�A��i���Ѩϡu�u�ڡv������
-�ëD�N�~�A�ӬO�P�o�����˱q�ư�a�լd�����u�@�����A��O�K�M�w�M�u���̡v
-�@�_��u���w�@���v�u�ڪ��a�@�d�s���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �즭�w�@���u�ڮa�լd    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u���w�@���v�u�ڪ��a���A�b���䪺�ѩФ��o�{�F�@�D�q���U���D��
-�t���A�K�J���@���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M���̤@�_�M���������x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�U���D�@���ѨM�������ǳ���A�̫�ק��@�Ӫ��w�A���L�ץΤ����
-�k�]�L�k���}�A�ҥH�u�n�������}�A�t�Q��k�C
-
-�u�ڮa�U���D�G�����ܭ��A�Ů�j�A���Y���u�A���P���J�C
-
-    ���}�U���D��A�~�@�X�u�ڪ��a�A�Y�Qĵ�x�u�Ϋȡv��ӥ��ۡA�G�ܤ���
-�N�Q���i�j�c�A�ӡu���̡v���w�}���٪o���ȤF�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ĵ���c��                �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �b�c���{�ѤF�u�֤M�i�T�v�B�u�פY�v�B�u�{�y�L�v�C�M�L�̶����A�o
-���u�j���|���~�v���ǳƹ�������I�H�ߦìV�p���A�H�Q�Ȩ���h�������ѡA
-�����W���e�ҵo�ͪ��}�a��ʡA�ҬO�u�j���|���~�v���Ҭ��C
-
-    ����A�A�P�u�֤M�i�T�v�����u�{�q�v���ܡA��i�����᪺����G���@�t
-�D�A��O�b�@�f�j���U�A�׫��X�F�@�����D�A���H�K�@�P�i�J�M��X���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M�䯵�K�q�D            �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �q�D�U�O�@�U���D�A�b�@�}�j�M��A�o�{�F�@��u�\�A�q�䨭�Ǫ����O��
-�o���L�O�@��ҥj�Ǯa�A�B�����U���D���q�����r�𪺸��A����F�\�[������
-�䥦���X�f�A��O�j�a�K�P�N���^ĵ���c�ЦA�Q��k�C
-
-ĵ���U���D�G��O�E���A�K���I�ߡA���H��A���Į��M�A���Y���u�C
-
-    �^��ĵ���c�ЮɡA�����u�s�ӡvĵ���d�СA�b�@�f������A�L�M�w�񲳤H
-�X�h�C�������ɡu�פY�v���Ѥj�u��l���v�]�e�ӧT�ϡu�פY�v�A�u�s�ӡv��
-�K��¾�A�K�W�e�l���A�ӡu�{�y�L�v�B�u�֤M�i�T�v�]�e�h��U�C
-
-    ���ɡu�u�ڡv�P����ˤ]�e��ĵ�������A���١u�ּ֡v�B�u���d�v�G�H�M
-�աC�ӥѩ�ĵ���O��b�u�o�O���v�A�ݩ�ߪ��a�L�W�A��O�u�ּ֡v�K��ĳ��
-���}�ߪ��a�L�C
-
-�o�O���G����A���ݭ�ơA�����ơAī�G�A�K���A�K���A�K�v�C
-�ΫȪ��a�G������ơA�X����ơC
-�ΫȪ��a�Z�ҡG�Ψm�C
-�ΫȪ��a�שСG���Y���u�C
-�k�۪����a�G�u®�C
-�k�۪����a�Z�ҡGĬ�����C
-�k�۪����a�שСG�E�Y�A�ɪŭ�ơC
-�����l�l�a�G�����q���C
-�����l�l�a�שСG�q�O��ơC
-��׼p�v�a�G�ͤƭ�ơC
-��׼p�v�a�שСG�K���C
-��׼p�v�a�Z�ҡG�Ʋz��ơC
-ĵ��G�������C
-�]�_���G��ֵ��C
-�������G�B���y�C
-�����\�U�G�Ʋz��ơC
-�Ȧ�G��ֵ��C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���t���}�ߪ��a�L        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}ĵ���B���U�g�ѡu�ѷݸ��v�Ө�u�����v�ɡA�J���F�u���A�ߡv�A
-��i���ߦ��j�·ФF�A�n�u�ּ֡v�e���u�o�O���v��u�Ԫ̿ߡv�ݲM�Ա��C
-
-�ѷݸ��G�o���A�߭��A�ͤƭ�ơA�q���A�����~�A�ڽ��C
-���_���G�����ơA���ݭ�ơC
-�h�ӷh�h�`���q�G�㥽�A���Y���u�C
-�h�ӷh�h�`���q�G�ӡG�T�y�C
-���d�A�����G�֭��A���C
-�h�ӷh�h�`���a�G������ۣ�A�𸭡C
-�h�ӷh�h�`���a�שСG�v���C
-�h�ӷh�h�`���a�p�СG���L�R�C
-������Ψ�|�G�C�ơC
-������Ψ�|�G�ӡG�N�C�A�X����ơC
-�����줽�ǡG�X����סC
-�����줽�ǩж��G�n�ʡC
-���d���a�G�J�ԯ��A�^�a�C
-���d���a�שС]�k�^�G�۷Q��ơC
-���d���a�שС]���^�G�ȡC
-�������a�G�K���C
-�������a�ռӡG�q�O��ơC
-�������a�ѩСG�]���C
-�������a�שСG�����q���C
-�����G�T�o�A�u®�A�۴֡A�ۦǡA�N�C�Aī�G�A�K���AĬ�����A���ݭ�ơA
-�����A�s��A���ġA�K���C
-���f���G�K���A�q���A�ɽu�C
-�������C���a�G�ȡC
-�������C���a�שСG�ɪŭ�ơA�������C
-�������C���a�p�СG���ơA�T�y�C
-�@�ئ��󤧮a�G�������A���C
-�@�ئ��󤧮a�p�СG�J�ԯ��A�֭��C
-�@�ئ��󤧮a�שСG�K�v�A�E�Y�C
-�������G���Y���u�C
-�@�ة��G�۷Q��ơA����C
-�J�|���ͤ��a�G�T�y�A���K�C
-�J�|���ͤ��a�ռӡG�氮�A�Ψm�C
-�J�|���ͤ��a���U�G���K�A���C
-�J�|���ͤ��a�שСG�r�᯻�A��u�C
-����J�|���G��ǭ�ơC
-
-    ���ۦ^��u�o�O���v�Ө�u�o�O���v����u�Ԫ̿ߡv�A�g�u�Ԫ̿ߡv�ۧi
-�o���u�ߤ��v�Q���F�A�u������ĥ�v�]�X���Q���v�A�ӴM��F��D�O�����M���A
-��O�u�Ԫ̿ߡv�[�J�@�_�e�h��u�y�v�v�C
-
-�w�w��G���ݭ�ơA������סA���ơA�ɽu�A���D�A�߭��A�N�C�A�T�o�A����A
-�_��A�B���y�A�q���C
-�@�ؤj���a�G�𸭡A�������C
-�@�ؤj���a�שСG�v���C
-�@�ؤj���a�ѩСG���ԡA�㥽�C
-�B�ʾ������G�ѯ��C
-�k�۶T�����q�G�ѥ]�A���ġC
-�q�����G�u®�C
-�q�������U�G�N���ơA�p�U�N�u�C
-�q�����שС]���^�G�C�ơA�֭��C
-�q�����שС]���^�G�ɽu�A�K���A������ơC
-�y���̩@�ة��G�X����ơA�����~�C
-�P���`���G�ˤl�A����j�C
-�j�O�h���a�G�^�a�A�֭��C
-�j�O�h���a�B�ʩСG�K���A�㥽�C
-�j�O�h���a�שСG�T�y�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���y�v�����M��ߤ�      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@������u���������v���u�y�v�v�C�u�y�v�v�o���ߤ��Q���A���ܼ���
-�Q�����A���ѩ�u������ĥ�v�Q�X�����|�ܦ^�_�ϡA�ҥH�e���˥h��ثe���~
-�b�u����s���v�M��F�誺�礤�n��u����v�ۧU�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���̸����d�s�i���L�k��  �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�C�󤽸��v�P�u�s�i�v�б¥�ͫ�A�A��u�����v�P�u�̸����v��
-�ܡA�o���䥿�b�M��u�s�i�v�б¡A�ñN�u�s�i�v�б¦b�u�C�󤽸��v������
-�i�D�o�C�^��u�C�󤽸��v�s�i�a���e�P�u�̸����v�͸ܡC
-
-    �Ө�u�����v�ɡA�A�J�u�̸����v�A��Ӧo�b�t�ʡu�s�i�v�б¡A��O
-�K���o��u�C�󤽸��v�ݡu�s�i�v�бª����k�u��ù�R�v�C
-
-    �Ө�u�C�󤽸��v�s�i�a���u��ù�R�v�A�o���u�s�i�v�б¥ثe�S���k
-�B�͡A�A�^��u�����v�N�������i�D�u�̸����v�A��o���Q�����C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �����s���伯��        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���ۡu�ѷݸ��v���k����F�u����s���v���u����v�C�u����v�n�D��
-�D�@�D�u�ߤ��v�����D�~��M��A�����H�Ҥ����u�ߤ��v�O��\�H�]�A�ҥH��
-���S���u�ߤ��v���F��i���u����v�D�A�Ӿڶ������]���_���ܡA�o�����u��
-��v���������P�u�ߤ��v�i��Q�P�@��H�����A�ҥH�N�����������ưȩһD�D
-�������F��a�C�ӡu����v�B�u��͡v�]�[�J����C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�IDOMO                    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u���ָ��v�A�i�u�q�v�|�v�i�J�ù���ҢӢۢݤp�աA��L�J�ӾǱo
-�u���j�����v�A����֥;Ǳo�u�ҢӢۢݴ��B�v�C
-
-���ָ��G���ԡA�p�U�N�u�A�Ʋz��ơC
-���Ȯq��s�ΡG�ɽu�A�s��C
-������]�G�r�᯻�A���D�C
-������]���Y�G��ǭ�ơC
-������]�����СG�N���ơC
-������]�����СG���Ĥ��C
-DOMO�G�ɪŭ�ơA���A���Y���u�A�ɽu�A����s�סA�a�������A���K�A�z����
-�p�A�۷Q��ơA�����^�a�A�X����סA�����~�A������ơA�p�q���u�C
-����Ȧ�G���K�A��u�A�氮�C
-�ۤ���G�����C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�N���ƪ��ç��浹�b�б�  �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u���ָ��v������]�����лP�M�|��͡A�L�|���U�A�e�u���ƪ��ç��v
-���u���w�G���v���b�б¡C��u���w�G���v�N�u���ƪ��ç��v�浹�b�б¡A�o
-����@�ʤ��C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�Ш|�ɭۯS              �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u���w�@���v�ǮձЫǢ��P�u�ɭۯS�v��͡A���䥿�T����Ʒ����A
-��o�Q�I�зN�I�ơC
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I���k�ԧ�Юv            �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u���w�@���v�Ǯտ줽�ǻP����Ǯղz�ƪ��u�k�ԡv��͡]�U�ȡ^�A�o
-�|���o���b���u�q���Юv�A�ýСu�ּ֡v�����d�N�@�U�C
-
-    ����h�u�M�󤽸��v��s�i�б°ݥL���N�@��A�A�^��Ǯտ줽�ǧ�u�k
-�ԡv�A�u�s�i�v�б«K�|�X�{�������Юv�A����o���Q�I�зN�I�ơC
-
-�Ǯտ줽�ǡG�r�᯻�A�ˤl�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�e�Ѩ�ڤ����ƺ����a    �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�ѷݸ��v�i�u�h�ӷh�h�`���a�v��u�������v�]�p�䤣��A�h�մX��
-�Y�i�^�A���L�e�Ѩ�u�ڤ����v�ƺ����a�C
-
-    �Ө�u�ڤ����v�A���i�u�K�Q�ө��v�o�����D�O�u�ƺ��v�Ҷ}���A�A�i��
-�u�ƺ����a�v���d�l���ƺ��A�A�N�ѥ浹�������A�Y�i��o����G�ʤ��C
-
-�ڤ����G�J�Ԭ��u�A�r�᯻�A�N���ơA�ȡA�T�o�C
-�~�����G�������C
-�ᩱ���a�G�X����ơC
-�ᩱ���a�שС]�k�^�G���D�C
-�ᩱ���a�שС]���^�G��ǭ�ơC
-���v�]���^�G�q�O��ơC
-���v���U�G�����C
-���v�Z�ҡG���C
-�K�Q�ө��G�N���ơC
-�ƺ����a���U�G���K�A�ͤƭ�ơC
-���v�]���^�G�߭��C
-���v�p�СG�����^�a�C
-���v�]�k�^�שСG����j�C
-
-  �~�s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  �x�x�I�e�ޢҢϵ��کԤ�        �x�x
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�ѷݸ��v�P�h�ӷh�h�`���u�������v��͡A���L�e�ޢҢϵ��u�o�O���v
-�]�_���̪��کԤҡA�o������Q���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��ѷݸ���F�ưȩ�      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�ѷݸ��v�i�J�u�����줽�ǡv�o�{�u�ߤ��v�M�Ϊ��n�ʭ���ά���
-���A���D�����N�O�ߤ��ܡH�u����v�D�F����A�i���e�o�X�Ѧb�u�]�����v��
-���D��ۦP�����D�A��O�K���u�]�����v�X�o�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���]������M�ߤ����U��  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �g�ѡu�����v�Ө�F�u�]�����v�A����u�ּ֡v�p�ɭԪ����K��a�ɡA
-�u����v�T�w�u�ߤ��v�N�Q���b�ح��A�����f���y�]�ݦu�A�����i�h�A��O�K
-�Q��q�u�������v���\���q�D��i�C
-
-�]�����G�ۦǡA�^�a�A�r�᯻�AĬ�����A���Ĥ��A�X����ơA�氮�A�T�y�A��
-���A���ݭ�ơA�J�Ԭ��u�A����A�X����סA�۷Q��ơA�ѥ]�A�K���A�Ʋz��
-�ơA�K�v�A�������A���Y���u�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �q�������\����i�°�a  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�������v�g�Ѭ\����U���D�A�g�@�f�j���A�׶i���°�a�C�b�u�{
-�y�L�v�ۧU�U�A���ˤp�y�]�A�ϥX�F�����C
-
-    �����]�ӻ{�L�N�O�u�ߤ��v�A�B�i���L�N�O�u�j���|���~�v�`�����k�B�A
-�H�Ρu�j���|���~�v�����Ѩ��ݡC����A�u�ߤ��v�l�����ߪ��b�u����s���v
-���X�A�ëť��u�ּ֡v���ᦨ���ߪ����@�P��ɪ̡C
-
-�������G�N���ơA�ͤƭ�ơA���L�R�A�����~�A�N�ѡA�p�U�N�u�A�۴֡A��
-���~�A���ԡA�����A�����q���A���ơA���Y���u�A�n�ʡA��ǭ�ơA�����ơA
-���D�A�q�O��ơC
-�ְּ�a���D�G�ʼ}�F�����A�O�ֲy���u�A�ɦV�q���u�A�¾K�w���A�j�ƶ콦
-�j�A�B�ʮa���J�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���ޤp���A�����j���|���~�x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �o�ѡA�u�ּ֡v�A�t�_���ޤp�����d�A����u���O���������v�ɡA�J���O
-�̡u�ԯZ�v�A�o���ª��|�Ѥj�u��l���v�v������Fĵ��A��O�K���t����
-�u�o�O���v�C
+    出「南瓜博物館」，往左走到「東部公路」，可看見一隻小雞跟著一群鴨
+子在跑，此小雞就是多多了（如找不到，那在欄杆下即可找到），將牠捉到後，
+回「南瓜博物館」交給「黛咪」，即可得到「阿摩尼亞」藥水。
+
+瑞得的家：蘋果，小燃燒彈，蘇打粉。
+瑞得的家廚房：餅乾，油漆，芥末。
+豬舍：蘿蔔，竹子。
+東部公路：橡皮筋，合成原料，野花，醫學原料，生化原料，鐵塊。
+漢森的家：雞蛋。
+漢森的臥房：繃帶，酒精。
+漢森的家閣樓：電池，鐵片x2。
+孤僻老人的家：幻想原料，香蕉。
+孤僻老人的家房間（中）：冰水球，鐵片。
+孤僻老人的家房間（左）：尼龍絲，火藥，香料，顏料。
+
+  ╭┬─────────────┬╮
+  ││＠到山姆家和伊羅娜玩猜數字││
+  ╰┴─────────────┴╯
+    接著離開「田野路」來到了「青草公路」，進「山姆家」找「伊羅娜」玩
+猜數字遊戲（小學遊戲嘛，４８１就對了），猜對了就可得到一瓶消毒水。
+
+山姆家：胡椒炸彈，石灰。
+山姆的臥房：紙，蘋果，冰水球。
+伊羅娜的臥房：毒花粉，圖釘，彈簧。
+青草公路（右）：樹葉，蛤蟆菌菇，雞蛋，鐵塊。
+
+    出「山姆家」、繼續沿著「青草公路」走，遇見了正準備和「白眉」離開
+小鎮的「肥皮」、「殭屍」、「圓刷子」及「諂媚」，在一言不合下便打了起
+來，但那知「殭屍」的毒氣攻擊非常厲害，沒兩下「樂樂」即敗下陣了。
+
+  ╓┬─────────────┬╖
+  ║│  尋找消毒水炸彈          │║
+  ╙┴─────────────┴╜
+    落敗後的「樂樂」馬上以無線電聯絡「阿吉」商議，他建議尋找消毒水炸
+彈來替「殭屍」洗洗澡也許就能贏，於是便開始尋找消毒水炸彈的原料：阿摩
+尼亞及消毒水了。從支線任務獲得後，利用ＰＤＡ功能將其組合成消毒水炸彈，
+再次去找「殭屍」決戰，一顆消毒水炸彈即將「殭屍」擺平。
+
+青草公路（左）：鐵釘，樹葉，料理原料。
+瓦爾多家：鐵指環，小燃燒彈，鐵片。
+瓦爾多家房間（左）：鐵塊，木材，紙。
+瓦爾多家房間（右）：維他命，毛線。
+儲藏室：稻草，火藥，麵粉，洋蔥。
+無名老爹家：電力原料，熱能原料，冷氣原料，生化原料。
+無名老爹家廚房：芥末，貓食，胡椒粉，辣椒，肥皂，麵粉。
+
+    將「殭屍」打敗後，便折返回「田野路」，往「蛋糕南路」前進，遇見了
+「三劍客」及「香蕉皮」，從牠們口中得知「漢堡走路」正集合了一些狗在
+「東部公路」準備搶人的食物，於是便火速的前往「東部公路」阻止「漢堡走
+路」的為非作歹，而「三劍客」也加入了行動行列。
+
+伊莉莎白小屋：毛線，料理原料。
+伊莉莎白臥房：辣椒。
+伊莉莎白餐廳：胡椒炸彈。
+蛋糕南路：蛤蟆菌菇。
+
+  ╓┬─────────────┬╖
+  ║│  到東部公路阻止漢堡走路  │║
+  ╙┴─────────────┴╜
+    往回走經「田野路」來到了「東部公路」，果真見到「漢堡走路」正在收
+攬「狗」心準備搶奪人類的食物，屢勸不聽的「漢堡走路」，看來只好以武力
+來降服了。
+
+    打敗「漢堡走路」後，「三劍客」即離隊回去向「獵師」報告此事，而
+「樂樂」則負責找「白眉」來阻止「漢堡走路」的亂來。
+
+  ╓┬─────────────┬╖
+  ║│  找白眉阻止漢堡走路的亂來│║
+  ╙┴─────────────┴╜
+    離開「東部公路」，經「田野路」來到了「青草公路」，終於找到了「白
+眉」。「白眉」在獲悉「漢堡走路」正在「大兵路」亂來之事後，立即飛奔而
+去，「樂樂」也隨後跟去了。
+
+  ╓┬─────────────┬╖
+  ║│  到大兵路救漢堡走路      │║
+  ╙┴─────────────┴╜
+    來到「大兵路」後，只見「土頭」已被來歷不明的人打傷了，而「漢堡走
+路」等狗兒已逃之夭夭了。於是「樂樂」便救治傷重的「土頭」，「土頭」感
+激之餘，遂樂意的加入「木桶小隊」行列，而「大米」建議先帶「土頭」回基
+地參觀一番。
+
+    帶「土頭」參觀完基地後，「樂樂」又得再繼續找伙伴的工作了。一走出
+基地即遇見「胖哥」、「瘦哥」，從牠們口中得知狗老大「獵師」在「蛋糕南
+路」恭侯「樂樂」。
+
+  ╓┬─────────────┬╖
+  ║│  到蛋糕南路見狗老大獵師  │║
+  ╙┴─────────────┴╜
+    在受到「獵師」的敬邀後，便馬上趕往「蛋糕南路」會見「獵師」。從
+「獵師口中得知牠們打算一舉攻入小鎮北部奪回原屬於狗的地盤，並要「樂樂」
+的幫忙。在答應「獵師」的請求後，「獵師」也先行前往「蛋糕北路」，而
+「三劍客」也加入「樂樂」的隊伍之中。
+
+  ╓┬─────────────┬╖
+  ║│  到蛋糕北路參加誓師大會  │║
+  ╙┴─────────────┴╜
+    沿著「蛋糕南路」走到了「蛋糕北路」，參加了「獵師」舉辦的誓師大會
+後，便準備開始展開奪回北區地盤之戰了。
+
+蛋糕北路：布，鐵塊，收音機。
+阿摩斯小屋：火藥，肥皂。
+阿摩斯家臥房：熱能原料。
+大彼得家豬舍：芹菜，鐵釘。
+大彼得的家：顏料。
+大彼得家倉庫：冰水球。
+大彼得的臥房：遙控器。
+獸醫院：紅藥水，繃帶，生化原料。
+獸醫院豬圈：麵粉。
+賀門醫師家：機器原料，時空原料。
+賀門醫師臥房：收音機。
+
+  ╓┬─────────────┬╖
+  ║│  協助狗打贏北區大戰      │║
+  ╙┴─────────────┴╜
+    誓師大會完畢後，沿著「蛋糕北路」走到了「釣魚路」，看見「圓刷子」
+正在與貓對戰，於是便上前相助，打退「一咪」、「二咪」。接著再繼續向前
+行，看見喜愛耍嘴皮的「胖哥」、「瘦哥」，看來牠們對此北區大戰似乎漠不
+在乎。
+
+釣魚路（左）：橡皮筋，竹子，木材，蘋果，彈簧，野花，鐵片，枕頭，鐵罐，
+冷氣原料。
+郵局：熱能原料。
+酒吧：生化原料。
+海洋貿易公司：時空原料。
+海洋貿易公司二樓：合成原料，高壓電池。
+海洋貿易公司三樓：合成原料，金屬原料。
+海洋貿易宿舍：石灰，幻想原料。
+海洋貿易宿舍臥房：布。
+
+    接著再往上走到「愛神街」，看見正在苦戰中的「香蕉皮」，便上前相助
+擊退狗群，並從「香蕉皮」口中得知「獵師」正在「哈哈街」被圍攻。於是便
+往上一路殺經「決鬥街」，來到了「哈哈街」。
+
+愛神街：蘋果，冰水球，鐵片，毒花粉，生化原料，現具槍，鐵釘，火藥，熱
+能原料，胡椒炸彈，尼龍絲。
+木桶書城：油漆。
+書店老闆家：合成原料。
+書店老闆家走廊：電力原料，毒花粉。
+書店老闆家臥房：機器原料，火藥。
+書店老闆家廚房：醫學原料。
+占卜屋：幻想原料，繃帶。
+資源協調倉庫：冷氣原料，蛤蟆菌菇。
+決鬥街：冷媒，芹菜，電力原料，顏料，胡椒粉，毛線，汽球，蘿蔔，蛤蟆菌
+菇，膠水。
+鞋店：芥末。
+鞋店走廊：醫學原料。
+鞋店臥房（左）：跳蚤，金屬原料。
+鞋店臥房（右）：辣椒，皮革。
+雜貨兄弟的家：合成原料，料理原料。
+雜貨兄弟的家廚房：洋蔥，電池。
+雜貨兄弟的家走廊：紙，汽油。
+雜貨兄弟的家臥房（左）：樹葉，機器原料。
+雜貨兄弟的家臥房（右）：幻想原料，鉛筆。
+快刀張三的家：石棉，時空原料。
+快刀張三的家廚房：稻草，生化原料。
+快刀張三的家臥房：銅線，貓食。
+快刀張三的家客廳：磁鐵。
+快刀張三的家置物間：維他命。
+
+    到了「哈哈街」，得知「獵師」以一狗之力擊退了貓群，並從「獵師」口
+中得知貓群背後有個叫「貓王」的傢伙在領導牠們，這才會使貓群的實力變強。
+
+    接下來，「獵師」負責回頭招募其它的狗，而「樂樂」則繼續負責查探的
+工作。
+
+哈哈街：冷媒，罐頭炸彈，竹子，合成樹脂，跳蚤，合成樹脂，玻璃瓶，料理
+原料，毒花粉，消炎繃帶，酒精，火藥，蘋果。
+報社老闆家：鐵罐。
+報社老闆家臥房（左）：金屬原料。
+報社老闆家臥房（右）：玩具槍，野花。
+木桶報社：料理原料。
+木桶報社辦公室：紙，可樂。
+木桶報社總經理室：幻想原料。
+好吃餐廳：胡椒炸彈，料理原料。
+資源協調中心：醫學原料，罐頭炸彈。
+餐廳廚師的家大廳：彈簧。
+餐廳廚師的家廚房：枕頭。
+
+  ╭┬─────────────┬╮
+  ││＠與麥克玩有獎徵答        ││
+  ╰┴─────────────┴╯
+    在「哈哈街」路上與麥克（紅頭髮那位）談話，參加他的有獎徵答，其二
+個答案都回答「南瓜」，即可獲得牛奶糖。
+
+  ╭┬─────────────┬╮
+  ││＠與杰米玩捉迷藏          ││
+  ╰┴─────────────┴╯
+    再與「哈哈街」路上的「杰米」（戴眼鏡那位）談話，與他玩捉迷藏，尋
+找躲起來的小孩（共有三位）。
+
+    「小嬰兒」躲在「決鬥街」與「哈哈街」交會處的樹下；「麥克」躲在
+「哈哈街」與「早安路」交會處的餐廳旁樹下；「杰米」躲在「哈哈街」最左
+邊的樹下。找齊三位後，再與「杰米」談話，即可獲得兩顆蘋果。
+
+  ╭┬─────────────┬╮
+  ││＠買漢堡給杰米            ││
+  ╰┴─────────────┴╯
+    再次與「杰米」談話，他會要求你請他吃漢堡；到「哈哈街」與「早安路」
+交會處的好吃餐廳以一百元買得特製漢堡全餐，再拿給「杰米」，即可得知如
+須打探消息，可在下午兩點時，到餐廳找他媽媽打探。
+
+  ╭┬─────────────┬╮
+  ││＠尋找報社社長女兒的戒指  ││
+  ╰┴─────────────┴╯
+    進「好吃餐廳」找「杰米」的媽媽（報社社長夫人）打探消息，得知報社
+社長正懸賞找女兒的戒指，而欲知詳情，可找報社社長詳談。
+
+    接著進到「木桶報社」找報社社長，接下幫其尋找微微安的戒指的任務；
+再到街上找「杰米」（如果是晚上了，就到社長家即可找到），得到一枚戒指，
+並得知另一枚戒指掉在餐廳廚房。回報社將戒指交給社長，得到５００元賞金。
+
+  ╭┬─────────────┬╮
+  ││＠尋找微微安的玩具戒指    ││
+  ╰┴─────────────┴╯
+    與木桶報社櫃台的「微微安」談話（如果他下班了，就到社家長即可找到），
+她會請你幫她尋找另一枚玩具戒指。
+
+  ╭┬─────────────┬╮
+  ││＠幫餐廳廚師趕走怪貓      ││
+  ╰┴─────────────┴╯
+    到「好吃餐廳」的廚房（餐廳在早上才會開啟）找廚師，得知有隻夾著戒
+指的怪貓會在下午兩點鐘出現，並請求幫他趕走怪貓。
+
+    到了下午兩點鐘時，再進餐廳即可看見怪貓，將牠嚇走後，得到一枚玩具
+戒指，並與廚師談話，得到３００元賞金。再將玩具戒指拿去給「微微安」，
+得到３００元賞金。
+
+    接著，繼續往上走到了「早安一路」，即看見正在力戰貓群的「鋼毛」，
+於是便上前相助擊退貓群，但「鋼毛」似乎並不領情。繼續往右走到「早安一
+路」與「早安二路」的交會處，遇見了「毛姐」，一番交談後，此時可看見貓
+老大「黃金戰艦」已立於一旁。
+
+    本想先擒住貓老大來控制整個戰局，但那知「黃金戰艦」竟搧動「毛姐」，
+使其反叛而幫助貓群了。一陣激戰將「毛姐」打敗後，繼續向前來到了「早安
+二路」。
+
+早安一路：野花，毒花粉，金屬原料，鐵釘，橡皮筋，玩具槍，鐵罐，彈簧，
+蛤蟆菌菇，維他命，木材。
+拉班之家：遙控器。
+拉班之家廚房：蘇打粉，火藥。
+拉班之家臥房：電池，布。
+木桶教皇之家：木材，胡椒粉。
+木桶教皇之家臥房：熱能原料，野花。
+木桶教皇之家地窖：繃帶，紙。
+學無涯書店：電力原料，布。
+學無涯書店臥房：蕃薯，麵粉。
+住宅：布，電力原料。
+住宅廚房：肥皂，香蕉。
+住宅臥房：汽球，生化原料。
+房地產事務所：鉛筆，電池，樹葉。
+真夢的家：芥末，鐵塊，跳蚤。
+真夢父母臥房：石灰，顏料。
+真夢的家走廊：時空原料。
+真夢的臥房：稻草。
+真夢父親的書房：收音機。
+真夢的家廚房：冰水球。
+
+  ╓┬─────────────┬╖
+  ║│  打倒貓老大黃金戰艦      │║
+  ╙┴─────────────┴╜
+    一到「早安二路」即卯上了「黃金戰艦」，此時「獵師」也前來助陣；一
+陣激戰後，「黃金戰艦」落敗即溜之大吉，此北區大戰狗群已獲得全面的勝利
+了。
+
+    收復地盤後，「獵師」在每個路口都安置了守衛，以防止貓群的進襲，而
+「土頭」也前往「釣魚路」通知「鋼毛」陣守；「三劍客」則前往「圓圈路」
+支援「肥哥」、「瘦哥」陣守；至於「樂樂」與「大米」則負責去勸服「白眉」
+重回狗的陣營。
+
+早安二路（左）：電力原料，樹葉，電力原料，繃帶，洋蔥，火藥。
+酒吧站長的家：玻璃瓶。
+酒吧站長的家閣樓：汽油。
+酒吧站長的家飯廳：料理原料，蘿蔔。
+酒吧站長的家臥房（中）：鐵釘，鐵塊，收音機。
+酒吧站長的家臥房（右）：野花，枕頭。
+鐵路酒吧：玻璃瓶，香蕉。
+木桶學術機構：冷煤，跳蚤，辣椒。
+倉庫局長家：合成原料，毛線。
+倉庫局長家臥房：貓食。
+倉庫局長家：胡椒炸彈，合成樹脂。
+
+  ╓┬─────────────┬╖
+  ║│  說服白眉重回狗的陣營    │║
+  ╙┴─────────────┴╜
+    接著，一路往回走到「蛋糕北路」時，再遇見「土頭」，其又回到了隊伍
+的行列。再一路走到「田野路」時，遇見「阿康」與南瓜管理員「通哥」，
+「通哥」表示說南瓜園內老鼠橫行，於是便派「土頭」幫助「通哥」去趕走南
+瓜園的老鼠，而「阿康」在得知狗群獲得北區大戰勝利後，也加入隊伍行列，
+一同尋找「白眉」。
+
+    再繼續往回走到「大兵路」遇見「圓刷子」，從其口中得知「白眉」正集
+結狗群在「河邊空地」，於是便火速路經「蛋糕南路」來到了「河邊空地」，
+終找到「白眉」。但「白眉」對於重返狗的陣營一事，表示需要與眾狗商量一
+下才能做答覆，於是「樂樂」便決定回去找「獵師」，等侯「白眉」的答覆。
+
+河邊空地：冷氣原料，小燃燒彈，毒花粉，生化原料，餅乾。
+
+  ╭┬─────────────┬╮
+  ││＠替依麗莎白詢問大彼得    ││
+  ╰┴─────────────┴╯
+    到「蛋糕南路」與「依麗莎白」交談多次，其表示說「蛋糕北路」的「大
+彼得」時常跟縱她。再到「蛋糕北路」的「大彼得家」問「大彼得，這才知其
+是「依麗莎白」昔日的男友，但「依麗莎白」的疑心病太重，而導致精神緊張
+兮兮，看來此事「樂樂」是幫不上忙了。
+
+  ╓┬─────────────┬╖
+  ║│  回去找獵師等侯白眉的答覆│║
+  ╙┴─────────────┴╜
+    一路往返來到「蛋糕北路」時，即見「獵師」和眾狗集結在此，原來貓群
+幕後的黑手～「貓王」已經出現了。
+
+    正當與「獵師」商議之時，「貓王」派來的使者「忍者貓」前來告知說
+「貓王」已在「釣魚路」恭侯了。性急的「迅猛龍」一聽即衝了過去，看來明
+知這是個陷阱，也要前往一探了。
+
+    來到「釣魚路」時，即遇上了「貓王」，而「迅猛龍」也被其所捉了。精
+明的「貓王」待眾狗來到時，使用激將法將眾狗引至後方，準備來個逐一擊破，
+「樂樂」也趁此將「迅猛龍」救出，並請得「迅猛龍」加入隊伍行列，此時
+「白眉」也率眾狗前來相助，但平時隨便慣了的他們，一時無法聽從「樂樂」
+的指揮，也是一股勁的往前衝了過去，看來得加緊腳步跟上才行了。
+
+  ╓┬─────────────┬╖
+  ║│  找到貓王並打倒他        │║
+  ╙┴─────────────┴╜
+    沿著「釣魚路」一路走，即遇上了死性不改的「漢堡走路」又在打算搶人
+類食物的主意，正在對「漢堡走路」曉以大意之際，一群貓群出現攔路，將其
+打敗後，得知可在「偉人紀念路」找到「貓王」。
+
+釣魚路（右）：電力原料，餅乾，蘇打粉，收音機，遙控器
+海洋貿易宿舍：醫學原料，機器原料
+海洋貿易宿舍臥房：麵包
+海洋貿易宿舍廚房：料理原料
+
+    沿「釣魚路」一路往右走到了「偉人紀念路」，看見路上有二個會動的箱
+子，打開一看才知是「肥哥」、「瘦哥」。此時又出現一群貓，將牠們打敗後，
+「肥哥」、「瘦哥」也自認是最膽小的狗，而要繼續躲在箱子裏，真是敗給牠
+們了。
+
+偉人紀念路：高壓電池，玩具槍，橡皮筋，鐵片，木材，鐵塊，辣椒，彈簧。
+油油老爹的家：機器原料，麵粉。
+油油老爹的家臥房（左）：小燃燒彈，枕頭。
+油油老爹的家臥房（右）：醫學原料，鐵釘。
+玩具博士家：生化原料，紅藥水。
+玩具博士家臥房（右）：料理原料。
+玩具博士家臥房（左）：磁鐵。
+住宅：野花，幻想原料。
+住宅廚房：繃帶。
+住宅臥房：銅線。
+玩具店：膠水。
+油油披薩店：合成原料。
+
+  ╭┬─────────────┬╮
+  ││＠幫奧麗微雅問傑西之事    ││
+  ╰┴─────────────┴╯
+    進到「偉人紀念路」最右邊的披薩店手店員「奧麗微雅」，其請求幫她到
+「拯救世界協會」問「傑西」之事；再到披薩店左邊的「拯救世界協會」問清
+潔工「提麗」，得知「傑西」到另一國家勸戰，至今下落不明了。將此不幸之
+事回去告訴「奧麗微雅」吧。
+
+    接著往下走到了「祁禱路」，看見「白眉」正與「貓王」交戰，於是便火
+速上前助陣，但「貓王」見勢又乘機溜走了，剩下一些小貓應戰。將一群小貓
+打敗後，「白眉」仍是耐不住性子，又單獨的追「貓王」去了。
+
+祁禱路：火藥，石棉x2，蛤蟆菌菇，顏料，跳蚤，鐵塊，毛線，蕃薯，酒精，
+芹菜，磁鐵，汽球，胡椒粉，跳蚤，蘿蔔，鐵塊．冷媒，火藥，蛤蟆菌菇。
+五兄妹的家：蘇打粉，石灰。
+五兄妹的家廚房：熱能原料，料理原料。
+五兄妹的家臥房：冷氣原料，機器原料。
+住宅（左）：時空原料。
+住宅臥房（中）：麵包，南瓜。
+住宅臥房（左）：罐頭炸彈，收音機。
+倉庫（左）：鐵罐，電力原料。
+住宅（右）：肥皂，布。
+住宅廁所：布，合成原料。
+住宅臥房：冰水球，酒精。
+倉庫（右）：火藥。
+車店：遙控器。
+
+  ╭┬──────────────────┬╮
+  ││＠幫奧斯丁找安布羅斯問討厭噪音的原因││
+  ╰┴──────────────────┴╯
+    進到「五兄妹的家」找老大「奧斯丁」，幫其找「安布羅斯」問討厭噪音
+的原因；再到隔壁住宅內找「安布羅斯」（如找不到，可到偉人紀念路找找），
+問明其討厭噪音的原因後，可得創意點數十點。
+
+    之後，沿著「祁禱路」往上走到了「早安二路」遇見了「鋼毛」，本想請
+牠帶路尋找「貓王」，但因一言不合而發生戰火。
+
+    「鋼毛」落敗離去後，「樂樂」繼續往前走，遇見被「貓王」打敗的「香
+蕉皮」及「圓刷子」，得知「貓王」正在「偉人紀念路」。此時又出現貓群攔
+路，將牠們打跑後，便火速的趕往「偉人紀念路」。
+
+早安二路（右）：鐵罐，汽油，石灰，冷氣原料，橡皮筋。
+湯米事務所：幻想原料，皮革。
+湯米事務所臥房：幻想原料，酒精。
+麥可家：芹菜，油漆。
+麥可家臥房：石棉，洋蔥。
+麥可家廚房：冷媒，汽油。
+資源協調倉庫：醫學原料，南瓜。
+理容院：時空原料，合成樹脂，肥皂。
+
+  ╓┬─────────────┬╖
+  ║│  力戰「貓王」            │║
+  ╙┴─────────────┴╜
+    來到「偉人紀念路」時，即見到行為詭異的「貓王」遭兩名警員盤詢，但
+他們那是「貓王」的對手，一記南瓜炮就把兩名警員轟走了。此時「獵師」也
+來到與「樂樂」併肩，共同力戰「貓王」。
+
+    一場激戰後，終將「貓王」打敗了，使得北區大戰獲得全面的勝利，北區
+又再度回到狗的勢力範圍。而為了養精蓄銳，決定與「貓王」畫清以「圓圈路」
+和「這是橋」為界限，雙方互不侵犯。
+
+    幾天後，「貓王」果然守諾，未再對狗群發動侵襲；而「獵師」也召集眾
+狗到「河邊空地」會合，並請「樂樂」、「阿康」及「阿吉」前往。
+
+    來到「河邊空地」後，「獵師」也宣布將狗老大的位置讓給「樂樂」，在
+無所推辭的情況下，「樂樂」也欣然的接受這個職位。自此，木桶鎮的狗群再
+度統一，而每隻狗也都有自已的工作職務了。
+
+    在安頓好眾狗兒後，「樂樂」也回到基地稍做休息，而「大米」也帶著小
+狗「黃黃」、「瓜瓜」前來加入隊伍行列。此時「約翰叔叔」告知應將木桶小
+隊的事，向當地的警察機關知會，以利往後的行動。
+
+  ╭┬─────────────┬╮
+  ││＠化解漢森夫婦的心結      ││
+  ╰┴─────────────┴╯
+    在「東部公路」上與「漢森」的太太談話多次（如找不到，就到漢森的家
+找），得知其與丈夫無法溝通，再找「漢森」交談多次（在路上或其家中即可
+找到），化解其夫婦倆的心結，即可獲得創意點數十點。
+
+  ╭┬─────────────┬╮
+  ││＠找神父治療瑞得的瘋病    ││
+  ╰┴─────────────┴╯
+    在「東部公路」上與「瑞得」太太談話，得知其丈夫「瑞得」得了瘋病，
+並得知教堂的神父醫術高超。
+
+    經由「偉人紀念路」往上走到了「早安二路」，進入「教堂」問神父治療
+「瑞得」瘋病的方法；神父說「瑞得」身上有鬼作怪，於是便給了一面鏡子及
+說明治療的方法。
+
+    回「東部公路」上與「瑞得」談話，治好他的瘋病。
+
+  ╓┬───────────────┬╖
+  ║│  到偉人路巡邏並向山楂警員問好│║
+  ╙┴───────────────┴╜
+    經由「釣魚路」來到了「偉人紀念路」遇見了「山楂」警員；經「山楂」
+的提醒，這才知新學期又開始了，看來也得到學校一趟了。
+
+  ╓┬─────────────┬╖
+  ║│  到木桶學校一趟          │║
+  ╙┴─────────────┴╜
+
+    到「早安一路」，在進學校入口處與「小湯姆」交談得知「木桶教皇」正
+在找久未上學的「阿康」、「阿吉」兩人，看來得先回基地找「阿康」、「阿
+吉」商議一下了。
+
+  ╓┬─────────────┬╖
+  ║│  回鬼屋找阿吉、阿康商議  │║
+  ╙┴─────────────┴╜
+    一路往回走到「釣魚路」與「蛋糕北路」路口時，遇見一位老人，交談後
+才知他就是人稱【木桶教皇】的「多福」老師。但說沒兩句，因不順其意而令
+偏激的教皇欲揮扙實施打的教育，「樂樂」見情勢不妙，遂叫「大米」帶著小
+狗先行離開。此時「教皇」才知「樂樂」與「阿康」、「阿吉」是一起的，便
+叫「樂樂」傳話，叫「阿吉」、「阿康」明天回學校報到。
+
+    擺脫煩人的「木桶教皇」後，一路走到「蛋糕南路」，遇見了「大米」及
+「三劍客」並邀其加入隊伍中。
+
+    回到鬼屋，與「阿康」及「約翰叔叔」商議的結果，三人決定先休學半學
+期，於是「樂樂」便負責前往找「木桶教皇」，告知休學之事。
+
+  ╓┬─────────────┬╖
+  ║│  找木桶教皇,告知休學之事 │║
+  ╙┴─────────────┴╜
+    離開鬼屋後，一路走到「蛋糕南路」時，遇上受託要將「樂樂」三人強行
+押至學校上學的「山楂」警員。經過一番解說後，「山楂」終願意讓「樂樂」
+自行到學校說明休學之事。
+
+    接著走到「早安一路」，進到學校終找到「木桶教皇」。教皇一聽休學之
+事，二話不說便揮扙施行打的教育了。教皇的教鞭果然厲害，兩三下就把「樂
+樂」制服了，幸得「山楂」警員及時前來阻止，這才得以乘機脫身。
+
+  ╓┬─────────────┬╖
+  ║│  回鬼屋找阿吉            │║
+  ╙┴─────────────┴╜
+    一出學校，即在校門口遇見了木桶週刊記者「拉班」，其告知這期週刊將
+報導木桶鎮的教育為主題，也順便探討「木桶教皇」動不動就實施打的教育的
+現象。
+
+    回到鬼屋後，正愁無法對付「木桶教皇」時，「約翰叔叔」將教皇怕音樂
+盒的弱點告知，尤其是少女的祈禱那一段，但木桶鎮上的音樂盒早在數年前就
+被燒得一乾二淨，如今就只剩教皇的太太在當時偷偷保存的一只了。看來得到
+「早安一路」拜訪「多福夫人」了。
+
+  ╓┬─────────────┬╖
+  ║│  到早安一路找多福夫人    │║
+  ╙┴─────────────┴╜
+    離開鬼屋走到「約翰的路」時，即見「獵師」慌忙跑來告知，說所有的狗
+都被人捉走了。於是「獵師」也加入隊伍，一同前往調查此事。
+
+    來到「不是約翰的路」時，遇見了捕狗隊，這才知有一老人（看來是木桶
+教皇吧）檢舉說狗會亂咬人，而令政府下令將狗格殺勿論，以斷絕狂犬病的命
+令。而捕狗隊也一意要將「獵師」、「大米」捉走，這當然不能稱其意了。
+
+    將捕狗隊打跑後，基於事態嚴重，便馬上以無線電與「阿吉」商議，深知
+非得趕快找到被捕的狗。
+
+  ╓┬─────────────┬╖
+  ║│  尋找被捕狗隊捉走的狗下落│║
+  ╙┴─────────────┴╜
+    一路搜尋來到「蛋糕南路」，找到倖免被捕的「鋼毛」，得知捕狗車正停
+在學校附近，而「鋼毛」也加入了隊伍之中。
+
+    來到「釣魚路」時，遇見了「多福夫人」及「山楂」警員，「多福夫人」
+也反對其丈夫的所為，所以便順利的得到了音樂盒齒輪，而不滿捕狗隊所為的
+「山楂」，決定去聯絡鎮民來解救狗群。
+
+  ╓┬─────────────┬╖
+  ║│  到學校門口將所有狗放出  │║
+  ╙┴─────────────┴╜
+    到了學校門口，終找到了捕狗隊長，但由於捕狗隊長厲害，沒兩下即全軍
+覆沒了，而「獵師」、「大米」也皆被捉走了。看來事態更嚴重了，於是便火
+速趕回鬼屋與「阿吉」商量救「狗」之法。
+
+學校走廊：胡椒炸彈，繃帶。
+教室１：蘋果。
+教室２：竹子。
+圖書館：跳蚤，紅藥水，玻璃瓶，小燃燒彈。
+神秘房間：罐頭炸彈，蛤蟆菌菇。
+
+  ╓┬─────────────┬╖
+  ║│  回鬼屋請求阿吉支援      │║
+  ╙┴─────────────┴╜
+    回到鬼屋後，將音樂齒輪交給「阿吉」，組合成一個完整的音樂盒，接著
+便與「阿吉」、「阿康」一同前往學校救「狗」了。
+
+  ╓┬─────────────┬╖
+  ║│  將捕狗車內的同伴救出    │║
+  ╙┴─────────────┴╜
+    在趕往學校的途中，來到「蛋糕南路」時，竟遇見了「木桶教皇」，其看
+見「樂樂」三人，不由分說便要揮扙實施打的教育。幸好有音樂盒在身，一祭
+出音樂盒後，「木桶教皇」便沒輒而落慌而去了。
+
+    之後便一路來到學校，再度遇上捕狗隊長，但終究不是他的隊手，三人全
+被捉進教室內反省。
+
+    正當三人絕望之際，窗外射入一道詳光，那位小女孩天使出現救了「樂樂」
+三人。被放出後的「樂樂」三人，立即趕往捕狗車處，看到「山楂」帶著鎮民
+圍住捕狗車，欲迫其釋放被捕的狗群，「樂樂」三人見此時機，欲打開車門放
+出狗群時，「木桶教皇」這老頑固又出現揮杖實行打的教育，「阿康」、「樂
+樂」也在其扙打下，昏了過去。
+
+    此時、就在兩方僵持不下之際，「貓王」率領眾貓群適時出現，救出了眾
+狗群，並將捕狗隊趕出了鎮外。
+
+  ╓┬─────────────┬╖
+  ║│  在醫院裡逛逛            │║
+  ╙┴─────────────┴╜
+    昏厥過去而被送往醫院的「樂樂」、「阿康」，在些許片刻後，「樂樂」
+先甦醒過來了，於是便在醫院裡閒逛。
+
+    一走出病房即看見一對吵架的夫婦，再走進隔壁的病房則看見病床上躺著
+一位和小天使長的很像的女孩，正在質疑之際，小天使出現說明了一切。
+
+    原來病床上的女孩正是小天使的身體，因為發生了車禍而被送到此處，雖
+然病已經治好了，但因為她的父母天天吵架且要離婚，所以她才遲遲不肯醒來，
+而在病房外吵架的夫婦正是天使的父母，於是便答應幫天使去說服她父母重歸
+於好。
+
+  ╓┬─────────────┬╖
+  ║│  幫天使說服父母重歸於好  │║
+  ╙┴─────────────┴╜
+    來到病房外，在費了一番曉以大義的說詞下，終說服天使「真夢」的父母
+重歸於好，「真夢」也欣然甦醒過來，一家團聚了。
+
+    此時「阿康」也醒來了，並從神父處得知鎮長已將木桶教皇開除了，而木
+桶教皇經此事也有懺悔之意，正在教堂內懺悔，「樂樂」和「阿康」也先行回
+鬼屋了。
+
+  ╓┬─────────────┬╖
+  ║│  到街上逛逛              │║
+  ╙┴─────────────┴╜
+    經過幾天之後，「樂樂」也養足了精神，便和「阿康」到街上逛逛。一路
+走到「不是約翰的路」時，遇見名偵探「湯米」，其告知天使「真夢」的車禍
+並非意外，而是與她的父親從事國家調查員的工作有關，於是便決定和「湯米」
+一起到「早安一路」真夢的家一查究竟。
+
+  ╓┬─────────────┬╖
+  ║│  到早安一路真夢家調查    │║
+  ╙┴─────────────┴╜
+    來到「早安一路」真夢的家中，在左邊的書房中發現了一道通往下水道的
+暗門，便入內一探。
+
+  ╓┬─────────────┬╖
+  ║│  和湯米一起尋找木桶鎮遺跡│║
+  ╙┴─────────────┴╜
+    在下水道一路解決阻路的怪魚後，最後終找到一個金庫，但無論用什麼方
+法也無法打開，所以只好先行離開再另想辦法。
+
+真夢家下水道：次元披風，空氣槍，罐頭炸彈，明星夾克。
+
+    離開下水道後，才一出真夢的家，即被警官「肥客」抓個正著，二話不說
+就被關進大牢，而「湯米」早已腳底抹油先溜了。
+
+  ╓┬─────────────┬╖
+  ║│  警局牢房                │║
+  ╙┴─────────────┴╜
+    在牢中認識了「快刀張三」、「肉丸」、「閃腰俠」。和他們閒聊後，得
+知「大都會企業」正準備對木桶鎮實施人心污染計劃，以利賺取更多錢的陰謀，
+而鎮上先前所發生的破壞行動，皆是「大都會企業」的所為。
+
+    之後，再與「快刀張三」的狗「閃電」說話，其告知身後的牆似乎有一暗
+道，於是在一番搜索下，終挖出了一條秘道，眾人便一同進入尋找出路。
+
+  ╓┬─────────────┬╖
+  ║│  尋找秘密通道            │║
+  ╙┴─────────────┴╜
+    通道下是一下水道，在一陣搜尋後，發現了一具骷髏，從其身旁的筆記本
+得知他是一位考古學家，且說此下水道有通往金字塔的路，但找了許久仍不見
+其它的出口，於是大家便同意先回警局牢房再想辦法。
+
+警局下水道：體力激素，鐵絲背心，防寒衣，麻藥拳套，罐頭炸彈。
+
+    回到警局牢房時，正巧「山楂」警員查房，在一番解釋後，他決定放眾人
+出去。正巧此時「肉丸」的老大「獅子王」也前來劫救「肉丸」，「山楂」為
+免失職，便上前追捕，而「閃腰俠」、「快刀張三」也前去協助。
+
+    此時「真夢」與其母親也前來警局解釋，終還「樂樂」、「阿康」二人清
+白。而由於警局是位在「這是路」，屬於貓的地盤上，於是「樂樂」便提議先
+離開貓的地盤。
+
+這是路：木材，金屬原料，熱能原料，蘋果，鐵罐，鐵片，鐵釘。
+肥客的家：機器原料，合成原料。
+肥客的家廁所：肥皂。
+肥客的家臥房：罐頭炸彈。
+隕石社長家：彈簧。
+隕石社長家廁所：蘇打粉。
+隕石社長家臥房：枕頭，時空原料。
+都市痞子家：高壓電池。
+都市痞子家臥房：電力原料。
+橫肉廚師家：生化原料。
+橫肉廚師家臥房：鐵塊。
+橫肉廚師家廁所：料理原料。
+警察局：遙控器。
+珠寶店：橡皮筋。
+消防隊：冰水球。
+知足餐廳：料理原料。
+銀行：橡皮筋。
+
+  ╓┬─────────────┬╖
+  ║│  迅速離開貓的地盤        │║
+  ╙┴─────────────┴╜
+    離開警局、往下經由「老爺路」來到「圓圈路」時，遇見了「什錦貓」，
+其告知貓有大麻煩了，要「樂樂」前往「這是橋」找「忍者貓」問清詳情。
+
+老爺路：油漆，貓食，生化原料，電池，玻璃瓶，蘿蔔。
+裁縫店：熱能原料，金屬原料。
+搬來搬去總公司：芥末，罐頭炸彈。
+搬來搬去總公司二樓：汽球。
+衣櫃服飾店：皮革，布。
+搬來搬去總裁家：蛤蟆菌菇，樹葉。
+搬來搬去總裁家臥房：洋蔥。
+搬來搬去總裁家廚房：維他命。
+木桶集團協會：顏料。
+木桶集團協會二樓：冷媒，合成原料。
+鎮長辦公室：合成樹脂。
+鎮長辦公室房間：南瓜。
+阿康的家：胡椒粉，繃帶。
+阿康的家臥房（右）：幻想原料。
+阿康的家臥房（左）：紙。
+鎮長的家：鐵罐。
+鎮長的家閣樓：電力原料。
+鎮長的家書房：鉛筆。
+鎮長的家臥房：高壓電池。
+圓圈路：汽油，彈簧，石棉，石灰，冷媒，蘋果，鐵片，蘇打粉，金屬原料，
+蕃薯，酒精，火藥，鐵塊。
+雜貨店：鐵片，電池，銅線。
+阿公阿婆之家：紙。
+阿公阿婆之家臥房：時空原料，遙控器。
+阿公阿婆之家廚房：香料，汽球。
+咖啡老闆之家：收音機，布。
+咖啡老闆之家廚房：胡椒粉，皮革。
+咖啡老闆之家臥房：鐵釘，枕頭。
+五金店：罐頭炸彈。
+咖啡店：幻想原料，野花。
+蛋糕先生之家：汽球，磁鐵。
+蛋糕先生之家閣樓：餅乾，肥皂。
+蛋糕先生之家飯廳：磁鐵，芹菜。
+蛋糕先生之家臥房：毒花粉，毛線。
+木桶蛋糕店：醫學原料。
+
+    接著回到「這是路」來到「這是橋」見到「忍者貓」，經「忍者貓」相告
+得知「貓王」被捉了，「黃金戰艦」也趁機想奪權，而尋找東西乃是狗的專長，
+於是「忍者貓」加入一起前去找「獵師」。
+
+泡泡街：金屬原料，全成樹脂，香料，銅線，跳蚤，貓食，冷媒，汽油，木材，
+稻草，冰水球，電池。
+咖啡大叔家：樹葉，遙控器。
+咖啡大叔家臥房：洋蔥。
+咖啡大叔家書房：辣椒，芥末。
+運動器材店：麵粉。
+隕石貿易公司：麵包，火藥。
+電腦店：彈簧。
+電腦店飯廳：冷氣原料，小燃燒彈。
+電腦店臥房（中）：顏料，皮革。
+電腦店臥房（左）：銅線，鐵罐，機器原料。
+流浪者咖啡店：合成原料，玻璃瓶。
+星際總部：竹子，玩具槍。
+大力士的家：繃帶，皮革。
+大力士的家運動房：鐵塊，芥末。
+大力士的家臥房：汽球。
+
+  ╓┬─────────────┬╖
+  ║│  找獵師幫忙尋找貓王      │║
+  ╙┴─────────────┴╜
+    一路走到「約翰的路」找到「獵師」。「獵師」得知貓王被捉，雖很熱心
+想幫忙，但由於「黃金戰艦」想趁此機會奪回北區，所以牠推薦去找目前隱居
+在「木桶廣場」尋找東西的箇中好手「摩西」相助。
+
+  ╭┬─────────────┬╮
+  ││＠幫甘蒂絲查山姆有無女友  ││
+  ╰┴─────────────┴╯
+    到「青草公路」與「山姆」教授交談後，再到「圓圈路」與「甘蒂絲」談
+話，得知其正在尋找「山姆」教授，並將「山姆」教授在「青草公路」的住所
+告訴她。回到「青草公路」山姆家門前與「甘蒂絲」談話。
+
+    來到「圓圈路」時，再遇「甘蒂絲」，原來她在暗戀「山姆」教授，於是
+便幫她到「青草公路」問「山姆」教授的姪女「伊羅娜」。
+
+    來到「青草公路」山姆家找到「伊羅娜」，得知「山姆」教授目前沒有女
+朋友，再回到「圓圈路」將此消息告訴「甘蒂絲」，獲得五十圓賞金。
+
+  ╓┬─────────────┬╖
+  ║│  到木桶廣場找摩西        │║
+  ╙┴─────────────┴╜
+    順著「老爺路」往右走到了「木桶廣場」找到「摩西」。「摩西」要求先
+聞一聞「貓王」的味道才能尋找，但眾人皆不知「貓王」是何許人也，所以根
+本沒有「貓王」的東西可讓「摩西」聞，而據傳鎮長也離奇失蹤，聰明的「摩
+西」推測鎮長與「貓王」可能被同一批人捉走，所以就先到鎮長的事務所聞聞
+鎮長的東西吧。而「摩西」、「花生」也加入隊伍。
+
+  ╭┬─────────────┬╮
+  ││＠DOMO                    ││
+  ╰┴─────────────┴╯
+    到「音樂路」，進「電影院」進入螢幕到ＤＥＭＯ小組，找林克敏學得
+「雙槍攻擊」，找王福生學得「ＤＥＭＯ散步」。
+
+音樂路：辣椒，小燃燒彈，料理原料。
+金銀島啤酒屋：銅線，酒精。
+木桶旅館：毒花粉，跳蚤。
+木桶旅館走廊：醫學原料。
+木桶旅館２號房：冷氣原料。
+木桶旅館３號房：紅藥水。
+DOMO：時空原料，布，罐頭炸彈，銅線，絕對零度，地獄之火，磁鐵，宙斯之
+雷，幻想原料，消炎繃帶，合成樹脂，玻璃瓶，機器原料，雷電炸彈。
+國王銀行：磁鐵，毛線，餅乾。
+唱片行：膠水。
+
+  ╭┬─────────────┬╮
+  ││＠將螞蟻的棺材交給呆教授  ││
+  ╰┴─────────────┴╯
+    到「音樂路」木桶旅館１號房與和尚交談，他會拜託你送「螞蟻的棺材」
+給「早安二路」的呆教授。到「早安二路」將「螞蟻的棺材」交給呆教授，得
+賞金一百元。
+
+  ╭┬─────────────┬╮
+  ││＠教育賽倫特              ││
+  ╰┴─────────────┴╯
+    到「早安一路」學校教室１與「賽倫特」交談，灌輸其正確的行事概念，
+獲得十點創意點數。
+
+  ╭┬─────────────┬╮
+  ││＠幫法拉找教師            ││
+  ╰┴─────────────┴╯
+    到「早安一路」學校辦公室與木桶學校理事長「法拉」交談（下午），她
+會說她正在找優秀的教師，並請「樂樂」幫忙留意一下。
+
+    之後去「清草公路」找山姆教授問他的意願後，再回到學校辦公室找「法
+拉」，「山姆」教授便會出現答應當教師，並獲得五十點創意點數。
+
+學校辦公室：毒花粉，竹子。
+
+  ╭┬─────────────┬╮
+  ││＠送書到夢之路希爾的家    ││
+  ╰┴─────────────┴╯
+    到「老爺路」進「搬來搬去總裁家」找「維斯洛」（如找不到，多試幾次
+即可），幫他送書到「夢之路」希爾的家。
+
+    來到「夢之路」，先進「便利商店」得知此乃是「希爾」所開的，再進到
+「希爾的家」的櫃子找到希爾，再將書交給狗娃娃，即可獲得賞金二百元。
+
+夢之路：胡椒炸彈，毒花粉，冷氣原料，紙，汽油。
+漢堡店：收音機。
+花店之家：合成原料。
+花店之家臥房（右）：跳蚤。
+花店之家臥房（左）：醫學原料。
+住宅（左）：電力原料。
+住宅飯廳：香蕉。
+住宅廁所：布。
+便利商店：冷氣原料。
+希爾的家飯廳：磁鐵，生化原料。
+住宅（中）：貓食。
+住宅廚房：消炎繃帶。
+住宅（右）臥房：玩具槍。
+
+  ╭┬─────────────┬╮
+  ││＠送ＰＤＡ給歐拉夫        ││
+  ╰┴─────────────┴╯
+    到「老爺路」與搬來搬去總裁「維斯洛」交談，幫他送ＰＤＡ給「這是路」
+珠寶店裡的歐拉夫，得賞金五十元。
+
+  ╓┬─────────────┬╖
+  ║│  到老爺路行政事務所      │║
+  ╙┴─────────────┴╜
+    來到「老爺路」進入「鎮長辦公室」發現「貓王」專用的南瓜面具及紅披
+風，難道鎮長就是貓王嗎？「摩西」聞了之後，告知牠這幾天在「魔王路」亦
+有聞到相同的味道，於是便往「魔王路」出發了。
+
+  ╓┬─────────────┬╖
+  ║│  到魔王路找尋貓王的下落  │║
+  ╙┴─────────────┴╜
+    經由「圓圈路」來到了「魔王路」，走到「樂樂」小時候的秘密基地時，
+「摩西」確定「貓王」就被關在裏面，但門口有流氓看守，不易進去，於是便
+想到從「鬼哭路」的枯井通道潛進。
+
+魔王路：石灰，繃帶，毒花粉，蘇打粉，紅藥水，合成原料，餅乾，汽球，樹
+葉，金屬原料，胡椒炸彈，木材，合成樹脂，幻想原料，麵包，鐵片，料理原
+料，鐵釘，收音機，罐頭炸彈。
+
+  ╓┬─────────────┬╖
+  ║│  從鬼哭路枯井潛進舊基地  │║
+  ╙┴─────────────┴╜
+    來到「鬼哭路」經由枯井到下水道，經一番搜索，終進到舊基地。在「閃
+腰俠」相助下，打倒小流氓，救出了鎮長。
+
+    鎮長也承認他就是「貓王」，且告知他就是「大都會企業」總裁的女婿，
+以及「大都會企業」的陰謀事蹟。之後，「貓王」召集眾貓狗在「木桶廣場」
+集合，並宣布「樂樂」今後成為貓狗的共同領導者。
+
+鬼哭路：冷氣原料，生化原料，維他命，玻璃瓶，冷煤，小燃燒彈，石棉，玻
+璃瓶，辣椒，蕃薯，高壓電池，香料，罐頭炸彈，南瓜，醫學原料，熱能原料，
+跳蚤，電力原料。
+樂樂基地秘道：百慕達之爪，保齡球炸彈，導向電飛彈，麻醉針筒，強化塑膠
+槍，運動家夾克。
+
+  ╓┬─────────────┬╖
+  ║│  巡邏小鎮，提防大都會企業│║
+  ╙┴─────────────┴╜
+    這天，「樂樂」再負起巡邏小鎮之責，巡到「不是約翰的路」時，遇見記
+者「拉班」，得知黑社會老大「獅子王」率眾佔領了警察局，於是便火速趕到
+「這是路」。
             
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��o�O���A�ܦ^ĵ�    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�o�O���v�i��ĵ��A�u���u������ĥ�v�w����ӷm�ϤF�C���ɶ�
-���|�Ѥj�u��l���v�]�X�{�F�A�b�g�L�@���E�ԡA�ױN�u��l���v���]�F�C�p
-���u�j���|���~�v�欰�V�ӶV��v�A�ݨӱo���������Ӷq�ﵦ�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��ѷݸ��������Ӷq�ﵦ  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�ѷݸ��v�i�����줽�ǻP������ĳ�A�o���u�j���|���~�v�w�����i�n
-�u������v�F�A�p���ߦ��d���u�R����v���u�j���|���~��ƳB�v�A�ݬݦ��L
-�u���i�`�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �d���R����j���|��ƳB  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���۸g�ѡu�o�O���v�@���g�u�������v�Ө�F�u�R����v�j�������~���
-�B���f�ɡA�J���F�N�Z���u������v���D�A�ӻP�u�å��F�_�ӡC�]�]���]�F�u
-�æӸ��o�S�H�ݦu�A�b�����u���̡v�ۧU�U�A���}�F��ƳB�j���A���H�@�P�J
-���d���C
-
-    �j�������~�줽�Ǥ����������A�g�L�@�f�j�M�A�צb�a�U�G�Ӥ@���u�@��
-���@�쪱��]�p�v�A�䨭�ǳ]�p���u�M�ͦѤj�v�������ٯu�j�ڡC
-
-    �P����]�p�v�᧹�X�Ы�A�u���̡v�i����b�u�ּ֡v�P����]�p�v����
-�ɡA�X�����}�F�O�I�c�A���F�@�T����]�p�ϡA�ݨӦ��]�p�ϤS�o�a�u���N�v
-���[�ݤ~�o����ѤF�C
-
-�j�������~�G�֥����n�A������A���r�M�ˡA�ϭ��u���J�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^���αN�]�p�ϥ浹���N  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}�u�j�������~��ƳB�v��A�@���^�찭�αN�]�p�ϥ浹�u���N�v�A��
-�ɡu���d�v�W�����]�ӻ���W�X�{�F�@�s����L�Υ��b�}�a�C�����H�Ө�u��
-�v�����v�ɡA�J�W�F�����O�j�j������L�A���o�u�ߤ��v�X�{�A�ɪ��ѨM�F��
-��L�C�Ӧp�����W�w���O����L�F�A�n����̪��ܡA�ߦ�����`�������A�~
-����L�̡C��O�u�ߤ��v�B�u���d�v�]�[�J����A�@�P�e���u�j���|��ƫǡv
-�M���`�������C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j������ƳB���`�������x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �A���Ө�u�R����v�j���|��ƳB���f�ɡA�J���F����u�{�v�A����ӤF
-�@�B�A����u�{�v�w�N�`����e���u������v�]�N�O�������k��^�p���D�F�A
-�ӡu������v���b�u����s���v���֡A�ҥH���H�K���t�����u����s���v�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �����s���������p���D�x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u����s���v�ק��u������v�p���D�A�o�~���`����O�æb����
-���u�M�ͦѤj�v�����W�A���u�M�ͦѤj�v�D���������A�g���H���O�����U�~�N
-�u�M�ͦѤj�v�����A�s�`����]�@�P�Q���F�A�]�����W������L�]�L�k�l�^�A
-����ۥͦ۷��F�C
-
-    �u�ߤ��v�A����k��u������v�A�G���k�A�׭��{�A�Ӫ���u�{�v���n�^
-��j���|���~���j�����u�����U�ԡv�A�ݨӤ]�o�e���u�����U�ԡv�d���@�f
-�F�C
-
-    �u�֤M�i�T�v�o���u�ּ֡v�Q�`�J�u�����U�ԡv�@���A�K�e�ӧi�������
-�u�]�����v�Ǧ������|�i�q���u�����U�ԡv�C��O�b�u�֤M�i�T�v���a��U�A
-�Ө�F�u�]�����v�Ǫ��u�s���v�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �콼���U�Խլd�j���|���Ѣx��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@�i�u�s���v�Y�J�W�@�s�c�T�A���o�u�ªZ�h�v�X�{�ۧU���h�T�s�C�u��
-�Z�h�v�o���u�ּ֡v���e���u�����U�ԡv�A�K�[�J����@�P�e���C
-
-�˪L�G�J�|�A�ϭ��u�Z�ҡA�p������A���J�A�����^�a�A�[�t�����C
-�}�ޡG���r����A�g�X���ʡA�Ѭr���A����A�ʼ}�F�����A�U���^�a�A�ϯB��
-�c�C
-
-    �g�L���j���s���A�A�q�L�@�B�}�ޫ�A�ש�Ө�F�u�����U�ԡv�A�ӡu��
-���U�ԡv���~���Q���K�E���O�����D�q�̡C�g�ѥk����Ө�@�B�����A�ݨ���
-�b�������۪��u�̿|�v�Ρu�n�u�ߡv�A���b�@�ǪY�઺�c�߮v�u�֪G�v�o����
-���N���Ƹ��A�ݤ��D���@�����u�ּ֡v���M�W�e�ۧU�A���]�F�u�֪G�v�A���]
-�]���ۨӨ��Ǵ۵��ȴc��ĵ�ƶ��C
-
-    ���D�۫O�A���M�[�H�������hĵ�ƶ��A���������B�O�u�֪G�v���a�L�A��
-�H�������ȫK�O��P�u�̿|�v�������}���a�A�^�������C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���}�����U�Ԧ^������  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���n�����`�A�Ө�u�����U�ԡv�q���}�ު��J�f�ɡA�S���쮷���������A
-��ӥL�]�O���Bĵ�ƶ������A�ݨӤS�o�}���F�C
-
-    �@�}�E�ԫ�A�ק�ĵ�ƶ������ѡA�X����֤��ڡA���H�]�X�����|�]�i�}
-�ޡA�@���]�^������C
-
-    �^�찭�ΡA�P�u���N�v�B�u���d�v��ĳ��A���D�H���b�u�����U�ԡv�q
-��ۦp�A�K�M�w�P�u���d�v��u�R����v�j�������~��ƳB�����q���ҡC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j������ƳB���q����  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �X���ΧY����³��u�Ǧǡv�@�a�H�A�u�ּ֡v�]�]���⮩��u�l��³��s�v
-�����ޡC�Ө찭�Ϋe�Q���ɡA�J�W�����]�Ȥk��u������v�Q����˱j��a���A
-�e�ӱN�k��H���b���ΡA�ӡu���d�v�]�u�n�d�U�ӧ@���F�A�ҥH�u�ּ֡v�u�n
-�@�H�e����ƳB�F�C
-
-    �Ө�u���������v�J�W�u�y�v�v�A�䨣�u�ּ֡v�ճ�O���A�K�[�J�@�P�e
-���C��F�u�R����v�j������ƳB���f�ɡA��ť��c�߮v�u�֪G�v�n��u���
-�s���v�]�p���������ѡA��O�K���H���F�u����s���v�A���M����u�֪G�v
-�����ѡC
-
-    �Ӧb�L�Τ��A�`ı�u�֪G�v�餺���G���ۤ@��c�]�A�����O�q�D�`�j�j�A
-��O�K�^�찭�λP���H��ĳ�ﵦ�C���H��ĳ��A�M�w�h�����~�Ǯժ��u�m�N�ݡv
-�ǲ��]�k�A�Χ䯫���ǲ߯��t�����N�A�H�K��I���c���c�]�C
-
-    ���}���Ϋ�A�@���Ө�u���w�@���v�A�i�J�ǮչϮ��]�����}���d�t���A
-����F�u�m�N�ݡv�ò߱o�u���F�ߥl��N�v�C���ۨӨ�u���w�G���v�A�i�а�
-�������A�߱o�u���t�v���N�v��A�K��^���ΡC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��^����                �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@����^���ΨӨ�u���������v�W�ɡA�J���F�u��l���v�A��i���ۤw�Q
-�u�֪G�v�Q�ΤF�A�Ө��U�]���Q�u�֪G�v�����F�C�h��e�D���u��l���v�M
-�w�器�k���A�Сu�ּ֡v�ۧU�Ϧ^��Q��������U�A��O�A�u�ּ֡v�K��P
-�u��l���v�B�ǵs�u���H�v�@�P�e���u�j���|��ƳB�v�ϤH�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j���|��ƳB�ϤH      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �@������u�R����v�j���|��ƳB���f�ɡA�J���]��D�H�u�̿|�v�]�Q
-�u�֪G�v�����Ӥ߫�p�ª��u�n�u�ߡv�A��O�u�n�u�ߡv�]�[�J�F�ϤH��ʡC
-
-    �i��u�j���|�줽�ǡv�W��G�ӡA�M���@��������A�n���e���Ө�@�D��
-�e�A���O�ɤߤO���L�k���}�����C���ɥ����u������v�p���D�X�{�A���ޤF�@
-���K�D�A���۴L�߱j�P���ǵs�u���̡v���H�����}���}���F�����A�K�d�U���~
-�����}�����k�Ӥ��@�P���H�e�i�C
-
-    �i�J�K�D�Ө�T�ӫ�A�u������v���@�h���A����ˡA���o��F�Ҧ����H�A
-��O�u���d�v�]����[�J����A�@�P�b�j�Ӥ������M���H���U���C
-
-    �@���b�j�ӥ|�B�j�M��A�A�׹J�W�F�u�֪G�v�A���u�֪G�v���Xĵ�ƶ����A
-�ۤv�o���Ȥ��j�N�F�C�Ӥ��骺�u�ּ֡v���H�w�D���骺�d�U���X�A�@���E��
-�ױNĵ�ƶ������ѤF�C
-
-    �ѨMĵ�ƶ�����A�A�~�򩹫e�j�M�A�ק��Q�����u�̿|�v���H�C�ϥX��
-�H��A���۫K�O��u������v�p���D�@�_�^��a�F�C
-
-�j�������~�G���Z����A�ϯB�־c�A���Ǩ��@�n�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �������@�_�^�h        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���^����T�Ӭ��������˿줽�ǮɡA�u���u�������v�Q�������b�̭��A�i
-�Q�Ӫ��仡�A���ˤ����\�F�C�N�u������v��X�A���o���^���Ϋ�A���H�K��
-�ۥh��ǵs�u���̡v�A�ǳƤ@�P���}�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��ǵs���̷ǳ����}      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���^����G�Ө���u���̡v�A����ݤ������߲ױN����H����]�������}
-�F�A���̭��o�O���Z���Z�ҦӤw�C�٦n�b�a�W�ߨ�@���観�_�Ǥ�r�����ݪO�A
-�o�~���|�O�u���̡v�����Ҧ��Ү{�O�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ����N�Q�ת��ݪO����    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �^���a��A�M�u���N�v�Q�ת��ݪO���ơA�L�����W�ӥh�A�͡C�Ө�ӤW
-����ǧ�u���N�v�A�q�L�f���o����ӳo�����ݪO�M���e�bĵ���U���D��쪺
-�������O���j�����s�C�ھڤ�r����ܡA�b������n�誺�u����q�v�W�A�s�b
-�۶ǻ��w�[���j������r����A���n��u����q�v����������A�ҥH��
-�H�K�ʨ��e���u������v���u�����v���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �������          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���}���Ϋ�A�g�ѡu�����v�B�u�ڤ����v�Ө�F�u������v���u�����v�C
-���F��Ҥ@�d����A���Q���W�F�p��A�Ө�F�u����q�v�C
-
-������G�۷Q��ơA������ơC
-�ܮw�G���ݭ�ơC
-�믫������ߤG�ӡG�n�ʡC
-�U�ѲԤh�a�G���M�C
-�U�ѲԤh�a�שС]���^�G��ǭ�ơC
-�U�ѲԤh�a�שС]�k�^�G�ۦǡC
-�s�Ӫ��a�G�����ơC
-�s�Ӫ��a�G�ɪŭ�ơA���Ĥ��C
-�h�������a�G�^�a�C
-�h�������a�שСG���ġC
-�����G�氮�A�K�����C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �M��j�����r��J�f    �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �u����q�v�W�@����A���F�X�B����A�Y�ݨ��@�ک_�Ǫ��W�l�A�B�W�l
-�W�٦��@�j�ʤf�A��j�p���n�P���ݪO�۲šC�b���J���ݤ���A�Yť���@�}��
-�T�A�e��a�����M�B�X�@�y���r��A�ݨӶǻ��ëD�갲�A��O���H�K�i�J�@��
-�s���C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���d���r�𪺯��K        �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �i�J���r�𤺡A�g�L����������q�D��A�צb�`�B���@�B���x�Ч��@��
-���r�����_�ۡA���ɡu����v�v�X�{�¯٭n�N���_�ۥ浹�L�A���M�|�ﲳ�H��
-�Ȯ�A�����H������N�A�E���ʤ��z�L�C
-
-���r��G�p������A�a�������A�ϭ��u�Z�ҡA��Ͻc�A�j�ĿU�N�u�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^�����                �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���X���r���A�Y���u����v�v�a�ۥL�s�o������������w�b�X�f�B����
-�F�C����������L�@�ݤ��@�ΡA��T�U�K�N������F�A�ӡu����v�v�����A�u
-�n����Ӱk�F�C
-
-    �Ө��f�ݲ�ҡA�o�~���p������w�Q�u����v�v�}�a�A�ҥH�u�n�H�L�u
-�q�D�U�u���N�v�F�C�g�u���N�v�ۧi�A�~���讳�쪺���r���_�ۭ�ӴN�O�@��
-�Ŷ�����A�u�n�⥦�˶i�ޢҢϦA�t�X�L�Ҽg���{���A�Y�i�����@��������
-�e���C�Q�Φ��@��k�A���H�^��F���ΡC
-
-    �^�찭�Ϋ�A�u���N�v���u�s�ӡvĵ�����ӶD���u�֪G�v���b���W�G����
-�����ЫΤ��ơA�ӡu��l���vť�����@�Ʊ��A�K�ۧi�īi�@�P�e���г����L
-�o�a�A�h�_�o�O�L�W�A���l���a�J�A�Hū���骺�o�L�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��г�������֪G���c��  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Q�΢ޢҢϦa�϶ǰe�\��ǰe��u�г����v�A�ݨ��u�֪G�v���b�G������
-��Фl�A���H�K���W�X�����u�֪G�v���c��C
-
-    �N�u�֪G�v���o����Ӱk��A���۫K�O�n�ѨM�u��l���v�Q�q�r�����D�A
-�u�ּ֡v��ĳ���h�������A�ݬݦ��S���n���ѨM��k�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ����l����ѷݸ�������  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�ѷݸ��v�����줽�Ǩ���������A�������̦n����k�N�O�u��l���v
-�h�ۭ��A���o���׭��u�֪G�v���b�p���k�~�A�u��l���v���M���|�N���}���
-��ĥ������h�C���ɢޢҢϵL�u�q�T�_�A�u���N�v�i���u�֪G�v�S�b�u�C��
-���v�x�ƤF�A��O�u�ּ֡v�K���t�����u�C�󤽸��v�C
-
-    ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-    ���x  ��C�󤽸�����֪G�x��  �x��
-    ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��F�u�C�󤽸��v�Y���u���d�v�B�u������v�B�u��l���v���H�w�b����
-��u�֪G�v���c��A���u�֪G�v���O�c�ʤ���A���ǳƱаV�L�@�f�ɡA�W����
-��x�u�ѯT�P�v�X�{�F�A�L�O�e�Ӷe���u��l���v���A�ӡu�֪G�v�]��������
-�F�A���n�u���d�v�B�u������v�l�h�ݦ��u�֪G�v�C
-
-    ���]�����Ʋz���u�ѯT�P�v��A�u��l���v�]���^�������׭��Y�F�C����
-�u���d�v���ޢҢϵL�u�q�ӳq���u�a�ʡv�Q�u�֪G�v��ˡA���b�u�J�|�_���v
-���~��|�v���A����|�~�o�E���F�@�ǫ����Ю{�A������u�a�ʡv���Q�A��O
-�u�ּ֡v�K���t�����u�J�|�_���v�ۧU�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��J�|�_���~��|��U���d�x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��F�u�J�|�_���v�~��|�e�A�b�u�T�C�ȡv�Ρu�j�̡v�ۧU�U�A�ץ��]�F
-�ƨg�������Ю{�C�ӡu���d�v�]���ϡu�a�ʡv�ӱN�u�֪G�v�l��F�C
-
-    ���ɡu�ѯT�P�v�A�ץX�{�߰ݡu��l���v���U���A�������z�f�����u�ּ֡v�A
-�Q�u�ѯT�P�v�����@�Ǧӥ��F�_�ӡC�g�L�@���E�ԡA�ױN�u�ѯT�P�v���ѡA��
-�ɡu���N�v�H�L�u�q�q�����b�u�]�����v���@�ǲM����@�áA�G�u�ּ֡v�K��
-���u�]�����v�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���]��������x�ƪ��M����x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�]�����v�A���]�b���x�ƪ��u����v�v��A�u���N�v�H�L�u�q�q��
-���u�ѯT�P�v�w��F���Ϊ���A�n�u�ּ֡v���^���ΡA�ӡu�j�̡v�Ρu�T�C�ȡv
-�h�d�b�u�]�����v��U�߸s�A�H���u����v�v�A���Ӿx�ơC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �^���λP��l���ͽ�      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �^�찭�Ϋe�Q���ɡA�Y�J�W�F�u�ѯT�P�v�A���ɡu��l���v�]�Q�q�A�M�w
-�X���ۭ��A���L�Ʊ�u�ѯT�P�v��N����¤�u�֪G�v÷���H�k�A�ӡu�ѯT�P�v
-�]�������ơA�P�u�ּ֡v�p��լd�j���|���~�C
-
-    �g�L�u�q�P�u���d�v���o�pô��A�o���u�֪G�v���b�u��ë���v�A��O�K
-���u��ë���v�X�o�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ���ë����֪G          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u��ë���v�ש���F�u�֪G�v�A���l�׳Q���⪺�u�֪G�v�ȱ��C��
-�L�ڡu���d�v���q���A�o���u�֪G�v���а󪺤�V�k�h�A��O�K�����а�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��а�e���֪G          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��F�а��A�K�P�u�ѯT�P�v�L���G���M��u�֪G�v�C�u�ּ֡v���а�
-�M��u�֪G�v�ɡA���F�ߥX�{�i���ݷ|�u�ּ֡v�|�J�W�@�����񪺼ĤH�A�Ӱ�
-�@��A�e����k�A�N�O��e�a�i�а󤺡C
-
-    �b�а󤺧䤣��u�֪G�v�A�K�Y�軰���u�ѯT�P�v�l�M���X����V�e�i�C
-��F�a�U�ӥޫ�A�ש���F�u�֪G�v�A���ɪ����u�֪G�v���W���c�]�]�X�{
-�F�A�b�g�L�@�f�i���A�ױN�c�]�޶i�а󤺡A�ױN�䦬�A�F�A�ӡu�֪G�v�]
-�ש�o�����o�A�Q�e���J���F�C
-
-    ���Ʊ��ץ������A�ڡu�u�ڡv�o�쯫���T���q���A�o���u�����U�ԡv����
-�s�Y�N�z�o�Ať�����B������A�u�ּ֡v�K���t���u�����U�ԡv�X�o�A�q����
-�H�����C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �콼���U�Գq�����H����  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �g�ѡu�]�����v�Ө�u�s���v�A�A�׹J�W�u�ªZ�h�v�A�B�o���u�u�ڡv�]
-�H�᰽����Ӧӥ��Q�@���a�H�J�W�C
-
-    �b�ѱϡu�u�ڡv��A�K�������᪺����F�u�����U�ԡv�A���u�����U�ԡv
-���~���ڥ����H���s�|�z�o���ơA���F����ЬӦh�֤Ұ��~�A��l���H�̥���
-�H�u�����U�ԡv���ͦb���s�������U�F�C
-
-    �����ݻŪ��H���a�����H�A�O���H�����߶ˡA���]�\�٦��@�ǥ��٪̫��
-��U�A��O�b��ĳ��A�M�w�h�������Q�ױϨa���ơC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  �������Q�ױϨa����      �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ��u�ѷݸ��v�����줽�ǻP������ĳ��A�M�w�i�J�F�����q���t�ΡA�p��
-�䥦�������H���@�P��O�䴩�C���ѩ�F�����q���t�ΤQ���Y�K�A�դF�h����
-�O�L�k�i�J�A��O�������X�j���|���~���@�Ӱ���F�����t�γn��A�������n
-�Φ��n��ɡA�o�{�����H�]�b�ΡA�B�X�����T�N�@�ǻȦ檺������J�L���b��C
-�N�b���ɡu���d�v�e�ӳq�����u�֪G�v�w�Q�u����v�v�T���Ϩ��F�A�i�Q�Ӫ��A
-���b�γn���ऽ�ڪ��H�N�O�u�֪G�v�F�C
-
-    �g�q���l�ܫ�A�o���u�֪G�v���b�j���|���~�줽�Ǥ��A���H�K���t����
-�u�R����v�j���|���~�줽�ǡC
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��j���|�줽�Ǯ��^�֪G  �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    �Ө�u�R����v�j���|���~�줽�Ǥ��Y�J���u������v�Ψ�w�����諸��
-�ˡC���ɡA�u�֪G�v�P�u����v�v�r�ۨ�s�o�����u�Z�˼˫~�Ρv�X�{�A�]��
-���O�j�j�A�S�@�|�A�u�ּ֡v�Ρu���d�v�Y�Q�������˩��ֹL�h�F�C
-
-    �Q���H�e����|���u�ּ֡v�B�u���d�v�A�b������������N��v�U�A���t
-����_�F�A������u�֪G�v�w�k��F��f�A�ǳƱ��ڰk�ܰ�~�F�C
-
-  ��s�w�w�w�w�w�w�w�w�w�w�w�w�w�s��
-  ���x  ��          �n          �x��
-  ���r�w�w�w�w�w�w�w�w�w�w�w�w�w�r��
-    ���F�ܦ^�Q�u�֪G�v�ܨ����Ϩa���A�u�ּ֡v��P�F�u���d�v�B�u�ѯT�P�v�B
-�u��l���v�B�u�ªZ�h�v�o�Ǳj�O����A�������X�o�F�C
-
-    �Ө�u�����v�׻����W����u�֪G�v�k�X�A�g�L�@�f�W�ԫ�A�ױN�u�Z
-�˼˫~�Ρv�Ρu�֪G�v�B�u����v�v���ѡA�ӡu����v�v�P�u�֪G�v�]�צ��c
-���A�����b��o����������������z�˸m�U�C
-
-    �����F�o�����B�B���i���A�Ʊ��å��]���ӵ����A���۲��H�]�n������
-�j�������ϴ��έ��ؤu�@�A�H���гy�@�ӧA�ڤߤ��M�����n���ͬ��Ŷ��A�Ӧ@
-�P�V�O�İ��۩O�C
-
-
-  �z�w�w�����Ϣw�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x  �ޢҢϲզX���~�G�]�Y�����C�쪺�զX�ο��~�A�Цۦ��|�ա^      �x
-  �u�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�t
-  �x      ��      �X      ��     �~             �x  �Ͳ������~    �x
-  �u�w�w�w�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+���ġ�Ĭ����           �x�J�Ԭ��u        �x
-  �x                  �x+�ˤl���ȡ������E       �x���Գ�          �x
-  �x  ����            �x+�ѯ�                   �x�ѥ]            �x
-  �x                  �x+�㥽                   �x���m��          �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+�s��                   �x²�����K�u      �x
-  �x  ��              �x+�_��                   �x�_��H          �x
-  �x                  �x+��                     �x�F��ñ�W        �x
-  �x                  �x+�J�ԯ�                 �x�J�Գ�          �x
-  �x                  �x+�E�Y                   �x�E�Ф��n        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x  ������          �x+������                 �x���Ǩ��@�n      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�T�y                   �x�㥽�Ϲ��u      �x
-  �x                  �x+��                     �x�����K��        �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �x  ����            �x+�u®                   �x����Y��        �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �x                  �x+�ۺ�                   �x�j����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�ɽu                   �x�H�y�B�r        �x
-  �x  �N�C            �x+�����~                 �x�N�Ѭ��u        �x
-  �x                  �x+�֭�                   �x�j����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�Ѭr��          �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �x                  �x+�s��                   �x���Ĥ�          �x
-  �x  ��            �x+��                     �x���Фf�n        �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+����                   �x�M���o��        �x
-  �x                  �x+�J�ԯ�                 �x�y��f�r�u      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �x                  �x+��                     �x�B���y          �x
-  �x                  �x+�㥽                   �x�㥽�Ϲ��u      �x
-  �x  �T�y            �x+����                   �x�ᶵ��          �x
-  �x                  �x+����j                 �x�Ů�j          �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+�۴�                   �x�j����          �x
-  �x                  �x+�E�Y                   �x�U�l            �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+����                   �x�ʲ\�v��        �x
-  �x                  �x+������ۦ�             �x�j�O������      �x
-  �x                  �x+�߭����T�y             �x���m��          �x
-  �x                  �x+��                     �x�����ܭ�        �x
-  �x  �Ψm            �x+����j                 �x�Ů�j          �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �x                  �x+�K��                   �x�j�O�콦�j      �x
-  �x                  �x+Ĭ����                 �x����ө��u      �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x  �J�ԯ�          �x+�E�Y                   �x�J�Գ�          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�ۦǡ��ѯ�             �x�ϰv����        �x
-  �x                  �x+�ˤl                   �x�K��l          �x
-  �x                  �x+��������������         �x�ʼ}�F����      �x
-  �x                  �x+�E                     �x�K���I��        �x
-  �x                  �x+��ֵ������K�����     �x�u®�j          �x
-  �x  �K�v            �x+�㥽                   �x�㥽�Ϲ��u      �x
-  �x                  �x+�۴�                   �x������          �x
-  �x                  �x+�K�����K��             �x�K���l          �x
-  �x                  �x+�ɽu                   �x�����q��        �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+����                   �x�O�ֲy���u      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x  ����j          �x+�E�Y                   �x�Ů�j          �x
-  �x                  �x+������                 �x�k�ۺj          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�K��                   �x�ϰv����        �x
-  �x                  �x+��ֵ����n��           �x�ѥ]�Ϲ��u      �x
-  �x  �ѯ�            �x+����                   �x�����K��        �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+�s��                   �x���Ĥ�          �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�u®��������           �x�p�U�N�u        �x
-  �x                  �x+�_��                   �x²�����K�u      �x
-  �x  �s��            �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+����j                 �x�ɦV���u        �x
-  �x                  �x+����                   �x���Ĥ�          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�ۦ�                   �x�d�q����        �x
-  �x                  �x+�ˤl���K��             �x���M            �x
-  �x                  �x+�]�����_��             �x�ˤl�j          �x
-  �x                  �x+�E                     �x���Фf�n        �x
-  �x                  �x+�߭�                   �x����            �x
-  �x                  �x+�㥽                   �xī�G            �x
-  �x                  �x+�۴�                   �x���r�M��        �x
-  �x  ���            �x+�K��                   �x�K��l          �x
-  �x                  �x+�ɽu���u®������j     �x�콦�j          �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+��                   �x�ݼ�            �x
-  �x                  �x+�s��                   �x�Ѭr��          �x
-  �x                  �x+���s��                 �x���s��          �x
-  �x                  �x+������ۣ               �x���Į��M        �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�ˤl                   �x���P���J        �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �x                  �x+��                     �x���H��          �x
-  �x  ��u            �x+�K��                   �x���u��          �x
-  �x                  �x+���s��                 �x���s���M��      �x
-  �x                  �x+�u®                   �x�_��H          �x
-  �x                  �x+�۴�                   �x�j����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�K������ֵ�           �x�����q��        �x
-  �x                  �x+�T�o                   �x�p�U�N�u        �x
-  �x                  �x+���K                   �x�ᦱ�Ŷ���      �x
-  �x  �q��            �x+��                     �x�����ܭ�        �x
-  �x                  �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+������                 �x�ɦV�q���u      �x
-  �x                  �x+�K��                   �x�x�����Y        �x
-  �x                  �x+�۴�                   �x�U���^�a        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�K�v                   �x�ϰv����        �x
-  �x                  �x+�ˤl                   �x�̤�j          �x
-  �x                  �x+���                   �x���M            �x
-  �x                  �x+��u                   �x�p������        �x
-  �x                  �x+���K                   �x�ϯB�־c        �x
-  �x                  �x+�ѯ����߭�             �x�ѥ]            �x
-  �x  �C��            �x+��                     �x�����K��        �x
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+��ֵ�                 �x���t��          �x
-  �x                  �x+�s��                   �x���Ĥ�          �x
-  �x                  �x+��                     �x�����ܭ�        �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+���s��                 �x���s���M��      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+�]��������             �x�Ů�j          �x
-  �x                  �x+�T�o                   �x�̤�j          �x
-  �x                  �x+�ɽu                   �x�콦�j          �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x  �ˤl            �x+����j                 �x�ˤl�j          �x
-  �x                  �x+��                     �x�B��            �x
-  �x                  �x+�J�ԯ�                 �x�J�Գ�          �x
-  �x                  �x+�E�Y                   �x�B�ʮa���J      �x
-  �x                  �x+���s��                 �x���s��          �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+�u®                   �x��y����j      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+���K                   �x�֥����n        �x
-  �x                  �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+������                 �x�ɦV�q���u      �x
-  �x  �T�o            �x+�K��                   �x�p�U�N�u        �x
-  �x                  �x+����j                 �x�Ů�j          �x
-  �x                  �x+�u®                   �x�Q�g�ȦB�c      �x
-  �x                  �x+�K��                   �x�x����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�ѯ�                   �x�ѯ��Ϲ��u      �x
-  �x                  �x+�ˤl                   �x�ˤl�j          �x
-  �x                  �x+�]��                   �x�r�᯻          �x
-  �x                  �x+�߭�                   �x���m��          �x
-  �x                  �x+�T�y                   �x�B���y          �x
-  �x  �ۦ�            �x+��                     �x�F��ñ�W        �x
-  �x                  �x+�۴�                   �x�j����          �x
-  �x                  �x+�K��                   �x�ϰv����        �x
-  �x                  �x+�H��ۣ                 �x�r�᯻          �x
-  �x                  �x+�J�ԯ�                 �x�j�O������      �x
-  �x                  �x+�n��                   �x�B�ʮa���J      �x
-  �x                  �x+�s��                   �x�O�ֲy���u      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�s��                   �x�p�U�N�u        �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+�㥽                   �x�㥽�Ϲ��u      �x
-  �x  Ĭ����          �x+����                   �x�r�᯻          �x
-  �x                  �x+����j                 �x����˴��j      �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+�E�Y                   �x����^�a        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�u®                   �x���Գ�          �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x  �㥽            �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �x                  �x+��ֵ�                 �x�㥽�Ϲ��u      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�𸭡��E�Y             �x�ϯB�־c        �x
-  �x                  �x+��                     �x�����ܭ�        �x
-  �x  ���K            �x+�ɽu��������           �x�ᦱ�Ŷ���      �x
-  �x                  �x+����j                 �x�k�ۺj          �x
-  �x                  �x+�K��                   �x�ϭ��u�Z��      �x
-  �x                  �x+�K��                   �x�֥����n        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�u®                   �x�¬}���;�      �x
-  �x                  �x+�K��                   �x�j�ƶ콦�j      �x
-  �x  �ɽu            �x+�K��                   �x�����q��        �x
-  �x                  �x+��                     �x�K���I��        �x
-  �x                  �x+������                 �x�ɦV�J���u      �x
-  �x                  �x+����j                 �x�u®�j          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+��ֵ�                 �x�ˤl�j          �x
-  �x  �]��            �x+�ȡ���                 �x�F��ñ�W        �x
-  �x                  �x+������ۦ�             �x�r�᯻          �x
-  �x                  �x+����j���K��           �x�콦�j          �x
-  �x                  �x+�۴�                   �x�F���ҩ���      �x
-  �x                  �x+���                   �x�ˤl            �x
-  �x                  �x+�ˤl                   �x�Ů�j          �x
-  �x                  �x+�X�����               �xĳ���ѧO��      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+��u                   �x�y��f�r�u      �x
-  �x                  �x+�ۦǡ��T�y             �x�O�ֲy���u      �x
-  �x                  �x+�ˤl������             �x�p�U�N�u        �x
-  �x  ����            �x+���K                   �x�֥����n        �x
-  �x                  �x+�ɽu                   �x�j�ƶ콦�j      �x
-  �x                  �x+�K��                   �x���Y���u        �x
-  �x                  �x+�㥽                   �x�J�Ԭ��u        �x
-  �x                  �x+��ֵ�                 �x�Q�g�ȦB�c      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�_��                   �x�F��ñ�W        �x
-  �x                  �x+�K��                   �x�ʹ��F����      �x
-  �x                  �x+������                 �x���ӱj���O      �x
-  �x                  �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+�]��                   �x�콦�j          �x
-  �x                  �x+�㥽                   �x�㥽�Ϩ�        �x
-  �x  �K��            �x+�۴�                   �x������          �x
-  �x                  �x+����                   �x���u��          �x
-  �x                  �x+�ɽu                   �x�K���I��        �x
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+�߭�                   �x�p������        �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x                  �x+����j                 �x��y����j      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x�氮            �x
-  �x  �߭�            �x+��                   �x���m��          �x
-  �x                  �x+�ѯ�                   �x�ѯ��Ϲ��u      �x
-  �x                  �x+������ۣ               �x�ѥ]            �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�㥽                   �x�㥽�Ϲ��u      �x
-  �x                  �x+�s��                   �x�x����          �x
-  �x                  �x+���s��                 �x���r��          �x
-  �x                  �x+�u®                   �x����۰ʺj      �x
-  �x                  �x+����j                 �x����˴��j      �x
-  �x  �K��            �x+�K��                   �x���K�@��        �x
-  �x                  �x+�v��                   �x�j�O������      �x
-  �x                  �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+�۴�                   �x���r�M��        �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x                  �x+������                 �x�֥����n        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+Ĭ����                 �x�f�r����        �x
-  �x                  �x+�s��                   �x�p�U�N�u        �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+�E�Y                   �x�_�I�a���J      �x
-  �x                  �x+��ֵ�                 �x�^�a            �x
-  �x  �n��            �x+�㥽                   �x�㥽�Ϲ��u      �x
-  �x                  �x+��                     �x�d�q����        �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+�J�ԯ�                 �x�d����          �x
-  �x                  �x+�v��                   �x�Ѭr��          �x
-  �x                  �x+����j                 �x��y����j      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�K��                   �x�]�y            �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+��                     �x���t��          �x
-  �x                  �x+���s��                 �x���s���M��      �x
-  �x  ��ֵ�          �x+����                   �x�ᶵ��          �x
-  �x                  �x+����j                 �x�j�콦�j        �x
-  �x                  �x+�v��                   �x�Ѭr��          �x
-  �x                  �x+�۴�                   �x�콦�j          �x
-  �x                  �x+������                 �x�j�ƶ콦�j      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+������ۣ               �x���Į��M        �x
-  �x                  �x+������                 �x���K�@��        �x
-  �x                  �x+������                 �x�ᦱ�Ŷ���      �x
-  �x  �K��            �x+��                     �x�K���I��        �x
-  �x                  �x+����j                 �x�k�ۺj          �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x                  �x+�v��                   �x�ʲ\�v��        �x
-  �x                  �x+�۴�                   �x�ϭ��u�Z��      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�K��                   �x����۰ʺj      �x
-  �x  �u®            �x+����                   �x�ᶵ��          �x
-  �x                  �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+��                     �x�K���I��        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+��ֵ�                 �x���m��          �x
-  �x                  �x+��                     �x�����ܭ�        �x
-  �x                  �x+�ȡ�����               �x�����K��        �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+���                   �x���M            �x
-  �x                  �x+�ˤl                   �x�̤�j          �x
-  �x  �o��            �x+�ѯ�                   �x�ѥ]            �x
-  �x                  �x+�K��                   �x���K�@��        �x
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+�u®                   �x�콦�Y��        �x
-  �x                  �x+����                   �x�r�᯻          �x
-  �x                  �x+����j                 �x��²�j          �x
-  �x                  �x+�֭�                   �x�p������        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�n��                   �x��i��          �x
-  �x                  �x+��ֵ�                 �x�����^�a        �x
-  �x                  �x+���                   �x���M            �x
-  �x                  �x+�㥽                   �x�d����          �x
-  �x                  �x+����                   �x��O�E��        �x
-  �x                  �x+����j                 �x����˴��j      �x
-  �x  ����            �x+�v��                   �x�Ѭr��          �x
-  �x                  �x+���ơ�Ĭ����           �xī�G            �x
-  �x                  �x+�E�Y                   �x���t��          �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+�ѯ����C��             �x�ѥ]            �x
-  �x                  �x+����                   �x�����K��        �x
-  �x                  �x+��                     �x�F��ñ�W        �x
-  �x                  �x+�s��                   �x���Ĥ�          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x  ���r��          �x+��������               �x���r�����u      �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�����~�����������T�y�� �x���D�S��      �x
-  �x                  �x �K�����𸭡��K�v����� �x                �x
-  �x  ���D            �x ���X�����             �x                �x
-  �x                  �x+�K��                   �x�y��f�r�u      �x
-  �x                  �x+�߭�                   �x���m��          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�N��                   �x�j����          �x
-  �x                  �x+�ˤl                   �x�B��            �x
-  �x                  �x+�C��                   �x�p������        �x
-  �x                  �x+�E�Y                   �x���H��          �x
-  �x                  �x+���                   �x���M            �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �x                  �x+�o��                   �x�p������        �x
-  �x  �֭�            �x+�K�����K�v���ɽu       �x�K���I��        �x
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x                  �x+�K��                   �x���Z����        �x
-  �x                  �x+�_��                   �x�_��H          �x
-  �x                  �x+���K                   �x�ϯB�־c        �x
-  �x                  �x+�]��                   �x�D�u���r��      �x
-  �x                  �x+�n��                   �x�d�q����        �x
-  �x                  �x+�K��                   �x�ߤl����        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+������                 �x�ʲ\�v��        �x
-  �x                  �x+���                   �x��²�j          �x
-  �x  ����j          �x+�K��                   �x�N����M        �x
-  �x                  �x+����                   �x�H�y�B�r        �x
-  �x                  �x+�۴�                   �x�j����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+����                   �x�ᶵ��          �x
-  �x                  �x+�J�ԯ�                 �x�J�Գ�          �x
-  �x  ��              �x+������                 �x�����ܭ�        �x
-  �x                  �x+�E�Y                   �x���H��          �x
-  �x                  �x+�۴�                   �x�j����          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+����                   �x���P���J        �x
-  �x  �_��            �x+��                     �x�_��H          �x
-  �x                  �x+������ۣ               �x�����į�        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�۴�                   �x�j����          �x
-  �x  �E�Y            �x+�Ψm                   �x�B���y          �x
-  �x                  �x+�s��                   �x�H�y�B�r        �x
-  �x                  �x+�K�v                   �x�N���          �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+�J�ԯ�                 �x�r�᯻          �x
-  �x  ����            �x+����j                 �x�ᶵ��          �x
-  �x                  �x+�E�Y                   �x�^�a            �x
-  �x                  �x+�۴�                   �x�d�q����        �x
-  �u�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�t
-  �x                  �x+����                   �x��O�E��        �x
-  �x  �v��            �x+�J�ԯ�                 �x�J�Ԭ��u        �x
-  �x                  �x+����j                 �x����˴��j      �x
-  �|�w�w�w�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�}
-
-  �z�w�����Тw�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x �ޢҢ϶}�o���~�G�]�Y����|�ο��~�A�Цۦ��|�ա^               �x
-  �u�w�w�w�w�s�w�s�w�w�w�w�w�s�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x  ���O  �xLV�x���зN�I�Ƣx�}�o�����~�x    �Ҷ����귽          �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x  �x          �x�B��      �x��100                   �x
-  �x        �x 1�x    1     �x�~�M      �x��90                    �x
-  �x        �x  �x          �x�^�a      �x��200                   �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x  �x          �x�����Y    �x��200                   �x
-  �x��¦��Ǣx 2�x    3     �x�ᶵ��    �x��70                    �x
-  �x        �x  �x          �x�֧��J    �x��80                    �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   20     �x�ѳ¾K�w  �x��208                   �x
-  �x        �x  �x          �x�Ѭr��    �x��208                   �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   35     �x��Ͻc    �x��256                   �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x   3      �x�����q��  �x�q�O���                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x   15     �x���t��    �x��250,�q�O���          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   32     �x�p�q���M  �x��200,�q�O���,���ݭ�� �x
-  �x�q    �O�x  �x          �x�q���Ųy  �x�q�O���,�X�����       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   55     �x�ѹq�ɹp�ޢx�q�O���,�������       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x   85     �x�ɹp��    �x��300,�q�O���,���ݭ�� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x   105    �x�p�q���u  �x�q�O���2,�X�����      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x   3      �x�B���y    �x�N����                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x   18     �x�j����    �x��250,�N����          �x
-  �x        �x  �x          �x�N�C���u  �x�N����                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   33     �x�N����M  �x��250,�N����,�X����� �x
-  �x�N    ��x  �x          �x�j�O�������x�N����2               �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   60     �x�j��V�v���x��250,�N����,�ɪŭ�� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x   90     �x�N���    �x��300,�N����,�ɪŭ�� �x
-  �x        �x  �x          �x�z��      �x��300,�N����,�X����� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x   110    �x����s��  �x�N����2,�������      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    4     �x�p�U�N�u  �x������                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    16    �x���H��    �x��250,������          �x
-  �x        �x  �x          �x���Y���u  �x������                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x    36    �x���V��    �x��250,������,�ɪŭ�� �x
-  �x��    ��x  �x          �x�x�����Y  �x������2               �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x    62    �x�_�٬��u  �x������,��ǭ��       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    92    �x���u���M  �x��350,������,�۷Q��� �x
-  �x        �x  �x          �x�j�ĿU�N�u�x������,�ͤƭ��       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    112   �x�a������  �x������2,������      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    5     �x�r�᯻    �x�ͤƭ��                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    18    �x���Į��M  �x��300,�ͤƭ��          �x
-  �x        �x  �x          �x���D�S�𶤢x��20,�ͤƭ��           �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x    37    �x���E��  �x�ͤƭ��,�Ʋz���       �x
-  �x��    �Ƣx  �x          �x�����į�  �x��10,�ͤƭ��2          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x    63    �x���Ĭr��  �x�ͤƭ��,������       �x
-  �x        �x  �x          �x���K�u    �x��10,�ͤƭ��,�q�O���  �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    93    �x���r����  �x��350,�ͤƭ��,�۷Q��� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    113   �x�˴��B�u  �x�ͤƭ��2,������      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x   3      �x          �x                        �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x   17     �x�����ܭ�  �x��300,�ɪŭ��          �x
-  �x        �x  �x          �x�ᦱ�Ŷ����x�ɪŭ��                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   36     �x��w�F�|  �x��10,�ɪŭ��,�Ʋz���  �x
-  �x��    �Ţu�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   62     �x���O��    �x��320,�ɪŭ��,���ݭ�� �x
-  �x        �x  �x          �x�[�t����  �x��10,�ɪŭ��,��ǭ��  �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x   92     �x�ɪŬ��u  �x������,�ɪŭ��       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x   112    �x�¬}���;��x�ɪŭ��x2��,�q�O���   �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    3     �x�K���M    �x��100,���ݭ��          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    18    �x�K���l    �x��230,���ݭ��          �x
-  �x        �x  �x          �x���׿��Y���x��200,���ݭ��          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x    37    �x���׿���  �x��250,���ݭ��,�q�O��� �x
-  �x        �x  �x          �x�]�y      �x���ݭ��,�N����       �x
-  �x��    �ݢx  �x          �x���׿���  �x��250,���ݭ��,������ �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x    63    �x�g�X����  �x��260,���ݭ��,�ͤƭ�� �x
-  �x        �x  �x          �x���׿����M�x��240,���ݭ��,�ɪŭ�� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    93    �x����      �x��300,���ݭ��,�q�O��� �x
-  �x        �x  �x          �x�X���޵P  �x��340,���ݭ��,������ �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    113   �x�W�X����  �x��400,���ݭ��2,������Ƣx
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    2     �x          �x                        �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    16    �x���Ĥ�    �x�X����U                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x    36    �x���s��    �x��250,�X�����,�X����� �x
-  �x�X    ���x  �x          �x���s���M�ˢx��250,�X�����,�ɪŭ�� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x    58    �x�j�Ʋ���  �x��300,�۷Q���          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    88    �x�����ֺ��ʢx��250,�X�����,������� �x
-  �x        �x  �x          �x���ֺ��~�M�x��250,�X�����,�N���� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    108   �x���Ĥ�    �x�X�����2,�Ʋz���      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x   3      �x�����K��  �x��20,�۷Q���           �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x   15     �x�_��H    �x��10,�۷Q���           �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   33     �x�d�q����  �x��250,�۷Q���,�N���� �x
-  �x��    �Q�u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   55     �x���Τ��J  �x��20,�۷Q���,�q�O���  �x
-  �x        �x  �x          �x�j�Ѹt��  �x�۷Q���,��ǭ��       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x   85     �x���Z����  �x��400,�۷Q���,�Ʋz��� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x   105    �x�z�����p  �x�۷Q���x2��,�q�O���   �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    3     �x�콦���J  �x��100,�������          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    16    �x�u®�j    �x��200,�������          �x
-  �x        �x  �x          �x�Q�g�ȦB�c�x��200,�������          �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x��    ���x 3�x    37    �x�p������  �x��250,�������,������ �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x    62    �x�j�Ƥ�j  �x��300,�������,�q�O��� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    92    �x�k�ۺj    �x��360,�������,�N���� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    112   �x��y���u�j�x��360,�������2,�N���Ƣx
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    3     �x�����^�a  �x��ǭ��                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x    15    �x���L�R    �x��ǭ�U                �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x    32    �x�y��f�r�u�x��ǭ��,�ͤƭ��       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x��    �Ǣx 4�x    55    �x�U���^�a  �x��ǭ��,�Ʋz���       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x    85    �x����~�M  �x��350,��ǭ��,�Ʋz��� �x
-  �x        �x  �x          �x��X���L�R�x��ǭ��,�N����       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 6�x    105   �x�U�Ϋ�Ͻc�x��512,��ǭ��x2��      �x
-  �u�w�w�w�w�q�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 1�x    4     �x�J�Ԭ��u  �x��10,�Ʋz���           �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 2�x   16     �x�J�Գ�    �x��300,�Ʋz���,���ݭ�� �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 3�x   37     �x�ѯ������u�x��10,�Ʋz���,�ɪŭ��  �x
-  �x��    �z�x  �x          �x�ʲ\�v��  �x��10,�Ʋz���,�ͤƭ��  �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 4�x   63     �x�ը��~�M  �x��350,�Ʋz���,�۷Q��� �x
-  �x        �x  �x          �x���඼��  �x�ɪŭ��,�Ʋz���       �x
-  �x        �u�w�q�w�w�w�w�w�q�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x        �x 5�x   93     �x���Գ�    �x��400,�ɪŭ��          �x
-  �|�w�w�w�w�r�w�r�w�w�w�w�w�r�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�}
-
-��ĳ���͸˳ơG
-
-���Գʡ����׿����M���ʼ}�F����
-�ϭ��u�Z��
-�ϯB�־c���p��������W�X����
+  ╓┬─────────────┬╖
+  ║│  到這是路，奪回警察局    │║
+  ╙┴─────────────┴╜
+    來到「這是路」進到警察局，只見「黃金戰艦」已先行來搶救了。此時黑
+社會老大「獅子王」也出現了，在經過一場激戰，終將「獅子王」打跑了。如
+今「大都會企業」行為越來越放肆，看來得先找鎮長商量對策了。
+
+  ╓┬─────────────┬╖
+  ║│  到老爺路找鎮長商量對策  │║
+  ╙┴─────────────┴╜
+    到「老爺路」進鎮長辦公室與鎮長商議，得知「大都會企業」已正式進駐
+「木桶鎮」了，如今唯有查探「愛神街」的「大都會企業辦事處」，看看有無
+線索可循。
+
+  ╓┬─────────────┬╖
+  ║│  查探愛神街大都會辦事處  │║
+  ╙┴─────────────┴╜
+    接著經由「這是路」一路經「釣魚路」來到了「愛神街」大都市企業辦事
+處門口時，遇見了刁蠻的「紅珊瑚」公主，而與守衛打了起來。也因打跑了守
+衛而落得沒人看守，在神探「湯米」相助下，打開了辦事處大門，眾人一同入
+內查探。
+
+    大都市企業辦公室內神秘兮兮，經過一番搜尋，終在地下二樓一間工作室
+找到一位玩具設計師，其身旁設計的「刀疤老大」熊娃娃還真大啊。
+
+    與玩具設計師聊完出房後，「湯米」告知其在「樂樂」與玩具設計師閒聊
+時，趁機打開了保險箱，偷了一幅玩具設計圖，看來此設計圖又得靠「阿吉」
+來觀看才得知其解了。
+
+大都市企業：快打膠囊，防火衣，防毒套裝，反飛彈夾克。
+
+  ╓┬─────────────┬╖
+  ║│  回鬼屋將設計圖交給阿吉  │║
+  ╙┴─────────────┴╜
+    離開「大都市企業辦事處」後，一路回到鬼屋將設計圖交給「阿吉」，此
+時「阿康」慌忙的跑來說街上出現了一群玩具兵團正在破壞。當眾人來到「約
+瀚的路」時，遇上了攻擊力強大的玩具兵，幸得「貓王」出現適時的解決了玩
+具兵。而如今鎮上已全是玩具兵了，要阻止它們的話，唯有找到總遙控器，才
+能制止他們。於是「貓王」、「阿康」也加入隊伍，一同前往「大都會辦事室」
+尋找總遙控器。
+
+  ╓┬─────────────┬╖
+  ║│  到大都市辦事處找總遙控器│║
+  ╙┴─────────────┴╜
+    再次來到「愛神街」大都會辦事處門口時，遇見了玩具工程師，但遲來了
+一步，玩具工程師已將總控制器送給「紅珊瑚」（就是鎮長的女兒）小公主了，
+而「紅珊瑚」正在「木桶廣場」玩樂，所以眾人便火速趕往「木桶廣場」。
+
+  ╓┬─────────────┬╖
+  ║│  到木桶廣場找紅珊瑚小公主│║
+  ╙┴─────────────┴╜
+    來到「木桶廣場」終找到「紅珊瑚」小公主，這才知總控制器是藏在熊娃
+娃「刀疤老大」的身上，但「刀疤老大」非等閒之輩，經眾人全力攻擊下才將
+「刀疤老大」擊毀，連總控制器也一同被毀了，因此鎮上的玩具兵也無法召回，
+任其自生自滅了。
+
+    「貓王」再見其女兒「紅珊瑚」，二父女再度重逢，而玩具工程師說要回
+到大都會企業的大本營～「蝦格鯉拉」，看來也得前往「蝦格鯉拉」查探一番
+了。
+
+    「快刀張三」得知「樂樂」想深入「蝦格鯉拉」一探，便前來告知其熟知
+「魔王路」旁有條捷徑可通往「蝦格鯉拉」。於是在「快刀張三」的帶領下，
+來到了「魔王路」旁的「山路」。
+
+  ╓┬─────────────┬╖
+  ║│  到蝦挌鯉拉調查大都會陰謀│║
+  ╙┴─────────────┴╜
+    一進「山路」即遇上一群惡狼，幸得「黑武士」出現相助擊退狼群。「黑
+武士」得知「樂樂」欲前往「蝦格鯉拉」，便加入隊伍一同前往。
+
+森林：蛋糕，反飛彈鎧甲，小魚項圈，雞蛋，消炎繃帶，加速時鐘。
+洞穴：防毒面具，鈦合金傘，解毒劑，葡萄，百慕達之爪，萬能繃帶，磁浮皮
+鞋。
+
+    經過迂迴的山路，再通過一處洞穴後，終於來到了「蝦格鯉拉」，而「蝦
+格鯉拉」的居民十之八九都是拜金主義者。經由右方路來到一處角落，看見正
+在賣藝走唱的「米糕」及「搖滾貓」，但在一旁欣賞的惡律師「皮果」卻不時
+的刁難數落，看不慣此作為的「樂樂」當然上前相助，打跑了「皮果」，但也
+因此招來那些欺善怕惡的警備隊。
+
+    為求自保，當然加以還擊打退警備隊，但畢竟此處是「皮果」的地盤，所
+以當今之務便是伙同「米糕」趕快離開此地，回到木桶鎮。
+
+  ╓┬─────────────┬╖
+  ║│  離開蝦格鯉拉回到木桶鎮  │║
+  ╙┴─────────────┴╜
+    但好景不常，來到「蝦格鯉拉」通往洞穴的入口時，又見到捕狗隊隊長，
+原來他也是此處警備隊隊長，看來又得開打了。
+
+    一陣激戰後，終把警備隊長打敗，趁其昏厥之際，眾人也趁此機會跑進洞
+穴，一路跑回木桶鎮。
+
+    回到鬼屋，與「阿吉」、「阿康」商議後，為求以後能在「蝦格鯉拉」通
+行自如，便決定與「阿康」到「愛神街」大都市企業辦事處偷取通行證。
+
+  ╓┬─────────────┬╖
+  ║│  到大都市辦事處偷通行證  │║
+  ╙┴─────────────┴╜
+    出鬼屋即見到麻雀「灰灰」一家人，「樂樂」也因此領悟到「召喚麻雀群」
+的絕技。來到鬼屋前吊橋時，遇上鎮長因怕女兒「紅珊瑚」被其母親強行帶走，
+前來將女兒寄住在鬼屋，而「阿康」也只好留下來作陪了，所以「樂樂」只好
+一人前往辦事處了。
+
+    來到「約翰的路」遇上「獵師」，其見「樂樂」勢單力薄，便加入一同前
+往。到了「愛神街」大都市辦事處門口時，偷聽到惡律師「皮果」要到「木桶
+廣場」設計鎮民的陰謀，於是便尾隨其到了「木桶廣場」，當然揭穿「皮果」
+的陰謀。
+
+    而在無形中，深覺「皮果」體內似乎住著一位惡魔，它的力量非常強大，
+於是便回到鬼屋與眾人商議對策。眾人商議後，決定去找隱居學校的「叮咚爺」
+學習魔法，及找神父學習神聖醫療術，以便對付邪惡的惡魔。
+
+    離開鬼屋後，一路來到「早安一路」，進入學校圖書館內打開書櫃暗門，
+見到了「叮咚爺」並習得「幽靈貓召喚術」。接著來到「早安二路」，進教堂
+見神父，習得「神聖治療術」後，便返回鬼屋。
+
+  ╓┬─────────────┬╖
+  ║│  返回鬼屋                │║
+  ╙┴─────────────┴╜
+    一路返回鬼屋來到「約翰的路」上時，遇見了「獅子王」，其告知自已被
+「皮果」利用了，而其手下也全被「皮果」捉走了。痛改前非的「獅子王」決
+定改邪歸正，請「樂樂」相助救回其被捉走的手下，於是，「樂樂」便伙同
+「獅子王」、怪盜「湯人」一同前往「大都會辦事處」救人。
+
+  ╓┬─────────────┬╖
+  ║│  到大都會辦事處救人      │║
+  ╙┴─────────────┴╜
+    一路趕到「愛神街」大都會辦事處門口時，遇見因其主人「米糕」也被
+「皮果」捉走而心急如麻的「搖滾貓」，於是「搖滾貓」也加入了救人行動。
+
+    進到「大都會辦公室」上到二樓，清除一路的打手，好不容易來到一道門
+前，但費盡心力仍無法打開此門。此時正巧「紅珊瑚」小公主出現，指引了一
+條密道，但自尊心強烈的怪盜「湯米」不信打不開那開不了的門，便留下來繼
+續思索開門之法而不願與眾人前進。
+
+    進入密道來到三樓後，「紅珊瑚」自願去說服其母親，讓她放了所有的人，
+於是「阿康」也先行加入隊伍，一同在大樓中先行找尋眾人的下落。
+
+    一路在大樓四處搜尋後，再度遇上了「皮果」，但「皮果」派出警備隊長，
+自己卻先溜之大吉了。而今日的「樂樂」眾人已非昔日的吳下阿蒙，一場激戰
+終將警備隊長打敗了。
+
+    解決警備隊長後，再繼續往前搜尋，終找到被捉的「米糕」等人。救出眾
+人後，接著便是找「紅珊瑚」小公主一起回基地了。
+
+大都市企業：企鵝項圈，磁浮皮鞋，光學防護罩。
+
+  ╓┬─────────────┬╖
+  ║│  找紅珊瑚一起回去        │║
+  ╙┴─────────────┴╜
+    往回走到三樓紅蝴蝴母親辦公室時，只見「紅珊蝴」被反鎖關在裡面，可
+想而知其說服母親不成功了。將「紅珊瑚」放出，讓她先回鬼屋後，眾人便接
+著去找怪盜「湯米」，準備一同離開。
+
+  ╓┬─────────────┬╖
+  ║│  找怪盜湯米準備離開      │║
+  ╙┴─────────────┴╜
+    往回走到二樓見到「湯米」，其堅毅不撓的心終將那原以為虛設的門打開
+了，但裡面卻是平凡的廁所而已。還好在地上撿到一塊刻有奇怪文字的金屬板，
+這才不會令「湯米」的辛勞有所徒費。
+
+  ╓┬─────────────┬╖
+  ║│  找阿吉討論金屬板之事    │║
+  ╙┴─────────────┴╜
+    回到基地後，和「阿吉」討論金屬板之事，他說先上樓去再談。來到樓上
+實驗室找「阿吉」，從他口中得知原來這塊金屬板和之前在警局下水道找到的
+那本筆記本大有關連。根據文字的顯示，在木桶鎮南方的「不毛島」上，存在
+著傳說已久的古文明金字塔遺跡，但要到「不毛島」必須先找到船隻，所以眾
+人便動身前往「金砂路」的「木桶港」找船隻。
+
+  ╓┬─────────────┬╖
+  ║│  到木桶港找船隻          │║
+  ╙┴─────────────┴╜
+    離開鬼屋後，經由「圓圈路」、「夢之路」來到了「金砂路」的「木桶港」。
+給了船夫一千元後，順利的上了小船，來到了「不毛島」。
+
+金砂路：幻想原料，機器原料。
+倉庫：金屬原料。
+精神支持中心二樓：南瓜。
+下棋紳士家：拳套。
+下棋紳士家臥房（左）：醫學原料。
+下棋紳士家臥房（右）：石灰。
+山楂的家：熱能原料。
+山楂的家：時空原料，紅藥水。
+退休船員的家：繃帶。
+退休船員的家臥房：火藥。
+木桶港：餅乾，鐵指環。
+
+  ╓┬─────────────┬╖
+  ║│  尋找古遺跡金字塔入口    │║
+  ╙┴─────────────┴╜
+    「不毛島」上一片荒蕪，走了幾步路後，即看見一根奇怪的柱子，且柱子
+上還有一大缺口，其大小正好與金屬板相符。在插入金屬片後，即聽見一陣巨
+響，前方地面赫然浮出一座金字塔，看來傳說並非虛假，於是眾人便進入一探
+究竟。
+
+  ╓┬─────────────┬╖
+  ║│  探查金字塔的秘密        │║
+  ╙┴─────────────┴╜
+    進入金字塔內，經過錯綜複雜的通道後，終在深處的一處祭台房找到一顆
+金字塔藍寶石，此時「玩具師」出現威脅要將藍寶石交給他，不然會對眾人不
+客氣，但眾人不順其意，遂索性不理他。
+
+金字塔：小雞項圈，地獄之火，反飛彈鎧甲，急救箱，強效燃燒彈。
+
+  ╓┬─────────────┬╖
+  ║│  回木桶鎮                │║
+  ╙┴─────────────┴╜
+    走出金字塔後，即見「玩具師」帶著他新發明的機器玩具已在出口處等候
+了。但機器玩具兵耐看不耐用，兩三下便將它打爛了，而「玩具師」見此，只
+好落荒而逃了。
+
+    來到港口問船夫，這才知小船引擎已被「玩具師」破壞，所以只好以無線
+電求助「阿吉」了。經「阿吉」相告，才知剛拿到的金字塔寶石原來就是一個
+空間控制器，只要把它裝進ＰＤＡ再配合他所寫的程式，即可成為一個瞬間傳
+送器。利用此一方法，眾人回到了鬼屋。
+
+    回到鬼屋後，「阿吉」說「山楂」警員曾來訴說「皮果」正在鎮上逼迫鎮
+民賤賣房屋之事，而「獅子王」聽見此一事情，便自告奮勇一同前往田野路林
+得家，痛宰這令他名譽受損的壞蛋，以贖昔日的罪過。
+
+  ╓┬─────────────┬╖
+  ║│  到田野路阻止皮果的惡行  │║
+  ╙┴─────────────┴╜
+    利用ＰＤＡ地圖傳送功能傳送到「田野路」，看見「皮果」正在逼迫鎮民
+賣房子，眾人便馬上出手阻止「皮果」的惡行。
+
+    將「皮果」打得落荒而逃後，接著便是要解決「獅子王」被通緝的問題，
+「樂樂」提議先去找鎮長，看看有沒有好的解決方法。
+
+  ╓┬─────────────┬╖
+  ║│  陪獅子王到老爺路找鎮長  │║
+  ╙┴─────────────┴╜
+    來到「老爺路」鎮長辦公室見到鎮長後，鎮長說最好的方法就是「獅子王」
+去自首，但罪魁禍首「皮果」仍在逍遙法外，「獅子王」當然不會就此罷休而
+氣奮先行離去。此時ＰＤＡ無線電響起，「阿吉」告知「皮果」又在「青草公
+路」鬧事了，於是「樂樂」便火速趕往「青草公路」。
+
+    ╓┬─────────────┬╖
+    ║│  到青草公路阻止皮果鬧事  │║
+    ╙┴─────────────┴╜
+    到了「青草公路」即見「阿康」、「紅珊瑚」、「獅子王」等人已在此阻
+止「皮果」的惡行，但「皮果」仍是惡性不改，正準備教訓他一番時，超級檢
+察官「天狼星」出現了，他是前來逮捕「獅子王」的，而「皮果」也乘機先溜
+了，幸好「阿康」、「紅珊瑚」追去看住「皮果」。
+
+    打跑不分事理的「天狼星」後，「獅子王」也先回鬼屋避避風頭了。此時
+「阿康」打ＰＤＡ無線電來通報「地瓜」被「皮果」踩傷，正在「蛋糕北路」
+的獸醫院治療，但醫院外卻聚集了一些拜金教徒，正欲對「地瓜」不利，於是
+「樂樂」便火速趕往「蛋糕北路」相助。
+
+  ╓┬─────────────┬╖
+  ║│  到蛋糕北路獸醫院協助阿康│║
+  ╙┴─────────────┴╜
+    到了「蛋糕北路」獸醫院前，在「三劍客」及「大米」相助下，終打跑了
+瘋狂的拜金教徒。而「阿康」因為救「地瓜」而將「皮果」追丟了。
+
+    此時「天狼星」再度出現詢問「獅子王」的下落，但堅不透口風的「樂樂」，
+被「天狼星」視為共犯而打了起來。經過一場激戰，終將「天狼星」打敗，此
+時「阿吉」以無線電通報說在「魔王路」有一些清潔機作亂，故「樂樂」便趕
+往「魔王路」。
+
+  ╓┬─────────────┬╖
+  ║│  到魔王路阻止鬧事的清潔機│║
+  ╙┴─────────────┴╜
+    來到「魔王路」，打跑在此鬧事的「玩具師」後，「阿吉」以無線電通報
+說「天狼星」已到了鬼屋附近，要「樂樂」趕回鬼屋，而「大米」及「三劍客」
+則留在「魔王路」協助貓群，以防「玩具師」再次來鬧事。
+
+  ╓┬─────────────┬╖
+  ║│  回鬼屋與獅子王談談      │║
+  ╙┴─────────────┴╜
+    回到鬼屋前吊橋時，即遇上了「天狼星」，此時「獅子王」也想通，決定
+出面自首，但他希望「天狼星」能將幕後黑手「皮果」繩之以法，而「天狼星」
+也答應此事，與「樂樂」聯手調查大都會企業。
+
+    經無線電與「阿康」取得聯繫後，得知「皮果」正在「祁禱路」，於是便
+往「祁禱路」出發。
+
+  ╓┬─────────────┬╖
+  ║│  到祁禱路找皮果          │║
+  ╙┴─────────────┴╜
+    來到「祁禱路」終於找到了「皮果」，但始終被狡猾的「皮果」溜掉。不
+過據「阿康」的通報，得知「皮果」往教堂的方向逃去，於是便趕往教堂。
+
+  ╓┬─────────────┬╖
+  ║│  到教堂逮捕皮果          │║
+  ╙┴─────────────┴╜
+    到了教堂後，便與「天狼星」兵分二路尋找「皮果」。「樂樂」往教堂內
+尋找「皮果」時，幽靈貓出現告知待會「樂樂」會遇上一位難纏的敵人，而唯
+一制服牠的方法，就是把牠帶進教堂內。
+
+    在教堂內找不到「皮果」，便即刻趕往「天狼星」追尋的墳場方向前進。
+到了地下墓穴後，終於找到了「皮果」，此時附身「皮果」身上的惡魔也出現
+了，在經過一番波折後，終將惡魔引進教堂內，終將其收服了，而「皮果」也
+終於罪有應得，被逮捕入獄了。
+
+    但事情終未結束，據「真夢」得到神的訊息通報，得知「蝦格鯉拉」的火
+山即將爆發，聽此噩運消息後，「樂樂」便火速往「蝦格鯉拉」出發，通知眾
+人避難。
+
+  ╓┬─────────────┬╖
+  ║│  到蝦格鯉拉通知眾人避難  │║
+  ╙┴─────────────┴╜
+    經由「魔王路」來到「山路」，再度遇上「黑武士」，且得知「真夢」也
+隨後偷偷跟來而正被一些壞人遇上。
+
+    在解救「真夢」後，便馬不停蹄的趕到了「蝦格鯉拉」，但「蝦格鯉拉」
+的居民根本不信火山會爆發之事，除了木桶教皇多福夫婦外，其餘的人們全都
+隨「蝦格鯉拉」葬生在火山的熔岩下了。
+
+    見此殘酷的人間地獄景象，令眾人為之心傷，但也許還有一些生還者急待
+協助，於是在商議後，決定去找鎮長討論救災之事。
+
+  ╓┬─────────────┬╖
+  ║│  找鎮長討論救災之事      │║
+  ╙┴─────────────┴╜
+    到「老爺路」鎮長辦公室與鎮長商議後，決定進入政府的電腦系統，聯絡
+其它城鎮的人民一同協力支援。但由於政府的電腦系統十分嚴密，試了多次仍
+是無法進入，於是鎮長講出大都會企業有一個假扮政府的系統軟體，但正當要
+用此軟體時，發現竟有人也在用，且趁火打劫將一些銀行的公款轉入他的帳戶。
+就在此時「阿康」前來通知說「皮果」已被「玩具師」劫獄救走了，可想而知，
+正在用軟體轉公款的人就是「皮果」了。
+
+    經電腦追蹤後，得知「皮果」正在大都會企業辦公室內，眾人便火速趕往
+「愛神街」大都會企業辦公室。
+
+  ╓┬─────────────┬╖
+  ║│  到大都會辦公室捉回皮果  │║
+  ╙┴─────────────┴╜
+    來到「愛神街」大都會企業辦公室內即遇見「紅珊瑚」及其已知悔改的母
+親。此時，「皮果」與「玩具師」駕著其新發明的「武裝樣品屋」出現，因其
+火力強大，沒一會，「樂樂」及「阿康」即被打成重傷昏厥過去了。
+
+    被眾人送往醫院的「樂樂」、「阿康」，在神父的高明醫術醫治下，迅速
+的恢復了，但此刻「皮果」已逃到了港口，準備捲款逃至國外了。
+
+  ╓┬─────────────┬╖
+  ║│  尾          聲          │║
+  ╙┴─────────────┴╜
+    為了奪回被「皮果」奪走的救災金，「樂樂」伙同了「阿康」、「天狼星」、
+「獅子王」、「黑武士」這些強力幫手，往木桶港出發了。
+
+    來到「木桶港」終趕的上阻止「皮果」逃出，經過一番苦戰後，終將「武
+裝樣品屋」及「皮果」、「玩具師」打敗，而「玩具師」與「皮果」也終有惡
+報，葬身在其發明的玩具機器的自爆裝置下。
+
+    平息了這風風雨雨的波折後，事情並未因此而結束，接著眾人也積極的為
+大都市的救援及重建工作，以期創造一個你我心中和偕美好的生活空間，而共
+同努力奮鬥著呢。
+
+
+  ┌──附表Ａ──────────────────────────┐
+  │  ＰＤＡ組合物品：（若有未列到的組合或錯誤，請自行嚐試）      │
+  ├──────────────────────┬────────┤
+  │      組      合      物     品             │  生產之物品    │
+  ├─────────┬────────────┼────────┤
+  │                  │+火藥／蘇打紙           │胡椒炸彈        │
+  │                  │+竹子／紙／布／枕       │辣椒傘          │
+  │  辣椒            │+麵粉                   │麵包            │
+  │                  │+芥末                   │貓瀉藥          │
+  │                  │+野花                   │毒花粉          │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+酒精                   │簡易火焰彈      │
+  │  紙              │+稻草                   │稻草人          │
+  │                  │+布                     │政客簽名        │
+  │                  │+胡椒粉                 │胡椒傘          │
+  │                  │+枕頭                   │聚塵之罩        │
+  ├─────────┼────────────┼────────┤
+  │  遙控器          │+收音機                 │光學防護罩      │
+  ├─────────┼────────────┼────────┤
+  │                  │+汽球                   │芥末煙幕彈      │
+  │                  │+紙                     │隱身貼紙        │
+  │                  │+橡皮筋                 │絕緣衣          │
+  │  膠水            │+彈簧                   │塑鋼頭盔        │
+  │                  │+稻草                   │稻草人          │
+  │                  │+野花                   │毒花粉          │
+  │                  │+石綿                   │隔熱衣          │
+  ├─────────┼────────────┼────────┤
+  │                  │+銅線                   │人造冰雹        │
+  │  冷媒            │+玻璃瓶                 │冷煤炸彈        │
+  │                  │+皮革                   │隔熱衣          │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │解毒劑          │
+  │                  │+橡皮筋                 │絕緣衣          │
+  │                  │+酒精                   │紅藥水          │
+  │  樹葉            │+布                     │防塵口罩        │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+野花                   │清香油精        │
+  │                  │+胡椒粉                 │流行病毒彈      │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+橡皮筋                 │絕緣衣          │
+  │                  │+布                     │冰水球          │
+  │                  │+芥末                   │芥末煙幕彈      │
+  │  汽球            │+野花                   │花項圈          │
+  │                  │+玩具槍                 │空氣槍          │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+石棉                   │隔熱衣          │
+  │                  │+枕頭                   │帽子            │
+  ├─────────┼────────────┼────────┤
+  │                  │+辣椒                   │催淚洋蔥        │
+  │                  │+木材／石灰             │強力滅火筒      │
+  │                  │+貓食／汽球             │貓瀉藥          │
+  │                  │+布                     │次元披風        │
+  │  肥皂            │+玩具槍                 │空氣槍          │
+  │                  │+野花                   │毒花粉          │
+  │                  │+鐵罐                   │強力塑膠槍      │
+  │                  │+蘇打粉                 │鎂光照明彈      │
+  │                  │+橡皮筋                 │絕緣衣          │
+  ├─────────┼────────────┼────────┤
+  │  胡椒粉          │+枕頭                   │胡椒傘          │
+  ├─────────┼────────────┼────────┤
+  │                  │+石灰／麵粉             │圖釘陷阱        │
+  │                  │+竹子                   │鐵刷子          │
+  │                  │+收音機／遙控器         │百慕達之爪      │
+  │                  │+枕                     │鐵絲背心        │
+  │                  │+橡皮筋／磁鐵／木材     │彈簧槍          │
+  │  鐵釘            │+芥末                   │芥末煙幕彈      │
+  │                  │+石棉                   │防火衣          │
+  │                  │+鐵片／鐵罐             │鐵爪子          │
+  │                  │+銅線                   │高壓電池        │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+火藥                   │保齡球炸彈      │
+  ├─────────┼────────────┼────────┤
+  │  玩具槍          │+枕頭                   │空氣槍          │
+  │                  │+遙控器                 │隕石槍          │
+  ├─────────┼────────────┼────────┤
+  │                  │+鐵片                   │圖釘陷阱        │
+  │                  │+橡皮筋／南瓜           │麵包煙幕彈      │
+  │  麵粉            │+膠水                   │隱身貼紙        │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+酒精                   │紅藥水          │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  ├─────────┼────────────┼────────┤
+  │                  │+彈簧／收音機           │小燃燒彈        │
+  │                  │+稻草                   │簡易火焰彈      │
+  │  酒精            │+洋蔥                   │催淚洋蔥        │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+玩具槍                 │導向飛彈        │
+  │                  │+野花                   │紅藥水          │
+  ├─────────┼────────────┼────────┤
+  │                  │+石灰                   │卡通面具        │
+  │                  │+竹子／鐵罐             │拳套            │
+  │                  │+鉛筆／稻草             │竹子槍          │
+  │                  │+枕                     │防塵口罩        │
+  │                  │+貓食                   │葡萄            │
+  │                  │+芥末                   │蘋果            │
+  │                  │+石棉                   │防毒套裝        │
+  │  木材            │+鐵片                   │鐵刷子          │
+  │                  │+銅線／彈簧／玩具槍     │塑膠槍          │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+樹葉                   │芭樂            │
+  │                  │+酒精                   │解毒劑          │
+  │                  │+尼龍絲                 │尼龍傘          │
+  │                  │+蛤蟆菌菇               │麻藥拳套        │
+  │                  │+野花                   │花項圈          │
+  ├─────────┼────────────┼────────┤
+  │                  │+竹子                   │明星夾克        │
+  │                  │+橡皮筋                 │絕緣衣          │
+  │                  │+布                     │防寒衣          │
+  │  毛線            │+鐵片                   │防彈衣          │
+  │                  │+尼龍絲                 │尼龍絲套裝      │
+  │                  │+彈簧                   │稻草人          │
+  │                  │+石棉                   │隔熱衣          │
+  ├─────────┼────────────┼────────┤
+  │                  │+鐵片／橡皮筋           │高壓電池        │
+  │                  │+汽油                   │小燃燒彈        │
+  │                  │+磁鐵                   │扭曲空間儀      │
+  │  電池            │+布                     │次元披風        │
+  │                  │+胡椒粉                 │胡椒炸彈        │
+  │                  │+遙控器                 │導向電飛彈      │
+  │                  │+鐵罐                   │暖氣罐頭        │
+  │                  │+石棉                   │萬能繃帶        │
+  ├─────────┼────────────┼────────┤
+  │                  │+鐵釘                   │圖釘陷阱        │
+  │                  │+竹子                   │檜木槍          │
+  │                  │+木材                   │拳套            │
+  │                  │+毛線                   │小雞項圈        │
+  │                  │+磁鐵                   │磁浮皮鞋        │
+  │                  │+麵粉／貓食             │麵包            │
+  │  顏料            │+紙                     │隱身貼紙        │
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+橡皮筋                 │絕緣衣          │
+  │                  │+酒精                   │紅藥水          │
+  │                  │+布                     │次元披風        │
+  │                  │+野花                   │毒花粉          │
+  │                  │+稻草                   │稻草人          │
+  │                  │+尼龍絲                 │尼龍絲套裝      │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+鉛筆／膠水             │空氣槍          │
+  │                  │+汽油                   │檜木槍          │
+  │                  │+銅線                   │塑膠槍          │
+  │                  │+野花                   │花項圈          │
+  │  竹子            │+玩具槍                 │竹子槍          │
+  │                  │+紙                     │雨傘            │
+  │                  │+胡椒粉                 │胡椒傘          │
+  │                  │+枕頭                   │運動家夾克      │
+  │                  │+尼龍絲                 │尼龍傘          │
+  │                  │+稻草                   │稻草人          │
+  │                  │+彈簧                   │改造玩具槍      │
+  ├─────────┼────────────┼────────┤
+  │                  │+磁鐵                   │快打膠囊        │
+  │                  │+胡椒粉                 │胡椒炸彈        │
+  │                  │+遙控器                 │導向電飛彈      │
+  │  汽油            │+鐵塊                   │小燃燒彈        │
+  │                  │+玩具槍                 │空氣槍          │
+  │                  │+彈簧                   │噴射溜冰鞋      │
+  │                  │+鐵罐                   │暖氣罐          │
+  ├─────────┼────────────┼────────┤
+  │                  │+麵粉                   │麵粉煙幕彈      │
+  │                  │+竹子                   │竹子槍          │
+  │                  │+鉛筆                   │毒花粉          │
+  │                  │+貓食                   │貓瀉藥          │
+  │                  │+汽球                   │冰水球          │
+  │  石灰            │+紙                     │政客簽名        │
+  │                  │+石棉                   │隔熱衣          │
+  │                  │+鐵片                   │圖釘陷阱        │
+  │                  │+蚵菌菇                 │毒花粉          │
+  │                  │+胡椒粉                 │強力滅水筒      │
+  │                  │+南瓜                   │運動家夾克      │
+  │                  │+酒精                   │保齡球炸彈      │
+  ├─────────┼────────────┼────────┤
+  │                  │+酒精                   │小燃燒彈        │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+芥末                   │芥末煙幕彈      │
+  │  蘇打粉          │+野花                   │毒花粉          │
+  │                  │+玩具槍                 │玩具瓦斯槍      │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+枕頭                   │止血繃帶        │
+  ├─────────┼────────────┼────────┤
+  │                  │+彈簧                   │辣椒傘          │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │  芥末            │+胡椒粉                 │胡椒炸彈        │
+  │                  │+野花                   │毒花粉          │
+  │                  │+橡皮筋                 │芥末煙幕彈      │
+  ├─────────┼────────────┼────────┤
+  │                  │+樹葉／枕頭             │磁浮皮鞋        │
+  │                  │+布                     │次元披風        │
+  │  磁鐵            │+銅線／遙控器           │扭曲空間儀      │
+  │                  │+玩具槍                 │隕石槍          │
+  │                  │+鐵塊                   │反飛彈鎧甲      │
+  │                  │+鐵罐                   │快打膠囊        │
+  ├─────────┼────────────┼────────┤
+  │                  │+彈簧                   │黑洞產生器      │
+  │                  │+鐵罐                   │強化塑膠槍      │
+  │  銅線            │+鐵塊                   │高壓電池        │
+  │                  │+布                     │鐵絲背心        │
+  │                  │+遙控器                 │導向宿飛彈      │
+  │                  │+玩具槍                 │彈簧槍          │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+橡皮筋                 │竹子槍          │
+  │  鉛筆            │+紙／布                 │政客簽名        │
+  │                  │+野花／石灰             │毒花粉          │
+  │                  │+玩具槍／鐵片           │塑膠槍          │
+  │                  │+石棉                   │政客證明書      │
+  │                  │+木材                   │竹子            │
+  │                  │+竹子                   │空氣槍          │
+  │                  │+合成樹脂               │議員識別證      │
+  ├─────────┼────────────┼────────┤
+  │                  │+毛線                   │流行病毒彈      │
+  │                  │+石灰／汽球             │保齡球炸彈      │
+  │                  │+竹子／野花             │小燃燒彈        │
+  │  火藥            │+磁鐵                   │快打膠囊        │
+  │                  │+銅線                   │強化塑膠槍      │
+  │                  │+鐵罐                   │罐頭炸彈        │
+  │                  │+芥末                   │胡椒炸彈        │
+  │                  │+橡皮筋                 │噴射溜冰鞋      │
+  ├─────────┼────────────┼────────┤
+  │                  │+稻草                   │政客簽名        │
+  │                  │+鐵塊                   │百幕達之爪      │
+  │                  │+遙控器                 │探照強光燈      │
+  │                  │+胡椒粉                 │胡椒炸彈        │
+  │                  │+鉛筆                   │塑膠槍          │
+  │                  │+芥末                   │芥末煙具        │
+  │  鐵片            │+石棉                   │防火衣          │
+  │                  │+膠水                   │防彈衣          │
+  │                  │+銅線                   │鐵絲背心        │
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+貓食                   │小魚項圈        │
+  │                  │+野花                   │花項圈          │
+  │                  │+玩具槍                 │改造玩具槍      │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │餅乾            │
+  │  貓食            │+樹葉                   │貓瀉藥          │
+  │                  │+麵粉                   │麵粉煙幕彈      │
+  │                  │+蛤蟆菌菇               │麵包            │
+  ├─────────┼────────────┼────────┤
+  │                  │+芥末                   │芥末煙幕彈      │
+  │                  │+酒精                   │暖氣罐          │
+  │                  │+尼龍絲                 │防毒裝          │
+  │                  │+彈簧                   │玩具自動槍      │
+  │                  │+玩具槍                 │玩具瓦斯槍      │
+  │  鐵罐            │+鐵塊                   │鋼鐵護甲        │
+  │                  │+洋蔥                   │強力滅火筒      │
+  │                  │+胡椒粉                 │胡椒炸彈        │
+  │                  │+石棉                   │防毒套裝        │
+  │                  │+野花                   │花項圈          │
+  │                  │+遙控器                 │快打膠囊        │
+  ├─────────┼────────────┼────────┤
+  │                  │+蘇打粉                 │病毒抗體        │
+  │                  │+酒精                   │小燃燒彈        │
+  │                  │+稻草                   │稻草人          │
+  │                  │+枕頭                   │冒險家夾克      │
+  │                  │+橡皮筋                 │繃帶            │
+  │  南瓜            │+芥末                   │芥末煙幕彈      │
+  │                  │+布                     │卡通面具        │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+胡椒粉                 │甦醒藥          │
+  │                  │+洋蔥                   │解毒劑          │
+  │                  │+玩具槍                 │改造玩具槍      │
+  ├─────────┼────────────┼────────┤
+  │                  │+鐵塊                   │鉛球            │
+  │                  │+稻草                   │稻草人          │
+  │                  │+布                     │絕緣衣          │
+  │                  │+尼龍絲                 │尼龍絲套裝      │
+  │  橡皮筋          │+野花                   │花項圈          │
+  │                  │+玩具槍                 │槍塑膠槍        │
+  │                  │+洋蔥                   │解毒劑          │
+  │                  │+石棉                   │塑膠槍          │
+  │                  │+收音機                 │強化塑膠槍      │
+  ├─────────┼────────────┼────────┤
+  │                  │+蛤蟆菌菇               │麻藥拳套        │
+  │                  │+遙控器                 │鋼鐵護甲        │
+  │                  │+收音機                 │扭曲空間儀      │
+  │  鐵塊            │+布                     │鐵絲背心        │
+  │                  │+玩具槍                 │隕石槍          │
+  │                  │+野花                   │花項圈          │
+  │                  │+洋蔥                   │催淚洋蔥        │
+  │                  │+石棉                   │反飛彈鎧甲      │
+  ├─────────┼────────────┼────────┤
+  │                  │+鐵塊                   │玩具自動槍      │
+  │  彈簧            │+野花                   │花項圈          │
+  │                  │+胡椒粉                 │胡椒炸彈        │
+  │                  │+布                     │鐵絲背心        │
+  ├─────────┼────────────┼────────┤
+  │                  │+橡皮筋                 │貓瀉藥          │
+  │                  │+布                     │次元披風        │
+  │                  │+紙／膠水               │隱身貼紙        │
+  │                  │+稻草                   │稻草人          │
+  │                  │+木材                   │拳套            │
+  │                  │+竹子                   │檜木槍          │
+  │  油漆            │+麵粉                   │麵包            │
+  │                  │+鐵罐                   │鋼鐵護甲        │
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+彈簧                   │塑膠頭盔        │
+  │                  │+野花                   │毒花粉          │
+  │                  │+玩具槍                 │竹簡槍          │
+  │                  │+皮革                   │小雞項圈        │
+  ├─────────┼────────────┼────────┤
+  │                  │+南瓜                   │營養劑          │
+  │                  │+橡皮筋                 │消炎繃帶        │
+  │                  │+木材                   │拳套            │
+  │                  │+芥末                   │甦醒藥          │
+  │                  │+野花                   │體力激素        │
+  │                  │+玩具槍                 │玩具瓦斯槍      │
+  │  蕃薯            │+洋蔥                   │解毒劑          │
+  │                  │+香料／蘇打粉           │蘋果            │
+  │                  │+枕頭                   │絕緣衣          │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+麵粉／顏料             │麵包            │
+  │                  │+膠水                   │隱身貼紙        │
+  │                  │+紙                     │政客簽名        │
+  │                  │+酒精                   │紅藥水          │
+  ├─────────┼────────────┼────────┤
+  │  消毒水          │+阿摩尼亞               │消毒水炸彈      │
+  ├─────────┼────────────┼────────┤
+  │                  │+玻璃瓶／遙控器／汽球／ │跳蚤特攻隊      │
+  │                  │ 鐵片／樹葉／鐵釘／木材 │                │
+  │  跳蚤            │ ／合成樹脂             │                │
+  │                  │+鐵塊                   │流行病毒彈      │
+  │                  │+貓食                   │貓瀉藥          │
+  ├─────────┼────────────┼────────┤
+  │                  │+冷煤                   │隔熱衣          │
+  │                  │+竹子                   │雨傘            │
+  │                  │+顏料                   │小魚項圈        │
+  │                  │+枕頭                   │防寒衣          │
+  │                  │+木材                   │拳套            │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  │                  │+油漆                   │小雞項圈        │
+  │  皮革            │+鐵片／鐵釘／銅線       │鐵絲背心        │
+  │                  │+野花                   │花項圈          │
+  │                  │+鐵塊                   │企鵝項圈        │
+  │                  │+稻草                   │稻草人          │
+  │                  │+磁鐵                   │磁浮皮鞋        │
+  │                  │+鉛筆                   │主席的駕照      │
+  │                  │+南瓜                   │卡通面具        │
+  │                  │+鐵罐                   │兔子項圈        │
+  ├─────────┼────────────┼────────┤
+  │                  │+遙控器                 │催淚洋蔥        │
+  │                  │+木材                   │竹簡槍          │
+  │  玩具槍          │+鐵片                   │冷氣牙套        │
+  │                  │+野花                   │人造冰雹        │
+  │                  │+石棉                   │隔熱衣          │
+  ├─────────┼────────────┼────────┤
+  │                  │+野花                   │花項圈          │
+  │                  │+胡椒粉                 │胡椒傘          │
+  │  布              │+遙控器                 │次元披風        │
+  │                  │+枕頭                   │防寒衣          │
+  │                  │+石棉                   │隔熱衣          │
+  ├─────────┼────────────┼────────┤
+  │                  │+野花                   │明星夾克        │
+  │  稻草            │+布                     │稻草人          │
+  │                  │+蛤蟆菌菇               │昏睡藥粉        │
+  ├─────────┼────────────┼────────┤
+  │                  │+石棉                   │隔熱衣          │
+  │  枕頭            │+肥皂                   │冰水球          │
+  │                  │+酒精                   │人造冰雹        │
+  │                  │+鐵釘                   │冷氣爪          │
+  ├─────────┼────────────┼────────┤
+  │                  │+胡椒粉                 │毒花粉          │
+  │  野花            │+玩具槍                 │花項圈          │
+  │                  │+枕頭                   │繃帶            │
+  │                  │+石棉                   │卡通面具        │
+  ├─────────┼────────────┼────────┤
+  │                  │+野花                   │體力激素        │
+  │  洋蔥            │+胡椒粉                 │胡椒炸彈        │
+  │                  │+玩具槍                 │玩具瓦斯槍      │
+  └─────────┴────────────┴────────┘
+
+  ┌─附表Ｂ───────────────────────────┐
+  │ ＰＤＡ開發物品：（若有遺漏或錯誤，請自行嚐試）               │
+  ├────┬─┬─────┬─────┬────────────┤
+  │  類別  │LV│須創意點數│開發之物品│    所須之資源          │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │  │          │雨傘      │金100                   │
+  │        │ 1│    1     │外套      │金90                    │
+  │        │  │          │繃帶      │金200                   │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │  │          │提神丸    │金200                   │
+  │基礎科學│ 2│    3     │花項圈    │金70                    │
+  │        │  │          │皮夾克    │金80                    │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   20     │解麻醉針  │金208                   │
+  │        │  │          │解毒劑    │金208                   │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│   35     │急救箱    │金256                   │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│   3      │高壓電池  │電力原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│   15     │絕緣衣    │金250,電力原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   32     │雷電拳套  │金200,電力原料,金屬原料 │
+  │電    力│  │          │電擊藍球  │電力原料,合成原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│   55     │天電導雷管│電力原料,機器原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│   85     │導雷傘    │金300,電力原料,金屬原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│   105    │雷電炸彈  │電力原料2,合成原料      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│   3      │冰水球    │冷氣原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│   18     │隔熱衣    │金250,冷氣原料          │
+  │        │  │          │冷媒炸彈  │冷氣原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   33     │冷氣牙套  │金250,冷氣原料,合成原料 │
+  │冷    氣│  │          │強力滅火筒│冷氣原料2               │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│   60     │強制冬眠儀│金250,冷氣原料,時空原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│   90     │冷氣爪    │金300,冷氣原料,時空原料 │
+  │        │  │          │爆衣      │金300,冷氣原料,合成原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│   110    │絕對零度  │冷氣原料2,機器原料      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    4     │小燃燒彈  │熱能原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    16    │防寒衣    │金250,熱能原料          │
+  │        │  │          │罐頭炸彈  │熱能原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│    36    │火燄爪    │金250,熱能原料,時空原料 │
+  │熱    能│  │          │暖氣罐頭  │熱能原料2               │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│    62    │震撼炸彈  │熱能原料,醫學原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    92    │熱線牙套  │金350,熱能原料,幻想原料 │
+  │        │  │          │強效燃燒彈│熱能原料,生化原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    112   │地獄之火  │熱能原料2,熱能原料      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    5     │毒花粉    │生化原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    18    │麻藥拳套  │金300,生化原料          │
+  │        │  │          │跳蚤特攻隊│金20,生化原料           │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│    37    │潛能激素  │生化原料,料理原料       │
+  │生    化│  │          │昏睡藥粉  │金10,生化原料2          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│    63    │硫酸毒氣  │生化原料,熱能原料       │
+  │        │  │          │麻庳彈    │金10,生化原料,電力原料  │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    93    │防毒面具  │金350,生化原料,幻想原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    113   │瓦斯氫彈  │生化原料2,熱能原料      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│   3      │          │                        │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│   17     │次元披風  │金300,時空原料          │
+  │        │  │          │扭曲空間儀│時空原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   36     │遲鈍沙漏  │金10,時空原料,料理原料  │
+  │時    空├─┼─────┼─────┼────────────┤
+  │        │ 4│   62     │重力傘    │金320,時空原料,金屬原料 │
+  │        │  │          │加速時鐘  │金10,時空原料,醫學原料  │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│   92     │時空炸彈  │熱能原料,時空原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│   112    │黑洞產生器│時空原料x2個,電力原料   │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    3     │鐵拳套    │金100,金屬原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    18    │鐵爪子    │金230,金屬原料          │
+  │        │  │          │不銹鋼頭盔│金200,金屬原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│    37    │不銹鋼爪  │金250,金屬原料,電力原料 │
+  │        │  │          │鉛球      │金屬原料,冷氣原料       │
+  │金    屬│  │          │不銹鋼牙  │金250,金屬原料,熱能原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│    63    │鈦合金傘  │金260,金屬原料,生化原料 │
+  │        │  │          │不銹鋼拳套│金240,金屬原料,時空原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    93    │鋼傘      │金300,金屬原料,電力原料 │
+  │        │  │          │合金盾牌  │金340,金屬原料,熱能原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    113   │超合金牙  │金400,金屬原料2,機器原料│
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    2     │          │                        │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    16    │紅藥水    │合成原枓                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│    36    │尼龍傘    │金250,合成原料,合成原料 │
+  │合    成│  │          │尼龍絲套裝│金250,合成原料,時空原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│    58    │強化瓷牙  │金300,幻想原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    88    │玻璃纖維傘│金250,合成原料,機器原料 │
+  │        │  │          │玻纖維外套│金250,合成原料,冷氣原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    108   │紫藥水    │合成原料2,料理原料      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│   3      │隱身貼紙  │金20,幻想原料           │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│   15     │稻草人    │金10,幻想原料           │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   33     │卡通面具  │金250,幻想原料,冷氣原料 │
+  │幻    想├─┼─────┼─────┼────────────┤
+  │        │ 4│   55     │異形之蛋  │金20,幻想原料,電力原料  │
+  │        │  │          │迴天聖水  │幻想原料,醫學原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│   85     │企鵝項圈  │金400,幻想原料,料理原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│   105    │宙斯之雷  │幻想原料x2個,電力原料   │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    3     │塑膠夾克  │金100,機器原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    16    │彈簧槍    │金200,機器原料          │
+  │        │  │          │噴射溜冰鞋│金200,機器原料          │
+  │        ├─┼─────┼─────┼────────────┤
+  │機    器│ 3│    37    │小魚項圈  │金250,機器原料,熱能原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│    62    │強化手槍  │金300,機器原料,電力原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    92    │隕石槍    │金360,機器原料,冷氣原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    112   │改造散彈槍│金360,機器原料2,冷氣原料│
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    3     │消炎繃帶  │醫學原料                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│    15    │維他命    │醫學原枓                │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│    32    │流行病毒彈│醫學原料,生化原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │醫    學│ 4│    55    │萬能繃帶  │醫學原料,料理原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│    85    │牙醫外套  │金350,醫學原料,料理原料 │
+  │        │  │          │綜合維他命│醫學原料,冷氣原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 6│    105   │萬用急救箱│金512,醫學原料x2個      │
+  ├────┼─┼─────┼─────┼────────────┤
+  │        │ 1│    4     │胡椒炸彈  │金10,料理原料           │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 2│   16     │胡椒傘    │金300,料理原料,金屬原料 │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 3│   37     │麵粉煙霧彈│金10,料理原料,時空原料  │
+  │料    理│  │          │催淚洋蔥  │金10,料理原料,生化原料  │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 4│   63     │調味外套  │金350,料理原料,幻想原料 │
+  │        │  │          │機能飲料  │時空原料,料理原料       │
+  │        ├─┼─────┼─────┼────────────┤
+  │        │ 5│   93     │辣椒傘    │金400,時空原料          │
+  └────┴─┴─────┴─────┴────────────┘
+
+建議產生裝備：
+
+辣椒傘／不銹鋼拳套／百慕達之爪
+反飛彈鎧甲
+磁浮皮鞋／小雞項圈／超合金牙

@@ -1,19 +1,19 @@
-¦WºÙ¡GFuck Quest (­^¤åª©)
-Â²¤¶¡GRichard Eter 1998¦~©Ò°µªº¢°¢·¸T«_ÀI¸ÑÁ¼¹CÀ¸¡A¼@±¡¬Û·íªºµu¡Aºâ
-      ¬O¤@´Ú¤p«~¹CÀ¸¡C¾ã­Ó¹CÀ¸¬O¥HSierraªºAGI¡]Adv Game Interpreter¡^
-      ¬°°òÂ¦¤U¥h°µªº¡A¹ï¤Hª«¤U©R¥O³£±o¥´­^¤å¡A¤ñ¸û³Â·Ð¡A¦ý¦h¥b¤£¥X
-      Look¡BGet¡BPut¡BOpen¡BGiveµ¥µ¥©R¥O¡C¼@±¡¬Û·íªº¸Ø±iÃz¯º¡A¥u¥i±¤
-      ¹ê¦b¤Óµu¤F¡A¦Óµe­±¤]Áà­®¤F¨Ç¡C¨Sª±¹Lªº¤H¥i¥Hª±ª±¬Ý¡A«D±`¦³½ì¡C
-«OÅ@¡GµL¡C
-§ð²¤¡G¡]§@ªÌ¡Ð«C­m¡^
+ï»¿åç¨±ï¼šFuck Quest (è‹±æ–‡ç‰ˆ)
+ç°¡ä»‹ï¼šRichard Eter 1998å¹´æ‰€åšçš„ï¼‘ï¼˜ç¦å†’éšªè§£è¬ŽéŠæˆ²ï¼ŒåŠ‡æƒ…ç›¸ç•¶çš„çŸ­ï¼Œç®—
+      æ˜¯ä¸€æ¬¾å°å“éŠæˆ²ã€‚æ•´å€‹éŠæˆ²æ˜¯ä»¥Sierraçš„AGIï¼ˆAdv Game Interpreterï¼‰
+      ç‚ºåŸºç¤Žä¸‹åŽ»åšçš„ï¼Œå°äººç‰©ä¸‹å‘½ä»¤éƒ½å¾—æ‰“è‹±æ–‡ï¼Œæ¯”è¼ƒéº»ç…©ï¼Œä½†å¤šåŠä¸å‡º
+      Lookã€Getã€Putã€Openã€Giveç­‰ç­‰å‘½ä»¤ã€‚åŠ‡æƒ…ç›¸ç•¶çš„èª‡å¼µçˆ†ç¬‘ï¼Œåªå¯æƒœ
+      å¯¦åœ¨å¤ªçŸ­äº†ï¼Œè€Œç•«é¢ä¹Ÿé†œé™‹äº†äº›ã€‚æ²’çŽ©éŽçš„äººå¯ä»¥çŽ©çŽ©çœ‹ï¼Œéžå¸¸æœ‰è¶£ã€‚
+ä¿è­·ï¼šç„¡ã€‚
+æ”»ç•¥ï¼šï¼ˆä½œè€…ï¼é’è¡«ï¼‰
 
-1.¤@¶}©l¬O¦b¦Û¤v®aªù¤f¡A¥ýOpen Door¦^¦Û¤v®a¡A¦AOpen Drawer¥´¶}©â±P¡A
-  ¸Ì­±¦³­ÓBrad Pitt­±¨ã¡ATake Mask®³¨ú­±¨ã¡A¦AWear MaskÀ¹¤W­±¨ã¡C
-2.¥Xªù©¹¥k¨«¡A¶i¤JMart¡ATake Guitar®³¨«¦N¥L¡C¥Xªù¦Vªù¥~ªº¤HTake
-  Cigarette®³­»·Ï¡AµM«áÄ~Äò©¹¥k¨«¹L¢³­Ó³õ´º¡ATake FlowerºK¤Uª´ºÀªá¡C
-3.©¹¥ª¨«¡A¦V¤k¤HGive Flower°eªá¡A¦AGive Cigarette°e­»·Ï¡A±µµÛPlay
-  Guitar°Û±¡ºq¡A³Ì«á¦V¦oªí¥Õ­nFuck¡A©ó¬O¦o«K·|µªÀ³§A¡C
-4.©¹¥ª¨«¶i«Î¡ATake Off Clothes²æ¤U¦oªº¦çªA¡AµM«á¿é¤JOne¡BTwo¡BThree
-  ©ÎFour¿ï¾ÜÅé¦ì¡A±µµÛ«ö¤W¤U¥ª¥kÁä¶}©l§@·R¤F¡]°O±o­nChange Position
-  §ó´«Åé¦ì¸Õ¸Õ¬Ý¡^¡CµM«á¹L¤F¤@·|«Kµ²§ô¤F¡]¬Ý¬Ý§Aªº¤À¼Æ¬O¤£¬O¢µ¢¸¤À¡^¡C
+1.ä¸€é–‹å§‹æ˜¯åœ¨è‡ªå·±å®¶é–€å£ï¼Œå…ˆOpen Doorå›žè‡ªå·±å®¶ï¼Œå†Open Draweræ‰“é–‹æŠ½å±œï¼Œ
+  è£¡é¢æœ‰å€‹Brad Pitté¢å…·ï¼ŒTake Maskæ‹¿å–é¢å…·ï¼Œå†Wear Maskæˆ´ä¸Šé¢å…·ã€‚
+2.å‡ºé–€å¾€å³èµ°ï¼Œé€²å…¥Martï¼ŒTake Guitaræ‹¿èµ°å‰ä»–ã€‚å‡ºé–€å‘é–€å¤–çš„äººTake
+  Cigaretteæ‹¿é¦™ç…™ï¼Œç„¶å¾Œç¹¼çºŒå¾€å³èµ°éŽï¼”å€‹å ´æ™¯ï¼ŒTake Floweræ‘˜ä¸‹çŽ«ç‘°èŠ±ã€‚
+3.å¾€å·¦èµ°ï¼Œå‘å¥³äººGive Floweré€èŠ±ï¼Œå†Give Cigaretteé€é¦™ç…™ï¼ŒæŽ¥è‘—Play
+  Guitarå”±æƒ…æ­Œï¼Œæœ€å¾Œå‘å¥¹è¡¨ç™½è¦Fuckï¼Œæ–¼æ˜¯å¥¹ä¾¿æœƒç­”æ‡‰ä½ ã€‚
+4.å¾€å·¦èµ°é€²å±‹ï¼ŒTake Off Clothesè„«ä¸‹å¥¹çš„è¡£æœï¼Œç„¶å¾Œè¼¸å…¥Oneã€Twoã€Three
+  æˆ–Fouré¸æ“‡é«”ä½ï¼ŒæŽ¥è‘—æŒ‰ä¸Šä¸‹å·¦å³éµé–‹å§‹ä½œæ„›äº†ï¼ˆè¨˜å¾—è¦Change Position
+  æ›´æ›é«”ä½è©¦è©¦çœ‹ï¼‰ã€‚ç„¶å¾ŒéŽäº†ä¸€æœƒä¾¿çµæŸäº†ï¼ˆçœ‹çœ‹ä½ çš„åˆ†æ•¸æ˜¯ä¸æ˜¯ï¼–ï¼™åˆ†ï¼‰ã€‚
 

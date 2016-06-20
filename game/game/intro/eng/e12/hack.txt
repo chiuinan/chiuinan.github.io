@@ -1,19 +1,19 @@
-¦WºÙ¡G¦Ê¾Ô°g®c (Dungeon Hack¡A­^¤åª©)
-Â²¤¶¡GSSI 1993¦~¥X«~ªº¨¤¦â§êºt¹CÀ¸¡A¥Ñ³nÅé¥@¬É¥N²z¶i¤f¡C¦¹¹CÀ¸¥i»¡¬O
-      Å]²´±þ¾÷¨t¦CªºÅÜ§Î¡A¦]¦¹¾Þ§@¤è¦¡©MÅ]²´±þ¾÷¬Û·íÃþ¦ü¡A±Ä¥Îª½¨¤3D
-      µøÄ±§e²{¡A¥H³æ¤H§Y®É¤è¦¡¾Ô°«¡A¦Ó¦a¤U«°¤ºªº©Çª«¤]©MÅ]²´±þ¾÷¨t¦C
-      ¬Û¦P¡C¬G¨Æ´y¼g¥D¨¤±µ¨ü¤k§Åªº©e°U¡A¨ì¦a¤U«°¤¤±þ¦ºÀs¤ý¡A¤£¹L¼@±¡
-      ¦b¹CÀ¸¹Lµ{¤¤¨Ã¨S¦³¼vÅT¡A¤]¥i»¡¬O¥»¹CÀ¸§¹¥þ­½µL¼@±¡¥i¨¥¡A³oÂI¨Ï
-      ±o¥»¹CÀ¸®Ú¥»¤ñ¤£¤WÅ]²´±þ¾÷¨t¦C¡C¤£¹L¥»¹CÀ¸³Ì¤jªº¯S¦â¬O¥¦¨C¦¸­«
-      ·s²£¥Íªº¦a¤U«°§¡¤£¦P¡A³o¤]´N¬O¥¦¬°¤°»òºÙ¬°¦Ê¾Ô°g®cªº­ì¦]¡Ð¥Ã»·
-      ¦³·sªº¦a¤U«°¥i¨Ñ«_ÀI¡C¥u¬O¨S¦³¼@±¡ªº¤ä¼µ¡A³æ¯Âªº¥u¬OÅÜ¤Æ°g®c¡A
-      ª±¤[¤FÁÙ¬O·|Ä±±o«Ü¿°¡C¦pªG³ßÅw¦a¤U«°«_ÀIªºª±®a¡A¦b¨S¦³¨ä¥L§ó¦n
-      ªº¹CÀ¸ª±®É¡A­Ë¥i§Q¥Î¥»¹CÀ¸¨Ó¥´µo¤@¨Ç®É¶¡¡C
-«OÅ@¡G¤å¦r±K½X¡A¯}¸Ñ½X¦p¤U¡G
+ï»¿åç¨±ï¼šç™¾æˆ°è¿·å®® (Dungeon Hackï¼Œè‹±æ–‡ç‰ˆ)
+ç°¡ä»‹ï¼šSSI 1993å¹´å‡ºå“çš„è§’è‰²æ‰®æ¼”éŠæˆ²ï¼Œç”±è»Ÿé«”ä¸–ç•Œä»£ç†é€²å£ã€‚æ­¤éŠæˆ²å¯èªªæ˜¯
+      é­”çœ¼æ®ºæ©Ÿç³»åˆ—çš„è®Šå½¢ï¼Œå› æ­¤æ“ä½œæ–¹å¼å’Œé­”çœ¼æ®ºæ©Ÿç›¸ç•¶é¡žä¼¼ï¼ŒæŽ¡ç”¨ç›´è§’3D
+      è¦–è¦ºå‘ˆç¾ï¼Œä»¥å–®äººå³æ™‚æ–¹å¼æˆ°é¬¥ï¼Œè€Œåœ°ä¸‹åŸŽå…§çš„æ€ªç‰©ä¹Ÿå’Œé­”çœ¼æ®ºæ©Ÿç³»åˆ—
+      ç›¸åŒã€‚æ•…äº‹æå¯«ä¸»è§’æŽ¥å—å¥³å·«çš„å§”è¨—ï¼Œåˆ°åœ°ä¸‹åŸŽä¸­æ®ºæ­»é¾çŽ‹ï¼Œä¸éŽåŠ‡æƒ…
+      åœ¨éŠæˆ²éŽç¨‹ä¸­ä¸¦æ²’æœ‰å½±éŸ¿ï¼Œä¹Ÿå¯èªªæ˜¯æœ¬éŠæˆ²å®Œå…¨äº³ç„¡åŠ‡æƒ…å¯è¨€ï¼Œé€™é»žä½¿
+      å¾—æœ¬éŠæˆ²æ ¹æœ¬æ¯”ä¸ä¸Šé­”çœ¼æ®ºæ©Ÿç³»åˆ—ã€‚ä¸éŽæœ¬éŠæˆ²æœ€å¤§çš„ç‰¹è‰²æ˜¯å®ƒæ¯æ¬¡é‡
+      æ–°ç”¢ç”Ÿçš„åœ°ä¸‹åŸŽå‡ä¸åŒï¼Œé€™ä¹Ÿå°±æ˜¯å®ƒç‚ºä»€éº¼ç¨±ç‚ºç™¾æˆ°è¿·å®®çš„åŽŸå› ï¼æ°¸é 
+      æœ‰æ–°çš„åœ°ä¸‹åŸŽå¯ä¾›å†’éšªã€‚åªæ˜¯æ²’æœ‰åŠ‡æƒ…çš„æ”¯æ’ï¼Œå–®ç´”çš„åªæ˜¯è®ŠåŒ–è¿·å®®ï¼Œ
+      çŽ©ä¹…äº†é‚„æ˜¯æœƒè¦ºå¾—å¾ˆè†©ã€‚å¦‚æžœå–œæ­¡åœ°ä¸‹åŸŽå†’éšªçš„çŽ©å®¶ï¼Œåœ¨æ²’æœ‰å…¶ä»–æ›´å¥½
+      çš„éŠæˆ²çŽ©æ™‚ï¼Œå€’å¯åˆ©ç”¨æœ¬éŠæˆ²ä¾†æ‰“ç™¼ä¸€äº›æ™‚é–“ã€‚
+ä¿è­·ï¼šæ–‡å­—å¯†ç¢¼ï¼Œç ´è§£ç¢¼å¦‚ä¸‹ï¼š
       HACK.RES
         17 01 46 04
         18 -- -- --
-­ì±K½Xªí¡G
+åŽŸå¯†ç¢¼è¡¨ï¼š
 
   Page Word Password
   ---- ---- -----------
@@ -42,99 +42,99 @@
    61    3   Sometimes
    62    5   Brawny
 
-±K§Þ¡G¦b¹CÀ¸§å¦¸ÀÉ³Ì«e­±¥[¤W
+å¯†æŠ€ï¼šåœ¨éŠæˆ²æ‰¹æ¬¡æª”æœ€å‰é¢åŠ ä¸Š
         set aesop_diag=1
-      «h¦b¹CÀ¸®É·|¼W¥[¤U¦C¥\¯àÁä¡G
-        A - ®ø·À©Ò¦³¥»¼hªº©Çª«
-        I - ¤¹³\¥D¨¤ª½±µ¬ï¹LÀð¾À
-        O - ª½±µ¨ú±o·sªºª««~¡A¨ú±oª««~¤£©w¡A¥B¦¸¼Æ¦³­­
-        X - ¼W¥[¸gÅç­È
-¾Þ§@¡G
+      å‰‡åœ¨éŠæˆ²æ™‚æœƒå¢žåŠ ä¸‹åˆ—åŠŸèƒ½éµï¼š
+        A - æ¶ˆæ»…æ‰€æœ‰æœ¬å±¤çš„æ€ªç‰©
+        I - å…è¨±ä¸»è§’ç›´æŽ¥ç©¿éŽç‰†å£
+        O - ç›´æŽ¥å–å¾—æ–°çš„ç‰©å“ï¼Œå–å¾—ç‰©å“ä¸å®šï¼Œä¸”æ¬¡æ•¸æœ‰é™
+        X - å¢žåŠ ç¶“é©—å€¼
+æ“ä½œï¼š
 
-¤W¤UÁä = «e¶i¡þ«á°h
-¥ª¥kÁä = ¤ô¥­²¾°Ê
-Home/PgUp = ¥ª¥kÂà
-C = ²ÏÀç
-F1 = ¤Á´«²ÊÁW¼Ò¦¡¡þ²Ó¿°¼Ò¦¡
+ä¸Šä¸‹éµ = å‰é€²ï¼å¾Œé€€
+å·¦å³éµ = æ°´å¹³ç§»å‹•
+Home/PgUp = å·¦å³è½‰
+C = ç´®ç‡Ÿ
+F1 = åˆ‡æ›ç²—ç³™æ¨¡å¼ï¼ç´°è†©æ¨¡å¼
 
-»¡©ú¡G
+èªªæ˜Žï¼š
 
-¦¹³Bªº¤¤Ä¶¦Wµü§¡¾¨¶qªu¥ÎÅ]²´±þ¾÷²Ä¤T¥N¤¤¤åª©¡A¦Ó¤£¥H¤â¥U¬°·Ç¡]¯S§O¬O
-ªk³N¦WºÙ¡^¡A¤£¹L©Çª«¦WºÙ«h¾¨¶q¥H¤â¥U¬°·Ç¡C
+æ­¤è™•çš„ä¸­è­¯åè©žå‡å„˜é‡æ²¿ç”¨é­”çœ¼æ®ºæ©Ÿç¬¬ä¸‰ä»£ä¸­æ–‡ç‰ˆï¼Œè€Œä¸ä»¥æ‰‹å†Šç‚ºæº–ï¼ˆç‰¹åˆ¥æ˜¯
+æ³•è¡“åç¨±ï¼‰ï¼Œä¸éŽæ€ªç‰©åç¨±å‰‡å„˜é‡ä»¥æ‰‹å†Šç‚ºæº–ã€‚
 
-­^¤å         ¤â¥U    ¤T¥N¤¤¤åª©
+è‹±æ–‡         æ‰‹å†Š    ä¸‰ä»£ä¸­æ–‡ç‰ˆ
 --------------------------------
-Gnome        ¦aºë    ¨Ü¾§
-Ranger       ¬y®öªÌ  ¹C«L
-Paladin      ¹C«L    ªZ¤h
-Thief        µs¸é    ¤p°½
-Intelligent  ´¼¤O    ´¼¯à
-Wisdom       ºÍ´¼    ¾Ç°Ý
+Gnome        åœ°ç²¾    ä¾å„’
+Ranger       æµæµªè€…  éŠä¿ 
+Paladin      éŠä¿     æ­¦å£«
+Thief        ç›œè³Š    å°å·
+Intelligent  æ™ºåŠ›    æ™ºèƒ½
+Wisdom       ç¿æ™º    å­¸å•
 
-*** ¤Hª«³Ð³y
+*** äººç‰©å‰µé€ 
 
-¤@. ºØ±Ú¡]Race¡^
+ä¸€. ç¨®æ—ï¼ˆRaceï¼‰
 
-¤¤¤å   ­^¤å     ¤O´¼¾Ç±ÓÅé¾y  ¾Ô¹CªZ§Åªª°½¸Ö  ¯S©Ê
+ä¸­æ–‡   è‹±æ–‡     åŠ›æ™ºå­¸æ•é«”é­…  æˆ°éŠæ­¦å·«ç‰§å·è©©  ç‰¹æ€§
 -------------------------------------------------------------------
-¤HÃþ   Human    ¡Ð¡Ð¡Ð¡Ð¡Ð¡Ð  ¡Ð¡Ð¡Ð¡Ð¡Ð¡Ð¡Ð
-ºëÆF   Elf      ¢æ¢æ¢æ+1-1¢æ  1518¢æ181515¢æ  §Ü¶Ê¯v¡A¤}½b/¼C©R¤¤+1
-¥bºëÆF Half Elf ¡Ð¡Ð¡Ð¡Ð¡Ð¡Ð  1719¢æ151715¡Ð  §Ü¶Ê¯v
-¸G¤H   Dwarf    ¢æ¢æ¢æ-1+1-2  18¢æ¢æ¢æ1315¢æ  §Ü¬r»PÅ]ªk
-¨Ü¾§   Gnome    ¢æ+1-1¢æ¢æ¢æ  14¢æ¢æ¢æ1216¢æ
-¥b¨­¤H Halfling -1¢æ¢æ+1¢æ¢æ  12¢æ¢æ¢æ1118¢æ  §ÜÅ]ªk¡A§ë¥Û¯Á©R¤¤+1
+äººé¡ž   Human    ï¼ï¼ï¼ï¼ï¼ï¼  ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+ç²¾éˆ   Elf      ï¼¸ï¼¸ï¼¸+1-1ï¼¸  1518ï¼¸181515ï¼¸  æŠ—å‚¬çœ ï¼Œå¼“ç®­/åŠå‘½ä¸­+1
+åŠç²¾éˆ Half Elf ï¼ï¼ï¼ï¼ï¼ï¼  1719ï¼¸151715ï¼  æŠ—å‚¬çœ 
+çŸ®äºº   Dwarf    ï¼¸ï¼¸ï¼¸-1+1-2  18ï¼¸ï¼¸ï¼¸1315ï¼¸  æŠ—æ¯’èˆ‡é­”æ³•
+ä¾å„’   Gnome    ï¼¸+1-1ï¼¸ï¼¸ï¼¸  14ï¼¸ï¼¸ï¼¸1216ï¼¸
+åŠèº«äºº Halfling -1ï¼¸ï¼¸+1ï¼¸ï¼¸  12ï¼¸ï¼¸ï¼¸1118ï¼¸  æŠ—é­”æ³•ï¼ŒæŠ•çŸ³ç´¢å‘½ä¸­+1
 
-µù¡G
+è¨»ï¼š
 
-1.¨k¤k©Ê§OµL¥ô¦ó¼vÅT¡C
-2.Â¾·~³Ì°ª20¯Å¡A°£¤F¤HÃþ¥i¹F¨ì¥~¡A¨ä¾lºØ±Ú±q¨ÆªºÂ¾·~§¡¦³µ¥¯Å­­¨î¡]¸Ö
-  ¤H°£¥~¡^¡C
+1.ç”·å¥³æ€§åˆ¥ç„¡ä»»ä½•å½±éŸ¿ã€‚
+2.è·æ¥­æœ€é«˜20ç´šï¼Œé™¤äº†äººé¡žå¯é”åˆ°å¤–ï¼Œå…¶é¤˜ç¨®æ—å¾žäº‹çš„è·æ¥­å‡æœ‰ç­‰ç´šé™åˆ¶ï¼ˆè©©
+  äººé™¤å¤–ï¼‰ã€‚
 
-Â¾·~             ¤HÃþ ºëÆF ¥bºëÆF ¸G¤H ¨Ü¾§ ¥b¨­¤H
+è·æ¥­             äººé¡ž ç²¾éˆ åŠç²¾éˆ çŸ®äºº ä¾å„’ åŠèº«äºº
 ----------------------------------------------------
-¾Ô¤h              ¢ç   ¢ç    ¢ç    ¢ç   ¢ç    ¢ç
-¹C«L              ¢ç   ¢ç    ¢ç    ¡Ð   ¡Ð    ¡Ð
-ªZ¤h              ¢ç   ¡Ð    ¡Ð    ¡Ð   ¡Ð    ¡Ð
-§Å®v              ¢ç   ¢ç    ¢ç    ¡Ð   ¡Ð    ¡Ð
-ªª®v              ¢ç   ¢ç    ¢ç    ¢ç   ¢ç    ¢ç
-¤p°½              ¢ç   ¢ç    ¢ç    ¢ç   ¢ç    ¢ç
-¾Ô¤h¡þªª®v        ¡Ð   ¡Ð    ¢ç    ¢ç   ¢ç    ¡Ð
-¾Ô¤h¡þ¤p°½        ¡Ð   ¢ç    ¢ç    ¢ç   ¢ç    ¢ç
-¾Ô¤h¡þ§Å®v        ¡Ð   ¢ç    ¢ç    ¡Ð   ¡Ð    ¡Ð
-¾Ô¤h¡þ§Å®v¡þ¤p°½  ¡Ð   ¢ç    ¢ç    ¡Ð   ¡Ð    ¡Ð
-¤p°½¡þ§Å®v        ¡Ð   ¢ç    ¢ç    ¡Ð   ¡Ð    ¡Ð
-ªª®v¡þ¤p°½        ¡Ð   ¡Ð    ¡Ð    ¡Ð   ¢ç    ¡Ð
-¾Ô¤h¡þªª®v¡þ§Å®v  ¡Ð   ¡Ð    ¢ç    ¡Ð   ¡Ð    ¡Ð
-¹C«L¡þªª®v        ¡Ð   ¡Ð    ¢ç    ¡Ð   ¡Ð    ¡Ð
-ªª®v¡þ§Å®v        ¡Ð   ¡Ð    ¢ç    ¡Ð   ¡Ð    ¡Ð
-¸Ö¤H              ¢ç   ¡Ð    ¢ç    ¡Ð   ¡Ð    ¡Ð
+æˆ°å£«              ï¼¹   ï¼¹    ï¼¹    ï¼¹   ï¼¹    ï¼¹
+éŠä¿               ï¼¹   ï¼¹    ï¼¹    ï¼   ï¼    ï¼
+æ­¦å£«              ï¼¹   ï¼    ï¼    ï¼   ï¼    ï¼
+å·«å¸«              ï¼¹   ï¼¹    ï¼¹    ï¼   ï¼    ï¼
+ç‰§å¸«              ï¼¹   ï¼¹    ï¼¹    ï¼¹   ï¼¹    ï¼¹
+å°å·              ï¼¹   ï¼¹    ï¼¹    ï¼¹   ï¼¹    ï¼¹
+æˆ°å£«ï¼ç‰§å¸«        ï¼   ï¼    ï¼¹    ï¼¹   ï¼¹    ï¼
+æˆ°å£«ï¼å°å·        ï¼   ï¼¹    ï¼¹    ï¼¹   ï¼¹    ï¼¹
+æˆ°å£«ï¼å·«å¸«        ï¼   ï¼¹    ï¼¹    ï¼   ï¼    ï¼
+æˆ°å£«ï¼å·«å¸«ï¼å°å·  ï¼   ï¼¹    ï¼¹    ï¼   ï¼    ï¼
+å°å·ï¼å·«å¸«        ï¼   ï¼¹    ï¼¹    ï¼   ï¼    ï¼
+ç‰§å¸«ï¼å°å·        ï¼   ï¼    ï¼    ï¼   ï¼¹    ï¼
+æˆ°å£«ï¼ç‰§å¸«ï¼å·«å¸«  ï¼   ï¼    ï¼¹    ï¼   ï¼    ï¼
+éŠä¿ ï¼ç‰§å¸«        ï¼   ï¼    ï¼¹    ï¼   ï¼    ï¼
+ç‰§å¸«ï¼å·«å¸«        ï¼   ï¼    ï¼¹    ï¼   ï¼    ï¼
+è©©äºº              ï¼¹   ï¼    ï¼¹    ï¼   ï¼    ï¼
 
-µù¡G­ÝÂ¾Â¾·~¤É¯Å®É¡A¼W¥[ªº¦å¶q¥²¶·°£¥H­ÝÂ¾¼Æ¡A¦Ó«Dª½±µ¥[¤W¥h¡C
+è¨»ï¼šå…¼è·è·æ¥­å‡ç´šæ™‚ï¼Œå¢žåŠ çš„è¡€é‡å¿…é ˆé™¤ä»¥å…¼è·æ•¸ï¼Œè€Œéžç›´æŽ¥åŠ ä¸ŠåŽ»ã€‚
 
-¤G. Â¾·~¡]Class¡^
+äºŒ. è·æ¥­ï¼ˆClassï¼‰
 
-¤¤¤å  ­^¤å   ¥D­nÄÝ©Ê  ªZ¾¹         Å@¥Ò  ¥[¦å9-¡þ10+¯Å  ¯S©Ê
+ä¸­æ–‡  è‹±æ–‡   ä¸»è¦å±¬æ€§  æ­¦å™¨         è­·ç”²  åŠ è¡€9-ï¼10+ç´š  ç‰¹æ€§
 --------------------------------------------------------------
-¾Ô¤h  Fighter  ¤O       ¡Ð           ¡Ð     1-10¡þ+3
-¹C«L  Ranger   ¤O¾Ç±Ó   ¡Ð          °v¥Ò    1-10¡þ+3
-ªZ¤h  Paladin  ¤O¾y     ¡Ð           ¡Ð     1-10¡þ+3     µù1
-§Å®v  Mage     ´¼      ¤P­º,Ãð,§ú   ªø³T     1-4¡þ+1
-ªª®v  Cleric   ¾Ç      ¶w¾¹,§ë¥Û¯Á   ¡Ð      1-8¡þ+2
-¤p°½  Thief    ±Ó       ¡Ð          ¥Ö¥Ò     1-6¡þ+2     ¶}Âê
-¸Ö¤H  Bard     ±Ó¾y     ¡Ð          Ãì¥Ò     1-6¡þ+2     µù2
+æˆ°å£«  Fighter  åŠ›       ï¼           ï¼     1-10ï¼+3
+éŠä¿   Ranger   åŠ›å­¸æ•   ï¼          é‡˜ç”²    1-10ï¼+3
+æ­¦å£«  Paladin  åŠ›é­…     ï¼           ï¼     1-10ï¼+3     è¨»1
+å·«å¸«  Mage     æ™º      åŒ•é¦–,é¢,æ–   é•·è¢     1-4ï¼+1
+ç‰§å¸«  Cleric   å­¸      éˆå™¨,æŠ•çŸ³ç´¢   ï¼      1-8ï¼+2
+å°å·  Thief    æ•       ï¼          çš®ç”²     1-6ï¼+2     é–‹éŽ–
+è©©äºº  Bard     æ•é­…     ï¼          éˆç”²     1-6ï¼+2     è¨»2
 
-µù¡G
+è¨»ï¼š
 
-1.ªZ¤h¹ï¯e¯f§K¬Ì¡A§Ü¬r»PÅ]ªk¡A¨¸´c©Ç©R¤¤²v-1¡Alv3¥i¶W´ç¤`»î¡Alv9¥i¾Ç
-  §Cµ¥ªª®vªk³N¡C
-2.¸Ö¤H·|¶}Âê¡B¾\Åª¤£¦P»y¨¥¤å¦r¡B¥i¤@¤â«ù¤@§âªZ¾¹¡AµLªk¨Ï¥Î¬Þ¡Alv2¥i¬I
-  ®i§Å®vªk³N¡Alv10¥i¨Ï¥Î¨÷¶b»PÅ]ªk®Ñ¡A¥¢±Ñ²v15%¡C
-3.Â¾·~¥D­nÄÝ©Ê³£¦b16¥H¤W®É¡A¸gÅç­È+10%¡C
-4.¾Ô¤h¡B¹C«L¡BªZ¤h²ÎºÙ¬°¾Ô¤h«¬Â¾·~¡C
+1.æ­¦å£«å°ç–¾ç—…å…ç–«ï¼ŒæŠ—æ¯’èˆ‡é­”æ³•ï¼Œé‚ªæƒ¡æ€ªå‘½ä¸­çŽ‡-1ï¼Œlv3å¯è¶…æ¸¡äº¡é­‚ï¼Œlv9å¯å­¸
+  ä½Žç­‰ç‰§å¸«æ³•è¡“ã€‚
+2.è©©äººæœƒé–‹éŽ–ã€é–±è®€ä¸åŒèªžè¨€æ–‡å­—ã€å¯ä¸€æ‰‹æŒä¸€æŠŠæ­¦å™¨ï¼Œç„¡æ³•ä½¿ç”¨ç›¾ï¼Œlv2å¯æ–½
+  å±•å·«å¸«æ³•è¡“ï¼Œlv10å¯ä½¿ç”¨å·è»¸èˆ‡é­”æ³•æ›¸ï¼Œå¤±æ•—çŽ‡15%ã€‚
+3.è·æ¥­ä¸»è¦å±¬æ€§éƒ½åœ¨16ä»¥ä¸Šæ™‚ï¼Œç¶“é©—å€¼+10%ã€‚
+4.æˆ°å£«ã€éŠä¿ ã€æ­¦å£«çµ±ç¨±ç‚ºæˆ°å£«åž‹è·æ¥­ã€‚
 
-¤É¯Å¸gÅçªí¡G
+å‡ç´šç¶“é©—è¡¨ï¼š
 
-µ¥¯Å    ¾Ô¤h  ¹C«L¡þªZ¤h  §Å®v     ªª®v  µs¸é¡þ¸Ö¤H
+ç­‰ç´š    æˆ°å£«  éŠä¿ ï¼æ­¦å£«  å·«å¸«     ç‰§å¸«  ç›œè³Šï¼è©©äºº
 ----------------------------------------------------
   1        0        0        0        0        0
   2     2000     2250     2500     1500     1250
@@ -157,20 +157,20 @@ Wisdom       ºÍ´¼    ¾Ç°Ý
  19  2750000  3300000  3375000  2475000  1980000
  20  3000000  3600000  3750000  2700000  2200000  
 
-¤T. ÄÝ©Ê
+ä¸‰. å±¬æ€§
 
-1.¤O¶q¡]STR¡AStrength¡^¡G¾Ô¤h«¬Â¾·~¥D­nÄÝ©Ê¡]18®É¥t±a¤ñ¨Ò­È¡A·U°ª·U±j¡^¡A
-  ¼vÅTªñ¾Ô©R¤¤²v»P§ðÀ»¶Ë®`¤O¡C
-2.´¼¯à¡]INT¡AIntelligent¡^¡G§Å®v¥D­nÄÝ©Ê¡C
-3.¾Ç°Ý¡]WIS¡AWisdom¡^¡Gªª®v¡B¹C«L¥D­nÄÝ©Ê¡A¼vÅTªª®vªk³N°O¾Ð¼Æ¥Ø¡C
-4.±Ó±¶¡]DEX¡ADexterity¡^¡G¤p°½¡B¹C«L¡B¸Ö¤H¥D­nÄÝ©Ê¡A¼vÅT»·®g©R¤¤²v»P
-  ¨¾¿m¤O¡C¶W¹L16®É¡A¾Ô¤h«¬¤Hª«©Î¸Ö¤H¥i¤@¤â«ù¤@§âªZ¾¹§ðÀ»¡C
-5.Åé½è¡]CON¡AConstitution¡^¡G¼vÅT¤É¯Å¥Í©R¼W­È¡C
-6.¾y¤O¡]CHA¡ACharisma¡^¡GªZ¤h¡B¸Ö¤H¥D­nÄÝ©Ê¡C
+1.åŠ›é‡ï¼ˆSTRï¼ŒStrengthï¼‰ï¼šæˆ°å£«åž‹è·æ¥­ä¸»è¦å±¬æ€§ï¼ˆ18æ™‚å¦å¸¶æ¯”ä¾‹å€¼ï¼Œæ„ˆé«˜æ„ˆå¼·ï¼‰ï¼Œ
+  å½±éŸ¿è¿‘æˆ°å‘½ä¸­çŽ‡èˆ‡æ”»æ“Šå‚·å®³åŠ›ã€‚
+2.æ™ºèƒ½ï¼ˆINTï¼ŒIntelligentï¼‰ï¼šå·«å¸«ä¸»è¦å±¬æ€§ã€‚
+3.å­¸å•ï¼ˆWISï¼ŒWisdomï¼‰ï¼šç‰§å¸«ã€éŠä¿ ä¸»è¦å±¬æ€§ï¼Œå½±éŸ¿ç‰§å¸«æ³•è¡“è¨˜æ†¶æ•¸ç›®ã€‚
+4.æ•æ·ï¼ˆDEXï¼ŒDexterityï¼‰ï¼šå°å·ã€éŠä¿ ã€è©©äººä¸»è¦å±¬æ€§ï¼Œå½±éŸ¿é å°„å‘½ä¸­çŽ‡èˆ‡
+  é˜²ç¦¦åŠ›ã€‚è¶…éŽ16æ™‚ï¼Œæˆ°å£«åž‹äººç‰©æˆ–è©©äººå¯ä¸€æ‰‹æŒä¸€æŠŠæ­¦å™¨æ”»æ“Šã€‚
+5.é«”è³ªï¼ˆCONï¼ŒConstitutionï¼‰ï¼šå½±éŸ¿å‡ç´šç”Ÿå‘½å¢žå€¼ã€‚
+6.é­…åŠ›ï¼ˆCHAï¼ŒCharismaï¼‰ï¼šæ­¦å£«ã€è©©äººä¸»è¦å±¬æ€§ã€‚
 
-³Ì¦n±NÄÝ©Ê­È³£½Õ¨ì³Ì¤j¡]¥]¬A¥Í©RHP¡^¡C
+æœ€å¥½å°‡å±¬æ€§å€¼éƒ½èª¿åˆ°æœ€å¤§ï¼ˆåŒ…æ‹¬ç”Ÿå‘½HPï¼‰ã€‚
 
-¤O¶q  ªñ¾Ô©R¤¤²v  ¶Ë®`¤O
+åŠ›é‡  è¿‘æˆ°å‘½ä¸­çŽ‡  å‚·å®³åŠ›
 ----------------------------
 3         -3        -1
 4-5       -2        -1
@@ -189,9 +189,9 @@ Wisdom       ºÍ´¼    ¾Ç°Ý
 21*       +4        +9
 22*       +4        +10
 
-µù¡G¤O¶q19¥H¤W¡A¥u¯à³z¹LÅ]ªk¼W¥[¡C
+è¨»ï¼šåŠ›é‡19ä»¥ä¸Šï¼Œåªèƒ½é€éŽé­”æ³•å¢žåŠ ã€‚
 
-¾Ç°Ý  ¤@¯Å  ¤G¯Å  ¤T¯Å  ¥|¯Å¡]ªª®vªk³N¡^
+å­¸å•  ä¸€ç´š  äºŒç´š  ä¸‰ç´š  å››ç´šï¼ˆç‰§å¸«æ³•è¡“ï¼‰
 ---------------------------------
  13    +1     0     0     0
  14    +2     0     0     0
@@ -201,7 +201,7 @@ Wisdom       ºÍ´¼    ¾Ç°Ý
  18    +2    +2    +1    +1
  19    +3    +2    +1    +2
 
-±Ó±¶  »·®g©R¤¤²v  AC­×¥¿
+æ•æ·  é å°„å‘½ä¸­çŽ‡  ACä¿®æ­£
 ----------------------------
 3         -3        +4
 4         -2        +3
@@ -214,7 +214,7 @@ Wisdom       ºÍ´¼    ¾Ç°Ý
 18        +2        -4
 19        +3        -4
 
-Åé½è  ¤É¯Å¼W©R­×¥¿
+é«”è³ª  å‡ç´šå¢žå‘½ä¿®æ­£
 --------------------
 3          -2
 4-6        -1
@@ -225,283 +225,283 @@ Wisdom       ºÍ´¼    ¾Ç°Ý
 18         +4*
 19         +5*
 
-µù¡G«D¾Ô¤h«¬Â¾·~¡A¤É¯Å¼W¥[¥Í©R­×¥¿­È³Ì°ª¬°+2¡C
+è¨»ï¼šéžæˆ°å£«åž‹è·æ¥­ï¼Œå‡ç´šå¢žåŠ ç”Ÿå‘½ä¿®æ­£å€¼æœ€é«˜ç‚º+2ã€‚
 
-*** ¹CÀ¸¿ï¶µ»¡©ú
+*** éŠæˆ²é¸é …èªªæ˜Ž
 
-§xÃø«×¡G
+å›°é›£åº¦ï¼š
 
-1.Â²³æ¡]Easy¡^
-2.¼ô½m¡]Moderate¡^
-3.§xÃø¡]Hard¡^¡G¦³³]©w¤Hª«¯u¹ê¦º¤`¡C
-4.¦Û¦æ³]©w¡]Custom¡^
+1.ç°¡å–®ï¼ˆEasyï¼‰
+2.ç†Ÿç·´ï¼ˆModerateï¼‰
+3.å›°é›£ï¼ˆHardï¼‰ï¼šæœ‰è¨­å®šäººç‰©çœŸå¯¦æ­»äº¡ã€‚
+4.è‡ªè¡Œè¨­å®šï¼ˆCustomï¼‰
 
-«e¤TºØ¬°¹CÀ¸¤w³]©w¦n¦UºØ¿ï¶µ¡AµLªk½Õ¾ã¡A¤@¯ë¥i¦Û¦æ³]©w¡A½Õ¾ã¦¨¦Û¤v³Ì
-³ßÅwªº¼Ò¦¡¡C
+å‰ä¸‰ç¨®ç‚ºéŠæˆ²å·²è¨­å®šå¥½å„ç¨®é¸é …ï¼Œç„¡æ³•èª¿æ•´ï¼Œä¸€èˆ¬å¯è‡ªè¡Œè¨­å®šï¼Œèª¿æ•´æˆè‡ªå·±æœ€
+å–œæ­¡çš„æ¨¡å¼ã€‚
 
-¦a¤U«°³Ð³]¿ï¶µ¡G
+åœ°ä¸‹åŸŽå‰µè¨­é¸é …ï¼š
 
-1.¦a¤U«°²`«×¡]Dungeon Depth¡^¡G­­¨î10¡ã25¼h¡C
-2.©Çª«¥X²{ÀW²v¡]Monster Frequency¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-3.Ä_ÂÃ¼Æ¶q¡]Treasure¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-4.­¹ª«¼Æ¶q¡]Food Availability¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-5.¤Û¹³Àð¼Æ¶q¡]Illusionary Walls¡^¡G0¡ã7¡A0=µL¡A7=°ª¡C
-6.Æ_°Í¼Æ¶q¡]Key Frequency¡^¡G0¡ã7¡A0=µL¡A7=°ª¡C
-7.Å]ªk³´¨À¼Æ¶q¡]Magic Traps¡^¡G0¡ã7¡A0=µL¡A7=°ª¡C
-8.³´§|¼Æ¶q¡]Pit Frequency¡^¡G0¡ã7¡A0=µL¡A7=°ª¡C
-9.´£¥Ü¼Æ¶q¡]Hints¡^¡G0¡ã7¡A0=µL¡A7=°ª¡C
-10.Å]ªk¦a±a¡]Magical Zones¡^¡G¶}¡þÃö¡C§Y¬Y­Ó°Ï°ì¬O§_¥iªþ¦³Å]ªk§@¥Î¡C
-11.¤ô¼h¡]Water Level¡^¡G¶}¡þÃö¡C
-12.¦h¼h°g®cÃöÁp¡]Multi-level Puzzles¡^¡G¶}¡þÃö¡C§Y¸Ñ¶}°g®cªºÃöÁäª««~
-   ¬O§_¥u­­©ó¦P¤@¼h¡C
-13.¾D¹J¤£¦º¥Íª«¡]Encounter Undead¡^¡G¶}¡þÃö¡C¬Y¨Ç¤£¦º¥Íª«·|§l¨ú¤Hª«µ¥
-   ¯Å¡C
+1.åœ°ä¸‹åŸŽæ·±åº¦ï¼ˆDungeon Depthï¼‰ï¼šé™åˆ¶10ï½ž25å±¤ã€‚
+2.æ€ªç‰©å‡ºç¾é »çŽ‡ï¼ˆMonster Frequencyï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+3.å¯¶è—æ•¸é‡ï¼ˆTreasureï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+4.é£Ÿç‰©æ•¸é‡ï¼ˆFood Availabilityï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+5.å¹»åƒç‰†æ•¸é‡ï¼ˆIllusionary Wallsï¼‰ï¼š0ï½ž7ï¼Œ0=ç„¡ï¼Œ7=é«˜ã€‚
+6.é‘°åŒ™æ•¸é‡ï¼ˆKey Frequencyï¼‰ï¼š0ï½ž7ï¼Œ0=ç„¡ï¼Œ7=é«˜ã€‚
+7.é­”æ³•é™·é˜±æ•¸é‡ï¼ˆMagic Trapsï¼‰ï¼š0ï½ž7ï¼Œ0=ç„¡ï¼Œ7=é«˜ã€‚
+8.é™·å‘æ•¸é‡ï¼ˆPit Frequencyï¼‰ï¼š0ï½ž7ï¼Œ0=ç„¡ï¼Œ7=é«˜ã€‚
+9.æç¤ºæ•¸é‡ï¼ˆHintsï¼‰ï¼š0ï½ž7ï¼Œ0=ç„¡ï¼Œ7=é«˜ã€‚
+10.é­”æ³•åœ°å¸¶ï¼ˆMagical Zonesï¼‰ï¼šé–‹ï¼é—œã€‚å³æŸå€‹å€åŸŸæ˜¯å¦å¯é™„æœ‰é­”æ³•ä½œç”¨ã€‚
+11.æ°´å±¤ï¼ˆWater Levelï¼‰ï¼šé–‹ï¼é—œã€‚
+12.å¤šå±¤è¿·å®®é—œè¯ï¼ˆMulti-level Puzzlesï¼‰ï¼šé–‹ï¼é—œã€‚å³è§£é–‹è¿·å®®çš„é—œéµç‰©å“
+   æ˜¯å¦åªé™æ–¼åŒä¸€å±¤ã€‚
+13.é­é‡ä¸æ­»ç”Ÿç‰©ï¼ˆEncounter Undeadï¼‰ï¼šé–‹ï¼é—œã€‚æŸäº›ä¸æ­»ç”Ÿç‰©æœƒå¸å–äººç‰©ç­‰
+   ç´šã€‚
 
-¹CÀ¸Àô¹Ò¿ï¶µ¡G
+éŠæˆ²ç’°å¢ƒé¸é …ï¼š
 
-1.­¹ª«®ø¯Ó³t«×¡]Food Consumption¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-2.©Çª«Ãø«×¡]Monster Difficulty¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-3.Å]ªk«Â¤O¡]Magic Power¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-4.¬r©Ê«Â¤O¡]Poison Strength¡^¡G0¡ã7¡A0=§C¡A7=°ª¡C
-5.¤Hª«¯u¹ê¦º¤`¡]Character Death Real¡^¡G¶}¡þÃö¡C¥´¶}«á¡A¤@¥¹¤Hª«¦º¤`
-  §Y§R°£¤Hª«¸ê®Æ¡AµLªkÅªÀÉ­«¨Ó¡C
-6.¼Ä¤H¬Iªk¡]Enemy Spells¡^¡G¶}¡þÃö¡C
+1.é£Ÿç‰©æ¶ˆè€—é€Ÿåº¦ï¼ˆFood Consumptionï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+2.æ€ªç‰©é›£åº¦ï¼ˆMonster Difficultyï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+3.é­”æ³•å¨åŠ›ï¼ˆMagic Powerï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+4.æ¯’æ€§å¨åŠ›ï¼ˆPoison Strengthï¼‰ï¼š0ï½ž7ï¼Œ0=ä½Žï¼Œ7=é«˜ã€‚
+5.äººç‰©çœŸå¯¦æ­»äº¡ï¼ˆCharacter Death Realï¼‰ï¼šé–‹ï¼é—œã€‚æ‰“é–‹å¾Œï¼Œä¸€æ—¦äººç‰©æ­»äº¡
+  å³åˆªé™¤äººç‰©è³‡æ–™ï¼Œç„¡æ³•è®€æª”é‡ä¾†ã€‚
+6.æ•µäººæ–½æ³•ï¼ˆEnemy Spellsï¼‰ï¼šé–‹ï¼é—œã€‚
 
-*** §ð¨¾»¡©ú
+*** æ”»é˜²èªªæ˜Ž
 
-¤@. ©R¤¤²v
+ä¸€. å‘½ä¸­çŽ‡
 
-¶Ã¼Æ  = 1¡ã20
-AC    = ¨¾¿mµ¥¯Å¡Aªì©l­È¬°10¡A·U§C·U¦n¡A³Ì§C-10¡]«á­z¡^
-THAC0 = ¥Î¨Óªí¥Ü§ðÀ»AC¬°0ªº¼Ä¤H¡A©R¤¤©Ò»Ý¶Ã¼Æ­È¡Aªì©l­È¬°20¡A·U§C·U¦n
+äº‚æ•¸  = 1ï½ž20
+AC    = é˜²ç¦¦ç­‰ç´šï¼Œåˆå§‹å€¼ç‚º10ï¼Œæ„ˆä½Žæ„ˆå¥½ï¼Œæœ€ä½Ž-10ï¼ˆå¾Œè¿°ï¼‰
+THAC0 = ç”¨ä¾†è¡¨ç¤ºæ”»æ“ŠACç‚º0çš„æ•µäººï¼Œå‘½ä¸­æ‰€éœ€äº‚æ•¸å€¼ï¼Œåˆå§‹å€¼ç‚º20ï¼Œæ„ˆä½Žæ„ˆå¥½
 
-©R¤¤©Ò»Ý¶Ã¼Æ­È = §ðÀ»ªÌTHAC0 - ³Q§ðÀ»ªÌAC
-©R¤¤²v = (20-THAC0+AC)*5%
+å‘½ä¸­æ‰€éœ€äº‚æ•¸å€¼ = æ”»æ“Šè€…THAC0 - è¢«æ”»æ“Šè€…AC
+å‘½ä¸­çŽ‡ = (20-THAC0+AC)*5%
 
-¨Ò¦p¡G
-  (1)¶¤­û¡]THAC0=15¡^§ðÀ»©Çª«¡]AC=3¡^¡A«h¶Ã¼Æ­È>=15-3=12«Kªí¥Ü©R¤¤¡C
-  (2)¶¤­û¡]THAC0=16¡^§ðÀ»©Çª«¡]AC=-2¡^¡A«h¶Ã¼Æ­È>=16+2=18¤~ªí¥Ü©R¤¤¡C
+ä¾‹å¦‚ï¼š
+  (1)éšŠå“¡ï¼ˆTHAC0=15ï¼‰æ”»æ“Šæ€ªç‰©ï¼ˆAC=3ï¼‰ï¼Œå‰‡äº‚æ•¸å€¼>=15-3=12ä¾¿è¡¨ç¤ºå‘½ä¸­ã€‚
+  (2)éšŠå“¡ï¼ˆTHAC0=16ï¼‰æ”»æ“Šæ€ªç‰©ï¼ˆAC=-2ï¼‰ï¼Œå‰‡äº‚æ•¸å€¼>=16+2=18æ‰è¡¨ç¤ºå‘½ä¸­ã€‚
 
-1.Â¾·~µ¥¯Å
+1.è·æ¥­ç­‰ç´š
 
-µ¥¯Å´£¤É¥i¥H­°§CTHAC0¡A¦UÂ¾·~¡þµ¥¯ÅªºTHAC0­È¬°¡G
+ç­‰ç´šæå‡å¯ä»¥é™ä½ŽTHAC0ï¼Œå„è·æ¥­ï¼ç­‰ç´šçš„THAC0å€¼ç‚ºï¼š
 
-Â¾·~   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+è·æ¥­   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
 ------------------------------------------------------------------
-¾Ô¤h  20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
-¹C«L  20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
-ªZ¤h  20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
-ªª®v  20 20 20 18 18 18 16 16 16 14 14 14 12 12 12 10 10 10  8  8
-¤p°½  20 20 19 19 18 18 17 17 16 16 15 15 14 14 13 13 12 12 11 11
-¸Ö¤H  20 20 19 19 18 18 17 17 16 16 15 15 14 14 13 13 12 12 11 11
-§Å®v  20 20 20 19 19 19 18 18 18 17 17 17 16 16 16 15 15 15 14 14
+æˆ°å£«  20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
+éŠä¿   20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
+æ­¦å£«  20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
+ç‰§å¸«  20 20 20 18 18 18 16 16 16 14 14 14 12 12 12 10 10 10  8  8
+å°å·  20 20 19 19 18 18 17 17 16 16 15 15 14 14 13 13 12 12 11 11
+è©©äºº  20 20 19 19 18 18 17 17 16 16 15 15 14 14 13 13 12 12 11 11
+å·«å¸«  20 20 20 19 19 19 18 18 18 17 17 17 16 16 16 15 15 15 14 14
 
-2.¤O¶q­×¥¿
+2.åŠ›é‡ä¿®æ­£
 
-¤O¶q·U°ª¡Aªñ¾Ô®Éªº©R¤¤²v·U°ª¡A½Ð°Ñ¾\ÄÝ©Ê»¡©ú¡C
+åŠ›é‡æ„ˆé«˜ï¼Œè¿‘æˆ°æ™‚çš„å‘½ä¸­çŽ‡æ„ˆé«˜ï¼Œè«‹åƒé–±å±¬æ€§èªªæ˜Žã€‚
 
-3.±Ó±¶­×¥¿
+3.æ•æ·ä¿®æ­£
 
-±Ó±¶·U°ª¡A§ëÂY©Î®gÀ»®Éªº©R¤¤²v·U°ª¡A½Ð°Ñ¾\ÄÝ©Ê»¡©ú¡C
+æ•æ·æ„ˆé«˜ï¼ŒæŠ•æ“²æˆ–å°„æ“Šæ™‚çš„å‘½ä¸­çŽ‡æ„ˆé«˜ï¼Œè«‹åƒé–±å±¬æ€§èªªæ˜Žã€‚
 
-4.ªZ¾¹­×¥¿
+4.æ­¦å™¨ä¿®æ­£
 
-Å]ªkªZ¾¹¥i¥H­°§CTHAC0¡A¨Ò¦p+2ªø¼C¡A§ðÀ»®ÉTHAC0«K´î2¡C
+é­”æ³•æ­¦å™¨å¯ä»¥é™ä½ŽTHAC0ï¼Œä¾‹å¦‚+2é•·åŠï¼Œæ”»æ“Šæ™‚THAC0ä¾¿æ¸›2ã€‚
 
-5.ªk³N­×¥¿
+5.æ³•è¡“ä¿®æ­£
 
-¯¬ºÖ³N¡B¬èÃ«³Nµ¥¤]¥i¥H¼È®É­°§CTHAC0¤@ÂI¡C
+ç¥ç¦è¡“ã€ç¥ˆç¦±è¡“ç­‰ä¹Ÿå¯ä»¥æš«æ™‚é™ä½ŽTHAC0ä¸€é»žã€‚
 
-¤G. ¨¾¿mµ¥¯Å¡]Armor Class¡AÂ²ºÙAC¡^
+äºŒ. é˜²ç¦¦ç­‰ç´šï¼ˆArmor Classï¼Œç°¡ç¨±ACï¼‰
 
-1.±Ó±¶­×¥¿
+1.æ•æ·ä¿®æ­£
 
-±Ó±¶·U°ª¡AAC·U§C¡A½Ð°Ñ¾\ÄÝ©Ê»¡©ú¡C
+æ•æ·æ„ˆé«˜ï¼ŒACæ„ˆä½Žï¼Œè«‹åƒé–±å±¬æ€§èªªæ˜Žã€‚
 
-2.Å@¥Ò»P¬Þ
+2.è­·ç”²èˆ‡ç›¾
 
-Å@¥Ò©M¬Þ§¡¦³¤@©wªº¨¾Å@¤O¡]ªø³T°£¥~¡^¡A¥H¤U¬°µLÅ]ªk¤§Å@¥Ò»P¬Þ¹ïACªº­×
-¥¿­È¡G
+è­·ç”²å’Œç›¾å‡æœ‰ä¸€å®šçš„é˜²è­·åŠ›ï¼ˆé•·è¢é™¤å¤–ï¼‰ï¼Œä»¥ä¸‹ç‚ºç„¡é­”æ³•ä¹‹è­·ç”²èˆ‡ç›¾å°ACçš„ä¿®
+æ­£å€¼ï¼š
 
-¤¤¤å      ­^¤å            AC­×¥¿  ·sAC
+ä¸­æ–‡      è‹±æ–‡            ACä¿®æ­£  æ–°AC
 ----------------------------------------
-ªø³T      Robe               0     10
-¬Þ        Shield            -1      9
-¥Ö¥Ò      Leather Armor     -2      8
-Àô¥Ò      Ring Mail         -3      7
-Åì¥Ò      Scale Mail        -4      6
-ªO¥Ò      Brigandine        -4      6
-Ãì¥Ò      Chain Mail        -5      5
-ºëÆFÃì¥Ò  Elven Chain Mail  -5      5
-ãT¥Ò      Banded Armor      -6      4
-«C»ÉñZ¥Ò  Bronze Plate Mail -6      4
-ñZ¥Ò      Plate Mail        -7      3
-Às¥Ö¥Ò    Dragonskin Armor  -7      3
-¥þ¨­ñZ¥Ò  Field Plate Mail  -8      2
+é•·è¢      Robe               0     10
+ç›¾        Shield            -1      9
+çš®ç”²      Leather Armor     -2      8
+ç’°ç”²      Ring Mail         -3      7
+é±—ç”²      Scale Mail        -4      6
+æ¿ç”²      Brigandine        -4      6
+éˆç”²      Chain Mail        -5      5
+ç²¾éˆéˆç”²  Elven Chain Mail  -5      5
+ç®ç”²      Banded Armor      -6      4
+é’éŠ…éŽ§ç”²  Bronze Plate Mail -6      4
+éŽ§ç”²      Plate Mail        -7      3
+é¾çš®ç”²    Dragonskin Armor  -7      3
+å…¨èº«éŽ§ç”²  Field Plate Mail  -8      2
 
-¨ä¤¤¬Þ¨C¸Ë³Æ¤@­Ó¡AAC«K´î1¡C¨ä¾l¸Ë³Æ¡A¦p¨¾Å@µÃ±a¡]Bracers¡^¡B§Ù«ü¡]Ring¡^
-µ¥¡A°£«D¨ã¦³Å]ªk¨¾Å@¤O¡A§_«h¬ïÀ¹»P§_¡A¹ïAC¨ÃµL¼vÅT¡CÀY²¯¡]Helm¡^¡B¾c
-¤l¡]Boots¡^¡B¶µÁå¡]Medallion©ÎNecklace¡^¡A¤@«ß¤£¼vÅTAC¡C·í¬ïÀ¹¦h­Ó±a
-Å]ªk¨¾Å@¤Oªº¸Ë³Æ®É¡A¦P¤@Ãþ«¬¡]¦p§Ù«ü¡^¥u¨ú³Ì°ªªºÅ]ªk¨¾Å@¤O¡A¤£·|²Ö¥[¡C
+å…¶ä¸­ç›¾æ¯è£å‚™ä¸€å€‹ï¼ŒACä¾¿æ¸›1ã€‚å…¶é¤˜è£å‚™ï¼Œå¦‚é˜²è­·è…•å¸¶ï¼ˆBracersï¼‰ã€æˆ’æŒ‡ï¼ˆRingï¼‰
+ç­‰ï¼Œé™¤éžå…·æœ‰é­”æ³•é˜²è­·åŠ›ï¼Œå¦å‰‡ç©¿æˆ´èˆ‡å¦ï¼Œå°ACä¸¦ç„¡å½±éŸ¿ã€‚é ­ç›”ï¼ˆHelmï¼‰ã€éž‹
+å­ï¼ˆBootsï¼‰ã€é …éŠï¼ˆMedallionæˆ–Necklaceï¼‰ï¼Œä¸€å¾‹ä¸å½±éŸ¿ACã€‚ç•¶ç©¿æˆ´å¤šå€‹å¸¶
+é­”æ³•é˜²è­·åŠ›çš„è£å‚™æ™‚ï¼ŒåŒä¸€é¡žåž‹ï¼ˆå¦‚æˆ’æŒ‡ï¼‰åªå–æœ€é«˜çš„é­”æ³•é˜²è­·åŠ›ï¼Œä¸æœƒç´¯åŠ ã€‚
 
-¤T. ¶Ë®`¤O
+ä¸‰. å‚·å®³åŠ›
 
-1.ªZ¾¹
+1.æ­¦å™¨
 
-¤À¦¨ªñ¾ÔªZ¾¹¡]§Q¤bªZ¾¹¡þ¶w«¬ªZ¾¹¡^¡B§ëÂYªZ¾¹¡Bªøµ{ªZ¾¹¤TºØ¡G
+åˆ†æˆè¿‘æˆ°æ­¦å™¨ï¼ˆåˆ©åˆƒæ­¦å™¨ï¼éˆåž‹æ­¦å™¨ï¼‰ã€æŠ•æ“²æ­¦å™¨ã€é•·ç¨‹æ­¦å™¨ä¸‰ç¨®ï¼š
 
-(1)ªZ¾¹§ëÂY«á¡A¦Û°Ê±q¸y¥]¡]¦³3®æ¡^Âà²¾¨ì¤â¤W¡C¥i±NªZ¾¹©Î¬Þ©ñ¦b¸y¥]²Ä
-   ¤@®æ¡A·í§ëÂYªZ¾¹¥ÎºÉ®É¡A«K·|¦Û°Ê©ñ¨ì¤â¤¤¡C¬Y¨ÇªZ¾¹¡]¦pÆF¤§ºlµ¥¡^¦b
-   §ëÂY«á¡A·|¦Û°Ê­¸¦^¤â¤¤¡C
-(2)ªøµ{ªZ¾¹·|®gÀ»¨ì¨­¤W¡]¥]¬A¸y¥]¡^¨S¦³¥Û¶ô©Î½bÅn¨S½b¬°¤î¡C
+(1)æ­¦å™¨æŠ•æ“²å¾Œï¼Œè‡ªå‹•å¾žè…°åŒ…ï¼ˆæœ‰3æ ¼ï¼‰è½‰ç§»åˆ°æ‰‹ä¸Šã€‚å¯å°‡æ­¦å™¨æˆ–ç›¾æ”¾åœ¨è…°åŒ…ç¬¬
+   ä¸€æ ¼ï¼Œç•¶æŠ•æ“²æ­¦å™¨ç”¨ç›¡æ™‚ï¼Œä¾¿æœƒè‡ªå‹•æ”¾åˆ°æ‰‹ä¸­ã€‚æŸäº›æ­¦å™¨ï¼ˆå¦‚éˆä¹‹æ§Œç­‰ï¼‰åœ¨
+   æŠ•æ“²å¾Œï¼Œæœƒè‡ªå‹•é£›å›žæ‰‹ä¸­ã€‚
+(2)é•·ç¨‹æ­¦å™¨æœƒå°„æ“Šåˆ°èº«ä¸Šï¼ˆåŒ…æ‹¬è…°åŒ…ï¼‰æ²’æœ‰çŸ³å¡Šæˆ–ç®­å›Šæ²’ç®­ç‚ºæ­¢ã€‚
 
-¤¤¤å    ­^¤å              ¯S©Ê  ¤¤¤p©Ç  ¤j«¬©Ç
+ä¸­æ–‡    è‹±æ–‡              ç‰¹æ€§  ä¸­å°æ€ª  å¤§åž‹æ€ª
 ------------------------------------------------
-µu¼C    Short Sword       °Æ¤â   1-6     1-8
-©òÀY    Axe               ¥D¤â   1-8     1-8
-ªø¼C    Long Sword        ¥D¤â   1-8     1-12
-ªøºj    Polearm           ¥D¤â   2-8     2-8
-¤T¤e´u  Trident           Âù¤â   2-7     3-12
-´u      Halberd           Âù¤â   1-10    2-12
-Âù¤â¼C  Two Handed Sword  Âù¤â   1-10    3-18
+çŸ­åŠ    Short Sword       å‰¯æ‰‹   1-6     1-8
+æ–§é ­    Axe               ä¸»æ‰‹   1-8     1-8
+é•·åŠ    Long Sword        ä¸»æ‰‹   1-8     1-12
+é•·æ§    Polearm           ä¸»æ‰‹   2-8     2-8
+ä¸‰å‰æˆŸ  Trident           é›™æ‰‹   2-7     3-12
+æˆŸ      Halberd           é›™æ‰‹   1-10    2-12
+é›™æ‰‹åŠ  Two Handed Sword  é›™æ‰‹   1-10    3-18
 ------------------------------------------------
-´Ò´Î    Club              ¥D¤â   1-6     1-3
-°vÀYÂñ  Mace              ¥D¤â   2-7     1-6
-ÃìÏE    Flail             ¥D¤â   2-7     2-8
-¬y¬PÂñ  Morning Star      ¥D¤â   2-8     2-7
-§ú      Staff             Âù¤â   1-6     1-6
+æ£æ£’    Club              ä¸»æ‰‹   1-6     1-3
+é‡˜é ­éŽš  Mace              ä¸»æ‰‹   2-7     1-6
+éˆæž·    Flail             ä¸»æ‰‹   2-7     2-8
+æµæ˜ŸéŽš  Morning Star      ä¸»æ‰‹   2-8     2-7
+æ–      Staff             é›™æ‰‹   1-6     1-6
 ------------------------------------------------
-½b      Arrow             °Æ¤â   1-1     1-1
-¥Û¶ô    Rock              °Æ¤â   1-2     1-2
-­¸Ãð    Dart              °Æ¤â   1-3     1-2
-¤P­º    Dagger            °Æ¤â   1-4     1-3
-­¸ºl    Warhammer         ¥D¤â   2-5     1-4
-¤e¥Ù    Spear             ¥D¤â   1-6     1-8
+ç®­      Arrow             å‰¯æ‰‹   1-1     1-1
+çŸ³å¡Š    Rock              å‰¯æ‰‹   1-2     1-2
+é£›é¢    Dart              å‰¯æ‰‹   1-3     1-2
+åŒ•é¦–    Dagger            å‰¯æ‰‹   1-4     1-3
+é£›æ§Œ    Warhammer         ä¸»æ‰‹   2-5     1-4
+å‰çŸ›    Spear             ä¸»æ‰‹   1-6     1-8
 ------------------------------------------------
-§ë¥Û¯Á  Sling             Âù¤â   1-4     1-4
-¤}      Bow               Âù¤â   1-6     1-6
+æŠ•çŸ³ç´¢  Sling             é›™æ‰‹   1-4     1-4
+å¼“      Bow               é›™æ‰‹   1-6     1-6
 
-­YªZ¾¹¦³Å]ªk¡A«h¦A¥[¤W¨äÅ]ªk¶Ë®`¤O¡C
+è‹¥æ­¦å™¨æœ‰é­”æ³•ï¼Œå‰‡å†åŠ ä¸Šå…¶é­”æ³•å‚·å®³åŠ›ã€‚
 
-2.¤O¶q­×¥¿
+2.åŠ›é‡ä¿®æ­£
 
-¤O¶q·U°ª¡A¶Ë®`·U°ª¡A½Ð°Ñ¾\ÄÝ©Ê»¡©ú¡C
+åŠ›é‡æ„ˆé«˜ï¼Œå‚·å®³æ„ˆé«˜ï¼Œè«‹åƒé–±å±¬æ€§èªªæ˜Žã€‚
 
-3.©Çª«­×¥¿
+3.æ€ªç‰©ä¿®æ­£
 
-¬Y¨Ç©Çª«¹ï¯S©wªZ¾¹¦³¨¾¿m¤O¡A³Ì«áªº¶Ë®`¤O·|¨Ì¦¹¶i¦æ­×¥¿¡C
+æŸäº›æ€ªç‰©å°ç‰¹å®šæ­¦å™¨æœ‰é˜²ç¦¦åŠ›ï¼Œæœ€å¾Œçš„å‚·å®³åŠ›æœƒä¾æ­¤é€²è¡Œä¿®æ­£ã€‚
 
-*** ªk³N
+*** æ³•è¡“
 
-¤@. §Å®vªk³N
+ä¸€. å·«å¸«æ³•è¡“
 
-¯Å ¤¤¤å    ­^¤å                  ¹ï¶H ®ÄªG
+ç´š ä¸­æ–‡    è‹±æ–‡                  å°è±¡ æ•ˆæžœ
 --------------------------------------------------------------------
-1 Å]«`³N   Armor                 ¦Û¤v AC­°¦Ü6¡Aª½¨ì¨ü¶Ë8+¬IªkªÌlv¬°¤î
-1 ¿U¿N¤§¤â Burning Hands         ³æ¼Ä ªñ¾Ô¶Ë®`(1-3)+lv*2
-1 ¦B§N¤§Ä² Chill Touch           ³æ¼Ä ¶Ë®`1-6¡A¤£¦º¥Íª«µL®Ä
-1 °»´úÅ]ªk Detect Magic          ¦Û¤v Å]ªkª««~¥HÂÅ¦âÅã¥Ü
-1 °»´ú¤£¦º Detect Undead         ¦Û¤v ¦a¹ÏÅã¥Ü©Ò¦³¤£¦º¥Íª«ªº¦ì¸m
-1 Å]ªk­¸¼u Magic Missile         ³æ¼Ä ¶Ë®`(2-5)*(lv+1)/2¡A¥H9¯Å¬°­­¡A¥²¤¤
-1 ¦Ê¨¸¤£«I Protect Evil          ³æ¤H ¨¸´c©Çª«µLªk§ðÀ»
-1 Å]¬Þ³N   Shield                ¦Û¤v Å]ªk­¸¼u§K¬Ì¡A§ëÂYAC=2¡Aªøµ{AC=3
-1 ¹qÀ»¤â¤M Shocking Grasp        ³æ¼Ä ªÅ¤â¥[¹q¯à¡Aªñ¾Ô¤@¦¸¶Ë®`(1-8)+lv
-1 ³·²y³N   Snilloc's Snowballs   ³æ¼Ä ¶Ë®`1-3¡A¤õ¨t¥Íª«¶Ë®`1-6
-2 ª¥µK³N   Aganazzer's Scorcher  °Ï°ì ¨C¦^¦X¶Ë®`3-18¡A¦@2¦^¦X
-2 ÂaÄg¤Æ¨­ Blur                  ¦Û¤v ­°§C³QÀ»¤¤¾÷²v
-2 °»´úÁô§Î Detect Invisibility    1®æ Åã²{Áô§Îªº©Çª«¡Bª««~©Îªk³N
-2 ¿ëÃÑª««~ Improved Identify     ¦Û¤v ¿ëÃÑ¤â¤W1¥ó¥¼¿ëÃÑª««~
-2 Áô§Î³N   Invisibility          ³æ¤H Áô¨­ª½¨ì§ð¼Ä©Î³QÀ»¤¤¡A¬Y¨Ç©ÇµL®Ä
-2 ¨¾¿m·ò·ô Protect Paralysis     ³æ¤H ¹ï·ò·ô§K¬Ì
-2 »Ä²G¤§½b Melf's Acid Arrow     ³æ¼Ä ¶Ë®`(2-8)*(1+lv/3)¡A¦Pµ¥¯Å¾Ô¤h©R¤¤²v
-3 ¸Ñ©G³N   Dispel Magic          ¦Û¤v ®ø°£©Ò¦³§@¥Î¦b¶¤¥îªºªk³N
-3 ¤õ²y³N   Fireball               1®æ ¶Ë®`(1-6)*lv¡A¥H10¯Å¬°­­
-3 ¨³±¶³N   Haste                 ¦Û¤v §ðÀ»³t«×¥[­¿
-3 ©w¨­³N   Hold Person          1-4¼Ä §ô¿£Ãþ¤H©Çª«
-3 ¤£¦º©w¨­ Hold Undead          1-3¼Ä §ô¿£¤£¦º¥Íª«¡Aµ¥¯Å>¬IªkªÌµL®Ä
-3 ¤Q§`Áô§Î Invisibility 10'      ¦Û¤v ¦PÁô§Î³N¡A¦ý§ð¼Ä®É¥þ¶¤Áô§Î¥¢®Ä
-3 ¹p¹q³N   Lightning Bolt         2®æ ¶Ë®`(1-6)*lv¡A¥H10¯Å¬°­­
-3 ¿ð½w³N   Slow                   2®æ ²¾°Ê»P§ðÀ»³t«×´î¥b¡AAC+4
-3 §l¦å°­¤ö Vampiric Touch        ³æ¼Ä ªÅ¤â¥[°­¤ö¡Aªñ¾Ô¤@¦¸°½©R(1-6)*lv/2¡A¤£¦º¥Íª«µL®Ä
-3 ¤ô¤¤©I§l Water Breathing       ¦Û¤v ¥i¦b¤ô¤¤©I§l
-4 ®£Äß³N   Fear                   2®æ ¼Ä¤H°k¶]
-4 ´H¦B­·¼É Ice Storm            3x3®æ ªøµ{¶Ë®`3-30¡A¤Óªñ®É¤v¤è¥ç·|¨ü¶Ë
-4 Å]ªk¤æÁO Ilyykur's Mantle      ¦Û¤v ¹ïªk³NAC-1
-4 ±j¤OÁô§Î Improved Invisibility ¦Û¤v ¦PÁô§Î³N¡A¦ý§ð¼Ä«á¤£·|¥¢®Ä
-4 ­¸¼u¾É¦V Missile Mastery       ¦Û¤v ¨C¦^¦X±±¨î¤@­ÓÅ]ªk­¸¼u
-4 ¸Ñ°£¶A©G Remove Curse          ¦Û¤v ¨Ï¶A©Gª««~¥i¥H±q¨­¤W²¾¤U
-5 §NÀ@³N   Cone of Cold         «e3®æ ¶Ë®`(2-5)*lv
-5 ©Çª«©w¨­ Hold Monster           1®æ §ô¿£©Ò¦³©Çª«¡A¤£¦º¥Íª«µL®Ä
-5 ¤j«¬­¸¼u Major Missile         ³æ¼Ä ¶Ë®`(2-5)*(lv+1)/2¡A¥²¤¤
-5 ¤OÀð³N   Wall of Force          1®æ «Ø¥ß¤@­±¤OÀð¾×¦í©Çª«©Îªk³N
-6 ¹Ü©R³N   Death Spell            3®æ ±þ¦º©Çª«¡A¦¨¥\¾÷²v¨Ì©Çª«¡AµL¥Í©Rªº©Çª«µL®Ä
-6 ¤À¸Ñ³N   Disintegrate          ³æ¼Ä ®ø·À©Çª«¡A¦¨¥\¾÷²v¨Ì©Çª«
-6 ¥Û¤Æ³N   Flesh to Stone        ³æ¼Ä ¥Û¤Æ©Çª«¡A¦¨¥\¾÷²v¨Ì©Çª«
-6 §Å§¯¤§Ä² Lich Touch            ³æ¼Ä ¶Ë®`1-10¨Ã³Â·ô¡A¤£¦º¥Íª«µL®Ä 
-6 »s³y¦B²y Freezing Sphere       °Ï°ì ¶Ë®`6-36
-6 ³zµø³N   True Seeing           ¦Û¤v «ùÄò©Ê°»´úÁô§Î¡A¥B¯à¬Ý¬ï¤Û¶HÀð
-7 »Ä²G­·¼É Acid Storm             3®æ ¶Ë®`(1-6)*lv¡A·ílv>7®É¼W¥[¶Ë®`(1-8)*(lv-7)
-7 ¦º¤`¤§«ü Finger of Death       ³æ¼Ä ±þ¦º©Çª«¡A¤£¦¨¥\®É¶Ë®`3-17
-7 Å]ªk¼C®ð Mordenkainen's Sword  ³æ¼Ä ªÅ¤â¥[¼C¡A¶Ë®`5-20/5-30¡A¥i¦b«á±Æ§ðÀ»¡A¦Pµ¥¯Å/2¾Ô¤h©R¤¤²v
-7 ±j¤OÅå©G Power Word, Stun      ³æ¼Ä §ô¿£©Çª«¡A®É¶¡¨Ì¦å¶q
+1 é­”å†‘è¡“   Armor                 è‡ªå·± ACé™è‡³6ï¼Œç›´åˆ°å—å‚·8+æ–½æ³•è€…lvç‚ºæ­¢
+1 ç‡ƒç‡’ä¹‹æ‰‹ Burning Hands         å–®æ•µ è¿‘æˆ°å‚·å®³(1-3)+lv*2
+1 å†°å†·ä¹‹è§¸ Chill Touch           å–®æ•µ å‚·å®³1-6ï¼Œä¸æ­»ç”Ÿç‰©ç„¡æ•ˆ
+1 åµæ¸¬é­”æ³• Detect Magic          è‡ªå·± é­”æ³•ç‰©å“ä»¥è—è‰²é¡¯ç¤º
+1 åµæ¸¬ä¸æ­» Detect Undead         è‡ªå·± åœ°åœ–é¡¯ç¤ºæ‰€æœ‰ä¸æ­»ç”Ÿç‰©çš„ä½ç½®
+1 é­”æ³•é£›å½ˆ Magic Missile         å–®æ•µ å‚·å®³(2-5)*(lv+1)/2ï¼Œä»¥9ç´šç‚ºé™ï¼Œå¿…ä¸­
+1 ç™¾é‚ªä¸ä¾µ Protect Evil          å–®äºº é‚ªæƒ¡æ€ªç‰©ç„¡æ³•æ”»æ“Š
+1 é­”ç›¾è¡“   Shield                è‡ªå·± é­”æ³•é£›å½ˆå…ç–«ï¼ŒæŠ•æ“²AC=2ï¼Œé•·ç¨‹AC=3
+1 é›»æ“Šæ‰‹åˆ€ Shocking Grasp        å–®æ•µ ç©ºæ‰‹åŠ é›»èƒ½ï¼Œè¿‘æˆ°ä¸€æ¬¡å‚·å®³(1-8)+lv
+1 é›ªçƒè¡“   Snilloc's Snowballs   å–®æ•µ å‚·å®³1-3ï¼Œç«ç³»ç”Ÿç‰©å‚·å®³1-6
+2 ç‚™ç„°è¡“   Aganazzer's Scorcher  å€åŸŸ æ¯å›žåˆå‚·å®³3-18ï¼Œå…±2å›žåˆ
+2 æœ¦æœ§åŒ–èº« Blur                  è‡ªå·± é™ä½Žè¢«æ“Šä¸­æ©ŸçŽ‡
+2 åµæ¸¬éš±å½¢ Detect Invisibility    1æ ¼ é¡¯ç¾éš±å½¢çš„æ€ªç‰©ã€ç‰©å“æˆ–æ³•è¡“
+2 è¾¨è­˜ç‰©å“ Improved Identify     è‡ªå·± è¾¨è­˜æ‰‹ä¸Š1ä»¶æœªè¾¨è­˜ç‰©å“
+2 éš±å½¢è¡“   Invisibility          å–®äºº éš±èº«ç›´åˆ°æ”»æ•µæˆ–è¢«æ“Šä¸­ï¼ŒæŸäº›æ€ªç„¡æ•ˆ
+2 é˜²ç¦¦ç—²ç—º Protect Paralysis     å–®äºº å°ç—²ç—ºå…ç–«
+2 é…¸æ¶²ä¹‹ç®­ Melf's Acid Arrow     å–®æ•µ å‚·å®³(2-8)*(1+lv/3)ï¼ŒåŒç­‰ç´šæˆ°å£«å‘½ä¸­çŽ‡
+3 è§£å’’è¡“   Dispel Magic          è‡ªå·± æ¶ˆé™¤æ‰€æœ‰ä½œç”¨åœ¨éšŠä¼çš„æ³•è¡“
+3 ç«çƒè¡“   Fireball               1æ ¼ å‚·å®³(1-6)*lvï¼Œä»¥10ç´šç‚ºé™
+3 è¿…æ·è¡“   Haste                 è‡ªå·± æ”»æ“Šé€Ÿåº¦åŠ å€
+3 å®šèº«è¡“   Hold Person          1-4æ•µ æŸç¸›é¡žäººæ€ªç‰©
+3 ä¸æ­»å®šèº« Hold Undead          1-3æ•µ æŸç¸›ä¸æ­»ç”Ÿç‰©ï¼Œç­‰ç´š>æ–½æ³•è€…ç„¡æ•ˆ
+3 åå‘Žéš±å½¢ Invisibility 10'      è‡ªå·± åŒéš±å½¢è¡“ï¼Œä½†æ”»æ•µæ™‚å…¨éšŠéš±å½¢å¤±æ•ˆ
+3 é›·é›»è¡“   Lightning Bolt         2æ ¼ å‚·å®³(1-6)*lvï¼Œä»¥10ç´šç‚ºé™
+3 é²ç·©è¡“   Slow                   2æ ¼ ç§»å‹•èˆ‡æ”»æ“Šé€Ÿåº¦æ¸›åŠï¼ŒAC+4
+3 å¸è¡€é¬¼çˆª Vampiric Touch        å–®æ•µ ç©ºæ‰‹åŠ é¬¼çˆªï¼Œè¿‘æˆ°ä¸€æ¬¡å·å‘½(1-6)*lv/2ï¼Œä¸æ­»ç”Ÿç‰©ç„¡æ•ˆ
+3 æ°´ä¸­å‘¼å¸ Water Breathing       è‡ªå·± å¯åœ¨æ°´ä¸­å‘¼å¸
+4 ææ‡¼è¡“   Fear                   2æ ¼ æ•µäººé€ƒè·‘
+4 å¯’å†°é¢¨æš´ Ice Storm            3x3æ ¼ é•·ç¨‹å‚·å®³3-30ï¼Œå¤ªè¿‘æ™‚å·±æ–¹äº¦æœƒå—å‚·
+4 é­”æ³•æ–—ç¯· Ilyykur's Mantle      è‡ªå·± å°æ³•è¡“AC-1
+4 å¼·åŠ›éš±å½¢ Improved Invisibility è‡ªå·± åŒéš±å½¢è¡“ï¼Œä½†æ”»æ•µå¾Œä¸æœƒå¤±æ•ˆ
+4 é£›å½ˆå°Žå‘ Missile Mastery       è‡ªå·± æ¯å›žåˆæŽ§åˆ¶ä¸€å€‹é­”æ³•é£›å½ˆ
+4 è§£é™¤è©›å’’ Remove Curse          è‡ªå·± ä½¿è©›å’’ç‰©å“å¯ä»¥å¾žèº«ä¸Šç§»ä¸‹
+5 å†·éŒè¡“   Cone of Cold         å‰3æ ¼ å‚·å®³(2-5)*lv
+5 æ€ªç‰©å®šèº« Hold Monster           1æ ¼ æŸç¸›æ‰€æœ‰æ€ªç‰©ï¼Œä¸æ­»ç”Ÿç‰©ç„¡æ•ˆ
+5 å¤§åž‹é£›å½ˆ Major Missile         å–®æ•µ å‚·å®³(2-5)*(lv+1)/2ï¼Œå¿…ä¸­
+5 åŠ›ç‰†è¡“   Wall of Force          1æ ¼ å»ºç«‹ä¸€é¢åŠ›ç‰†æ“‹ä½æ€ªç‰©æˆ–æ³•è¡“
+6 å¥ªå‘½è¡“   Death Spell            3æ ¼ æ®ºæ­»æ€ªç‰©ï¼ŒæˆåŠŸæ©ŸçŽ‡ä¾æ€ªç‰©ï¼Œç„¡ç”Ÿå‘½çš„æ€ªç‰©ç„¡æ•ˆ
+6 åˆ†è§£è¡“   Disintegrate          å–®æ•µ æ¶ˆæ»…æ€ªç‰©ï¼ŒæˆåŠŸæ©ŸçŽ‡ä¾æ€ªç‰©
+6 çŸ³åŒ–è¡“   Flesh to Stone        å–®æ•µ çŸ³åŒ–æ€ªç‰©ï¼ŒæˆåŠŸæ©ŸçŽ‡ä¾æ€ªç‰©
+6 å·«å¦–ä¹‹è§¸ Lich Touch            å–®æ•µ å‚·å®³1-10ä¸¦éº»ç—ºï¼Œä¸æ­»ç”Ÿç‰©ç„¡æ•ˆ 
+6 è£½é€ å†°çƒ Freezing Sphere       å€åŸŸ å‚·å®³6-36
+6 é€è¦–è¡“   True Seeing           è‡ªå·± æŒçºŒæ€§åµæ¸¬éš±å½¢ï¼Œä¸”èƒ½çœ‹ç©¿å¹»è±¡ç‰†
+7 é…¸æ¶²é¢¨æš´ Acid Storm             3æ ¼ å‚·å®³(1-6)*lvï¼Œç•¶lv>7æ™‚å¢žåŠ å‚·å®³(1-8)*(lv-7)
+7 æ­»äº¡ä¹‹æŒ‡ Finger of Death       å–®æ•µ æ®ºæ­»æ€ªç‰©ï¼Œä¸æˆåŠŸæ™‚å‚·å®³3-17
+7 é­”æ³•åŠæ°£ Mordenkainen's Sword  å–®æ•µ ç©ºæ‰‹åŠ åŠï¼Œå‚·å®³5-20/5-30ï¼Œå¯åœ¨å¾ŒæŽ’æ”»æ“Šï¼ŒåŒç­‰ç´š/2æˆ°å£«å‘½ä¸­çŽ‡
+7 å¼·åŠ›é©šå’’ Power Word, Stun      å–®æ•µ æŸç¸›æ€ªç‰©ï¼Œæ™‚é–“ä¾è¡€é‡
 
-¤G. ªª®vªk³N
+äºŒ. ç‰§å¸«æ³•è¡“
 
-¯Å ¤¤¤å    ­^¤å                  ¹ï¶H ®ÄªG
+ç´š ä¸­æ–‡    è‹±æ–‡                  å°è±¡ æ•ˆæžœ
 --------------------------------------------------------------------
-1 ¶W´ç¤`»î Turn Undead            1®æ ¤£¦º¥Íª«°k¶]©Î®ø·À
-1 ¯¬ºÖ³N   Bless                 ¦Û¤v ¤v¤è©R¤¤²v+1
-1 »´«×¶Ë®` Cause Light Wounds    ³æ¼Ä ªñ¾Ô¶Ë®`1-8
-1 ªvÀø»´¶Ë Cure Light Wounds     ¦Û¤v ªvÀø1-8
-1 °»´úÅ]ªk Detect Magic          ¦Û¤v Å]ªkª««~¥HÂÅ¦âÅã¥Ü
-1 ¦Ê¨¸¤£«I Protect Evil          ¦Û¤v ¨¸´c©Çª«µLªk§ðÀ»
-1 °»´ú³´§| Detect Pits           ¦Û¤v ¦a¹ÏÅã¥Ü©Ò¦³³´§|ªº¦ì¸m
-1 ¤£¦ºÁô§Î Invisible to Undead   ¦Û¤v ¹ï¤£¦º©Çª«Áô¨­ª½¨ì§ð¼Ä©Î³QÀ»¤¤¡A¬Y¨Ç©ÇµL®Ä
-2 ±j¤Æ¥Í©R Aid                   ¦Û¤v ¦P¯¬ºÖ³N¡Aªþ¥[ÃB¥~1-8¥Í©R
-2 ¤õµK¤§¤b Flame Blade           ¦Û¤v ªÅ¥D¤â¥[¤õµK¤M¡Aªñ¾Ô¶Ë®`7-10
-2 ©w¨­³N   Hold Person            1®æ §ô¿£Ãþ¤H©Çª«
-2 §Ü¤õ³N   Resist Fire           ¦Û¤v ´î¤Ö¤õ¨t§ðÀ»¶Ë®`
-2 §Ü¦B³N   Resist Cold           ¦Û¤v ´î¤Ö¦B¨t§ðÀ»¶Ë®`
-2 ¤ßÆF¤§ºl Spiritual Hammer      ³æ¼Ä ²£¥Í°Æ¤â¥i¥ÎªºÅ]ªk­¸ºl¡AÅ]ªk¤O¨Ìµ¥¯Å
-2 ´î½w¬r©Ê Slow Poison           ¦Û¤v ¼È®Éªý¤î¤¤¬r·l¦å
-3 »s³y­¹ª« Create Food           ¦Û¤v ¶i­¹
-3 ¸Ñ©G³N   Dispel Magic          ¦Û¤v ®ø°£©Ò¦³§@¥Î¦b¶¤¥îªºªk³N
-3 Å]ªk¤§³T Magical Vestment      ¦Û¤v AC­°¦Ü5¡Alv>=5®É¡AAC­°¦Ü5-(lv-4)/3
-3 ¹@¨¸³N   Negative Protection   ¦Û¤v Á×§K¤£¦º¥Íª«§l¦¬µ¥¯Å
-3 ¬èÃ«³N   Prayer                ¦Û¤v ¤v¤è©R¤¤²v+1¡A¼Ä¤H©R¤¤²v-1
-3 ¿m¤õ³N   Protect From Fire     ¦Û¤v ¤õ¨t§ðÀ»§K¬Ì¡Aª½¨ì§l¦¬¤@©w¶Ë®`
-3 ¸Ñ°£³Â·ô Remove Paralysis      ¦Û¤v ¸Ñ°£³Â·ô
-3 ¸Ñ°£¶A©G Remove Curse          ¦Û¤v ¨Ï¶A©Gª««~¥i¥H±q¨­¤W²¾¤U
-3 ¤ô¤¤©I§l Water Breathing       ¦Û¤v ¥i¦b¤ô¤¤©I§l
-4 ·Å·x¯¬ºÖ Blessed Warmth        ¦Û¤v ´î¤Ö¦B¨t§ðÀ»¶Ë®`
-4 ­««×¶Ë®` Cause Serious         ³æ¼Ä ªñ¾Ô¶Ë®`3-17
-4 ªvÀø­«¶Ë Cure Serious          ¦Û¤v ªvÀø3-17
-4 ¦Û¥Ñ²¾°Ê Free Action           ¦Û¤v ¹ï·ò·ô»P¿ð½w§K¬Ì¡A¨Ã¥i¦b¤ô¤¤¬¡°Ê
-4 ¤¤©M¬r¯À Neutralize Poison     ¦Û¤v ¸Ñ¬r
-4 ¬rÀ»³N   Poison                ³æ¼Ä ¼Ä¤H¤¤¬r©Î¦º¤`
-5 ­P©R¶Ë®` Cause Critical        ³æ¼Ä ªñ¾Ô¶Ë®`6-27
-5 ªvÀø­P©R Cure Critical         ¦Û¤v ªvÀø6-27
-5 ¤Ñ¤õµI¨­ Flame Strike           1®æ ¶Ë®`6-48
-5 ¹Ü©R³N   Slay Living           ³æ¼Ä ©Çª«¦º¤`©Î¨ü¶Ë¡A¦¨¥\¾÷²v¨Ì©Çª«
-5 ³zµø³N   True Seeing           ¦Û¤v «ùÄò©Ê°»´úÁô§Î¡A¥B¯à¬Ý¬ï¤Û¶HÀð
-6 ¶Ë®`³N   Harm                  ³æ¼Ä ªñ¾Ô±N¼Ä¤H¥Í©R­°¦Ü«Ü§C
-6 §¹¥þÂåÀø Heal                  ¦Û¤v ¥Í©R»P¤£¨}ª¬ºA¥þ³¡«ì´_
-6 ­^¶¯²±®b Heroes' Feast         ¦Û¤v ¶i­¹¡BªvÀø¨Ã¯¬ºÖ¡A¹ï®£Äß©M¬r§K¬Ì
-6 ¿N¨`¤§¥Û Sol's Searing Orb     ³æ¼Ä ²£¥Í©w®É¦ÛÃzÄ_¥Û¡A¶Ë®`6-36¡A¤£¦º¥Íª«¥[­¿
-7 ¤õ²y­·¼É Fire Storm           3x3®æ ¶Ë®`(2-16)+lv
-7 ´_¯à³N   Restoration           ¦Û¤v ´_­ì³Q§l¨úªºµ¥¯Å¡A¥²¶·¦b¤@¤Ñ¤º´_­ì
+1 è¶…æ¸¡äº¡é­‚ Turn Undead            1æ ¼ ä¸æ­»ç”Ÿç‰©é€ƒè·‘æˆ–æ¶ˆæ»…
+1 ç¥ç¦è¡“   Bless                 è‡ªå·± å·±æ–¹å‘½ä¸­çŽ‡+1
+1 è¼•åº¦å‚·å®³ Cause Light Wounds    å–®æ•µ è¿‘æˆ°å‚·å®³1-8
+1 æ²»ç™‚è¼•å‚· Cure Light Wounds     è‡ªå·± æ²»ç™‚1-8
+1 åµæ¸¬é­”æ³• Detect Magic          è‡ªå·± é­”æ³•ç‰©å“ä»¥è—è‰²é¡¯ç¤º
+1 ç™¾é‚ªä¸ä¾µ Protect Evil          è‡ªå·± é‚ªæƒ¡æ€ªç‰©ç„¡æ³•æ”»æ“Š
+1 åµæ¸¬é™·å‘ Detect Pits           è‡ªå·± åœ°åœ–é¡¯ç¤ºæ‰€æœ‰é™·å‘çš„ä½ç½®
+1 ä¸æ­»éš±å½¢ Invisible to Undead   è‡ªå·± å°ä¸æ­»æ€ªç‰©éš±èº«ç›´åˆ°æ”»æ•µæˆ–è¢«æ“Šä¸­ï¼ŒæŸäº›æ€ªç„¡æ•ˆ
+2 å¼·åŒ–ç”Ÿå‘½ Aid                   è‡ªå·± åŒç¥ç¦è¡“ï¼Œé™„åŠ é¡å¤–1-8ç”Ÿå‘½
+2 ç«ç„°ä¹‹åˆƒ Flame Blade           è‡ªå·± ç©ºä¸»æ‰‹åŠ ç«ç„°åˆ€ï¼Œè¿‘æˆ°å‚·å®³7-10
+2 å®šèº«è¡“   Hold Person            1æ ¼ æŸç¸›é¡žäººæ€ªç‰©
+2 æŠ—ç«è¡“   Resist Fire           è‡ªå·± æ¸›å°‘ç«ç³»æ”»æ“Šå‚·å®³
+2 æŠ—å†°è¡“   Resist Cold           è‡ªå·± æ¸›å°‘å†°ç³»æ”»æ“Šå‚·å®³
+2 å¿ƒéˆä¹‹æ§Œ Spiritual Hammer      å–®æ•µ ç”¢ç”Ÿå‰¯æ‰‹å¯ç”¨çš„é­”æ³•é£›æ§Œï¼Œé­”æ³•åŠ›ä¾ç­‰ç´š
+2 æ¸›ç·©æ¯’æ€§ Slow Poison           è‡ªå·± æš«æ™‚é˜»æ­¢ä¸­æ¯’æè¡€
+3 è£½é€ é£Ÿç‰© Create Food           è‡ªå·± é€²é£Ÿ
+3 è§£å’’è¡“   Dispel Magic          è‡ªå·± æ¶ˆé™¤æ‰€æœ‰ä½œç”¨åœ¨éšŠä¼çš„æ³•è¡“
+3 é­”æ³•ä¹‹è¢ Magical Vestment      è‡ªå·± ACé™è‡³5ï¼Œlv>=5æ™‚ï¼ŒACé™è‡³5-(lv-4)/3
+3 è¾Ÿé‚ªè¡“   Negative Protection   è‡ªå·± é¿å…ä¸æ­»ç”Ÿç‰©å¸æ”¶ç­‰ç´š
+3 ç¥ˆç¦±è¡“   Prayer                è‡ªå·± å·±æ–¹å‘½ä¸­çŽ‡+1ï¼Œæ•µäººå‘½ä¸­çŽ‡-1
+3 ç¦¦ç«è¡“   Protect From Fire     è‡ªå·± ç«ç³»æ”»æ“Šå…ç–«ï¼Œç›´åˆ°å¸æ”¶ä¸€å®šå‚·å®³
+3 è§£é™¤éº»ç—º Remove Paralysis      è‡ªå·± è§£é™¤éº»ç—º
+3 è§£é™¤è©›å’’ Remove Curse          è‡ªå·± ä½¿è©›å’’ç‰©å“å¯ä»¥å¾žèº«ä¸Šç§»ä¸‹
+3 æ°´ä¸­å‘¼å¸ Water Breathing       è‡ªå·± å¯åœ¨æ°´ä¸­å‘¼å¸
+4 æº«æš–ç¥ç¦ Blessed Warmth        è‡ªå·± æ¸›å°‘å†°ç³»æ”»æ“Šå‚·å®³
+4 é‡åº¦å‚·å®³ Cause Serious         å–®æ•µ è¿‘æˆ°å‚·å®³3-17
+4 æ²»ç™‚é‡å‚· Cure Serious          è‡ªå·± æ²»ç™‚3-17
+4 è‡ªç”±ç§»å‹• Free Action           è‡ªå·± å°ç—²ç—ºèˆ‡é²ç·©å…ç–«ï¼Œä¸¦å¯åœ¨æ°´ä¸­æ´»å‹•
+4 ä¸­å’Œæ¯’ç´  Neutralize Poison     è‡ªå·± è§£æ¯’
+4 æ¯’æ“Šè¡“   Poison                å–®æ•µ æ•µäººä¸­æ¯’æˆ–æ­»äº¡
+5 è‡´å‘½å‚·å®³ Cause Critical        å–®æ•µ è¿‘æˆ°å‚·å®³6-27
+5 æ²»ç™‚è‡´å‘½ Cure Critical         è‡ªå·± æ²»ç™‚6-27
+5 å¤©ç«ç„šèº« Flame Strike           1æ ¼ å‚·å®³6-48
+5 å¥ªå‘½è¡“   Slay Living           å–®æ•µ æ€ªç‰©æ­»äº¡æˆ–å—å‚·ï¼ŒæˆåŠŸæ©ŸçŽ‡ä¾æ€ªç‰©
+5 é€è¦–è¡“   True Seeing           è‡ªå·± æŒçºŒæ€§åµæ¸¬éš±å½¢ï¼Œä¸”èƒ½çœ‹ç©¿å¹»è±¡ç‰†
+6 å‚·å®³è¡“   Harm                  å–®æ•µ è¿‘æˆ°å°‡æ•µäººç”Ÿå‘½é™è‡³å¾ˆä½Ž
+6 å®Œå…¨é†«ç™‚ Heal                  è‡ªå·± ç”Ÿå‘½èˆ‡ä¸è‰¯ç‹€æ…‹å…¨éƒ¨æ¢å¾©
+6 è‹±é›„ç››å®´ Heroes' Feast         è‡ªå·± é€²é£Ÿã€æ²»ç™‚ä¸¦ç¥ç¦ï¼Œå°ææ‡¼å’Œæ¯’å…ç–«
+6 ç‡’ç¼ä¹‹çŸ³ Sol's Searing Orb     å–®æ•µ ç”¢ç”Ÿå®šæ™‚è‡ªçˆ†å¯¶çŸ³ï¼Œå‚·å®³6-36ï¼Œä¸æ­»ç”Ÿç‰©åŠ å€
+7 ç«çƒé¢¨æš´ Fire Storm           3x3æ ¼ å‚·å®³(2-16)+lv
+7 å¾©èƒ½è¡“   Restoration           è‡ªå·± å¾©åŽŸè¢«å¸å–çš„ç­‰ç´šï¼Œå¿…é ˆåœ¨ä¸€å¤©å…§å¾©åŽŸ
 
-¤T. ªZ¤hªk³N
+ä¸‰. æ­¦å£«æ³•è¡“
 
-¯Å ¤¤¤å    ­^¤å                  ¹ï¶H ®ÄªG
+ç´š ä¸­æ–‡    è‹±æ–‡                  å°è±¡ æ•ˆæžœ
 --------------------------------------------------------------------
-1 ¶Ç¥\¤jªk Lay on Hand           ¦Û¤v ªvÀø2*lv¡]¨C¤Ñ¤@¦¸¡^
+1 å‚³åŠŸå¤§æ³• Lay on Hand           è‡ªå·± æ²»ç™‚2*lvï¼ˆæ¯å¤©ä¸€æ¬¡ï¼‰
 
-¨ä¾l¦Pªª®vªk³N¡C
+å…¶é¤˜åŒç‰§å¸«æ³•è¡“ã€‚
 
-¥|. §Å®vµ¥¯Å¡þªk³N¼Æ
+å››. å·«å¸«ç­‰ç´šï¼æ³•è¡“æ•¸
 
-µ¥¯Å  ¤@¯Å  ¤G¯Å  ¤T¯Å  ¥|¯Å  ¤­¯Å  ¤»¯Å  ¤C¯Å  ¤K¯Å  ¤E¯Å
+ç­‰ç´š  ä¸€ç´š  äºŒç´š  ä¸‰ç´š  å››ç´š  äº”ç´š  å…­ç´š  ä¸ƒç´š  å…«ç´š  ä¹ç´š
 ------------------------------------------------------------
   1     1     0     0     0     0     0     0     0     0
   2     2     0     0     0     0     0     0     0     0
@@ -524,9 +524,9 @@ THAC0 = ¥Î¨Óªí¥Ü§ðÀ»AC¬°0ªº¼Ä¤H¡A©R¤¤©Ò»Ý¶Ã¼Æ­È¡Aªì©l­È¬°20¡A·U§C·U¦n
  19     5     5     5     5     5     3     3     3     1
  20     5     5     5     5     5     4     3     3     2
 
-¤­. ªª®vµ¥¯Å¡þªk³N¼Æ
+äº”. ç‰§å¸«ç­‰ç´šï¼æ³•è¡“æ•¸
 
-µ¥¯Å  ¤@¯Å  ¤G¯Å  ¤T¯Å  ¥|¯Å  ¤­¯Å  ¤»¯Å  ¤C¯Å
+ç­‰ç´š  ä¸€ç´š  äºŒç´š  ä¸‰ç´š  å››ç´š  äº”ç´š  å…­ç´š  ä¸ƒç´š
 -----------------------------------------------
   1     1     0     0     0     0     0     0
   2     2     0     0     0     0     0     0
@@ -549,9 +549,9 @@ THAC0 = ¥Î¨Óªí¥Ü§ðÀ»AC¬°0ªº¼Ä¤H¡A©R¤¤©Ò»Ý¶Ã¼Æ­È¡Aªì©l­È¬°20¡A·U§C·U¦n
  19     9     9     8     8     6     4     2
  20     9     9     9     8     7     5     2
 
-¤». ªZ¤hµ¥¯Å¡þªk³N¼Æ
+å…­. æ­¦å£«ç­‰ç´šï¼æ³•è¡“æ•¸
 
-µ¥¯Å  ¤@¯Å  ¤G¯Å  ¤T¯Å  ¥|¯Å  ªk³Nµ¥¯Å
+ç­‰ç´š  ä¸€ç´š  äºŒç´š  ä¸‰ç´š  å››ç´š  æ³•è¡“ç­‰ç´š
 ----------------------------------------
   9     1     0     0     0      1
  10     2     0     0     0      2
@@ -566,9 +566,9 @@ THAC0 = ¥Î¨Óªí¥Ü§ðÀ»AC¬°0ªº¼Ä¤H¡A©R¤¤©Ò»Ý¶Ã¼Æ­È¡Aªì©l­È¬°20¡A·U§C·U¦n
  19     3     3     3     2      9
  20     3     3     3     3      9
 
-¤C. ¸Ö¤Hµ¥¯Å¡þªk³N¼Æ
+ä¸ƒ. è©©äººç­‰ç´šï¼æ³•è¡“æ•¸
 
-µ¥¯Å  ¤@¯Å  ¤G¯Å  ¤T¯Å  ¥|¯Å  ¤­¯Å  ¤»¯Å
+ç­‰ç´š  ä¸€ç´š  äºŒç´š  ä¸‰ç´š  å››ç´š  äº”ç´š  å…­ç´š
 ------------------------------------------
   2     1     0     0     0     0     0
   3     2     0     0     0     0     0
@@ -590,62 +590,62 @@ THAC0 = ¥Î¨Óªí¥Ü§ðÀ»AC¬°0ªº¼Ä¤H¡A©R¤¤©Ò»Ý¶Ã¼Æ­È¡Aªì©l­È¬°20¡A·U§C·U¦n
  19     4     4     4     4     3     2
  20     4     4     4     4     4     3
 
-*** ©Çª«¦Cªí
+*** æ€ªç‰©åˆ—è¡¨
 
-¤¤¤å        ­^¤å           AC THAC0 ¥Í©R ¦¸  ¶Ë®`  Åé ¯S®í
+ä¸­æ–‡        è‹±æ–‡           AC THAC0 ç”Ÿå‘½ æ¬¡  å‚·å®³  é«” ç‰¹æ®Š
 --------------------------------------------------------------------
-¦Ê¨¬ÂÎ      Ankheg          2  15   3d+8  1  4-22  ¤j
-¤£¦ºÃ~*     Undead Beast    6   7 12d+12  3  3-24  ¤j ¤õ§K¡AÅ]§Ü20%¡A§Ü§Q¾¹
-´c§¯        Bugbear         5  17   3d+1  1  2-8   ¤j
-Â©¦æÂÎ      Carrion Crawler 3  17   3d+1  8  1-2   ¤j ³Â·ô
-¤TÀYÃ~      Chimera         5  11    11d  6  1-12  ¤j ¼Q¤õ¡A¤õ§K
-Âû³D        Cockatrice      6  15     5d  1  1-3   ¤p ¥Û¤Æ
-ÂÅÀs        Blue Dragon     0   7    14d  3  3-24  ¤j ¼Q¹q
-¤g¤¸¯À      Earth Element   2   5    16d  1  4-32  ¤j +2ªZ¾¹
-¤ô¤¸¯À      Water Element   2   7    16d  1  5-30  ¤j +2ªZ¾¹
-ÂùÀY©Ç      Ettin           3  11    10d  2  2-12  ¤j
-ÆL¾y        Feyr           -2   5    16d  4  2-12  ¤j Áô§Î¡AÅ]§Ü40%
-¥Û¹³°­      Gargoyle        5  15   4d+4  4  1-16  ¤¤ +1ªZ¾¹
-­¹«Í°­*     Ghoul           6  19     2d  3  1-6   ¤¤ ³Â·ô
-¤p´c°­      Goblin          6  20   1d+1  1  1-6   ¤p
-¶ï°­*       Grave Mist      4  13     7d  1  1-14  ¤¤ §l§N¡A§lÅé¡A+1ªZ¾¹
-¦×¶ì¤H¨­    Flesh Golem     9  11     9d  2  2-16  ¤j §l¹q¡Aªk³N§K¬Ì¡A+1ªZ¾¹
-«è»î*       Groaning Spirit 0  13     7d  1  1-8   ¤¤ ¦B¹q§K¡AÅ]§Ü50%¡A+1ªZ¾¹
-¦Ñ§¯        Hag            -2  11     9d  2  7-8   ¤¤ Å]§Ü35%
-´c°­        Hobgoblin       5  19   1d+1  1  2-8   ¤¤
-¦ºÆFÃM¤h*   Death Knight    0  11   9d10  1 10-20  ¤¤ ¤õ²y¡AÅ]§Ü75%
-¹«¤H        Lycanthrope,    6  17   3d+1  1  1-6   ¤¤ +1ªZ¾¹
+ç™¾è¶³èŸ²      Ankheg          2  15   3d+8  1  4-22  å¤§
+ä¸æ­»ç¸*     Undead Beast    6   7 12d+12  3  3-24  å¤§ ç«å…ï¼Œé­”æŠ—20%ï¼ŒæŠ—åˆ©å™¨
+æƒ¡å¦–        Bugbear         5  17   3d+1  1  2-8   å¤§
+ç©¢è¡ŒèŸ²      Carrion Crawler 3  17   3d+1  8  1-2   å¤§ éº»ç—º
+ä¸‰é ­ç¸      Chimera         5  11    11d  6  1-12  å¤§ å™´ç«ï¼Œç«å…
+é›žè›‡        Cockatrice      6  15     5d  1  1-3   å° çŸ³åŒ–
+è—é¾        Blue Dragon     0   7    14d  3  3-24  å¤§ å™´é›»
+åœŸå…ƒç´       Earth Element   2   5    16d  1  4-32  å¤§ +2æ­¦å™¨
+æ°´å…ƒç´       Water Element   2   7    16d  1  5-30  å¤§ +2æ­¦å™¨
+é›™é ­æ€ª      Ettin           3  11    10d  2  2-12  å¤§
+é­˜é­…        Feyr           -2   5    16d  4  2-12  å¤§ éš±å½¢ï¼Œé­”æŠ—40%
+çŸ³åƒé¬¼      Gargoyle        5  15   4d+4  4  1-16  ä¸­ +1æ­¦å™¨
+é£Ÿå±é¬¼*     Ghoul           6  19     2d  3  1-6   ä¸­ éº»ç—º
+å°æƒ¡é¬¼      Goblin          6  20   1d+1  1  1-6   å°
+å¡šé¬¼*       Grave Mist      4  13     7d  1  1-14  ä¸­ å¸å†·ï¼Œå¸é«”ï¼Œ+1æ­¦å™¨
+è‚‰å¡‘äººèº«    Flesh Golem     9  11     9d  2  2-16  å¤§ å¸é›»ï¼Œæ³•è¡“å…ç–«ï¼Œ+1æ­¦å™¨
+æ€¨é­‚*       Groaning Spirit 0  13     7d  1  1-8   ä¸­ å†°é›»å…ï¼Œé­”æŠ—50%ï¼Œ+1æ­¦å™¨
+è€å¦–        Hag            -2  11     9d  2  7-8   ä¸­ é­”æŠ—35%
+æƒ¡é¬¼        Hobgoblin       5  19   1d+1  1  2-8   ä¸­
+æ­»éˆé¨Žå£«*   Death Knight    0  11   9d10  1 10-20  ä¸­ ç«çƒï¼Œé­”æŠ—75%
+é¼ äºº        Lycanthrope,    6  17   3d+1  1  1-6   ä¸­ +1æ­¦å™¨
             Wererat
-äÝñÀ        Meazel          8  17     4d  2  1-4   ¤¤
-±ö§ù²ï      Medusa          5  15     6d  1  1-4   ¤¤ ¥Û¤Æ¡A¤¤¬r
-¤ì¤D¥ì*     Mummy           3  13   6d+3  1  1-12  ¤¤ ¦B¬r§K¡A+1ªZ¾¹¶Ë´î¥b¡A©È¤õ
-¤ûÀY¤H      Minotaur        6  13   6d+3  2  2-8   ¤j
-°©¯Ç¥[*     Bone Naga       6  13     7d  2  1-12  ¤j ¦B»Ä¬r§K¡AÅ]ªk­¸¼u
-ÆF¯Ç¥[      Spirit Naga     4  11    10d  1  1-3   ¤j ¤¤¬r
-µò½Â­¹¤HÅ]  Ogre Slug       4  13   8d+4  2  1-12  ¤j ¶w¾¹¶Ë´î¥b
-¥bÃ~¤H      Orc             6  19     1d  1  1-8   ¤¤¡@
-¥bÃ~§¯      Orog            4  17     3d  1  1-10  ¤¤ +1ªZ¾¹
-­¹Â©Ã~      Otyugh          3  13     8d  3  1-8   ¤¤
-¥¨ÃÈ©Ç      Scaladar        2  13   7d+7  3  1-12  ¤j ¦B§K¡A§l¹q»PÅ]ªk­¸¼u¡AÅ]§Ü35%¡A¤õ»P§Q¾¹¶Ë´î¥b¡A®g¹q
-«ÕÆF*       Shade          10  11    10d  1  1-8   ¤¤ Å]§Ü60%
-¼vÅ]*       Shadow          7  17   3d+3  1  2-5   ¤¤ ¦B§K¡A§l¤O¡A+1ªZ¾¹
-ºñÅ]        Shambling Mound 0  13     8d  2  2-16  ¤j §l¹q¡A¤õ§K¡A§Ü¶w¾¹¡A¦B»P§Q¾¹¶Ë´î¥b
-ÂÐ­±­¹«Í°­* Sheet Ghoul     2  17   4d+2  3  1-6   ¤¤
-ÅÜ§ÎÂH½¦©Ç  Slithermorph    6  13   7d+7  5  3-12  ¤j ¦B¤õ»Ä¬r§K
-§¯¾y*       Spectre         2  13   7d+3  1  1-8   ¤¤ ¦B¬r§K¡A§lµ¥¡A+1ªZ¾¹
-ÅK¥Ò«ÕÆF*   Steel Shadow    2  17   4d+4  5  2-5   ¤p ¹q§K
-ªZ»î*       Swordwraith     3  13     7d  2  1-10  ¤¤ §l¤O¡A+2ªZ¾¹
-ÃÈ¨­¤H      Tlincalli       5  13     8d  3  2-5   ¤j ¤¤¬r¡AÅ]§Ü20%
-¥Þ©~¤H      Troglodyte      5  19     2d  3  2-5   ¤¤
-¥Þ¥¨¤H      Troll           4  13   6d+6  2  5-12  ¤j ªZ¾¹¶Ë´î¥b
-ÅÌ¤HÃ~      Umber Hulk      2  11   8d+8  3  3-12  ¤j
-¦uÅ@¤§ÆF*   Watchghost      1  13   7d+2  1  2-16  ¤¤ ¦B§K¡A§lµ¥¡AÅ]§Ü25%
-¤ô©Ç        Water Weird     4  15   3d+3  0   0    ¤j ¤õ¶Ë´î¥b¡A§Ü§Q¾¹
-«Í¤H*       Wight           5  15   4d+3  1  1-4   ¤¤ ¦B§K¡A§lµ¥¡A+1ªZ¾¹
-¨¸ÆF*       Wraith          4  15   5d+3  1  1-6   ¤¤ ¦B¬r§K¡A§lµ¥¡A+1ªZ¾¹
-ÁlÀs        Wyvern          3  13   7d+7  2  1-16  ¤j ¤¤¬r
-²§§Î        Xill            0  15     5d  4  1-4   ¤¤ ³Â·ô¡AÅ]§Ü70%
+é¬¾é­Š        Meazel          8  17     4d  2  1-4   ä¸­
+æ¢…æœèŽŽ      Medusa          5  15     6d  1  1-4   ä¸­ çŸ³åŒ–ï¼Œä¸­æ¯’
+æœ¨ä¹ƒä¼Š*     Mummy           3  13   6d+3  1  1-12  ä¸­ å†°æ¯’å…ï¼Œ+1æ­¦å™¨å‚·æ¸›åŠï¼Œæ€•ç«
+ç‰›é ­äºº      Minotaur        6  13   6d+3  2  2-8   å¤§
+éª¨ç´åŠ *     Bone Naga       6  13     7d  2  1-12  å¤§ å†°é…¸æ¯’å…ï¼Œé­”æ³•é£›å½ˆ
+éˆç´åŠ       Spirit Naga     4  11    10d  1  1-3   å¤§ ä¸­æ¯’
+è›žè“é£Ÿäººé­”  Ogre Slug       4  13   8d+4  2  1-12  å¤§ éˆå™¨å‚·æ¸›åŠ
+åŠç¸äºº      Orc             6  19     1d  1  1-8   ä¸­ã€€
+åŠç¸å¦–      Orog            4  17     3d  1  1-10  ä¸­ +1æ­¦å™¨
+é£Ÿç©¢ç¸      Otyugh          3  13     8d  3  1-8   ä¸­
+å·¨è æ€ª      Scaladar        2  13   7d+7  3  1-12  å¤§ å†°å…ï¼Œå¸é›»èˆ‡é­”æ³•é£›å½ˆï¼Œé­”æŠ—35%ï¼Œç«èˆ‡åˆ©å™¨å‚·æ¸›åŠï¼Œå°„é›»
+å¹½éˆ*       Shade          10  11    10d  1  1-8   ä¸­ é­”æŠ—60%
+å½±é­”*       Shadow          7  17   3d+3  1  2-5   ä¸­ å†°å…ï¼Œå¸åŠ›ï¼Œ+1æ­¦å™¨
+ç¶ é­”        Shambling Mound 0  13     8d  2  2-16  å¤§ å¸é›»ï¼Œç«å…ï¼ŒæŠ—éˆå™¨ï¼Œå†°èˆ‡åˆ©å™¨å‚·æ¸›åŠ
+è¦†é¢é£Ÿå±é¬¼* Sheet Ghoul     2  17   4d+2  3  1-6   ä¸­
+è®Šå½¢é»è† æ€ª  Slithermorph    6  13   7d+7  5  3-12  å¤§ å†°ç«é…¸æ¯’å…
+å¦–é­…*       Spectre         2  13   7d+3  1  1-8   ä¸­ å†°æ¯’å…ï¼Œå¸ç­‰ï¼Œ+1æ­¦å™¨
+éµç”²å¹½éˆ*   Steel Shadow    2  17   4d+4  5  2-5   å° é›»å…
+æ­¦é­‚*       Swordwraith     3  13     7d  2  1-10  ä¸­ å¸åŠ›ï¼Œ+2æ­¦å™¨
+è èº«äºº      Tlincalli       5  13     8d  3  2-5   å¤§ ä¸­æ¯’ï¼Œé­”æŠ—20%
+ç©´å±…äºº      Troglodyte      5  19     2d  3  2-5   ä¸­
+ç©´å·¨äºº      Troll           4  13   6d+6  2  5-12  å¤§ æ­¦å™¨å‚·æ¸›åŠ
+æ”«äººç¸      Umber Hulk      2  11   8d+8  3  3-12  å¤§
+å®ˆè­·ä¹‹éˆ*   Watchghost      1  13   7d+2  1  2-16  ä¸­ å†°å…ï¼Œå¸ç­‰ï¼Œé­”æŠ—25%
+æ°´æ€ª        Water Weird     4  15   3d+3  0   0    å¤§ ç«å‚·æ¸›åŠï¼ŒæŠ—åˆ©å™¨
+å±äºº*       Wight           5  15   4d+3  1  1-4   ä¸­ å†°å…ï¼Œå¸ç­‰ï¼Œ+1æ­¦å™¨
+é‚ªéˆ*       Wraith          4  15   5d+3  1  1-6   ä¸­ å†°æ¯’å…ï¼Œå¸ç­‰ï¼Œ+1æ­¦å™¨
+ç¿¼é¾        Wyvern          3  13   7d+7  2  1-16  å¤§ ä¸­æ¯’
+ç•°å½¢        Xill            0  15     5d  4  1-4   ä¸­ éº»ç—ºï¼Œé­”æŠ—70%
 
-¥Í©R¨Ï¥Îªº»ë¤l¼Æ¥Ø¤j¤p¡GÆL¾y6¡AÀs»P¤£¦º¥Íª«12¡A¨ä¾l8¡C
-©Çª«¦WºÙ«á¼Ð¥Ü¬P¸¹*ªÌ¬°¤£¦º¥Íª«¡C
-¸Ô²Ó©Çª«¸ê°T¡A¥i°Ñ¦Òhttp://www.lomion.de/cmm/_index.php¡C
+ç”Ÿå‘½ä½¿ç”¨çš„éª°å­æ•¸ç›®å¤§å°ï¼šé­˜é­…6ï¼Œé¾èˆ‡ä¸æ­»ç”Ÿç‰©12ï¼Œå…¶é¤˜8ã€‚
+æ€ªç‰©åç¨±å¾Œæ¨™ç¤ºæ˜Ÿè™Ÿ*è€…ç‚ºä¸æ­»ç”Ÿç‰©ã€‚
+è©³ç´°æ€ªç‰©è³‡è¨Šï¼Œå¯åƒè€ƒhttp://www.lomion.de/cmm/_index.phpã€‚
