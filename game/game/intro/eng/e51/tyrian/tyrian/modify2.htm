@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>裝備檔修改</title>
+</head>
+<body>
+<pre><font face="細明體"><P><CENTER><FONT COLOR=FF0000 size=5><b>裝備檔修改</b></FONT></CENTER>
+修改：Plasma Storm數量無限
+      TYRIAN.HDT，TYRIAN4.LVL，TYRIAN5.LVL三個檔案
+        10 58 00 06 01 26
+        -- -- -- 00 -- --
+
+修改：裝備定義檔TYRIAN.HDT
+
+註：第四章的裝備定義檔在TYRIAN4.LVL，第五章的裝備定義檔在TYRIAN5.LVL，格式相同
+
+1.Ship Type，每個29h=41 byte，位置14A2Ch開始（Tyrian 2000位置在26F4Dh）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-36 不明：6 byte
+  37-37 耐擊力：1 byte
+  38-39 價格：2 byte
+  40-40 不明：1 byte
+
+2.Shield，每個25h=37 byte，位置156D0h開始（Tyrian 2000位置在27F18h）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-31 不明：1 byte
+  32-32 防護力：1 byte
+  33-34 不明：2 byte
+  35-36 價格：2 byte
+
+3.Generator，每個25h=37 byte，位置14925h開始（Tyrian 2000位置在26E46h）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-32 不明：2 byte
+  33-33 馬力：1 byte
+  34-34 不明：1 byte
+  35-36 價格：2 byte
+  
+4.Front Gun／Rear Gun，每個52h=82 byte，位置134C1h開始（Tyrian 2000位置在252F6h）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-31 有否模式二：1 byte，01=無，02=有
+  32-53 各等級子彈型態：2 byte整數，共11個
+  54-75 各等級模式二子彈型態：2 byte整數，共11個
+  76-77 價格：2 byte
+  78-79 顯示圖案：2 byte
+  80-81 消耗馬力：2 byte
+
+5.Sidekick，每個56h=86 byte，位置14C97h開始（Tyrian 2000位置在27285h）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-31 不明：1 byte
+  32-33 顯示圖案：2 byte（隨附加方式而變）
+  34-35 價格：2 byte
+  36-36 附加方式：1 byte，00=固定，01=拖曳，02=頂端可飛離，03=拖曳，04=繞船體
+  37-38 不明：2 byte
+  39-39 動畫數目：1 byte，表示後面動畫的數目
+  40-79 動畫編號：每個2 byte，共20個（隨附加方式而變）
+  80-80 不明：1 byte
+  81-82 子彈型態：2 byte（Plasma Storm=58h）
+  83-83 彈數：1 byte，0表無限制
+  84-85 不明：2 byte
+
+6.特殊武器，每個25h=37 byte，位置1425Ah開始（Tyrian 2000位置在26653h）
+  00-00 開頭：1 byte，固定1Eh
+  01-30 名稱：30 byte，不足補空白（20h）
+  31-32 顯示圖案：2 byte
+  33-33 不明：1 byte
+  34-34 子彈發射方式：1 byte
+  35-36 子彈型態：2 byte（SDF Main Gun=30Ah）
+</pre>
+</body>
+</html>
