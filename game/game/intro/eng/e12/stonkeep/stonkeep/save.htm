@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體"><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+到存檔目錄修改gameinfo.save檔案：
+
+0154h：現有血量，2 byte
+0156h：最大血量，2 byte，健康升級後會重算（最高240，即F0h）
+0158h：每6 byte一組，共10組（到0193h為止），以2 byte切分，分別為技能
+       等級（最高5級）、該技能目前經驗值、升級所需經驗值
+0130h：同上，但為力量的的技能（最高10級）與經驗值
+013Ch：同上，但為敏捷的的技能（最高10級）與經驗值
+
+最好以修改經驗值方式（填個大數值，升級後會歸零），讓系統升級，而不要
+直接改技能等級。其他人可以直接找血量，屬性的相對位置是一樣的。其他資
+訊如下：
+
+0007h：隊伍所在Ｘ座標
+0009h：隊伍所在Ｙ座標
+000Dh：隊伍所在地圖編號
+</font>
+</pre>
+</body>
+</html>
