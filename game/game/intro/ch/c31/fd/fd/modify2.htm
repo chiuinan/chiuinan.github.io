@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>資訊修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體"><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+修改：FD.EXE
+
+1.人物升級最大值資訊：每人物4 byte，內容為最大值+1。
+  轉職前：位置10489h開始，開頭為06 06 04。
+  轉職後：位置10599h開始，開頭為09 09 07。
+
+2.武器資訊：位置FC52h開始，每個11 byte，開頭為01 28 00 64。
+
+TY AP AP HT R1 R2 WW WW LV PP PP
+
+TY = 武器類型，00=特殊，01=劍，02=槍，03=弓，04=杖
+AP = 攻擊力
+HT = 命中率
+R1/R2 = 最小／最大攻擊距離
+WW = 重量
+LV = 等級限制
+PP = 價格
+
+3.護甲資訊：位置FB60h開始，每個11 byte，開頭為01 64 00 0A。
+
+TY HP HP DP EV MV WW WW LV PP PP
+
+TY = 護甲類型，00=特殊，01=輕型甲，02=重型甲，03=法師袍
+HP = 生命力
+DP = 防禦力
+EV = 閃避率（有號數）
+MV = 移動力（標準為4）
+WW = 可承載重量
+LV = 等級限制
+PP = 價格
+
+4.法術／物品資料：位置FD9Ch開始，每個14 byte，開頭為05 64 00 5A。
+
+TY DA DA HT TG DS RA TT WW WW LV CL PP PP
+
+TY = 物品類型，05=法術，06道具
+DA = 傷害/恢復
+HT = 命中率
+DS = 攻擊距離
+TG = 作用對象，00=己方，01=敵方（修改無效）
+RA = 攻擊範圍
+TT = 可使用次數
+WW = 重量
+LV = 等級限制
+CL = 法術等級與物品作用
+       位元04h=0表高級法術，1表初級法術
+       位元02h=0表攻擊用，1表治療用
+       位元01h=0表有動畫，1表無動畫（消耗品，用後無經驗值）
+PP = 價格
+
+5.各章商店販賣物品資料：位置10603h開始，開頭為29 0D 2D 0D。
+
+各章長度不固定，格式為：
+
+  前導資料：6 byte
+  武器數目：1 byte
+  武器編號：每個1 byte
+  護甲數目：1 byte
+  護甲編號：每個1 byte
+  道具數目：1 byte
+  道具編號：每個1 byte
+  
+6.各章結束獲得金錢資料：位置130A0h開始，每章2 byte，開頭為F4 01 EE 02。
+</font>
+</pre>
+</body>
+</html>

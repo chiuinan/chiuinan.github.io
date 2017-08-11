@@ -1,0 +1,295 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>資訊修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體"><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+修改：MISC.VFS
+
+1.物品功效資訊：7A6234h開始，每個物品17h=23 byte，按物品編號排列
+
+-- TY AP AP HT HT DP DP EV EV S1 S2 R1 R2 K1 K2
+K3 K4 K5 K6 MM MM ?? ?? -- -- -- -- -- -- -- --
+
+TY = 物品類型，01=劍，02=刀，03=槍，04=杖，05=指環，06=拳套，07=弓...24h=道具
+AP = 攻擊力增值
+HT = 命中率增值
+DP = 防禦力增值
+EV = 速度增值
+S1 = 攻擊附加屬性，00=無，01=麻痺，02=雙擊，03=暴擊，04=中毒
+S2 = 麻痺／暴擊／中毒機率（雙擊一律100%）
+R1/R2 = 攻擊距離最小／最大值
+K1～K6 = 物品附加能力
+  K1 = 使用物品後的作用
+         00=無作用          01=火系傷害      02=雷系傷害      03=冰系傷害
+         04=地系傷害        05=不明          06=不明          07=火系傷害
+         08=雷系傷害        09=冰系傷害      0A=地系傷害      0B=恢復生命
+         0C=恢復魔法        0D=不明          0E=無            0F=永久增加生命
+         10=永久增加法力    11=永久增加力量  12=永久增加耐力  13=永久增加速度
+         14=永久增加移動力  15=無            16=解除中毒      17=無
+         18=解除麻痺        19=無            1A=無            1B=不明
+         1C=無              1D=無            1E=無視防禦傷害  1F=無
+         20=恢復生命
+  K2/K3 = 數量
+  K4 = 施放距離，10h=1表直線，否則表全部，最低4位元為實際距離
+  K5 = 作用對象，00=敵方，05=己方（修改無效）
+  K6 = 影響範圍（最大3），若施放距離為直線，則全部影響
+MM = 價格
+
+2.法術功效資訊：96DF9Eh開始，每個法術7 byte，按法術編號排列
+
+DA DA HT DS RN MP WH
+
+DA = 最大傷害力／恢復力，負數表AP加乘率，2.50倍=-250=65536-250=65286=FF06h
+HT = 命中率
+DS = 攻擊距離，10h=1表直線，否則表全部，最低4位元為實際距離
+RN = 攻擊範圍（最大3）
+MP = 消耗法力
+WH = 作用對象，00=敵方，01=己方（修改無效）
+
+00 業火        01 狂暴巨燄    02 烈獄之火    03 光之箭
+04 聖光柱      05 落雷術      06 奔雷彈      07 暴雷絕擊
+08 冰爆術      09 絕殺冰封    0A 裂地術      0B 封神裂震
+0C 震空重力彈  0D 鬼動死靈陣  0E 恢復之光    0F 治癒之風
+10 痊癒之泉    11 封魔咒術    12 腐毒術      13 麻痺術
+14 神之祝福    15 傳送術      16 神行術      17 咒殺術
+18 甦癒術      19 魔龍霸炎    1A 強力衝擊    1B 金剛斬
+1C 獄炎烈破彈  1D 轟神砲      1E 流星箭      1F 靈彈超必殺
+20 審判之雷    21 鎮魂之歌    22 超重力黑洞  23 聖龍烈霸斬
+24 爆炎狂龍    25 冰魔超速彈  26 極度冰凍    27 萬神降臨
+
+3.人物出場屬性資訊：7892F8h開始，每個人物24 byte
+
+-- -- -- -- -- RA CL LV HP HP MP MP MV MG MG MG
+MG IT IT IT IT IT IT ?? ?? ?? ?? ?? ?? -- -- --
+
+RA = 種族編號
+CL = 職業編號
+LV = 出場時等級
+HP = 人物基礎生命，實際出場HP=人物基礎生命+(LV-1)*HP最小成長值
+MP = 人物基礎法力，實際出場MP=人物基礎法力+(LV-1)*MP最小成長值
+MV = 移動力
+MG = 已會的法術
+IT = 初始裝備（FF表沒有）
+
+4.升級屬性資料：789898h，每位人物11 byte
+
+AP0 AP1 DP0 DP1 DX0 DX1 HP0 HP1 MP0 MP1 MG
+
+AP0/AP1 = 最小力量／最大力量+1
+DP0/DP1 = 最小耐力／最大耐力+1
+DX0/DX1 = 最小速度／最大速度+1
+HP0/HP1 = 最小生命／最大生命+1
+MP0/MP1 = 最小法力／最大法力+1
+MP = 法術習得等級資料索引值（FFh表沒有）
+
+位址    人物                AP    DP    DX    HP    MP    MG
+-------------------------------------------------------------
+789898  蘭迪斯              04 06 03 05 02 03 09 0B 03 04 00
+7898A3  法蓮娜              02 04 02 04 02 03 06 09 07 0A 01
+7898AE  費塔加              03 06 02 06 02 04 06 08 07 0A 02
+7898B9  裘娜                05 0B 04 06 01 02 0A 10 02 04 FF
+7898C4  亞克                05 07 03 05 02 02 0A 0D 02 04 FF
+7898CF  瑪麗安              05 07 03 05 03 04 08 0A 02 04 FF
+7898DA  尤利安              04 06 02 04 01 02 08 0A 04 06 06
+7898E5  琴琴                08 0B 05 07 03 04 0C 0F 02 04 FF
+7898F0  布蘭多              04 06 03 05 03 03 09 0B 03 05 08
+7898FB  蓋亞                07 09 05 07 00 00 0C 0F 03 05 FF
+789906  珊                  06 08 06 08 04 05 0B 0E 0C 0E 0A
+789911  蘭斯洛特            0A 10 0A 10 03 04 0E 10 00 00 FF
+78993D  蘭迪斯    劍聖      06 09 0A 0E 02 03 0E 14 07 0A 0F
+789948  法蓮娜    法師      03 06 06 0A 02 03 0C 10 0B 10 10
+789953  費塔加    法師      06 0A 08 0E 02 03 0C 0E 0D 11 11
+78995E  裘娜      聖戰士    0A 10 0A 10 02 02 0C 12 04 06 12
+789969  亞克      聖騎士    07 0B 09 0D 02 03 0D 12 05 09 13
+789974  瑪麗安    神箭手    09 0D 07 0A 03 03 0E 12 04 06 14
+78997F  尤利安    大僧侶    06 09 06 0A 02 02 0B 11 06 0A 15
+78998A  琴琴      武聖      0B 0E 09 0E 03 03 0E 14 03 04 FF
+789995  布蘭多    機械伯爵  07 0A 07 0A 03 03 0D 11 04 06 17
+7899A0  蘭迪斯    劍帝      09 0D 06 08 02 03 0B 0E 05 07 18
+7899AB  法蓮娜    巫師      07 0C 06 09 02 02 0A 0C 0C 10 19
+7899B6  費塔加    巫師      04 07 05 0A 02 02 08 0C 08 0B 1A
+7899C1  裘娜      狂戰士    0F 16 07 0A 02 02 0F 18 03 04 1B
+7899CC  亞克      大地騎士  0A 10 06 0A 02 03 0F 14 03 04 1C
+7899D7  瑪麗安    狙擊王    0A 11 05 08 03 03 0C 0F 03 04 1D
+7899E2  尤利安    大祭司    09 0D 04 08 02 02 0C 0F 09 0F 1E
+7899ED  琴琴      武神      0C 11 05 09 03 04 0A 0F 02 04 FF
+7899F8  布蘭多    機械大師  0A 0F 06 08 03 03 0B 0F 07 0C 20
+789A03  蘭迪斯    英雄      0F 12 0A 0D 03 04 12 14 0E 12 21
+
+5.法術習得等級資料：79C427h開始，每個12 byte
+
+LV MG LV MG LV MG LV MG LV MG LV MG
+
+LV = 法術習得等級（FFh表沒有）
+MG = 法術編號（FFh表沒有）
+
+    位址    人物                LV MG LV MG LV MG LV MG LV MG LV MG
+---------------------------------------------------------------------
+00  79C427  蘭迪斯              10 01 1E 02 FF FF FF FF FF FF FF FF
+01  79C433  法蓮娜              0B 13 0F 06 14 0E 19 07 FF FF FF FF
+02  79C43F  費塔加              0F 09 14 0A 1C 25 FF FF FF FF FF FF
+03  79C44B                      FF FF FF FF FF FF FF FF FF FF FF FF
+04  79C457                      FF FF FF FF FF FF FF FF FF FF FF FF
+05  79C463                      FF FF FF FF FF FF FF FF FF FF FF FF
+06  79C46F  尤利安              0A 11 10 0F 1C 10 FF FF FF FF FF FF
+07  79C47B                      FF FF FF FF FF FF FF FF FF FF FF FF
+08  79C487                      FF FF FF FF FF FF FF FF FF FF FF FF
+09  79C493                      FF FF FF FF FF FF FF FF FF FF FF FF
+0A  79C49F  珊                  14 22 FF FF FF FF FF FF FF FF FF FF
+0B  79C4AB                      FF FF FF FF FF FF FF FF FF FF FF FF
+0C  79C4B7                      FF FF FF FF FF FF FF FF FF FF FF FF
+0D  79C4C3                      FF FF FF FF FF FF FF FF FF FF FF FF
+0E  79C4CF                      FF FF FF FF FF FF FF FF FF FF FF FF
+0F  79C4DB  蘭迪斯    劍聖      08 24 FF FF FF FF FF FF FF FF FF FF
+10  79C4E7  法蓮娜    法師      02 0F 06 03 0C 04 0F 10 14 20 FF FF
+11  79C4F3  費塔加    法師      02 0F 06 03 0C 04 11 26 16 10 1A 16
+12  79C4FF  裘娜      聖戰士    05 1B FF FF FF FF FF FF FF FF FF FF
+13  79C50B  亞克      聖騎士    0F 10 FF FF FF FF FF FF FF FF FF FF
+14  79C517  瑪麗安    神箭手    02 0F 0D 1E FF FF FF FF FF FF FF FF
+15  79C523  尤利安    大僧侶    05 18 0A 21 FF FF FF FF FF FF FF FF
+16  79C52F                      FF FF FF FF FF FF FF FF FF FF FF FF
+17  79C53B  布蘭多    機械伯爵  0A 13 FF FF FF FF FF FF FF FF FF FF
+18  79C547  蘭迪斯    劍帝      08 19 0F 24 FF FF FF FF FF FF FF FF
+19  79C553  法蓮娜    巫師      02 0F 06 0C 0C 20 12 22 19 27 FF FF
+1A  79C55F  費塔加    巫師      0D 0B 11 26 FF FF FF FF FF FF FF FF
+1B  79C56B  裘娜      狂戰士    08 1B FF FF FF FF FF FF FF FF FF FF
+1C  79C577  亞克      大地騎士  0A 1A FF FF FF FF FF FF FF FF FF FF
+1D  79C583  瑪麗安    狙擊王    0A 12 14 13 FF FF FF FF FF FF FF FF
+1E  79C58F  尤利安    大祭司    02 03 0A 14 0F 21 14 04 19 18 FF FF
+1F  79C59B                      FF FF FF FF FF FF FF FF FF FF FF FF
+20  79C5A7  布蘭多    機械大師  0C 1C FF FF FF FF FF FF FF FF FF FF
+21  79C5B3  蘭迪斯    英雄      03 19 06 10 0A 24 0F 15 14 23 FF FF
+
+6.職業相關資料：19D513Ah開始，每職業10 byte
+
+M1 M2 M3 M4 M5 M6 M7 M8 DR MR
+
+M1～M8 = 各地形消耗的行動力
+           M1：平地（AP+5,DP+0）
+           M2：階梯或草叢（AP+0,DP+0）
+           M3：草地（AP-5,DP+10）
+           M6：無法行走但可飛行的區域（AP+0,DP+0）
+           M7：無法通行的區域（AP+0,DP+0）
+DR = 暴擊率
+MR = 100-魔法抗性
+
+    位址     職業      M1 M2 M3 M4 M5 M6 M7 M8 DR MR 魔法抗性
+---------------------------------------------------------------
+00  19D513A  劍士      01 02 01 02 FF FF FF FF 03 5F    5%
+01  19D5144  劍聖      01 02 01 01 FF FF FF FF 05 50   20%
+02  19D514E  劍帝      01 02 01 01 FF FF FF FF 08 5A   10%
+03  19D5158  英雄      01 02 01 01 FF FF FF FF 0A 32   50%
+04  19D5162  戰士      01 02 02 02 FF FF FF FF 03 64    0%
+05  19D516C  聖戰士    01 02 01 02 FF FF FF FF 05 50   20%
+06  19D5176  狂戰士    01 02 01 02 FF FF FF FF 0A 5F    5%
+07  19D5180  騎士      01 02 01 02 FF FF FF FF 03 64    0%
+08  19D518A  聖騎士    01 02 01 01 FF FF FF FF 05 5F    5%
+09  19D5194  大地騎士  01 02 01 01 FF FF FF FF 08 55   15%
+0A  19D519E  弓兵      01 02 01 01 FF FF FF FF 03 64    0%
+0B  19D51A8  神箭手    01 02 01 01 FF FF FF FF 05 55   15%
+0C  19D51B2  狙擊王    01 02 01 01 FF FF FF FF 0F 5F    5%
+0D  19D51BC  魔導士    01 02 01 01 FF FF FF FF 00 4B   25%
+0E  19D51C6  法師      01 02 01 01 FF FF FF FF 00 3C   40%
+0F  19D51D0  巫師      01 02 01 01 FF FF FF FF 00 41   35%
+10  19D51DA  僧侶      01 02 01 01 FF FF FF FF 03 50   20%
+11  19D51E4  大僧侶    01 02 01 01 FF FF FF FF 05 46   30%
+12  19D51EE  大祭司    01 02 01 01 FF FF FF FF 05 41   35%
+13  19D51F8  武道家    01 02 01 01 FF FF FF FF 0A 5F    5%
+14  19D5202  武聖      01 02 01 01 FF FF FF FF 0A 50   20%
+15  19D520C  武神      01 02 01 01 FF FF FF FF 0F 5A   10%
+16  19D5216  技師      01 01 01 01 01 01 FF FF 05 64    0%
+17  19D5220  機械伯爵  01 02 01 01 01 01 FF FF 05 50   20%
+18  19D522A  機械大師  01 02 01 01 01 01 FF 01 0A 5A   10%
+19  19D5234  機兵      01 02 02 02 FF FF FF FF 00 3C   40%
+1A  19D523E  魔神      FF FF FF FF FF FF FF FF 00 5A   10%
+1B  19D5248  魔導王    01 01 01 01 FF FF FF FF 00 46   30%
+1C  19D5252  魔導戰士  01 01 01 02 FF FF FF FF 05 55   15%
+1D  19D525C  武士      01 01 01 01 FF FF FF FF 03 64    0%
+1E  19D5266  重裝武士  01 02 01 02 FF FF FF FF 05 64    0%
+1F  19D5270  飛兵      01 01 01 01 01 01 FF FF 03 64    0%
+20  19D527A  妖魔      01 02 02 02 FF FF FF FF 00 50   20%
+21  19D5284  守護獸    01 01 01 01 FF FF FF FF 00 32   50%
+22  19D528E  將軍      01 01 01 01 FF FF FF FF 0A 5A   10%
+23  19D5298  傭兵      01 02 02 02 FF FF FF FF 05 64    0%
+24  19D52A2  ？？      FF FF FF FF FF FF FF FF 00 64    0%
+25  19D52AC  惡靈      01 01 01 01 01 01 FF FF 00 64    0%
+26  19D52B6  活屍      01 01 01 01 01 FF FF FF 0A 0A   90%
+
+修改：FIELD.VFS
+
+1.商店出售物品資訊：3CAB5h開始，每個有商店的章節佔36 byte
+
+道具店：12 byte，FF=無
+武器店：12 byte，FF=無
+神秘商店：12 byte，FF=無
+
+2.地圖控制與寶箱資料：內含檔MAP??.DAT
+
+地圖編號：1 byte
+己方最多可出場人數：1 byte
+敵友出場人物總數：1 byte
+回合事件資訊：每組3 byte，共16組，FF FF 00表沒有
+  所在回合：1 byte
+  事件編號：2 byte
+保留：每組2 byte，共16組，一律FF 00
+寶箱資料：每組3 byte，共16組（必須地圖構成資料裡有觸發才有用）
+  型態：1 byte，00表物品，01表金錢
+  內容：2 byte，物品編號／金錢數目
+出場人物資訊：每位26 byte，數量=敵友出場人物總數
+  陣營：1 byte，00=敵方，01=友方，02=己方
+  肖像編號：1 byte
+  種族編號：1 byte
+  職業編號：1 byte
+  等級：1 byte
+  物品編號：每個1 byte，共8個，最前兩個固定為裝備的武器和防具，FF表沒有
+  法術編號：每個1 byte，共8個
+  出場所在回合：1 byte
+  死亡時掉落物品：4 byte
+    型態：1 byte，00表物品，01表金錢
+    內容：3 byte，物品編號／金錢數目
+
+3.人物出場位置資料：內含檔MAP??.COD
+
+不明：5 byte
+出場位置資訊：每組3個2 byte整數，人物總數=MAP??.DAT裡己方最多可出場人數+敵友出場人物總數
+  X座標
+  Y座標
+  肖像編號：00表己方人物
+
+修改：FIELD1.VFS
+
+1.地圖構成資料：內含檔M??0.MPL
+
+不明：7 byte
+地圖寬度：2 byte整數
+地圖高度：2 byte整數
+地形資料：先水平後垂直，每單位2 byte整數
+
+2.事件與寶箱資料：內含檔M??.DTL
+
+不明：7 byte
+資料寬度：2 byte整數
+資料高度：2 byte整數
+不明：5 byte
+事件或寶箱資料：先水平後垂直，每單位1 byte
+
+修改：FDPS.EXE
+
+1.神秘商店進入密碼資訊：2FE30h開始（有的版本在302C0h，開頭為4D 50 4D 1E），
+  每章8 byte，由第2章開始到第25章止，Scan Code表示按鍵，0為結束。Scan Code如下：
+
+  Esc=01 1=02 2=03 3=04 4=05 5=06 6=07 7=08 8=09 9=0A 0=0B -=0C ==0D Backspace=0E
+  Tab=0F Q=10 W=11 E=12 R=13 T=14 Y=15 U=16 I=17 O=18 P=19 [=1A ]=1B Enter=1C
+  Left Ctrl=1D A=1E S=1F D=20 F=21 G=22 H=23 J=24 K=25 L=26 ;=27 '=28 `=29
+  Left Shift=2A \=2B Z=2C X=2D C=2E V=2F B=30 N=31 M=32 ,=33 .=34 /=35 Right Shift=36
+  Keypad-* = 37 Left Alt=38 Space=39 CapsLock=3A
+  F1=3B F2=3C F3=3D F4=3E F5=3F F6=40 F7=41 F8=42 F9=43 F10=44 NumLock=45 ScrollLock=46
+  Home=47 上鍵=48 PgUp=49 Keypad--=4A 左鍵=4B Keypad-5=4C 右鍵=4D Keypad-+=4E
+  End=4F 下鍵=50 PgDn=51 Ins=52 Del=53 SysRq=54
+</font>
+</pre>
+</body>
+</html>
