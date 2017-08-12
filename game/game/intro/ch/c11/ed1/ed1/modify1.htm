@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>程式修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+1.第一章進魯迪亞城，不會被抓到地牢：
+  PROG.EXE
+    3D 00 00 74 16
+    -- -- -- EB --
+2.第三章那修城的士兵，不讓進李斯頓的家：
+  DATA.02
+    11 09 01 0F
+    -- 01 -- --
+3.第五章無法觸發大盜賊蓋伊受傷回來的事件：
+  DATA.02
+    F6 06 3D 04 20 74 05
+    -- -- -- -- -- 90 90
+</font>
+</pre>
+</body>
+</html>

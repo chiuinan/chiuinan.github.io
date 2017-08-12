@@ -1,0 +1,764 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+修改：存檔SAVEGAME.DBS，第一個人物從位置C2C0h開始（從檔尾往前找較快），
+      每個人物1B0h byte（中文版則是1B8h，名字多了8 byte，因此中英文版
+      存檔不能相互讀取）。
+
+英文版 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+=======================================================
+ C2C0  (........名字.........) AA AA 00 00 BB BB BB BB
+ C2D0  CC CC CC CC DD DD DD DD EE EE EE EE FF FF FF FF
+ C2E0  GG GG GG GG HH HH -- -- II II II II II II II II
+ C2F0  II II II II II II II II II II II II II II II II
+ C300  (身上物品，8 byte一組，共10組)
+ C350  (背包物品，8 byte一組，共12組)
+ C3B0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3C0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3D0  JJ JJ JJ JJ JJ JJ JJ JJ 00 00 00 00 -- -- -- --
+ C3E0  -- -- 00 00 00 00 00 00 00 00 00 00 KK KK KK KK
+ C3F0  KK KK KK KK LL LL LL LL LL LL LL LL LL LL MM MM
+ C400  MM MM MM MM MM NN NN NN NN NN PP PP PP PP PP PP
+ C410  PP PP 00 QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ QQ 00
+ C420  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C430  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C440  -- -- -- -- -- -- -- -- RR RR RR RR RR RR RR RR
+ C450  RR RR SS 00 00 00 00 00 00 00 00 00 W1 W2 W3 W4
+ C460  -- 00 00 00 00 00 01 0A 00 -- -- -- Z1 Z2 -- --
+=======================================================
+中文版 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+=======================================================
+ C2C0  (....................名字.....................)
+ C2D0  AA AA 00 00 BB BB BB BB CC CC CC CC DD DD DD DD
+ C2E0  EE EE EE EE FF FF FF FF GG GG GG GG HH HH -- --
+ C2F0  II II II II II II II II II II II II II II II II
+ C300  II II II II II II II II (身上物品，共10組)
+ C350  (身上物品)              (背包物品，共12組)
+ C3B0  (背包物品)              -- -- -- -- -- -- -- --
+ C3C0  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C3D0  -- -- -- -- -- -- -- -- JJ JJ JJ JJ JJ JJ JJ JJ
+ C3E0  00 00 00 00 -- -- -- -- -- -- 00 00 00 00 00 00
+ C3F0  00 00 00 00 KK KK KK KK KK KK KK KK LL LL LL LL
+ C400  LL LL LL LL LL LL MM MM MM MM MM MM MM NN NN NN
+ C410  NN NN PP PP PP PP PP PP PP PP 00 QQ QQ QQ QQ QQ
+ C420  QQ QQ QQ QQ QQ QQ QQ 00 -- -- -- -- -- -- -- --
+ C430  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C440  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ C450  RR RR RR RR RR RR RR RR RR RR SS 00 00 00 00 00
+ C460  00 00 00 00 W1 W2 W3 W4 -- 00 00 00 00 00 01 0A
+ C470  00 -- -- -- Z1 Z2 -- -- (....下個人物名字.....)
+=======================================================
+
+AA=年齡
+BB=經驗值
+CC=殺敵數
+DD=金錢
+EE=目前生命／最大生命
+FF=目前精力／最大精力
+GG=目前負重（載入會重算）／最大負重
+HH=等級
+II=目前法力／最大法力，依次為火系、水系、風系、土系、心靈、魔法
+JJ=裝備的物品，在身上物品的第幾個（由00開始，FF表沒有），依次為主手、
+   副手、飾物、頭盔、護甲、護腿、手套、鞋子
+KK=屬性值，依次為力量、智力、虔誠、活力、敏捷、速度、個性、命運
+LL=武器技能值（Weaponry），各1 byte，最大64h，依次為：
+     手杖與匕首（Wand&Dagger）
+     刀劍類（Sword）
+     斧類（Axe）
+     釘頭鎚與連枷（Mace&Flail）
+     棍棒與長柄武器（Pole&Staff）
+     投擲類武器（Throwing）
+     投石器（Sling）
+     弓箭類（Bows）
+     盾牌（Shield）
+     空手戰鬥（Hands&Feet）
+MM=身體技能值（Physical），各1 byte，最大64h，依次為：
+     游泳（Swimming）
+     偵察（Scouting）
+     音樂（Music）
+     吟頌（Oratory）
+     竊盜（Legerdemain）
+     開鎖（Skulduggery）
+     忍術（Ninjutsu）
+NN=個人技能值（Personal），各1 byte，最大64h，依次為：
+     防衛（Defense）
+     速度（Speed）
+     移動（Movement）
+     瞄準（Aim）
+     力量（Power）
+PP=學術技能值（Academia），各1 byte，最大64h，依次為：
+     物品知識（Artifacts）
+     神話學（Mythology）
+     卷軸知識（Scribe）
+     鍊金術（Alchemy）
+     神學（Theology）
+     心靈學（Theosophy）
+     魔法學（Thaumaturgy）
+     刺擊術（Kirijutsu）
+QQ=似乎是火系、水系、風系、土系、心靈、魔法的抵抗力，格式不明
+RR=法術，各位元代表是否學到
+SS=隱藏法術：乾糧（Help Food）、魔法食物（Magic Food）
+W1=頭像編號
+W2=種族編號，各值為：
+     00=人類（Human）
+     01=精靈（Elf）
+     02=矮人（Dwarf）
+     03=侏儒（Gnome）
+     04=小精靈（Hobbit）
+     05=小妖精（Faerie）
+     06=蜥蜴人（Lizardman）
+     07=龍人（Dracon）
+     08=貓人（Felpurr）
+     09=狗人（Rawulf）
+     0A=雪人（Mook）
+W3=性別，00=男，01=女
+W4=職業編號，各值為：
+     00=戰士（Fighter）
+     01=法師（Mage）
+     02=牧師（Priest）
+     03=盜賊（Thief）
+     04=流浪者（Ranger）
+     05=鍊金術士（Alchemist）
+     06=詩人（Bard）
+     07=靈者（Psionic）
+     08=女戰士（Valkyrie）
+     09=主教（Bishop）
+     0A=領主（Lord）
+     0B=武士（Samurai）
+     0C=僧侶（Monk）
+     0D=忍者（Ninja）
+Z1=身上物品數量，最大0Ah
+Z2=背包物品數量，最大0Ch
+
+物品格式（8 byte一組）：AA AA BB BB CC DD EE FF
+
+AA=物品編號
+BB=重量（物品檢視時顯示資訊不會變，但人物實際負重會變）
+CC=物品種類
+     00=短程武器
+     01=中程武器（註：短程武器修改成中程武器並不會變更攻擊距離）
+     02=可投擲武器
+     03=長程武器（弓／投石器）
+     04=長程武器彈藥（箭／石頭）
+     05=飾物
+     06=頭盔
+     07=護甲
+     08=護腿
+     09=手套
+     0A=鞋子
+     0B=盾牌
+     0C=藥水
+     0D=卷軸
+     0E=無計數雜物（含樂器）
+     0F=有計數雜物
+DD=物品圖像編號，77表無圖像
+EE=物品數量／剩餘使用次數，非消耗性物品固定為0
+FF=各位元意義（物品檢視時顯示資訊不會變）：
+     01=是否裝備中
+     02=?
+     04=是否副手可裝備的武器
+     08=是否雙手武器
+     10=?
+     20=?
+     40=是否不可丟棄
+     80=?
+
+短程武器物品編號（CC=00，括號內為正確的圖像編號）：
+
+01 00      匕首（Dagger）
+02 00      副劍（Main Gauche）
+03 00      短劍（Short Sword）
+04 00      忍者短刀（Wakizashi）
+05 00      軍刀（Rapier）
+06 00 (0F) 小刀（Cutlass）
+07 00      弱劍（Inferior Sword）
+08 00 (01) 長劍（Longsword）
+09 00      闊劍（Broadsword）
+0A 00      武士刀（Katana）
+0B 00      弧形劍（Bastard Sword）
+0C 00      雙刃砍刀（Claymore）
+0D 00      刺芒戰斧（Bearded War Axe）
+0E 00      戰斧（Battle Axe）
+0F 00      聖化連枷（Anointed Flail）
+10 00      戰爭之杖（War Sceptre）
+11 00      釘頭鎚（Mace）
+12 00 (07) 木杖（Staff）
+13 00      流星鎚（Morningstar）
+14 00      鐵鎚（Hammer）
+15 00      戰鎚（War Hammer）
+1C 00      木棒（Club）
+24 00      大型匕首（Poignard）
+27 00      忍者刀（Ninjato）
+28 00      重劍（Flamberge）
+29 00      巨劍（Zweihander）
+2A 00      忍者長刀（No-Dachi）
+2B 00      雙手斧（Bipennis）
+2C 00      希卡之星（Zizka Star）
+2D 00      尖頭鎚（Bec De Corbin）
+30 00 (37) 忍者匕首（Sai）
+31 00 (38) 雙節棍（Nunchaka）
+3C 00 (00) 骷髏匕首（Skull Dagger）
+3D 00 (01) 刺擊之劍（Sword of Striking）
+3E 00      催眠刀（Beastmaster）
+3F 00      毒劍（Blackblade）
+40 00      屠龍劍（Dragon Slayer）
+41 00 (10) 武士之刃（Bushido Blade）
+43 00      毒釘頭鎚（Mustard Mace）
+50 00      盜賊匕首（Thieves Dagger）
+51 00 (3A) 死亡之刃（Blade Cuisinart）
+52 00      玄鐵重劍（Sword of Lading）
+53 00      火燄劍（Sword of Fire）
+54 00      哀傷之斧（Axe of Woe）
+55 00      碎骨杖（Maiden Head）
+56 00      火神之鎚（Vulcan Hammer）
+64 00 (59) 邪神匕首（Dagger of Ramm）
+65 00      惡魔之牙（Demons Tooth）
+66 00      心劍（Sword of Hearts）
+67 00      聖徒之劍（Saint Bastard）
+68 00 (3A) 狼牙刀（Fang）
+69 00      女神之劍（Estoc of Olivia）
+6A 00 (3B) 復仇者之刃（The Avenger）
+6B 00 (10) 村正妖刀（Muramasa Blade）
+6C 00      銳劍（Excaliber）
+6D 00      寒冰劍（Blades of Aesir）
+6E 00      鑽石之眼（Diamond Eyes）
+74 00 (33) 武士短刀+1（Wakizashi+1）
+76 00      鐵鎚+1.5（Hammer+1.5）
+77 00      巨鎚（Giant Sledge）
+25 01 (13) 魔法杖（Staff Magicus）
+26 01      星辰之杖（Stave of Stars）
+27 01      森林之杖（Dryadic Staff）
+28 01      月亮之杖（Stave of Moons）
+29 01      女巫之杖（Stave of Witches）
+2A 01      毀滅之杖（Staff of Ruin）
+2B 01      神秘之杖（Wand of Mystery）
+2C 01      編織之杖（Wand of Weaving）
+2D 01      水晶杖（Crystal Wand）
+2E 01      鬼魂之杖（Wand of Ghosts）
+2F 01      復活之杖（Necrology Rod）
+30 01      消除之杖（Wand of Razing）
+36 01      仙子之杖（Pixie Stick）
+37 01      仙靈之杖（Faerie Stick）
+38 01      夜晚之杖（Night Stick）
+39 01      靈魂之杖（Rod of Sprites）
+3A 01      閃電杖（Lightning Rod）
+3B 01      黃金之杖（Golden Rod）
+7F 01      魔彈之杖（Stave of Missiles）
+8F 01 (62) 十字鎬（Miner's Pick）
+9E 01 (00) 礦工鑿刀（Miner's Chisel）
+CA 01 (07) 神聖木樁（Holy Stake of Wood）
+
+中程武器物品編號（CC=01，括號內為正確的圖像編號）：
+
+16 00      長矛（Spear）
+17 00      錐槍（Awl Pike）
+18 00 (0A) 長棍（Quarterstaff）
+19 00      僧侶長棍（Bo）
+1A 00      戟（Halberd）
+2E 00 (36) 長鞭（Bullwhip）
+32 00      長槍（Lance）
+33 00      聖體杖（Monstrance）
+34 00      掃刀（Fauchard）
+35 00      忍者掃刀（Naginata）
+44 00 (0A) 忍者長棍（Hayai Bo）
+45 00      神聖之杖（Holy Basher）
+57 00      毀滅之刃（Ravens Bill）
+58 00      九尾鞭（Cat'o Nine Tail）
+6F 00 (5A) 女神之槍（Maenad's Lance）
+70 00      武士之杖（Zatoichi Bo）
+71 00      奪命之戟（Faust Halberd）
+73 00      閃電杖（Rammbus Staff）
+AB 01 (09) 死亡之矛（Spear of Death）
+CC 01 (13) 亞倫之杖（Staff of Aram）
+
+可投擲武器物品編號（CC=02，括號內為正確的圖像編號）：
+
+1B 00 (00) 飛刀（Dirk）
+25 00      大型飛刀（Stiletto）
+26 00      忍者飛刀（Ginzu Knife）
+2F 00      忍者飛鏢（Shuriken）
+42 00      蝴蝶斧（Butterfly Axe）
+75 00 (15) 死亡飛鏢（Shiken Shuri）
+31 01      爆竹（Sparkler）
+32 01      冰柱（Icicle）
+33 01      炸藥（Firecracker）
+34 01      管狀火箭（Bottlerocket）
+35 01      高空火箭（Skyrocket）
+66 01      仙靈之塵（Faerie Dust）
+67 01      噴嚏粉（Sneeze）
+68 01      盲目粉（Blind）
+69 01      古老灰塵（Ancient Dust）
+6A 01      神秘灰塵（Mystic Dust）
+AA 01      防熱藥粉（Foot Powder）
+
+長程武器物品編號（CC=03，括號內為正確的圖像編號）：
+
+1D 00 (0D) 投石器（Sling）
+1F 00 (0B) 短弓（Short Bow）
+20 00      長弓（Long Bow）
+22 00 (0C) 輕十字弓（Lt. Crossbow）
+4A 00      迷惑之弓（Vex Bow）
+4C 00      重十字弓（Hv. Crossbow）
+5B 00      昏迷之石（Wrist Rocket）
+5D 00      巨弓（Great Bow）
+60 00      死亡之弓（Seige Arbalest）
+72 00      精靈弓（Elven Bow）
+
+長程武器彈藥物品編號（CC=04，括號內為正確的圖像編號）：
+
+1E 00 (17) 飛石（Bullet Stone）
+21 00 (16) 精靈箭（Elm Arrow）
+23 00      方鏃箭（Quarrel）
+38 00      銳石（Razor Stone）
+39 00      愛神之箭（Cupid Arrow）
+3A 00      倒鉤箭（Barbed Arrow）
+48 00      蛇石（Serpent Stone）
+49 00      藍石（Rhine Stone）
+4B 00      毒箭（Viper Arrow）
+4D 00      碎骨石（Bone Breaker）
+5C 00      魔鬼之石（Devil Stone）
+5E 00      神秘之箭（Mystic Arrow）
+5F 00      死亡之箭（Peacemaker）
+61 00      閃電箭（Lightning Bolt）
+
+飾物物品編號（CC=05，括號內為正確的圖像編號）：
+
+C7 00 (49) 聖化披風（Anointed Cloak）
+D7 00 (49) 森林披風（Forest Cape）
+E9 00      僧侶披風（Cape of Hi-Zen）
+EA 00 (49) 幻影披風（Displacer Cloak）
+F0 00      眼罩（Eye-Patch）
+F1 00 (49) 陰影披風（Shadow Cloak）
+F2 00 (52) 骨質項鍊（Bone Necklace）
+F3 00      幸運草（Clove of Garlic）
+F4 00      絕望之鍊（Chain of Despair）
+F5 00 (4E) 銀十字架（Silver Cross）(使用前)
+F6 00 (4F) 紅寶石護符（Ruby Talisman）
+F7 00      虎形護符（Tora Maedate）
+F8 00      綠鸚鵡（Green Parrot）
+FC 00      午夜披風（Midnight Cloak）
+FD 00      醫藥袋（Medicine Bag）
+FE 00 (54) 玉雕像（Jade Figurine）
+FF 00      蜣螂項鍊（Scarab Necklace）
+00 01      死亡護符（Mempo of Death）
+04 01      玫瑰花圈（Garland of Roses）
+05 01      魔水晶（Pk Crystal）
+06 01 (57) 寶石墜子（Cameo Locket）
+07 01 (58) 鑽石戒指（Diamond Ring）
+0C 01      山貓戒指（Lynx Ring）
+0D 01      蟾蜍石戒指（Toadstone Ring）
+0E 01 (1F) 心靈戒指（Ring of Minds）
+0F 01 (1F) 神秘之戒（Mystic's Ring）
+10 01 (1F) 速度之戒（Ring of Speed）
+11 01 (1F) 靈巧之戒（Ring of Deftness）
+12 01 (1E) 夜晚護身符（Amulet of Night）
+13 01 (1E) 大氣護身符（Amulet of Air）
+14 01 (1E) 風護身符（Amulet of Winds）
+15 01 (1E) 冰護身符（Amulet of Ice）
+16 01 (1E) 生命護身符（Amulet of Life）
+17 01 (32) 體力護符（Ankh of Might）
+18 01 (32) 年齡護符（Ankh of Youth）
+19 01 (32) 醫療護符（Ankh of Wonder）
+1A 01 (32) 純淨護符（Ankh of Purity）
+1B 01 (32) 神聖護符（Ankh of Sanctity）
+1C 01 (32) 生命護符（Ankh of Life）
+1D 01 (32) 死亡護符（Ankh of Death）
+1E 01 (32) 火燄護符（Ankh of Phyre）
+23 01 (32) 防禦護符（Ankh of Arnie）
+24 01 (32) 虛無護符（Pol Ankh）
+90 01 (1F) 解碼戒指（J.R. Decoder）
+9C 01 (1F) 法師戒指（Wizard's Ring）
+A9 01 (54) 火神雕像（Idol of Mau-Mu-Mu）
+D8 01 (4E) 銀十字架（Silver Cross）(使用後)
+D9 01 (1F) 星辰戒指（Ring of Stars）
+E1 01 (1F) 達飛戒指（Ring of Delphi）
+
+頭盔物品編號（CC=06，括號內為正確的圖像編號）：
+
+80 00 (40) 無邊小帽（Skullcap）
+81 00      羽毛帽（Feathered Hat）
+8A 00      皮質頭盔（Leather Helm）
+8F 00      鋼盔（Steel Helm）
+93 00      鎧甲頭盔（Mail Coif）
+9A 00      硬質頭盔（Bascinet）
+A0 00 (5C) 忍者頭巾（Ninja Cowl）
+A2 00      法師帽（Wizard's Cone）
+A3 00      主教冠（Mitre）
+AF 00      錐形軟帽（Phrygian Cap）
+B0 00      雙層頭盔（Helm & Coif）
+B1 00 (44) 武士頭盔（Kabuto）
+C0 00      柏艮第頭盔（Burgonet Helm）
+C1 00 (19) 高硬質頭盔（Bascinet & Camail）
+C2 00      劣質頭盔（Coxcomb）
+CC 00      仙靈帽（Faerie Cap）
+CD 00      大主教冠（Mitre De Sanct）
+D4 00 (19) 騎士頭盔（Armet）
+DA 00      大型頭盔（Heaume）
+E3 00      法師尖帽（Mordecai's Cone）
+E4 00      詛咒之盔（Helm of Obitus）
+EB 00      船長帽（Tricorne Hat）
+EC 00 (60) 黑檀木盔（Ebony Heaume）
+81 01 (55) 山羊面具（Goat's Mask）
+
+護甲物品編號（CC=07，括號內為正確的圖像編號）：
+
+78 00 (2A) 布質襯衫（Cloth Shirt (U)）
+7A 00 (3C) 長袍(上)（Robes (U)）
+7C 00      獸皮甲（Fur Halter）
+7E 00 (2A) 羔羊皮衣（Suede Doublet）
+85 00      厚墊上衣（Quilt Tunic）
+87 00 (29) 皮質胸甲（Leather Cuirass）
+88 00      皮質鎖子甲（Leather Hauberk）
+8E 00      護胸鐵甲（Breastplate）
+90 00      生鏽甲冑（Tarnished Mail）
+91 00      鐵鍊鎖子甲（Chain Hauberk）
+98 00      鋼質鎧甲（Plate Mail）
+9E 00 (5D) 忍者衣(上)（Ninja Garb (U)）
+AA 00      青銅護胸甲（Bronze Cuirass）
+AC 00      強化鎖子甲（Studded Hauberk）
+B8 00      高級上衣（Jazeraint Tunic）
+BB 00      武士護甲(上)（Tosei-Do (U)）
+BD 00      劣質鎧甲（Plate Du Faux）
+BE 00 (1A) 高級鎧甲(上)（Full Plate (U)）
+CA 00      硬質護甲（Chamail Doublet）
+D0 00 (3C) 魔法長袍(上)（Robe of Enchant (U)）
+D2 00 (3C) 劣質長袍(上)（Vennal Robe (U)）
+DE 00      厚質胸罩（Stud-Cuir Bra+2）
+DF 00 (1A) 黑檀木甲(上)（Ebony Plate (U)）
+E1 00 (45) 高級護甲(上)（Hi-Kane-Do (U)）
+
+護腿物品編號（CC=08，括號內為正確的圖像編號）：
+
+79 00 (2C) 布質長褲（Cloth Shirt (L)）
+7B 00 (3D) 長袍(下)（Robes (L)）
+7D 00      軟羔皮裙（Chamois Skirt）
+7F 00 (2C) 羔羊皮長褲（Suede Pants）
+84 00 (2C) 獸皮護腿（Fur Legging）
+86 00      厚墊護腿（Quilt Legging）
+89 00      皮質護腿（Leather Legging）
+92 00      鐵鍊護腿（Chain Chausses）
+97 00      劣質鎧甲（Hoaxial Plate）
+99 00      鋼質護腿（Plate Greviere）
+9F 00 (5E) 忍者衣(下)（Ninja Garb (L)）
+AB 00      皮質護脛套（Leather Greaves）
+AD 00      強化護腿（Stud Chausses）
+AE 00      劣質護腿（Hoary Legging）
+B9 00      高級長裙（Jazeraint Skirt）
+BA 00 (2B) 青銅護脛套（Bronze Greaves）
+BC 00      武士護甲(下)（Tosei-Do (L)）
+BF 00 (1B) 高級鎧甲(下)（Full Plate (L)）
+CB 00      硬質長褲（Chamail Pants）
+D1 00 (3D) 魔法長袍(下)（Robe of Enchant (L)）
+D3 00 (3D) 劣質長袍(下)（Vennal Robe (L)）
+E0 00 (1B) 黑檀木甲(下)（Ebony Plate (L)）
+E2 00 (46) 高級護甲(下)（Hi-Kane-Do (L)）
+
+手套物品編號（CC=09，括號內為正確的圖像編號）：
+
+8B 00 (2D) 硬皮手套（Cuir Gauntlets）
+94 00      鎧甲手套（Mail Mittens）
+9B 00      鋼質手套（Steel Gauntlets）
+B2 00      劣質手套（Unctuous Gloves）
+B3 00      軟羔皮手套（Chamois Gloves）
+B4 00      紅銅手套（Copper Gloves）
+C3 00 (1C) 銀手套（Silver Gloves）
+D5 00 (4A) 螳螂手套（Mantis Gloves）
+
+鞋子物品編號（CC=0A，括號內為正確的圖像編號）：
+
+82 00 (2E) 涼鞋（Sandals）
+83 00 (2F) 厚底靴（Buskins）
+8C 00 (30) 皮質長靴（Leather Boots）
+95 00      鐵鍊長靴（Chain Hosen）
+9C 00      鋼片鞋（Solleret）
+A1 00 (5F) 忍者靴（Tabi Boots）
+C4 00 (1D) 銀鞋（Silver Solleret）
+C5 00      鉛鞋（Lead Boots）
+D6 00 (4B) 螳螂靴（Mantis Boots）
+E5 00      神聖拖鞋（Sacred Slippers）
+E6 00 (4C) 水翼鞋（Water Wings）
+E7 00      玻璃鞋（Glass Slippers）
+
+盾牌物品編號（CC=0B，括號內為正確的圖像編號）：
+
+8D 00 (26) 小型盾（Buckler Shield）
+96 00      圓盾（Round Shield）
+9D 00      熱盾（Heater Shield）
+B5 00      劣質盾（Duck Shield）
+C6 00      龍盾（Dragon Kite）
+E8 00      紋章盾（Heraldic Shield）
+
+藥水物品編號（CC=0C，括號內為正確的圖像編號）：
+
+3C 01 (20) 輕度醫療（Lt. Heal）
+3D 01 (20) 中度醫療（Mod. Heal）
+3E 01 (20) 高度醫療（Hv. Heal）
+3F 01 (20) 中等恢復疲勞（Mod. Stamina）
+40 01 (20) 高等恢復疲勞（Hv. Stamina）
+41 01 (20) 治療輕微病症（Cure Lt. Cnd）
+42 01 (20) 治療中毒（Cure Poison）
+43 01 (20) 治療麻痺（Cure Paralyz）
+44 01 (20) 治療石化（Cure Stone）
+45 01 (20) 復活（Resurrection）
+46 01      臭雲炸彈（Stink Bomb）
+47 01      櫻桃炸彈（Cherry Bomb）
+48 01      火燄炸彈（Fire Bomb）
+49 01      毒氣炸彈（Poison Bomb）
+4A 01      酸液炸彈（Acid Bomb）
+4B 01      致命毒液（Deadly Poison）
+4C 01 (20) 聖水（Holy Water）
+92 01 (65) 神秘油（Mystery Oil）
+CB 01 (20) 聖水（Holy H2O+）
+
+卷軸物品編號（CC=0D，括號內為正確的圖像編號）：
+
+4D 01 (21) 魔法護盾（Armor Shield）
+4F 01 (21) 魔法飛彈（Magic Missile）
+50 01 (21) 恐懼術（Terror）
+51 01 (21) 解咒術（Dispell Undead）
+52 01 (21) 緩慢術（Slow）
+53 01 (21) 解鎖術（Knock-Knock）
+54 01 (21) 束縛怪物（Hold Monsters）
+55 01 (21) 火燄盾（Fire Shield）
+56 01 (21) 冰盾術（Ice Shield）
+57 01 (21) 強化護盾（Armorplate）
+58 01 (21) 強化武器（Enchanted Blade）
+59 01 (21) 飛刀術（Blades）
+5A 01 (21) 火球術（Fireball）
+5B 01 (21) 移形化影（Blink）
+5C 01 (21) 製造幻影（Illusion）
+5D 01 (21) 大召喚術（Conjuration）
+5E 01 (21) 飄浮術（Levitate）
+5F 01 (21) 吸星大法（Lifesteal）
+60 01 (21) 復活術（Resurrection）
+
+無計數雜物編號（CC=0E）：
+
+36 00 (77) 簧風琴（Harmonium）
+37 00 (77) 琵琶（Lute）
+3B 00 (77) 天使之舌（Angel's Tongue）
+46 00 (77) 魔鬼之笛（Devil's Pipe）
+47 00 (77) 午夜之聲（Midnight Choir）
+4F 00 (77) 牧神之笛（Pan Flute）
+59 00 (77) 火燄號角（Horn of Prometheus）
+5A 00 (77) 低音豎琴（Basso Lyre）
+62 00 (77) 死靈魔音（Cuckoo Call）
+63 00 (77) 蛋糕豎琴（Lyre Of Cakes）
+1F 01 (31) 祈禱之書（Book of Mantras）
+20 01 (31) 迷惑之書（Book of Rapture）
+21 01 (31) 惡魔之書（Book of Demons）
+22 01 (31) 詩詞之書（Book of Poetry）
+61 01 (31) 飄浮之書（Book of Levitation）
+62 01 (31) 寡婦之書（Book of Widows）
+63 01 (31) 鑑識之書（Book of Identity）
+64 01 (31) 平靜之書（Book of Peace）
+65 01 (31) 反魔法之書（Book of Anti-Magic）
+6B 01 (31) 冰盾之書（Book of Iceshield）
+6C 01 (31) 大氣之書（Book of Airs）
+6D 01 (31) 氣盾之書（Book of Air Shield）
+6E 01 (31) 沉靜之書（Book of Silence）
+6F 01 (31) 解鎖之書（Book of Knocks）
+70 01 (31) 方位之書（Book of Directions）
+71 01 (31) 偵測之書（Book of Detection）
+72 01 (31) 寒冷之書（Book of Chills）
+73 01 (31) 盲目之書（Book of Blinding）
+74 01 (31) 虛弱之書（Book of Weakening）
+75 01 (31) 遲緩之書（Book of Sloth）
+76 01 (31) 毒害之書（Book of Poisons）
+77 01 (31) 火盾之書（Book of Fireshield）
+78 01 (31) 保護之書（Book of Protection）
+79 01 (31) 治療之書（Book of Lt.Curing）
+7A 01 (31) 催眠之書（Book of Dozes）
+7B 01 (31) 熔甲之書（Book of Armormelt）
+7C 01 (23) 金鑰匙（Gold Key）
+82 01 (23) 邪神之鑰（Key of Ramm）
+84 01 (31) 魔王日記（King's Diary）
+85 01 (23) 鐘樓鑰匙（Bell Key）
+86 01      粗重繩索（Hv. Rope）
+87 01 (23) 銀鑰匙（Silver Key）
+88 01      腐敗乳酪（Rotten Cheese）
+89 01      酒瓶（Wine Bottle）
+8A 01 (23) 獄卒鑰匙（Jailer Key）
+8B 01 (31) 死者日誌（Deadman's Log）
+8C 01      鋼鉤（Steel Hook）
+8D 01 (77) 繩鉤（Rope & Hook）
+8E 01 (23) 地牢鑰匙（Dungeon Key）
+91 01      玩具小狗（Stuffed Beagle）
+93 01 (77) 存根（Ticket Stub）
+94 01 (31) 邪神之書（Book of Ramm）
+95 01      破裂齒輪（Broken Sprocket）
+96 01      齒輪（Sprocket）
+97 01      橡皮纖維（Rubber Strand）
+98 01      橡皮筋（Rubber Braid）
+99 01      橡皮繩（Rubber Band）
+9A 01      巨石（Hv. Boulder）
+9B 01      小型飾物（Bauble & Trinkets）
+9D 01      礦工鑰匙（Key of a Minor）
+A0 01 (23) 塔樓鑰匙（Spire Key）
+A1 01 (31) 法師日記（Wizard's Record）
+A2 01 (77) 靈魂號角（Horn of Souls）
+A3 01      紅寶石之眼（Ruby Eyeball）
+A4 01      紅寶石之眼（Ruby Eyeball）
+A5 01      黏膠（Gloop Sploch）
+A6 01 (23) 骨鑰匙（Bone Key）
+A7 01      沙袋（Bag of Sand）
+A8 01      空袋子（Empty Bag）
+AC 01 (23) 米諾斯鑰匙（Key of Minos）
+AD 01 (23) 亡靈之鑰（Key of the Damned）
+AE 01 (31) 亡靈之書（Book of the Damned）
+AF 01      骨灰甕（Cylinder of Ash）
+B0 01      骨灰甕（Cylinder of Ash）
+B1 01 (23) 墓穴之鑰（Tomb Key）
+B2 01 (31) 水妖之書（Book of the Sirens）
+B3 01      骨灰甕（Cylinder of Ash）(正)
+B4 01 (23) 迷失之鑰（Key of the Lost）
+B5 01 (23) 東方出口之鑰（East Exit Key）
+B6 01      煙管（Hooka Pipe）
+B7 01 (77) 線香（Incense）
+B8 01      瓶塞（Cork Bobber）
+B9 01      紙條（Special Message）
+BA 01      被塞住的瓶子（Bottle w/Cork）
+BB 01      放有紙條的瓶子（Bottle w/Msg）
+BC 01      紙條／塞子／瓶子（Botl w/Msg+Cork）
+BD 01 (77) 答案／塞子／瓶子（Botl w/Ans+Cork）
+BE 01      魚線（Fishline）
+BF 01      魚鉤（Fish Hook）
+C0 01 (77) 釣竿（Fishline w/Hook）
+C1 01 (23) 寶庫鑰匙（Vault Key）
+C2 01 (23) 死者之鑰（Key of the Dead）
+C4 01 (23) 骷髏鑰匙（Skeleton Key）
+C5 01 (23) 黑暗精靈之鑰（Key of Drows）
+C6 01 (23) 騎士之鑰（Key of Knights）
+C7 01 (23) 女武士之鑰（Key of Valkyries）
+C8 01 (23) 皇后之鑰（Key of Queens）
+C9 01 (23) 邪惡之鑰（Key of Devil）
+CD 01 (77) 鈴噹（Tinkerbell）
+CE 01 (77) 反映之石（Rock of Reflection）
+CF 01 (23) 決策之鑰（Key of Decision）
+D0 01 (23) 第一試驗之鑰（Key of 1st Test）
+D1 01 (23) 陰暗之鑰（Key of Quandry）
+D2 01 (23) 第一試驗之鑰（Key of 1st Test）
+D3 01 (23) 虛無之鑰（Key of Nothing）
+D4 01 (23) 最終之鑰（Key of Finality）
+D5 01 (23) 最終之鑰（Key of Finality）
+D6 01 (23) 青鑰鑰匙（B.D. Key）
+D7 01 (23) 星辰之鑰（Key of Stars）
+DF 01 (23) 法師洞穴之鑰（Key of Wizard Cave）
+E0 01      液態金屬（Liquid Metal）
+E2 01 (23) 北方出口之鑰（North Exit Key）
+
+有計數雜物編號（CC=0F，DD=77）：
+
+7D 01 (23) 鐵鑰匙（Iron Key）
+7E 01 (23) 紅銅鑰匙（Copper Key）
+80 01 (23) 黑桃鑰匙（Key of Spades）
+83 01 (23) 鉻鑰匙（Chrome Key）
+9F 01      烤玉米（Roasted Corn）
+C3 01 (77) 紅蘑菇（Red Mushroom）
+DA 01      玫瑰花辮（Rose Petals）
+DB 01      蕓薹（Rutabega）
+DC 01      蘋果（Apple）
+DD 01      魔法餅乾（Magic Cookie）
+DE 01      草藥餅（Herbal Patty）
+
+常用職業最佳裝備改法：
+
+1.武士
+
+武器：70 00 00 00 01 0A 00 04 (Zatoichi Bo)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：B1 00 00 00 06 44 00 00
+護甲：E1 00 00 00 07 45 00 00
+護腿：E2 00 00 00 08 46 00 00
+手套：8B 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+2.女戰士
+
+武器：6C 00 00 00 01 10 00 04 (Excaliber)x2
+飾物：07 01 00 00 05 1F 58 00
+頭盔：EC 00 00 00 06 60 00 00
+護甲：DF 00 00 00 07 1A 00 00
+護腿：E0 00 00 00 08 1B 00 00
+手套：D0 00 00 00 09 4A 63 00
+鞋子：D6 00 00 00 0A 4B 63 00
+
+3.忍者
+
+武器：41 00 00 00 01 10 00 04 (Bushido Blade)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：A0 00 00 00 06 5C 00 00 (保留原有即可)
+護甲：9E 00 00 00 07 5D 00 00 (保留原有即可)
+護腿：9F 00 00 00 08 5E 00 00 (保留原有即可)
+鞋子：E6 00 00 00 0A 4C 00 00
+
+4.詩人
+
+武器：58 00 00 00 01 36 00 04 (Cat'o Nine Tail)x2
+飾物：07 01 00 00 05 1F 58 00
+頭盔：AF 00 00 00 06 40 00 00
+護甲：B8 00 00 00 07 2A 00 00
+護腿：B9 00 00 00 08 2C 00 00
+手套：B3 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+樂器：59 00 00 00 0E 77 00 00
+
+5.牧師
+
+武器：73 00 00 00 01 0A 00 04 (Rammbus Staff)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：CD 00 00 00 06 40 00 00
+護甲：D0 00 00 00 07 3C 00 00
+護腿：D1 00 00 00 08 3D 00 00
+手套：B3 00 00 00 09 2D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+6.法師
+
+武器：18 00 00 00 01 0A 00 04 (Quarterstaff)x2
+飾物：06 01 00 00 05 57 63 00
+頭盔：CC 00 00 00 06 40 00 00
+護甲：D0 00 00 00 07 3C 00 00
+護腿：D1 00 00 00 08 3D 00 00
+鞋子：E6 00 00 00 0A 4C 00 00
+
+
+*** 改檔快速過關並玩多種結局法
+
+1.修改出下列物品：
+
+  A3 01 00 00 0E 77 01 00 (紅寶石之眼)
+  A4 01 00 00 0E 77 01 00 (紅寶石之眼)
+  E6 00 00 00 0A 4C 00 00 (水翼鞋)
+  C2 01 00 00 0E 23 01 00 (死者之鑰)
+  B3 01 00 00 0E 77 01 00 (骨灰甕)
+  B7 01 00 00 0E 77 01 00 (線香)
+  C8 01 00 00 0E 23 01 00 (皇后之鑰)
+  64 00 00 00 00 59 00 04 (邪神匕首)
+  81 01 00 00 06 55 00 00 (山羊面具)
+  CC 01 00 00 01 13 00 00 (亞倫之杖)
+
+2.到城堡地下二樓#15，使用紅寶石之眼開門前往冥河。
+3.在冥河#1使用水翼鞋走到#23用死者之鑰開門進入亡者殿堂。
+4.在亡者殿堂#1處放置骨灰甕並點燃線香，到#7拿鑰匙開#8，到#24用皇后之鑰
+  開門，搜尋#25再按#26，開#28到#29（銀十字架丟不丟棄都無所謂，玩第二
+  結局不想再改檔便丟棄，不想受傷就別丟棄）。
+5.地牢#3使用邪神匕首，魔法森林#1戴上山羊面具，進入邪神神殿。
+6.邪神神殿#1裝備亞倫之杖通過，一路到#18：
+  (1)想玩第二結局的，必須丟棄銀十字架，如果身上有銀十字架，找裝備編號
+     D8 01，將最後byte改成00便可以丟棄。
+  (2)想玩第三結局的，必須再修改出下列物品：
+
+     D8 01 00 00 05 4E 00 00 (銀十字架，如果已有便不用了)
+     CA 01 00 00 00 07 00 04 (神聖木樁)x3
+     CB 01 00 00 0C 20 63 04 (聖水)x3
+     D6 01 00 00 0E 23 01 00 (青銅鑰匙)
+</font>
+</pre>
+</body>
+</html>
