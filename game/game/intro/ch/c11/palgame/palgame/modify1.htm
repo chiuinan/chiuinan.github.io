@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>程式修改</title>
+</head>
+<body>
+<pre>
+<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+1.解決小狐狸精掉落物品延遲20～40秒的問題
+  gmon.dat
+    CE 00 00 00 01 00 00 00
+    -- -- -- -- 05 11 -- --
+    CD 00 00 00 17 0E 00 00
+    -- -- -- -- 01 00 -- --
+    D1 00 00 00 02 00 00 00
+    -- -- -- -- 17 0E -- --
+    D0 00 00 00 00 00 00 00
+    -- -- -- -- 02 -- -- --
+</font>
+</pre>
+</body>
+</html>
