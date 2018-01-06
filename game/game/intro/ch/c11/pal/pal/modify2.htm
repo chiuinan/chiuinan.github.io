@@ -35,7 +35,6 @@ RNG.MKF   過場動畫
 VOC.MKF   音效檔
 WORD.DAT  名稱、選項文字，每個10 byte，不足時補空白(20h)
 
-
 <FONT COLOR=BLUE><B><A name="MKF">*** MKF檔</B></FONT>
 
 仙劍奇俠傳的遊戲資訊檔幾乎都是MKF檔，這種檔案格式是將多個檔案合併成一
@@ -47,7 +46,6 @@ WORD.DAT  名稱、選項文字，每個10 byte，不足時補空白(20h)
 
 從第一個4 byte整數n便能得知有多少分檔：n/4-1，各分檔大小則是下一個分
 檔位置減去目前分檔位置。
-
 
 <FONT COLOR=BLUE><B><A name="DATA.MKF">*** DATA.MKF</B></FONT>
 
@@ -219,7 +217,6 @@ SP = 仙術編號
 <b><A name="DATA-15">*** 升級所需經驗</b>
 
 每級2 byte整數，由等級0開始，表示要升到下個等級所需的經驗值。
-
 
 <FONT COLOR=BLUE><B><A name="SSS.MKF">*** SSS.MKF</B></FONT>
 
@@ -543,7 +540,6 @@ FF FF 顯示對話，P1=對話索引編號
 1.每個調色盤256個顏色，每個顏色3 byte，依次為RGB。
 2.一個分檔裡若有兩個調色盤，分別為白天和晚上用的。
 
-
 <FONT COLOR=BLUE><B><A name="GOP.MKF">*** GOP.MKF</B></FONT>
 
 每個分檔為一個圖元包，其格式類似MKF檔為：
@@ -553,7 +549,6 @@ FF FF 顯示對話，P1=對話索引編號
 3.圖片內容：<A href="#RLE">RLE圖片壓縮格式</A>
 
 所有圖片均使用PAT.MKF第0個調色盤。
-
 
 <FONT COLOR=BLUE><B><A name="MAP.MKF">*** MAP.MKF</B></FONT>
 
@@ -573,7 +568,6 @@ DD = 上層圖元控制
 
 貼完GOP圖元後成為2048x2048的地圖。
 
-
 <FONT COLOR=BLUE><B><A name="RLE">*** RLE圖片壓縮格式</B></FONT>
 
 寬度：2 byte
@@ -583,7 +577,6 @@ DD = 上層圖元控制
 讀取一個byte，低7位元為像素數目
 if 最高位元(80h)=1 then 像素為透明
 else 讀取前述數目byte的像素資料（256色調色盤索引值）
-
 
 <FONT COLOR=BLUE><B><A name="YJ_1">*** YJ_1資料壓縮格式</B></FONT>
 
