@@ -1,0 +1,295 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>魔術拼圖</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：魔術拼圖 (中文版)
+<b>簡介</b>：大宇1989年出品的拼圖與記憶翻牌遊戲，分成母片與資料片兩種形式。
+      資料片由母片所製成，共有10關，奇數關為拼圖，偶數關為翻牌，以及
+      最終關全螢幕拼圖。母片除了可製成資料片外，也可和資料片一樣玩拼
+      圖與翻牌遊戲，除了和資料片相同玩法外，還加入了局部貼圖的玩法，
+      過關時也有動畫。只是單色螢幕的拼圖非常耗眼，而母片用來製圖的舊
+      式掃描機，現在應該也早已絕跡。因此本遊戲基本上也只是用來懷舊而
+      已，想玩的人應該也不多了。
+<IMG src="domo/game1.png">
+
+<IMG src="domo/game2.png">
+<b>保護</b>：不明
+<b>限制</b>：只能用單色螢幕（Hercules）玩。DosBox要設定：
+        machine=hercules
+<b>修改</b>：START.EXE
+
+1.開頭說明畫面不用按鍵自動略過
+  80 3E 08 05 01 75 F9 BE 36 01
+  -- -- -- -- -- 90 90 -- -- --
+
+<b>修改</b>：存檔FILE1.TDT
+
+位置08h～2Fh = 各位置的方塊編號，若填入00h～27h，進入後立即完成
+位置60h～65h = 本關的參數
+
+<b>修改</b>：各關參數檔FILE2.TDT
+
+各關參數：位置07h開始，每關6 byte，共10關
+
+PP 00 TT 00 U1 U2
+
+PP = 是否無［讓電腦完成］選項，1表無，0表有
+TT = 挑戰交換次數
+U1 = 數字顯示可以打開的次數
+U2 = 數字顯示打開後限制操作的次數
+
+<b>修改</b>：記憶體
+
+TT 00 U1 U2 U3
+
+TT = 挑戰交換次數
+U1 = 數字顯示可以打開的次數
+U2 = 數字顯示打開後限制操作的最大次數
+U3 = 數字顯示打開後限制操作的剩餘次數
+
+<b>圖檔</b>：PCTEST.SCN
+
+檔頭：7 byte，無意義
+影像資料：同Hercules顯示卡的RAM結構（影像大小720x348）
+
+Hercules顯示卡的RAM結構，區分成4個區塊，每個區塊8KB（8192 byte）。
+
+區塊一：包含水平線0、4、8、12...
+區塊二：包含水平線1、5、9、13...
+區塊三：包含水平線2、6、10、14...
+區塊四：包含水平線3、7、11、15...
+
+每條水平線佔90 byte=720位元，各位元1=白，0=黑。水平線y的影像資料在檔
+案中的位置為：
+
+pos = (y%4)*8192 + (y/4)*90 + 7;
+
+<b>圖檔</b>：DOMO?.TDT、DATA2.TDT
+
+固定檔頭：7 byte，無意義
+第一個區塊資料的相對位置：2 byte
+第二個區塊資料的相對位置：2 byte
+:
+最終區塊資料（不使用）的相對位置：2 byte
+
+區塊數 = 第一個區塊資料的相對位置/2-1
+
+1.只有一個區塊的區塊資料格式
+
+水平byte數：2 byte
+垂直大小：2 byte
+影像資料：各水平線資料按y值依次存放，水平線各位元1=白，0=黑。
+
+2.有多個區塊的區塊資料格式
+
+垂直大小：1 byte
+水平byte數：1 byte
+影像資料：各水平線資料按y值依次存放，水平線各位元1=白，0=黑。
+
+各區塊按由左到右、由上到下次序放置。
+
+<b>圖檔</b>：MAGIC*.BCR
+
+固定檔頭：7 byte，無意義
+影像資料大小：2 byte（含本資料的2 byte）
+影像資料（Run Length壓縮）
+
+影像資料解壓縮演算法：
+
+while 還有資料
+{
+  a = 讀取一個byte
+  if a最高位元=1 then
+    a去除最高位元
+    讀取a個byte輸出，資料不足時補0
+  else
+    b = 讀取一個byte
+    輸出b共a次
+  endif
+}
+
+解壓所得資料同Hercules顯示卡的RAM結構，不足部份補0。
+
+<b>秘技</b>：
+
+拼圖/翻牌過關按鍵：ENTER+Q
+最後一關全螢幕拼圖過關按鍵：ENTER+SPACE
+
+<b>說明</b>：（作者－青衫）
+
+<font color=blue><b>*** 資料片遊戲（執行START.EXE）</b></font>
+
+由遊戲母片所製作，採用的圖檔為DOMO?.TDT，?=0-9、0表示10，共計10個關卡，
+奇數關為拼圖、偶數關為翻牌。
+
+<font color=blue><b>1.拼圖</b></font>
+<IMG src="domo/game2.png">
+
+8或上鍵、2或下鍵、4或左鍵、6或右鍵 = 移動游標（方塊編號為00）
+Q = 跳出遊戲
+O = 音樂開關
+U = 顯示數字，原圖由左而右、由上而下各方塊編號依次為0～39，有次數限制。
+I = 消除數字
+K = 操作反相，即移動游標的反向和目前相反。
+S = 存錄現況，僅第一關有效。
+J = 搖桿切換
+T = 挑戰交換，完成1A2B猜對數字後，可直接選擇兩個方塊互換，有次數限制。
+P = 讓電腦完成，若有此選項，則按下後會由電腦自動完成，並進入下一關。
+
+畫面中央上面第一個數字為可以［顯示數字］的次數，第二個數字為［顯示數字］
+後，剩餘操作的次數，當次數降至0時，會自動清除數字。
+
+<font color=blue><b>2.翻牌</b></font>
+<IMG src="domo/game3.png">
+
+8或上鍵、2或下鍵、4或左鍵、6或右鍵 = 移動游標
+U或空白鍵 = 翻牌
+O = 音樂開關
+Q = 跳出遊戲
+
+翻出相同數字或英文字母的兩張牌即可消去。畫面中央上面數字為翻牌限制次
+數，若翻牌次數超過限制次數仍未全部消去所有的牌即算失敗。
+
+<font color=blue><b>3.最後一關拼圖</b></font>
+
+為全螢幕的大圖拼圖，採用的圖檔為PCTEST.SCN。
+
+8或上鍵、2或下鍵、4或左鍵、6或右鍵 = 移動游標
+O = 音樂開關
+Q = 跳出遊戲
+
+<font color=blue><b>4.各關參數與使用圖形</b></font>
+
+<font color=blue>第1關：挑戰交換次數=30，顯示數字次數、操作次數=40、100，可讓電腦完成</font>
+<IMG src="domo/01.png">
+
+<font color=blue>第2關：翻牌次數=50</font>
+<IMG src="domo/02.png">
+
+<font color=blue>第3關：挑戰交換次數=30，顯示數字次數、操作次數=20、100</font>
+<IMG src="domo/03.png">
+
+<font color=blue>第4關：翻牌次數=45</font>
+<IMG src="domo/04.png">
+
+<font color=blue>第5關：挑戰交換次數=30，顯示數字次數、操作次數=8、100</font>
+<IMG src="domo/05.png">
+
+<font color=blue>第6關：翻牌次數=40</font>
+<IMG src="domo/06.png">
+
+<font color=blue>第7關：挑戰交換次數=30，顯示數字次數、操作次數=4、100</font>
+<IMG src="domo/07.png">
+
+<font color=blue>第8關：翻牌次數=35</font>
+<IMG src="domo/08.png">
+
+<font color=blue>第9關：挑戰交換次數=30，顯示數字次數、操作次數=2、100</font>
+<IMG src="domo/09.png">
+
+<font color=blue>第10關：翻牌次數=30</font>
+<IMG src="domo/10.png">
+
+<font color=blue>最後一關</font>
+<IMG src="domo/11.png">
+
+<font color=blue><b>*** 母片遊戲（執行DOMO.EXE）</b></font>
+
+遊戲均使用母片內定的參數與圖形，無法修改。採用的圖檔為MAGIC*.BCR（含
+動畫圖片），共計10個關卡，奇數關為拼圖、偶數關為翻牌。而每過一次奇偶
+關後，會進行局部貼圖。最後一關會在全螢幕拼圖後，再進行局部貼圖。
+
+<font color=blue><b>1.拼圖</b></font>
+
+同資料片遊戲。
+
+<font color=blue><b>2.翻牌</b></font>
+
+同資料片遊戲。
+
+<font color=blue><b>3.最後一關拼圖</b></font>
+
+同資料片遊戲（採用的圖檔為DATA2.TDT）。
+
+<font color=blue><b>4.局部貼圖</b></font>
+
+左鍵、右鍵 = 移動數字輸入游標
+0～9 = 輸入數字
+Enter = 確認數字
+O = 音樂開關
+Q = 跳出遊戲
+
+第一個數字為右邊挑選的圖，第二個數字為左邊要貼上的方塊編號。最後全部
+貼成功的話（採用的圖檔為MAGIC14.BCR），便會看到動畫。
+
+<font color=blue><b>5.各關參數與使用圖形</b></font>
+
+<font color=blue>第1關：挑戰交換次數=30，顯示數字次數、操作次數=10、200，可讓電腦完成</font>
+<IMG src="domo/d01.png">
+
+<font color=blue>第2關：翻牌次數=50</font>
+<IMG src="domo/d02.png">
+
+<font color=blue>第3關：挑戰交換次數=25，顯示數字次數、操作次數=10、200</font>
+<IMG src="domo/d03.png">
+
+<font color=blue>第4關：翻牌次數=45</font>
+<IMG src="domo/d04.png">
+
+<font color=blue>第5關：挑戰交換次數=20，顯示數字次數、操作次數=10、200</font>
+<IMG src="domo/d05.png">
+
+<font color=blue>第6關：翻牌次數=40</font>
+<IMG src="domo/d06.png">
+
+<font color=blue>第7關：挑戰交換次數=15，顯示數字次數、操作次數=10、200</font>
+<IMG src="domo/d07.png">
+
+<font color=blue>第8關：翻牌次數=35</font>
+<IMG src="domo/d08.png">
+
+<font color=blue>第9關：挑戰交換次數=10，顯示數字次數、操作次數=10、200</font>
+<IMG src="domo/d09.png">
+
+<font color=blue>第10關：翻牌次數=30</font>
+<IMG src="domo/d10.png">
+
+<font color=blue>最後一關</font>
+<IMG src="domo/d11.png">
+
+<font color=blue>局部貼圖</font>
+<IMG src="domo/d12.png">
+
+<font color=blue><b>*** 資料片製作（執行DOMO.EXE）</b></font>
+
+1.讀取圖形：讀進PCTEST.SCN裡的圖形
+2.存錄圖形：將目前圖形存入PCTEST.SCN
+3.掃描圖形：由掃描機讀進圖形（支援的掃描機規格不明）
+4.讀取遊戲檔：讀進遊戲檔DOMO?.TDT裡的圖形
+5.存錄遊戲檔：將目前圖形存入DOMO?.TDT
+6.設定遊戲資料：設定各關卡的控制參數（儲存在FILE2.TDT）
+  第幾份資料（1～10） = 第幾關
+  電腦是否會自動完成（Y/N）= 0表可以，1表不行
+  挑戰交換的次數（0～30）
+  數字顯示可以打開的次數（0～255）
+  顯示打開維持次數（0～255）
+7.結束
+L.看圖形：顯示目前已讀進的圖形
+
+<b>存錄遊戲檔的操控方式：</b>
+
+ESC：取消結束
+A、S：改變左邊界位置
+左右鍵：改變右邊界位置
+W、Z：改變上邊界位置
+上下鍵：改變下邊界位置
+G：裁切出選定的圖形
+   SPACE = 確認存檔
+   ESC = 取消
+</font>
+</pre>
+</body>
+</html>
