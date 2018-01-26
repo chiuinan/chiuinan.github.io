@@ -1,0 +1,255 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>麻將大師</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：麻將大師 (中文版)
+<b>簡介</b>：光譜1996年出品的１６張麻將遊戲，目標在於一年內參加大師盃麻將比
+      賽，獲得冠軍。其過程除了必須累積足夠的金錢外，還必須經過檢定取
+      得足夠的段位資格，這算是一個蠻新穎的做法，也讓玩家在漫長的麻將
+      爭戰過程中，有了階段性的目標，而不會顯得太過無聊。此外，經驗值
+      的累積、拜師學藝、胡牌放槍次數統計，以及體力、精神力消耗的設計，
+      都還頗符合實際，計台方式也可自行設定，因此整個遊戲的娛樂算是相
+      當地不錯。
+<IMG src="s16mj/game1.jpg">
+
+<IMG src="s16mj/game2.png">
+<b>保護</b>：數字密碼。
+<b>備註</b>：本版為1.22版。
+<b>修改</b>：記憶體
+
+-- -- -- -- -- -- -- -- DD DD DD DD MM MM MM MM
+H1 H1 H1 H1 H2 H2 H2 H2 H3 H3 H3 H3 H4 H4 H4 H4
+EX EX EX EX LV LV LV LV KK KK KK KK KK KK KK KK
+KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK
+KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK
+KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK
+KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK KK
+KK KK KK KK -- -- -- -- -- -- -- -- NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+
+DD = 剩餘天數
+MM = 現金總數
+H1/H2 = 目前體力／最大體力
+H3/H4 = 目前精神／最大精神
+EX = 經驗
+LV = 級位，FFFFFFFFh=無，00=10級，01=9級...，09=1級，0Ah=1段
+     要先檢定過後再修改
+KK = 是否學會密技，4 BYTE一組，共19個，1表已學會
+NN = 各物品數量，4 BYTE一組，共9個
+
+<b>密技</b>：進入遊戲輸入密碼時，先輸入「ilovettime」（注意要小寫），按ENTER
+      後，再輸入正確的密碼進入遊戲。進入遊戲後，在街道主畫面中，以滑
+      鼠右鍵叫出主選單，此時只要按：
+        $ = 加錢10000元
+        E = 加經驗值1000點（注意要大寫）
+        L = 加等級1級（注意要大寫）
+      光碟版使用者，請執行「main -p」的方式進入遊戲，便會出現密碼輸入
+      的視窗，再按照前述方式輸入密鍵。
+<b>操作</b>：
+
+滑鼠右鍵 = 大地圖時跳出主選單
+Space鍵／滑鼠左鍵 = 選擇／摸牌／捨牌
+Enter鍵 = 確認交換牌
+
+主選單圖案：
+<IMG src="s16mj/menu.png">
+  左上 = 休息一天，恢復所有體力與精神力（只能在街道時使用）
+  正上 = 已會的麻將密技
+  右上 = 擁有的物品
+  左下 = 計台方式設定
+  正下 = 存麻將檔（只能在打麻將時使用）
+  右下 = 系統選單
+
+<b>攻略</b>：（作者－青衫）
+
+<font color=blue><b>*** 一般提示</b></font>
+
+1.初始狀態：金錢5000元，最大體力60，最大精神60。
+2.體力、精神最大為100。要提高最大體力須到健健美健身院，一次便提升至
+  100，但每過一天最大體力會減2，直到60為止。至於最大精神會隨著經驗值
+  的累積而升級提升，不會再減少。
+3.每次打一雀決勝負，若中途有人籌碼不足，牌局亦告終。而每打完一局麻將，
+  體力會減2，若體力不夠則牌局結束，送醫住院3天。因此體力不太夠時別去
+  打牌，或是發現體力不夠時，直接中斷牌局離開（但會損失一些錢）。
+4.想學密技要先有拜師費，同時經驗值也要足夠，因此一開始要儘量打牌賺錢
+  與經驗值。又由於賭金較高的麻將館都有麻將段位的限制，故也要儘可能先
+  去提升麻將段位。
+5.段位檢定須付檢定作業費，同時分筆試和實戰兩部份，各佔50%，總分必須
+  60分以上才通過。段位檢定的麻將實戰，不能使用任何密技，且只打一圈。
+6.打牌時，主選單上方顏色橫條閃爍時，為使用密技的時機（選擇發牌牌型、
+  更換所發的牌），過了就不能使用了。
+7.遊戲目標便是在365天以內，將麻將段位升到一段，再籌資200萬元賭資後，
+  前往麻將大賽會館，參加麻將大賽奪冠（共5場比賽，可使用密技和物品，
+  前4場取錢數最多的前兩名進入下一場比賽）。
+8.膽量賭場小遊戲規則：
+  (1)在未擲出指定的點數前，比誰擲的次數較多。
+  (2)若擲出指定的點數為爆掉，視同次數為0。
+  (3)輸贏賭金 = 次數差*下注金額。
+9.向SOS地下錢莊借錢時，當天先扣30%利息錢，之後每3天付一次利息90%，若
+  錢不夠會被圍毆並住院7天。但若到第3天前已還款，則完全不用再付利息。
+
+<font color=blue><b>*** 地點說明</b></font>
+
+<IMG src="s16mj/map.jpg">
+
+<font color=blue>A.麻將館</font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>編號<TH>名稱<TH>等級限制<TH>賭資限制<TH>底<TH>台<TH>拜師費<TH>備註／可學密技</TR>
+<TR><TD>1<TD>麻將技術研習所<TD> <TD> <TD> <TD> <TD> <TD>可看其他三家牌，純練習用</TR>
+<TR><TD>2<TD>大眾麻將館<TD> <TD> <TD>100<TD>50<TD><TD></TR>
+<TR><TD>3<TD>美少女麻將館<TD>8級<TD><TD>500<TD>200<TD><TD></TR>
+<TR><TD>4<TD>第六感麻將館<TD>6級<TD><TD>1000<TD>500<TD>3000<TD>連續自摸6把者獎金5萬元<br>密技：無</TR>
+<TR><TD>5<TD>萬子麻將館<TD>4級<TD> <TD>3000<TD>1000<TD>10000<TD>胡萬子清一色獎金5萬元<br><font color=red>密技：發牌牌型（風牌～大四喜）</font></TR>
+<TR><TD>6<TD>大三元麻將館<TD>2級<TD> <TD>5000<TD>2000<TD>20000<TD>胡大三元獎金5萬元<br><font color=red>密技：發牌後換牌（時光倒轉～腳底抹油）</font></TR>
+<TR><TD>7<TD>大師麻將館<TD>1段<TD>50萬元<TD>20000<TD>10000<TD>30000<TD><font color=red>密技：打牌時（透視術～二進牌）</font></TR>
+<TR><TD>8<TD>麻將大賽會館<TD>1段<TD>200萬元<TD><TD><TD><TD></TR>
+</TABLE>
+<font color=blue>B.餐飲店</font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>編號<TH>名稱<TH>商品<TH>價格<TH>作用<TH>打工工資</TR>
+<TR><TD>1<TD>麻將麵攤<TD>麻將麵<TD>50<TD>體力+2<TD>500/天</TR>
+<TR><TD>2<TD>八索速食店<TD>大師全餐<TD>99<TD>體力+2<TD>500/天</TR>
+</TABLE>
+<font color=blue>C.特殊建物</font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>編號<TH>名稱<TH>作用</TR>
+<TR><TD>1<TD>健健美健身院<TD>付10000元花一週時間提升最大體力到100</TR>
+<TR><TD>2<TD>麻將段位檢定所<TD>檢定麻將能力（10級～1段）</TR>
+<TR><TD>3<TD>考古題攤<TD>得知麻將段位檢定時的考題答案</TR>
+<TR><TD>4<TD>大補中藥店<TD>購買物品</TR>
+<TR><TD>5<TD>麻將推廣研習營<TD>說明麻將的規則</TR>
+<TR><TD>6<TD>便利當鋪<TD>原價50%典當，原價75%贖回</TR>
+<TR><TD>7<TD>世紀末商業銀行<TD>存款，日利率0.3%</TR>
+<TR><TD>8<TD>SOS地下錢莊<TD>借款，日利率30%</TR>
+<TR><TD>9<TD>膽量賭場<TD>玩小賭遊戲</TR>
+<TR><TD>10<TD>麻將大賽名人堂<TD>查看排行榜</TR>
+</TABLE>
+<font color=blue><b>*** 物品一覽表</b></font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>名稱<TH>價格<TH>作用</TR>
+<TR><TD>綜合維他命<TD>2000<TD>精神+1</TR>
+<TR><TD>福氣牌飲料<TD>5000<TD>精神+1</TR>
+<TR><TD>白蘭地雞精<TD>8000<TD>精神+2</TR>
+<TR><TD>天山雪蓮子<TD>10000<TD>精神+3</TR>
+<TR><TD>卜派菠菜<TD>30000<TD>精神+10</TR>
+<TR><TD>龍虎藥酒<TD>50000<TD>精神+20</TR>
+<TR><TD>長白老山蔘<TD>80000<TD>精神+30</TR>
+<TR><TD>龜鶴牌靈芝<TD>100000<TD>精神+40</TR>
+<TR><TD>阿中大補丸<TD>200000<TD>精神+100</TR>
+</TABLE>
+<font color=blue><b>*** 密技一覽表</b></font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>名稱<TH>所需經驗<TH>消耗精神<TH>作用</TR>
+<TR><TD>風牌<TD>3000<TD>5<TD>使用後可拿到風牌的刻子
+<TR><TD>三元牌<TD>6000<TD>10<TD>使用後可拿到三元牌的刻子
+<TR><TD>碰碰胡<TD>10000<TD>30<TD>使用後可拿到接近碰碰胡的牌
+<TR><TD>混一色<TD>12000<TD>30<TD>使用後可拿到接近混一色的牌
+<TR><TD>清一色<TD>15000<TD>50<TD>使用後可拿到接近清一色的牌
+<TR><TD>大三元<TD>18000<TD>50<TD>使用後可拿到接近大三元的牌
+<TR><TD>大四喜<TD>21000<TD>50<TD>使用後可拿到接近大四喜的牌
+<TR><TD>時光倒轉<TD>6000<TD>5<TD>重新發牌
+<TR><TD>移花接木I<TD>8000<TD>7<TD>交換一張牌
+<TR><TD>移花接木II<TD>10000<TD>10<TD>交換兩張牌
+<TR><TD>乾坤大挪移I<TD>15000<TD>15<TD>一次任意交換牌的機會
+<TR><TD>乾坤大挪移II<TD>18000<TD>30<TD>兩次任意交換牌的機會
+<TR><TD>腳底抹油<TD>21000<TD>30<TD>提早結束牌局
+<TR><TD>透視術I<TD>6000<TD>2<TD>觀看某家的牌1秒
+<TR><TD>透視術II<TD>10000<TD>10<TD>觀看某家的牌5秒
+<TR><TD>透視術III<TD>12000<TD>20<TD>觀看某家的牌
+<TR><TD>催眠術I<TD>15000<TD>10<TD>使某家進什麼牌便打什麼牌
+<TR><TD>催眠術II<TD>18000<TD>30<TD>強迫流局
+<TR><TD>二進牌<TD>21000<TD>10<TD>打出牌後再摸一次牌<br>（如果精神夠的話，開莊便可一個人打到自摸）
+</TABLE>
+<font color=blue><b>*** 經驗升級</b></font>
+
+所需經驗  最大精神力
+-----------------------
+1000          65
+3000          70
+6000          75
+10000         80
+15000         85
+21000         90
+28000         95
+36000        100
+
+<font color=blue><b>*** 段位檢定</b></font>
+
+升級  檢定作業費  考古題
+-------------------------------
+10級      1500     1萬元
+9級       2000     2萬元
+8級       3000     3萬元
+7級       5000     4萬元
+6級       9000     5萬元
+5級      17000     6萬元
+4級      33000     7萬元
+3級      65000     8萬元
+2級     129000     9萬元
+1級     257000    10萬元
+1段     513000    20萬元
+
+<font color=blue><b>*** 段位檢定考古題</b></font>
+
+升10級
+<IMG src="s16mj/10k-1.jpg">
+<IMG src="s16mj/10k-2.jpg">
+
+升9級
+<IMG src="s16mj/9k-1.jpg">
+<IMG src="s16mj/9k-2.jpg">
+
+升8級
+<IMG src="s16mj/8k-1.jpg">
+<IMG src="s16mj/8k-2.jpg">
+
+升7級
+<IMG src="s16mj/7k-1.jpg">
+<IMG src="s16mj/7k-2.jpg">
+
+升6級
+<IMG src="s16mj/6k-1.jpg">
+<IMG src="s16mj/6k-2.jpg">
+
+升5級
+<IMG src="s16mj/5k-1.jpg">
+<IMG src="s16mj/5k-2.jpg">
+
+升4級
+<IMG src="s16mj/4k-1.jpg">
+<IMG src="s16mj/4k-2.jpg">
+
+升3級
+<IMG src="s16mj/3k-1.jpg">
+<IMG src="s16mj/3k-2.jpg">
+<IMG src="s16mj/3k-3.jpg">
+
+升2級
+<IMG src="s16mj/2k-1.jpg">
+<IMG src="s16mj/2k-2.jpg">
+<IMG src="s16mj/2k-3.jpg">
+
+升1級
+<IMG src="s16mj/1k-1.jpg">
+<IMG src="s16mj/1k-2.jpg">
+<IMG src="s16mj/1k-3.jpg">
+<IMG src="s16mj/1k-4.jpg">
+
+升1段
+<IMG src="s16mj/1d-1.jpg">
+<IMG src="s16mj/1d-2.jpg">
+<IMG src="s16mj/1d-3.jpg">
+
+</font>
+</pre>
+</body>
+</html>
