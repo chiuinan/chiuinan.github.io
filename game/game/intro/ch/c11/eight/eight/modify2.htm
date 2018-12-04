@@ -1,0 +1,79 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>資訊修改</title>
+</head>
+<body>
+<pre>
+<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+1.<b>武器資訊</b>：EIGHT.EXE位置47499h開始，每個30 byte，共44個
+
+N1 N1 N1 N1 N1 N1 N1 N1 00 N2 N2 N2 N2 N2 N2 N2
+N2 N2 N2 N2 N2 00 PP PP AT AT ?? ?? MM MM
+
+N1 = 武器名稱
+N2 = 招式名稱
+PP = 價錢
+AT = 攻擊力
+MM = 可裝備者，00=阿卡迪亞，01=美雅，02=伊諾
+
+2.<b>防具資訊</b>：EIGHT.EXE位置479C1h開始，每個15 byte，依次為帽子18個，
+  飾品盾牌24個，盔甲24個，鞋子15個
+
+N1 N1 N1 N1 N1 N1 N1 N1 00 PP PP DF DF MM MM
+
+N1 = 防具名稱
+N2 = 招式名稱
+PP = 價錢
+AT = 防禦力
+MM = 可裝備者，00=阿卡迪亞，01=美雅，02=伊諾
+
+3.<b>道具資訊</b>：EIGHT.EXE位置47E80h開始，每個15 byte，共21個
+
+N1 N1 N1 N1 N1 N1 N1 N1 00 -- PP PP NO NO --
+
+N1 = 道具名稱
+PP = 價錢
+NO = 作用數量
+
+4.<b>法術資訊</b>：EIGHT.EXE位置47FBBh開始，每個18 byte，共38個
+
+N1 N1 N1 N1 N1 N1 N1 N1 00 ?? ?? -- -- -- MP MP
+NO NO
+
+N1 = 道具名稱
+MP = 消耗內力
+NO = 作用數量
+
+5.<b>升級資訊</b>：每個18 byte，共50個
+
+阿卡迪亞 = AKA.DAT
+美雅 = MEI.DAT
+伊諾 = ENO.DAT
+
+HP HP MP MP NP NP DF DF AT AT SP SP EX EX EX EX
+LS LS
+
+HP = 生命
+MP = 法力
+NP = 內力
+DF = 防禦力
+AT = 攻擊力
+SP = 速度
+EX = 升到下一級所需經驗
+LS = 學到法術編號，FFFFh表沒有
+
+6.<b>商店資訊</b>：
+
+(1)武器：EIGHT.EXE位置481B3h開始，每個32 byte，共4個
+(2)防具：EIGHT.EXE位置48233h開始，每個32 byte，共4個
+   帽子 = 編號 + 100
+   衣服 = 編號 + 200
+   飾品 = 編號 + 300
+   鞋子 = 編號 + 400
+(3)道具：EIGHT.EXE位置4B2B3h開始，每個32 byte，共4個
+
+</font>
+</pre>
+</body>
+</html>

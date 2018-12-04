@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>程式修改</title>
+</head>
+<body>
+<pre>
+<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<b>修改</b>：EIGHT.EXE
+
+1.HP不少（但被攻擊損失的HP不能大於現有HP）：
+  66 29 82 7E 87 00 00
+  EB 05 -- -- -- -- --
+
+<b>修改</b>：所有人物升級不會超過50級（否則會當）
+
+AKA.DAT
+  B2 83 01 00
+  FF FF FF 7F
+ENO.DAT
+  16 20 01 00
+  FF FF FF 7F
+MEI.DAT
+  E4 51 01 00
+  FF FF FF 7F
+</font>
+</pre>
+</body>
+</html>
