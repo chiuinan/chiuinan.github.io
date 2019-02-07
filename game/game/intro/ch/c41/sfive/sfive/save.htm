@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔SAVE\FILE.SV?
+
+0000 YY YY MM MM DD DD -- -- WW WW -- -- -- -- -- --
+
+YY/MM/DD/WW = 年/月/日/星期
+
+0170 -- -- H1 H1 H2 H2 -- -- SC SC SC SC LV LV MM MM
+0180 MM MM EX EX EX EX -- -- -- -- -- -- -- -- -- --
+0190 NO NO T1 T1 N1 N1 T2 T2 N2 N2 T3 T3 N3 N3 T4 T4
+01A0 N4 N4 T5 T5 N5 N5 T6 T6 N6 N6 T7 T7 N7 N7 ...
+
+H1/H2 = 最大體力／目前體力
+SC = 排名分
+LV = 等級（01h～0Bh）
+MM = 金錢
+EX = 經驗
+NO = 物品種類數目
+T?/N? = 物品編號/數目
+
+<font color=blue>大獎賽資料</font>：位置0226h開始，每52(34h)byte一組
+
+PL PL LV LV -- -- SP SP SP SP P1 P1 P1 P1 P2 P2
+P2 P2 P3 P3 P3 P3 S1 S1 S2 S2 S3 S3 -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- --
+
+PL = 比賽地點，01=北京，0C=台北，12=東京
+LV = 限制等級
+SP = 報名費
+P1～P3 = 第1～3名獎金
+S1～S3 = 第1～3名排名分
+
+</font>
+</pre>
+</body>
+</html>
