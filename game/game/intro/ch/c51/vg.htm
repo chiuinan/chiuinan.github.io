@@ -5,7 +5,7 @@
 </head>
 <body>
 <pre>
-<font face="細明體" size=3><b>名稱</b>：武姬神傳說 (中文版)
+<font face="細明體" size=3><b>名稱</b>：武姬神傳說 (Variable Geo，中文版)
 <b>簡介</b>：GIGA 1993年出品的１８禁打鬥遊戲，由天堂鳥修改成中文版。玩家必
       須選擇６個女戰士中的一個，每位女戰士各有其絕技，然後打敗另外５
       名女戰士。當每勝一場時，便會顯示圖片供觀賞。只是絕技的按鍵不易
@@ -14,6 +14,7 @@
 <IMG SRC="vg/game1.png">
 
 <IMG SRC="vg/game2.png">
+<b>備註</b>：本版為光碟版，並修正語音問題以及DosBox 0.74當機問題
 <b>保護</b>：圖案密碼，破解碼：
       VG.EXE
         83 7E EA 05 74 03
@@ -34,12 +35,78 @@
         -- -- -- -- -- -- -- EB --
         83 3E C1 44 15 7D 22 6A 03
         C7 06 C1 -- -- 00 EB 21 --
-<b>備註</b>：DosBox 0.74版執行時，聲霸卡的聲音會當，請改成無聲音，或改用SVN
-      修正版或0.63版執行。
 <b>備註</b>：若進入打鬥畫面時會跳出，請試著調低CPU速度。
-<b>備註</b>：<A href="vg/cg.htm">CG圖</A>有露點。
+<b>修改</b>：語音雜訊，以及DosBox 0.74版執行時聲霸卡當機問題
+
+遊戲配置4000h byte空間做為語音資料緩衝區，並將這個緩衝區位址送進DMA
+通道設定中。在DosBox中，配置的Segment位址會是在2F8Eh，實際開始位址就
+是2F8E0h，分成高word（0002h）和低word（F8E0h）。問題在於，DosBox處理
+DMA資料讀取時，是採用wrapping方式處理，也就是低word超過FFFFh時，會從
+0000h繼續，但高word並不會改變，於是應該讀取位址30000h的語音資料，卻
+去讀取位址20000h非語音資料，於是語音變成了雜訊。在DosBox 0.74版，若
+發生這樣的wrapping，便會引發Exception，造成遊戲當機跳出。
+
+解決方法便是攔住int 21h，當遊戲要配置語音資料空間時，要確認低word值
+小於C000h，這樣便不會發生wrapping狀況，可以正常播放語音。以下為解決
+此一問題的常駐程式碼，將程式前面的16進位數值依次寫入一個COM執行檔中
+（共118 byte），並於主程式VG.EXE之前執行本常駐程式，便能在DosBox裡正
+常地玩了。
+
+  EB54           jmp  $start
+  90             nop
+$int21:
+  80FC48         cmp  ah,48h
+  7541           jne  $exit
+  81FB0104       cmp  bx,401h
+  753B           jne  $exit
+$retry:
+  9C             pushf
+  2EFF1E4E01     call dword ptr cs:[$21_addr]
+  7222           jc   $end
+  50             push ax
+  25FF0F         and  ax,0FFFh
+  3D000C         cmp  ax,0C00h
+  58             pop  ax
+  7207           jb   $end2
+  B448           mov  ah,48h
+  BB0104         mov  bx,401h
+  EBE7           jmp  $retry
+$end2:
+  2E8F065201     pop  word ptr cs:[$tmp_addr]
+  2E8F065401     pop  word ptr cs:[$tmp_addr+2]
+  9D             popf
+  F8             clc
+  2EFF2E5201     jmp  dword ptr cs:[$tmp_addr]
+$end:
+  2E8F065201     pop  word ptr cs:[$tmp_addr]
+  2E8F065401     pop  word ptr cs:[$tmp_addr+2]
+  9D             popf
+  F9             stc
+  2EFF2E5201     jmp  dword ptr cs:[$tmp_addr]
+$exit:
+  2EFF2E4E01     jmp  dword ptr cs:[$21_addr]
+$21_addr:
+  00000000       dd   ?
+$tmp_addr:
+  00000000       dd   ?
+$start:
+  0E             push cs
+  1F             pop  ds
+  B82135         mov  ax,3521h
+  CD21           int  21h
+  2E891E4E01     mov  word ptr cs:[$21_addr],bx
+  2E8C065001     mov  word ptr cs:[$21_addr+2],es
+  B82125         mov  ax,2521h
+  BA0301         mov  dx,offset $int21
+  0E             push cs
+  1F             pop  ds
+  CD21           int  21h
+  BA5601         mov  dx,offset $start
+  CD27           int  27h
+
 <b>秘技</b>：觀圖法：將*.gcx改成*.pcx即可
-<b>操作</b>：選擇時Z=決定，X=取消，打鬥時Esc=暫停
+<b>備註</b>：<A href="vg/cg.htm">CG圖</A>有露點。
+<b>操作</b>：選擇時Z=決定，X=取消，打鬥時Esc=暫停，Tab=不斷地截圖
 
 進入遊戲後，依下述１Ｐ或２Ｐ按鍵選擇功能。
 

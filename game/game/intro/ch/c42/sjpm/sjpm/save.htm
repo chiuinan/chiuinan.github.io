@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔a_0?.sav
+
+0000 -- -- -- -- -- -- -- -- -- -- -- -- MN MN MN MN
+0010 TI TI TI TI -- -- -- -- FA FA FA FA AP AP AP AP
+0020 IR IR IR IR -- -- -- -- -- -- -- -- -- -- -- --
+0030 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+0040 -- -- -- -- -- -- -- -- G2 G2 G2 G2 G2 G2 G2 G2
+0050 G4 G4 G4 G4 G4 G4 G4 G4 G7 G7 G7 G7 G7 G7 G7 G7
+0060 G5 G5 G5 G5 G5 G5 G5 G5 G1 G1 G1 G1 G1 G1 G1 G1
+0070 G3 G3 G3 G3 G3 G3 G3 G3 G8 G8 G8 G8 G8 G8 G8 G8
+0080 G6 G6 G6 G6 G6 G6 G6 G6 -- -- -- -- -- -- -- --
+0090 -- -- -- -- -- -- -- -- -- -- -- -- BL BL BL BL
+ :
+0160 -- -- -- NN NN NN NN NN NN NN NN NN NN NN NN NN
+0170 NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+0180 NN -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+MN = 金錢
+TI = 時間（第n天=n*6-5，初始值0001h，最後一天為019Fh）
+FA = 名氣（最多999）
+AP = 儀表（最多999）
+IR = 人際（最多999）
+G1～G8：妻妾愛情／美麗值，各4 byte
+  G1=李瓶兒, G2=吳月娘, G3=宋蕙蓮, G4=孫雪娥
+  G5=潘金蓮, G6=李嬌兒, G7=卓丟兒, G8=孟玉樓
+BL = 財產（建議改金錢後從置產著手）
+NN = 各物品數量，每個1 byte，共39個
+
+<b>修改</b>：Evt.inf
+
+影片開啟：位置0014h～002Ch，共25個，01表開啟
+          0018h、0021h、0023h這三個位置必須為00，否則會當機
+圖片開啟：位置002Dh～0053h，共39個，01表開啟
+</font>
+</pre>
+</body>
+</html>
