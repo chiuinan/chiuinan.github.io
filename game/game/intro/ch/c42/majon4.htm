@@ -112,7 +112,7 @@ MN = 必須籌碼＜MN（0表不限制）
 
 NN NN NN NN NN NN NN NN NN N0 N0 N0 N0 N0 N0 N0
 N0 N0 N1 N1 N1 N1 N1 00 N2 N2 N2 N2 N2 00 N3 N3
-N3 N3 N3 00 N4 N4 N4 N4 N4 00 -- -- SS SS SS SS
+N3 N3 N3 00 N4 N4 N4 N4 N4 00 -- -- -- -- -- --
 S1 S1 S1 S1 S1 S1 S1 S1 S1 S2 S2 S2 S2 S2 S2 S2
 S2 S2 -- -- -- -- -- -- -- -- -- -- -- -- -- --
 -- -- -- -- CL CL CL CL
@@ -128,7 +128,6 @@ N3 = 訊息文字指示
      (T*???，p=*-'A'，後面的數字n表示Data\Graphics\Text.dat第p*50h+n-1個block，
      每個CCh byte，每行33h byte)
 N4 = 影音指示 (V*???，*表示人物，後面的數字n表示第幾個影片)
-SS = 選項數目
 S1 = 選擇第一項的下個訊息名稱（含00字元）
 S2 = 選擇第二項的下個訊息名稱（含00字元）
 ED = 後面是否已經沒有訊息
