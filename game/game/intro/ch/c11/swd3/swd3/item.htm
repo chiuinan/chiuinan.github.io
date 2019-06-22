@@ -4,340 +4,572 @@
 <title>裝備列表</title>
 </head>
 <body>
-<pre>
-<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>裝備列表</b></FONT></CENTER>
-*** 武器一覽表
+<CENTER>
+裝備列表：<A HREF="#weapon">武器</A>、<A HREF="#armor">防具</A>、<A HREF="#use">法寶</A>、<A HREF="#med">道具</A>
+</CENTER>
+註：各人物武器係按照（攻擊力+熟練傷害+額外傷害）的總和依次排列。
+<A name="weapon">
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">武器列表</FONT></B>
+</TR>
 
-1.賽特
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊力<TH nowrap>熟練傷害<TH nowrap>熟練攻擊次數<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>額外傷害<TH nowrap>附加效果</TR>
 
-名稱        攻 防 敏  特性
------------------------------------------
-闊劍        10  1  0
-長劍        18  0  0
-封印之劍    20  0  0  回復1%命靈體
-羽翼劍      25  0  3
-火燄劍      35  3 -2  火攻7
-中國劍      40 -1  3
-月牙劍      50  1  2
-赤螫        62  0 -5  暗攻20
-隴金玉劍    68  0  2
-雪浪劍      75  8  0  冰攻20，火抗20
-崙凰劍      78  5  0  火攻20，冰抗20
-魚腸        85  0  4
-湛盧       100  3 -6  暗攻20，光抗-20
-莫邪       120  0  3
-斷梗       128  5  0  風攻20
-勝邪       160  0  0
-干將       178 13  2
-純鈞       193 -4  2
-巨闕       230  5 -2
-工布       233 -1  6  冰攻30
-泰阿       240  3 -3  土攻30
-龍泉       250  0  0  光攻30
-軒轅劍     590  0  0  光攻30，回復2%命靈體
+<tr><td><A name="01F5">01F5<td>闊劍<td>武器<td>27<td>賽特<td>70<td>10<td>3<td>80<td>+1<td><td><td></tr>
+<tr><td><A name="01F6">01F6<td>長劍<td>武器<td>29<td>賽特<td>150<td>18<td>5<td>160<td><td><td><td></tr>
+<tr><td><A name="01F7">01F7<td>羽翼劍<td>武器<td>32<td>賽特<td>300<td>25<td>8<td>220<td><td>+3<td><td></tr>
+<tr><td><A name="01F8">01F8<td>火燄劍<td>武器<td>36<td>賽特<td>480<td>35<td>5<td>150<td>+3<td>-2<td>火傷7<td></tr>
+<tr><td><A name="0242">0242<td>中國劍<td>奇物<td>20<td>賽特<td>600<td>40<td>15<td>250<td>-1<td>+3<td><td></tr>
+<tr><td><A name="01FC">01FC<td>月牙劍<td>武器<td>42<td>賽特<td>540<td>50<td>10<td>200<td>+1<td>+2<td><td></tr>
+<tr><td><A name="0243">0243<td>月牙劍<td>奇物<td><td>賽特<td>650<td>50<td>10<td>200<td>+1<td>+2<td><td></tr>
+<tr><td><A name="01FB">01FB<td>隴金玉劍<td>武器<td>47<td>賽特<td>750<td>68<td>3<td>100<td><td>+2<td><td></tr>
+<tr><td><A name="01FA">01FA<td>赤螫<td>武器<td>45<td>賽特<td>700<td>62<td>15<td>250<td><td>-5<td>暗傷20<td></tr>
+<tr><td><A name="0202">0202<td>魚腸<td>奇物<td><td>賽特<td>1500<td>85<td>15<td>280<td><td>+4<td><td></tr>
+<tr><td><A name="01FD">01FD<td>雪浪劍<td>武器<td>50<td>賽特<td>1000<td>75<td>20<td>450<td>+8<td><td>冰傷20<td>火抗+20%</tr>
+<tr><td><A name="01FE">01FE<td>崙凰劍<td>武器<td>51<td>賽特<td>1200<td>78<td>22<td>500<td>+5<td><td>火傷20<td>冰抗+20%</tr>
+<tr><td><A name="01FF">01FF<td>湛盧<td>武器<td>55<td>賽特<td>1800<td>100<td>10<td>300<td>+3<td>-6<td>暗傷20<td>光抗-20%</tr>
+<tr><td><A name="0205">0205<td>莫邪<td>奇物<td><td>賽特<td>2500<td>120<td>55<td>400<td><td>+3<td><td></tr>
+<tr><td><A name="01F9">01F9<td>斷梗<td>奇物<td>56<td>賽特<td>2300<td>128<td>30<td>350<td>+5<td><td>風傷20<td></tr>
+<tr><td><A name="0204">0204<td>干將<td>奇物<td><td>賽特<td><td>178<td><td><td>+13<td>+2<td><td></tr>
+<tr><td><A name="0201">0201<td>勝邪<td>奇物<td>60<td>賽特<td>4000<td>160<td>40<td>500<td><td><td><td></tr>
+<tr><td><A name="0200">0200<td>純鈞<td>武器<td>64<td>賽特<td><td>193<td>27<td>370<td>-4<td>+2<td><td></tr>
+<tr><td><A name="0203">0203<td>巨闕<td>奇物<td><td>賽特<td><td>230<td><td><td>+5<td>-2<td><td></tr>
+<tr><td><A name="0208">0208<td>工布<td>奇物<td><td>賽特<td><td>233<td><td><td><td>+6<td>冰傷30<td></tr>
+<tr><td><A name="0207">0207<td>泰阿<td>奇物<td><td>賽特<td><td>240<td><td><td>+4<td>-3<td>土傷30<td></tr>
+<tr><td><A name="0206">0206<td>龍泉<td>奇物<td><td>賽特<td><td>250<td><td><td><td><td>光傷30<td></tr>
+<tr><td><A name="0319">0319<td><font color=blue>封印之劍</font><td>奇物<td>20<td>賽特<td><td>20<td>380<td>2800<td><td><td><td>每回合回復1%命靈體力</tr>
+<tr><td><A name="0244">0244<td><font color=red>軒轅劍</font><td>奇物<td><td>賽特<td><td>590<td>10<td>10<td><td><td>光傷30<td>每回合回復2%命靈體力</tr>
 
-2.妮可
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊力<TH nowrap>熟練傷害<TH nowrap>熟練攻擊次數<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>額外傷害<TH nowrap>附加效果</TR>
 
-名稱        攻 防 敏  特性
------------------------------------------
-短木弓      18  2  0
-十字弓      24  1  0
-獵弓        30  0  1
-烏紋弓      33  2 -1
-雷神弓      33  0  1  電攻10
-大食誡弓    35  1  0  暗攻5，暗抗20光抗-20
-華蓮七彩弓  40  5  0
-閻魔弓      45 -2  0  暗攻15
-火炎神弩    60  1  0  火攻25
-絕情貓袖箭  70 -5  3
-鐵胎弓      72  0 -2
-神臂弓      90 -2  2
-意弦弓     128  1 -2
-地湧       150 20 -2
-天燎       180 -10 5
-萬鈞神弩   200  8 -4
+<tr><td><A name="0209">0209<td>短木弓<td>武器<td>28<td>妮可<td>60<td>18<td>2<td>70<td>+2<td><td><td></tr>
+<tr><td><A name="020A">020A<td>十字弓<td>武器<td>31<td>妮可<td>120<td>24<td>3<td>100<td>+1<td><td><td></tr>
+<tr><td><A name="020B">020B<td>獵弓<td>武器<td>33<td>妮可<td>200<td>30<td>8<td>160<td><td>+1<td><td></tr>
+<tr><td><A name="0210">0210<td>烏紋弓<td>武器<td>35<td>妮可<td>350<td>33<td>8<td>120<td>+2<td>-1<td><td></tr>
+<tr><td><A name="020C">020C<td>雷神弓<td>武器<td>34<td>妮可<td>500<td>33<td>5<td>100<td><td>+1<td>電傷10<td></tr>
+<tr><td><A name="020F">020F<td>大食誡弓<td>武器<td>37<td>妮可<td>400<td>35<td>8<td>180<td>+1<td>+1<td>暗傷5<td>光抗-20%，暗抗+20%</tr>
+<tr><td><A name="0214">0214<td>閻魔弓<td>武器<td>40<td>妮可<td>570<td>45<td>10<td>200<td>-2<td><td>暗傷15<td></tr>
+<tr><td><A name="020E">020E<td>華蓮七彩弓<td>武器<td>39<td>妮可<td>550<td>40<td>35<td>280<td>+5<td><td><td></tr>
+<tr><td><A name="0215">0215<td>絕情貓袖箭<td>奇物<td><td>妮可<td><td>70<td>15<td>300<td>-5<td>+3<td><td></tr>
+<tr><td><A name="0211">0211<td>鐵胎弓<td>武器<td>49<td>妮可<td>1200<td>72<td>20<td>400<td><td>-2<td><td></tr>
+<tr><td><A name="020D">020D<td>火炎神弩<td>奇物<td>44<td>妮可<td>800<td>60<td>13<td>300<td>+1<td><td>火傷25<td></tr>
+<tr><td><A name="0216">0216<td><font color=blue>神臂弓</font><td>武器<td>57<td>妮可<td>1800<td>90<td>28<td>200<td>-2<td>+2<td><td></tr>
+<tr><td><A name="0217">0217<td>意弦弓<td>奇物<td><td>妮可<td>3800<td>128<td>32<td>320<td>+1<td>-2<td><td></tr>
+<tr><td><A name="0213">0213<td>地湧<td>奇物<td>61<td>妮可<td><td>150<td>30<td>100<td>+20<td>-2<td><td></tr>
+<tr><td><A name="0212">0212<td>天燎<td>武器<td>65<td>妮可<td><td>180<td>50<td>350<td>-10<td>+5<td><td></tr>
+<tr><td><A name="0218">0218<td><font color=red>萬鈞神弩</font><td>奇物<td><td>妮可<td>10000<td>200<td>40<td>400<td>+8<td>-4<td><td></tr>
 
-3.卡瑪
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊力<TH nowrap>熟練傷害<TH nowrap>熟練攻擊次數<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>額外傷害<TH nowrap>附加效果</TR>
 
-名稱        攻 防 敏  特性
------------------------------------------
-彎刀        20  0  0
-弧月刀      38  2  0
-刃風刀      48 -2  3  風抗20
-柳葉刀      53  2  0
-蝴蝶刀      62  1  2
-太皇刀藍牙  65  0  3  冰攻20，冰抗20
-鬼眼法刀    78  3  0
-鴛鴦刀      82  0 -4
-太皇刀閻天  85  3 -2  暗攻20，暗抗20
-太皇刀綠痕  93  0  0  風攻20，風抗20
-軒轅菜刀   102  0  0
-太皇刀紅葉 108 -3  2  火攻20，火抗20
-無瑕雙刀   138  1  3
-麟火吞月刀 170  5 -2  火攻30
-四極皇霸刀 215 10 -4
+<tr><td><A name="0219">0219<td>彎刀<td>武器<td>30<td>卡瑪<td>80<td>20<td>6<td>120<td><td><td><td></tr>
+<tr><td><A name="021A">021A<td>弧月刀<td>武器<td>38<td>卡瑪<td>300<td>38<td>7<td>180<td>+2<td><td><td></tr>
+<tr><td><A name="021B">021B<td>刃風刀<td>武器<td>41<td>卡瑪<td>520<td>48<td>4<td>130<td>-2<td>+3<td><td></tr>
+<tr><td><A name="0225">0225<td>柳葉刀<td>武器<td>43<td>卡瑪<td>600<td>53<td>15<td>300<td>+2<td><td><td></tr>
+<tr><td><A name="0224">0224<td>蝴蝶刀<td>武器<td>46<td>卡瑪<td>820<td>62<td>13<td>280<td>+1<td>+2<td><td></tr>
+<tr><td><A name="0220">0220<td>太皇刀─藍牙<td>奇物<td><td>卡瑪<td><td>65<td>10<td>300<td><td>+3<td>冰傷20<td>冰抗+20%</tr>
+<tr><td><A name="0226">0226<td>鴛鴦刀<td>武器<td>52<td>卡瑪<td>1300<td>82<td>18<td>400<td><td>-4<td><td></tr>
+<tr><td><A name="021C">021C<td>鬼眼法刀<td>奇物<td>66<td>卡瑪<td>1500<td>78<td>30<td>500<td>+3<td><td><td></tr>
+<tr><td><A name="0221">0221<td>太皇刀─閻天<td>奇物<td><td>卡瑪<td><td>85<td>15<td>150<td>+3<td>-2<td>暗傷20<td>暗抗+20%</tr>
+<tr><td><A name="0223">0223<td>軒轅菜刀<td>武器<td>58<td>卡瑪<td>2300<td>102<td>18<td>150<td><td><td><td></tr>
+<tr><td><A name="021F">021F<td>太皇刀─綠痕<td>奇物<td><td>卡瑪<td><td>93<td>27<td>270<td><td><td><td>風抗+20%，靈力+30</tr>
+<tr><td><A name="0222">0222<td>太皇刀─紅葉<td>奇物<td><td>卡瑪<td><td><font color=red>108</font><td>12<td>120<td>-3<td>+2<td>火傷20<td>火抗+20%</tr>
+<tr><td><A name="021E">021E<td><font color=blue>無瑕雙刀</font><td>武器<td>62<td>卡瑪<td>4200<td>138<td>22<td>220<td>+1<td>+3<td><td></tr>
+<tr><td><A name="021D">021D<td>麟火吞月刀<td>奇物<td>68<td>卡瑪<td><td>170<td>20<td>200<td>+5<td>-2<td>火傷30<td></tr>
+<tr><td><A name="0229">0229<td><font color=red>四極皇霸刀</font><td>奇物<td><td>卡瑪<td><td>215<td>25<td>250<td>+10<td>-4<td><td></tr>
 
-4.李靖
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊力<TH nowrap>熟練傷害<TH nowrap>熟練攻擊次數<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>額外傷害<TH nowrap>附加效果</TR>
 
-名稱        攻 防 敏  特性
------------------------------------------
-齊眉棍      70  0 -2
-八卦棍      84  0 -3
-蒺藜槍      98  1  0
-鉤鐮槍     120  3  0
-方天戟     184 15  0
-太寧筆槍   162  0 -4
-如意金箍棒 200  2 -4
-憾天神槍   248  3  0
+<tr><td><A name="022A">022A<td>齊眉棍<td>武器<td>48<td>李靖<td>500<td>70<td>10<td>130<td><td>-2<td><td></tr>
+<tr><td><A name="022B">022B<td>八卦棍<td>武器<td>53<td>李靖<td>750<td>84<td>13<td>200<td>+2<td>-3<td><td></tr>
+<tr><td><A name="022D">022D<td>蒺藜槍<td>武器<td>54<td>李靖<td>1000<td>98<td>12<td>200<td>+1<td><td><td></tr>
+<tr><td><A name="022E">022E<td>鉤鐮槍<td>武器<td>59<td>李靖<td>1800<td>120<td>13<td>300<td>+3<td><td><td></tr>
+<tr><td><A name="0230">0230<td>太寧筆槍<td>武器<td>67<td>李靖<td>3800<td>162<td>18<td>200<td><td>-4<td><td></tr>
+<tr><td><A name="022F">022F<td><font color=blue>方天戟</font><td>武器<td>63<td>李靖<td><td>183<td>17<td>170<td>+15<td><td><td></tr>
+<tr><td><A name="022C">022C<td>如意金箍棒<td>奇物<td>70<td>李靖<td><td>200<td>40<td>500<td>+2<td>-4<td><td></tr>
+<tr><td><A name="0232">0232<td><font color=red>憾天神槍</font><td>奇物<td><td>李靖<td><td>248<td>22<td>220<td>+3<td><td><td></tr>
 
+</TABLE>
 
-*** 防具一覽表
+<p>
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">投擲與其他武器列表</FONT></B>
+</TR>
 
-1.頭部
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>允用人員<TH nowrap>價格<TH nowrap>消耗<TH nowrap>對象<TH nowrap>傷害力</TR>
 
-名稱        使用者 攻   防 敏  特別功能
-------------------------------------------------
-頭巾          全    0    1  0
-布帽          全    0    2  0
-皮帽          全    0    3  0
-銀髮結        女    0    5  0
-輕鋼盔        塞    0    7  2
-安碧特麗之冠  女    2    8  0
-聖皇盔        塞    2    8  1
-羽盔        塞妮卡  0    9  0
-鷹矢盔        男    0   17 -2
-翠玉金釵      女   -5   18  1
-藍夷髮帶      女    5   20  0
-鬼雲          全    0   25  4
-海神盔        塞    3   27  1
-紫金冠        李    5   35  2
-鏡舞          妮    0   38  0
-象綿盔        塞    1   40 -1
-金霞盔        男    2   66  2
-龍族盔        塞    0   75 -2  靈+100
-金鋼斗笠      李    0   23  0  暗20
-麒麟緞帶      卡    0   28  0  暗20光20
-千葉          女    0   28  2  暗40光20
-法藏          女    2   32  4  光20
-天蠶絲帶      女    0   35  0  火20冰20
-聖獸玲瓏冠    李    2   70  0  火冰風土20
-龍鱗盔        男    0   50  0  回復2%命
+<tr><td><A name="0234">0234<td>飛斧<td>武器<td>15<td>全<td>80<td>武器<td>敵單<td>25物理傷害</tr>
+<tr><td><A name="0235">0235<td>飛去來器<td>武器<td>26<td>全<td>120<td>武器<td>敵單<td>50物理傷害</tr>
+<tr><td><A name="0236">0236<td>流雲針<td>武器<td>35<td>全<td>200<td>武器<td>敵單<td>100物理傷害</tr>
+<tr><td><A name="0237">0237<td>輪刃<td>武器<td>40<td>全<td>280<td>武器<td>敵單<td>180物理傷害</tr>
+<tr><td><A name="0238">0238<td>翔羽葉<td>武器<td>45<td>全<td>350<td>武器<td>敵單<td>250物理傷害</tr>
+<tr><td><A name="0239">0239<td>旋流刺<td>武器<td>50<td>全<td>450<td>武器<td>敵單<td>350物理傷害</tr>
+<tr><td><A name="023A">023A<td>飛蝗石<td>武器<td>52<td>全<td>600<td>武器<td>敵單<td>450物理傷害</tr>
+<tr><td><A name="023E">023E<td>柳葉飛刀<td>武器<td>53<td>全<td>700<td>武器<td>敵單<td>550物理傷害</tr>
+<tr><td><A name="023C">023C<td>飛爪<td>武器<td>55<td>全<td>850<td>武器<td>敵單<td>700物理傷害</tr>
+<tr><td><A name="023B">023B<td>日月乾坤圈<td>武器<td>60<td>全<td>1000<td>武器<td>敵單<td>850物理傷害</tr>
+<tr><td><A name="0240">0240<td>五雷神機<td>奇物<td>70<td>全<td><td>武器<td>敵單<td>1000物理傷害</tr>
+<tr><td><A name="0040">0040<td>藍魔神<td>特殊<td>49<td>全<td><td>體力120<td>敵全<td>100冰系傷害</tr>
+<tr><td><A name="003F">003F<td>姆斯比爾<td>特殊<td>50<td>全<td><td>體力100<td>敵全<td>300火系傷害</tr>
+<tr><td><A name="0046">0046<td>蜃樓王<td>特殊<td>50<td>全<td><td>體力150<td>敵單<td>500電系傷害</tr>
+<tr><td><A name="0325">0325<td>紅珊瑚娃娃<td>奇物<td><td>全<td><td>體力150<td>敵全<td>2500風系傷害</tr>
+<tr><td><A name="02FA">02FA<td>大米娃娃<td>奇物<td><td>全<td><td>體力150<td>敵單<td>3000毒系傷害</tr>
+<tr><td><A name="0342">0342<td>軒轅劍<td>奇物<td><td>賽特<td><td>體力400<td>敵全<td>3000光系傷害</tr>
+<tr><td><A name="0322">0322<td>貓王娃娃<td>奇物<td><td>全<td><td>體力150<td>敵單<td>4000物理傷害</tr>
+<tr><td><A name="0321">0321<td>樂樂娃娃<td>奇物<td><td>全<td><td>體力200<td>敵單<td>5000物理傷害</tr>
+<tr><td><A name="0023">0023<td>軒轅劍僮<td>奇物<td><td>全<td><td>體力600<td>敵單<td>8000光系傷害</tr>
+<tr><td><A name="0343">0343<td>DOMO神打功<td>奇物<td><td>全<td><td>靈力1<td>敵單<td>9999特殊傷害</tr>
+</TABLE>
 
-2.身體
+<p>
+<A name="armor">
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">頭盔列表</FONT></B>
+</TR>
 
-名稱      使用者 攻   防 敏  特別功能
-------------------------------------------------
-棉布衣      全    0    3  0
-胸甲        男    0    6  1
-甲冑        全    0   10  0
-虎皮衣      女    0   13  0
-鎖子甲      男    0   15  0
-片葉鎧      男    5   16  2
-護心鏡      全    1   16  4
-鎖鎧        男    0   18 -2
-蛇鱗衣      女    1   18  0
-聖皇之鎧    賽    0   20  2
-思潮之袍    男    2   35  0
-神秘斗篷    女    0   35  2  體+20
-烏蠶衣      全    0   55  2
-銀絲戰袍    全    3   68  0
-天蠶絲衣    女    0   85  3
-紫堂殼      李    3   88  5
-精鐵蠻甲    男    0   90 -6
-蒼蟒錦衣    男   -2  100  3
-龍鬚衣      李    0  110  0
-星狼雲鎧    塞    5  128  0
-冥妖戰甲    塞    0  130  2  暗40
-天仙神衣    卡    0  134  0  暗20光20
-九龍雲生冑  李    8  140 -3  光60
-貂皮衣      全    0   10  0  冰80
-蛟鱗衣      女    0   22  0  火20
-血殷長袍    妮    5   60 -2  暗100光-100
-泥蚣袍      男    2   72 -3  電60其他20
-光紗天衣    卡    4   96 -2  光40暗-20
-竹葉符衣    妮    0   98  2  暗40光-20靈-20
-鳳凰羽衣    女    5  108  0  火40冰-40
-玄雪絲衣    女    0  113  3  冰40火-40
-癒傷之鎧    男    0   42  0  回復5%命
-啻浪奇甲    塞    0   80  0  回復2%靈
-天珠武鎧    李    0   85 -2  回復2%命靈體
-毛獸大衣    全    0  100 -5  回復3%命
-白狐披風    妮    0  118  0  回復8%靈
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>防禦<TH nowrap>攻擊<TH nowrap>敏捷<TH nowrap>附加效果</TR>
 
-3.手部
+<tr><td><A name="03FB">03FB<td>頭巾<td>防具<td>9<td>全<td>10<td>+1<td><td><td></tr>
+<tr><td><A name="03FC">03FC<td>布帽<td>防具<td>11<td>全<td>20<td>+2<td><td><td></tr>
+<tr><td><A name="037A">037A<td>皮帽<td>防具<td>13<td>全<td>40<td>+3<td><td><td></tr>
+<tr><td><A name="037B">037B<td>武盔<td>防具<td>15<td>賽特<td>80<td>+5<td><td><td></tr>
+<tr><td><A name="03FD">03FD<td>銀髮結<td>防具<td>17<td>女性<td>60<td>+5<td><td><td></tr>
+<tr><td><A name="037C">037C<td>輕鋼盔<td>防具<td>19<td>賽特<td>150<td>+7<td><td>+2<td></tr>
+<tr><td><A name="03FE">03FE<td>安碧特麗之冠<td>防具<td>21<td>女性<td>300<td>+8<td>+2<td><td></tr>
+<tr><td><A name="0380">0380<td>聖皇盔<td>奇物<td><td>賽特<td><td>+8<td>+2<td>+1<td></tr>
+<tr><td><A name="037D">037D<td>羽盔<td>防具<td>23<td>賽特、妮可、卡瑪<td>200<td>+9<td><td><td></tr>
+<tr><td><A name="037E">037E<td>鷹矢盔<td>防具<td>25<td>男性<td>450<td>+17<td><td>-2<td></tr>
+<tr><td><A name="03FF">03FF<td>翠玉金釵<td>防具<td>27<td>女性<td>250<td>+18<td>-5<td>+1<td></tr>
+<tr><td><A name="0400">0400<td>藍夷髮帶<td>奇物<td>15<td>女性<td>350<td>+20<td>+5<td><td></tr>
+<tr><td><A name="0383">0383<td><font color=blue>金剛斗笠</font><td>防具<td>29<td>李靖<td>750<td>+23<td><td><td>暗抗+20%</tr>
+<tr><td><A name="0404">0404<td>鬼雲<td>奇物<td><td>全<td><td>+25<td><td>+4<td></tr>
+<tr><td><A name="037F">037F<td>海神盔<td>防具<td>29<td>賽特<td>800<td>+27<td>+3<td>+1<td></tr>
+<tr><td><A name="0403">0403<td>麒麟緞帶<td>防具<td>41<td>卡瑪<td>800<td>+28<td><td><td>光抗+20%，暗抗+20%</tr>
+<tr><td><A name="0407">0407<td><font color=red>千葉</font><td>奇物<td><td>女性<td>480<td>+28<td><td>+2<td>光抗+20%，暗抗+40%</tr>
+<tr><td><A name="0405">0405<td>法藏<td>奇物<td><td>女性<td>800<td>+32<td>+2<td>+4<td>光抗+20%</tr>
+<tr><td><A name="0401">0401<td>天蠶絲帶<td>防具<td>33<td>女性<td>760<td>+35<td><td><td>火、冰抗+20%</tr>
+<tr><td><A name="0386">0386<td>紫金冠<td>防具<td>39<td>李靖<td>1100<td>+35<td>+5<td>+2<td></tr>
+<tr><td><A name="0406">0406<td>鏡舞<td>奇物<td><td>妮可<td><td>+38<td><td><td></tr>
+<tr><td><A name="0381">0381<td>象綿盔<td>防具<td>35<td>賽特<td>1200<td>+40<td>+1<td>-1<td></tr>
+<tr><td><A name="0384">0384<td><font color=red>龍鱗盔</font><td>防具<td>37<td>男性<td>1800<td>+50<td><td><td>每回合回復2%生命</tr>
+<tr><td><A name="0388">0388<td>金霞盔<td>奇物<td><td>男性<td>2780<td>+66<td>+2<td>+2<td></tr>
+<tr><td><A name="0389">0389<td><font color=red>聖獸玲瓏冠</font><td>奇物<td><td>李靖<td><td>+70<td>+2<td><td>火、冰、風、土抗+20%</tr>
+<tr><td><A name="0382">0382<td>龍族盔<td>奇物<td>43<td>賽特<td><td>+75<td><td>-2<td>靈力+100</tr>
 
-名稱      使用者 攻   防 敏  特別功能
-------------------------------------------------
-手鐲        女    0    1  0
-玉鐲        女    0    2  0
-皮手套      全    0    2  0
-修羅膀腕    全   12    2  3  命-30體+30
-鐵鎖手套    男    0    4  0
-鐵手套      男    0    5 -2
-白金之腕    女    1    5  0
-鋼手套      男    0    6  0
-景衣法鐲    女    0    8  0
-聖皇手套    塞    0    8  2
-紅雀鐲      女    2   11  2
-掃羅手套    男    0   12  0  命+10
-加卡達鐲    全    0   14  0  命+100
-烏蠶手套    全    0   16  1
-龍鱗手套    男    0   20  0
-千佛鐲      卡    8   23  0  靈+20
-碧英之腕    妮    5   28 -2
-地痞手套    男   10   28  8
-青電臂      全   -2   33  6
-狂獅戰腕    李    2   35  0
-靈蛇手套    全   -3   40  2
-般若裟腕    卡    0   10  0  光40
-雨雲之腕    女    0   11  0  火20
-冰晶腕      全    6   38 -3  火20
-仙風膀      李    0   46  0  暗40
-子雷手套    全   10   48  0  電60靈-100
-藍堂光套    賽    0   53  0  光40暗-20
-縛閻指套    李    0   58 -4  暗40光-20
-蓮腕釧      卡    0   23  2  回復2%靈
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">手套列表</FONT></B>
+</TR>
 
-4.足部
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>防禦<TH nowrap>攻擊<TH nowrap>敏捷<TH nowrap>附加效果</TR>
 
-名稱      使用者 攻   防 敏  特別功能
-------------------------------------------------
-藤鞋        全    0    1  2
-皮靴        全    0    2  3
-鷹爪靴      全    2    6  3
-鱗靴        女    0    4  4
-鋼靴        全    0    4  4
-綑鍊鞋      全    0   18  4  體-100
-虎爪鞋      男    3   10  5
-聖皇靴      塞    0    7  6
-冰雕鞋      女    0   12  6
-武裝鞋      男    2   12  6
-繡花葉鞋    妮    0   13  6  命+200體+200
-雅典之靴    妮   15   18 10
-神駝靴      男    0   20 10
-菟縱鞋      全    0    6 10
-流光鞋      卡    0   20 11
-踏風草鞋    全    0    2 16
-帶火風輪    李   -3   28 18
-閰氣靴      妮    0    8  6  暗40
-五行鞋      男    0    5  7  火冰風土電20
-蛇皮短靴    女    0   10  7  火20冰20
-七星法靴    男    0   15  8  暗20
-鈦銧奇鞋    塞    3   20 16  暗20光-20
-歌神之靴    男    5   10  3  回復2%命靈體
-鳳羽靴      女    0    8  8  回復2%命
+<tr><td><A name="0412">0412<td>手鐲<td>防具<td>13<td>女性<td>20<td>+1<td><td><td></tr>
+<tr><td><A name="0413">0413<td>玉鐲<td>防具<td>15<td>女性<td>50<td>+2<td><td><td></tr>
+<tr><td><A name="0368">0368<td>皮手套<td>防具<td>17<td>全<td>30<td>+2<td><td><td></tr>
+<tr><td><A name="041C">041C<td>修羅膀腕<td>防具<td>53<td>全<td>1600<td>+2<td>+12<td>+3<td>生命-30，體力-30</tr>
+<tr><td><A name="0369">0369<td>鐵鎖手套<td>防具<td>19<td>男性<td>50<td>+4<td><td><td></tr>
+<tr><td><A name="036A">036A<td>鐵手套<td>防具<td>21<td>男性<td>70<td>+5<td><td>-2<td></tr>
+<tr><td><A name="0414">0414<td>白金之腕<td>防具<td>23<td>女性<td>100<td>+5<td>+1<td><td></tr>
+<tr><td><A name="036B">036B<td>鋼手套<td>防具<td>25<td>男性<td>100<td>+6<td><td><td></tr>
+<tr><td><A name="0416">0416<td>景衣法鐲<td>防具<td>27<td>女性<td>250<td>+8<td><td><td></tr>
+<tr><td><A name="036C">036C<td>聖皇手套<td>奇物<td><td>賽特<td>200<td>+8<td><td>+2<td>
+<tr><td><A name="0417">0417<td>般若裟腕<td>防具<td>29<td>卡瑪<td>350<td>+10<td><td><td>光抗+40%</tr>
+<tr><td><A name="0415">0415<td>雨雲之腕<td>防具<td>31<td>女性<td>450<td>+11<td><td><td>火抗+20%</tr>
+<tr><td><A name="0423">0423<td>紅雀鐲<td>防具<td>33<td>女性<td>480<td>+11<td>+2<td>+2<td></tr>
+<tr><td><A name="036E">036E<td>掃羅手套<td>防具<td>35<td>男性<td>300<td>+12<td><td><td>生命+10</tr>
+<tr><td><A name="0418">0418<td>加卡達鐲<td>防具<td>37<td>全<td>550<td><font color=red>+14</font><td><td><td>生命+100</tr>
+<tr><td><A name="0373">0373<td>烏蠶手套<td>防具<td>39<td>全<td>420<td>+16<td><td>+1<td></tr>
+<tr><td><A name="0375">0375<td>龍鱗手套<td>防具<td>43<td>男性<td>600<td>+20<td><td><td></tr>
+<tr><td><A name="041D">041D<td>千佛鐲<td>奇物<td><td>卡瑪<td><td>+23<td>+8<td><td>靈力+20</tr>
+<tr><td><A name="041B">041B<td><font color=red>蓮腕釧</font><td>防具<td>51<td>卡瑪<td>750<td>+23<td><td>+2<td>每回合回復2%靈力</tr>
+<tr><td><A name="041A">041A<td>碧英之腕<td>奇物<td><td>妮可<td>880<td><font color=red>+28</font><td>+5<td>-2<td></tr>
+<tr><td><A name="036F">036F<td>地痞手套<td>奇物<td><td>男性<td><td>+28<td>+10<td>+8<td></tr>
+<tr><td><A name="0371">0371<td>青電臂<td>奇物<td><td>全<td>1000<td>+33<td>-2<td>+6<td></tr>
+<tr><td><A name="0378">0378<td>狂獅戰腕<td>防具<td>43<td>李靖<td>850<td>+35<td>+2<td><td>暗抗+20%</tr>
+<tr><td><A name="0370">0370<td>冰晶腕<td>防具<td>49<td>全<td>1500<td>+38<td>+6<td>-3<td>火抗+20%</tr>
+<tr><td><A name="0374">0374<td>靈蛇手套<td>防具<td>41<td>全<td>1200<td>+40<td>-3<td>+2<td></tr>
+<tr><td><A name="0372">0372<td>仙風膀<td>奇物<td><td>李靖<td>1800<td>+46<td><td><td>暗抗+40%</tr>
+<tr><td><A name="0379">0379<td><font color=red>子雷手套</font><td>防具<td>50<td>全<td><td>+48<td>+10<td><td>電抗+60%，靈力-100</tr>
+<tr><td><A name="0377">0377<td>藍堂光套<td>奇物<td><td>賽特<td><td>+53<td><td><td>光抗+40%，暗抗-20%</tr>
+<tr><td><A name="0376">0376<td><font color=red>縛閻指套</font><td>防具<td>47<td>李靖<td><td>+58<td><td>-4<td>光抗-20%，暗抗+40%</tr>
 
-5.飾品
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">盔甲列表</FONT></B>
+</TR>
 
-名稱      使用者 攻   防 敏  特別功能
-------------------------------------------------
-銅戒指      全    0    2  0
-珍珠耳環    女    4   -4  2
-金項鍊      全    0    6 -2
-鐵戒指      全    2    2  0
-葦笛        全    8   -6  2
-金戒指      全    2    6 -2
-銀戒指      全    2    4  0
-珍珠戒指    女    0    6  0
-琥珀項鍊    全    8   -4  2
-綠玉耳環    女    0    4  2  靈+80
-珍珠項鍊    女    2    6  0
-瑪瑙戒指    全    6    0  2  靈+20
-銀笛        全    0    4  6
-紅寶石耳環  女    4    6  2  命+40靈+20體+30
-五鬼戒指    全    4    6  4
-白玉飛天珮  全   12    4  0
-龍睛法戒    男   16    6  4
-白玉龍紋珮  全   10   10  6
-象牙耳環    女    2    6 -4  風40土-20
-銀項鍊      全    0    4  0  光20
-玉戒指      全    0    4  0  暗20毒100
-角笛        全   -4    6  2  光20
-珊瑚耳環    女    2    4  0  冰20
-神草結      全    2    2  2  暗20毒20光20
-龍紋珮      全    4    8 -4  暗20
-辟邪戒指    全    2    6  0  暗20毒20光20
-太極護符    全    4   12 -6  暗20
-惡魔風笛    全   10    2  0  暗40毒20光-20
-象牙戒指    全    2    4  6  光20
-詛咒魔戒    全    6   20 -10 暗40光-40
-五彩石項鍊  女   10   10 -2  暗40毒40
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>防禦<TH nowrap>攻擊<TH nowrap>敏捷<TH nowrap>附加效果</TR>
 
+<tr><td><A name="03EB">03EB<td>棉布衣<td>防具<td>22<td>全<td>40<td>+3<td><td><td></tr>
+<tr><td><A name="0353">0353<td>胸甲<td>防具<td>12<td>男性<td>50<td>+6<td><td>+1<td></tr>
+<tr><td><A name="0357">0357<td>甲冑<td>防具<td>15<td>全<td>80<td>+10<td><td><td></tr>
+<tr><td><A name="03EC">03EC<td>貂皮衣<td>防具<td>24<td>全<td>100<td>+10<td><td><td>冰抗+80%</tr>
+<tr><td><A name="03ED">03ED<td>虎皮衣<td>防具<td>26<td>女性<td>150<td>+13<td><td><td></tr>
+<tr><td><A name="0354">0354<td>鎖子甲<td>防具<td>18<td>男性<td>120<td>+15<td><td><td></tr>
+<tr><td><A name="0358">0358<td>片葉鎧<td>防具<td>21<td>男性<td>350<td>+16<td>+5<td>+2<td></tr>
+<tr><td><A name="03F3">03F3<td>護心鏡<td>防具<td>28<td>全<td>330<td>+16<td>+1<td>+4<td></tr>
+<tr><td><A name="0356">0356<td>鎖鎧<td>防具<td>24<td>男性<td>200<td>+18<td><td>-2<td></tr>
+<tr><td><A name="03EE">03EE<td>蛇鱗衣<td>防具<td>30<td>女性<td>300<td>+18<td>+1<td><td></tr>
+<tr><td><A name="0355">0355<td>聖皇之鎧<td>奇物<td><td>賽特<td>250<td>+20<td><td>+2<td></tr>
+<tr><td><A name="03EF">03EF<td>蛟鱗衣<td>防具<td>32<td>女性<td>380<td>+22<td><td><td>火抗+20%</tr>
+<tr><td><A name="035C">035C<td>思潮之袍<td>防具<td>27<td>男性<td>380<td>+35<td>+2<td><td></tr>
+<tr><td><A name="03F6">03F6<td>神秘斗篷<td>防具<td>34<td>女性<td>500<td>+35<td><td>+2<td>體力+20</tr>
+<tr><td><A name="0359">0359<td><font color=blue>癒傷之鎧</font><td>防具<td>30<td>男性<td>680<td>+42<td><td><td>每回合回復5%生命</tr>
+<tr><td><A name="0360">0360<td>烏蠶衣<td>防具<td>33<td>全<td>700<td>+55<td><td>+2<td></tr>
+<tr><td><A name="03F8">03F8<td>血殷長袍<td>防具<td>36<td>妮可<td>1000<td>+60<td>+5<td>-2<td>光抗-100%，暗抗+100%</tr>
+<tr><td><A name="035F">035F<td>銀絲戰袍<td>防具<td>36<td>全<td>1000<td>+68<td>+3<td><td></tr>
+<tr><td><A name="0364">0364<td><font color=blue>泥蚣袍</font><td>奇物<td>45<td>男性<td>3000<td>+72<td>+2<td>-3<td>火、冰、風、土、毒、光、暗抗+20%，電抗+60%</tr>
+<tr><td><A name="035B">035B<td><font color=blue>啻浪奇甲</font><td>奇物<td>48<td>賽特<td>1500<td>+80<td><td><td>每回合回復2%靈力</tr>
+<tr><td><A name="03F0">03F0<td>天蠶絲衣<td>防具<td>38<td>女性<td>1600<td>+85<td><td>+3<td></tr>
+<tr><td><A name="035D">035D<td><font color=blue>天珠武鎧</font><td>奇物<td><td>李靖<td>3000<td>+85<td>+2<td>-2<td>每回合回復2%命靈體</tr>
+<tr><td><A name="035A">035A<td>紫堂殼<td>防具<td>54<td>男性<td><td>+88<td>+3<td>+5<td></tr>
+<tr><td><A name="0362">0362<td>精鐵蠻甲<td>防具<td>42<td>男性<td>1500<td>+90<td><td>-6<td></tr>
+<tr><td><A name="03F4">03F4<td>光紗天衣<td>防具<td>42<td>卡瑪<td>2600<td>+96<td>+4<td>-2<td>光抗+40%，暗抗-20%</tr>
+<tr><td><A name="03F5">03F5<td>竹葉符衣<td>防具<td>40<td>妮可<td>2500<td>+98<td><td>+2<td>光抗-20%，暗抗+40%，靈力-20</tr>
+<tr><td><A name="0363">0363<td>蒼蟒錦衣<td>防具<td>39<td>男性<td>2300<td>+100<td>-2<td>+3<td></tr>
+<tr><td><A name="03FA">03FA<td><font color=blue>毛獸大衣</font><td>奇物<td><td>全<td><td>+100<td><td>-5<td>每回合回復3%生命</tr>
+<tr><td><A name="03F2">03F2<td>鳳凰羽衣<td>奇物<td><td>女性<td>4000<td>+108<td>+5<td><td>火抗+40%，冰抗-40%</tr>
+<tr><td><A name="035E">035E<td>龍鬚衣<td>防具<td>51<td>李靖<td>2800<td>+110<td><td><td></tr>
+<tr><td><A name="03F1">03F1<td>玄雪絲衣<td>奇物<td><td>女性<td>3800<td>+113<td><td>+3<td>火抗-40%，冰抗+40%</tr>
+<tr><td><A name="03F7">03F7<td><font color=red>白狐披風</font><td>奇物<td><td>妮可<td><td>+118<td><td><td>每回合回復8%靈力</tr>
+<tr><td><A name="0366">0366<td>星狼雲鎧<td>奇物<td><td>賽特<td>3500<td>+128<td>+5<td><td></tr>
+<tr><td><A name="0365">0365<td><font color=red>冥妖戰甲</font><td>奇物<td><td>賽特<td><td>+130<td><td>+2<td>暗抗+40%</tr>
+<tr><td><A name="03F9">03F9<td><font color=red>天仙神衣</font><td>奇物<td><td>卡瑪<td><td>+134<td><td><td>光抗+20%，暗抗+20%</tr>
+<tr><td><A name="0367">0367<td><font color=red>九龍雲生冑</font><td>奇物<td><td>李靖<td><td>+140<td>+8<td>-3<td>光抗+60%</tr>
 
-*** 法寶列表
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">鞋子列表</FONT></B>
+</TR>
 
-1.薩登荊環：裝備者增加攻擊力，由10％成長到50％
-2.星君眼：同薩登荊環，但成長較快
-3.靈虛扇：裝備者可抵抗異常狀態，依五階段增加抵抗種類，第一階段抵抗中毒
-  與盲目，第二階段增加驚嚇與昏睡，第三階段增加麻痺與瘋狂，第四階段增加
-  凍定身與石化，第五階段增加退化
-4.吸魔壺：將敵人的法術傷害轉換成靈力，由1%成長到50%
-5.吸血鬼指環：裝備者攻擊敵人時造成的傷害值，可吸收為自己的生命力，吸取
-  點數由10％成長到100％
-6.神偷面具：戰鬥中可發動「偷竊」指令，偷取敵人身上物品，成功率由10％成
-  長到100％
-7.乾坤袋：同神偷面具，但成長較快
-8.武聖手鐲：戰鬥中可發動「連擊」指令，戰鬥中可連續攻擊敵人2次，但是會
-  降低攻擊力，由降低40%成長到不降低
-9.姜公膽：同武聖手鐲，但成長較快
-10.夜叉肩帶：戰鬥中可發動「回氣」指令，每次都可恢復一定靈力，回復值由
-  10％成長到100％
-11.暗殺寶錄：戰鬥中可發動「投擲」指令，可將物品投擲出去攻擊，傷害值以
-  投擲武器的攻擊力和法寶經驗值高低決定
-12.鼠槌：戰鬥中可發動「鼠槌」指令，五秒內給予敵人一定的物理攻擊，傷害
-  值取決於玩家的按鍵次數，每按一次的傷害值由1點成長到5點
-13.庖丁菜刀：戰鬥中可發動「分解」指令，可使單名敵人立即死亡（除頭目），
-  成功率由10％成長到80％
-14.硃砂神筆：戰鬥中可發動「煉符」指令，將敵人奇術抄錄至空白符紙，成功
-  機率由10%成長到80%（煉出的符紙使用後會變回空白符紙）
-15.硃砂辟魔玉：戰鬥中可發動「隱形」指令，由2回合速度降1%成長到6回合速
-  度降50%
-16.金鐘罩秘笈：戰鬥中可發動「護罩」指令，增加防禦70%，由2回合成長到6回合
-17.地炎玉：修煉完成可增加裝備者的火抗80％
-18.朱雀火羽：修煉完成可增加裝備者的火抗100％
-19.水靈珠：修煉完成可增加裝備者的冰抗60％
-20.青龍水珠：修煉完成可增加裝備者的冰抗100％
-21.白虎風牙：修煉完成可增加裝備者的風抗80％
-22.玄武土器：修煉完成可增加裝備者的土抗80％
-23.神光寶塔：修煉完成可增加裝備者的光抗80％
-24.暗黑魔樽：修煉完成可增加裝備者的暗抗80％
-25.雷公鎚：修煉完成可增加裝備者的電抗80％
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>防禦<TH nowrap>攻擊<TH nowrap>敏捷<TH nowrap>附加效果</TR>
 
+<tr><td><A name="0408">0408<td>藤鞋<td>防具<td>7<td>全<td>20<td>+1<td><td>+2<td></tr>
+<tr><td><A name="038A">038A<td>皮靴<td>防具<td>10<td>全<td>30<td>+2<td><td>+3<td></tr>
+<tr><td><A name="040A">040A<td>鷹爪靴<td>防具<td>22<td>全<td>150<td>+6<td>+2<td>+3<td></tr>
+<tr><td><A name="038E">038E<td><font color=blue>歌神之靴</font><td>奇物<td><td>男性<td><td>+10<td>+5<td>+3<td>每回合回復2%命靈體</tr>
+<tr><td><A name="038B">038B<td>鋼靴<td>防具<td>13<td>全<td>80<td>+4<td><td>+4<td></tr>
+<tr><td><A name="0409">0409<td>鱗靴<td>防具<td>16<td>女性<td>100<td>+4<td><td>+4<td></tr>
+<tr><td><A name="040E">040E<td>綑鍊鞋<td>防具<td>40<td>全<td>200<td>+18<td><td>+4<td>體力-100</tr>
+<tr><td><A name="0391">0391<td>虎爪鞋<td>防具<td>28<td>男性<td>180<td>+10<td>+3<td>+5<td></tr>
+<tr><td><A name="038C">038C<td>聖皇靴<td>奇物<td><td>賽特<td>200<td>+7<td><td>+6<td></tr>
+<tr><td><A name="0411">0411<td><font color=blue>閰氣靴</font><td>防具<td>25<td>妮可<td>220<td>+8<td><td>+6<td>暗抗+40%</tr>
+<tr><td><A name="040B">040B<td>冰雕鞋<td>防具<td>49<td>女性<td>500<td>+12<td><td>+6<td></tr>
+<tr><td><A name="038F">038F<td>武裝鞋<td>防具<td>34<td>男性<td>280<td>+12<td>+2<td>+6<td></tr>
+<tr><td><A name="040F">040F<td>繡花葉鞋<td>奇物<td><td>妮可<td><td>+13<td><td>+6<td>生命+200，體力+200</tr>
+<tr><td><A name="0398">0398<td><font color=blue>五行鞋</font><td>防具<td>55<td>男性<td>1350<td>+5<td><td>+7<td>火、冰、風、土、電抗+20%</tr>
+<tr><td><A name="040D">040D<td>蛇皮短靴<td>防具<td>31<td>女性<td>350<td>+10<td><td>+7<td>火抗+20%，冰抗+20%</tr>
+<tr><td><A name="040C">040C<td><font color=blue>鳳羽靴</font><td>防具<td>52<td>女性<td>700<td>+8<td><td>+8<td>每回合回復2%生命</tr>
+<tr><td><A name="0396">0396<td>七星法靴<td>防具<td>37<td>男性<td>500<td>+15<td><td>+8<td>暗抗+20%</tr>
+<tr><td><A name="0392">0392<td>菟縱鞋<td>防具<td>19<td>全<td>350<td>+6<td><td>+10<td></tr>
+<tr><td><A name="038D">038D<td><font color=red>雅典之靴</font><td>防具<td>60<td>妮可<td><td>+18<td>+15<td>+10<td></tr>
+<tr><td><A name="0390">0390<td>神駝靴<td>奇物<td><td>男性<td>800<td>+20<td><td>+10<td></tr>
+<tr><td><A name="0410">0410<td><font color=red>流光鞋</font><td>防具<td>53<td>卡瑪<td><td>+20<td><td>+11<td></tr>
+<tr><td><A name="0394">0394<td><font color=blue>踏風草鞋</font><td>防具<td>46<td>全<td>900<td>+2<td><td>+16<td></tr>
+<tr><td><A name="0397">0397<td><font color=red>鈦銧奇鞋</font><td>奇物<td><td>賽特<td><td>+20<td>+3<td>+16<td>光抗-20%，暗抗+20%</tr>
+<tr><td><A name="0393">0393<td><font color=red>帶火風輪</font><td>奇物<td>55<td>李靖<td><td>+28<td>-3<td>+18<td></tr>
 
-*** 煉符一覽表
+</TABLE>
 
-名稱          敵人        效果
-------------------------------------------------
-地龍鑽符      阿拔東      單人土傷20
-聚雷光符      阿加希歐    單人電傷30
-火球符        修道院院長  單人火傷35
-閻火符        吸血鬼王    單人暗傷65
-食魂符        康那里士    單人暗傷65
-纏絲氣符      妖貓        單人暗傷70
-海靈彈符      溫蒂妮      單人冰傷80
-凝冰符        藍魔神      單人冰傷100
-幻光聖劍符    瓦雀        單人光傷120
-天降雷火符    亞坦        單人電傷150
-滅靈光環符    瓊霜        單人光傷300
-降龍拳符      機關和尚    單人物傷300
-流雲幻光符    天宮仙女    單人光傷380
-除魔靈鼓符    女夷        單人光傷400
-殘月鎖漪符    女英        單人冰傷400
-移魂仙樂符    七仙女      單人光傷550
-冰雹符        半人馬      全體冰傷40
-狂浪襲符      牛頭魚      全體冰傷60
-六芒星符      康那里士    全體暗傷80
-霜漩流符      冰魔薇達    全體冰傷90
-靈魔幻音符    格倫特      全體暗傷300
-五雷咒符      黑壇教士    全體電傷300
-日輪烈焰符    娥皇        全體火傷320
-雷霆光鏵符    蜃樓王      全體電傷350
-仙靈冰封符    雪芙        全體冰傷400，麻痺3回合
-三昧陰火劫符  羯羊妖機    全體暗傷480
-風捲殘雲符    蠶女        全體風傷600
-凍霧符        雪球怪      單人麻痺3回合
-封靈滅法符    蜃樓王      單人封魔8回合
-</font>
-</pre>
+<p>
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">飾品列表</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>附加效果</TR>
+
+<tr><td><A name="03CB">03CB<td>銅戒指<td>飾品<td>12<td>全<td>10<td><td>+1<td><td>
+<tr><td><A name="03E7">03E7<td>珍珠耳環<td>飾品<td>32<td>女性<td>240<td>+2<td>-2<td>+1<td>
+<tr><td><A name="03E8">03E8<td>象牙耳環<td>飾品<td>42<td>女性<td>180<td>+1<td>+3<td>-2<td>風抗+40%，土抗-20%
+<tr><td><A name="03DC">03DC<td>金項鍊<td>飾品<td>24<td>全<td>80<td><td>+3<td>-1<td>
+<tr><td><A name="03CC">03CC<td>鐵戒指<td>飾品<td>14<td>全<td>20<td>+1<td>+1<td><td>
+<tr><td><A name="03DB">03DB<td>銀項鍊<td>飾品<td>18<td>全<td>50<td><td>+2<td><td>光抗+20%
+<tr><td><A name="03CF">03CF<td>玉戒指<td>飾品<td>28<td>全<td>80<td><td>+2<td><td>毒抗+100%，暗抗+20%，智慧+5
+<tr><td><A name="03D9">03D9<td>葦笛<td>奇物<td>30<td>全<td>450<td>+4<td>-3<td>+1<td>
+<tr><td><A name="03D8">03D8<td>角笛<td>飾品<td>20<td>全<td>120<td>-2<td>+3<td>+1<td>光抗+20%
+<tr><td><A name="03CE">03CE<td>金戒指<td>飾品<td>22<td>全<td>55<td>+1<td>+3<td>-1<td>
+<tr><td><A name="03CD">03CD<td>銀戒指<td>飾品<td>16<td>全<td>35<td>+1<td>+2<td><td>
+<tr><td><A name="03D0">03D0<td>珍珠戒指<td>飾品<td>34<td>女性<td>500<td><td>+3<td><td>
+<tr><td><A name="03E6">03E6<td>珊瑚耳環<td>飾品<td>30<td>女性<td>135<td>+1<td>+2<td><td>冰抗+20%
+<tr><td><A name="03DE">03DE<td>琥珀項鍊<td>飾品<td>46<td>全<td>150<td>+4<td>-2<td>+1<td>
+<tr><td><A name="03E9">03E9<td>綠玉耳環<td>飾品<td>48<td>女性<td>280<td><td>+2<td>+1<td>靈力+80
+<tr><td><A name="03E3">03E3<td>神草結<td>飾品<td>54<td>全<td>230<td>+1<td>+1<td>+1<td>毒、光、暗抗+20%
+<tr><td><A name="03DF">03DF<td>龍紋珮<td>飾品<td>58<td>全<td>300<td>+2<td>+4<td>-2<td>暗抗+20%
+<tr><td><A name="03DD">03DD<td>珍珠項鍊<td>飾品<td>36<td>女性<td>600<td>+1<td>+3<td><td>
+<tr><td><A name="03D3">03D3<td>辟邪戒指<td>飾品<td>52<td>全<td>200<td>+1<td>+3<td><td>毒、光、暗抗+20%
+<tr><td><A name="03D2">03D2<td>瑪瑙戒指<td>飾品<td>44<td>全<td>110<td>+3<td><td>+1<td>靈力+20
+<tr><td><A name="03E4">03E4<td>太極護符<td>飾品<td>60<td>全<td>300<td>+2<td>+6<td>-3<td>暗抗+20%
+<tr><td><A name="03D7">03D7<td>銀笛<td>飾品<td>26<td>全<td>100<td><td>+2<td>+3<td>
+<tr><td><A name="03DA">03DA<td><font color=blue>惡魔風笛</font><td>飾品<td>40<td>全<td>280<td>+5<td>+1<td><td>毒抗+20%，光抗-20%，暗抗+40%
+<tr><td><A name="03EA">03EA<td>紅寶石耳環<td>奇物<td><td>女性<td>500<td>+2<td>+3<td>+1<td>生命+40，靈力+20，體力+30
+<tr><td><A name="03D1">03D1<td><font color=blue>象牙戒指</font><td>飾品<td>38<td>全<td>140<td>+1<td>+2<td>+3<td>光抗+20%
+<tr><td><A name="03D4">03D4<td>五鬼戒指<td>飾品<td>50<td>全<td>250<td>+2<td>+3<td>+2<td>
+<tr><td><A name="03D6">03D6<td>詛咒魔戒<td>奇物<td><td>全<td>800<td>+3<td>+10<td>-5<td>光抗-40%，暗抗+40%
+<tr><td><A name="03E0">03E0<td>白玉飛天珮<td>飾品<td>56<td>全<td>400<td>+6<td>+2<td><td>
+<tr><td><A name="03D5">03D5<td><font color=red>龍睛法戒</font><td>奇物<td><td>男性<td>400<td>+8<td>+3<td>+2<td>
+<tr><td><A name="03E1">03E1<td><font color=red>白玉龍紋珮</font><td>奇物<td><td>全<td>600<td>+5<td>+5<td>+3<td>
+<tr><td><A name="03E2">03E2<td><font color=red>五彩石項鍊</font><td>奇物<td><td>女性<td><td>+10<td>+10<td>-2<td>毒抗+40%，暗抗+40%
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可裝備人員<TH nowrap>價格<TH nowrap>攻擊<TH nowrap>防禦<TH nowrap>敏捷<TH nowrap>附加效果</TR>
+
+</TABLE>
+
+<p>
+<A name="use">
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">法寶列表</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>可裝備人員<TH nowrap>成長經驗<TH nowrap>指令<TH nowrap>消耗體力<TH nowrap>效果</TR>
+
+<tr><td><A name="03A3">03A3<td><font color=red>薩登荊環</font><td>法寶<td>全<td>1200<td><td><td>裝備者增加攻擊力，由10%成長到50%
+<tr><td><A name="03AB">03AB<td><font color=red>星君眼</font><td>法寶<td>全<td>1300<td><td><td>裝備者增加攻擊力，由10%成長到50%
+<tr><td><A name="03A6">03A6<td><font color=red>吸血鬼指環</font><td>法寶<td>全<td>1800<td><td><td>裝備者攻擊敵人時造成的傷害值，可吸收成為自己的生命力，吸取點數由10%成長到100%
+<tr><td><A name="03BA">03BA<td><font color=red>吸魔壺</font><td>法寶<td>全<td>5000<td><td><td>將敵人的法術傷害轉換成靈力，由1%成長到50%
+<tr><td>03A2<td><font color=red>靈虛扇</font><td>法寶<td>全<td>3000<td><td><td><A name="03A2">裝備者可抵抗異常狀態，依五階段增加抵抗種類：<br>　第一階段抵抗中毒與盲目，第二階段增加驚嚇與昏睡<br>　第三階段增加麻痺與瘋狂，第四階段增加定身與石化，第五階段增加退化
+<tr><td><A name="03A5">03A5<td>硃砂神筆<td>法寶<td>全<td>1500<td>煉符<td>20<td>將敵人奇術抄錄至空白符紙，成功機率由10%成長到80% (煉出的符紙使用後會變回空白符紙)
+<tr><td><A name="03A4">03A4<td>武聖手鐲<td>法寶<td>全<td>1000<td>連擊<td>10<td>戰鬥中可連續攻擊敵人2次，但是會降低攻擊力，由降低40%成長到不降低
+<tr><td><A name="03A9">03A9<td><font color=red>神偷面具</font><td>法寶<td>全<td>3500<td>偷竊<td>15<td>偷取敵人身上物品，成功率由10%成長到100%
+<tr><td><A name="03AF">03AF<td>乾坤袋<td>法寶<td>全<td>1500<td>偷竊<td>30<td>偷取敵人身上物品，成功率由10%成長到100%
+<tr><td><A name="03B6">03B6<td>暗殺寶錄<td>法寶<td>全<td>3800<td>投擲<td>40<td>可將物品投擲出去攻擊，傷害值以投擲武器的攻擊力和法寶經驗值高低決定
+<tr><td><A name="03BD">03BD<td>御夫錄<td>法寶<td>全<td>2800<td>投擲<td>50<td>可將物品投擲出去攻擊，傷害值以投擲武器的攻擊力和法寶經驗值高低決定
+<tr><td><A name="03B9">03B9<td>庖丁菜刀<td>法寶<td>全<td>3500<td>分解<td>120<td>可使單名敵人立即死亡（魔王除外），成功率由10%成長到80%
+<tr><td><A name="03AA">03AA<td>鼠槌<td>法寶<td>全<td>1000<td>鼠槌<td>50<td>五秒內給予敵人傷害，傷害值取決於玩家的按鍵次數，每按一次的傷害值由1點成長到5點
+<tr><td><A name="03AC">03AC<td>姜公膽<td>法寶<td>全<td>800<td>連擊<td>20<td>戰鬥中可連續攻擊敵人2次，但是會降低攻擊力，由降低40%成長到不降低
+<tr><td><A name="03AD">03AD<td><font color=blue>夜叉肩帶</font><td>法寶<td>全<td>1200<td>回氣<td><td>回復一定數量的靈力，回復值由10%成長到100%
+<tr><td><A name="03B7">03B7<td nowrap>硃砂辟魔玉<td>法寶<td>全<td>1500<td>隱形<td>80<td>由2回合速度降1%成長到6回合速度降50%
+<tr><td><A name="03B8">03B8<td>金鐘罩秘笈<td>法寶<td>全<td>1200<td>護罩<td>50<td>增加防禦70%，由2回合成長到6回合
+<tr><td><A name="03A1">03A1<td>地炎玉<td>法寶<td>全<td>900<td><td><td>修煉完成可增加裝備者的火抗60%
+<tr><td><A name="03A7">03A7<td>朱雀火羽<td>法寶<td>全<td>900<td><td><td>修煉完成可增加裝備者的火抗100%
+<tr><td><A name="03A8">03A8<td>水靈珠<td>法寶<td>全<td>900<td><td><td>修煉完成可增加裝備者的冰抗60%
+<tr><td><A name="03B0">03B0<td>青龍水珠<td>法寶<td>全<td>1200<td><td><td>修煉完成可增加裝備者的冰抗100%
+<tr><td><A name="03B1">03B1<td>白虎風牙<td>法寶<td>全<td>1000<td><td><td>修煉完成可增加裝備者的風抗80%
+<tr><td><A name="03B2">03B2<td>玄武土器<td>法寶<td>全<td>1000<td><td><td>修煉完成可增加裝備者的土抗80%
+<tr><td><A name="03B4">03B4<td>神光寶塔<td>法寶<td>全<td>1000<td><td><td>修煉完成可增加裝備者的光抗80%
+<tr><td><A name="03B5">03B5<td><font color=blue>暗黑魔樽</font><td>法寶<td>全<td>1000<td><td><td>修煉完成可增加裝備者的暗抗80%
+<tr><td><A name="03B3">03B3<td><font color=blue>雷公鎚</font><td>法寶<td>全<td>1000<td><td><td>修煉完成可增加裝備者的電抗80%
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>可裝備人員<TH nowrap>成長經驗<TH nowrap>指令<TH nowrap>消耗體力<TH nowrap>效果</TR>
+
+</TABLE>
+
+<p>
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">煉符列表</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>允用人員<TH nowrap>來源怪物<TH nowrap>對象<TH nowrap>傷害力<TH nowrap>附加效果</TR>
+
+<tr><td><A name="044E">044E<td>火球符<td>全<td><td>敵單<td>35火系傷害<td></tr>
+<tr><td><A name="044F">044F<td>魔炎符<td>全<td><td>敵單<td>80火系傷害<td></tr>
+<tr><td><A name="0468">0468<td>日輪烈焰符<td>全<td><A href="monster.htm#009E">娥皇</A>、<A href="monster.htm#0095">九天玄女</A><td>敵全<td>320火系傷害<td></tr>
+<tr><td><A name="0456">0456<td>海靈彈符<td>全<td><A href="monster.htm#008F">溫蒂妮</A><td>敵單<td>80冰系傷害<td></tr>
+<tr><td><A name="0458">0458<td>凝冰符<td>全<td><A href="monster.htm#000D">藍魔神</A><td>敵單<td>100冰系傷害<td></tr>
+<tr><td><A name="0450">0450<td>冰雹符<td>全<td><A href="monster.htm#0086">半人馬</A><td>敵全<td>40冰系傷害<td></tr>
+<tr><td><A name="0454">0454<td>狂浪襲符<td>全<td><A href="monster.htm#008D">牛頭魚</A><td>敵全<td>60冰系傷害<td></tr>
+<tr><td><A name="0459">0459<td>霜漩流符<td>全<td><A href="monster.htm#003C">冰魔薇達</A><td>敵全<td>90冰系傷害<td></tr>
+<tr><td><A name="0469">0469<td>殘月鎖漪符<td>全<td><A href="monster.htm#009F">女英</A><td>敵全<td>400冰系傷害<td></tr>
+<tr><td><A name="0465">0465<td>仙靈冰封符<td>全<td><A href="monster.htm#00FD">雪芙</A><td>敵全<td>400冰系傷害<td>麻痺3回合</tr>
+<tr><td><A name="0464">0464<td>風捲殘雲符<td>全<td><A href="monster.htm#009B">蠶女</A><td>敵全<td>600風系傷害<td></tr>
+<tr><td><A name="0460">0460<td>地龍鑽符<td>全<td><A href="monster.htm#00AD">阿拔東</A><td>敵單<td>20土系傷害<td></tr>
+<tr><td><A name="045A">045A<td>幻光聖劍符<td>全<td><A href="monster.htm#0099">瓦雀</A><td>敵單<td>120光系傷害<td></tr>
+<tr><td><A name="045C">045C<td>滅靈光環符<td>全<td><A href="monster.htm#0097">瓊霜</A><td>敵單<td>300光系傷害<td></tr>
+<tr><td><A name="046A">046A<td>流雲幻光符<td>全<td><A href="monster.htm#0119">天宮仙女</A><td>敵單<td>380光系傷害<td></tr>
+<tr><td><A name="0467">0467<td>除魔靈鼓符<td>全<td><A href="monster.htm#009C">女夷</A><td>敵單<td>400光系傷害<td></tr>
+<tr><td><A name="0466">0466<td>移魂仙樂符<td>全<td><A href="monster.htm#0094">七仙女</A>、<A href="monster.htm#0095">九天玄女</A><td>敵單<td>550光系傷害<td></tr>
+<tr><td><A name="0452">0452<td>閻火符<td>全<td><A href="monster.htm#007D">吸血鬼王</A><td>敵單<td>65暗系傷害<td></tr>
+<tr><td><A name="0455">0455<td>纏絲氣符<td>全<td><A href="monster.htm#008C">妖貓</A>、<A href="monster.htm#00A3">朱蛤獸</A><td>敵單<td>70<font color=red>暗系傷害</font><td></tr>
+<tr><td><A name="0451">0451<td>六芒星符<td>全<td><A href="monster.htm#0007">康那里士</A><td>敵單<td>80暗系傷害<td></tr>
+<tr><td><A name="045D">045D<td>靈魔幻音符<td>全<td><A href="monster.htm#00B4">格特輪</A><td>敵全<td>300暗系傷害<td></tr>
+<tr><td><A name="0463">0463<td>三昧陰火劫符<td>全<td><A href="monster.htm#0033">羯羊妖機</A><td>敵全<td>480<font color=red>暗系傷害</font><td></tr>
+<tr><td><A name="044D">044D<td>聚雷光符<td>全<td><A href="monster.htm#0081">阿加希歐</A><td>敵單<td>30電系傷害<td></tr>
+<tr><td><A name="045B">045B<td>天降雷火符<td>全<td><A href="monster.htm#00A1">亞坦</A><td>敵單<td>150電系傷害<td></tr>
+<tr><td><A name="0462">0462<td>五雷咒符<td>全<td><A href="monster.htm#017C">教眾長老</A><td>敵全<td>300電系傷害<td></tr>
+<tr><td><A name="045E">045E<td>雷霆光鏵符<td>全<td><A href="monster.htm#0010">蜃樓王</A><td>敵全<td>350電系傷害<td></tr>
+<tr><td><A name="0461">0461<td>降龍拳符<td>全<td><A href="monster.htm#0039">機關和尚</A><td>敵單<td>300物理傷害<td></tr>
+<tr><td><A name="0453">0453<td>食魂符<td>全<td><A href="monster.htm#00A2">蝠妖</A><td>敵單<td><td>驚嚇5回合</tr>
+<tr><td><A name="0457">0457<td>凍霧符<td>全<td><A href="monster.htm#008E">雪球怪</A><td>敵單<td><td>麻痺3回合</tr>
+<tr><td><A name="045F">045F<td>封靈滅法符<td>全<td><A href="monster.htm#009E">娥皇</A><td>敵單<td><td>封魔8回合</tr>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>允用人員<TH nowrap>來源怪物<TH nowrap>對象<TH nowrap>傷害力<TH nowrap>附加效果</TR>
+
+</TABLE>
+
+<p>
+<A name="med">
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">恢復道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可使用人員<TH nowrap>價格<TH nowrap>對象<TH nowrap>效果</TR>
+
+<tr><td><A name="026D">026D<td>藥草<td>靈藥<td>14<td>賽特、卡瑪、李靖<td>20<td>己單<td>生命+50
+<tr><td><A name="026E">026E<td>結纍葡萄<td>靈藥<td>16<td>全<td>50<td>己單<td>生命+100
+<tr><td><A name="0271">0271<td>回復劑<td>靈藥<td>17<td>全<td>100<td>己單<td>生命+200
+<tr><td><A name="0273">0273<td>魔貝粉<td>靈藥<td>24<td>全<td>250<td>己單<td>生命+300
+<tr><td><A name="0274">0274<td>金創藥<td>靈藥<td>44<td>全<td>500<td>己單<td>生命+1000
+<tr><td><A name="0277">0277<td>鹿茸膏<td>靈藥<td>48<td>全<td>800<td>己單<td>生命+3000
+<tr><td><A name="0324">0324<td>真夢娃娃<td>奇物<td><td>全（消耗體力300）<td><td>己全<td>生命+4000，防禦上升30%5回合
+<tr><td><A name="026F">026F<td>聖石榴<td>靈藥<td>37<td>全<td>300<td>己單<td>生命+30%
+<tr><td><A name="027A">027A<td>千年蔘心丹<td>奇物<td>29<td>全<td>1300<td>己單<td>生命+100%
+<tr><td><A name="0279">0279<td>千年何首烏<td>奇物<td>28<td>全<td>1800<td>己全<td>生命+50%
+<tr><td><A name="0278">0278<td>蟠桃<td>奇物<td>34<td>全<td>3000<td>己全<td>生命+100%
+<tr><td><A name="027C">027C<td>魔法葉<td>靈藥<td>18<td>全<td>50<td>己單<td>靈力+50
+<tr><td><A name="027E">027E<td>魔力水<td>靈藥<td>39<td>全<td>250<td>己單<td>靈力+150
+<tr><td><A name="027F">027F<td>還靈丹<td>靈藥<td>46<td>全<td>500<td>己單<td>靈力+350
+<tr><td><A name="0280">0280<td>靈神天藥<td>奇物<td>25<td>全<td>800<td>己單<td>靈力+600
+<tr><td><A name="027D">027D<td>魔晶粉<td>靈藥<td>25<td>全<td>150<td>己全<td>靈力+60
+<tr><td><A name="0283">0283<td>天山雪蓮<td>奇物<td>31<td>全<td>2000<td>己單<td>靈力+100%
+<tr><td><A name="0281">0281<td>仙爐灰<td>奇物<td>30<td>全<td>1500<td>己全<td>靈力+50%
+<tr><td><A name="0282">0282<td>仙魄香<td>奇物<td>32<td>全<td>3000<td>己全<td>靈力+100%
+<tr><td><A name="0270">0270<td>無酵餅<td>靈藥<td>15<td>全<td>30<td>己單<td>體力+60
+<tr><td><A name="0272">0272<td>十果粉<td>靈藥<td>23<td>全<td>80<td>己單<td>體力+120
+<tr><td><A name="028A">028A<td>柴胡乾葛草<td>靈藥<td>47<td>全<td>200<td>己單<td>體力+300
+<tr><td><A name="028C">028C<td>五色石南葉<td>奇物<td>18<td>全<td>450<td>己單<td>體力+800
+<tr><td><A name="027B">027B<td>麒麟竭<td>奇物<td>33<td>全<td>1200<td>己單<td>體力+100%
+<tr><td><A name="0275">0275<td>精華藥水<td>靈藥<td>38<td>全<td>200<td>己單<td>生命+100，體力+50
+<tr><td><A name="0276">0276<td>嘉果<td>靈藥<td>45<td>全<td>400<td>己單<td>生命+50%，體力+50%
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<A name="add"><B><FONT COLOR="#FF0000">增加能力道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可使用人員<TH nowrap>價格<TH nowrap>對象<TH nowrap>效果</TR>
+
+<tr><td><A name="029D">029D<td>耶穌聖血<td>奇物<td>59<td>全<td>200<td>己單<td>生命上限+10</tr>
+<tr><td><A name="02A0">02A0<td>神奇麵包<td>奇物<td>45<td>全<td>500<td>己單<td>生命上限+30</tr>
+<tr><td><A name="02AF">02AF<td>三葉雪桑果<td>奇物<td>99<td>全<td>1200<td>己單<td>生命上限+100</tr>
+<tr><td><A name="02A2">02A2<td>妖精麥粉<td>奇物<td>44<td>全<td>400<td>己單<td>靈力上限+20</tr>
+<tr><td><A name="02AC">02AC<td>黃金蘋果<td>奇物<td>49<td>全<td>1000<td>己單<td>靈力上限+50</tr>
+<tr><td><A name="02B2">02B2<td><font color=blue>舍利子</font><td>奇物<td>99<td>全<td>1200<td>己單<td>靈力上限+100</tr>
+<tr><td><A name="02A1">02A1<td>蜜乳樹汁<td>奇物<td>48<td>全<td>400<td>己單<td>體力上限+20</tr>
+<tr><td><A name="029F">029F<td>豐饒之角<td>奇物<td>51<td>全<td>800<td>己單<td>體力上限+50</tr>
+<tr><td><A name="02B1">02B1<td>活靈芝<td>奇物<td>99<td>全<td>1200<td>己單<td>體力上限+100</tr>
+<tr><td><A name="02B3">02B3<td>活骨靈藥<td>奇物<td>99<td>全<td>1800<td>己單<td>命、靈、體上限+30</tr>
+<tr><td><A name="02B7">02B7<td><font color=blue>七合龍爪花</font><td>奇物<td>99<td>全<td>3000<td>己單<td>命、靈、體上限+100</tr>
+<tr><td><A name="02AB">02AB<td>人馬獸之血<td>奇物<td>63<td>全<td>800<td>己單<td>力量上限+5</tr>
+<tr><td><A name="029E">029E<td>香柏葉<td>奇物<td>47<td>全<td>1500<td>己單<td>力量上限+10</tr>
+<tr><td><A name="02B0">02B0<td>蜂王露<td>奇物<td>99<td>全<td>1500<td>己單<td>力量上限+10</tr>
+<tr><td><A name="02A9">02A9<td>不老之泉水<td>奇物<td>61<td>全<td>1000<td>己單<td>耐力上限+5</tr>
+<tr><td><A name="02A4">02A4<td>歌唱的胡桃<td>奇物<td>46<td>全<td>2000<td>己單<td>耐力上限+10</tr>
+<tr><td><A name="02B4">02B4<td>神木之精<td>奇物<td>99<td>全<td>1500<td>己單<td>耐力上限+10</tr>
+<tr><td><A name="02AE">02AE<td>里納種子<td>奇物<td>41<td>全<td>500<td>己單<td>敏捷上限+1</tr>
+<tr><td><A name="02A3">02A3<td>巴丹杏仁<td>奇物<td>40<td>全<td>800<td>己單<td>敏捷上限+2</tr>
+<tr><td><A name="02A6">02A6<td>魔法精羽<td>奇物<td>57<td>全<td>1000<td>己單<td>敏捷上限+3</tr>
+<tr><td><A name="02A7">02A7<td>飛翔魔油<td>奇物<td>45<td>全<td>1800<td>己單<td>敏捷上限+5</tr>
+<tr><td><A name="02A5">02A5<td>瑰麗之梨<td>奇物<td>43<td>全<td>800<td>己單<td>智慧上限+5</tr>
+<tr><td><A name="02AD">02AD<td>密茹之水<td>奇物<td>55<td>全<td>1500<td>己單<td>智慧上限+10</tr>
+<tr><td><A name="02B5">02B5<td>玉山佛甲草<td>奇物<td>99<td>全<td>1200<td>己單<td>智慧上限+10</tr>
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">解除狀態道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可使用人員<TH nowrap>價格<TH nowrap>對象<TH nowrap>效果</TR>
+
+<tr><td><A name="0284">0284<td>還魄丹<td>奇物<td>15<td>全<td>120<td>己單<td>解除瀕死，生命+200</tr>
+<tr><td><A name="0285">0285<td>輪迴盤<td>符器<td>28<td>全<td>800<td>己單<td>解除瀕死，生命+60%</tr>
+<tr><td><A name="0286">0286<td>仙蓮子<td>奇物<td>48<td>全<td>1500<td>己單<td>解除瀕死，命靈體+100%</tr>
+<tr><td><A name="0287">0287<td>解毒草<td>靈藥<td>19<td>全<td>35<td>己單<td>解除中毒</tr>
+<tr><td><A name="028D">028D<td>還神果<td>靈藥<td>21<td>全<td>50<td>己單<td>解除昏睡</tr>
+<tr><td><A name="028E">028E<td>茴香水<td>靈藥<td>28<td>全<td>200<td>己全<td>解除昏睡</tr>
+<tr><td><A name="0293">0293<td>明目水<td>靈藥<td>29<td>全<td>60<td>己單<td>解除盲目</tr>
+<tr><td><A name="0294">0294<td>決明子散<td>奇物<td>16<td>全<td>250<td>己全<td>解除盲目</tr>
+<tr><td><A name="0288">0288<td>解病萬靈丹<td>靈藥<td>26<td>全<td>120<td>己單<td>解除中毒、麻痺、昏睡、<font color=red>盲目</font></tr>
+<tr><td><A name="028F">028F<td>定心丸<td>靈藥<td>22<td>全<td>70<td>己單<td>解除驚嚇、瘋狂</tr>
+<tr><td><A name="0290">0290<td>安神定志丸<td>奇物<td>17<td>全<td>300<td>己全<td>解除驚嚇、瘋狂</tr>
+<tr><td><A name="0289">0289<td>解僵針<td>靈藥<td>20<td>全<td>50<td>己單<td>解除麻痺、定身</tr>
+<tr><td><A name="028B">028B<td>溶石藥劑<td>靈藥<td>27<td>全<td>80<td>己單<td>解除石化</tr>
+<tr><td><A name="0291">0291<td>聖言石<td>符器<td>26<td>全<td>100<td>己單<td>解除封魔</tr>
+<tr><td><A name="0292">0292<td>破元仙露<td>奇物<td>21<td>全<td>400<td>己全<td>解除封魔</tr>
+<tr><td><A name="0295">0295<td>七葉蓮<td>奇物<td>19<td>全<td>350<td>己單<td>解除寄生</tr>
+<tr><td><A name="0296">0296<td>河車丸<td>奇物<td>20<td>全<td>430<td>己單<td>解除退化</tr>
+<tr><td><A name="0297">0297<td>地脈血泉<td>奇物<td>26<td>全<td>600<td>己單<td>解除所有狀態</tr>
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">狀態攻擊道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可使用人員<TH nowrap>價格<TH nowrap>對象<TH nowrap>效果</TR>
+
+<tr><td><A name="02CE">02CE<td>龍舌蘭<td>靈藥<td>30<td>全<td>50<td>敵單<td>7毒系傷害，中毒3回合</tr>
+<tr><td><A name="02CF">02CF<td>博落迴之根<td>靈藥<td>31<td>全<td>60<td>敵單<td>麻痺3回合</tr>
+<tr><td><A name="02D0">02D0<td>囚燕草<td>特殊<td>32<td>全<td>100<td>敵單<td>定身3回合</tr>
+<tr><td><A name="02D1">02D1<td>海檬果<td>靈藥<td>40<td>全<td>100<td>敵單<td>石化</tr>
+<tr><td><A name="02D2">02D2<td>山蛇莓<td>靈藥<td>33<td>全<td>50<td>敵單<td>昏睡3回合</tr>
+<tr><td><A name="02D3">02D3<td>龍骨木<td>靈藥<td>41<td>全<td>100<td>敵單<td>封魔3回合</tr>
+<tr><td><A name="02D4">02D4<td>相思芽苞<td>特殊<td>42<td>全<td>80<td>敵單<td>瘋狂3回合</tr>
+<tr><td><A name="02D5">02D5<td>紫藤葉<td>靈藥<td>34<td>全<td>80<td>敵單<td>驚嚇3回合</tr>
+<tr><td><A name="02D6">02D6<td>延胡索之花<td>靈藥<td>35<td>全<td>60<td>敵單<td>盲目3回合</tr>
+<tr><td><A name="02D7">02D7<td>大葉合歡散<td>靈藥<td>36<td>全<td>80<td>敵單<td>退化3回合</tr>
+<tr><td><A name="02D8">02D8<td>菟絲魔子<td>靈藥<td>43<td>全<td><td>敵單<td>寄生3回合</tr>
+
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">攻防輔助道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>可使用人員<TH nowrap>價格<TH nowrap>對象<TH nowrap>效果</TR>
+
+<tr><td><A name="02BD">02BD<td>天仙酒<td>奇物<td>22<td>全<td>500<td>己單<td>攻擊上升30%5回合</tr>
+<tr><td><A name="02BE">02BE<td>金元五體丹<td>奇物<td>23<td>全<td>500<td>己單<td>防禦上升30%5回合</tr>
+<tr><td><A name="02BF">02BF<td>靈樞玉液<td>奇物<td>24<td>全<td>800<td>己單<td>防禦上升30%10回合</tr>
+<tr><td><A name="02C0">02C0<td>風神符<td>符器<td>30<td>全<td>500<td>己單<td>敏捷上升30%5回合</tr>
+<tr><td><A name="02CA">02CA<td>九龍神火罩<td>符器<td>46<td>全<td><td>己單<td>火系攻擊力上升30%5回合</tr>
+<tr><td><A name="02CB">02CB<td>雲生碧燄巾<td>符器<td>48<td>全<td><td>己單<td>冰系攻擊力上升30%5回合</tr>
+<tr><td><A name="02CC">02CC<td>天雷聚陽鼎<td>符器<td>50<td>全<td><td>己單<td>光系攻擊力上升30%5回合</tr>
+<tr><td><A name="02CD">02CD<td>暗黑修羅砧<td>符器<td>99<td>全<td><td>己單<td>暗系攻擊力上升30%5回合</tr>
+<tr><td><A name="02C5">02C5<td>紫玉冰晶<td>符器<td>36<td>全<td><td>己單<td>火系傷害減半5回合</tr>
+<tr><td><A name="02C6">02C6<td>炎陽靈珠<td>符器<td>38<td>全<td><td>己單<td>冰系傷害減半5回合</tr>
+<tr><td><A name="02C7">02C7<td>白皙葫蘆<td>符器<td>40<td>全<td><td>己單<td>毒系傷害減半5回合</tr>
+<tr><td><A name="02C8">02C8<td>羅剎食日鈸<td>符器<td>42<td>全<td><td>己單<td>光系傷害減半5回合</tr>
+<tr><td><A name="02C9">02C9<td>三教霞光鏡<td>符器<td>44<td>全<td><td>己單<td>暗系傷害減半5回合</tr>
+<tr><td><A name="02C4">02C4<td>羅漢袈裟<td>符器<td>34<td>全<td><td>己單<td>物理傷害減半5回合</tr>
+<tr><td><A name="031A">031A<td>紅酒<td>靈藥<td>10<td>允用<td>250<td>己單<td>攻擊+5、敏捷-2、體力-15</tr>
+
+</TABLE>
+
+<p>
+<TABLE BORDER=1 cellspacing="0" cellpadding="1" width="100%">
+<TR>
+<TD ALIGN=CENTER COLSPAN=30 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">其他道具</FONT></B>
+</TR>
+
+<TR ALIGN=CENTER><TH nowrap>代碼<TH nowrap>名稱<TH nowrap>類型<TH nowrap>等級<TH nowrap>價格<TH nowrap>效果</TR>
+
+<tr><td><A name="033E">033E<td>坦普拉琴<td>法寶<td><td>500<td>任務用品</tr>
+<tr><td><A name="031F">031F<td>暗黑修羅砧<td>特殊<td>99<td><td>任務用品（和符器的暗黑修羅砧不同）</tr>
+<tr><td><A name="0331">0331<td>金塊<td>特殊<td><td>1667<td>可賣錢</tr>
+<tr><td><A name="02C3">02C3<td>遁影浮沙<td>符器<td>32<td>300<td>脫離戰鬥</tr>
+<tr><td><A name="02BA">02BA<td>諸方神石<td>符器<td>20<td>50<td>脫離迷宮</tr>
+<tr><td><A name="02B8">02B8<td>土地神符<td>符器<td>22<td>80<td>脫離迷宮</tr>
+<tr><td><A name="02B9">02B9<td>祠符<td>特殊<td>24<td>120<td>城鎮傳送</tr>
+<tr><td><A name="02D9">02D9<td>神祕果<td>靈藥<td>49<td><td>隨時存檔</tr>
+<tr><td><A name="0300">0300<td>空白符紙<td>特殊<td><td><td>煉符法寶專用的符紙，用來將敵人的奇術收入符內</tr>
+<tr><td><A name="0301">0301<td>靈界指標<td>特殊<td><td><td>可放置在地上並指出曾經走過的路</tr>
+<tr><td><A name="0327">0327<td>天山通行符<td>特殊<td><td><td>能任意往來天山的奇符</tr>
+<tr><td><A name="0318">0318<td>神魔異事錄<td>特殊<td><td><td>提供記錄和辨識怪物的奇書</tr>
+
+</TABLE>
+
 </body>
 </html>
