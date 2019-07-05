@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>資訊修改</title>
+</head>
+<body>
+<pre>
+<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<A href="#item">Itemobj.dat</A>       物品資訊檔
+<A href="#mon">mondata.dat</A>      敵人資訊檔
+
+<FONT COLOR=BLUE><B><A name="item">*** 物品資訊檔 Itemobj.dat</B></FONT>
+
+檔頭：200h=512 byte
+物品資訊：不定長度，由多個物品資訊連接在一起
+  代碼：2 byte
+  物品資訊定義：16 byte
+  物品名稱：字串，以%為結束
+  物品說明：字串，以%為結束
+
+物品資訊定義（8x2 byte）：
+  1.秘笈可學到的武功代碼／物品作用代號
+  2.秘笈所需經驗值／物品作用代號
+  3.不明
+  4.不明
+  5.物品價格／武功是否作用在全體
+  6.使用次數，-1表不消耗
+  7.消耗內力
+  8.是否不可賣，2表不可賣，3表劇情物品
+
+<FONT COLOR=BLUE><B><A name="mon">*** 敵人資訊檔 mondata.dat</B></FONT>
+
+檔頭：200h=512 byte
+敵人資訊：
+  開始標記 + {區塊開始 + {敵人資料} + 區塊結束} + 結束標記
+
+開始標記 = F000
+結束標記 = FF00
+區塊開始 = F001
+區塊結束 = FF01
+
+敵人資料：每個敵人61h=97 byte
+
+[0000] 4 byte，固定為0（升級經驗）
+[0004] 4 byte，經驗
+[0008] 2 byte，力道
+[000A] 2 byte，目前生命
+[000C] 2 byte，固定為0（目前內力）
+[000E] 2 byte，氣勁
+[0010] 2 byte，最大生命
+[0012] 2 byte，固定為0（最大內力）
+[0014] 2 byte，防禦
+[0016] 2 byte，固定為0（智慧）
+[0018] 2 byte，固定為0（資質）
+[001A] 2 byte，身法
+[001C] 2 byte，固定為2
+[001E] 2 byte，固定為0
+[0020] 2 byte，準頭
+[0022] 2 byte，固定為0（靈巧）
+[0024] 2 byte，固定為0
+[0026] 1 byte，等級
+[0027] 2 byte，不明
+[0029] 2 byte，固定為0
+[002B] 2 byte，固定為0
+[002D] 10 byte，增強傷害率，依次為風雷冰火土光暗力毒亂，抗性=-值
+[0037] 4 byte，固定為0
+[003B] 2 byte，物品一ID
+[003D] 2 byte，物品一偷竊機率
+[003F] 2 byte，物品一掉落機率
+[0041] 2 byte，物品二ID
+[0043] 2 byte，物品二偷竊機率
+[0045] 2 byte，物品二掉落機率
+[0047] 2 byte，物品三ID
+[0049] 2 byte，物品三偷竊機率
+[004B] 2 byte，物品三掉落機率
+[004D] 2 byte，物品四ID
+[004F] 2 byte，物品四偷竊機率
+[0051] 2 byte，物品四掉落機率
+[0053] 2 byte，固定為0
+[0055] 2 byte，固定為0
+[0057] 2 byte，固定為0
+[0059] 2 byte，不明
+[005B] 2 byte，不明
+[005D] 2 byte，掉落金錢
+[005F] 2 byte，不明ID
+
+</font>
+</pre>
+</body>
+</html>
