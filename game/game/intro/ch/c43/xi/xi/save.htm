@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔WDATA-?.DAT，?=A、B、C、D、E
+
+1.檔頭
+
+MP -- -- PN -- -- -- -- P1 P2 P3 P4 P5 P6 -- --
+
+MP = 版圖編號，00=秦朝，01=唐朝，02=明朝
+PN = 玩家總數，秦朝=4，唐朝=5，明朝=6
+P1～P6 = 各玩家代表的君主編號（參見<a href="list.htm">將領列表</a>）
+
+2.君主資訊：位置0026h開始，按編號排列，共14位，每位50h=80 byte
+
+0000 N1 N1 N1 N1 N1 N1 N1 N1 N2 N2 N2 N2 N2 N2 N2 N2
+0010 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F2 F2 F2 F2 F2 F2
+0020 F2 F2 F2 F2 NN NN NN NN NN NN IN OD P1 P2 P3 P4
+0030 ?? ?? -- -- -- -- T1 T2 T3 T4 T5 T6 T7 T8 T9 TA
+0040 TB TC TD TE TF TG TH TI MN MN MN MN SD SD SD SD
+
+N1～N2 = 相關名稱1～2
+F1～F2 = 相關檔名1～2
+NN = 君主姓名
+IN = 是否參與遊戲，02表由電腦操控，01表由玩家操控，00表未參與
+OD = 參與遊戲時的順序編號，由00開始
+P1 = 內政思想，00=儒家思想，01=法家思想
+P2～P4 = 內政制度：一夫多妻制、強徵民夫制、貴族至上制，00表禁用，01表啟用
+T1～TI = 道具／武器編號（參見<a href="item.htm">裝備列表</a>）
+MN = 金錢數
+SD = 兵員數
+
+3.將領資訊：位置0486h開始，按編號排列，每位36h=54 byte
+
+0000 NN NN NN NN NN NN F1 F1 F1 F1 F1 F1 F1 F1 AN AN
+0010 AN AN AN AN ID -- ST WT WP A1 A5 A4 A2 A3 ?? ??
+0020 -- -- N1 N2 -- -- FT ?? RT ?? -- -- -- -- -- --
+0030 -- -- -- -- -- --
+
+NN = 將領姓名
+F1 = 相關名稱
+AN = 特別能力名稱
+ID = 將領編號
+ST = 狀態，00=健康，01=生病，02=重傷，03=發瘋
+WT = 使用的武器形態，1=短兵類，2=長桿類，3=弓弩類，4=火槍類
+WP = 手持武器編號（參見<a href="item.htm">裝備列表</a>）
+A1～A5 = 忠誠度、貪污度、統御力、智力、武力（含裝備攻擊力）
+N1～N2 = 手持武器、特別能力的攻擊次數
+FT = 前軍攻擊形態，02=攻擊全體
+RT = 後軍攻擊形態，特定編號可攻擊全體（例如02,17h～21h,24h,25h等）
+
+4.城池資訊：位置22B0h開始，按編號排列，每個28h=40 byte
+
+0000 NN NN NN NN NN NN LD PT A1 A2 P1 P1 P2 P2 SD SD
+0010 G1 G2 G3 G4 G5 G6 G7 G8 GN -- -- ?? ?? ?? ?? ??
+0020 ?? ?? ?? ?? ?? ?? ?? ??
+
+NN = 城池姓名
+LD = 所屬君主編號+1，0表無人城池
+PT = 城池形態，00=驛站，01=城鎮，02=名勝，03=關邑，04=神廟
+A1～A2 = 人民忠誠度、建設度
+P1～P2 = 目前人口數／最大人口數
+SD = 駐軍兵員數
+G1～G8 = 城內將領編號
+GN = 城內將領數目
+
+</font>
+</pre>
+</body>
+</html>

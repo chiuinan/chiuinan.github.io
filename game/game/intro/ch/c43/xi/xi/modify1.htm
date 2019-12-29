@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>程式修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<b>修改</b>：
+
+1.DosBox或某些PC執行時，數字字元顯示為亂碼的問題
+
+由於遊戲程式是經由0:010Ch取得顯示卡的ROM字型，並認定該字型為8x8，然而
+並非所有顯示卡提供的字型都是8x8，例如DosBox模擬的EGA是8x14，VGA/SVGA
+則是8x16，因此會造成取得字形資料不正確。解決方法是寫一個常駐程式來提
+供固定的8x8字型給遊戲程式（只需數字字元共10個字的字型資料）。
+
+以下為解決用的常駐程式碼，將程式前面的16進位數值依次寫入一個COM執行檔
+中（共102 byte），並在玩前先執行本常駐程式，便可以解決字型顯示錯亂的
+問題。
+
+ EB50         jmp  $start
+$font:
+ 7CC6CEDE
+ F6E67C00     db   7Ch,C6h,CEh,DEh,F6h,E6h,7Ch,00h
+ 30703030
+ 3030FC00     db   30h,70h,30h,30h,30h,30h,FCh,00h
+ 78CC0C38
+ 60CCFC00     db   78h,CCh,0Ch,38h,60h,CCh,FCh,00h
+ 78CC0C38
+ 0CCC7800     db   78h,CCh,0Ch,38h,0Ch,CCh,78h,00h
+ 1C3C6CCC
+ FE0C1E00     db   1Ch,3Ch,6Ch,CCh,FEh,0Ch,1Eh,00h
+ FCC0F80C
+ 0CCC7800     db   FCh,C0h,F8h,0Ch,0Ch,CCh,78h,00h
+ 3860C0F8
+ CCCC7800     db   38h,60h,C0h,F8h,CCh,CCh,78h,00h
+ FCCC0C18
+ 30303000     db   FCh,CCh,0Ch,18h,30h,30h,30h,00h
+ 78CCCC78
+ CCCC7800     db   78h,CCh,CCh,78h,CCh,CCh,78h,00h
+ 78CCCC7C
+ 0C187000     db   78h,CCh,CCh,7Ch,0Ch,18h,70h,00h
+$start:
+ 8CC8         mov  ax,cs
+ 2D1800       sub  ax,18h
+ 8ED8         mov  ds,ax
+ BA0201       mov  dx,offset $font
+ B84325       mov  ax,2543h
+ CD21         int  21h
+ BA5201       mov  dx,offset $start
+ CD27         int  27h
+</font>
+</pre>
+</body>
+</html>
