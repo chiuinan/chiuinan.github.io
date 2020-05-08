@@ -10,21 +10,170 @@
       象車馬包兵排列，但包需隔子吃子之暗棋遊戲。遊戲中可兩人對下，亦
       可單人採用闖關的方式進行，玩者必須連闖１５關獲得最後的勝利。而
       遊戲中提供了不少秘技與道具可使用，增加了不少趣味，只可惜對弈過
-      程無法隨時存檔，比較不方便些。不過整體而言，這款遊戲還蠻不錯的，
-      有興趣的玩家可以玩玩看。
+      程無法隨時存檔，必須在晉級成功後才能存檔，比較不方便些。不過整
+      體而言，這款遊戲還蠻不錯的，有興趣的玩家可以玩玩看。
 <IMG src="chessg/game1.png">
 
 <IMG src="chessg/game2.png">
-<b>保護</b>：不明，破解碼：
+<b>備註</b>：本版新遊戲一開始即擁有所有秘技，避免秘技選擇對應不正確的問題。
+<b>保護</b>：圖形密碼，破解碼：
       CHESS.EXE (先用UNP解壓)
         83 3E B1 00 00 75 05
         -- -- -- -- -- EB --
-      或
-        75 05 9A B5 1B F0 0D
-        EB -- -- -- -- -- --
-<b>操作</b>：F1 = 離開遊戲
-      F2 = 回到主畫面
-      F10 = 遊戲選單
+<b>備註</b>：直接使用DosBox玩時，AI反應會較慢，遊戲的思考時間會較久，導致下
+      棋時常需等待數秒鐘對手回應。若無法忍受，可改採用DosBox Boot方式
+      啟動來改善。例如做成硬碟檔chess.img，則以下列方式Boot後啟動遊戲：
+        imgmount c .\chess.img
+        boot -l c
+<b>修改</b>：解決秘技選擇對應不正確的問題（初始擁有所有秘技）
+      CHESS.EXE (先用UNP解壓)
+        03 00 0F 00 0F 00 01 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        0B -- -- -- -- -- -- -- -- -- -- -- 01 -- 01 -- 01 -- 01 -- 01 -- 01 -- 01 -- 01 --
+<b>修改</b>：存檔GAME.PLM，以下為存檔一資料
+
+0000 -- -- P1 00 P2 00 P3 00 P4 00 P5 00 -- -- GN GN
+ :
+0040 -- -- -- -- -- -- -- -- -- -- T0 T0 T1 T1 T2 T2
+0050 T3 T3 T4 T4 T5 T5 T6 T6 T7 T7 T8 T8 T9 T9 TN TN
+0060 -- -- -- -- -- -- -- -- -- -- -- -- MN MN -- --
+0070 -- -- -- -- -- -- -- -- SN SN M1 M1 M2 M2 SA SA
+0080 SB SB SC SC SD SD SE SE SF SF SG SG SH SH SI SI
+0090 SJ SJ SK SK -- -- -- -- -- -- -- -- -- -- -- --
+
+P1 = 棋盤，0=特殊棋盤36格，1=標準棋盤32格
+P2 = 時間限制，0=30秒，1=60秒，2=不限
+P3 = 犯規次數，FFh=表不限
+P4 = 勝負場次，修改為1即一盤決勝負
+P5 = 和局步數
+GN = 已過關卡數，0～14
+T0～T9 = 現有寶物編號
+TN = 現有寶物數目
+MN = 金錢數，最多999
+SN = 現有秘技數目
+M1/M2 = 目前／最大秘技點數
+SA～SK = 是否有對應的秘技，00=無，01=有
+
+<b>資訊</b>：
+
+1.遊戲初始資料在CHESS.EXE的222ADh位置處，格式同存檔。
+2.各秘技所需點數在CHESS.EXE的2282Dh位置處，每個2 byte。
+3.各寶物價格在CHESS.EXE的22299h位置處，每個2 byte。
+4.對手資料在ENEMY.DAT，每位138=8Ah byte：
+
+0000 -- -- -- -- -- -- -- -- -- -- -- -- ID ID -- --
+0010 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+0020 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+0030 -- -- -- -- -- -- -- -- -- -- -- -- -- -- T0 T0
+0040 T1 T1 T2 T2 T3 T3 T4 T4 T5 T5 T6 T6 T7 T7 T8 T8
+0050 T9 T9 TN TN -- -- -- -- -- -- -- -- -- -- -- --
+0060 MN MN A1 A1 A2 A2 A3 A3 A4 A4 A5 A5 SN SN M1 M1
+0070 M2 M2 SA SA SB SB SC SC SD SD SE SE SF SF SG SG
+0080 SH SH SI SI SJ SJ SK SK -- --
+
+ID = 人物編號（00h～0Eh）
+T0～T9 = 現有寶物編號
+TN = 現有寶物數目
+MN = 擊敗可獲金錢數
+A1～A5 = 攻、防、降、智、幸等屬性值
+SN = 現有秘技數目
+M1/M2 = 目前／最大秘技點數
+SA～SK = 是否有對應的秘技，00=無，01=有
+
+<b>操作</b>：
+
+上下左右鍵、WZAD鍵 = 移動游標
+Enter、Space = 確定
+F1 = 離開遊戲
+F2 = 回到主畫面
+F10 = 特殊功能（時間暫停）
+<table>
+<tr><td><img src="chessg/ma1.png"><td>求和<td><img src="chessg/mb1.png"><td>投降</tr>
+<tr><td><img src="chessg/ma2.png"><td>招降<td><img src="chessg/mb2.png"><td>建議</tr>
+<tr><td><img src="chessg/ma3.png"><td>使用秘技<td><img src="chessg/mb3.png"><td>使用寶物</tr>
+<tr><td><img src="chessg/ma4.png"><td>己方資料<td><img src="chessg/mb4.png"><td>電腦託管</tr>
+<tr><td><img src="chessg/ma5.png"><td>對手資料<td><img src="chessg/mb5.png"><td>停止託管</tr>
+</table>
+<b>說明</b>：
+
+<font color=blue><b>*** 新遊戲選項</b></font>
+
+1.賽制
+  單人晉級制：晉級後才能存檔，並獲得金錢。
+    標準棋盤32格：可使用秘技和法寶，法寶必須事先購買。
+    特殊棋盤36格：同上，多出的4格藏有寶物（必須視同敵子吃掉才能獲得）。
+  雙人對抗制：
+    標準棋盤32格：無法使用秘技和法寶。
+2.時間限制：分成30秒、60秒、不限三種。當有時間限制時，超過時間未走子，
+  即視同犯規，依後述犯規規定處理。
+3.犯規次數：分成3次、7次、不限三種。當有犯規時，超過犯規次數即該局判
+  負，否則便輪由對方走子（失去走子權利）。
+4.勝負場次：分成3場、5場、不限（僅限雙人對抗制）三種。當取得指定的勝
+  利場次時，即晉級成功；若失敗達到指定的場次，則晉級失敗。
+5.和局設定：分成20步、40步（實際為50步）兩種。在指定的步數內若無勢力
+  消長，即判定為和局。
+
+<font color=blue><b>*** 對手列表</b></font>
+
+1.攻：採取攻勢的機率
+2.防：採取守勢的機率
+3.降：我方成功招降的機率
+4.智：適當走子的機率
+5.幸：翻出有利棋子的機率
+6.標示紅色者，為手冊數值誤植，此處以遊戲檔的數據為準
+
+<table BORDER=1 cellspacing="0" cellpadding="1">
+<tr><td>關卡<td>對手<td>攻<td>防<td>降<td>智<td>幸<td>金錢<td>點數<td>秘技<td>寶物</tr>
+<tr><td>1<td>項羽<td>78<td>22<td>25<td>75<td>55<td>20<td>20<td>A～D<td>1～3
+<tr><td>2<td>虞姬<td>46<td>54<td>25<td>65<td><font color=red>55</font><td>20<td>20<td>A～E<td>1～3
+<tr><td>3<td>安祿山<td>66<td>34<td>50<td>55<td>75<td>20<td>25<td>A～E<td>1～4
+<tr><td>4<td>紂王<td>74<td>26<td>70<td>60<td>65<td>20<td>25<td>A～F<td>1～5
+<tr><td>5<td>楊貴妃<td>48<td>52<td>45<td>70<td>65<td>20<td><font color=red>25</font><td>A～F<td>1～6
+<tr><td>6<td>妲己<td>57<td>43<td>60<td>75<td>80<td>30<td>30<td>A～G<td>1～4
+<tr><td>7<td>劉邦<td>56<td>44<td>45<td>75<td>90<td>30<td><font color=red>30</font><td>A～G<td>1～5
+<tr><td>8<td>嬴政<td>71<td>29<td>40<td>85<td>75<td>30<td>35<td>A～H<td>1～6
+<tr><td>9<td>王昭君<td>42<td>58<td>50<td>80<td>85<td>30<td>40<td>A～H<td>1～7
+<tr><td>10<td>蘇小小<td>35<td>65<td>60<td>85<td>80<td>30<td>40<td>A～I<td>1～7
+<tr><td>11<td>唐玄宗<td>58<td>42<td>40<td>90<td>90<td>40<td>45<td>A～I<td>1～5
+<tr><td>12<td>西施<td>38<td>62<td>55<td>85<td>85<td>40<td>45<td>A～J<td>1～6
+<tr><td>13<td>姜子牙<td>40<td>60<td>50<td>95<td>80<td>40<td>50<td>A～J<td>1～7
+<tr><td>14<td>陶淵明<td>41<td>59<td>45<td>90<td>85<td>40<td>50<td>A～K<td>1～7
+<tr><td>15<td>唐伯虎<td>52<td>48<td>60<td>95<td>85<td>40<td>50<td>A～K<td>1～7
+</table>
+
+<font color=blue><b>*** 秘技</b></font>
+
+1.初始秘技為A～C，可透過使用秘技錦囊獲取新的秘技（但也可能是舊的）。
+2.初始最大秘技點數為15點，每勝一盤最大值加1。
+
+<table BORDER=1 cellspacing="0" cellpadding="1">
+<tr><td>編號<td>名稱<td>點數<td>作用</tr>
+<tr><td>A<td>禮賢下士<td>2<td>己方暫停一步由對方走子</tr>
+<tr><td>B<td>聽天由命<td>3<td>將令牌上的未翻子隨機和其他未翻子交換</tr>
+<tr><td>C<td>望梅止渴<td>3<td>可偷看令牌上的未翻子</tr>
+<tr><td>D<td>妙手空空<td>5<td>偷一件對手的寶物</tr>
+<tr><td>E<td>移形換位<td>5<td>將令牌上的未翻子和指定的未翻子交換</tr>
+<tr><td>F<td>非我莫屬<td>6<td>指定令牌上的未翻子所翻出的棋子</tr>
+<tr><td>G<td>移花接木<td>6<td>指定對手下次翻開的棋子</tr>
+<tr><td>H<td>人定勝天<td>9<td>3步內對手不能吃令牌指定的棋子（移動後無效）</tr>
+<tr><td>I<td>天眼通<td>9<td>15秒內看見所有未翻子</tr>
+<tr><td>J<td>當仁不讓<td>10<td>可連走兩步棋子</tr>
+<tr><td>K<td>乾坤大挪移<td>10<td>所有未翻子隨機互換</tr>
+</table>
+
+<font color=blue><b>*** 寶物</b></font>
+
+1.身上最多10個寶物，多的直接自動捨棄。
+
+<table BORDER=1 cellspacing="0" cellpadding="1">
+<tr><td>編號<td>名稱<td>定價<td>作用</tr>
+<tr><td>1<td>秘技補充<td>5<td>補充秘技點數5點</tr>
+<tr><td>2<td>迷魂藥<td>5<td>10步內對手無法使用寶物</tr>
+<tr><td>3<td>提神藥<td>5<td>10步內對手使用秘技無效</tr>
+<tr><td>4<td>大補丸<td>10<td>補充所有秘技點數</tr>
+<tr><td>5<td>秘技錦囊<td>15<td>隨機獲得一項秘技</tr>
+<tr><td>6<td>天翼<td>20<td>將令牌上的棋子移至其他空白處</tr>
+<tr><td>7<td>孟婆湯<td>30<td>悔局一次</tr>
+</table>
 </font>
 </pre>
 </body>

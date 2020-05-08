@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔DATA2.GRP
+
+1.武功招式全滿
+    (1)檔案一     sec#2102 off#302（位置106D2Eh）
+    (2)檔案二     sec#2163 off#158（位置10E69Eh）
+    (3)檔案三     sec#2224 off#014（位置11600Eh）
+    (4)檔案四     sec#2284 off#382（位置11D97Eh）
+  原值為1E 00 00 00，改成FF FF FF FF即可。
+2.物品修改法
+    (1)檔案一     sec#2102 off#238（位置106CEEh）
+    (2)檔案二     sec#2163 off#094（位置10E65Eh）
+    (3)檔案三     sec#2223 off#462（位置115FCEh）
+    (4)檔案四     sec#2284 off#318（位置11D93Eh）
+  每項物品佔4 byte，格式為：
+    代號：2 byte
+    數量：2 byte
+  代號意義如下：
+    60 金錢       61 樹枝       62 鐵線卷
+    63 竹子       64 弓箭       65 鈍斧
+    66 灰鑰匙     67 紅鑰匙     68 墨綠鑰匙
+    69 血龍丹     6A 人參粉     6B 暴雨黎花針
+    6C 真鋼劍     6D 終南山地圖 6E 菩提軟玉
+    6F 紫金鼎     70 辟火丹     71 紅塵簫
+    72 多情譜     73 鑄鐵盒     74 玉佩
+    75 截脈散解藥 76 石塊       77 青虹追命針
+    78 人參       79 長白參王   7A 雪蓮
+    7B 何首烏     7C 大鐵鎚     7D 魔教令牌
+</font>
+</pre>
+</body>
+</html>
