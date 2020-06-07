@@ -1,0 +1,243 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>記憶體修改</title>
+</head>
+<body>
+<pre><font face="細明體" size=3><P><CENTER><FONT COLOR=FF0000 size=5><b>記憶體修改</b></FONT></CENTER>
+存檔有加密，故只能修改記憶體。首先利用GameMaster搜尋金錢（MM的位置），
+或開始新遊戲後搜尋（1,0,0,0,0,2,2,1,1,4），亦即金錢下FG、RG的位置，然
+後修改記憶體如下（遊戲中仍可改）：
+
+  -- -- -- -- -- H2 -- H1 MM MM MM MM 00 00 00 00
+  -- -- -- -- -- -- FG RG -- LS RS GG -- -- -- SS
+  XX ST -- -- -- -- -- -- -- -- -- -- -- -- FG RG
+  -- LS RS GG -- -- -- SS XX ST -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- V1 V2 -- -- -- -- -- -- -- --
+
+Tyrian 2000的記憶體格式則為：
+
+  -- -- -- -- -- -- -- -- -- -- -- -- H2 -- H1 00
+  MM MM MM MM 00 00 00 00 -- -- -- -- -- -- FG RG
+  -- LS RS GG -- -- -- SS XX ST -- -- -- -- -- --
+  -- -- -- -- -- -- FG RG -- LS RS GG -- -- -- SS
+  XX ST -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- V1 V2
+
+MM = 金錢，別改太大（參閱攻略說明）
+H1 = 關卡難度（決定出現敵人數量），01=Easy、02=Normal、03=Hard、
+     04=Impossible、08=Suicide／Lord of Game
+H2 = 敵人強度（決定出現敵人強度），初始數值同關卡難度，每過一關系統會
+     重新依照金錢總數調整，最大到9（當然還可以更高）
+FG = Front Gun
+RG = Rear Gun
+LS = Left Sidekick
+RS = Right Sidekick
+GG = Generator（06h最佳）
+SS = Shield（0Ah最佳，若為Tyrian2000，則0Bh最佳）
+XX = 特殊武器
+ST = Ship Type（0Ch最佳，若金錢要少，則0Dh最佳）
+V1 = Front Gun等級，最大0Bh
+V2 = Rear Gun等級，最大0Bh
+
+注意第二組FG、RG以下是Upgrade Ship時使用的，應該修改第一組。另外，
+Sidekick武器剩餘彈數在記憶體裡也是固定的，進入遊戲中找到後鎖定，便可
+以享受無限彈數的強力武器。
+
+<b>Ship Type編號：</b>
+
+  00h = 無
+  01h = USP Talon
+  02h = SupperCarrot
+  03h = Gencore Phoenix
+  04h = Gencore Maelstrom
+  05h = MicroCorp Stalker
+  06h = MicroCorp Stalker-B
+  07h = Prototype Stalker-C
+  08h = Stalker
+  09h = USP Fang
+  0Ah = U-Ship
+  0Bh = Silver Ship
+  0Ch = Nort Ship
+  0Dh = The Stalker 21.216
+  (以下為Tyrian 2000才有)
+  0Eh = Storm
+  0Fh = Red Dragon
+  10h = Gencore II
+  11h = PeteZoomer
+  12h = Rum Bottle
+
+<b>Shield編號：</b>
+
+  00h = 無
+  01h = Structural Integrity Field
+  02h = Advanced Integrity Field
+  03h = Gencore Low Energy Shield
+  04h = Gencore High Energy Shield
+  05h = MicroCorp LXS Class A
+  06h = MicroCorp LXS Class B
+  07h = MicroCorp LXS Class C
+  08h = MicroCorp HXS Class A
+  09h = MicroCorp HXS Class B
+  0Ah = MicroCorp HXS Class C
+Tyrian 2000為：
+  08h = Gencore Solar Shield
+  09h = MicroCorp HXS Class A
+  0Ah = MicroCorp HXS Class B
+  0Bh = MicroCorp HXS Class C
+
+<b>Generator編號：</b>
+
+  00h = 無
+  01h = Standard MR-9
+  02h = Standard MR-12
+  03h = Gencore Custom MR-12
+  04h = Standard MicroFusion
+  05h = Advanced MicroFusion
+  06h = Gravitron Pulse-Wave
+
+<b>Front Gun／Rear Gun武器編號:</b>
+
+  00h = 無
+  01h = Pulse-Cannon
+  02h = Multi-Cannon
+  03h = Mega Cannon
+  04h = Laser
+  05h = Zica Laser
+  06h = Protron Z
+  07h = Vulcan Cannon
+  08h = Lightning Cannon
+  09h = Starburst (Front/Rear)
+  0Ah = Multi-Cannon (Rear)
+  0Bh = Sonic Wave
+  0Ch = Protron (Rear)
+  0Dh = Protron
+  0Eh = Wild Ball
+  0Fh = Vulcan Cannon (Rear)
+  11h = Missile Launcher
+  12h = Fireball (Front/Rear)
+  13h = Mega Pulse
+  14h = Heavy Missile Launcher
+  15h = Rear Heavy Missile Launcher
+  16h = Rear Mega Pulse
+  17h = Banana Blast
+  18h = Banana Blast Rear
+  19h = HotDog Front
+  1Ah = HotDog Rear
+  1Bh = Hyper Pulse
+  1Ch = Guided Micro Bombs
+  1Dh = Heavy Guided Bombs
+  1Eh = Scatter Wave
+  1Fh = Guided Bombs
+  20h = Shuruiken Field
+  21h = Poison Bomb
+  22h = Protron Wave
+  23h = The Orange Juicer
+  24h = NortShip Super Pulse
+  25h = NortShip Spreader
+  26h = NortShip Spreader B
+  27h = Automic RailGun
+  28h = Widget Beam
+  29h = Sonic Impulse
+  2Ah = RetroBall
+  (以下為Tyrian 2000才有)
+  2Bh = Needle Laser
+  2Ch = Pretzel Missile
+  2Dh = Dragon Frost
+  2Eh = People Pretzels
+  2Fh = Dragon Flame
+
+<b>Sidekick武器編號：</b>
+
+  00h = 無
+  01h = Single Shot Option
+  02h = Dual Shot Option
+  03h = Charge Cannon
+  04h = Vulcan Shot Option
+  05h = Wobbley
+  06h = MegaMissile
+  07h = Atom Bombs
+  08h = Phoenix Device
+  09h = Plasma Storm
+  0Ah = Mini-Missile
+  0Bh = Buster Rocket
+  0Ch = Zica SuperCharger
+  0Dh = MicroBomb
+  0Eh = 8-Way MicroBomb
+  0Fh = Post-it Mine
+  10h = Mint-O-Ship
+  11h = Zica Flamethrower
+  12h = Side Ship
+  13h = Companion Ship Warfly
+  14h = MicroSol FrontBlaster
+  15h = Companion Ship Gerund
+  16h = BattleShip-Class Firebomb
+  17h = Protron Cannon Indigo
+  18h = Campanion Ship QuickSilver
+  19h = Protron Cannon Tangerine
+  1Ah = MicroSol FrontBlaster II
+  1Bh = Beno Wallop Beam
+  1Ch = Beno Protron System -B-
+  1Dh = Tropical Cherry Companion
+  1Eh = Satellite Marlo
+  (以下為Tyrian 2000才有)
+  1Fh = Bubble Gum-Gun
+  20h = Flying Punch
+
+<b>特殊武器編號：</b>
+
+  00h = 無
+  01h = Repulsor
+  02h = Pearl Wind
+  03h = Soul of Zinglon
+  04h = Attractor
+  05h = Ice Beam
+  06h = Flare
+  07h = Blade Field
+  08h = Sand Storm
+  09h = Mine Field
+  0Ah = Dual Vulcan
+  0Bh = Banana Bomb
+  0Ch = Protron Dispersal
+  0Dh = Astral Zone
+  0Eh = Xega Ball
+  0Fh = MegaLaser Dual
+  10h = Orange Shield
+  11h = Pulse Blast
+  12h = MegaLaser
+  13h = Missile Pod
+  14h = Minefield
+  15h = Post-It Blast
+  18h = Super Bomb
+  19h = Hot Dog
+  1Ah = Lightning UP
+  1Bh = Lightning UP+LEFT
+  1Ch = Lightning UP+RIGHT
+  1Dh = Lightning LEFT
+  1Eh = Lightning RIGHT
+  1Fh = MicroSol Option
+  20h = MicroSol Option2
+  21h = MicroSol Option3
+  22h = MicroSol Option4
+  23h = MicroSol Option5
+  24h = MicroSol Option6
+  25h = Invulnerability
+  26h = Atom Bombs
+  27h = Seeker Bombs
+  28h = Lightning Zone
+  29h = SDF Main Gun
+  2Ah = Ice Blast
+  2Ch = Pearl Wind
+  2Dh = 8-Way Microbomb
+  2Eh = Protron Field
+  (以下為Tyrian 2000才有)
+  2Fh = Super Pretzel
+  30h = Dragon Lightning
+</pre>
+</body>
+</html>

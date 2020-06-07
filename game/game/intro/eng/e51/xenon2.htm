@@ -1,0 +1,161 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>氙星異形2</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：氙星異形２ (Xenon 2 : Megablast，英文版)
+簡介：Bitmap Brothers 1989年出品的射擊遊戲，畫面精美，當時不知風靡了
+      多少玩家。各關都有頭目把守，不過途中可以購買更強的火力及裝備，
+      還算是蠻不錯的射擊遊戲。只是這款遊戲一擊中便死，而愈到後面，迷
+      宮愈複雜，敵人也愈多，要打到後面實在不怎麼容易。關卡一共有５關，
+      且過關後不會從第１關繼續，有點稍嫌少了些。
+<IMG SRC="xenon2/game1.png"> <IMG SRC="xenon2/game2.png">
+<b>保護</b>：磁片
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
+<b>修改</b>：XENON2.EXE
+
+1.所有裝備只賣1元（但賣出也沒錢）
+  位置1C602h～1C631h都填入01 00
+2.無敵（打不死）
+  29 06 86
+  39 -- --
+
+<b>修改</b>：用GameMaster搜尋分數後：
+
+-- -- AF AF -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- SC SC SC SC MM MM MM MM SP SP
+-- -- NT NT NT NT -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- AR -- -- -- NO -- -- -- -- --
+
+AF = 自動射擊數目，最大03，再大如08幾乎是連珠炮，但再吃到武器會當
+SC = 分數
+MM = 金錢
+SP = 加速器數目，最大02
+NT = 超級毀滅武器剩餘時間
+AR = 防護力，最大27h
+NO = 剩餘架次
+
+<b>密技</b>：在選擇圖形界面時，按下F7，然後在玩時，再按下i鍵，便會成為無敵。
+<b>操作</b>：
+
+空白鍵 = 發射／開始
+Enter = 潛航
+P = 暫停
+Esc = 離開遊戲
+F10 = 結束遊戲
+
+<b>說明</b>：
+
+畫面最下方為防禦值，減到0即被擊毀，該關重來。消滅敵人後，會出現的東西：
+
+1.膠囊：打掉特殊敵人會出現，裡面有可增加座機威力的裝備。
+2.泡泡：打掉一組敵人或關卡魔王會出現，內含金錢，可用來買賣物品，泡泡
+  愈大，金錢愈多。不過金錢過關後會重置，故在關卡最後的商店要儘量用完。
+
+商店可買到的裝備：
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr BGCOLOR=#FFFF80><td colspan=5>1.前座武器</tr>
+<tr><td align=center><IMG SRC="xenon2/1-1.png"><td>雙重射擊(Double Shot)<td>$3000<td>一次射擊2彈。
+<tr><td align=center><IMG SRC="xenon2/1-2.png"><td>火焰發射器(Flamer)<td>$5000<td>威力不小，但攻距太短，有點不實用。
+<tr BGCOLOR=#FFFF80><td colspan=5>2.後座武器</tr>
+<tr><td align=center><IMG SRC="xenon2/2-1.png"><td>後衛火砲(Rear Shot)<td>$1000<td>後射火砲，可消滅後方的敵人。無法與後方加載武器並存。
+<tr><td align=center><IMG SRC="xenon2/2-2.png"><td>橫向火砲(Side Shot)<td>$1000<td>橫射火砲，可消滅兩側的敵人。
+<tr><td align=center><IMG SRC="xenon2/2-3.png"><td>炸彈(Bomb)<td>$5500<td>向前投射炸彈，爆炸範圍較小，但威力不低。
+<tr><td align=center><IMG SRC="xenon2/2-4.png"><td>蜂鳴飛彈(Homing Missiles)<td>$6000<td>一次發射4個自動追蹤飛彈，只是飛速頗慢。
+<tr BGCOLOR=#FFFF80><td colspan=5>3.後方加載武器</tr>
+<tr><td align=center><IMG SRC="xenon2/3-1.png"><td>小型地雷(Mine)<td>$1000<td>佈雷最多10顆，放開發射鍵逐一爆炸，有點不實用。
+<tr><td align=center><IMG SRC="xenon2/3-2.png"><td>電子球(Electroball)<td>$1200<td>可四處移動攻擊敵機。
+<tr><td align=center><IMG SRC="xenon2/3-3.png"><td>大型地雷(Mine)<td>$3000<td>威力為小型的2倍，範圍也較大，但仍不實用。
+<tr><td align=center><IMG SRC="xenon2/3-4.png"><td>雄蜂散射器(Drone)<td>$4500<td>固定在機身後方，旋轉向各方向發射散彈，威力增加則散彈數亦增加，最多16個散彈。
+<tr BGCOLOR=#FFFF80><td colspan=5>4.左右加載武器，最多加載到左右各2個</tr>
+<tr><td align=center><IMG SRC="xenon2/4-1.png"><td>加農砲(Cannon)<td>$4000<td>每次發射一枚飛彈。
+<tr><td align=center><IMG SRC="xenon2/4-2.png"><td>飛彈發射架(Missile Launcher)<td>$4000<td>每次發射兩枚飛彈。
+<tr><td align=center><IMG SRC="xenon2/4-3.png"><td>雷射(Laser)<td>$4000<td>威力增強後，為過關斬將的利器。
+<tr BGCOLOR=#FFFF80><td colspan=5>5.座機強化道具</tr>
+<tr><td align=center><IMG SRC="xenon2/5-1.png"><td>加速器(Speed-Up)<td>$500<td>加快移動速度，最多2個。
+<tr><td align=center><IMG SRC="xenon2/5-2.png"><td>自動射擊(Autofire)<td>$500<td>加快自動射擊頻率，最多3個。
+<tr><td align=center><IMG SRC="xenon2/5-3.png"><td>超級毀滅武器(Super Nashwan Power)<td>$600<td>剛進入關卡時提供所有最強武器，限時10秒。
+<tr><td align=center><IMG SRC="xenon2/5-4.png"><td>增強劑(Power-Up)<td>$2000<td>增加武器威力，一次提升一個武器，依次為前右後左。
+<tr><td align=center><IMG SRC="xenon2/5-5.png"><td>潛航器(Dive)<td>$4000<td>可潛航避開敵人攻擊，最多3次，每次限時10秒。
+<tr><td align=center><IMG SRC="xenon2/5-6.png"><td>防護罩(Protection)<td>$6000<td>減低敵人炮火傷害。
+<tr BGCOLOR=#FFFF80><td colspan=5>6.能源補充</tr>
+<tr><td align=center><IMG SRC="xenon2/6-1.png"><td>小型能源補充劑(Power Refill)<td>$500<td>恢復一半防護力。
+<tr><td align=center><IMG SRC="xenon2/6-2.png"><td>大型能源補充劑(Power Refill)<td>$1000<td>恢復全部防護力。
+<tr><td align=center><IMG SRC="xenon2/6-3.png"><td>額外架次(Extra Life)<td>$6000<td>可增加一個架次。
+<tr BGCOLOR=#FFFF80><td colspan=5>7.其他道具</tr>
+<tr><td align=center><IMG SRC="xenon2/7-1.png"><td>告知器(Advice)<td>$200<td>可提供裝備建議，但大都是沒意義的訊息，不值得買。</tr>
+<tr><td align=center><IMG SRC="xenon2/7-2.png"><td>負片影像(Bitmap Shades)<td>$6000<td>螢幕變負片效果10秒，沒什麼作用。</tr>
+</table>
+<font color=blue><b>*** 關卡說明</b></font>
+
+道具表示戰場中打掉敵人會出現的裝備，商店表示販賣的物品。如果要買取代
+用的武器，記得先賣出不要的武器。注意每關最後的商店裡，儘量將錢用完。
+
+第一關
+
+道具：加速器、加速器、<font color=red>增強劑</font>、<font color=red>後衛火砲</font>
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器
+道具：敵人全滅、小型能源補充劑、<font color=red>加農砲</font>
+魔王：鸚鵡螺，弱點為眼睛，小心觸手
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球、
+      增強劑、大型地雷、<font color=red>雙重射擊</font>
+
+第二關
+
+道具：小型能源補充劑、<font color=red>增強劑</font>
+魔王：蛇形異形，注意吐出的珠蛇是會不斷再生的，先摧毀尾部兩個眼睛，會
+      自動後退，再摧毀前面眼睛
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球
+道具：敵人全滅、小型能源補充劑、<font color=red>橫向火砲</font>
+魔王：大蜘蛛，到最後面時，它會醒過來不斷放出小蜘蛛，弱點在頭部，必須
+      自行後退攻擊
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球、
+      增強劑、大型地雷、雙重射擊、加農砲、潛航器、
+      飛彈發射架、<font color=red>雷射</font>
+
+第三關
+
+道具：後衛火砲、後衛火砲、小型能源補充劑、小型能源補充劑
+魔王：螃蟹，弱點在眼睛
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球、
+      增強劑
+道具：敵人全滅、大型能源補充劑、大型能源補充劑
+魔王：金屬蛇，弱點在頭部，但行動迅速，不易打中，最好當它從上方洞穴出
+      來時擊中火力攻擊
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球、
+      增強劑、大型地雷、雙重射擊、加農砲、潛航器、
+      飛彈發射架、<font color=red>雷射</font>、雄蜂散射器、火焰發射器
+
+第四關
+
+道具：無敵、小型能源補充劑、橫向火砲
+魔王：蜥蜴，先清掉身上４個頭，再打掉尾巴，自動回頭打頭
+商店：告知器、加速器、小型能源補充劑、自動射擊、超級毀滅武器、
+      大型能源補充劑、後衛火砲、小型地雷、橫向火砲、電子球、
+      增強劑
+道具：後衛火砲、後衛火砲、炸彈
+魔王：變色龍，先打掉眼睛後再打頭
+商店：全部
+
+第五關
+
+道具：<font color=red>增強劑</font>、<font color=red>增強劑</font>、大型能源補充劑、蜂鳴飛彈
+魔王：重型坦克，注意坦克的雷射與旁邊的砲塔
+商店：全部
+道具：橫向火砲
+商店：全部
+魔王：巨型戰艦，先清掉艦上砲塔，再打掉尾部噴射器，再攻擊艦身
+</font>
+</pre>
+</body>
+</html>
