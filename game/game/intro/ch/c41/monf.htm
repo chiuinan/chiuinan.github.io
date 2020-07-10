@@ -1,0 +1,200 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>悶絕－性技王傳說</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：悶絕－性技王傳說 (中文版)
+<b>簡介</b>：FIX 1996年出品的１８禁牌技色情遊戲，由鷹揚修改成中文版。遊戲主
+      要以女同性間的作愛戰鬥為主，利用發牌後牌中的道具進行攻擊，先達
+      到高潮的一方為輸。整個遊戲的困難度並不高，但圖畫、動畫及文字都
+      極具挑逗性，為蠻不錯的色情遊戲。
+<IMG src="monf/game1.png">
+
+<IMG src="monf/game2.png">
+<b>保護</b>：圖形顏色密碼，破解碼不明。
+<b>備註</b>：如果執行PLAY無法啟動遊戲，可試著直接執行MFIGHT。
+<b>修改</b>：MFIGHT.EXE
+
+1.修正偶爾當機問題
+  75 02 EB FE (全改)
+  -- -- 90 90
+2.三人對戰模式中央圖片不往對方移動
+  26 FF 0E FC 1B (全改，共2處)
+  90 90 90 90 90
+3.兩人對戰模式快感度均加在對方
+  E9 6B 04 0B F6 74 04 33 C0 EB 03
+  -- -- -- -- -- -- -- -- -- -- 00
+  因混合雙方數值，攻擊結果會和戰鬥能力表有點不同。又，第5關別改，否則
+  因為不敗，第5-2場戰鬥後會看不到正確的劇情。
+4.恢復劑變成增加100點快感
+  BA FB FF F7 EA 89 46 (全改，共2處)
+  -- 64 00 -- -- -- --
+  BA 05 00 F7 EA 5A
+  -- 9C FF -- -- --
+
+<b>修改</b>：記憶體
+
+AA AA BB BB CC CC
+
+AA = 我方累積快感數，三人對戰模式為中央圖片偏向我方的格數
+BB = 對手累積快感數
+CC = 中央對手下屬累積快感數，兩人對戰模式固定為100
+
+<b>備註</b>：<A href="monf/cg.7z">CG圖</A>有露點。
+<b>說明</b>：
+
+1.每關卡有3場戰鬥，共計5關。每過一關才能存檔。
+
+<font color=blue><b>*** 兩人對戰模式</b></font>
+
+1.戰鬥畫面裡，左上為對手，右下為我方。
+2.雙方底下紅線為累積的快感數，全滿表示達到高潮。
+3.先達到高潮者（快感總數100），判定為敗。
+4.同一性技牌可同時出牌，每多一張牌，快感數+1。
+5.恢復劑每瓶可減少5點快感數，可一次多張（瓶）。
+6.必殺技牌可增加25點快感數。
+7.每關使用不同的性技牌，反應度均不同，有時反而會減少快感數（請參見各
+  關戰鬥能力表）。
+8.若手上牌都不好時，可按左下換牌鈕，將牌全數更換。
+
+<font color=blue><b>*** 三人對戰模式</b></font>
+
+1.戰鬥畫面裡，左上為對手，中央圖片為第三方（對手下屬），右下為我方。
+2.每回合雙方攻擊第三方，獲勝時（快感數增加較多），圖片往勝方移動。
+3.中央垂直紅線為第三方累積的快感數，全滿表示達到高潮。
+4.當第三方達到高潮時（快感總數100），以中央圖片接近那方決定勝負。靠
+  近我方則我方勝，靠近對方則對方勝。判斷基準為雙方標線上的紅點，若剛
+  好在正中央，仍判對方勝、我方敗。
+5.當對方出牌後，先按戰鬥能力表計算其會增加的快感數，再決定我方要出的
+  牌（只需比對方增加的快感數多即可）。若對手使用恢復劑，只要我方不使
+  用恢復劑，不管快感數的增減是正或負，都算勝。
+6.當無論怎麼出牌都無法獲勝時，便保留較佳的牌、出掉不好的牌，或是整幅
+  牌重換也可以。
+
+<font color=blue><b>*** 各關戰鬥能力表</b></font>
+
+各關戰鬥能力資訊係放在MFIGHT?.GTR，分成個人基礎能力與戰場修正資訊兩種。
+例如第一關沙也伽（編號0）能力值在MFIGHT1.GTR的08C9B9h位置：
+     6  4  0  6  4  0  4 -6 -2
+巴克蘭（編號1）能力值在MFIGHT1.GTR的08C9DFh位置：
+     2  0  4  4  5  7  2 -5 -5
+以上數值各代表舌～繩技牌（編號0～8）的攻擊能力。而第一戰場的能力修正
+資訊在MFIGHT1.GTR的08CB21h位置：
+　  -1  1 -1  0  1  2 -1 -2 -2
+總和起來，第一場戰鬥雙方的攻擊能力為：
+     5  5 -1  6  5  2  3 -8 -4 (我方)
+     1  1  3  4  6  9  1 -7 -7 (對方)
+下列的能力表，均只列出總和後的攻擊能力，並加上必出的1張牌（快感數+1）。
+
+<b>第1-1場 巴絲特蘭／巴克蘭 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>6<td>6<td>0<td>7<td>6<td>3<td>4<td>-7<td>-3</tr>
+<tr align=center><td>巴克蘭<td>2<td>2<td>4<td>5<td>7<td>10<td>2<td>-6<td>-6</tr>
+</TABLE>
+<b>第1-2場 巴絲特蘭／休凱蘭 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>8<td>4<td>0<td>7<td>6<td>5<td>7<td>-9<td>-5</tr>
+<tr align=center><td>休凱蘭<td>4<td>0<td>4<td>5<td>7<td>12<td>5<td>-8<td>-8</tr>
+</TABLE>
+<b>第1-3場 巴絲特蘭 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>12<td>6<td>6<td>13<td>7<td>0<td>9<td>-5<td>-5</tr>
+<tr align=center><td>巴絲特蘭<td>9<td>2<td>7<td>10<td>9<td>8<td>8<td>-8<td>-5</tr>
+</TABLE>
+<b>第2-1場 弛緩女／香蓮 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>11<td>8<td>5<td>6<td>4<td>-1<td>8<td>-6<td>-3</tr>
+<tr align=center><td>香蓮<td>9<td>12<td>11<td>-2<td>0<td>-1<td>4<td>0<td>-5</tr>
+</TABLE>
+<b>第2-2場 弛緩女／瀨里花 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>9<td>10<td>2<td>7<td>5<td>1<td>10<td>-10<td>-6</tr>
+<tr align=center><td>瀨里花<td>7<td>14<td>8<td>-1<td>1<td>1<td>6<td>-4<td>-8</tr>
+</TABLE>
+<b>第2-3場 弛緩女 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>10<td>10<td>7<td>9<td>6<td>6<td>1<td>-5<td>-1</tr>
+<tr align=center><td>弛緩女<td>11<td>10<td>9<td>4<td>4<td>1<td>6<td>-3<td>-4</tr>
+</TABLE>
+<b>第3-1場 紗怒王／阿座美 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>6<td>4<td>-1<td>5<td>3<td>5<td>4<td>-1<td>3</tr>
+<tr align=center><td>阿座美<td>3<td>4<td>-4<td>-6<td>-5<td>10<td>4<td>12<td>10</tr>
+</TABLE>
+<b>第3-2場 紗怒王／依薔薇 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>7<td>5<td>-3<td>5<td>3<td>4<td>3<td>0<td>3</tr>
+<tr align=center><td>依薔薇<td>4<td>5<td>-6<td>-6<td>-5<td>9<td>3<td>13<td>10</tr>
+</TABLE>
+<b>第3-3場 紗怒王 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>11<td>11<td>6<td>5<td>4<td>1<td>7<td>-5<td>1</tr>
+<tr align=center><td>紗怒王<td>10<td>6<td>0<td>1<td>0<td>6<td>10<td>4<td>5</tr>
+</TABLE>
+<b>第4-1場 米蘭達／伊莉莎 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>7<td>7<td>3<td>11<td>8<td>-2<td>4<td>-9<td>-5</tr>
+<tr align=center><td>伊莉莎<td>5<td>9<td>7<td>11<td>4<td>-8<td>7<td>-3<td>-3</tr>
+</TABLE>
+<b>第4-2場 米蘭達／瑪莉奴 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>4<td>6<td>5<td>5<td>2<td>1<td>5<td>-10<td>-5</tr>
+<tr align=center><td>瑪莉奴<td>2<td>8<td>9<td>5<td>-2<td>-5<td>8<td>-4<td>-3</tr>
+</TABLE>
+<b>第4-3場 米蘭達 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>9<td>6<td>4<td>12<td>9<td>1<td>11<td>-9<td>-2</tr>
+<tr align=center><td>米蘭達<td>11<td>8<td>7<td>12<td>4<td>-5<td>13<td>-3<td>0</tr>
+</TABLE>
+<b>第5-1場 淫邪王／阿須羅 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>7<td>6<td>-1<td>4<td>9<td>-3<td>3<td>-2<td>-1</tr>
+<tr align=center><td>阿須羅<td>5<td>9<td>-4<td>-9<td>13<td>3<td>3<td>10<td>-3</tr>
+</TABLE>
+<b>第5-2場 淫邪王 vs 沙也伽</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>0<td>0<td>0<td>0<td>0<td>0<td>0<td>0<td>0</tr>
+<tr align=center><td>淫邪王<td>11<td>9<td>0<td>-1<td>12<td>7<td>10<td>3<td>-4</tr>
+</TABLE>
+<b>第5-3場 淫邪王 vs 沙也伽(變身後)</b>
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td><td width=9.5%>舌<td width=9.5%>指<td width=9.5%>揉<td width=9.5%>正常<td width=9.5%>後背<td width=9.5%>菊花<td width=9.5%>按摩棒<td width=9.5%>鞭<td width=9.5%>繩</tr>
+<tr align=center><td>沙也伽<td>3<td>7<td>2<td>7<td>7<td>6<td>8<td>-3<td>5</tr>
+<tr align=center><td>淫邪王<td>11<td>9<td>0<td>-1<td>12<td>7<td>10<td>3<td>-4</tr>
+</TABLE>
+
+</font>
+</pre>
+</body>
+</html>

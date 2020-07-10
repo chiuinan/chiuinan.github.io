@@ -1,0 +1,173 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鋤大D</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：鋤大D (Magic Big 2，中文版)
+<b>簡介</b>：宏申1994年的大老二撲克牌遊戲。本遊戲有基本模式和故事模式兩種，
+      基本模式為隨意挑選３名電腦對手進行遊戲，故事模式則主要為挑戰賽。
+      每個電腦對手都有其個性及出牌特質，因此玩起來比較不會膩，而且遊
+      戲規則也可隨自己喜好而更改。整體而言，這個遊戲比奇人黑桃２來得
+      好些，算是蠻不錯的一個大老二撲克牌遊戲。
+<IMG SRC="magic/game1.png">
+
+<IMG SRC="magic/game2.png">
+<b>保護</b>：圖案密碼，破解碼不明
+<b>備註</b>：安裝目錄名稱建議為MAGIC，否則設定規則之後，會儲存在\MAGIC目錄的
+      RULE.DAT檔案。
+<b>檔案</b>：bak目錄底下為必勝檔（含無限施法）。
+<b>備註</b>：光碟版裡有遊戲開發過程的介紹影片（頗無聊），可執行VIDEO.BAT播放
+      （每段播放完之後要按任何一鍵繼續）。不過播放程式PLAY.EXE只支援
+      聲霸卡2.0，因此用DosBox執行時，必須設定成sbtype=sb2，否則會顯示
+      Cannot Initialize Sound Device訊息，並造成當機。
+<b>修改</b>：存檔CARD.DAT (以下為存檔一的修改)
+
+00D0 -- -- -- -- -- -- -- -- -- -- -- -- LV LV MG MG
+00E0 M1 M1 M2 M2 M3 M3 M4 M4 -- -- -- -- -- -- -- --
+
+LV = 目前關卡，00～07h
+MG = 魔法點數，00～0Ch
+M1 = 己方籌碼
+M2 = 下家籌碼
+M3 = 對家籌碼
+M4 = 上家籌碼
+
+<b>修改</b>：GOAL8.VOC (先用UNP解壓)
+
+1.不論誰勝，都算我方勝
+  83 3E 30 CB 00 75 05
+  -- -- -- -- -- 90 90
+  A1 30 CB 3B 46 FE
+  31 C0 90 -- -- --
+  83 3E 30 CB 00 74 03
+  -- -- -- -- -- EB --
+  8B 46 FE 3B 06 30 CB 75 03 (全改，共2處)
+  -- -- -- 3D 00 00 90 -- --
+  8B 1E 30 CB D1 E3 (全改)
+  31 DB 90 90 -- --
+2.初始魔法點數12
+  C7 06 5A D7 00 00
+  -- -- -- -- 0C --
+3.施展魔法不減點數
+  33 C0 A3 5A D7 (全改)
+  -- -- 90 90 90
+4.故事模式，對家初始籌碼固定為0
+  C7 06 A0 D1 64 00
+  -- -- -- -- 00 --
+5.修改各關籌碼兌換比率
+  位置020C3Bh開始，共8個4 byte整數（最後一個是84 D7 17 00）
+
+<b>修改</b>：記憶體
+
+M1 M1 M2 M2 M3 M3 M4 M4
+
+M1 = 我方籌碼數
+M2 = 下家籌碼數
+M3 = 對家籌碼數
+M4 = 上家籌碼數
+
+<b>說明</b>：
+
+<font color=blue><b>*** 主畫面</b></font>
+
+<TABLE cellSpacing=0 cellPadding=1 border=1>
+<tr><td><IMG SRC="magic/menu1.png"><td>一般模式<td>從8位選手裡挑出3位出來打牌，同時決定座位（上下對家）<br>8位選手各有其打牌風格，可在選擇頁中點選了解</tr>
+<tr><td><IMG SRC="magic/menu2.png"><td>連線模式<td>經由連接COM PORT的數據機撥號連線，互為對家打牌<br>電腦使用RS232連線電腦時，撥號為0<br>一方按CALLER，一方按ANSWER</tr>
+<tr><td><IMG SRC="magic/menu3.png"><td>故事模式<td>帶有劇情動畫，歷經八場大賽以求獲勝</tr>
+<tr><td><IMG SRC="magic/menu4.png"><td>規則設定<td>設定各種遊戲規則，<font color=red>首次玩家務必設定成自己的習慣打法</font></tr>
+</TABLE>
+<font color=blue><b>*** 一般模式</b></font>
+
+1.四家均擁有200籌碼，任何一家籌碼歸零時，比賽即結束。
+2.無法使用存取檔與魔法功能。
+3.具有重播功能。
+
+<b>對手介紹</b>：
+
+1.古云：十分保守，有牌就出，不扣牌。
+2.何淑惠：絕不拆牌，大牌先出。
+3.王聖男：敢賭敢衝，但考慮周密，擅於拆牌扣牌。
+4.劉道安：經驗不足，按步就班出牌，上手後多張牌先出。
+5.于涵吉：城府極深，常考慮周密才出牌，故很少輸牌，是一難對付的角色。
+6.吉美奈子：牌比別人大就出，擅於拆牌。
+7.周英豪：常用大牌來掩護小牌，但並非每次都成功，擅於和下家合作偷雞。
+8.田日昇：心機極深，從未敗過，拆牌、扣牌，樣樣精通。
+
+<font color=blue><b>*** 故事模式</b></font>
+
+1.共須歷經台灣、香港、新加坡、泰國、菲律賓、日本、韓國、上海8場比賽。
+2.初始現金1000元，各場比賽兌換籌碼的比值均不同：
+    台灣   = 1:20
+    香港   = 1:100
+    新加坡 = 1:500
+    泰國   = 1:2500
+    菲律賓 = 1:12500
+    日本   = 1:62500
+    韓國   = 1:312500
+    上海   = 1:1562500
+3.上下家籌碼固定為50（歸零時可無限次增加），對家籌碼固定為100。
+4.每場比賽必須讓對家籌碼歸零才算獲勝，己方籌碼歸零則算落敗。
+5.每勝一回合，除了獲得籌碼外，也會依照獲得籌碼的數目決定增加的魔法點數：
+    24以下 = 零點
+    25～29 = 一點
+    30～34 = 二點
+    35～39 = 三點
+    40～44 = 四點
+    45～59 = 五點
+    60～69 = 六點
+    70～79 = 七點
+    80～89 = 八點
+    90以上 = 九點
+  魔法點數最多12。
+6.每獲勝一場，可學得一項魔法。使用魔法需要魔法點數。
+
+<b>遊戲操作</b>：
+
+按下左下角Menu按鈕，可叫出系統選單：
+
+<TABLE cellSpacing=0 cellPadding=1 border=1>
+<tr><td><IMG SRC="magic/s1-1.png"><td>音樂開關<td><IMG SRC="magic/s2-1.png"><td>牌背選擇<td><IMG SRC="magic/s3-1.png"><td>牌桌選擇</tr>
+<tr><td><IMG SRC="magic/s1-2.png"><td>音效開關<td><IMG SRC="magic/s2-2.png"><td>重播開關<td><IMG SRC="magic/s3-2.png"><td>連線對話</tr>
+<tr><td><IMG SRC="magic/s1-3.png"><td>動畫開關<td><IMG SRC="magic/s2-3.png"><td>遊戲存檔<td><IMG SRC="magic/s3-3.png"><td>遊戲讀檔</tr>
+<tr><td><td><td><IMG SRC="magic/s2-4.png"><td>金額查詢<td><IMG SRC="magic/s3-4.png"><td>離開遊戲</tr>
+</TABLE>
+1.重播開關：一般模式才有，重播前一局的打牌過程。
+2.連線對話：連線模式才有，發送一段文字給對方。
+3.金額查詢：故事模式才有，查詢目前擁有的現金數。
+
+桌上的自動挑牌選單（Choose Card，可移動）：
+
+<TABLE cellSpacing=0 cellPadding=1 border=1>
+<tr><td><IMG SRC="magic/t1.png"><td>自動挑一張可出牌（單張）</tr>
+<tr><td><IMG SRC="magic/t2.png"><td>自動挑兩張可出牌（對子）</tr>
+<tr><td><IMG SRC="magic/t3.png"><td>自動挑五張可出牌（順、葫蘆）</tr>
+<tr><td><IMG SRC="magic/t4.png"><td>自動挑三張可出牌（三條）</tr>
+<tr><td><IMG SRC="magic/t5.png"><td>自動挑四張可出牌（四梅）</tr>
+<tr><td><IMG SRC="magic/t6.png"><td>出牌</tr>
+<tr><td><IMG SRC="magic/t7.png"><td>本輪不出牌</tr>
+<tr><td><IMG SRC="magic/t8.png"><td>使用魔法（故事模式才有）</tr>
+<tr><td><IMG SRC="magic/t9.png"><td>現有魔法點數</tr>
+</TABLE>
+1.前五個是自動挑牌，第一次按時會挑最小可出牌，每按一次則往上找比目前
+  已挑牌更大的牌。玩家也可以手動挑選，或是自動挑牌後，再加以變更。
+2.出牌時，會將手中挑出的牌打出，但不合法時無法出牌。
+3.遊戲不允許出4張牌，故按下四梅後，玩家必須再自行挑一張牌以組成5張牌。
+
+<font color=blue><b>*** 魔法列表</b></font>
+
+<TABLE cellSpacing=0 cellPadding=1 border=1>
+<tr><td><td>名稱<td>點數<td>作用</tr>
+<tr><td><IMG SRC="magic/m1.png"><td>透視<td align=center>4<td>看一輪對家的牌</tr>
+<tr><td><IMG SRC="magic/m2.png"><td>換牌<td align=center>5<td>更換手中不想要的牌（多張）</tr>
+<tr><td><IMG SRC="magic/m3.png"><td>悔牌<td align=center>6<td>回到上一輪打牌前的狀態</tr>
+<tr><td><IMG SRC="magic/m4.png"><td>搬風<td align=center>7<td>直接換成三家中某一家的牌</tr>
+<tr><td><IMG SRC="magic/m5.png"><td>催眠<td align=center>8<td>本輪三家均PASS不出牌</tr>
+<tr><td><IMG SRC="magic/m6.png"><td>消牌<td align=center>9<td>直接減少一張牌，但只剩一張時無效</tr>
+<tr><td><IMG SRC="magic/m7.png"><td>搓牌<td align=center>10<td>換一張自己想要的牌，但不可是手上或打過的牌</tr>
+</TABLE>
+</font>
+</pre>
+</body>
+</html>

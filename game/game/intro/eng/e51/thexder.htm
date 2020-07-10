@@ -1,0 +1,356 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>飛天戰神</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：飛天戰神，又名機動戰士、變形戰機、火鳥戰機 (Thexder，英文版)
+<b>簡介</b>：Sierra公司1987出品的射擊遊戲，一共１６關重複循環。遊戲的主角為
+      一可變換成飛機的機器人，遊戲的目的則是在機器人能量消耗殆盡之前，
+      儘量過關或得高分。有些地方還隱藏了可增加能量或提高能量值的敵人。
+      整體而言，這個遊戲算是早期一個相當不錯的射擊遊戲，玩過的玩家可
+      以再回味一下。
+<IMG SRC="thexder/game1.png">
+
+<IMG SRC="thexder/game2.png">
+<b>保護</b>：不明。
+<b>限制</b>：DosBox執行時若會當機，請調降速度。
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
+<b>修改</b>：MAINEG
+
+1.不死
+  83 2E 76 DE 02
+  C3 -- -- -- --
+2.能源最大值999
+  81 3E EF D5 F4 01 7E 06 C7 06 EF D5 F4 01
+  -- -- -- -- E7 03 -- -- -- -- -- -- E7 03
+3.能源最大值無上限（但超過999顯示會不正常）
+  81 3E EF D5 F4 01 7E 06
+  -- -- -- -- -- -- EB --
+
+<b>操作</b>：
+
+Space = 射擊
+Z = 啟動防護罩
+Esc = 暫停
+S = 音效開關
+M = 音樂開關
+Q = 離開遊戲
+Enter = 脫離標題畫面
+下鍵 = 變成飛機，若要變回機械人，只需接觸地面或飛行時按左右相反方向鍵
+
+<b>說明</b>：
+
+<IMG SRC="thexder/menu.png">
+
+1.遊戲畫面下方第一行數字為剩餘能源，能源減少到0時，遊戲即結束。第二
+  行通常會顯示SHIELD OFF字樣，表示未啟動防護罩；當啟動防護罩後，會變
+  成紅色線條逐漸縮短，以表示防護罩剩餘的有效時間。第三行SCORE為分數，
+  LEVEL為目前關卡，最右邊的數字為能源上限值。
+2.本遊戲主要目的是過關，次要目的是增加能量，因此有些可增加能量的敵人，
+  儘可能去消滅，無關的敵人則能避則避。
+3.變成機械人時才能自動鎖敵射擊，變成飛機時只能往前射擊。
+4.開啟防護罩後，遇到能源會損失的情況會先從防護罩的有效時間扣除，且怪
+  物碰到也會受到傷害。不過開啟防護罩會使得過關無法恢復能源，能源上限
+  的提升也會減少，因此可以的話，儘可能完全不開啟防護罩。
+5.要偵測附近有無隱藏的特殊怪物，只需消滅到沒敵人時變成機械人射擊，若
+  不是呈現水平方向，則其指向的地方便有隱藏的特殊怪物（通常可增加能源
+  上限）。
+
+<b>(一) 消耗能源</b>
+
+1.接觸到怪物（開防護罩時不減）。
+2.站在不能踩的地方，如熔岩（開防護罩時不減）。
+3.每射擊30發減2點能源（開防護罩時不減）。
+4.開防護罩減10點能源。
+
+<b>(二) 恢復能源</b>
+
+1.完成一區時補充100點（開啟過防護罩時不恢復）。
+2.擊毀特殊怪物。
+
+<b>(三) 增加能源上限值</b>
+
+1.完成一區增加上限30點（開啟過防護罩時只增加10點）。
+2.擊毀特殊怪物。
+3.能源上限值最大為500。
+
+<font color=blue><b>*** 第01關</b></font>
+
+<IMG SRC="thexder/01.png">
+
+1.一開始中間層的敵人不好打，因此先從上方繞過去。先引右邊會飛的敵人過
+  來消滅，再消滅地上爬行的。如果能源還很滿，恢復4%能源的敵人（不會動）
+  可以先保留不打，等能源下降後再回頭打；或是關卡結束前，用來補滿能源。
+2.過閘門後，先消滅上層的４隻敵人，再去打可增加能源上限的敵人，最後打
+  擋住通道、可恢復4%能源的敵人。
+3.之後的敵人很多，可慢慢前進或跳躍，逐一引出消滅。切忌亂衝，引來一堆
+  敵人來不及打。閘門後６隻可增加能源上限的敵人一定要打，同時別忘了最
+  右上方有一隻隱藏可增加能源上限的敵人。因為它只會水平移動，最好變身
+  為飛機往上射擊，避免碰觸到。
+
+<TABLE cellSpacing=0 cellPadding=1 border=1>
+<tr><td><td><IMG SRC="thexder/e01.png"><td><IMG SRC="thexder/e02.png"><td><IMG SRC="thexder/e03.png"><td><IMG SRC="thexder/u01.png"><td><IMG SRC="thexder/e04.png"><td><IMG SRC="thexder/u02.png"><td><IMG SRC="thexder/u03.png"></tr>
+<tr><td>恢復能源<td>+1%<td>+1%<td>+1%<td>+4%<td>+1%<td>+8%<td>+8%</tr>
+<tr><td>能源上限<td><td><td><td><td><td>+2%<td>+4%</tr>
+</TABLE>
+<font color=blue><b>*** 第02關</b></font>
+
+<IMG SRC="thexder/02.png">
+
+1.先到左下打可增加能源上限的敵人。注意本關有很多隱藏可大幅增加能源上
+  限的敵人，一定都要打到（非常補）。這邊最左下角就有３隻。
+2.回到入口的十字路口，先不要走上邊，因為中央的敵人很多，會分散自動射
+  擊的方向。先走下邊到中央左邊清敵，再回來走上邊，打在右下角的隱藏敵
+  人。由於上邊的道通有熔岩且不好打，因此要再次從下邊走。
+3.通過下邊通道後，右邊有許多敵人，要用引誘戰術一一消滅。通道最右下角
+  有隱藏敵人，必須從右邊打。上方十字中心有５隻隱藏敵人，要在左邊跳殺。
+4.出口前右下角有１隻隱藏敵人（藍色磚），右上角有４隻隱藏敵人。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u02.png"><td><IMG SRC="thexder/u04.png"><td><IMG SRC="thexder/u01.png"></tr>
+<tr><td>恢復<td>+8%<td>+15%<td>+4%</tr>
+<tr><td>上限<td>+2%<td>+14%<td></tr>
+</TABLE>
+<font color=blue><b>*** 第03關</b></font>
+
+<IMG SRC="thexder/03.png">
+
+1.本層恢復能源的敵人不多，而地形有熔岩，且敵人並不好打，因此不妨使用
+  防護罩協助過關。
+2.下層熔岩的左下角都有可大幅增加能源上限的隱藏敵人，一共３隻。其中可
+  打掉的藍色磚要先打掉，以便有立足之地，方便殺敵。由於這幾隻並不是很
+  好打，若能源上限已經夠多的話，其實也可考慮不打。
+3.３排岩牆處要先全部引誘到一邊，再快速移到另一邊殺敵。岩牆非常難打，
+  若被困住，即便不死也會消耗大量能源，必須特別注意。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u01.png"><td><IMG SRC="thexder/e05.png"><td><IMG SRC="thexder/u02.png"><td><IMG SRC="thexder/u05.png"></tr>
+<tr><td>恢復能源<td>+4%<td><td>+8%<td>+15%</tr>
+<tr><td>能源上限<td><td>+2%<td>+2%<td>+14%</tr>
+</TABLE>
+<font color=blue><b>*** 第04關</b></font>
+
+<IMG SRC="thexder/04.png">
+
+1.本層一樣有熔岩，尤其是最後出關處不但有無立足之地的熔岩，還有城牆擋
+  道，最好使用防護罩協助過關。如果之前增加能源上限的敵人都有打到，那
+  麼到這一關不久後，能源上限值應該已到最大的500%了，一些不是補充能源
+  的敵人，或太難打的地方，基本上都可以略過不打。
+2.中央通道盡頭圓環區中心有一隻可大幅增加能源上限的敵人。出中央通道往
+  左下到盡頭有一隻隱藏怪物，須在最左下角跳殺。
+3.上層熔岩區很難打，能避則避。若真要前往，務必開啟防護罩，減少能源損
+  失。熔岩區入口柱子有５隻隱藏怪物，要從左邊打。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e05.png"><td><IMG SRC="thexder/u06.png"><td><IMG SRC="thexder/u02.png"><td><IMG SRC="thexder/u05.png"><td><IMG SRC="thexder/u01.png"></tr>
+<tr><td>恢復能源<td><td>+7%<td>+8%<td>+15%<td>+4%</tr>
+<tr><td>能源上限<td>+2%<td>+14%<td>+2%<td>+14%<td></tr>
+</TABLE>
+<font color=blue><b>*** 第05關</b></font>
+
+<IMG SRC="thexder/05.png">
+
+1.本層基本上不難，但可補充能量的敵人很少，且通道彎曲，不好前進也不好
+  殺敵，水池站上去還會損失能源，因此建議不開防護罩，取最短路徑來通過
+  本層。因為敵人都不好殺，要緩慢前進引敵，避免一次對付兩隻以上的敵人。
+2.全層有4個隱藏小花，一個在最左下角、三個不動敵人左邊洞穴內，一個在
+  中下、不動敵人下方，一個在中上、不動敵人右側，一個在出口前右上洞穴
+  口。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u01.png"><td><IMG SRC="thexder/u07.png"><td><IMG SRC="thexder/u02.png"></tr>
+<tr><td>恢復能源<td><td>+15%<td>+8%</tr>
+<tr><td>能源上限<td>+4%<td>+14%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第06關</b></font>
+
+<IMG SRC="thexder/06.png">
+
+1.本層狀況和前一關差不多，但彎曲通道較少，更容易過關。因此建議過法還
+  是一樣，不開防護罩，取最短路徑通過本層。
+2.全層只有1個隱藏小花，在中下通道最右邊的盡頭處。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u01.png"><td><IMG SRC="thexder/u07.png"><td><IMG SRC="thexder/u02.png"></tr>
+<tr><td>恢復能源<td><td>+15%<td>+8%</tr>
+<tr><td>能源上限<td>+4%<td>+14%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第07關</b></font>
+
+<IMG SRC="thexder/07.png">
+
+1.比前兩關更多的彎曲通道，困難度增加了許多，但建議過法仍然一樣，不開
+  防護罩，取最短的路徑通過本層。但若被敵人堵住沒辦法時，仍要考慮使用
+  防護罩，尤其是最後有水池的出口處（沒閃過敵人時）。
+2.一開始的上層通道沒路（但第一個不動敵人右邊有隱藏小花），因此必須走
+  下層通道，再往左下走。中途補充能量的敵人都可以打，尤其是最下邊通道
+  中央處，殺掉兩隻蝙蝠，並等待爬行敵人都掉下後，便可飛上去打不動的敵
+  人（包括右邊一個隱藏小花）。
+3.出口處最後一個不動敵人右邊也有一個隱藏小花。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u01.png"><td><IMG SRC="thexder/u07.png"><td><IMG SRC="thexder/u02.png"></tr>
+<tr><td>恢復能源<td><td>+15%<td>+8%</tr>
+<tr><td>能源上限<td>+4%<td>+14%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第08關</b></font>
+
+<IMG SRC="thexder/08.png">
+
+1.不太好打的一關。一開始的敵人就不好打，要靠著它們不會進入通道，在通
+  道內以飛機型態將之消滅。接著要以飛機型態快速地飛過通道，否則一旦被
+  岩牆卡住，不死也半條命。熔岩下層和上層各有1隻和2隻隱藏小花，中下層
+  通道沒有路，最右邊盡頭閘門有也有1隻隱藏小花，可以打打。
+2.進上層通道先清完敵人後，引岩牆過來，再迅速往右走。兩個城牆中央的敵
+  人不好打，在尚未打斷連接的城牆前，要先以飛機型態打掉它。3個不動敵人
+  右邊有隱藏小花。接著的通道是個死亡陷阱。雖然最下方有不少補充能源的
+  敵人，也有隱藏小花，但中途很容易被岩牆卡死，最好略過此處，往右通過。
+3.出口前不動敵人右邊有隱藏小花，城牆右邊也有隱藏小花。城牆旁的藍色磚
+  大部份都可打掉，最後如右下圖所示，必須由下方通過。
+
+<TABLE><TR><TD><TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e06.png"><td><IMG SRC="thexder/u06.png"><td><IMG SRC="thexder/u07.png"><td><IMG SRC="thexder/u02.png"><td><IMG SRC="thexder/u01.png"></tr>
+<tr><td>恢復能源<td>+3%<td><td>+15%<td>+8%<td>+4%</tr>
+<tr><td>能源上限<td><td>+14%<td>+14%<td>+2%<td></tr>
+</TABLE><TD><IMG SRC="thexder/08-2.png"></TR></TABLE>
+<font color=blue><b>*** 第09關</b></font>
+
+<IMG SRC="thexder/09.png">
+
+1.本層必須打掉一些磚塊才能前進。到達下層通道後可選擇是否打掉閘門，讓
+  敵人掉下（裡面有2隻補充能源的怪物，一般大多略過不理）。接著的岩牆
+  只須都引到最右側，即可從最左側簡單通過。
+2.最左邊不動的敵人必須從通道最下方打掉藍色磚才能到達。可在通道右側面
+  向左，利用變身飛機的短暫時間，往上飛打左上的藍色磚（需要移動些位置，
+  以打到不同的磚）。等空間略充足後，改在左側面向右，打右上的藍色磚。
+  最後才往上飛打。上方通道往右，下一個擋道的磚，也是要用類似方法打掉。
+3.第二個置敵漏斗處，可站在左側高處直接清敵。接著的岩牆只會隨機移動，
+  不會追敵，很容易通過，想安全一點也可將它們打掉。置敵漏斗下方右側，
+  被藍磚圍住的敵人是打不到的。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e07.png"><td><IMG SRC="thexder/e08.png"><td><IMG SRC="thexder/e09.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+15%<td>+15%<td><td>+8%</tr>
+<tr><td>能源上限<td><td><td>+2%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第10關</b></font>
+
+<IMG SRC="thexder/10.png">
+
+1.一開始要引在入口不遠處的敵人過來消滅，不可變成機器人掉下，否則會被
+  岩牆卡住。接著有兩條路可選擇，建議往左走下層通道，比較容易些。下層
+  通道第一個岩牆處，要先引右邊的3隻敵人過來消滅，然後再打掉岩牆，之
+  後即可順利通過。
+2.到兩條路交會的T字路口往右走，在置敵漏斗處打掉中央不動的敵人，即可
+  快速通過。此後各通道便沒有什麼特別的難度。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e09.png"><td><IMG SRC="thexder/e10.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td><td>+4%<td>+8%</tr>
+<tr><td>能源上限<td>+2%<td><td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第11關</b></font>
+
+<IMG SRC="thexder/11.png">
+
+1.和第9關一樣的地圖，但換成更強的敵人。過法請參考第9關。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e07.png"><td><IMG SRC="thexder/e08.png"><td><IMG SRC="thexder/e09.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+15%<td>+15%<td><td>+8%</tr>
+<tr><td>能源上限<td><td><td>+2%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第12關</b></font>
+
+<IMG SRC="thexder/12.png">
+
+1.非常困難的一關。主要是通道很窄，大都必須使用飛機型態飛行，對於轉角
+  處擋道的敵人，因為無法射擊殺掉，大都必須使用防護罩接觸去除，會消耗
+  掉不少能源，因此儘可能走最短路徑離開此關。最短路徑為第一交叉口往右，
+  接著往上、（往右下）、往左、（往上）、往上、往右、往下。
+2.城牆敵人很難打，又沒什麼立足點，儘可能躲在通道裡，以飛機型態殺敵。
+  殺到無法殺時，才衝出迅速移到右側。由於紅網敵人可大幅恢復能量，若還
+  有時，可在右側立足點處變成機械人回頭殺。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e10.png"><td><IMG SRC="thexder/e09.png"><td><IMG SRC="thexder/e11.png"></tr>
+<tr><td>恢復能源<td>+4%<td><td>+15%</tr>
+<tr><td>能源上限<td><td>+2%<td>+10%</tr>
+</TABLE>
+<font color=blue><b>*** 第13關</b></font>
+
+<IMG SRC="thexder/13.png">
+
+1.不太好打的一關。彎曲的通道加上水池，不容易前進，空曠處敵人卻很多，
+  容易被包圍。敵人每隻都很硬，打不過時，一定要後逃拉開距離，然後再回
+  頭殺。
+2.全層有5隻隱藏船，集中在前半段，最左上方有1集，大水池左上有2隻，中央
+  空曠處左下1隻，右上通道盡頭1隻。
+3.最右側必須走下方窄水道通過，之後還會遭遇大量敵人，必須隨時預備好使
+  用防護罩。過了這裡，就沒什麼難處了。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e10.png"><td><IMG SRC="thexder/u09.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+4%<td>+15%<td>+8%</tr>
+<tr><td>能源上限<td><td>+10%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第14關</b></font>
+
+<IMG SRC="thexder/14.png">
+
+1.也是很不好打的一關，儘可能走最短路徑。主要通道在不動敵人擋住岩牆處，
+  打掉不動敵人後，岩牆會往下掉。之後以飛機形態上下移動，以打掉下方的
+  岩牆（同時也打右邊的閘門）。若岩牆打完，可通過下方的水道，到右下方
+  打第3道閘門，打完後再回來以飛機形態打通右邊閘門。
+2.穿過右閘門通道後，要立刻往左下打2隻隱藏船，並在此處消滅前來的敵人。
+  由於此處空曠，容易被敵人包圍，且有水池，難有立足之地。因此往右看到
+  敵人時，務必回頭引到左下逐一消滅。
+3.沿水池右下走到底，打掉不動敵人，立足在右下，打上方的岩牆，讓所有岩
+  牆掉下，以空出通道。然後再回頭走上方，經過通道，就可到達出口處。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e10.png"><td><IMG SRC="thexder/u09.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+4%<td>+15%<td>+8%</tr>
+<tr><td>能源上限<td><td>+10%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第15關</b></font>
+
+<IMG SRC="thexder/15.png">
+
+1.和第7關類似的地圖（極小部份不同），但換成更強的敵人。建議和第7關一
+  樣，取最短的路徑通過本層，但基本上此關需要開防護罩。
+2.一開始的上層通道沒路（但第一個不動敵人右邊有隱藏娃娃），因此必須走
+  下層通道，再往左下走。中途補充能量的敵人都可以打，尤其是最下邊通道
+  中央處，站在水池左方殺掉擋住的敵人，並清除掉下敵人與右邊會飛的敵人
+  後，便可飛上去打不動的敵人（包括右邊一個隱藏娃娃）。
+3.出口處最後一個不動敵人右邊也有一個隱藏娃娃。出口前水池上的大量敵人，
+  因為移動迅速，想直接穿越，結果只會被圍住而已，因此只能耐心一一引出
+  消滅，防護罩基本上是免不了的。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/e10.png"><td><IMG SRC="thexder/u10.png"><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+4%<td>+15%<td>+8%</tr>
+<tr><td>能源上限<td><td>+10%<td>+2%</tr>
+</TABLE>
+<font color=blue><b>*** 第16關</b></font>
+
+<IMG SRC="thexder/16.png">
+
+1.最後一關非常簡單，等於是送玩家補充能量的機會。中上一堆不動敵人，可
+  由下方凹處，以飛機形態左右飛行，往上打穿通道。
+2.最後的組合機器人，只需站在左下閘門處，將掉落的零件一一打掉即可。這
+  些零件多半可微幅增加能源上限，少數幾個可微幅恢復能源。雖然直接打掉
+  右邊閘門即可過關，但不打白不打，並沒有困難性。
+3.通過後由第2關繼續開始。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><td><IMG SRC="thexder/u08.png"></tr>
+<tr><td>恢復能源<td>+8%</tr>
+<tr><td>能源上限<td>+2%</tr>
+</TABLE>
+</font>
+</pre>
+</body>
+</html>
