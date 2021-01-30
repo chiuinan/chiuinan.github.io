@@ -1,0 +1,283 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>97超少女－連線水果盤</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：97超少女－連線水果盤 (中文版)
+<b>簡介</b>：天堂鳥1993年出品的１８禁９７連線水果盤遊戲，以一代賭博性水果盤
+      電玩為主要模仿對象，並加上了一些劇情。故事描寫主角解救失蹤的五
+      位超能力美少女，而解救的方式便是在玩水果盤的過程中，組出該美少
+      女的臉譜拼圖，組出之後便有漫畫美女圖，不過美女圖並不怎麼樣。這
+      個遊戲的中獎率蠻高的，但在沒有金錢的賭博誘因下，９７連線水果盤
+      遊戲其實是很無聊的，本遊戲也不例外，即使本遊戲增加了一些道具、
+      事件及法術來加強其娛樂性。大部份的情況都是玩家直接託管給電腦，
+      然後便一直盯著螢幕水果盤上的變化，到最後便可過關了，只是盯沒幾
+      分鐘便會覺得很厭煩。除非玩家對９７連線水果盤情有獨衷，否則並不
+      建議玩這類的遊戲。
+<IMG SRC="super97/game1.png"> <IMG SRC="super97/game2.png">
+<b>保護</b>：圖案數字密碼，破解碼：
+      SUPER97.EXE
+        83 7E FA 00 74 13
+        -- -- -- -- EB --
+      或
+        8B F0 0B F6 75 05 BF 04 00
+        -- -- 31 -- -- -- -- -- --
+      或
+        0B F6 75 05 BF 04 00
+        31 -- -- -- -- -- --
+<b>限制</b>：1.必須安裝在第一層目錄。
+      2.注意解開的檔案不能被設成唯讀，否則遊戲無法正常執行。
+<b>備註</b>：如果不想看開頭說明，直接進入遊戲，修改PLAY.BAT，拿掉INST即可。
+<b>備註</b>：正常版請執行PLAY.BAT，不減修改版請執行UPLAY.BAT
+<b>修改</b>：SUPER97.EXE
+
+1.法力不減
+  A3 B9 01 0E E8 FD
+  90 90 90 -- -- --
+2.金幣不減 (玩水果盤時)
+  83 C4 0A FF 0E BB 01
+  -- -- -- 90 90 90 90
+3.總分不減 (玩水果盤時)
+  83 2E AD 01 01
+  -- -- -- -- 00
+  1D 00 00 A3 AF 01 89 16 AD 01
+  -- -- -- 90 90 90 90 90 90 90
+  89 16 AF 01 A3 AD 01 (共2處)
+  90 90 90 90 90 90 90
+4.道具不減
+  FF 0E CC 1C
+  90 90 90 90
+  FF 0E C2 1C
+  90 90 90 90
+  FF 0E D6 1C
+  90 90 90 90
+  FF 0E E0 1C
+  90 90 90 90
+5.按Esc鍵即過關
+  83 3E A5 01 00 7E 0C
+  -- -- -- -- -- 90 90
+
+<b>修改</b>：存檔FRUIT.CFG
+
+N1 N1 N2 N2 N3 N3 N4 N4 N5 N5 N6 N6 -- -- SC SC
+SC SC SP SP GD GD LV LV -- -- -- --
+
+N1～N6 = 道具數（最多9），參見道具說明
+SC = 總分數
+SP = 法力數（最多99=63h）
+GD = 金幣數（最多99=63h）
+LV = 第幾關（0～4）
+
+<b>資訊</b>：美女圖檔scroll?.dat
+
+水平大小：2 byte
+垂直大小：2 byte
+色盤：256色，各3個2 byte整數（0～63），分別表示RGB
+影像資料：有壓縮
+
+影像資料解壓法如下：
+
+b = 輸入1 byte
+if b & 0xC0 = 0xC0 then
+	c = b & 0x3F
+	b = 輸入1 byte
+	輸出b共c次
+else
+	輸出b
+end if
+
+<b>備註</b>：<A href="super97/cg.7z">CG圖</A>有露點。
+<b>操作</b>：
+
+<IMG SRC="super97/game2.png">
+
+1.按下左上角頭像，會顯示各種連線賠率。
+2.<IMG SRC="super97/menu1.png" style="vertical-align:middle">：法力數，按下可進行施法（後述）。
+3.<IMG SRC="super97/menu2.png" style="vertical-align:middle">：金幣數，按下可兌換分數，每枚金幣2000分。
+4.<IMG SRC="super97/menu3.png" style="vertical-align:middle">：賭倍（後述），必須有得分才能進行。
+5.<IMG SRC="super97/menu4.png" style="vertical-align:middle">：電腦託管（後述）。
+6.<IMG SRC="super97/menu5.png" style="vertical-align:middle">：顯示特別贈分區（後述）。
+7.<IMG SRC="super97/menu6.png" style="vertical-align:middle">：押分（後述），可持續按著以快速增加。
+8.<IMG SRC="super97/menu7.png" style="vertical-align:middle">：目前得分，按下獲取（不賭倍）。
+9.<IMG SRC="super97/menu8.png" style="vertical-align:middle">：目前總分。
+10.按下中央開始轉盤（必須有押分）。
+11.左下為使用道具及其剩餘數目（後述）。
+12.按Esc鍵可決定是否存檔與結束遊戲。
+
+<b>說明</b>：（作者－青衫）
+
+1.遊戲一開始，玩家有法力5，金幣10，分數2000。法力用來施法，金幣可兌換
+  分數，分數可於商店購買金幣與道具。其獲得方式為：
+  (1)法力：水果盤特殊連線，最多99。
+  (2)金幣：施法、或商店購買，最多99。
+  (3)分數：水果盤連線，或由金幣兌換。
+2.先進行押分後，按水果盤開始轉盤。
+3.收集到9個正確位置的拼圖圖片，再按Esc即可過關。
+4.存檔不包含已獲取的拼圖圖片。重新遊戲載入先前存檔時，均必須重新獲取。
+5.每過一關，會顯示一張裸女圖。同時各美女會收取金幣做為路費：
+    第1位：5枚金幣。
+    第2位：8枚金幣。
+    第3位：12枚金幣。
+    第4位：18枚金幣。
+    第5位：25枚金幣。
+  玩家則可獲贈1個水晶。若金幣不夠，便無法獲得水晶。過完5關即結束遊戲，
+  身上若有5個水晶，為成功結局，否則為失敗結局。
+6.第二關開始，進入前會有商店購買物品（後述）。由於第二關開始有特殊狀
+  況會造成總分大幅下降，因此務必購滿預防道具，同時將總分儘量轉成金幣
+  （金幣在水果盤時可轉回分數）。
+
+<font color=blue><b>*** 押分</b></font>
+
+1.每按1分多一線，依次為橫中、橫上、橫下、直中、直左、直右、左上斜、
+  左下斜，如下圖所示：
+
+<IMG SRC="super97/menu9.png">
+
+2.最少押1分，最多64分（即各線8分）。
+3.押滿16以上才能增加法力。
+4.押滿32以上才有特別贈分，並允許施法。
+
+<font color=blue><b>*** 特別贈分區</b></font>
+
+<IMG SRC="super97/menu10.png">
+
+水果盤轉到下列情況，除了原本應有的分數外，還可獲得額外特別贈分：
+
+1.轉到清一色（含雜BAR，不含水果盤），可獲得清一色特別贈分=總押分*50。
+2.轉到荔枝連線，或開頭2個荔枝6次，可獲得1次額外分數轉盤。
+3.轉到綠7連線、或紅BAR連線，可獲得特別贈分=總押分*25。
+4.轉到水果盤，可獲得特別贈分=總押分*10。
+5.轉到綠BAR連線，或銅鐘連線5次，可獲得最下方的累積贈分，並獲得3次額外
+  分數轉盤。
+
+累積贈分初始為500，每次綠7出現在中央格時增加5，最多累積至3000。獲取後
+回復到500。
+
+<font color=blue><b>*** 賭倍</b></font>
+
+<IMG SRC="super97/menu11.png">
+
+1.<IMG SRC="super97/menu12.png" style="vertical-align:middle">：賭下一張為天使。
+2.<IMG SRC="super97/menu13.png" style="vertical-align:middle">：賭下一張為惡魔。
+3.<IMG SRC="super97/menu14.png" style="vertical-align:middle">：結束賭倍，獲取分數。
+
+賭到正確的牌時，得分加倍，否則得分歸零並結束。愈後面的關卡，賭倍成功
+率愈低。
+
+<font color=blue><b>*** 施法說明</b></font>
+
+1.必須押分32以上，才能使用法術。
+2.使用法術所獲得的連線，不會增加法力值。
+3.每多過一關，各法術所需消耗法力便多加2。
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>法術<td>消耗法力<td>作用<td>備註</tr>
+<tr><td align=center><IMG SRC="super97/spell1.png"><td align=right>3～11<td>轉出水果盤<td>獲分倍率22</tr>
+<tr><td align=center><IMG SRC="super97/spell2.png"><td align=right>5～13<td>轉出紅BAR連線<td>獲分倍率50</tr>
+<tr><td align=center><IMG SRC="super97/spell3.png"><td align=right>10～18<td>轉出綠7連線<td>獲分倍率87</tr>
+<tr><td align=center><IMG SRC="super97/spell4.png"><td align=right>15～23<td>轉出雜BAR清一色<td>獲分倍率60～110</tr>
+<tr><td align=center><IMG SRC="super97/spell5.png"><td align=right>20～28<td>轉出清一色<td>獲分倍率70～10050</tr>
+<tr><td align=center><IMG SRC="super97/spell6.png"><td align=right>15～23<td>換取1枚金幣<td>等同2000分</tr>
+</TABLE>
+<font color=blue><b>*** 電腦託管</b></font>
+
+<IMG SRC="super97/menu15.png">
+
+1.按下［開始啟用］，即可進行電腦託管。
+2.電腦託管前，可設定什麼情況要暫停。可按下對應的情況，變成紅色者即為
+  啟動。
+3.電腦託管期間，若總分數不足，自動以金幣兌換分數。但若總分剛好為0，
+  則會遊戲結束。
+4.電腦託管期間，可按下Esc鍵結束託管。
+
+<font color=blue><b>*** 商店</b></font>
+
+註：每多過一關，購買物品所需分數多500分。
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>物品<td>所需分數<td>作用<td>物品<td>所需分數<td>作用<td>物品<td>所需分數<td>作用</tr>
+<tr><td align=center><IMG SRC="super97/item1.png"><td align=center>2000～4000<td>1枚金幣
+<td align=center><IMG SRC="super97/item2.png"><td align=center>1000～3000<td>避震器
+<td align=center><IMG SRC="super97/item3.png"><td align=center>1000～3000<td>防雷器</tr>
+<td align=center><IMG SRC="super97/item4.png"><td align=center>1000～3000<td>蓄電瓶
+<td align=center><IMG SRC="super97/item5.png"><td align=center>1500～3500<td>火腿
+<td align=center><IMG SRC="super97/item6.png"><td align=center>1000～3000<td>防雪衣</tr>
+</TABLE>
+<font color=blue><b>*** 道具說明</b></font>
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>物品<td>名稱<td>作用</tr>
+<tr><td align=center><IMG SRC="super97/uitem1.png"><td>防雷器<td>應付打雷狀況</tr>
+<tr><td align=center><IMG SRC="super97/uitem2.png"><td>避震器<td>應付地震狀況</tr>
+<tr><td align=center><IMG SRC="super97/uitem3.png"><td>蓄電瓶<td>應付停電狀況</tr>
+<tr><td align=center><IMG SRC="super97/uitem4.png"><td>防雪衣<td>應付暴風雪狀況</tr>
+<tr><td align=center><IMG SRC="super97/uitem5.png"><td>火腿<td>微幅增加賭倍成功率，多少數量無關</tr>
+<tr><td align=center><IMG SRC="super97/uitem6.png"><td>水晶<td>關係是否成功結局</tr>
+</TABLE>
+無應付狀況的道具時，總分數除以2～6。但以下狀況無法預防：
+
+1.故障
+
+<font color=blue><b>*** 清一色得分與作用</b></font>
+
+註：各關圖案略異，但作用相同。
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>清一色類型<td>得分倍率<td>法力<td>其他作用<td>實際倍率<td>備註</tr>
+<tr><td><IMG SRC="super97/all01.png">x9<td align=right>10000<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>10050<td>不計單獨連線</tr>
+<tr><td><IMG SRC="super97/all02.png">x9<td align=right>5000<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>5050<td>不計單獨連線</tr>
+<tr><td><IMG SRC="super97/all03.png">x9<td align=right>1000<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>1050<td>不計單獨連線</tr>
+<tr><td><IMG SRC="super97/all04.png">x9<td align=right>500<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>550<td>不計單獨連線</tr>
+<tr><td><IMG SRC="super97/all05.png">x9<td align=right>100<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>150<td>不計單獨連線</tr>
+<tr><td><IMG SRC="super97/all06.png">x9<td align=right>100<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>150<td>不計單獨連線，不計水果盤</tr>
+<tr><td><IMG SRC="super97/all07.png">x9<td align=right>50<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>100<td>不計單獨連線，不計水果盤</tr>
+<tr><td><IMG SRC="super97/all08.png">x9<td align=right>50<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>100<td>不計單獨連線，不計水果盤</tr>
+<tr><td><IMG SRC="super97/all09.png">x9<td align=right>30<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>80<td>不計單獨連線，不計水果盤</tr>
+<tr><td><IMG SRC="super97/line13.png"><td align=right>20<td align=right>+10<td>獲得清一色贈分=總押分*50<td align=right>70<td>不計單獨連線，不計水果盤</tr>
+<tr><td><IMG SRC="super97/line10.png"><td align=right>10<td align=right>+5<td>獲得清一色贈分=總押分*50<td align=right>60<td>若有紅BAR或綠BAR連線，還可獲得其他特別贈分</tr>
+<tr><td>水果盤<td align=right>12<td align=right>+1<td>獲得水果盤贈分=總押分*10<td align=right>22<td></tr>
+</TABLE>
+<font color=blue><b>*** 連線得分與作用</b></font>
+
+註：各關圖案略異，但作用相同。
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>連線類型<td>得分倍率<td>法力<td>其他作用</tr>
+<tr><td><IMG SRC="super97/line01.png"><td align=right>500<td align=right>+3<td>獲得特別贈分=總押分*25</tr>
+<tr><td><IMG SRC="super97/line02.png"><td align=right>200<td align=right>+2<td>獲得特別贈分=總押分*25</tr>
+<tr><td><IMG SRC="super97/line03.png"><td align=right>100<td align=right>+1<td></tr>
+<tr><td><IMG SRC="super97/line04.png"><td align=right>50<td><td>獲得累積贈分，並進行3次額外加分盤</tr>
+<tr><td><IMG SRC="super97/line05.png"><td align=right>20<td><td>累積5次可獲得累積贈分，並進行3次額外加分盤</tr>
+<tr><td><IMG SRC="super97/line06.png"><td align=right>15<td><td></tr>
+<tr><td><IMG SRC="super97/line07.png"><td align=right>15<td><td></tr>
+<tr><td><IMG SRC="super97/line08.png"><td align=right>10<td><td></tr>
+<tr><td><IMG SRC="super97/line09.png"><td align=right>10<td><td></tr>
+<tr><td><IMG SRC="super97/line10.png"><td align=right>10<td><td></tr>
+<tr><td><IMG SRC="super97/line11.png"><td align=right>8<td><td>進行1次額外加分盤</tr>
+<tr><td><IMG SRC="super97/line12.png"><td align=right>4<td><td>累積6次可進行1次額外加分盤</tr>
+<tr><td><IMG SRC="super97/line13.png"><td align=right>2<td><td></tr>
+</TABLE>
+<font color=blue><b>*** 其他情況的得分與作用</b></font>
+
+註：各關圖案略異，但作用相同。
+
+<TABLE cellSpacing=0 cellPadding=0 border=1>
+<tr><td>類型<td>得分倍率<td>法力<td>其他作用</tr>
+<tr><td><IMG SRC="super97/all01.png">x8<td align=right>128<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x7<td align=right>64<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x6<td align=right>32<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x5<td align=right>16<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x4<td align=right>8<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x3<td align=right>4<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png">x2<td align=right>2<td align=right><td></tr>
+<tr><td><IMG SRC="super97/all01.png"><td align=right><td align=right>累積出現32盤+1法<td></tr>
+<tr><td><IMG SRC="super97/special1.png"><td align=right><td align=right><td>獲得一張拼圖圖片</tr>
+</TABLE>
+
+</font>
+</pre>
+</body>
+</html>
+
