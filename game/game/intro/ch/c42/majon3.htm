@@ -18,6 +18,17 @@
 
 <IMG src="majon3/game2.jpg">
 <b>保護</b>：光碟，破解碼不明
+<b>備註</b>：執行後若出現"找不到vids:IV32解壓縮程式"，請下載ir32_32.dll，將
+      之拷貝到Windows目錄，再以下列reg檔登錄即可：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.iv31"="ir32_32.dll"
+"vidc.iv32"="ir32_32.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.iv31"="ir32_32.dll"
+"vidc.iv32"="ir32_32.dll"
+
 <b>修改</b>：存檔beauty.sav
 
 位置009Ch開始共8組，每組4 byte，1表示已獲得寶石（可看圖）

@@ -6,17 +6,23 @@
       此打起來頗有難度。攻擊招式係隨著經驗而成長，且輕功跳躍也可傷敵，
       是遊戲中較特殊的地方，裝備威力則嫌過少了些。整體而言，這個遊戲
       設計得還算可以，也值得玩看看。
+限制：必須在Windows XP以下系統執行。
 保護：光碟，將第二片音樂碟燒錄成檔案，再模擬成光碟，即可避免使用實際
       光碟。注意遊戲只認第一個光碟，模擬光碟時要注意。
 備註：若進入遊戲後只有音樂，螢幕全黑（沒顯示片頭動畫），可找ICCVID.DLL
-      拷入Windows\System32，然後以下列reg檔方式註冊：
-        REGEDIT4
-        [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\drivers.desc]
-        "iccvid.dll"="Cinepak Codec by Radius Inc."
-        [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
-        "vidc.cvid"="iccvid.dll"
-      （Movies\Opening.avi必須能播放，其影片格式為Cinepak，但安裝
-      K-Lite Codec是無效的）
+      拷入Windows\System32，然後以下列reg檔方式註冊（Movies\Opening.avi
+      必須能播放，其影片格式為Cinepak，但安裝K-Lite Codec是無效的）：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\drivers.desc]
+"iccvid.dll"="Cinepak Codec by Radius Inc."
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\drivers.desc]
+"iccvid.dll"="Cinepak Codec by Radius Inc."
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+
 修改：
 
 尋找Data目錄下的*.fgp檔，搜尋到生命值，然後其相對位置的數值為（每個數

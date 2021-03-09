@@ -20,28 +20,83 @@
       BIG2A.EXE (先解壓)
         3A 84 78 A9 74 02
         88 -- -- -- EB --
-<b>操作</b>：
+<b>備註</b>：正常版請執行PLAY.BAT，修改版請執行UPLAY.BAT
+<b>修改</b>：BIG2A.EXE
 
-1.Pass鈕要連按兩次才會確認。
-2.發牌後按下右上黑桃２圖鈕（閃爍時）會出現下列可購買功能：
+1.入場費、買功能不用錢
+  29 06 82 A8 83 1E 84 A8 00 (共8個)
+  90 90 90 90 90 90 90 90 90
+2.功能用完可立即再買
+  C7 46 DE 01 00
+  -- -- -- 00 --
+3.修改初始金錢
+  C7 06 82 A8 F4 01 C7 06 84 A8 00 00 (共2處)
+  -- -- -- -- XX XX -- -- -- -- YY YY  YY=高字組,XX=低字組
+
+<b>資訊</b>：
+
+1.功能價碼倍率資訊：BIG2A.EXE位置FA07h開始，共10個，每個2 byte。
+2.入場費資訊：BIG2A.EXE位置FA1Bh開始，共4個，每個4 byte。
+3.計分賠率資訊：BIG2A.EXE位置F9FFh開始，共4個，每個2 byte。
+
+<b>說明</b>：（作者－青衫）
+
+1.遊戲的目標是在100回合內爭取最高的累積分數以打進排行榜。
+2.每個場所各有不同的入場費與計分賠率：
+
+  <IMG SRC="big2/menu1.png">
+
+  場所  入場費  計分賠率
+  --------------------------
+   A        0        5
+   B     1000       25
+   C    10000      250
+   D   100000     2500
+
+3.入場前可設定遊戲規則（一律可出三條）：
+
+  <IMG SRC="big2/menu2.png">
+
+  A.台灣計張制：計算手上剩餘的張數，10張(含)以上未出時罰2倍。
+  B.國際計張制：兩兩比對手上剩餘張數差，相差10張(含)以上時罰2倍，最後
+    加總在一起。
+  C.標準計分制
+    (1)先計算各家手上剩餘牌的分數：
+       3～K = 3～13分
+       A    = 14分
+       2    = 15分
+    (2)兩兩比對分數差，相加後除以4，做為最終分數。
+
+4.發牌後按下右上黑桃２圖鈕（閃爍時）會出現下列可購買功能（價格須乘上
+  計分賠率）：
 
 <TABLE cellSpacing=0 cellPadding=2 border=1>
-<tr><td><IMG SRC="big2/m1-1.png"><td>透視眼<td>$20<td>查看三家的牌</tr>
-<tr><td><IMG SRC="big2/m1-2.png"><td>換牌<td>$10<td>更換一張牌</tr>
-<tr><td><IMG SRC="big2/m1-3.png"><td>換牌<td>$100<td>更換多張牌</tr>
-<tr><td><IMG SRC="big2/m1-4.png"><td>加倍<td>$50<td>輸贏的賭金加倍</tr>
+<tr><td><IMG SRC="big2/m1-1.png"><td>透視眼<td>$4<td>查看三家的牌</tr>
+<tr><td><IMG SRC="big2/m1-2.png"><td>換牌<td>$2<td>更換一張牌</tr>
+<tr><td><IMG SRC="big2/m1-3.png"><td>換牌<td>$20<td>更換多張牌</tr>
+<tr><td><IMG SRC="big2/m1-4.png"><td>加倍<td>$10<td>輸贏的賭金加倍</tr>
 </table>
-3.遊戲中按下右上黑桃２圖鈕會出現下列可購買功能：
+5.遊戲中按下右上黑桃２圖鈕會出現下列可購買功能（價格須乘上計分賠率）：
 
 <TABLE cellSpacing=0 cellPadding=2 border=1>
-<tr><td><IMG SRC="big2/m2-1.png"><td>透視眼<td>$30<td>查看三家的牌</tr>
-<tr><td><IMG SRC="big2/m2-2.png"><td>迷魂酒<td>$80<td>向下家使用迷魂酒</tr>
-<tr><td><IMG SRC="big2/m2-3.png"><td>迷魂酒<td>$80<td>向對家使用迷魂酒</tr>
-<tr><td><IMG SRC="big2/m2-4.png"><td>迷魂酒<td>$80<td>向上家使用迷魂酒</tr>
-<tr><td><IMG SRC="big2/m2-5.png"><td>求救<td>$5<td>電腦建議</tr>
-<tr><td><IMG SRC="big2/m2-6.png"><td>倒轉<td>$60<td>反悔一手</tr>
+<tr><td><IMG SRC="big2/m2-1.png"><td>透視眼<td>$6<td>查看三家的牌</tr>
+<tr><td><IMG SRC="big2/m2-2.png"><td>迷魂酒<td>$16<td>向下家使用迷魂酒</tr>
+<tr><td><IMG SRC="big2/m2-3.png"><td>迷魂酒<td>$16<td>向對家使用迷魂酒</tr>
+<tr><td><IMG SRC="big2/m2-4.png"><td>迷魂酒<td>$16<td>向上家使用迷魂酒</tr>
+<tr><td><IMG SRC="big2/m2-5.png"><td>求救<td>$1<td>電腦建議</tr>
+<tr><td><IMG SRC="big2/m2-6.png"><td>倒轉<td>$12<td>反悔一手</tr>
 </table>
-4.可購買功能一回合只能選一次，買過便必須等下一輪。
+6.可購買功能一回合只能選一次，買過便必須等下一輪。
+7.Pass鈕要連按兩次才會確認。
+8.每局結束後的功能鈕如下（必須回大街才能存檔，但再入場仍需入場費）：
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr><td><IMG SRC="big2/m3-1.png"><td>進行下一局</tr>
+<tr><td><IMG SRC="big2/m3-2.png"><td>回大街</tr>
+<tr><td><IMG SRC="big2/m3-3.png"><td>音樂開關</tr>
+<tr><td><IMG SRC="big2/m3-4.png"><td>新遊戲</tr>
+<tr><td><IMG SRC="big2/m3-5.png"><td>結束遊戲</tr>
+</table>
 </font>
 </pre>
 </body>

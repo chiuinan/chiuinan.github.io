@@ -17,36 +17,63 @@
 
 <IMG src="777/game2.png">
 <b>保護</b>：數字密碼，破解法：
-        77.EXE
-          7C 71
-          -- 70
-      或
-          75 08 C7 06 20 00
+        77.EXE (先解壓)
+          75 08 C7 06 A2 00
           90 90 -- -- -- --
-<b>操作</b>：
+<b>備註</b>：正常版請執行PLAY.BAT，修改版請執行UPLAY.BAT
+<b>修改</b>：77.EXE
 
-1.主畫面：左邊數字為現有金錢，右邊數字為目前要進行的局數
-<IMG src="777/menu1.jpg">
+1.購買特殊功能不用錢
+  66 29 06 C0 22
+  90 90 90 90 90
 
-2.玩牌畫面
+<b>說明</b>：（作者－青衫）
+
+1.遊戲目標為在100局內，儘量贏取金錢加入排行榜。
+2.主畫面：中央為玩家可選擇的遊戲牌桌，罐子下方為進入所需的金錢門檻。
+  最下方左邊數字為現有金錢，右邊數字為目前已進行的局數。
+<IMG src="777/game1.jpg">
+
+  場所    所需籌碼  賠率
+  -------------------------------
+  松柏坑      500      1
+  白毫       5000     10
+  凍頂      50000    100
+  高山     500000   1000
+
+2.玩牌畫面：系統選單的離開遊戲為回到主畫面，但使用此功能會損失一局。
 <TABLE cellSpacing=1 cellPadding=1 border=0>
 <TR valign=top><TD><IMG src="777/menu2.jpg"><TD>系統選單<br>音樂開關
 <TD><IMG src="777/menu3.jpg"><TD>各家剩餘籌碼<br>己方總金錢
 <TD><IMG src="777/menu4.jpg"><TD>上：出牌<br>左右：上下一張可出牌<br>下：特殊功能</TR>
 </TABLE>
-3.特殊功能
+3.特殊功能：各功能的購買金額與賠率有關，且會隨機變動。
 <TABLE cellSpacing=1 cellPadding=1 border=0>
 <TR valign=top><TD><IMG src="777/menu4-1.png"><TD><font color=blue>看一次對手的牌</font><br>看東家<br>看北家<br>看西家<br>看三家
-<TD><IMG src="777/menu4-2.png"><TD><font color=blue>特殊洗牌</font><br>己方有4張7<br>己方有3張7<br>己方有2張7<br>己方牌都比K小<br>己方牌都比Q小<br>己方牌都比J小</TR>
+<TD><IMG src="777/menu4-2.png"><TD><font color=blue>特殊洗牌</font><br>己方有4張7<br>己方有3張7<br>己方有2張7<br>己方牌都比K小<br>己方牌都比Q小<br>己方牌都比J小<br><font color=red>出牌後無法使用</font></TR>
 <TR valign=top><TD><IMG src="777/menu4-3.png"><TD><font color=blue>對手牌攤開來打</font><br>東家攤開<br>北家攤開<br>西家攤開<br>三家都攤開
 <TD><IMG src="777/menu4-4.png"><TD><font color=blue>求助電腦</font><br>電腦建議出牌<br>電腦代打</TR>
 <TR valign=top><TD><IMG src="777/menu4-5.png"><TD><font color=blue>換牌</font><br>挑一張牌更換<br>剩餘牌重洗重發
-<TD><IMG src="777/menu4-6.png"><TD><font color=blue>賭博</font><br>輸贏金錢乘2倍<br>輸贏金錢乘3倍<br>贏的給輸的錢</TR>
+<TD><IMG src="777/menu4-6.png"><TD><font color=blue>賭博</font><br>輸贏金錢乘2倍<br>輸贏金錢乘3倍<br>贏的給輸的錢<br><font color=red>出牌後無法使用</font></TR>
 <TR valign=top><TD><IMG src="777/menu4-7.png"><TD><font color=blue>悔棋</font><br>回到上一輪<br>回到一開始
 <TD><TD></TR>
 </TABLE>
-<b>提示</b>：善用存取大法，找到特別的好牌後，再加賭３倍，迫使其中一方一局內
-      便輸光籌碼，如此很快的便能累積大量金錢。
+4.有黑桃7的玩家先出牌（不必先出黑桃7）。
+5.牌局結束時，各家依照蓋牌計算分數：
+    A～K = 1～13
+  然後兩兩計算分數差，最後加總即為各家的輪贏分。若有人出脫，分數加倍。
+  若出脫的最後一張是7，則分數再加倍。但若有人全蓋牌，則分數正負翻轉。
+6.若有一方輸底（輸光籌碼），則會進行獎金發放（須再乘上賠率）：
+  第一名：1000分
+  第二名：600分
+  第三名：300分
+7.牌局結束後，會詢問下列事項：
+  (1)繼續遊戲：在本牌桌繼續玩下一局。
+  (2)離開牌桌：回到主選單。若本局玩得不好，可回主選單後載入儲存進度。
+  (3)提前退休：將目前的金額納入排行榜中，並重開新遊戲。
+  (4)儲存進度：若本局結果不錯，可先存檔。選擇後可繼續再選其他選項。
+8.善用存取大法，找到特別的好牌後，再加賭３倍，迫使其中一方一局內輸光
+  籌碼，如此很快的便能累積大量金錢。
 </font>
 </pre>
 </body>
