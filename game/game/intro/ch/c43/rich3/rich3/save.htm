@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔?.SAV
+
+位置0000h = 檔頭
+  目前輪到的玩家順序值：4byte（由1開始）
+  年：2 byte
+  月：2 byte
+  日：2 byte
+  星期：2 byte
+  玩家數目：2 byte
+位置0014h = 人物資訊，每個66h=102 byte，請參見<a href="#1">記憶體修改</a>之說明
+位置1BACh = 過路費，每個24 byte，請參見<a href="modify2.htm#7-5">地圖資訊檔</a>之說明
+位置26E0h = 公司股票承銷資訊，每個18 byte，請參見<a href="modify2.htm#7-6">地圖資訊檔</a>之說明
+位置27F4h = 卡片出現資訊，均2 byte整數，第一個為數目，其後為依次出現的卡片編號
+位置28CCh = 卡片資訊，請參見<a href="#3">記憶體修改</a>之說明
+位置29CCh = 持股資訊，請參見<a href="#4">記憶體修改</a>之說明
+位置2D80h = 上市公司股票資訊，每個2Eh=46 byte，請參見<a href="modify2.htm#7-10">地圖資訊檔</a>之說明
+位置4D0Eh = 道路事件資訊，請參見<a href="#5">記憶體修改</a>之說明
+位置5314h = 道具資訊，請參見<a href="#2">記憶體修改</a>之說明
+位置538Ah = 命運事件表，每個4 byte，請參見<a href="modify2.htm#7-12">地圖資訊檔</a>之說明
+
+<b>修改</b>：記憶體
+
+<A name="1">1.人物資訊：各人物相距66h=102 byte，按順序排列
+
+0000 NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+0010 NN NN ID ID PL PL XX XX YY YY DI DI CA CA S1 S1
+0020 S2 S2 S3 S3 S4 S4 -- -- -- -- -- -- -- -- -- --
+0030 GD GD ST ST ST ST -- -- M1 M1 M1 M1 M2 M2 M2 M2
+0040 D1 D1 D1 D1 D2 D2 D2 D2 CR CR D3 D3 D3 D3 -- --
+0050 -- -- -- -- -- -- -- -- M3 M3 M3 M3 -- -- -- --
+0060 -- -- -- -- -- --
+
+NN = 角色資訊，請參見<a href="modify2.htm#12">角色資訊檔</a>（最前2 byte為人名索引值）
+ID = 角色編號（由0開始），存取人物圖像用
+PL = 操控者，1=玩家，2=電腦託管，3=電腦
+XX,YY = 所在座標（0～49）
+DI = 方向，0=上，1=右，2=下，3=左
+CA = 現有的交通工具，0=無，1=機車，2=汽車
+S1～S4 = 坐牢、住院、睡眠、夢遊剩餘天數
+GD = 附身神明或物品，參見<a href="#5">道路事件資訊</a>
+ST = 神明附身剩餘天數，或定時炸彈剩餘步數
+M1 = 現金
+M2 = 存款
+D1 = 信用額
+D2 = 刷卡額
+CR = 信用度
+D3 = 貸款額
+M3 = 點卷
+
+將現金、存款都改成FF FF FF FF，則第二天該角色便會倒閉破產。
+
+<A name="2">2.道具資訊
+
+A1 A1 A2 A2 A3 A3 A4 A4 A5 A5 A6 A6 00 00 B1 B1
+B2 B2 B3 B3 B4 B4 B5 B5 B6 B6 00 00 C1 C1 C2 C2
+C3 C3 C4 C4 C5 C5 C6 C6 00 00 D1 D1 D2 D2 D3 D3
+D4 D4 D5 D5 D6 D6 00 00 E1 E1 E2 E2 E3 E3 E4 E4
+E5 E5 E6 E6 00 00 F1 F1 F2 F2 F3 F3 F4 F4 F5 F5
+F6 F6 00 00 G1 G1 G2 G2 G3 G3 G4 G4 G5 G5 G6 G6
+H1 H1 H2 H2 H3 H3 H4 H4 H5 H5 H6 H6 00 00
+
+A1～A6 = 6位人物的信用卡數目
+B1～B6 = 6位人物的定時炸彈數目
+C1～C6 = 6位人物的飛彈數目
+D1～D6 = 6位人物的地雷數目
+E1～E6 = 6位人物的路障數目
+F1～F6 = 6位人物的遙控骰子數目
+G1～G6 = 6位人物的機器娃娃數目
+H1～H6 = 6位人物的機票數目
+
+<A name="3">3.卡片資訊：每14 byte一組，分別表示7人的第一張<A href="item.htm#card">卡片編號</A>，以此類推
+
+<A name="4">4.持股資訊：每支股票42 byte，分別為7人的購買資訊
+
+購買股數：2 byte
+購買費用：4 byte
+
+<A name="5">5.道路事件資訊：共9組，每組6 byte
+
+XX XX YY YY MM MM
+
+XX,YY = 座標
+MM = 事件編號：
+
+02h = 流氓      03h/04h = 警察  05h/06h = 乞丐  07h = 惡犬 
+08h = 財神      09h = 福神      0Ah = 窮神      0Bh = 衰神
+0Ch = 惡魔      0Dh = 天使
+0Eh = 小財神    0Fh = 小福神    10h = 小窮神    11h = 小衰神
+12h = 吉普賽人  13h = 地雷      14h = 定時炸彈  15h = 路障
+</font>
+</pre>
+</body>
+</html>
