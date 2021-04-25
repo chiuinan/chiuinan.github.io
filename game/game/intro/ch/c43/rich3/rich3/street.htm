@@ -98,11 +98,37 @@
 <tr align=center><td>醫院<td><IMG SRC="p02.png"><td align=left>住院的所在地，期間內不得收費也不得行動</tr>
 <tr align=center><td>賭城<td><IMG SRC="p13.png"><td align=left>可用現金購買點券，1點100元，一次最多購買100點</tr>
 <tr align=center><td>遊樂場<td><IMG SRC="p17.png"><td align=left>進行限時接點券遊戲</tr>
-<tr align=center><td>賭骰子<td><IMG SRC="p18.png"><td align=left>賭一次骰子，每個籌碼代表10點券，最多可押10個<br>出現機率最高是10、11，期望值（機率x獲利）最高是7、14<br>不想輸贏的話，便大小各押一個</tr>
+<tr align=center><td>賭骰子<td><IMG SRC="p18.png"><td align=left>賭一次骰子，每個籌碼代表10點券，最多可押10個<br>不想輸贏的話，便大小各押一個</tr>
 <tr align=center><td>得10點<td><IMG SRC="p19.png"><td align=left>得10點券</tr>
 <tr align=center><td>得30點<td><IMG SRC="p20.png"><td align=left>得30點券</tr>
 <tr align=center><td>得50點<td><IMG SRC="p21.png"><td align=left>得50點券</tr>
 </table>
+<font color=blue><b>*** 賭骰子機率分析</b></font>
+
+1.賭骰子背景圖中，8、13被誤標示為x8倍，實際上是x15倍。
+2.出現機率最高的是10、11。
+3.期望值（機率x獲利）最高的是8、13，其次為7、14。因此進入賭骰子，應
+  儘量押8或13，其效益是最大。
+
+點數      機率      倍率  期望值
+---------------------------------------
+ 3     1/216= 0.5%   100   0.46
+ 4     3/216= 1.4%    20   0.28
+ 5     6/216= 2.8%    20   0.56
+ 6    10/216= 4.6%    20   0.93
+ 7    15/216= 6.9%    20   <font color=red>1.39</font>
+ 8    21/216= 9.7%    15   <font color=red>1.46</font>
+ 9    25/216=11.6%    10   1.16
+10    27/216=<font color=red>12.5%</font>    10   1.25
+11    27/216=<font color=red>12.5%</font>    10   1.25
+12    25/216=11.6%    10   1.16
+13    21/216= 9.7%    15   <font color=red>1.46</font>
+14    15/216= 6.9%    20   <font color=red>1.39</font>
+15    10/216= 4.6%    20   0.93
+16     6/216= 2.8%    20   0.56
+17     3/216= 1.4%    20   0.28
+18     1/216= 0.5%   100   0.46
+豹子   1/216= 0.5%    80   0.37
 </font>
 </pre>
 </body>
