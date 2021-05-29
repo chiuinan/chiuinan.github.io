@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：霹靂闖天關存檔Data\StageFile.dat，以第一存檔為準：
+
+各人物資訊：
+
+ID NN NN NN NN NN NN NN NN -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- A1 A1 A1 A1
+A4 A4 A4 A4 A2 A2 A2 A2 A3 A3 A3 A3 -- -- -- --
+
+A1 = 生命力
+A2 = 攻擊力
+A3 = 防禦力
+A4 = 麻將功力
+
+己方資訊：
+
+位置08D4h = 生命力，最大100=64h
+位置08D8h = 麻將功力，最大100=64h
+位置08DCh = 攻擊力，最大100=64h
+位置08E0h = 防禦力，最大100=64h
+位置0949h = 黃藥水，最多5
+位置094Ch = 藍藥水，最多5
+位置094Fh = 紅藥水，最多5
+位置0952h = 搓牌藥膏，最多5
+位置0955h = 不敗真經，最多5
+位置0958h = 迷幻藥，最多5
+
+<b>修改</b>：霹靂名人賽存檔Data\RaceFile.dat，以第一存檔為準：
+
+各人物資訊：
+
+ID NN NN NN NN NN NN NN NN -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+SC SC SC SC -- -- -- -- TN TN TN TN HN HN HN HN
+FN FN FN FN ZN ZN ZN ZN -- -- FL --
+
+ID = 人物編號
+NN = 人名
+SC = 積分
+TN = 總局數
+HN = 胡牌局數，胡牌率=胡牌局數/總局數
+FN = 放槍局數，放槍率=放槍局數/總局數
+ZN = 自摸局數，自摸率=自摸局數/總局數
+FL = 1表失敗，0表沒有
+
+己方資訊：
+
+位置03E0h = 積分
+位置03E8h = 總局數
+位置03ECh = 胡牌局數
+位置03F0h = 放槍局數
+位置03F4h = 自摸局數
+</font>
+</pre>
+</body>
+</html>
