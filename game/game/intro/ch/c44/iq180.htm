@@ -1,0 +1,119 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>智商180</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：智商180 (中文版)
+<b>簡介</b>：第三波1990年出品的益智遊戲，內含孔明棋、蘋果遊戲、智商180等3種
+      遊戲。初玩時會覺得很新奇，但因為這些遊戲都有必勝公式可循，熟練
+      後便會覺得很無聊，並不是很耐玩。
+<IMG src="iq180/game1.png"> <IMG src="iq180/game2.png">
+
+<IMG src="iq180/game3.png"> <IMG src="iq180/game4.png">
+<b>保護</b>：無
+<b>備註</b>：用DoxBox玩時，cycles最好設定3000以下，否則遊戲的亂數會不夠亂，
+      導致蘋果數目均相同、或智商180的開盤不夠混亂等問題。
+<b>操作</b>：F10 = 回主選單／離開遊戲
+<b>攻略</b>：（作者—青衫）
+
+<font color=blue><b>*** 孔明棋</b></font>
+
+<b>遊戲規則</b>：
+
+1.玩法類似中國跳棋，不能走步，只能跳。棋子必須跳過相鄰棋子到空位上，
+  並把被跳過的棋子拿掉。棋子可以沿格線橫、直跳，不能斜跳，最後剩下的
+  棋子越少越好。
+2.有些額外要求是最後的子要落在中央、移動最少的棋子（允許連跳時）等。
+  本遊戲並沒有這些額外要求，單純看最後剩下的棋子數：
+    (1)剩1顆      天才
+    (2)剩2-3顆    聰明
+    (3)剩4-6顆    普通
+    (4)剩7顆以上  菜鳥
+
+<b>玩法提示</b>：
+
+1.棋子儘量往中央移動，並預留供邊界棋子移出的機會。
+2.不要做出孤立的棋子。
+3.儘量水平移動、垂直移動交互進行，避免留下橫向或縱向的連續棋子。
+
+<b>最佳玩法</b>：最短的路徑為移動18顆子。
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="0">
+<TR><TD>1-2子<BR>1-2步<TD><IMG src="iq180/c01.png" valign=middle> <IMG src="iq180/c02.png" valign=middle><TD>開始的唯一移法（去除對稱）</TR>
+<TR><TD>3-4子<BR>3-4步<TD><IMG src="iq180/c03.png" valign=middle> <IMG src="iq180/c04.png" valign=middle><TD>做成上邊標準L空角型</TR>
+<TR><TD>5-7子<BR>5-7步<TD><IMG src="iq180/c05.png" valign=middle> <IMG src="iq180/c06.png" valign=middle> <IMG src="iq180/c07.png" valign=middle><TD>做成右邊標準L空角型</TR>
+<TR><TD>8子<BR>8-9步<TD><IMG src="iq180/c08.png"><TD>移出右邊角落點</TR>
+<TR><TD>9-11子<BR>10-16步<TD><IMG src="iq180/c09.png" valign=middle> <IMG src="iq180/c10.png" valign=middle> <IMG src="iq180/c11.png" valign=middle><TD>做成左邊標準L空角型（含連跳）</TR>
+<TR><TD>12-13子<BR>17-18步<TD><IMG src="iq180/c12.png" valign=middle> <IMG src="iq180/c13.png" valign=middle><TD>做成下邊標準L空角型</TR>
+<TR><TD>14子<BR>19-20步<TD><IMG src="iq180/c14.png"><TD>移出下邊角落點</TR>
+<TR><TD>15子<BR>21-22步<TD><IMG src="iq180/c15.png"><TD>移出左邊角落點</TR>
+<TR><TD>16子<BR>23-25步<TD><IMG src="iq180/c16.png"><TD>移出上邊角落點</TR>
+<TR><TD>17-18子<BR>26-31步<TD><IMG src="iq180/c17.png" valign=middle> <IMG src="iq180/c18.png" valign=middle> <IMG src="iq180/c19.png" valign=middle><TD>結束收尾</TR>
+</TABLE>
+
+<font color=blue><b>*** 蘋果遊戲</b></font>
+
+<b>遊戲規則</b>：
+
+1.決定先後手。
+2.雙方輪流拿走蘋果，可任選一區拿取至少1顆以上的蘋果。
+3.最後一個拿光蘋果者獲勝。
+
+<b>獲勝秘訣</b>：
+
+這是標準的Nim遊戲，有Bouton's理論可參考：
+
+1.定義P-position和N-position，其中P代表Previous，N代表Next。
+  P-position：上一次拿的人有必勝策略的局面（後手必勝）。
+  N-position：這一次拿的人有必勝策略的局面（先手必勝）。
+2.對於一個Nim遊戲的局面(a1,a2,...,an)，當a1^a2^...^an=0時為P-position，
+  其中^表示位元xor運算。
+
+<IMG src="iq180/game3.png">
+
+以此例說明如下。各蘋果數為11、25、22、6，換算成位元值為：
+
+A: 11 = 0 1011
+B: 25 = 1 1001
+C: 22 = 1 0110
+D:  6 = 0 0110
+---------------
+  xor = 0 0010
+
+互斥結果非0，表示先手必勝，因此要選擇先手。然後針對互斥結果非0的位元，
+設法將之變成0。此例的方法是拿走A、C、D任一區2個蘋果即可。之後無論電腦
+拿走多少顆，都以此方法重算一次，找出拿走蘋果後，各數目互斥後數值仍為0
+的情況，最後即可獲勝。
+
+由於電腦也以此方式計算，所以只要算錯一次，便會變成電腦必勝。
+
+<font color=blue><b>*** 智商180</b></font>
+
+<b>遊戲規則</b>：
+
+1.按水平或垂直按鍵時，該行或列的各位置圖案會翻轉，且該行或列的各位置
+  也會左右或上下翻轉。
+2.玩家必須水平或垂直翻轉各行列圖案，使得所有位置的圖案都相同。
+
+<b>玩法提示</b>：
+
+1.先翻轉各行列，使得需要翻轉的圖案數目最少。
+<IMG src="iq180/game4.png"> <IMG src="iq180/d01.png">
+
+2.針對要翻轉的位置，依次按下該位置的垂直、水平、垂直、水平按鍵，則該
+  位置的圖案會與水平和垂直對稱位置的圖案交換與翻轉。若該位置未翻轉到
+  想要的圖案，則再按一次。
+  (1)翻轉左上角：A1A1
+<IMG src="iq180/d02.png">
+  (2)翻轉最左邊：A4A4、A5A5，然後按此方法翻轉所有點
+<IMG src="iq180/d03.png"> <IMG src="iq180/d04.png">
+
+3.最後剩下在垂直或水平中央的獨立點，則按下水平或垂直按鍵，等變成對稱
+  的點後，再按前述方法翻轉即可完成。
+<IMG src="iq180/d05.png"> <IMG src="iq180/d06.png">
+</font>
+</pre>
+</body>
+</html>
