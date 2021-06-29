@@ -1,0 +1,122 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>KataGo</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：KataGo (英文版)
+<b>簡介</b>：David J. Wu 2019年以AlphaGo的DeepMind論文為基礎，進行研究改良的
+      開源圍棋程式。除了主程式外，作者也開放其訓練資料，為目前最強的
+      電腦圍棋遊戲之一。在10秒一手的限制下，執白讓5子與天頂圍棋6下仍
+      可以獲勝。其高強的棋力，足供所有圍棋棋友下棋或學習之用。不過其
+      佈局十足的實利主義，幾乎一開始便進三三搶空，其至在二線爬行，並
+      不算是很好，主要都是靠中盤的攻殺獲勝。因此非上段的初學者，建議
+      仍以佈局較強的天頂圍棋為師較佳。
+<IMG src="katago/game1.jpg">
+<b>備註</b>：本版為1.8.2 opencl版與1.4.5版訓練資料，搭配Sabaki 0.51.1界面。
+<b>保護</b>：無
+<b>說明</b>：
+
+<font color=blue><b>*** 主程式</b></font>
+
+<b>一、下載</b>
+
+主程式：https://github.com/lightvector/KataGo/releases
+訓練資料：https://github.com/lightvector/KataGo/releases/tag/v1.4.5
+
+主程式有幾種版本，請視自己電腦配備決定版本：
+
+1.OpenCL：使用GPU的版本，適用現今絕大部份的顯示卡。
+2.Eigen：使用CPU的版本，速度會較慢，如果顯示卡太舊而無法執行OpenCL版
+  時才考慮。先試看看AVX2版，如果CPU太舊未支援向量指令時，才使用非AVX2
+  版，但速度又更慢。
+3.CUDA：NVIDIA特定GPU的版本，不一定比OpenCL快，其實並非必要使用。
+
+訓練資料也有幾種版本：
+
+1.20x256區塊：g170e-b20c256x2-s5303129600-d1228401921
+2.30x320區塊：g170-b30c320x2-s4824661760-d1229536699
+3.40x256區塊：g170-b40c256x2-s5095420928-d1229425124
+
+如果有足夠的計算時間，則區塊愈大者，棋力愈高。就作者以每手10秒限制，
+各版本互先下棋的結果為：
+
+黑＼白    20      30      40    結果
+----------------------------------------
+  20            勝＼負  負＼勝  2勝2負
+  30    負＼勝          勝＼負  1勝3負
+  40    勝＼負  勝＼負          3勝1負
+
+結果其實相差不多，建議是使用40x256區塊版本。
+
+<b>二、初始化</b>
+
+將訓練資料的gz檔放到net1.4.5子目錄裡，然後執行（看使用那個訓練資料）：
+
+katago.exe genconfig -model net1.4.5\g170e-b20c256x2-s5303129600-d1228401921.bin.gz -output gtp20.cfg
+katago.exe genconfig -model net1.4.5\g170-b30c320x2-s4824661760-d1229536699.bin.gz -output gtp30.cfg
+katago.exe genconfig -model net1.4.5\g170-b40c256x2-s5095420928-d1229425124.bin.gz -output gtp40.cfg
+
+然後回答問題：
+
+1.RULES：使用圍棋的規則，chinese為中國計點制，japanese為日本計目制。
+2.SEARCH LIMITS：每手限制，建議按n，由人機界面設定，接著會有警示訊息，
+  按Enter略過。之後的Enable pondering，按n可避免我方在思考時，電腦
+  同時也在背景計算。
+3.GPUS AND RAM：選擇使用的GPU和RAM數目。內定RAM是3GB，如果RAM不夠，
+  可以往下調降為1或2。
+4.PERFORMANCE TUNING：效能調校，全按Enter進行即可，可能需要數分鐘。
+
+<font color=blue><b>*** 人機界面</b></font>
+
+<b>一、下載</b>
+
+KataGo本身沒有人機界面，必須藉助其他通用的圍棋人機界面程式，例如：
+
+1.KaTrain：https://github.com/sanderland/katrain
+2.Lizzie：https://github.com/featurecat/lizzie
+3.q5Go：https://github.com/bernds/q5Go
+4.Sabaki：https://sabaki.yichuanshen.de/
+
+<b>二、設定</b>
+
+下面以Sabaki為例，說明其設定方法。首先將KataGo的程式目錄移進Sabaki裡
+（假設是katago1.8.2-opencl）。執行Sabaki.exe，選擇File的Preferences，
+然後變更Language成為繁體中文。離開程式並重新執行，選擇文件的首選項，
+點選引擎，按下新增，然後輸入：
+
+1.路徑：katago1.8.2-opencl\katago.exe
+2.運行參數：（看使用那個訓練資料）
+
+gtp -model net1.4.5\g170e-b20c256x2-s5303129600-d1228401921.bin.gz -config gtp20.cfg
+gtp -model net1.4.5\g170-b30c320x2-s4824661760-d1229536699.bin.gz -config gtp30.cfg
+gtp -model net1.4.5\g170-b40c256x2-s5095420928-d1229425124.bin.gz -config gtp40.cfg
+
+3.啟動參數：time_settings 0 10 1
+
+第一個參數為用時，第二個參數為讀秒限時，第三個參數為讀秒限時內著手數。
+如果KataGo在初始化時，沒有設定每手限時，此處務必設定，否則可能會因不
+限時，造成KataGo遲遲不落子。
+
+<b>三、操作</b>
+
+1.新對局時，按下黑子或白子的箭頭鈕，選擇載入引擎，以使用KataGo下棋。
+2.電腦執黑（先手）時，要按下F10【生成一手棋】開始下棋。
+3.若是電腦對電腦，則要按F5【開始引擎間的對戰】，避免暫停。
+
+<font color=blue><b>*** 戰績</b></font>
+
+在10秒一手的限制下，與天頂圍棋7段下棋的結果：
+
+1.互先執黑中押勝
+2.互先執白中押勝
+3.執白讓2子中押勝
+4.執白讓3子19目勝
+5.執白讓4子中押勝
+6.執白讓5子中押勝
+7.執白讓6子中押敗（相差約20目）
+</font>
+</pre>
+</body>
+</html>
