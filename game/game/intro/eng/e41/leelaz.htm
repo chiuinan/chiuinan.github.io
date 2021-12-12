@@ -1,0 +1,73 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Leela Zero</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：Leela Zero (英文版)
+<b>簡介</b>：比利時Gian-Carlo Pascutto於2017年開始，以AlphaGo的DeepMind論文
+      為基礎，進行研究改良的圍棋程式，並透過網路玩家協同建立訓練資料。
+      曾參加2018世界人工智慧圍棋大賽，敗給PhoenixGo與絕藝，獲得第三名。
+      後因訓練資料推進緩慢，加上個人因素，於2021年初宣布中止開發，改
+      推薦KataGo，為超強的電腦圍棋程式之一。
+<IMG src="leelaz/game1.jpg">
+<b>備註</b>：本版為0.17版與最終版訓練資料，搭配Sabaki 0.51.1界面。
+<b>保護</b>：無
+<b>說明</b>：
+
+<font color=blue><b>*** 主程式</b></font>
+
+<b>一、下載</b>
+
+主程式：https://github.com/leela-zero/leela-zero/releases
+訓練資料：https://zero.sjeng.org/best-network
+
+將訓練資料best-network檔案放到Leela Zero執行檔目錄裡。
+
+<b>二、初始化</b>
+
+直接執行leelaz.exe，會自動進行效能調校。
+
+<font color=blue><b>*** 人機界面</b></font>
+
+<b>一、下載</b>
+
+KataGo本身沒有人機界面，必須藉助其他通用的圍棋人機界面程式，例如：
+
+1.Lizzie：https://github.com/featurecat/lizzie
+2.Sabaki：https://sabaki.yichuanshen.de/
+3.LeelaSabaki：https://github.com/SabakiHQ/LeelaSabaki
+
+<b>二、設定</b>
+
+下面以Sabaki為例，說明其設定方法。首先將Leela Zero程式目錄移進Sabaki
+裡（假設是leela-zero-0.17）。執行Sabaki.exe，選擇File的Preferences，
+然後變更Language成為繁體中文。離開程式並重新執行，選擇文件的首選項，
+點選引擎，按下新增，然後輸入：
+
+1.路徑：leela-zero-0.17\leelaz.exe
+2.運行參數：--gtp -w best-network
+3.啟動參數：time_settings 0 10 1
+
+time_settings第1個參數為用時，第2個參數為讀秒限時，第3個參數為讀秒限
+時內著手數。
+
+<b>三、操作</b>
+
+1.新對局時，按下黑子或白子的箭頭鈕，選擇載入引擎，以使用KataGo下棋。
+2.電腦執黑（先手）時，要按下F10【生成一手棋】開始下棋。
+3.若是電腦對電腦，則要按F5【開始引擎間的對戰】，避免暫停。
+4.若是想由電腦建議、自行下子，則按F4【開始/停止分析】。
+
+<font color=blue><b>*** 戰績</b></font>
+
+每手10秒與KataGo互先下棋的結果：
+
+1.執白中押敗
+2.執黑中押敗
+3.執黑被授2子中押勝
+</font>
+</pre>
+</body>
+</html>
