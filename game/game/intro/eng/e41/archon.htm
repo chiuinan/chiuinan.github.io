@@ -9,8 +9,8 @@
 <b>簡介</b>：SSI 1994年出品的棋類遊戲，由Free Fall Associates公司製作，1983
       年遊戲《執政官：光明與黑暗》（Archon: The Light and the Dark）
       的重製版。遊戲乍看下以為是西洋棋，其實不然。棋盤大小為9x9，並
-      非西洋棋的8x8，雙方各有18個棋子、8個棋種。和其他棋類最大不同處
-      為，吃子時必須經過雙方戰鬥，勝者吃敗者。因為各棋種強弱不一，各
+      非西洋棋的8x8，雙方各有18個棋子、8個兵種。和其他棋類最大不同處
+      為，吃子時必須經過雙方戰鬥，勝者吃敗者。因為各兵種強弱不一，各
       有其特性，而棋格形態也會影響雙方能力，加上主將還可以施法，因此
       玩起來頗為複雜，很考驗玩家的腦力與操控力，值得喜歡挑戰的玩家試
       試。
@@ -22,11 +22,28 @@
 <b>修改</b>：ARCHON.EXE
 
 1.變動格亮度不變
-2.???
+  66 FF 05 F2
+  EB 05 -- --
+  66 FF 0D F2
+  EB 05 -- --
 
-<b>資訊</b>：
+<b>資訊</b>：ARCHON.EXE
 
-???
+1.盤面配置：位置0760BDh，每個1 byte（兵種編號），共28h=40個(含4個招喚怪)
+2.兵種資訊：位置075F54h，每個14 byte，共14h=20個
+
+  HP HP M1 M2 -- -- -- -- -- -- -- -- -- --
+
+HP = 生命
+M1 = 棋盤移動方式，低4位元 = 最大移動步數，高4位元：
+       C = 傳送
+       8 = 飛行
+       0 = 步行
+M2 = 戰鬥移動方式
+       01 = 步行
+       02 = 飄浮
+       04 = 同對手
+       0C = 飛行
 
 <b>操作</b>：
 
@@ -94,10 +111,10 @@ F1 = 暫停
 
 棋盤上一共有四種棋格：
 
-1.永亮格：亮度100%。
-2.永暗格：亮度0%。
-3.變動格：隨著回合數在亮度0%到100%來回切換，初始50%，每次增減1/6，先
-          暗後明。
+1.永亮格：亮度值14（白）。
+2.永暗格：亮度值0（黑）。
+3.變動格：隨著回合數在黑白亮度間來回切換，共有7種亮度，初始亮度為7，
+          先減後增。各亮度值為0、2、5、7、9、12、14。
 4.能量格：上、下（雙方法師所在棋格，分別為永暗格與永亮格）、左、右、
           中（均為變動格）共有五個能量格。
 
@@ -111,7 +128,13 @@ F1 = 暫停
 置。
 
 注意亮度與能量格額外增加的生命力是採用附加方式的，也就是說，必須先打
-掉這些額外的生命力，才會真正讓該棋子實際受到傷害。
+掉這些額外的生命力，才會真正讓該棋子實際受到傷害。在戰場實際的生命力
+計算公式為：
+
+    戰場生命力 = 兵種生命力 + 能量格附加生命力 + 亮度附加生命力
+    能量格附加生命力 = 能量格數目
+    光明方亮度附加生命力 = 亮度值/2
+    黑暗方亮度附加生命力 = 7-亮度值/2
 
 遊戲的獲勝方式如下：
 
@@ -123,7 +146,7 @@ F1 = 暫停
 由於能量格除了影響作戰能力外，也會影響到勝負，因此可說是雙方兵家必爭
 之地。
 
-根據不同的棋種，棋盤上的棋子共有三種移動方式：
+根據不同的兵種，棋盤上的棋子共有三種移動方式：
 
 1.步行（Ground）：只能水平或垂直移動，無法越過棋子。
 2.飛行（Fly）：可以斜角移動（視為一步），可以越過棋子。
@@ -131,19 +154,19 @@ F1 = 暫停
 
 當移動目的格已有對方棋子時，便會開始進入戰鬥，以搶奪該棋格的所有權。
 
-<font color=blue><b>四、棋種說明</b></font>
+<font color=blue><b>四、兵種說明</b></font>
 
 <table>
 <tr><td><img src="archon/role.png">
 <td>A.武士（Knight）<br>
 B.弓箭手（Archer）<br>
 C.女武士（Valkyrie）<br>
-D.石巨人（Golem）<br>
+D.魔像（Golem）<br>
 E.獨角獸（Unicorn）<br>
 F.精靈（Genie）<br>
 G.鳳凰（Phoenix）<br>
 H.巫師（Wizard）<br>
-<td>1.大耳怪（Goblins）<br>
+<td>1.地精（Goblins）<br>
 2.蠍獅（Manticore）<br>
 3.女妖（Banshee）<br>
 4.巨魔（Troll）<br>
@@ -152,110 +175,67 @@ H.巫師（Wizard）<br>
 7.龍（Dragon）<br>
 8.女巫（Sorceress）<br>
 </tr></table>
-
-THE OPPOSING FORCES 
-
-In the entries that follow, a variable missile is any medium- or long-range attack whose
-size, intensity, or number is affected by the length of time you hold down the appropriate
-firing button. A directable missile is any similar attack whose direction you can alter after
-the moment of firing. A piece's lifespan is the amount of damage !X loosely, the number
-of wounds !X the piece can sustain before dying. Exchange
-
-The phoenix is a match for anything on the Dark Side. It is devastating against the
-banshee. A battle with the shapeshifter is a long, unprofitable war of attrition; avoid
-initiating such a fight unless the square is white and no other Light piece is within striking
-distance. Because it negates the phoenix's advantage of altitude, the dragon is a
-challenging opponent, but the phoenix's true nemesis is the fire elemental, which cannot
-be harmed by fire! It is possible to evade and outlast an elemental, but it's not easy!
-
-Speed and distance are the unicorn's prime weapons. Use galloping and jumping to stay
-away from opponents, and exploit the speed of the energy bolts, which is matched on
-the Dark Side only by the basilisk's eyebeams. Never get closer than is necessary to hit
-the target. Try to use lines of obstacles as alleys for fire. 
-
-The golem is a reasonable match for most pieces on the Dark Side, but avoid the
-basilisk's eyebeams, and be wary of the lowly goblin. It can duck below the crystal, and
-it can attack far more often than the golem can turn invulnerable. When golem does
-meet goblin, try to keep water or lava between the two pieces. 
-
-Valkyrie
-Use lightning strikes to keep trolls, banshees, manticores, and goblins from
-getting close enough to use their short-range weapons. (Never let anyone inside that
-arc!) Lightning is not only one of the few weapons effective against the banshee's cursed
-skulls but is also one of the best ways to attack the dragon. Unless the battle is on a
-favorable square, avoid tangling with the fast missiles of the sorceress and the basilisk.
-
-Knight
-The banshee is lethal! Never attack a banshee unless one is stuck on a white square, and
-think twice about it even then.
-
 <table cellSpacing=0 cellPadding=2 border=1>
-<tr><th>棋種<th>數量<th>生命力<th>棋盤移動<th>戰鬥移動<th>戰鬥技能一<th>戰鬥技能二<th>備註
-<tr><td>巫師（Wizard）<td>1<td>中<td>傳送3<td>走路<td>短程太陽球<td>傳送<td>
-<tr><td>精靈（Genie）<td>1<td>長<td>飛行4<td>飄浮<td>中程導向火球<td>縮形快速移動<td>
-<tr><td>鳳凰（Phoenix）<td>1<td>長<td>飛行5<td>飛行<td>近距範圍爆炸火球<td>長程導向火羽<td>
-<tr><td>獨角獸（Unicorn）<td>2<td>中<td>步行4<td>步行<td>長程閃電箭<td>跳躍移動<td>
-<tr><td>石巨人（Golem）<td>2<td>長<td>步行3<td>步行<td>爆炸晶石<td>不受傷害<td>
-<tr><td>女武士（Valkyrie）<td>2<td>中<td>飛行3<td>飄浮<td>導向魔法標槍<td>近距三重閃電<td>
-<tr><td>弓箭手（Archer）<td>2<td>短<td>步行3<td>步行<td>箭<td>魔法箭<td>
-<tr><td>武士（Knight）<td>7<td>短<td>步行3<td>步行<td>近距劍<td>盾牌單面防禦<td>
-<tr><td>女巫（Sorceress）<td>1<td>中<td>傳送3<td>步行<td>導向閃電箭<td>傳送<td>
-<tr><td>龍（Dragon）<td>1<td>長<td>飛行4<td>飛行<td>噴火<td>毒氣團<td>
-<tr><td>變形怪（Shapeshifter）<td>1<td>同對手<td>飛行5<td>同對手<td>同對手<td>同對手<td>戰鬥後完全恢復生命
-<tr><td>蛇怪（Basilisk）<td>2<td>短<td>步行3<td>步行<td>麻痺目光<td>毒息<td>
-<tr><td>巨魔（Troll）<td>2<td>長<td>步行3<td>步行<td>巨石<td>近距範圍衝擊波(只對步行者有效)<td>戰鬥時逐漸恢復生命
-<tr><td>女妖（Banshee）<td>2<td>中<td>飛行3<td>飄浮<td>近距範圍號叫<td>骷髏(最多3個)<td>
-<tr><td>蠍獅（Manticore）<td>2<td>中<td>步行3<td>步行<td>尾釘群<td>短途獅吼<td>
-<tr><td>大耳怪（Goblins）<td>7<td>短<td>步行3<td>步行<td>近距木棒<td>伏低閃躲<td>
-<tr><td>火元素（Fire Elemental）<td>1<td>中<td>不限<td>飄浮<td>火球<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命<br>對火焰攻擊免疫
-<tr><td>水元素（Water Elemental）<td>1<td>長<td>不限<td>飄浮<td>水龍捲<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
-<tr><td>土元素（Earth Elemental）<td>1<td>長<td>不限<td>步行<td>滾石(飛行者無效)<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
-<tr><td>風元素（Air Elemental）<td>1<td>中<td>不限<td>飄浮<td>龍捲風<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
+<tr bgcolor=yellow><th>代碼<th>兵種<th>數量<th>生命力<th>棋盤移動<th>戰鬥移動<th>戰鬥技能一<th>戰鬥技能二<th>備註
+<tr><td>00<td>巫師 (Wizard)<td>1<td>12<td>傳送3<td>步行<td>膨脹太陽球<td>傳送<td>
+<tr><td>01<td>精靈 (Genie)<td>1<td>15<td>飛行4<td>飄浮<td>導向火球<td>縮形快速移動<td>
+<tr><td>02<td>鳳凰 (Phoenix)<td>1<td>12<td>飛行5<td>飛行<td>近距範圍自爆火球<td>自動尋敵慢速火羽<td>自爆火球時不受傷害
+<tr><td>03<td>獨角獸 (Unicorn)<td>2<td>9<td>步行4<td>步行<td>連續迅雷箭<td>跳躍移動<td>
+<tr><td>04<td>魔像 (Golem)<td>2<td>15<td>步行3<td>步行<td>爆炸晶石<td>不受傷害<td>
+<tr><td>05<td>女武士 (Valkyrie)<td>2<td>8<td>飛行3<td>飄浮<td>導向標槍<td>近距三重落雷<td>
+<tr><td>06<td>弓箭手 (Archer)<td>2<td>5<td>步行3<td>步行<td>箭<td>魔法箭<td>
+<tr><td>07<td>武士 (Knight)<td>7<td>5<td>步行3<td>步行<td>近距劍擊<td>盾牌單面防禦<td>
+<tr bgcolor=yellow><td colspan=20>
+<tr><td>08<td>女巫 (Sorceress)<td>1<td>14<td>傳送3<td>步行<td>導向閃電<td>傳送<td>
+<tr><td>09<td>龍 (Dragon)<td>1<td>19<td>飛行4<td>飛行<td>中距噴火<td>短距毒氣團<td>
+<tr><td>0A<td>變形怪 (Shapeshifter)<td>1<td>同對手<td>飛行5<td>同對手<td>同對手<td>同對手<td>戰鬥後完全恢復生命
+<tr><td>0B<td>蛇怪 (Basilisk)<td>2<td>6<td>步行3<td>步行<td>目光射線<td>中距毒氣團<td>
+<tr><td>0C<td>巨魔 (Troll)<td>2<td>16<td>步行3<td>步行<td>投擲巨石<td>近距範圍衝擊波<br>(只對步行者有效)<td>戰鬥時逐漸恢復生命
+<tr><td>0D<td>女妖 (Banshee)<td>2<td>8<td>飛行3<td>飄浮<td>近距範圍號叫<td>緩身骷髏(最多3個)<td>
+<tr><td>0E<td>蠍獅 (Manticore)<td>2<td>10<td>步行3<td>步行<td>尾釘群<td>短距獅吼<td>
+<tr><td>0F<td>地精 (Goblins)<td>7<td>5<td>步行3<td>步行<td>近距棒鎚<td>伏低閃躲<td>
+<tr bgcolor=yellow><td colspan=20>
+<tr><td>10<td>土元素 (Earth Elemental)<td>1<td>17<td>飛行15<td>步行<td>滾石(飛行者無效)<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
+<tr><td>11<td>風元素 (Air Elemental)<td>1<td>12<td>飛行15<td>飄浮<td>龍捲風<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
+<tr><td>12<td>火元素 (Fire Elemental)<td>1<td>10<td>飛行15<td>飄浮<td>火球<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命<br>對火焰攻擊免疫
+<tr><td>13<td>水元素 (Water Elemental)<td>1<td>14<td>飛行15<td>飄浮<td>水龍捲<td>近距範圍自我毀滅爆炸<td>戰鬥時逐漸減少生命
 </table>
+兵種勝負表（電腦自動戰鬥），+表示極大機率左勝上，-表示極大機率上勝左，
+?表不一定，即便獲勝自身也會損傷嚴重：
 
-
-
-
-Shapeshifter:
-Attack strong pieces on black or dark squares, but ignore the
-knights. Why take a chance on getting the shapeshifter killed for so small a prize?
-(Conversely, if you are playing Light, the best way to attack the shapeshifter on neutral
-ground is with a knight.)
-
-The sluggish basilisk is best at moderate or long range. Use the
-poisoned breath, with its more limited range, to supplement the eyebeams !X to keep
-infighters from closing or to finish off a badly wounded piece. Properly used, the basilisk
-is more than a match for slow or short-range fighters.
-
-Use the troll to pulverize knights; it is much more effective against them than the golem
-is against goblins. Against other opponents, it needs to get as close as possible to
-ensure hits and do damage. Because of its long life and regenerative ability, it is the one
-piece that can profitably trade attacks with any opponent. It is truly formidable,
-however, only on dark squares. 
+      巫師  精靈  鳳凰  獨角  魔像  女武  弓箭  武士
+------------------------------------------------------
+女巫   -     ?     -     ?     ?     ?     ?     ?
+龍     ?     ?     +     +     +     ?     +     ?
+變形   ?     ?     ?     ?     ?     ?     ?     ?
+蛇怪   ?     ?     -     ?     -     ?     ?     +
+巨魔   ?     -     -     ?     ?     ?     +     +
+女妖   ?     ?     ?     +     -     +     +     +
+蠍獅   ?     -     -     ?     -     ?     ?     ?
+地精   ?     -     -     ?     ?     -     ?     ?
 
 <font color=blue><b>五、戰鬥說明</b></font>
 
 下方左邊為光明方棋子狀態，右邊為黑暗方棋子狀態。最前的兩個圖案為戰鬥
-技能一和戰鬥技能二，當顯現時按下對應按鈕即可作用。攻擊後需要一段時間
-才能恢復再攻擊。後面的顏色條為棋子目前的生命力。
-
-地形作用：
-
-1.水：降低移動速度。
-2.沼澤(???)、岩漿：使棋子逐漸減少生命力。
-
-戰鬥中飛行或漂浮的棋種，不受地形作用影響。
-
-障礙物作用：
-
-阻礙彈體或棋子通過，但飛行的棋子不受影響。
-
-1.岩石：不可破壞
-2.樹木或巨菇：可破壞（2擊???）
-
-能量環：只有能量格上的戰場才有，會間歇性啟用(波紋???)，站在上面可恢復生命力。
+技能一和戰鬥技能二，當顯現時按下對應按鈕即可作用。大部份的長程攻擊，
+對應按鈕按著愈久，其傷害力愈高，射程也愈遠。攻擊之後需要一段時間才能
+恢復再攻擊。後面的顏色條則為兵種目前的生命力，每一格代表2點生命。
 
 <IMG src="archon/game2.png">
+
+一、地形作用：
+
+1.水：降低移動速度。
+2.沼澤、岩漿：使棋子逐漸減少生命力。
+
+戰鬥中飛行或漂浮的兵種，不受地形作用影響。
+
+二、障礙物作用：阻礙彈體或棋子通過，但飛行的棋子不受影響。
+
+1.岩石：不可破壞
+2.樹木或巨菇：攻擊2次可完全破壞
+
+三、能量環：只有能量格上的戰場才有，會間歇性啟用，站在上面可恢復生命。
 
 戰鬥後，受傷的棋子會隨著回合數逐漸恢復生命力，在能量格上的棋子恢復速
 度較快。
@@ -272,13 +252,13 @@ however, only on dark squares.
 
 <table cellSpacing=0 cellPadding=2 border=1>
 <tr><th>法術<th>效用<th>限制</tr>
-<tr><td>傳送(Teleport)<td>將己方指定棋子移到某一格 (目的必須空格???)<td>不能移出或移入能量格或囚禁中的棋子</tr>
-<tr><td>醫治(Heal)<td>完全恢復己方指定棋子的生命力<td>無法醫治能量格上的棋子</tr>
-<tr><td>反轉時間(Shift Time)<td>反轉目前變動格的亮度與變化方向 (亮度有變化???)<td></tr>
-<tr><td>交換(Exchange)<td>交換任意兩格的棋子 (只能一光一暗???)<td>不能移出或移入能量格</tr>
-<tr><td>召喚元素怪(Summon Elemental)<td>隨機召喚火水土風其中一種元素怪進行攻擊<br>無論勝負，戰鬥後元素怪便消失<td>不能攻擊能量格上的棋子</tr>
-<tr><td>重生(Revive)<td>復活己方已陣亡的一個棋子<td>復活的棋子必須在法師旁的空位上</tr>
-<tr><td>囚禁(Imprison)<td>讓敵方一個棋子停留在原地，無法移動與施法<br>直到變動格顏色完全變成該方顏色為止<td>不能囚禁能量格上的棋子</tr>
+<tr><td>傳送 (Teleport)<td>將己方指定棋子移到某一格<br>若該格已有敵子，則進入戰鬥<td>不能移出或移入能量格或囚禁中的棋子</tr>
+<tr><td>醫治 (Heal)<td>完全恢復己方指定棋子的生命力<td>無法醫治能量格上的棋子</tr>
+<tr><td>反轉時間 (Shift Time)<td>反轉目前變動格的亮度變化方向(原亮度不變)<td></tr>
+<tr><td>交換 (Exchange)<td>交換任意兩格的棋子<td>不能移出或移入能量格</tr>
+<tr><td>召喚元素怪 (Summon Elemental)<td>隨機召喚火水土風其中一種元素怪進行攻擊<br>無論勝負，戰鬥後元素怪便消失<td>不能攻擊能量格上的棋子</tr>
+<tr><td>重生 (Revive)<td>復活己方已陣亡的一個棋子<td>復活的棋子必須在法師旁的空位上</tr>
+<tr><td>囚禁 (Imprison)<td>讓敵方一個棋子停留在原地，無法移動與施法<br>直到變動格顏色完全變成該方顏色為止<td>不能囚禁能量格上的棋子</tr>
 </table>
 <font color=blue><b>七、提示</b></font>
 
