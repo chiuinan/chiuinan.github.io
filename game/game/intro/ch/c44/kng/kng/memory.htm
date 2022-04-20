@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>記憶體修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>記憶體修改</b></FONT></CENTER>
+<b>修改</b>：記憶體
+
+1.主角資訊，格式同<A href="save.htm">存檔</A>
+
+23D0 -- -- -- -- -- -- -- -- -- -- AG AG AG AG X2 X2
+23E0 X2 X2 X3 X3 X3 X3 X1 X1 X1 X1 X4 X4 X4 X4 X5 X5
+23F0 X5 X5 X6 X6 X6 X6 X7 X7 X7 X7 X8 X8 X8 X8 X9 X9
+2400 X9 X9 ST ST ST ST XA XA XA XA LH LH LH LH N3 N3
+2410 N3 N3 N2 N2 N2 N2 N1 N1 N1 N1 M1 M1 M1 M1 -- --
+2420 -- -- M2 M2 M2 M2 MD MD MD MD -- -- -- -- M3 M3
+2430 M3 M3 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+2440 -- -- E1 E1 E1 E1 E3 E3 E3 E3 E2 E2 E2 E2 -- --
+2450 -- -- -- -- -- -- E8 E8 E8 E8 EB EB EB EB XB XB
+2460 XB XB ED ED ED ED E9 E9 E9 E9 E5 E5 E5 E5 EA EA
+2470 EA EA E6 E6 E6 E6 E4 E4 E4 E4 EC EC EC EC -- --
+2480 -- -- E7 E7 E7 E7 -- -- -- -- -- -- -- -- -- --
+2490 -- -- N4 N4 N4 N4 T1 T1 T1 T1 T2 T2 T2 T2 T3 T3
+24A0 T3 T3 T4 T4 T4 T4 X1 X1 Y1 Y1 X2 X2 Y2 Y2 -- --
+24B0 -- -- -- HS Q1 Q1 Q2 Q2 Q3 Q3 Q4 Q4 Q5 Q5 Q6 Q6
+24C0 Q7 Q7 Q8 Q8 Q9 Q9 QA QA QB QB QC QC QD QD QE QE
+24D0 QF QF QG QG MT MT -- -- -- -- -- -- -- -- -- --
+24E0 -- -- -- MR MR -- -- -- -- -- -- -- -- -- -- --
+
+2.NPC資訊
+
+DS:853Ah開始，每個3Ah=58 byte，格式同<A href="save.htm">存檔</A>。
+
+3.日期
+
+位置DS:7119h，2 byte
+</font>
+</pre>
+</body>
+</html>

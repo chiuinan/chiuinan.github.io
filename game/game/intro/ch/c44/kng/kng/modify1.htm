@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>程式修改</title>
+</head>
+<body>
+<pre>
+<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<b>修改</b>：KNG.EXE
+
+1.不用開路，任何地形皆可走（里程碑無視條件可完成）
+  0B C0 75 03 E9 DE 00
+  -- -- EB -- -- -- --
+  0B C0 75 19 83 FE FF
+  -- -- EB -- -- -- --
+2.修正送錯禮物應減友誼度卻變增加的問題
+  01 00 F8 FF (共4個)
+  -- -- 08 00
+  3C 00 46 00 64 00
+  -- -- -- -- CE FF
+
+</font>
+</pre>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔SAVE??.DAT
+
+1.主角資料
+
+0000 AG AG AG AG X2 X2 X2 X2 X3 X3 X3 X3 X1 X1 X1 X1
+0010 X4 X4 X4 X4 X5 X5 X5 X5 X6 X6 X6 X6 X7 X7 X7 X7
+0020 X8 X8 X8 X8 X9 X9 X9 X9 ST ST ST ST XA XA XA XA
+0030 LH LH LH LH N3 N3 N3 N3 N2 N2 N2 N2 N1 N1 N1 N1
+0040 M1 M1 M1 M1 -- -- -- -- M2 M2 M2 M2 MD MD MD MD
+0050 -- -- -- -- M3 M3 M3 M3 -- -- -- -- -- -- -- --
+0060 -- -- -- -- -- -- -- -- E1 E1 E1 E1 E3 E3 E3 E3
+0070 E2 E2 E2 E2 -- -- -- -- -- -- -- -- E8 E8 E8 E8
+0080 EB EB EB EB XB XB XB XB ED ED ED ED E9 E9 E9 E9
+0090 E5 E5 E5 E5 EA EA EA EA E6 E6 E6 E6 E4 E4 E4 E4
+00A0 EC EC EC EC -- -- -- -- E7 E7 E7 E7 -- -- -- --
+00B0 -- -- -- -- -- -- -- -- N4 N4 N4 N4 T1 T1 T1 T1
+00C0 T2 T2 T2 T2 T3 T3 T3 T3 T4 T4 T4 T4 X1 X1 Y1 Y1
+00D0 X2 X2 Y2 Y2 -- -- -- -- -- HS Q1 Q1 Q2 Q2 Q3 Q3
+00E0 Q4 Q4 Q5 Q5 Q6 Q6 Q7 Q7 Q8 Q8 Q9 Q9 QA QA QB QB
+00F0 QC QC QD QD QE QE QF QF QG QG MT MT -- -- -- --
+0100 -- -- -- -- -- -- -- -- -- MR MR -- -- -- -- --
+
+AG=年齡，初值0Ch=12
+X1=相貌，父母平均值
+X2=身高，父母平均值-16，20歲前每年+2
+X3=體重，父母平均值-16，20歲前每年+2
+X4=學習，父母平均值
+X5=創造，父母平均值
+X6=表達，父母平均值
+X7=領導，父母平均值
+X8=親和，父母平均值
+X9=應變，父母平均值
+XA=健康，父母平均值
+XB=意志，父母平均值
+ST=體力，初值=健康*100
+LH=學歷，0=國小、1=國中、2=高中、3=大學、4=碩士、5=博士
+N1=現有金錢，初值03E8h=1000
+N2=現有名譽，初值03E8h=1000
+N3=現有快樂，初值03E8h=1000
+N4=現有智識，初值0
+M1=銀行借貸，初值0
+M2=活期儲蓄，初值0
+M3=三年定存，初值0
+MD=三年定存剩餘月數，初值0
+E1=國文，初值0
+E2=英文，初值0
+E3=數學，初值0
+E4=教育，初值0
+E5=商務，初值0
+E6=管理，初值0
+E7=政治，初值0
+E8=球技，初值0
+E9=設計，初值0
+EA=戰技，初值0
+EB=演技，初值0
+EC=編導，初值0
+ED=聲望，初值0
+T1=目標金錢
+T2=目標名譽
+T3=目標快樂
+T4=目標智識
+X1,Y1=主角在成就網的位置
+X2,Y2=主角在生活圈的位置
+HS=房產，FF=沒有，00=公寓，01=大廈，02=別墅
+Q1～QG=各物品數量
+MT=目前月份（0～11）
+MR=結婚對象編號，00=未婚
+
+2.NPC資料，位置387Bh，每位3Ah=58 byte
+
+-- -- DD DD FR FR FR FR
+
+DD = 總聯絡天數
+FR = 友誼度，實際值為FR/100，初值為1388h=5000或1E78h=7800
+</font>
+</pre>
+</body>
+</html>

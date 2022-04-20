@@ -1,0 +1,118 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>美女水果盤</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：美女水果盤 (中文版)
+<b>簡介</b>：寶貝貓工作室1993年出品的18禁水果盤遊戲，以一代賭博性水果盤電玩
+      為主要模仿對象，並未加入任何劇情，為一單純的水果盤遊戲，賭倍則
+      為21點遊戲。遊戲裡有提供了一些道具做為輔助，且本身中獎率頗高，
+      若有美女連線時，則會送一張限制級美女圖供觀賞，而遊戲一共有８張
+      美女圖。如不是為觀看美女圖的話，其實水果盤遊戲本身是很無聊的。
+<IMG SRC="girlss/game1.png"> <IMG SRC="girlss/game2.png">
+<b>保護</b>：數字密碼，破解碼：
+      FRUIT.EXE
+        74 03 E9 52 FE
+        EB -- -- -- --
+      或
+        83 7E FE 01 75 10
+        -- -- -- -- EB --
+<b>備註</b>：<A href="girlss/cg.7z">CG圖</A>有露點。
+<b>修改</b>：FRUIT.EXE
+
+1.一開始就有8張美女圖
+  01 02 03 04 05 06 07 08 00 00 00 00 00 00 00 00
+  -- -- -- -- -- -- -- -- 01 02 03 04 05 06 07 08
+  此處結構同下面記憶體所述，可由此修改初始金錢與物品等資訊。
+
+<b>修改</b>：記憶體
+
+-- -- -- -- MN MN MN MN BN BN BN BN IT IT IT IT
+IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- MP MP MP MP MP MP MP MP BT BT BT BT BT BT
+BT BT -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+MN = 我方目前金錢（左下角數目）
+BN = 水果盤額外獎金（左上角數目）
+IT = 現有道具卡（共20個），00表沒有
+     01=金卡、02=必勝卡、03=幸運卡、04=透視卡、05=美女卡
+MP = 現有美女圖（01～08），00表沒有
+BT = 各線壓注金額
+
+<b>說明</b>：
+
+<font color=blue><b>一、水果盤畫面</b></font>
+
+<table><tr><td><IMG SRC="girlss/game2.png"><td>Space = 開始/得分<br>
+B = 壓注/比倍<br>
+I/Esc/滑鼠右鍵 = 物品畫面<br>
+Q = 結束</table>
+1.操作可以使用滑鼠，也可使用按鍵。但若電腦速度太快時，按一下滑鼠左鍵，
+  遊戲可能視為按了很多下。
+2.先[壓注]，然後再[開始]。
+3.左下角數字為我方目前的金錢，用完即結束（不太容易）。
+4.當有中獎金時（金額在右下角），按[比倍]可進入賭倍畫面。
+5.中了水果盤時，可額外獲得左上角顯示的獎金數。
+6.三個笑臉連線時，可獲得三萬元，並進入樂透方塊畫面。
+7.三個骷髏連線時，會失去三萬元，並進入樂透方塊畫面。
+8.三個美女連線時，可隨機獲得一張美女圖，最多8張。
+9.初始物品有金卡、必勝卡、幸運卡、透視卡。
+
+可用物品：
+
+<IMG SRC="girlss/item1.png" valign=middle>（美女卡，固定存在）：進入美女圖畫面，檢視目前獲得的美女圖。
+<IMG SRC="girlss/item2.png" valign=middle>（金卡）：獲得一萬元。
+<IMG SRC="girlss/item4.png" valign=middle>（幸運卡）：大幅提高中獎機率。
+
+<font color=blue><b>二、賭倍畫面</b></font>
+
+<table><tr><td><IMG SRC="girlss/bet.png"><td>Space = 不補/得分<br>
+B = 補牌/比倍<br>
+I/Esc/滑鼠右鍵 = 物品畫面</table>
+1.右上角顯示目前的獎金數。
+2.採用21點比大小，同點時算我方獲勝。
+3.獲勝時，獎金翻倍，並可決定是否再[比倍]或[得分]。
+
+可用物品：
+
+<IMG SRC="girlss/item3.png" valign=middle>（必勝卡）：我方直接獲勝。
+<IMG SRC="girlss/item5.png" valign=middle>（透視卡）：偷看對家牌和下一張補牌。
+
+<font color=blue><b>三、樂透方塊畫面</b></font>
+
+<table><tr><td><IMG SRC="girlss/card.png"><td>Enter = 選擇<br>
+Space = 開始<br>
+I/Esc/滑鼠右鍵 = 物品畫面</table>
+1.選擇五個位置後，再按[開始]。
+2.若電腦隨機選的位置，和我方選的位置相同，則隨機獲得一張道具卡。最多
+  一次可獲得五張道具卡。
+3.道具卡最多20張，滿了後便無法再獲得。
+
+可用物品：
+
+<IMG SRC="girlss/item3.png" valign=middle>（必勝卡）：完全命中（五張）。
+<IMG SRC="girlss/item4.png" valign=middle>（幸運卡）：大幅提高命中機率。
+
+<font color=blue><b>四、物品畫面</b></font>
+
+<table><tr><td><IMG SRC="girlss/item.png"><td>左右 = 移動游標<br>
+下/滑鼠左鍵按右上角 = 更換物品列<br>
+Enter = 決定使用<br>
+Esc/滑鼠右鍵 = 離開</table>
+<font color=blue><b>五、美女圖畫面</b></font>
+
+<table><tr><td><IMG SRC="girlss/beauty.png"><td>上下左右 = 移動游標<br>
+Enter = 決定觀看<br>
+H = 採用高解析度觀看<br>
+L = 採用低解析度觀看<br>
+Esc/滑鼠右鍵 = 離開</table>
+1.採用高解析度觀看時，顯示卡必須能夠支援2Eh顯示模式（640x480x256色）。
+  DosBox請設成曾氏卡（svga_et3000、svga_et4000等）。
+</font>
+</pre>
+</body>
+</html>
