@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>俄羅斯方塊</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：俄羅斯方塊 (Tetris，英文版)
+<b>簡介</b>：Spectrum 1989年出品的俄羅斯方塊遊戲。這個版本為最早期的俄羅斯
+      方塊遊戲，曾風靡全世界無數人口，也就此延生了許多類似的遊戲。遊
+      戲的規則很簡單，只要讓方塊排成一個橫列沒有間斷即可消掉此行，但
+      不能讓方塊堆到最上面，如此便可以一直玩下去，但方塊掉下的速度會
+      愈來愈快。這個遊戲除了可選擇關數及未消去的行數外，並無其他特殊
+      功能，以現今眼光來看是相當陽春的一個遊戲。不過也就因為單純，頗
+      適合只是要消遣時間的玩家來玩。畢竟，即使是最陽春的俄羅斯方塊遊
+      戲，也是很好玩的。
+<IMG SRC="tetris/game1.png"> <IMG SRC="tetris/game2.png">
+<b>保護</b>：無
+<b>備註</b>：必須調降CPU速度，否則很快就死了。
+<b>修改</b>：修正高速電腦無法執行問題
+
+以下為解決此一問題的常駐程式碼，將程式前面的16進位數值依次寫入一個COM
+執行檔中（共40 byte），並於主程式CTETRIS.EXE之前執行本常駐程式，便能
+在高速CPU裡正常地玩了。
+
+  EB17          jmp  $start
+$int00:
+  90            nop
+  2E8F061501    pop  word ptr cs:[$ret_addr]
+  2E8F061701    pop  word ptr cs:[$ret_addr+2]
+  2E8306150102  add  word ptr cs:[$ret_addr],2
+  9D            popf
+  EA            db   0EAh
+$ret_addr:
+  00000000      dd   ?
+$start:
+  0E            push cs
+  1F            pop  ds
+  B80025        mov  ax,2500h
+  BA0301        mov  dx,offset $int00
+  CD21          int  21h
+  BA1901        mov  dx,offset $start
+  CD27          int  27h
+
+<b>操作</b>：
+
+左鍵/J = 左移
+右鍵/L = 右移
+Enter/Pad-5/K = 旋轉
+Space/下鍵/, = 掉下
+上鍵/I = 加快速度
+
+F1 = 左下角顯示控制鍵功能
+F2 = 右下角顯示方塊出現頻率
+F3 = 右上角顯示遊戲等級
+F4 = 下方顯示背景畫面說明
+S = 聲音開關
+P = 暫停
+R = 清除排行榜
+Q = 離開遊戲
+Esc = 暫停並顯示假的Excel表（老闆來了）
+
+<b>備註</b>：
+
+1.一次消掉愈多行，得分愈高。
+2.若剛好全部消掉，可額外得分。
+</font>
+</pre>
+</body>
+</html>
