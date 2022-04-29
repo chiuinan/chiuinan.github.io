@@ -35,16 +35,310 @@ WILL: 使黑螞蟻必定打敗紅螞蟻。
 
 <b>操作</b>：
 
-黃色螞蟻為自己操控的螞蟻，除了視窗上的選項外，可在黃色螞蟻上按下滑鼠
-左鍵可出現下列選項：
+<font color=blue><b>一、遊戲模式</b></font>
 
-1.Recruit ... - 集結多少隻螞蟻
-2.Release ... - 釋放多少隻螞蟻
-3.Exchange    - 更換要操控的螞蟻
+<IMG SRC="simant/mode.png">
+
+1.Tutorial Game：教學模式，採用互動式一步步教導玩家如何玩本遊戲。
+2.Quick Game：快速遊戲，單一區域與紅螞蟻對抗，殺死紅螞蟻蟻后即結束。
+3.Full Game：完整遊戲，多個區域（192個）與紅螞蟻、人類對抗，必須培養
+  新蟻后，佔領70%以上區域，逼得屋主搬家才算獲勝。
+4.Experimental：實驗模式，玩家可自由變更環境來觀察螞蟻的行為。
+5.Load Game：載入之前的存檔，繼續遊戲。
+6.Cancel：離開遊戲。
+
+<font color=blue><b>二、選單說明</b></font>
+
+用滑鼠點選，或按下Alt+選單名稱第一個字母打開選單。
+
+（一）File（Alt+F）
+
+1.About：顯示遊戲製作的相關人員。
+2.New（Ctrl+N）：開啟新遊戲。
+3.Load（Ctrl+L）：載入之前的存檔。
+4.Save（Ctrl+S）：儲存到目前的遊戲檔。
+5.Save As（Ctrl+A）：另存新檔。
+6.Quit（Ctrl+Q）：離開遊戲。
+
+（二）Window（Alt+W）
+
+1.Edit（Ctrl+E）：顯示編輯視窗。
+2.Map（Ctrl+M）：顯示地圖視窗。
+3.Behavior（Ctrl+B）：顯示行為控制視窗。
+4.Caste（Ctrl+C）：顯示蟻種控制視窗。
+5.History（Ctrl+H）：顯示經歷視窗。
+6.Info（Ctrl+I）：顯示資料視窗。
+7.Status（Ctrl+T）：顯示狀態視窗。
+
+（三）View（Alt+V）
+
+1.Yard（Ctrl+Y）：顯示庭院全景（地圖視窗）
+2.House（Ctrl+5）：顯示屋內全景（地圖視窗）
+3.Strategic（Ctrl+6）：顯示區域位置圖（地圖視窗）
+4.Graphic（Ctrl+7）：顯示各區域黑紅蟻數量圖（地圖視窗）
+5.Sureface（Ctrl+8）：顯示地表（編輯視窗與地圖視窗）
+6.Black Nest（Ctrl+9）：顯示黑蟻巢（編輯視窗與地圖視窗）
+7.Red Nest（Ctrl+0）：顯示紅蟻巢（編輯視窗與地圖視窗）
+
+（四）Options（Alt+O）
+
+1.AutoTrack（Ctrl+G）：是否使黃蟻位置永遠置中於視窗
+2.Music（Ctrl+J）：音樂開關
+3.Sound Effects（Ctrl+K）：音效開關
+4.Events：動畫開關
+5.Messages：訊息開關
+6.Silly：對話泡泡開關
+
+（五）Speed（Alt+S）
+
+1.Pause：暫停遊戲。
+2.Slow（Shift+1）：調整遊戲速度為慢。
+3.Normal（Shift+2）：調整遊戲速度為正常。
+4.Fast（Shift+3）：調整遊戲速度為快。
+5.Ultra（Shift+4）：調整遊戲速度為超級快。
+
+<font color=blue><b>三、視窗操作</b></font>
+
+最上方（視窗抬頭下）有時會顯示一些訊息（白底黑字），以提示玩家。
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr><th>圖像<th>位置<th>名稱<th>作用</tr>
+<tr><td><IMG SRC="simant/window1.png"><td>左上角<td>關閉視窗<td>按下後關閉視窗</tr>
+<tr><td><IMG SRC="simant/window2.png"><td>右上角<td>切換視窗<td>按下後將視窗移到最上層或下層，點選其他視窗亦同</tr>
+<tr><td><IMG SRC="simant/window3.png"><td>右上角<td>最大化視窗<td>按下後可將視窗最大化／切回正常大小，或按Ctrl+Z</tr>
+<tr><td><IMG SRC="simant/window4.png"><td>右下角<td>縮放視窗<td>按著可拖曳視窗大小，或按Ctrl+R</tr>
+<tr><td><td>上方名稱<td>移動視窗<td>按著可移動視窗，或按Ctrl+P</tr>
+<tr><td><td>上下左右<td>捲動視窗<td>游標移往畫面外即可，或按Ctrl+方向鍵</tr>
+</table>
+<font color=blue><b>四、編輯視窗</b></font>
+
+遊戲的主視窗，可能顯示地表、黑蟻巢、或紅蟻巢。左邊為控制面板：
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr><th>圖像<th>作用</tr>
+<tr><td><IMG SRC="simant/fun01.png"><td>顯示小地圖視窗</tr>
+<tr><td><IMG SRC="simant/fun02.png"><IMG SRC="simant/fun03.png"><td>顯示各圖像的功能說明／實驗模式選單</tr>
+<tr><td><IMG SRC="simant/fun04.png"><td>顯示地表</tr>
+<tr><td><IMG SRC="simant/fun05.png"><IMG SRC="simant/fun06.png"><td>顯示黑蟻巢／紅蟻巢</tr>
+<tr><td><IMG SRC="simant/fun07.png"><IMG SRC="simant/fun08.png"><td>切換至黃蟻／蜘蛛所在位置</tr>
+<tr><td><IMG SRC="simant/fun09.png"><IMG SRC="simant/fun10.png"><td>切換至黑蟻后／紅蟻后所在位置</tr>
+<tr><td><IMG SRC="simant/fun11.png"><td>暫停遊戲</tr>
+<tr><td><IMG SRC="simant/fun12.png"><td>顯示嗅跡</tr>
+<tr><td><IMG SRC="simant/fun13.png"><td>各螞蟻群的健康度，過低時表示需要食物</tr>
+</table>
+實驗模式選單：
+
+1.ANT INFO：螞蟻資訊，滑鼠左鍵按著任一隻螞蟻即可顯示其相關資訊。
+2.BARRIERS：置放障礙物：牆（WALLS）或石頭（ROCKS），若點選障礙物則將
+  之去除。
+3.DIG/FILL：挖土（DIG）或填土（FILL）。
+4.ADD ANTS：增加黑螞蟻（BLACK）或紅螞蟻（RED）。
+5.ADD FOOD：置放食物，1顆（1 PIECE）或20顆（20 PIECES）。
+6.DROP TRAILS：施放嗅跡，參見嗅跡選單。
+7.INSECTICIDE：施放殺蟲劑，有噴灑（SPRAY）和水柱（STREAM）兩種方式。
+8.START GAME：由目前的狀態開始進行遊戲。
+
+嗅跡選單：
+
+1.Off：停止顯示嗅跡。
+2.ALARM（按0）：施放警戒嗅跡。
+3.B-Nest：顯示黑蟻地域嗅跡。
+4.B-Trail：顯示黑蟻追蹤（食物）嗅跡。
+5.R-Nest：顯示紅蟻地域嗅跡。
+6.R-Trail：顯示紅蟻追蹤（食物）嗅跡。
+
+地表各地形意義為：
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr><th>圖像<th>意義</tr>
+<tr><td><IMG SRC="simant/p01.png"><td>蟻穴</tr>
+<tr><td><IMG SRC="simant/p02.png"><td>食物，雙擊可以搬起或吃掉（健康度過低時），再雙擊地上可放下</tr>
+<tr><td><IMG SRC="simant/p03.png"><td>蜘蛛，靠近可能被吃，螞蟻夠多可以殺掉它，變成綠色食物</tr>
+<tr><td><IMG SRC="simant/p04.png"><td>蟻獅，掉入會被吃掉，螞蟻夠多也可以殺掉它</tr>
+<tr><td><IMG SRC="simant/p05.png"><td>毛毛蟲，螞蟻夠多可以殺掉它，變成綠色食物</tr>
+<tr><td><IMG SRC="simant/p06.png"><td>小石頭，可搬移做為障礙物</tr>
+</table>
+角色操控法（通常為黃蟻）：
+
+1.對自己單擊滑鼠左鍵，可以在視窗中將自己置中。
+2.對其他地點單擊滑鼠左鍵，可以移動操控對象。
+3.滑鼠左鍵按著操控對象會出現操控選單。
+4.滑鼠左鍵按著其他螞蟻，會顯示其資訊。
+
+操控選單：
+
+1.蟻后
+
+Dig Hole（或按1）：挖掘蟻穴，雙擊滑鼠左鍵也有相同效果。
+Start Brood（或按2）：開始產卵，玩家角色將切換成工蟻。
+Help：顯示各選單作用。
+
+2.工蟻、兵蟻
+
+(1)對食物雙擊滑鼠左鍵，自動前往拿取或吃掉食物。
+(2)對小石頭雙擊滑鼠左鍵，自動前往拿取。
+(3)有拿取東西時，對地上雙擊滑鼠左鍵，即可放下。
+(4)對紅蟻雙擊滑鼠左鍵，自動前往攻擊。
+
+Recruit 5（或按1）：集結5隻螞蟻，可選用多次以集結更多螞蟻。
+Recruit 10（或按2）：集結10隻螞蟻，可選用多次以集結更多螞蟻。
+Release 1/2（或按3）：釋放一半螞蟻。
+Release All（或按4）：釋放全部螞蟻。
+Exchange（或按X）：更換玩家要操控的對象，包括蜘蛛。
+Help：顯示各選單作用。
 
 如果要搬食物，先集結螞蟻後，再到食物處釋放，釋放的螞蟻便會自動去搬食
 物。如果要攻擊，亦先集結螞蟻後，再到敵人處釋放，釋放的螞蟻便會自動去
-攻擊敵人。
+攻擊敵人（可先更換操控角色為兵蟻）。戰鬥勝負率如下（會有10%誤差）：
+
+      工蟻    兵蟻    蟻后    雄議
+----------------------------------------
+工蟻  50/50   20/80   30/70   70/30
+兵蟻  80/20   50/50   60/40   90/10
+蟻后  70/30   40/60   50/50   80/20
+雄議  30/70   10/90   20/80   50/50
+
+3.蜘蛛
+
+Chase（或按1）：追殺指定的螞蟻。雙擊滑鼠左鍵也有相同效果。
+Hunt（或按2）：自動不斷追殺螞蟻（不定黑蟻或紅蟻）。
+Exchange（或按X）：更換玩家要操控的對象。
+Help：顯示各選單作用。
+
+利用操控蜘蛛，玩家可以協助黑蟻來消滅紅蟻。又，如果玩家已在操控蜘蛛，
+此時再更換操控對象為蜘蛛，則遊戲程式會因為找不到玩家在操控的螞蟻，而
+另行產生出一隻黑蟻。可以利用此點來大量增加黑蟻。
+
+<font color=blue><b>五、地圖視窗</b></font>
+
+各地方的縮小圖，控制面板都在下邊：
+
+<b>（一）鳥瞰圖</b>
+
+本區域的鳥瞰圖，可能顯示地表、黑蟻巢、或紅蟻巢。
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr><th>圖像<th>作用</tr>
+<tr><td><IMG SRC="simant/fun21.png"><td>切換至庭院圖</tr>
+<tr><td><IMG SRC="simant/fun22.png"><td>分別切換至顯示地表、黑蟻巢、紅蟻巢</tr>
+<tr><td><IMG SRC="simant/fun23.png"><td>顯示嗅跡（參見編輯視窗的說明）</tr>
+<tr><td><IMG SRC="simant/fun24.png"><td>分別為顯示螞蟻足跡、黃蟻置中、神秘按鈕、顯示狀態視窗、實驗模式選單</tr>
+<tr><td><IMG SRC="simant/fun25.png"><td>分別為顯示行為控制視窗、蟻種控制視窗、歷程視窗、資料視窗、各圖像功能說明</tr>
+<tr><td><IMG SRC="simant/fun26.png"><td>指示黑蟻與紅蟻的狀況，P為數量，H為健康度，滑鼠按著可顯示各蟻種數量</tr>
+</table>
+<IMG SRC="simant/win2.png">
+1.黃色、黑色、紅色小點分別為黃蟻、黑蟻、紅蟻。
+2.綠色小點為食物，綠色長條為毛毛蟲。
+3.白色小點為蟻獅。
+4.藍色小點為無用小蟲、或雨水。
+5.黑色方塊為黑蟻巢、或紅蟻巢。
+6.粉紅色方框為編輯視窗目前顯示的區域。
+7.按下神秘按鈕，會隨機大量增減黑蟻或紅蟻的數量或健康度。
+
+<b>（二）庭院圖</b>
+
+房屋的縮小圖，可能顯示庭院全景、屋內全景、區域位置圖、或各區域黑紅蟻
+數量圖。
+
+<table cellSpacing=0 cellPadding=1 border=1>
+<tr><th>圖像<th>作用</tr>
+<tr><td><IMG SRC="simant/fun31.png"><td>切換至鳥瞰圖</tr>
+<tr><td><IMG SRC="simant/fun32.png"><td>切換至屋內全景、區域位置圖、各區域黑紅蟻數量圖</tr>
+<tr><td><IMG SRC="simant/fun33.png"><td>啟動交配週期、放置新蟻后（如果有的話）</tr>
+<tr><td><IMG SRC="simant/fun34.png"><td>顯示各圖像的功能說明</tr>
+<tr><td><IMG SRC="simant/fun35.png"><td>顯示黑蟻、紅蟻各自佔領的區域數</tr>
+</table>
+<IMG SRC="simant/win3.png">
+1.若要自行置放（Place）新蟻后，則在按下交配（Mate）前，要先選擇手動
+  （Manual）。
+2.對有黑蟻佔領的區域雙擊滑鼠左鍵，即可切換進入操控該區域。
+3.切換到新的區域時，尚未置放的新蟻后會自動全數死亡。
+
+<font color=blue><b>六、行為控制視窗</b></font>
+
+控制螞蟻行為的比例，通常採用Auto（自動）即可。
+
+<IMG SRC="simant/win4.png">
+1.Forage：找尋食物，這個部份要高一點。
+2.Dig：挖掘巢穴，這個部份要低一點。
+3.Nurse：照顧蟻后與蟻卵，這個部份適當即可。
+
+<font color=blue><b>七、蟻種控制視窗</b></font>
+
+控制蟻種比例，初期雄蟻比例要調低一些，等消滅紅蟻後，並加以調高。
+
+<IMG SRC="simant/win5.png">
+1.Breeders：雄蟻。
+2.Workers：工蟻。
+3.Soldiers：兵蟻。
+
+<font color=blue><b>八、其他視窗</b></font>
+
+1.History（經歷視窗）：顯示黑蟻與紅蟻的各種歷程。
+  Pop = 螞蟻數量
+  Food = 蟻穴食物存量
+  Health = 健康度
+  SFood = 地表食物存量
+  Eaten = 被吃掉的螞蟻
+  Expired = 自然死亡螞蟻
+  Killed = 被殺死的螞蟻
+2.Info（資料視窗）：顯示螞蟻真實的各項知識。
+3.Status（狀態視窗）：顯示黑蟻目前的各種狀況。
+  Colony Health：平均健康度
+  Foraging：食物存量佔雙方食物存量比例
+  Eggs Hatched：蟻卵孵化成功率
+  Fights Won：戰鬥成功率
+  Colonies Start：遊戲開始時，黑蟻區域佔雙方區域的比率
+  Colonies Held：黑蟻殖民區域的存活率
+  Yard Filled：黑蟻在庭院中佔所有庭院區域的比率
+  House Filled：黑蟻在房屋內佔所有屋內區域的比率
+  Overall Score：總體得分
+
+總體得分狀況：
+
+              尚可        可         優
+-------------------------------------------              
+快速遊戲    200,000    280,000    350,000
+完整遊戲  2,500,000  3,500,000  4,500,000
+
+<font color=blue><b>九、Full Game玩法提示</b></font>
+
+1.先往右上走一段路，以便讓蟻穴靠近綠色食物，有利初期發展。
+2.對地上雙擊滑鼠左鍵開始挖掘蟻穴，進入土中後，繼續對泥土雙擊滑鼠左鍵
+  進行挖掘，不用挖很深。然後滑鼠左鍵按著自己，選Start Brood開始產卵，
+  玩家角色切換成工蟻。
+3.繼續挖掘蟻穴，稍微擴大一些後，調整蟻種控制視窗，將雄蟻比例調低。
+4.切換至地表，將顯示框移到綠色食物處，雙擊綠色食物，黃蟻會自動移動到
+  點擊處搬取食物（若健康度過低，會自動吃掉，此時要再重新點取）。
+5.切換到黑蟻穴，雙擊通道，黃蟻會移動到點擊處放下食物。
+6.等有其他工蟻出現時，便開始切換到紅蟻穴，滑鼠左鍵點擊兩下紅蟻后，讓
+  黃蟻開始攻擊蟻后。最好先暫停，點選各螞蟻，找出兵蟻後，再交換成兵蟻。
+7.紅蟻后死亡後（可能需要攻擊多次），要再清除紅蟻卵，避免繼續孵化。接
+  著調高雄蟻比例，並繼續清除現存紅蟻。
+8.到庭院圖選擇Mate（交配），等出現新蟻后，再Place（置放）到其他區域
+  （三格以內）。如果有其他紅蟻佔領區域，則要儘量往紅蟻佔領區方向置放。
+9.重複步驟8，不斷產出新蟻后置放到各區域發展。等到與紅蟻區重疊時，再
+  雙擊進入該區協助清除紅蟻。等佔領區域夠多時，便能看到結局。
+
+<font color=blue><b>十、教育模式過程</b></font>
+
+1.雙擊泥土，挖掘蟻穴。再次雙擊泥土，挖掘蟻穴。
+2.點擊上面草地，移往地表。
+3.點擊其他土地，進行移動。點擊自己，進行顯示置中。
+4.將滑鼠移出螢幕外，以捲動視窗。
+5.選擇Windows-Map選單，切換至地圖視窗。將顯示方框移到綠色食物上，再
+  選擇Windows-Edit選單，切換至編輯視窗。移動到食物旁，雙擊食物吃掉。
+6.雙擊搬起食物，移動回蟻穴，雙擊通道將之放下。
+7.回到地表，雙擊小石頭搬起，再雙擊任一地方放下。
+8.按著自己，選擇Recruit 10，集結一些螞蟻。按下0並移動，施放警戒嗅跡。
+9.按著自己，選擇Exchange，再挑選任一隻黑蟻。
+10.切換至地圖視窗，按下Yard鈕顯示庭院全景。再按下House鈕顯示屋內全景。
+11.按下Patch鈕切回鳥瞰圖，再按下B鈕開啟行為控制視窗，移動中間圓點。
+12.切換至地圖視窗，按下？鈕，顯示功能說明。
+13.按下右下狀況圖，顯示蟻種資訊。
+14.按下C鈕開啟蟻種控制視窗。
+15.切換至編輯視窗，按左邊黃蟻鈕，進行顯示置中。
+16.按著自己，選擇Recruit 10共五次。往右移到紅蟻巢，殺掉紅蟻后。
 </font>
 </pre>
 </body>

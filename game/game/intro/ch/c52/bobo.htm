@@ -1,0 +1,261 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>勇者泡泡龍</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：勇者泡泡龍 (Brave Bubble Dragon，中文版)
+<b>簡介</b>：龍愛1997年出品的動作射擊遊戲，遊戲的規則便是讓主角吐泡泡將敵人
+      包住後，再將其碰撞消滅，當所有敵人都消滅後，便算過關了。泡泡龍
+      這類的遊戲常見於電動遊樂場，有逛過的玩家應該不陌生才對。遊戲中
+      一共有６大關，每大關有６～１２不等的小關，最後一小關為魔王。魔
+      王都必須拿到上方的特殊瓶子，吹出特殊的氣泡才能加以消滅，因此非
+      常難打，而且有些小關的地形設計得變態，要全部過關是非常困難的一
+      件事。不過整體而言，這款遊戲還算不錯，當做逍遣輕鬆地玩即可。
+<IMG SRC="bobo/game1.png"> <IMG SRC="bobo/game2.png">
+<b>備註</b>：本版已修正2-3隱藏關無法啟動的問題
+<b>保護</b>：光碟，破解碼（需把光碟的fff和bobo目錄拷貝到安裝目錄）：
+      GAME.EXE或PLAY.EXE
+        26 A0 00 00 04 41
+        -- -- -- -- B0 00
+        字串":\fff"改成".\fff"共3個
+        字串":\bobo"改成".\bobo"共2個
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
+<b>修改</b>：GAME.EXE或PLAY.EXE
+
+1.永久無敵
+  75 13 6A 29
+  EB -- -- --
+2.修正2-3隱藏關無法啟動的問題（氣泡位置最大到120h，無法達到122h條件）
+  81 BF D4 7C 22 01 7C 19
+  -- -- -- -- 20 -- -- --
+3.解決破關動畫後當機問題，以及缺少fff目錄動畫時會當機的問題
+  E8 24 09 0B C0 74 0F AC 32 E4
+  -- -- -- -- -- -- 5A -- -- --
+  BE 01 00 83 FE 01 75 E6 (共2個)
+  -- -- -- -- -- -- 90 90
+
+<b>資訊</b>：
+
+所有關卡的數目、接續，以及隱藏關卡的條件等，均寫死在程式中，無法變動。
+
+DS:466Ah = 目前的大關卡
+DS:466Ch = 目前的小關卡
+DS:8184h = 主角X位置，2 byte
+DS:8186h = 主角Y位置，2 byte
+DS:8E1Eh = 進入隱藏關的泡泡累積次數
+DS:4674h = 本關是否進入結束倒數
+DS:4676h = 結束前的等待時間，由0累積到100h
+DS:8E86h = 本關是否結束
+
+氣泡資訊： XX XX YY YY TT TT
+  XX,YY = 位置
+  TT = 可捕捉敵人的剩餘時間
+
+<b>密技</b>：
+
+暫停遊戲後，按下：
+
+F1+F3：無敵（每一關都要按一次）
+F2：取消無敵
+F8+D：無限接關
+
+<b>操作</b>：
+
+左右鍵 = 移動
+Ctrl或上鍵 = 跳躍
+Alt或Space = 吐泡泡
+Esc = 系統選單（音樂開關、離開遊戲）
+P = 暫停遊戲／開始遊戲
+
+<b>攻略</b>：（作者－青衫）
+
+1.主角吐泡泡將敵人包住後，碰撞該泡泡即可消滅敵人。
+2.消滅所有敵人，即過關。
+3.一定時間未消滅所有敵人，則會出現無法消滅的鬼魂出來攻擊。
+4.最後一小關的魔王必須先取得魔法泡泡瓶，利用該泡泡釋放出來的魔法（如
+  閃電、龍捲風、烈火等）進行攻擊，才能消滅魔王。
+
+<font color=blue><b>*** 第一關</b></font>
+
+1-1關：
+<IMG SRC="bobo/1-1.png">
+
+1-2關：
+<IMG SRC="bobo/1-2.png">
+
+1-3關：
+<IMG SRC="bobo/1-3.png">
+
+1-4關：<font color=red><b>（向左下角連續吐20個泡泡立即進入隱藏關）</b></font>
+<IMG SRC="bobo/1-4.png">  <IMG SRC="bobo/1-4s.png">
+
+1-5關：
+<IMG SRC="bobo/1-5.png">
+
+<font color=blue><b>*** 第二關</b></font>
+
+2-1關：
+<IMG SRC="bobo/2-1.png">
+
+2-2關：
+<IMG SRC="bobo/2-2.png">
+
+2-3關：<font color=red><b>（修正後，向右上角連續吐20個泡泡立即進入隱藏關）</b></font>
+<IMG SRC="bobo/2-3.png">  <IMG SRC="bobo/2-3s.png">
+
+2-4關：
+<IMG SRC="bobo/2-4.png">
+
+2-5關：
+<IMG SRC="bobo/2-5.png">
+
+2-6關：
+<IMG SRC="bobo/2-6.png">
+
+<font color=blue><b>*** 第三關</b></font>
+
+3-1關：
+<IMG SRC="bobo/3-1.png">
+
+3-2關：
+<IMG SRC="bobo/3-2.png">
+
+3-3關：
+<IMG SRC="bobo/3-3.png">
+
+3-4關：
+<IMG SRC="bobo/3-4.png">
+
+3-5關：
+<IMG SRC="bobo/3-5.png">
+
+3-6關：
+<IMG SRC="bobo/3-6.png">
+
+3-7關：
+<IMG SRC="bobo/3-7.png">
+
+3-8關：
+<IMG SRC="bobo/3-8.png">
+
+<font color=blue><b>*** 第四關</b></font>
+
+4-1關：
+<IMG SRC="bobo/4-1.png">
+
+4-2關：
+<IMG SRC="bobo/4-2.png">
+
+4-3關：
+<IMG SRC="bobo/4-3.png">
+
+4-4關：
+<IMG SRC="bobo/4-4.png">
+
+4-5關：
+<IMG SRC="bobo/4-5.png">
+
+4-6關：
+<IMG SRC="bobo/4-6.png">
+
+4-7關：<font color=red><b>（向左上角連續吐20個泡泡立即進入隱藏關）</b></font>
+<IMG SRC="bobo/4-7.png">  <IMG SRC="bobo/4-7s.png">
+
+4-8關：
+<IMG SRC="bobo/4-8.png">
+
+4-9關：
+<IMG SRC="bobo/4-9.png">
+
+4-10關：
+<IMG SRC="bobo/4-10.png">
+
+4-11關：
+<IMG SRC="bobo/4-11.png">
+
+<font color=blue><b>*** 第五關</b></font>
+
+5-1關：
+<IMG SRC="bobo/5-1.png">
+
+5-2關：
+<IMG SRC="bobo/5-2.png">
+
+5-3關：
+<IMG SRC="bobo/5-3.png">
+
+5-4關：
+<IMG SRC="bobo/5-4.png">
+
+5-5關：
+<IMG SRC="bobo/5-5.png">
+
+5-6關：
+<IMG SRC="bobo/5-6.png">
+
+5-7關：
+<IMG SRC="bobo/5-7.png">
+
+5-8關：
+<IMG SRC="bobo/5-8.png">
+
+5-9關：
+<IMG SRC="bobo/5-9.png">
+
+5-10關：
+<IMG SRC="bobo/5-10.png">
+
+<font color=blue><b>*** 第六關</b></font>
+
+6-1關：
+<IMG SRC="bobo/6-1.png">
+
+6-2關：
+<IMG SRC="bobo/6-2.png">
+
+6-3關：
+<IMG SRC="bobo/6-3.png">
+
+6-4關：
+<IMG SRC="bobo/6-4.png">
+
+6-5關：
+<IMG SRC="bobo/6-5.png">
+
+6-6關：
+<IMG SRC="bobo/6-6.png">
+
+6-7關：
+<IMG SRC="bobo/6-7.png">
+
+6-8關：
+<IMG SRC="bobo/6-8.png">
+
+6-9關：
+<IMG SRC="bobo/6-9.png">
+
+6-10關：
+<IMG SRC="bobo/6-10.png">
+
+6-11關：
+<IMG SRC="bobo/6-11.png">
+
+6-12關：
+<IMG SRC="bobo/6-12.png">
+
+6-13關：
+<IMG SRC="bobo/6-13.png">
+
+<font color=blue><b>*** 額外關</b></font>
+
+<IMG SRC="bobo/s-1.png">
+
+<IMG SRC="bobo/s-2.png">
+
+</font>
+</pre>
+</body>
+</html>
+
