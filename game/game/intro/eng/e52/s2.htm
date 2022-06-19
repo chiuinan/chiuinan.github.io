@@ -20,7 +20,10 @@
 <IMG SRC="s2/game2.jpg">
 <b>備註</b>：使用DosBox執行時，必須設定cycles=max，否則執行速度會不夠快，若
       要執行SETUP.EXE，則還要再設定cputype=pentium_slow。
-<b>保護</b>：光碟。
+<b>保護</b>：光碟，破解碼（想要有背景音樂須放入音樂光碟）：
+      START65H.EXE,START65L.EXE,STARTH.EXE,STARTL.EXE
+        75 15 61 33 C0 A3
+        EB -- -- -- -- --
 <b>備註</b>：若有CD映像檔（含音軌），執行前先設定：
          imgmount d [CD映像檔檔案位置] -t cdrom
       若想聽自己喜歡的音樂，也可設定：
