@@ -35,37 +35,188 @@
 2.特殊按鍵：
 
 Alt+1～6 = 調整遊戲速度（快～慢）
-Alt+F10 = 調整遊戲速度到最快
-Alt+F1 = 右方人物交由電腦控制
-Alt+F7 = 左方人物補滿血
-Alt+F8 = 右方人物補滿血
+Alt+F10  = 加快遊戲速度
+Ctrl-F10 = 減慢遊戲速度
+Ctrl+F1  = 右方人物交由玩家控制
+Alt+F1   = 右方人物交由電腦控制
+Alt+F7   = 左方人物補滿血
+Alt+F8   = 右方人物補滿血
+Alt+F4   = 戰鬥資訊顯示切換
 
 <b>操作</b>：
 
-1.各種對應按鍵可在遊戲中設定。
-2.以下按鍵組合是假設敵人在左邊時，若敵人在右邊，則須左右對調。
-3.有+的雙重按鍵時（例如左+拳），前者要略快於後者（但不放開）。
+上下左右 = 移動選單
+Enter = 確定
+
+各人物對打時的對應按鍵可在遊戲中設定，內定值為：
 
 <TABLE cellSpacing=0 cellPadding=2 border=1>
-<tr BGCOLOR=#FFFF80><td>編號<td>中文名<td>英文名<td>速度<td>攻擊<td>防禦<td>特殊技
-</tr><tr><td align=center>1<td>凱特<td>Kater<td align=center>4<td align=center>4<td align=center>4<td>幻象拳：連按"拳"鍵
-<br>氣功波："下"(放)"左+拳"
-<br>天龍破："右"(放)"左+拳"
-</tr><tr><td align=center>2<td>麗絲<td>Lice<td align=center>5<td align=center>2<td align=center>3<td>狂風奔："下"(放)"左+拳"
-<br>風嘯腿："下"(放)"左+腳"
-<br>滑　擊："右"(放)"左+拳"
-<br>滑　踢："右"(放)"左+腳"
-</tr><tr><td align=center>3<td>亞力<td>Ali<td align=center>4<td align=center>4<td align=center>4<td>雷擊球："下"(放)"左+拳"
-<br>毒龍鑽："下+腳"("下"放開"腳"不放)+"上"
-</tr><tr><td align=center>4<td>裘姆<td>Chomu<td align=center>4<td align=center>5<td align=center>4<td>刺　滾："下"(放)"左+拳"
-</tr><tr><td align=center>5<td>歐魯達<td>Oluda<td align=center>4<td align=center>4<td align=center>4<td>步輪斬："下"(放)"左+拳"
-<br>鷹爪蹬："下+腳"("下"放開"腳"不放)+"左+上"
-</tr><tr><td align=center>6<td>塞玻2號<td>Cyber-02<td align=center>3<td align=center>5<td align=center>5<td>電光砲："下"(放)"左+拳"
-<br>閃電斬："下+拳"("下"放開"拳"不放)+"上"
-</tr><tr><td align=center>7<td>沙奇爾<td>Sea killer<td align=center>5<td align=center>4<td align=center>4<td>月牙斬："下"(放)"左+腳"
-<br>躍空踢："下+腳"("下"放開"腳"不放)+"左+上"
-</tr><tr><td align=center>8<td>克萊德<td>Kalid<td align=center>5<td align=center>3<td align=center>4<td>能源球："下"(放)"左+拳"
-<br>化形擊："下"(放)"左+腳"
+<tr BGCOLOR=#FFFF80><td>作用<td>第一人<td>第二人</tr>
+<tr><td>移動<td>　上　<br>
+左　右<br>
+　下　<td>　Ｗ　<br>
+Ａ　Ｄ<br>
+　Ｘ　</tr>
+<tr><td>拳<td>Ctrl<td>Ｆ</tr>
+<tr><td>腳<td>Alt<td>Ｇ</tr>
+</TABLE>
+<b>說明</b>：
+
+1.Start Fight：從8位選手選擇一人，開始正式比賽。
+2.Practice：從8位選手任選兩人對打，或與電腦對打（選Player 1或Player 2
+  時可左右鍵變更）。
+3.Option：設定人物對打時使用的按鍵。
+4.按Esc鍵可離開遊戲。
+
+<font color=blue><b>*** 特殊技</b></font>
+
+1.以下按鍵組合是假設敵人在左邊時，若敵人在右邊，則須左右對調。
+2.有+的雙重按鍵時（例如左+拳），前者要略快於後者（但不放開）。
+3.組合鍵沒有時間限制，只要中間沒有按到其他按鍵，順序正確即有效。
+4.雙方初始生命=D6h=214。
+5.每個招式由多個動作所組成，若守方未在被擊中位置，則不會計算擊中傷害。
+6.每一擊的實際傷害=攻方招式傷害力-守方招式防禦力，以下僅列守方無招式
+  之基礎防禦力，除非守方採用防禦招式，否則差別不大。為方便計算傷害值，
+  同時將傷害力、防禦力全部減9（傷害值計算結果相同）。
+
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+<tr BGCOLOR=#FFFF80><td>編號<td>中文名<td>英文名<td>速度<td>攻擊<td>防禦<td>基礎傷害<td>特殊技<td>傷害<td>按鍵<td>備註
+</tr><tr><td align=center>1<td>凱特<td>Kater<td align=center>4<td align=center>4<td align=center>4
+<td>拳：7
+<br>腳：9
+<br>防：1
+<td>氣功波
+<br>天龍破
+<br>幻象拳
+<br>摔技
+<td>24
+<br>29
+<br>14x2
+<br>7+21
+<td>"下"(放)"左+拳"
+<br>"右"(放)"左+拳"
+<br>連按"拳"鍵5次
+<br>"下"(放)"拳+左"
+<td>長距氣功
+<br>近距跳踢
+<br>近距連擊
+<br>近身摔技
+</tr><tr><td align=center>2<td>麗絲<td>Lice<td align=center>5<td align=center>3<td align=center>3
+<td>拳：6
+<br>腳：8
+<br>防：0
+<td>狂風奔
+<br>風嘯腿
+<br>滑擊
+<br>滑踢
+<br>摔技
+<td>19x2
+<br>24x2
+<br>19x2
+<br>19x2
+<br>6+16
+<td>"下"(放)"左+拳"
+<br>"下"(放)"左+腳"
+<br>"右"(放)"左+拳"
+<br>"右"(放)"左+腳"
+<br>"下"(放)"拳+左"
+<td>長距突擊
+<br>中距飛踢
+<br>中距連推
+<br>中距滑踢
+<br>近身摔技
+</tr><tr><td align=center>3<td>亞力<td>Ali<td align=center>4<td align=center>4<td align=center>4
+<td>拳：7
+<br>腳：9
+<br>防：1
+<td>雷擊球
+<br>毒龍鑽
+<br>摔技
+<td>24
+<br>29
+<br>7+21
+<td>"下"(放)"左+拳"
+<br>"下+腳"("下"放開"腳"不放)+"上"
+<br>"下"(放)"拳+左"
+<td>長距氣功
+<br>中距飛踢
+<br>近身摔技
+</tr><tr><td align=center>4<td>裘姆<td>Chomu<td align=center>4<td align=center>5<td align=center>5
+<td>拳：9
+<br>腳：11
+<br>防：3
+<td>刺滾
+<br>摔技
+<td>21
+<br>9+26
+<td>"下"(放)"左+拳"
+<br>"下"(放)"拳+左"
+<td>長距飛擊
+<br>近身摔技
+</tr><tr><td align=center>5<td>歐魯達<td>Oluda<td align=center>4<td align=center>4<td align=center>4
+<td>拳：7
+<br>腳：9
+<br>防：1
+<td>步輪斬
+<br>鷹爪蹬
+<br>摔技
+<td>24
+<br>？
+<br>7+21
+<td>"下"(放)"左+拳"
+<br>"下+腳"("下"放開"腳"不放)+"左+上"
+<br>"下"(放)"拳+左"
+<td>長距氣功
+<br><font color=red>(按不出來)</font>
+<br>近身摔技
+</tr><tr><td align=center>6<td>塞玻2號<td>Cyber-02<td align=center>3<td align=center>5<td align=center>5
+<td>拳：9
+<br>腳：11
+<br>防：3
+<td>電光砲
+<br>閃電斬
+<br>摔技
+<td>21
+<br>26
+<br>9+26
+<td>"下"(放)"左+拳"
+<br>"下+拳"("下"放開"拳"不放)+"上"
+<br>"下"(放)"拳+左"
+<td>長距射擊
+<br>中距跳斬
+<br>近身摔技
+</tr><tr><td align=center>7<td>沙奇爾<td>Sea killer<td align=center>5<td align=center>4<td align=center>4
+<td>拳：7
+<br>腳：9
+<br>防：1
+<td>月牙斬
+<br>躍空踢
+<br>摔技
+<td>24
+<br>？
+<br>7+21
+<td>"下"(放)"左+腳"
+<br>"下+腳"("下"放開"腳"不放)+"左+上"
+<br>"下"(放)"拳+左"
+<td>長距氣功
+<br><font color=red>(按不出來)</font>
+<br>近身摔技
+</tr><tr><td align=center>8<td>克萊德<td>Kalid<td align=center>5<td align=center>3<td align=center>3
+<td>拳：6
+<br>腳：8
+<br>防：0
+<td>能源球
+<br>化形擊
+<br>摔技
+<td>23
+<br>21
+<br>6+16
+<td>"下"(放)"左+拳"
+<br>"下"(放)"左+腳"
+<br>"下"(放)"拳+左"
+<td>長距氣功
+<br>長距飛擊
+<br>近身摔技
 </tr></TABLE>
 </font>
 </pre>
