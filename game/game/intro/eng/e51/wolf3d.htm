@@ -1,0 +1,527 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>德軍總部3D</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：德軍總部3D (Wolfenstein 3D，英文版)
+<b>簡介</b>：Id Software 1992年出品的第一人稱射擊遊戲，其概念源自於1981年由
+      Muse Software所出品的德軍總部，描寫主角逃離德軍總部監獄城堡的
+      故事，並買下了德軍總部的商標，成為德軍總部系列的延續作品。遊戲
+      最初採共享軟體方式發行，只有第一章十個關卡，玩家必須付費註冊以
+      啟用其他章節的關卡，全部共有六章60個關卡。本遊戲一發行即熱銷，
+      並獲獎無數，成為第一人稱射擊類型遊戲的鼻祖。遊戲公司同時也公開
+      分享了遊戲原始碼，於是各種不同平台都有人移植本遊戲，同時也衍生
+      許多MOD遊戲模組，以及新的同類型遊戲，可說影響甚遠，實為經典中
+      的經典遊戲。
+<IMG SRC="wolf3d/game1.png"> <IMG SRC="wolf3d/game2.png">
+<b>備註</b>：本版為1.4g青衫修正版，內含地圖編輯器、關卡隨機生成器
+<b>保護</b>：無
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
+<b>備註</b>：<font color=red>推動暗格時，系統原本為2格移動，但在較快的CPU上會變成3格移動</font>，
+      導致有幾關的通道被卡死、或寶物被壓住無法撿取。可以在推動時，等
+      暗格快移到2格處，按下Pause鍵暫停，再慢慢按Pause鍵看看暗格是否
+      確實停在2格處。不過不是每一次都成功，最好按照後面的修改碼修正。
+<b>檔案</b>：wolfsrc.rar = 遊戲原始碼，需用BC++ 3.1編譯
+      wolf11.rar = 1.1版（第一章無法進入秘密關）
+      Wolf3D Super Upgrades.rar = 德軍總部3D超級升級包
+          內含815個粉絲製作關卡WolfMaster
+          地圖編輯器MapEdit 8.1、關卡隨機生成器Wolf Creator
+      德軍總部3D英文攻略.rar = 德軍總部3D英文攻略本
+<b>修改</b>：WOLF3D.EXE
+
+1.修正暗格2格移動變3格移動的問題
+  00 01 76 08
+  FF 00 -- --
+2.健康（Health）不減
+  29 36 C6 88 (1.1版)
+  90 90 90 90
+  29 16 D4 95 (1.4版)
+  90 90 90 90
+  29 16 E2 8C (1.4g版)
+  90 90 90 90
+3.子彈（Ammo）不減
+  FF 0E C8 88 (1.1版)
+  90 90 90 90
+  FF 0E E4 8C (1.4版)
+  90 90 90 90
+  FF 0E D6 95 (1.4g版)
+  90 90 90 90
+4.打死一人增加60000分以上
+  01 16 D8 8C (1.4g版)
+  -- 26 -- --
+
+<b>修改</b>：存檔SAVEGAM?.WL6
+
+0020 HD -- FL -- -- -- -- -- -- -- -- -- -- -- -- --
+0030 LF -- HT -- AM -- -- -- -- -- -- -- -- -- -- --
+
+HD = 困難等級，0～3
+FL = 第幾關，由0開始
+LF = 生命，最多9
+HT = 健康，最多100=64h
+AM = 子彈，最多99=63h
+
+<b>密技</b>：
+
+1.以WOLF3D -GOOBERS啟動遊戲。
+2.進入遊戲後（不是主選單），同時按下Shift+Alt+Backspace鍵啟動密技。
+3.密技啟動後，隨時可按下：
+    Tab+I = 增加分數、健康、子彈、武器
+    Tab+G = 無敵
+    Tab+H = 傷害自己
+    Tab+V = 增減遊戲速度
+    Tab+S = 慢動作
+    Tab+E = 跳到下一關
+    Tab+W = 跳到某關
+    Tab+C = 顯示本關統計資料
+    Tab+F = 顯示位置資訊
+    Tab+M = 顯示記憶體使用狀況
+    Tab+B = 改變邊框顏色
+    Tab+Q = 離開遊戲，回到Dos
+
+<b>操作</b>：
+
+一、選單
+
+New Game：開新遊戲，先選章節，再選難度，共有四種難度：
+  1.Can I Play Daddy：毫無經驗的初學者（等級1）
+  2.Don't Hurt Me：稍有經驗的新手（等級2）
+  3.Bring'Em On：一般玩家（等級3）
+  4.I Am Death Incarnate：想挑戰更高難度的老手（等級4）
+Sound：聲音設定
+Control：操作設定
+Load Game：讀檔
+Save Game：存檔
+Change View：變更視野視窗
+Read This!：顯示說明
+View Scores：查看排行榜
+End Game：結束遊戲
+Back to Demo/Game：回到遊戲
+Quit：離開遊戲
+
+二、按鍵
+
+Esc = 顯示選單／離開遊戲
+F1 = 顯示說明
+F2 = 存檔
+F3 = 讀檔
+F4 = 聲音設定
+F5 = 變更視野視窗
+F6 = 操作設定
+F7 = 結束遊戲
+F8 = 快速存檔
+F9 = 快速讀檔
+F10 = 離開遊戲
+
+以下為內定操作設定（可變更）：
+
+上下 = 前進後退
+左右 = 左右轉身
+右Shift = 快速移動（搭配方向鍵）
+Alt = 平移（搭配左右鍵）
+Space = 開啟／搜尋
+Ctrl = 射擊（機槍或鏈炮按住可連發）
+1 = 武器換成小刀（Knife）
+2 = 武器換成手槍（Pistol）
+3 = 武器換成機槍（Machine Gun）
+4 = 武器換成鏈炮（Chain Gun）
+Pause = 暫停
+
+<b>攻略</b>：（作者－青衫）
+
+1.初始武器=刀、槍，子彈（Ammo）=8，健康（Health）=100%，生命（Lives）=3。
+2.被敵人擊中時健康度下降，下降至0%時即死亡，減少一命並從本關重新開始。
+3.殺敵或撿拾寶物可獲得分數（Score），每40000分增加一命，最多9命。
+4.經過物品時會自動撿拾。除了地上可見物品外，殺死警衛經過屍體時也可撿
+  拾子彈，最多99發（SS衝鋒隊有時會掉機槍）。
+5.某些門需要鑰匙才能開啟，撿到鑰匙會顯示在子彈的右邊2小格內。
+6.每過一關（無法回頭），依照各項指標給予額外分數：
+    (1)殺死敵人100%：10000分。
+    (2)拿取寶物100%：10000分。
+    (3)推動暗格100%：10000分。
+    (4)低於標準時間：10000分。
+  秘密關不以上述指標為標準，過關直接加15000分。
+7.敵人不會站著不動，聽到槍聲甚至會四處搜尋或開門出來攻擊。
+
+<font color=blue><b>*** 物品說明</b></font>
+
+狗食（Dog Food）：恢復4%健康
+餐點（Dinner）：恢復10%健康
+急救包（First Aid）：恢復25%健康
+子彈（Ammo）：獲得8顆子彈
+機槍（Machine Gun）
+鏈炮（Chaingun）
+十字徽章（Cross）：加100分
+聖杯（Chalice）：加500分
+寶箱（Chest）：加1000分
+皇冠（Crown）：加5000分
+鑰匙（Keys）
+加命（One Ups）：健康加滿、子彈加滿、或增加一命
+
+<font color=blue><b>*** 攻略圖示說明</b></font>（地圖由MapEdit 8.1產生）
+
+1.物品
+  (1)青色小方塊 = 子彈
+  (2)暗青色小方塊 = 狗食
+  (3)青色小圓圈 = 餐點
+  (4)青色小十字 = 急救包
+  (5)青色大圓圈 = 加命
+  (6)暗青色g = 機槍
+  (7)青色g = 鏈炮
+  (8)黃色小十字、小圓圈、小方塊、n = 加分寶物
+  (9)黃色k、青色k = 鑰匙
+2.敵人：白色為必定出現，棕色等級3以上會出現，暗棕色等級4才會出現
+  (1)G = 警衛
+  (2)D = 警犬
+  (3)S = SS衝鋒隊
+  (4)O = 軍官
+  (5)* = 魔王
+  (6)H = 希特勒
+3.其他
+  (1)青色箭頭 = 本關主角開始處
+  (2)白框方格 = 暗格
+  (3)黃色格子 = 過到下一關的電梯（呈品字共三個）
+  (4)黃色門或青色門 = 鎖住的門，需對應的鑰匙開啟
+
+<font color=blue><b>*** 第1章 Escape from Castle Wolfenstein（逃離德軍總部城堡）</b></font>
+
+第1-1關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m00.png">
+<td>1.進入秘密關（1.1版bug：會進入1-2關）<br>2.進入1-2關
+</table>
+第1章秘密關
+<table>
+<tr><td><img src="wolf3d/m09.png">
+<td>1.進入1-2關<br>須先到東北拿鑰匙
+</table>
+第1-2關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m01.png">
+<td>
+</table>
+第1-3關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m02.png">
+<td>
+</table>
+第1-4關 標準時間3:30
+<table>
+<tr><td><img src="wolf3d/m03.png">
+<td>
+</table>
+第1-5關 標準時間3:00
+<table>
+<tr><td><img src="wolf3d/m04.png">
+<td>
+</table>
+第1-6關 標準時間3:00
+<table>
+<tr><td><img src="wolf3d/m05.png">
+<td>
+</table>
+第1-7關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m06.png">
+<td>
+</table>
+第1-8關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m07.png">
+<td>
+</table>
+第1-9關
+<table>
+<tr><td><img src="wolf3d/m08.png">
+<td>魔王為手拿兩把鏈炮的Hans Grosse，身上有鑰匙<br>
+往北用鑰匙開門進入後即結束
+</table>
+<font color=blue><b>*** 第2章 Operation: Eisenfaust（鐵拳行動）</b></font>
+
+第2-1關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m10.png">
+<td>1.進入秘密關<br>2.進入2-2關
+</table>
+第2章秘密關
+<table>
+<tr><td><img src="wolf3d/m19.png">
+<td>1.進入2-2關
+</table>
+第2-2關 標準時間3:30
+<table>
+<tr><td><img src="wolf3d/m11.png">
+<td>
+</table>
+第2-3關 標準時間3:00
+<table>
+<tr><td><img src="wolf3d/m12.png">
+<td>
+</table>
+第2-4關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m13.png">
+<td>
+</table>
+第2-5關 標準時間4:00
+<table>
+<tr><td><img src="wolf3d/m14.png">
+<td>
+</table>
+第2-6關 標準時間6:00
+<table>
+<tr><td><img src="wolf3d/m15.png">
+<td>
+</table>
+第2-7關 標準時間1:00
+<table>
+<tr><td><img src="wolf3d/m16.png">
+<td>
+</table>
+第2-8關 標準時間3:00
+<table>
+<tr><td><img src="wolf3d/m17.png">
+<td>先往北拿鑰匙，再往東拿鑰匙<br>
+西邊紅線為值得走的路線，綠色為會被阻塞無法到達（無法100%）<br>
+西邊有兩個第一章魔王Hans Grosse，要注意<br>
+北邊魔王前的兩個暗格為路徑二擇一，推上為加命，推下為魔王<br>
+西北環狀線可能會卡死自己，切勿亂推
+</table>
+第2-9關
+<table>
+<tr><td><img src="wolf3d/m18.png">
+<td>東南暗格要先推最下方的，亂推可能卡死自己<br>
+魔王為Dr. Schabbs，殺死後即結束
+</table>
+<font color=blue><b>*** 第3章 Die, Führer, Die!（去死吧！元首）</b></font>
+
+第3-1關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m20.png">
+<td>
+</table>
+第3-2關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m21.png">
+<td>
+</table>
+第3-3關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m22.png">
+<td>
+</table>
+第3-4關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m23.png">
+<td>
+</table>
+第3-5關 標準時間3:30
+<table>
+<tr><td><img src="wolf3d/m24.png">
+<td>
+</table>
+第3-6關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m25.png">
+<td>
+</table>
+第3-7關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m26.png">
+<td>1.進入第3章秘密關<br>2.進入3-8關<br>
+北邊暗格推動前，要先拿完附近的寶物，否則會被擋住，無法100%
+</table>
+第3章秘密關
+<table>
+<tr><td><img src="wolf3d/m29.png">
+<td>1.進入3-8關<br>本關有4隻殺不死的小精靈會不斷追著主角，因此必須不斷移動
+</table>
+第3-8關 標準時間6:00
+<table>
+<tr><td><img src="wolf3d/m27.png">
+<td>
+</table>
+第3-9關
+<table>
+<tr><td><img src="wolf3d/m28.png">
+<td>大魔王為手持4把鏈炮的希特勒（Hitler）<br>
+前面還有5個鬼魂小魔王，要注意丟出來的火球
+</table>
+<font color=blue><b>*** 第4章 A Dark Secret（不為人知的秘密）</b></font>
+
+第4-1關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m30.png">
+<td>
+</table>
+第4-2關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m31.png">
+<td>中央西邊向下的暗格要控制為2格移動，否則會壓住一個寶物無法拿取<br>
+其餘則有3個暗格不可推動，否則東邊的寶物會被堵死（等拿完再回頭推）<br>
+請按下圖次序進行（回程時均往東推，亂推有可能卡死自己）：<br>
+<img src="wolf3d/m31a.png">
+</table>
+第4-3關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m32.png">
+<td>1.進入第4章秘密關（很困難，請斟酌）<br>2.進入4-4關
+</table>
+第4章秘密關
+<table>
+<tr><td><img src="wolf3d/m39.png">
+<td>1.進入4-4關<br>
+推開暗格進入後，開一槍引所有敵人進來逐一殺掉（不躲進來必死）<br>
+不過當屍體過多時，會引發看不見敵人的bug，也容易死掉<br>
+或是一開始便直走到底左轉再右轉，然後往前一路衝到出口離開
+</table>
+第4-4關 標準時間1:00
+<table>
+<tr><td><img src="wolf3d/m33.png">
+<td>
+</table>
+第4-5關 標準時間4:30
+<table>
+<tr><td><img src="wolf3d/m34.png">
+<td>1.實際出口電梯（其餘均被木桶擋住）
+</table>
+第4-6關 標準時間3:30
+<table>
+<tr><td><img src="wolf3d/m35.png">
+<td>
+</table>
+第4-7關 標準時間2:00
+<table>
+<tr><td><img src="wolf3d/m36.png">
+<td>西北有一個暗格不能先推動，否則會把路堵死，拿不到鑰匙而無法過關<br>
+請按下列次序進行：<br>
+<img src="wolf3d/m36a.png">
+</table>
+第4-8關 標準時間4:30
+<table>
+<tr><td><img src="wolf3d/m37.png">
+<td>
+</table>
+第4-9關
+<table>
+<tr><td><img src="wolf3d/m38.png">
+<td>魔王為Giftmatcher，殺死即過關，注意射出來的飛彈
+</table>
+<font color=blue><b>*** 第5章 Trail of the Madam（狂人足跡）</b></font>
+
+第5-1關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m40.png">
+<td>
+</table>
+第5-2關 標準時間1:30
+<table>
+<tr><td><img src="wolf3d/m41.png">
+<td>
+</table>
+第5-3關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m42.png">
+<td>
+</table>
+第5-4關 標準時間2:30
+<table>
+<tr><td><img src="wolf3d/m43.png">
+<td>
+</table>
+第5-5關 標準時間4:00
+<table>
+<tr><td><img src="wolf3d/m44.png">
+<td>1.進入第5章秘密關<br>2.進入5-6關<br>
+西南暗格要控制為2格移動，否則會壓住一個寶物無法拿取
+</table>
+第5章秘密關
+<table>
+<tr><td><img src="wolf3d/m49.png">
+<td>1.進入5-6關
+</table>
+第5-6關 標準時間3:00
+<table>
+<tr><td><img src="wolf3d/m45.png">
+<td>
+</table>
+第5-7關 標準時間4:30
+<table>
+<tr><td><img src="wolf3d/m46.png">
+<td>東邊鑰匙旁的暗格推動後，會堵住其後3個急救包無法拿取
+</table>
+第5-8關 標準時間3:30
+<table>
+<tr><td><img src="wolf3d/m47.png">
+<td>北邊暗格要控制為2格移動，否則會壓住一個寶物無法拿取
+</table>
+第5-9關
+<table>
+<tr><td><img src="wolf3d/m48.png">
+<td>先從兩旁沿牆下去推暗格拿完東西後，再打魔王<br>
+魔王為拿兩把鏈炮的Gretel Grosse（第一關魔王的妹妹）<br>
+打死後撿取鑰匙，再往東北開門進去過關
+</table>
+<font color=blue><b>*** 第6章 Confrontation（對抗）</b></font>
+
+第6-1關 標準時間6:30
+<table>
+<tr><td><img src="wolf3d/m50.png">
+<td>
+</table>
+第6-2關 標準時間4:00
+<table>
+<tr><td><img src="wolf3d/m51.png">
+<td>西南第1個暗格要控制為2格移動，否則會卡死整個通道<br>
+裡面最後1個偏東北的暗格也要控制為2格移動，否則會壓住一個寶物無法拿取
+</table>
+第6-3關 標準時間4:30
+<table>
+<tr><td><img src="wolf3d/m52.png">
+<td>1.進入第6章秘密關<br>2.進入6-4關
+</table>
+第6章秘密關
+<table>
+<tr><td><img src="wolf3d/m59.png">
+<td>1.進入6-4關<br>
+西、南、北各有一個第一關的魔王Hans Grosse，殺死可得到鑰匙<br>
+東邊則是殺不死的小精靈，但必須正確推動暗格才能到達<br>
+請按下列次序進行（不可能全部推動，所以無法100%）：<br>
+<img src="wolf3d/m59a.png">
+</table>
+第6-4關 標準時間6:00
+<table>
+<tr><td><img src="wolf3d/m53.png">
+<td>
+</table>
+第6-5關 標準時間5:00
+<table>
+<tr><td><img src="wolf3d/m54.png">
+<td>
+</table>
+第6-6關 標準時間5:30
+<table>
+<tr><td><img src="wolf3d/m55.png">
+<td>
+</table>
+第6-7關 標準時間5:30
+<table>
+<tr><td><img src="wolf3d/m56.png">
+<td>北邊鑰匙旁的暗格要控制為2格移動，否則會卡死整個通道<br>
+</table>
+第6-8關 標準時間8:30
+<table>
+<tr><td><img src="wolf3d/m57.png">
+<td>中央偏東北的暗格要控制為2格移動，否則會壓住一個寶物無法拿取
+</table>
+第6-9關
+<table>
+<tr><td><img src="wolf3d/m58.png">
+<td>魔王為將軍（General），手持鏈炮還會射飛彈，打死即過關
+</table>
+</font>
+</pre>
+</body>
+</html>
