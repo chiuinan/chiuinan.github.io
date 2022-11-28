@@ -1,0 +1,645 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>德軍總部3D命運之矛</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：德軍總部3D命運之矛 (Wolfenstein 3D - Spear of Destiny，英文版)
+<b>簡介</b>：Id Software 1992年出品的第一人稱射擊遊戲，為德軍總部3D衍生作品，
+      通常稱為德軍總部3D二代，或是德軍總部3D資料片。和一代不同的是，
+      本作只有一章計21關，並採用零售方式銷售，同時於1994年再推出兩個
+      獨立任務包：回歸危險、終極挑戰。不過基本上玩法都和一代差不多，
+      娛樂性也相當。
+<IMG SRC="sod/game1.png"> <IMG SRC="sod/game2.png">
+<b>備註</b>：本版包含三個獨立任務包（已做Bug修正），以及地圖編輯器8.1版
+<b>保護</b>：無
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
+<b>備註</b>：<font color=red>推動暗格時，系統原本為2格移動，但在較快的CPU上會變成3格移動</font>，
+      導致有幾關的通道被卡死、或寶物被壓住無法撿取。可以在推動時，等
+      暗格快移到2格處，按下Pause鍵暫停，再慢慢按Pause鍵看看暗格是否
+      確實停在2格處。不過不是每一次都成功，最好按照後面的修改碼修正。???
+<b>檔案</b>：soda.rar = 命運之矛三合一整合版
+      命運之矛英文攻略.rar = 德軍總部3D命運之矛英文攻略本
+<b>修改</b>：SPEAR.EXE
+
+1.健康（Health）不減
+  29 36 52 85 (獨立版)
+  90 90 90 90
+  29 36 D4 91 (整合版)
+  90 90 90 90
+2.子彈（Ammo）不減
+  FF 0E 54 85 (獨立版)
+  90 90 90 90
+  FF 0E D6 91 (整合版)
+  90 90 90 90
+3.修正暗格2格移動變3格移動的問題
+  00 01 76 08
+  FF 00 -- --
+
+  從DosBox觀察，系統會在用時>100h時停止暗格移動，而每移一格為80h，當
+  移到第二格時剛好為100h。由於<=100h，因此還會繼續移動。只需將比對值
+  減一便可以只移2格。如果還是移動3格，便將比對的時間值再減少一些，如
+  中間值C0h會更保險些。
+
+<b>修改</b>：存檔SAVEGAM0.SOD
+
+0020 HD -- FL -- -- -- -- -- -- -- -- -- -- -- -- --
+0030 LF -- HT -- AM -- -- -- -- -- -- -- -- -- -- --
+
+HD = 困難等級，0～3
+FL = 第幾關，由0開始
+LF = 生命，最多9
+HT = 健康，最多100=64h
+AM = 子彈，最多99=63h
+
+<b>資訊</b>：地圖資訊，整數均低位元組在前
+
+MAPHEAD.xxx：關卡地圖指標檔
+
+  RLEWtag：2 byte整數（RLEW解壓用）
+  關卡地圖指標：4 byte整數，共100個，指向地圖資訊檔，<0表不存在，0表結束
+
+GAMEMAPS.xxx：地圖資訊檔
+
+1.關卡地圖資訊（由關卡地圖指標檔指向）
+  地圖壓縮資料指標：3個4 byte整數，指向地圖資訊檔
+  地圖壓縮資料大小：3個2 byte整數
+  地圖水平大小：2 byte整數，固定40h=64
+  地圖垂直大小：2 byte整數，固定40h=64
+  地圖名稱：16 byte
+2.地圖壓縮資料（由關卡地圖資訊指標指向）：須按後述方式解壓
+
+地圖資料共有3組，內容為資料編號：
+
+1.地圖背景資料（MapData），例如牆壁、電梯等。
+2.地圖物件資料（ObjData），例如寶物、鑰匙、桌椅等。
+3.暗格資料
+
+各資料編號均有固定意義（寫死在程式中），請自行參閱地圖編輯器MapEdit
+所附的MapData.*和ObjData.*。秘密關的關卡連結等，亦寫死在程式中，外界
+無法變更。
+
+*** 地圖資料解壓法
+
+註：原始資料大小 = 地圖水平大小 * 地圖垂直大小 * 2
+
+dest_len = 地圖壓縮資料開頭的2 byte整數
+Carmack解壓(地圖壓縮資料+2,dest,dest_len)
+地圖原始資料大小 = dest開頭的2 byte整數
+RLEW解壓(dest+2,地圖原始資料,地圖原始資料大小)
+
+*** Carmack解壓(source,dest,length)
+
+while (輸出緩衝區尚未填滿)
+{
+    ch = 讀取2 byte整數
+    chhigh = ch高位元組
+    if (chhigh == 0xA7) // NEARTAG //
+    {
+        count = ch低位元組
+        if (count == 0)
+        {
+            讀取1 byte做為ch的低位元組
+            輸出ch (2 byte整數)
+        }
+        else
+        {
+            offset = 讀取2 byte整數
+            複製輸出緩衝區目前位置往前offset*2的位置共count個2 byte整數
+        }
+    }
+    else if (chhigh == 0xA8) // FARTAG //
+    {
+        count = ch低位元組
+        if (count == 0)
+        {
+            讀取1 byte做為ch的低位元組
+            輸出ch (2 byte整數)
+        }
+        else
+        {
+            offset = 讀取2 byte整數
+            複製輸出緩衝區開始往後offset*2的位置共count個2 byte整數
+        }
+    }
+    else
+    {
+        輸出ch (2 byte整數)
+    }
+}
+
+*** RLEW解壓(source,dest,length)
+
+while (輸出緩衝區尚未填滿)
+{
+    value = 讀取2 byte整數
+    if (value != RLEWtag)
+    {
+        輸出value (2 byte整數)
+    }
+    else
+    {
+        count = 讀取2 byte整數
+        value = 讀取2 byte整數
+        輸出count次value (2 byte整數)
+    }
+}
+
+<b>密技</b>：
+
+1.以SPEAR -DEBUGMODE啟動遊戲。
+2.進入遊戲後（不是主選單），同時按下Shift+Alt+Backspace鍵啟動密技。
+3.密技啟動後，隨時可按下：
+    Tab+I = 增加分數、健康、子彈、武器
+    Tab+G = 無敵
+    Tab+H = 傷害自己
+    Tab+V = 增減遊戲速度
+    Tab+S = 慢動作
+    Tab+E = 跳到下一關
+    Tab+W = 跳到某關
+    Tab+C = 顯示本關統計資料
+    Tab+F = 顯示位置資訊
+    Tab+M = 顯示記憶體使用狀況
+    Tab+B = 改變邊框顏色
+    Tab+Q = 離開遊戲，回到Dos
+
+<b>操作</b>：
+
+一、選單
+
+New Game：開新遊戲，須選難度，共有四種難度：
+  1.Can I Play Daddy：毫無經驗的初學者（等級1）
+  2.Don't Hurt Me：稍有經驗的新手（等級2）
+  3.Bring'Em On：一般玩家（等級3）
+  4.I Am Death Incarnate：想挑戰更高難度的老手（等級4）
+Sound：聲音設定
+Control：操作設定
+Load Game：讀檔
+Save Game：存檔
+Change View：變更視野視窗
+Read This!：顯示說明
+View Scores：查看排行榜
+End Game：結束遊戲
+Back to Demo/Game：回到遊戲
+Quit：離開遊戲
+
+二、按鍵
+
+Esc = 顯示選單／離開遊戲
+F1 = 老闆來了（顯示假的Dos畫面，再按Esc回到遊戲）
+F2 = 存檔
+F3 = 讀檔
+F4 = 聲音設定
+F5 = 變更視野視窗
+F6 = 操作設定
+F7 = 結束遊戲
+F8 = 快速存檔
+F9 = 快速讀檔
+F10 = 離開遊戲
+Pause = 暫停
+1 = 武器換成小刀（Knife）
+2 = 武器換成手槍（Pistol）
+3 = 武器換成機槍（Machine Gun）
+4 = 武器換成鏈炮（Chain Gun）
+
+以下為內定操作設定（可變更）：
+
+上下 = 前進後退
+左右 = 左右轉身
+右Shift = 快速移動（搭配方向鍵）
+Alt = 平移（搭配左右鍵）
+Space = 開啟／搜尋
+Ctrl = 射擊（機槍或鏈炮按住可連發）
+
+<b>攻略</b>：（作者－青衫）
+
+1.初始武器=刀、槍，子彈（Ammo）=8，健康（Health）=100%，生命（Lives）=3，
+  分數（Score）=0，所在關卡（Floor）=1。
+2.被敵人擊中時健康度下降，下降至0%時即死亡，減少一命並從本關重新開始。
+3.殺敵或撿拾寶物可獲得分數，每40000分增加一命，最多9命。
+4.經過物品時會自動撿拾。除了地上可見物品外，殺死警衛經過屍體時也可撿
+  拾子彈，最多99發（SS衝鋒隊有時會掉機槍）。
+5.某些門需要鑰匙才能開啟，撿到鑰匙會顯示在子彈的右邊2小格內。
+6.每過一關（無法回頭），依照各項指標給予額外分數：
+    (1)殺死敵人100%：10000分。
+    (2)拿取寶物100%：10000分。
+    (3)推動暗格100%：10000分。
+    (4)低於標準時間：每秒500分。
+  秘密關或魔王關不以上述指標為標準，過關直接加15000分。
+7.敵人不會站著不動，聽到槍聲甚至會四處搜尋或開門出來攻擊。
+
+<font color=blue><b>*** 物品說明</b></font>
+
+狗食（Dog Food）：恢復4%健康
+餐點（Dinner）：恢復10%健康
+急救包（First Aid）：恢復25%健康
+子彈（Ammo）：獲得8顆顆子彈（若是敵人陣亡掉落則為4顆子彈）
+子彈箱（Ammo Box）：獲得25顆子彈
+機槍（Machine Gun）
+鏈炮（Chaingun）
+十字徽章（Cross）／收音機（Radio）：加100分
+聖杯（Chalice）／鈽（Plutonium）：加500分
+寶箱（Chest）／控制板（Control Panel）：加1000分
+皇冠（Crown）／炸彈殼（Bomb Casing）：加5000分
+鑰匙（Keys）
+加命（One Ups）：健康加滿、子彈加25、增加一命
+
+<font color=blue><b>*** 攻略圖示說明</b></font>（地圖由MapEdit 8.1產生）
+
+1.物品
+  (1)青色小方塊 = 子彈、子彈箱
+  (2)暗青色小方塊 = 狗食
+  (3)青色小圓圈 = 餐點
+  (4)青色小十字 = 急救包
+  (5)青色大圓圈 = 加命
+  (6)暗青色g = 機槍
+  (7)青色g = 鏈炮
+  (8)黃色小十字、小圓圈、小方塊、n = 加分寶物
+  (9)黃色k、青色k = 鑰匙
+2.敵人：白色為必定出現，棕色等級3以上會出現，暗棕色等級4才會出現
+  (1)G = 警衛
+  (2)D = 警犬
+  (3)S = SS衝鋒隊
+  (4)O = 軍官
+  (5)M = 變種人
+  (6)H = 鬼魂
+  (7)* = 魔王
+3.其他
+  (1)青色箭頭 = 本關主角開始處
+  (2)白框方格 = 暗格
+  (3)黃色格子 = 過到下一關的電梯（呈品字共三個）
+  (4)黃色門或青色門 = 鎖住的門，需對應的鑰匙開啟
+
+<font color=blue><b>*** 原始任務</b></font>
+
+第1-1關 標準時間1:30
+<table>
+<tr><td><img src="sod/m1-01.png">
+<td>
+</table>
+第1-2關 標準時間3:30
+<table>
+<tr><td><img src="sod/m1-02.png">
+<td>
+</table>
+第1-3關 標準時間2:45
+<table>
+<tr><td><img src="sod/m1-03.png">
+<td>
+</table>
+第1-4關 標準時間3:30
+<table>
+<tr><td><img src="sod/m1-04.png">
+<td>1.進入第1-19秘密關<br>2.進入第1-5關<br>
+中央偏西南的暗格要控制為2格移動，否則會壓住一個寶物無法拿取
+</table>
+第1-19秘密關
+<table>
+<tr><td><img src="sod/m1-19.png">
+<td>1.進入第1-5關<br>西邊偏南的暗格要控制為2格移動，否則會壓住一個寶物無法拿取<br>
+先到西南拿黃鑰匙，再到東南拿青鑰匙<br>
+西南的第一把黃鑰匙是拿不到的
+</table>
+第1-5關魔王關
+<table>
+<tr><td><img src="sod/m1-05.png">
+<td>本關魔王為手持2把鏈炮的Trans Grosse，打死他可撿取鑰匙
+</table>
+第1-6關 標準時間4:30
+<table>
+<tr><td><img src="sod/m1-06.png">
+<td>
+</table>
+第1-7關 標準時間3:15
+<table>
+<tr><td><img src="sod/m1-07.png">
+<td>先往北拿黃鑰匙，再往南拿青鑰匙<br>兩個電梯都進入第1-8關
+</table>
+第1-8關 標準時間2:45
+<table>
+<tr><td><img src="sod/m1-08.png">
+<td>
+</table>
+第1-9關 標準時間4:45
+<table>
+<tr><td><img src="sod/m1-09.png">
+<td>先往中央拿黃鑰匙，再到西南拿青鑰匙（走秘道較快）
+</table>
+第1-10關魔王關
+<table>
+<tr><td><img src="sod/m1-10.png">
+<td>本關魔王為一手機槍一手火箭炮的Barnacle Wilhelm，打死他可撿取黃鑰匙
+</table>
+第1-11關 標準時間6:30
+<table>
+<tr><td><img src="sod/m1-11.png">
+<td>南邊的暗格要控制為2格移動，否則會壓住一個寶物無法拿取<br>
+各處有三個暗格相鄰者，要注意不要卡死通道（最北邊第3個拿完再向東推）：<br>
+<img src="sod/m1-11a.png"> <img src="sod/m1-11b.png" valign=top>
+</table>
+第1-12關 標準時間4:30
+<table>
+<tr><td><img src="sod/m1-12.png">
+<td>1.進入第1-20秘密關<br>2.進入第1-13關<br>
+西南暗格要正確推動才不會擋住通道<br>
+最後一個要控制為2格移動，否則會擋在電梯入口：<br>
+<img src="sod/m1-12a.png">
+</table>
+第1-20秘密關
+<table>
+<tr><td><img src="sod/m1-20.png">
+<td>1.進入第1-13關<br>開始處的暗格要正確推動才不會卡死通道<br>
+編號4要控制為2格移動，否則編號6會無法推動，編號10要等拿完物品後再推：<br>
+<img src="sod/m1-20a.png"><br>
+西北某個暗格會卡死通道，幸好擋住的只是急救包，影響不大
+</table>
+第1-13關 標準時間2:45
+<table>
+<tr><td><img src="sod/m1-13.png">
+<td>先進西北角拿黃鑰匙，經秘密通道到東北角拿青鑰匙，出口在西南角
+</table>
+第1-14關 標準時間4:30
+<table>
+<tr><td><img src="sod/m1-14.png">
+<td>
+</table>
+第1-15關 標準時間6:00
+<table>
+<tr><td><img src="sod/m1-15.png">
+<td>先往東南拿黃鑰匙，再到西南拿青鑰匙，再回東南到出口<br>
+東北兩暗格處，只能選一個路徑拿取物品，另一邊的拿不到
+</table>
+第1-16關魔王關
+<table>
+<tr><td><img src="sod/m1-16.png">
+<td>先往北到東南拿青鑰匙<br>
+魔王為四刀一鏈炮的超級變種人（UberMutex），殺死可拿取黃鑰匙
+</table>
+第1-17關 標準時間6:00
+<table>
+<tr><td><img src="sod/m1-17.png">
+<td>
+</table>
+第1-18關魔王關（傳送關）
+<table>
+<tr><td><img src="sod/m1-18.png">
+<td>1.傳送至第1-21關（關卡不視為結束，左下關卡編號仍為18）<br>
+魔王為2鏈炮2火箭炮的死亡騎士（Death Knight），殺死可拿取黃鑰匙
+</table>
+第1-21關魔王關
+<table>
+<tr><td><img src="sod/m1-21.png">
+<td>鬼魂是無法消滅的，殺死後會在幾秒之後原地復活<br>
+魔王為死亡天使（Angel of Death），殺死它即結束
+</table>
+<font color=blue><b>*** Return to Danger（回歸危險）</b></font>
+
+第2-1關 標準時間1:30
+<table>
+<tr><td><img src="sod/m2-01.png">
+<td>東北暗格要注意推的方向，否則會壓到寶物無法拿取<br>
+本關無鑰匙，所以西北的鏈炮無法用正常方式獲得<br>
+唯一方式是引敵人開門，然後在門前殺死他，讓門無法關閉（很困難）
+</table>
+第2-2關 標準時間3:30
+<table>
+<tr><td><img src="sod/m2-02.png">
+<td>
+</table>
+第2-3關 標準時間2:45
+<table>
+<tr><td><img src="sod/m2-03.png">
+<td>中央偏西南的暗格要推正確方向，否則會堵死通道
+</table>
+第2-4關 標準時間3:30
+<table>
+<tr><td><img src="sod/m2-04.png">
+<td>1.進入第2-19秘密關<br>2.進入第2-5關<br>
+西北4暗格處要由南到北推動<br>
+西邊3暗格處要正確推動，否則會擋住通道<br>
+</table>
+第2-19秘密關
+<table>
+<tr><td><img src="sod/m2-19.png">
+<td>1.進入第2-5關<br>先到東南拿青鑰匙，再經密道到西南拿黃鑰匙
+</table>
+第2-5關魔王關
+<table>
+<tr><td><img src="sod/m2-05.png">
+<td>先從東南到東北拿青鑰匙<br>
+西北5暗格要往東推<br>
+本關魔王為一手鏈炮一手機槍的Submarine Willy，打死他可撿取黃鑰匙
+</table>
+第2-6關 標準時間4:30
+<table>
+<tr><td><img src="sod/m2-06.png">
+<td>
+</table>
+第2-7關 標準時間3:15
+<table>
+<tr><td><img src="sod/m2-07.png">
+<td>若想快速過關，直接往南進電梯即可<br>
+若要撿物品，便先進南邊中央兩旁房間拿鑰匙
+</table>
+第2-8關 標準時間2:45
+<table>
+<tr><td><img src="sod/m2-08.png">
+<td>若想快速過關，直接到東南進電梯即可<br>
+不過本關+5000分物品頗多，想高分最好還是去拿取
+</table>
+第2-9關 標準時間4:45
+<table>
+<tr><td><img src="sod/m2-09.png">
+<td>若想快速過關，直接走進電梯即可
+</table>
+第2-10關魔王關
+<table>
+<tr><td><img src="sod/m2-10.png">
+<td>先拿最西南的青鑰匙，西南的黃鑰匙都是拿不到的<br>
+本關魔王為一手機槍一手火箭炮的Prof. Quarkblitz，打死他可撿取黃鑰匙<br>
+注意不要在物品堆裡打死，否則黃鑰匙可能會掉不出來（消失），造成卡關
+</table>
+第2-11關 標準時間6:30
+<table>
+<tr><td><img src="sod/m2-11.png">
+<td>若想快速過關，直接到東南進電梯即可
+</table>
+第2-12關 標準時間4:30
+<table>
+<tr><td><img src="sod/m2-12.png">
+<td>1.進入第2-20秘密關<br>2.進入第2-13關<br>
+若想快速過關，直接經秘道到南方電梯即可進入第2-13關<br>
+但若想進入秘密關，便必須通過東南暗格迷宮<br>
+東南的暗格均只有一種推法，不會卡死，可以放心儘量推
+</table>
+第2-20秘密關
+<table>
+<tr><td><img src="sod/m2-20.png">
+<td>1.進入第2-13關<br>本關沒有捷徑，必須繞完整圈後才能到達出口
+</table>
+第2-13關 標準時間2:45
+<table>
+<tr><td><img src="sod/m2-13.png">
+<td>
+</table>
+第2-14關 標準時間4:30
+<table>
+<tr><td><img src="sod/m2-14.png">
+<td>西邊有些虛暗格，必須將最南的實格往北逐一推動佔據，以達成100%<br>
+有些暗格可能卡住通道，但沒有影響<br>
+若想快速過關，直接走進電梯即可<br>
+不過本關+5000分物品頗多，想高分最好還是去拿取
+</table>
+第2-15關 標準時間6:00
+<table>
+<tr><td><img src="sod/m2-15.png">
+<td>本關敵人多又集中，開門後別馬上進入，逐一引出解決
+</table>
+第2-16關魔王關
+<table>
+<tr><td><img src="sod/m2-16.png">
+<td>魔王為手持2鏈炮的Hans Von Schlieffen，殺死可拿取黃鑰匙
+</table>
+第2-17關 標準時間6:00
+<table>
+<tr><td><img src="sod/m2-17.png">
+<td>東邊暗格要注意推動方向，不要壓到黃鑰匙
+</table>
+第2-18關魔王關（傳送關）
+<table>
+<tr><td><img src="sod/m2-18.png">
+<td>1.傳送至第2-21關（關卡不視為結束，左下關卡編號仍為18）<br>
+北邊暗格要注意推動方向，別卡住通道<br>
+魔王為2鏈炮2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
+</table>
+第2-21關魔王關
+<table>
+<tr><td><img src="sod/m2-21.png">
+<td>鬼魂是無法消滅的，殺死後會在幾秒之後原地復活<br>
+魔王為Devil Incarnate，殺死它即結束
+</table>
+<font color=blue><b>*** Ultimate Challenge（終極挑戰）</b></font>
+
+第3-1關 標準時間1:30
+<table>
+<tr><td><img src="sod/m3-01.png">
+<td>
+</table>
+第3-2關 標準時間3:30
+<table>
+<tr><td><img src="sod/m3-02.png">
+<td>先往下到西南拿青鑰匙，再到中央拿黃鑰匙，然後北上過關
+</table>
+第3-3關 標準時間2:45
+<table>
+<tr><td><img src="sod/m3-03.png">
+<td>先到西南拿青鑰匙，再到東北拿黃鑰匙，最後到東南過關
+</table>
+第3-4關 標準時間3:30
+<table>
+<tr><td><img src="sod/m3-04.png">
+<td>1.進入第3-19秘密關<br>2.進入第3-5關<br>
+若想快速過關，直接進入南方電梯即可進入第3-5關<br>
+若想進入秘密關，就必須拿取青鑰匙和黃鑰匙，再進入西南的電梯<br>
+最西邊暗格要注意推動方向，避免卡住通道
+</table>
+第3-19秘密關
+<table>
+<tr><td><img src="sod/m3-19.png">
+<td>1.進入第3-5關<br>先到西北拿青鑰匙，再到東北拿黃鑰匙
+</table>
+第3-5關魔王關
+<table>
+<tr><td><img src="sod/m3-05.png">
+<td>先一路到東北拿青鑰匙<br>
+本關魔王為一手鏈炮一手機槍的Submarine Willy，打死他可撿取黃鑰匙
+</table>
+第3-6關 標準時間4:30
+<table>
+<tr><td><img src="sod/m3-06.png">
+<td>一路到東南拿黃鑰匙，即可到西北過關<br>西南青鑰匙只是用來拿寶物用
+</table>
+第3-7關 標準時間3:15
+<table>
+<tr><td><img src="sod/m3-07.png">
+<td>先到東南拿黃鑰匙，即可到西北過關<br>
+西北青鑰匙只是用來拿寶物用，兩個電梯都到第3-8關
+</table>
+第3-8關 標準時間2:45
+<table>
+<tr><td><img src="sod/m3-08.png">
+<td>先到西南拿青鑰匙，再到東北拿黃鑰匙，一路繞到中央電梯過關
+</table>
+第3-9關 標準時間4:45
+<table>
+<tr><td><img src="sod/m3-09.png">
+<td>先到西北拿青鑰匙，再到東北拿黃鑰匙，然後到東南電梯過關
+</table>
+第3-10關魔王關
+<table>
+<tr><td><img src="sod/m3-10.png">
+<td>本關魔王為一手機槍一手火箭炮的Prof. Quarkblitz，打死他可撿取黃鑰匙
+</table>
+第3-11關 標準時間6:30
+<table>
+<tr><td><img src="sod/m3-11.png">
+<td>先從西邊繞到中央拿青鑰匙，再到西南拿黃鑰匙，然後到北邊電梯過關
+</table>
+第3-12關 標準時間4:30
+<table>
+<tr><td><img src="sod/m3-12.png">
+<td>1.進入第3-20秘密關<br>2.進入第3-13關<br>
+若想快速過關，直接到東南電梯即可進入第3-13關<br>
+但若想進入秘密關，便必須拿青鑰匙、再拿黃鑰匙，然後進入東北電梯<br>
+東南的暗格均只有一種推法，不會卡死，可以放心儘量推
+</table>
+第3-20秘密關
+<table>
+<tr><td><img src="sod/m3-20.png">
+<td>1.進入第3-13關<br>本關沒有捷徑，必須繞完整圈並依次拿取青黃鑰匙後，才能到達出口
+</table>
+第3-13關 標準時間2:45
+<table>
+<tr><td><img src="sod/m3-13.png">
+<td>先往東南到西南拿青鑰匙，再到西北拿黃鑰匙，然後到中央電梯過關
+</table>
+第3-14關 標準時間4:30
+<table>
+<tr><td><img src="sod/m3-14.png">
+<td>先往北拿黃鑰匙，再往南拿青鑰匙，然後從西南一路到西北電梯過關
+</table>
+第3-15關 標準時間6:00
+<table>
+<tr><td><img src="sod/m3-15.png">
+<td>先繞到中央依次拿取黃鑰匙、青鑰匙，再到西南電梯過關
+</table>
+第3-16關魔王關
+<table>
+<tr><td><img src="sod/m3-16.png">
+<td>魔王為手持2鏈炮的Hans Von Schlieffen，殺死可拿取黃鑰匙<br>
+青鑰匙是用來拿寶物的，與過關無關<br>
+西北秘道必須持續推動暗格才能打通
+</table>
+第3-17關 標準時間6:00
+<table>
+<tr><td><img src="sod/m3-17.png">
+<td>先往南到西南拿青鑰匙，即可從西邊到電梯過關<br>
+如果嫌雲霧遮住視線不好戰鬥，便回頭到東邊拿黃鑰匙，再從西北進入電梯<br>
+</table>
+第3-18關魔王關（傳送關）
+<table>
+<tr><td><img src="sod/m3-18.png">
+<td>1.傳送至第3-21關（關卡不視為結束，左下關卡編號仍為18）<br>
+魔王為2鏈炮2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
+</table>
+第3-21關魔王關
+<table>
+<tr><td><img src="sod/m3-21.png">
+<td>鬼魂是無法消滅的，殺死後會在幾秒之後原地復活<br>
+魔王為Devil Incarnate，殺死它即結束
+</table>
+</font>
+</pre>
+</body>
+</html>
