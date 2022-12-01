@@ -108,59 +108,41 @@ RLEW解壓(dest+2,地圖原始資料,地圖原始資料大小)
 *** Carmack解壓(source,dest,length)
 
 while (輸出緩衝區尚未填滿)
-{
     ch = 讀取2 byte整數
     chhigh = ch高位元組
     if (chhigh == 0xA7) // NEARTAG //
-    {
         count = ch低位元組
         if (count == 0)
-        {
             讀取1 byte做為ch的低位元組
             輸出ch (2 byte整數)
-        }
         else
-        {
             offset = 讀取2 byte整數
             複製輸出緩衝區目前位置往前offset*2的位置共count個2 byte整數
-        }
-    }
+        end if
     else if (chhigh == 0xA8) // FARTAG //
-    {
         count = ch低位元組
         if (count == 0)
-        {
             讀取1 byte做為ch的低位元組
             輸出ch (2 byte整數)
-        }
         else
-        {
             offset = 讀取2 byte整數
             複製輸出緩衝區開始往後offset*2的位置共count個2 byte整數
-        }
-    }
+        end if
     else
-    {
         輸出ch (2 byte整數)
-    }
-}
+    end if
 
 *** RLEW解壓(source,dest,length)
 
 while (輸出緩衝區尚未填滿)
-{
     value = 讀取2 byte整數
     if (value != RLEWtag)
-    {
         輸出value (2 byte整數)
-    }
     else
-    {
         count = 讀取2 byte整數
         value = 讀取2 byte整數
         輸出count次value (2 byte整數)
-    }
-}
+    end if
 
 <b>密技</b>：
 
@@ -217,7 +199,7 @@ Pause = 暫停
 1 = 武器換成小刀（Knife）
 2 = 武器換成手槍（Pistol）
 3 = 武器換成機槍（Machine Gun）
-4 = 武器換成鏈炮（Chain Gun）
+4 = 武器換成鏈槍（Chain Gun）
 
 以下為內定操作設定（可變更）：
 
@@ -226,7 +208,7 @@ Pause = 暫停
 右Shift = 快速移動（搭配方向鍵）
 Alt = 平移（搭配左右鍵）
 Space = 開啟／搜尋
-Ctrl = 射擊（機槍或鏈炮按住可連發）
+Ctrl = 射擊（機槍或鏈槍按住可連發）
 
 <b>攻略</b>：（作者－青衫）
 
@@ -251,8 +233,8 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 餐點（Dinner）：恢復10%健康
 急救包（First Aid）：恢復25%健康
 子彈（Ammo）：獲得8顆子彈（若是敵人陣亡掉落則為4顆子彈）
-機槍（Machine Gun）
-鏈炮（Chaingun）
+機槍（Machine Gun）：子彈可連射
+鏈槍（Chaingun）：子彈可連射，射速更快
 十字徽章（Cross）：加100分
 聖杯（Chalice）：加500分
 寶箱（Chest）：加1000分
@@ -269,7 +251,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
   (4)青色小十字 = 急救包
   (5)青色大圓圈 = 加命
   (6)暗青色g = 機槍
-  (7)青色g = 鏈炮
+  (7)青色g = 鏈槍
   (8)黃色小十字、小圓圈、小方塊、n = 加分寶物
   (9)黃色k、青色k = 鑰匙
 2.敵人：白色為必定出現，棕色等級3以上會出現，暗棕色等級4才會出現
@@ -336,7 +318,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第1-9關
 <table>
 <tr><td><img src="wolf3d/m08.png">
-<td>魔王為手拿兩把鏈炮的Hans Grosse，身上有鑰匙<br>
+<td>魔王為手拿兩把鏈槍的Hans Grosse，身上有鑰匙<br>
 往北用鑰匙開門進入後即結束
 </table>
 <font color=blue><b>*** 第2章 Operation: Eisenfaust（鐵拳行動）</b></font>
@@ -447,7 +429,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第3-9關
 <table>
 <tr><td><img src="wolf3d/m28.png">
-<td>大魔王為手持4把鏈炮的希特勒（Hitler）<br>
+<td>大魔王為手持4把鏈槍的希特勒（Hitler）<br>
 前面還有5個鬼魂小魔王，要注意丟出來的火球
 </table>
 <font color=blue><b>*** 第4章 A Dark Secret（不為人知的秘密）</b></font>
@@ -562,7 +544,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="wolf3d/m48.png">
 <td>先從兩旁沿牆下去推暗格拿完東西後，再打魔王<br>
-魔王為拿兩把鏈炮的Gretel Grosse（第一關魔王的妹妹）<br>
+魔王為拿兩把鏈槍的Gretel Grosse（第一關魔王的妹妹）<br>
 打死後撿取鑰匙，再往東北開門進去過關
 </table>
 <font color=blue><b>*** 第6章 Confrontation（對抗）</b></font>
@@ -620,7 +602,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第6-9關
 <table>
 <tr><td><img src="wolf3d/m58.png">
-<td>魔王為將軍（General），手持鏈炮還會射飛彈，打死即過關
+<td>魔王為將軍（General），手持鏈槍還會射飛彈，打死即過關
 </table>
 </font>
 </pre>

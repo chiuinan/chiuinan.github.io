@@ -92,59 +92,41 @@ RLEW解壓(dest+2,地圖原始資料,地圖原始資料大小)
 *** Carmack解壓(source,dest,length)
 
 while (輸出緩衝區尚未填滿)
-{
     ch = 讀取2 byte整數
     chhigh = ch高位元組
     if (chhigh == 0xA7) // NEARTAG //
-    {
         count = ch低位元組
         if (count == 0)
-        {
             讀取1 byte做為ch的低位元組
             輸出ch (2 byte整數)
-        }
         else
-        {
             offset = 讀取2 byte整數
             複製輸出緩衝區目前位置往前offset*2的位置共count個2 byte整數
-        }
-    }
+        end if
     else if (chhigh == 0xA8) // FARTAG //
-    {
         count = ch低位元組
         if (count == 0)
-        {
             讀取1 byte做為ch的低位元組
             輸出ch (2 byte整數)
-        }
         else
-        {
             offset = 讀取2 byte整數
             複製輸出緩衝區開始往後offset*2的位置共count個2 byte整數
-        }
-    }
+        end if
     else
-    {
         輸出ch (2 byte整數)
-    }
-}
+    end if
 
 *** RLEW解壓(source,dest,length)
 
 while (輸出緩衝區尚未填滿)
-{
     value = 讀取2 byte整數
     if (value != RLEWtag)
-    {
         輸出value (2 byte整數)
-    }
     else
-    {
         count = 讀取2 byte整數
         value = 讀取2 byte整數
         輸出count次value (2 byte整數)
-    }
-}
+    end if
 
 <b>密技</b>：
 
@@ -201,7 +183,7 @@ Pause = 暫停
 1 = 武器換成小刀（Knife）
 2 = 武器換成手槍（Pistol）
 3 = 武器換成機槍（Machine Gun）
-4 = 武器換成鏈炮（Chain Gun）
+4 = 武器換成鏈槍（Chain Gun）
 
 以下為內定操作設定（可變更）：
 
@@ -210,7 +192,7 @@ Pause = 暫停
 右Shift = 快速移動（搭配方向鍵）
 Alt = 平移（搭配左右鍵）
 Space = 開啟／搜尋
-Ctrl = 射擊（機槍或鏈炮按住可連發）
+Ctrl = 射擊（機槍或鏈槍按住可連發）
 
 <b>攻略</b>：（作者－青衫）
 
@@ -236,8 +218,8 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 急救包（First Aid）：恢復25%健康
 子彈（Ammo）：獲得8顆顆子彈（若是敵人陣亡掉落則為4顆子彈）
 子彈箱（Ammo Box）：獲得25顆子彈
-機槍（Machine Gun）
-鏈炮（Chaingun）
+機槍（Machine Gun）子彈可連射
+鏈槍（Chaingun）子彈可連射，射速更快
 十字徽章（Cross）／收音機（Radio）：加100分
 聖杯（Chalice）／鈽（Plutonium）：加500分
 寶箱（Chest）／控制板（Control Panel）：加1000分
@@ -254,7 +236,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
   (4)青色小十字 = 急救包
   (5)青色大圓圈 = 加命
   (6)暗青色g = 機槍
-  (7)青色g = 鏈炮
+  (7)青色g = 鏈槍
   (8)黃色小十字、小圓圈、小方塊、n = 加分寶物
   (9)黃色k、青色k = 鑰匙
 2.敵人：白色為必定出現，棕色等級3以上會出現，暗棕色等級4才會出現
@@ -304,7 +286,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第1-5關魔王關
 <table>
 <tr><td><img src="sod/m1-05.png">
-<td>本關魔王為手持2把鏈炮的Trans Grosse，打死他可撿取鑰匙
+<td>本關魔王為手持2把鏈槍的Trans Grosse，打死他可撿取鑰匙
 </table>
 第1-6關 標準時間4:30
 <table>
@@ -374,7 +356,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="sod/m1-16.png">
 <td>先往北到東南拿青鑰匙<br>
-魔王為四刀一鏈炮的超級變種人（UberMutex），殺死可拿取黃鑰匙
+魔王為四刀一鏈槍的超級變種人（UberMutex），殺死可拿取黃鑰匙
 </table>
 第1-17關 標準時間6:00
 <table>
@@ -385,7 +367,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="sod/m1-18.png">
 <td>1.傳送至第1-21關（關卡不視為結束，左下關卡編號仍為18）<br>
-魔王為2鏈炮2火箭炮的死亡騎士（Death Knight），殺死可拿取黃鑰匙
+魔王為2鏈槍2火箭炮的死亡騎士（Death Knight），殺死可拿取黃鑰匙
 </table>
 第1-21關魔王關
 <table>
@@ -399,7 +381,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="sod/m2-01.png">
 <td>東北暗格要注意推的方向，否則會壓到寶物無法拿取<br>
-本關無鑰匙，所以西北的鏈炮無法用正常方式獲得<br>
+本關無鑰匙，所以西北的鏈槍無法用正常方式獲得<br>
 唯一方式是引敵人開門，然後在門前殺死他，讓門無法關閉（很困難）
 </table>
 第2-2關 標準時間3:30
@@ -429,7 +411,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <tr><td><img src="sod/m2-05.png">
 <td>先從東南到東北拿青鑰匙<br>
 西北5暗格要往東推<br>
-本關魔王為一手鏈炮一手機槍的Submarine Willy，打死他可撿取黃鑰匙
+本關魔王為一手鏈槍一手機槍的Submarine Willy，打死他可撿取黃鑰匙
 </table>
 第2-6關 標準時間4:30
 <table>
@@ -499,7 +481,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第2-16關魔王關
 <table>
 <tr><td><img src="sod/m2-16.png">
-<td>魔王為手持2鏈炮的Hans Von Schlieffen，殺死可拿取黃鑰匙
+<td>魔王為手持2鏈槍的Hans Von Schlieffen，殺死可拿取黃鑰匙
 </table>
 第2-17關 標準時間6:00
 <table>
@@ -511,7 +493,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <tr><td><img src="sod/m2-18.png">
 <td>1.傳送至第2-21關（關卡不視為結束，左下關卡編號仍為18）<br>
 北邊暗格要注意推動方向，別卡住通道<br>
-魔王為2鏈炮2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
+魔王為2鏈槍2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
 </table>
 第2-21關魔王關
 <table>
@@ -553,7 +535,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="sod/m3-05.png">
 <td>先一路到東北拿青鑰匙<br>
-本關魔王為一手鏈炮一手機槍的Submarine Willy，打死他可撿取黃鑰匙
+本關魔王為一手鏈槍一手機槍的Submarine Willy，打死他可撿取黃鑰匙
 </table>
 第3-6關 標準時間4:30
 <table>
@@ -617,7 +599,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 第3-16關魔王關
 <table>
 <tr><td><img src="sod/m3-16.png">
-<td>魔王為手持2鏈炮的Hans Von Schlieffen，殺死可拿取黃鑰匙<br>
+<td>魔王為手持2鏈槍的Hans Von Schlieffen，殺死可拿取黃鑰匙<br>
 青鑰匙是用來拿寶物的，與過關無關<br>
 西北秘道必須持續推動暗格才能打通
 </table>
@@ -631,7 +613,7 @@ Ctrl = 射擊（機槍或鏈炮按住可連發）
 <table>
 <tr><td><img src="sod/m3-18.png">
 <td>1.傳送至第3-21關（關卡不視為結束，左下關卡編號仍為18）<br>
-魔王為2鏈炮2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
+魔王為2鏈槍2火箭炮的機器人（Robot），殺死可拿取黃鑰匙
 </table>
 第3-21關魔王關
 <table>
