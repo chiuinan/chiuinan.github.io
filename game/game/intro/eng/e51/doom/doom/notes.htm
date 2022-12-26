@@ -1,0 +1,185 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>新手提示</title>
+</head>
+<body>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>新手提示（作者－青衫）</b></FONT></CENTER>
+<p align=right><a href="../../doom.htm">回首頁</a>
+<pre>
+<p align=left><font color=blue><b>*** 操作</b></font>
+
+一、選單
+
+New Game：開新遊戲，先選章節，再選難度等級
+Option：設定選項
+  End Game：結束遊戲
+  Message：訊息顯示開關
+  Graphic Detail：繪圖精細度，有HIGH、LOW兩種
+  Sreen Size：調整可見視窗範圍
+  Mouse Sensity：調整滑鼠敏感度
+  Sound Volume：調整聲音大小
+Load Game：讀檔
+Save Game：存檔
+Read This!：顯示操控說明
+Quit Game：離開遊戲回到DOS
+
+難度等級：共有五種等級的難度，愈高等級的敵人愈多，物品愈少
+
+1.新手級（I'm too young to die）：撿拾的彈藥數加倍，受到的傷害減半，
+  其餘同簡易級
+2.簡易級（Hey, not too tough）
+3.普通級（Hurt me plenty）
+4.困難級（Ultra-Violence）
+5.惡夢級（Nightmare）：撿拾的彈藥數加倍，敵人速度加倍、陣亡後一段時間
+  會重生，無法使用作弊碼，其餘同困難級
+
+惡夢級困難度必須1.2版以上才有。
+
+二、遊戲按鍵
+
+Esc = 顯示／離開選單
+BackSpace = 回到上一層選單
+
+F1 = 顯示操控說明
+F2 = 存檔
+F3 = 讀檔
+F4 = 調整聲音大小
+F5 = 調整繪圖詳細度
+F6 = 快速存檔
+F7 = 結束遊戲
+F8 = 訊息顯示開關
+F9 = 快速讀檔
+F10 = 離開遊戲回到DOS
+F11 = 調整亮度
+F12 = 切換成其他玩家的視角（多人連線時）
++/- = 調整可見視窗範圍
+Tab = 自動地圖開關（目前視角的玩家）
+Pause = 暫停
+
+1 = 武器換成拳頭（Fist）或電鋸（Chainsaw）
+2 = 武器換成手槍（Pistol）
+3 = 武器換成霰彈槍（Shotgun）
+4 = 武器換成機槍（Chaingun）
+5 = 武器換成火箭炮（Rocket Launcher）
+6 = 武器換成電漿槍（Plassma Rifle）
+7 = 武器換成雷射炮（BFG 9000）
+8 = 武器換成電鋸（Chainsaw）
+
+（以下內定按鍵可使用SETUP.EXE修改）
+
+滑鼠右鍵/上 = 前進
+下 = 後退
+左右 = 左右轉身
+右Shift = 快速移動（搭配方向鍵）
+Alt = 平移（搭配左右鍵）
+,. = 左右平移
+雙擊滑鼠右鍵/Space = 搜尋／開啟／使用
+滑鼠左鍵/Ctrl = 射擊，按住可連發
+
+三、地圖按鍵
+
++/- = 放大縮小地圖
+0 = 切換顯示全圖/縮放圖
+M = 標記位置（數字）
+C = 清除所有標記
+F = 跟隨模式（Follow Mode）開關，開啟時按方向鍵為移動人物，關閉時為
+    移動地圖
+
+<font color=blue><b>*** 遊戲說明</b></font>
+
+1.初始武器=槍，子彈（Bull）=50，健康（Health）=100%，護甲（Armor）=0。
+2.Ammo為目前使用武器的彈藥數，各武器的彈藥數顯示在最右下角，依次為：
+  子彈、霰彈、火箭、電量。
+3.Arms數字為目前可使用的武器（有武器也有彈藥時），1=拳頭隨時可使用。
+4.被敵人擊中時會先損耗護甲，並減少傷害（損耗程度=減少的傷害），剩餘
+  的傷害才會減少健康。健康下降至0%時即為死亡，自動從死亡附近的起始點
+  重新開始，但整個關卡也會回到最初狀態（敵人與物品都重置）。
+5.某些門需要鑰匙才能開啟，撿到鑰匙會顯示在護甲右邊3小格內（黃紅藍）。
+6.經過物品時會自動撿拾，各物品作用請見<A href="item.htm">物品一覽表</A>。
+7.每過一關（無法回頭），會統計各項指標供玩家參考，包括殺敵率、撿寶率、
+  秘區發掘率、用時與標準時間等。但遊戲目標主要是在過關，以上指標僅供
+  玩家參考，並無實質作用。
+8.遊戲主要目標是過關，因此一些沒有想要的物品又特別難打的區域、秘門，
+  其實可以不必進去或開啟。
+
+<font color=blue><b>*** 多人連線</b></font>（必須1.2版以上）
+
+以下以使用DosBox利用區域網路連線共同作戰為例進行說明。首先修改DosBox
+的Options：
+
+ipx=true
+
+然後雙方在DosBox下IPX連線命令：
+
+甲方：ipxnet startserver
+乙方或其他人：ipxnet connect [甲方網路名稱]
+
+使用同一台電腦，對方網路名稱可使用localhost。接著雙方執行：
+
+IPXSETUP.EXE
+
+可以加的執行參數有（所有參與者的參數要一致）：
+
+-NODES 要玩的人數（2～4），未指定時內定為2人
+-PORT 使用指定的通訊埠，未指定時由系統內定（有多組人在同一區域網域玩
+      時才需要）
+
+等各方建立通訊後，便會自動進入遊戲，可以進行雙打或多打了（敵人與物品
+與單人模式略有不同）。多人連線，各方也可以相互攻擊（稱為死鬥），因此
+要合作或互鬥，均取決於各方自己。
+
+<font color=blue><b>*** DOOM.EXE執行參數</b></font>
+
+<table cellSpacing=0 cellPadding=2 border=1>
+<tr align=center><td>參數<td>限制<td>說明</tr>
+<tr><td>@[檔名]<td><td>使用指定的檔案內容各行做為執行參數
+<tr><td>-altdeath<td>-devparm<td>啟用多人遊戲DeathMatch第二版 (1.4版以後才有)
+<tr><td>-avg<td>-devparm<td>20分後結束遊戲
+<tr><td>-cdrom<td>-devparm<td>使用C:\DOOMDATA目錄儲存資料
+<tr><td>-comdev<td>-devparm<td>讀取商用版的WAD資料
+<tr><td>-config [檔名]<td><td>使用指定的檔名做為config檔
+<tr><td>-control [岔斷編號]<td>-devparm<td>啟用使用岔斷的外部輸入裝置 (1.4版以後才有)
+<tr><td>-deathmatch<td><td>啟用多人遊戲DeathMatch
+<tr><td>-debugfile [parm]<td>-devparm<td>將除錯資訊存入debug[parm].txt裡
+<tr><td>-devparm<td><td>啟用開發模式
+<tr><td>-episode [ep]<td><td>指定開始的章節
+<tr><td>-GUS<td>-devparm<td>使用GUS
+<tr><td>-GUS1<td>-devparm<td>使用1MB GUS (1.4版以後才有)
+<tr><td>-fast<td>-warp<td>惡夢等級，但敵人不重生 (1.666版以後才有)
+<tr><td>-file [檔名.WAD]<td><td>使用外部PWAD檔
+<tr><td>-left<td>-net<td>啟用左邊視野的網路終端機
+<tr><td>-loadgame [存檔編號]<td><td>載入存檔開始遊戲
+<tr><td>-maxdemo<td><td>指定錄製demo的限制大小 (1.4版以後才有)
+<tr><td>-net [玩家數目]<td><td>決定多人遊戲的人數 (1.1版以前)
+<tr><td>-nodes [玩家數目]<td><td>決定多人遊戲的人數
+<tr><td>-noblit<td>-devparm<td>不顯示視角畫面
+<tr><td>-nodraw<td>-devparm<td>不顯示視角畫面
+<tr><td>-nojoy<td>-devparm<td>不使用搖桿
+<tr><td>-nomonsters<td><td>啟動沒有怪物的遊戲
+<tr><td>-nomouse<td>-devparm<td>不使用滑鼠
+<tr><td>-nomusic<td>-devparm<td>不播放背景音樂
+<tr><td>-nosfx<td>-devparm<td>不播放音效
+<tr><td>-nosound<td>-devparm<td>無聲音
+<tr><td>-opl3<td>-devparm<td>啟用PAS16的OPL-3
+<tr><td>-phase<td>-devparm<td>啟用PAS16的相移器
+<tr><td>-playdemo [檔名.LMP]<td><td>播放錄製的demo
+<tr><td>-record [檔名.LMP]<td>(-devparm)<td>錄製demo，直到過關、死亡或離開遊戲
+<tr><td>-recordfrom [存檔編號] [檔名.LMP]<td>(-devparm)<td>載入存檔開始錄製demo
+<tr><td>-regdev<td>-devparm<td>讀取註冊版的WAD資料
+<tr><td>-respawn<td><td>怪物一律重生
+<tr><td>-right<td>-net<td>啟用右邊視野的網路終端機
+<tr><td>-shdev<td>-devparm<td>讀取共享版的WAD資料
+<tr><td>-skill [困難等級]<td><td>指定遊戲的困難等級（1-5）
+<tr><td>-statcopy<td>-devparm<td>收集遊戲的統計特性
+<tr><td>-timer [分鐘數]<td>-deathmatch<br>-altdeath<td>多人遊戲時，經過指定時間後自動結束遊戲<br>(1.666版以後才有)
+<tr><td>-timedemo [檔名.LMP]<td>-devparm<td>計算播放demo的時間
+<tr><td>-turbo [速度]<td>-devparm<td>變更主角的速度（1-255） (1.666版以後才有)
+<tr><td>-warp [ep] [level]<td>-devparm<td>跳至指定章節的指定關卡
+<tr><td>-wart [ep] [level]<td>-devparm<td>載入ExMy.wad，跳至指定章節的指定關卡
+</table>
+啟用DeathMatch表示玩家陣亡後可重生，第二版增加所有物品會在30秒後重生。
+</font>
+</pre>
+</body>
+</html>
