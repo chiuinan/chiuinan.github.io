@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔DOOMSAV?.DSG
+
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+0050 -- -- -- -- HT HT HT HT AM AM AM AM AT AT AT AT
+0060 P1 P1 P1 P1 P2 P2 P2 P2 P3 P3 P3 P3 P4 P4 P4 P4
+0070 P5 P5 P5 P5 P6 P6 P6 P6 K1 K1 K1 K1 K2 K2 K2 K2
+0080 K3 K3 K3 K3 K4 K4 K4 K4 K5 K5 K5 K5 K6 K6 K6 K6
+0090 BP BP BP BP CW CW CW CW NW NW NW NW W1 W1 W1 W1
+00A0 W2 W2 W2 W2 W3 W3 W3 W3 W4 W4 W4 W4 W5 W5 W5 W5
+00B0 W6 W6 W6 W6 W7 W7 W7 W7 W8 W8 W8 W8 W9 W9 W9 W9
+00C0 A1 A1 A1 A1 A2 A2 A2 A2 A3 A3 A3 A3 A4 A4 A4 A4
+00D0 M1 M1 M1 M1 M2 M2 M2 M2 M3 M3 M3 M3 M4 M4 M4 M4
+
+HT = 健康，最多200=C8h
+AM = 護甲，最多200=C8h
+AT = 護甲形態，00=無，01=綠護甲，02=藍護甲
+P1～P6 = 是否有強化裝置，非0=有/剩餘作用時間（單位tics=1/35秒）
+         依次為無敵、狂暴、隱形、幅射防護衣、地圖、夜視鏡
+K1～K6 = 是否有鑰匙，1=有
+         依次為藍卡、黃卡、紅卡、藍骷髏、黃骷髏、紅骷髏
+BP = 是否有背包，1=有
+CW = 目前使用的武器，0 = 拳擊，1 = 手槍，2 = 霰彈槍，3 = 機槍
+     4 = 火箭炮，5 = 電漿槍，6 = 雷射炮，7 = 電鋸，8 = 雙管霰彈槍
+NW = 目前武器彈藥用盡準備替換的武器，0Ah表不更換（1.2版為09h）
+W1～W9 = 是否有該武器，1=有，依次為拳擊、手槍、霰彈槍、機槍、火箭炮、
+         電漿槍、雷射炮、電鋸、雙管霰彈槍
+A1～A4 = 現有彈藥量，依次為子彈、霰彈、電量、火箭
+M1～M4 = 最大彈藥量，依次為子彈、霰彈、電量、火箭
+</font>
+</pre>
+</body>
+</html>
