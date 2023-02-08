@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔HTICSAV?.HSG
+
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+0060 HT HT HT HT AM AM AM AM AT AT AT AT IT IT IT IT
+0070 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+0080 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+0090 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+00A0 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+00B0 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+00C0 IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT IT
+00D0 IN IN IN IN IT IT IT IT IN IN IN IN ST ST ST ST
+00E0 SN SN SN SN SI SI SI SI 00 00 00 00 P1 P1 P1 P1
+00F0 P2 P2 P2 P2 P3 P3 P3 P3 P4 P4 P4 P4 P5 P5 P5 P5
+0100 P6 P6 P6 P6 00 00 00 00 00 00 00 00 K1 K1 K1 K1
+0110 K2 K2 K2 K2 K3 K3 K3 K3 BP BP BP BP -- -- -- --
+0120 -- -- -- -- -- -- -- -- -- -- -- -- CW CW CW CW
+0130 NW NW NW NW W1 W1 W1 W1 W2 W2 W2 W2 W3 W3 W3 W3
+0140 W4 W4 W4 W4 W5 W5 W5 W5 W6 W6 W6 W6 W7 W7 W7 W7 
+0150 W8 W8 W8 W8 00 00 00 00 A1 A1 A1 A1 A2 A2 A2 A2
+0160 A3 A3 A3 A3 A4 A4 A4 A4 A5 A5 A5 A5 A6 A6 A6 A6
+0170 M1 M1 M1 M1 M2 M2 M2 M2 M3 M3 M3 M3 M4 M4 M4 M4
+0180 M5 M5 M5 M5 M6 M6 M6 M6 -- -- -- -- -- -- -- --
+
+HT = 健康，最多100=64h
+AM = 護甲，最多200=C8h
+AT = 護甲形態，00=無，01=盾牌，02=強化盾牌
+IT,IN = 寶物形態與數量，共14個
+          1 = 無敵戒指（Ring of Invincibility）
+          2 = 隱身魔球（Shadow Sphere）
+          3 = 補血藥瓶（Quartz Flask）
+          4 = 神秘骨灰（Mystic Urn）
+          5 = 能量之書（Tomb of Power）
+          6 = 火把（Torch）
+          7 = 定時炸彈（Time bomb of the Ancients）
+          8 = 化形卵（Morph Ovum）
+          9 = 飛翔之翼（Wings of Wrath）
+          10 = 混沌裝置（Chaos Device）
+ST,SN,SI = 目前選擇的寶物形態、數量及所在物品欄索引值（由1開始）
+P1～P6 = 是否有強化裝置，非0=有/剩餘作用時間（單位tics=1/35秒）
+         依次為無敵、隱形、地圖、夜視鏡、強化武器、飛行
+K1～K3 = 是否有鑰匙，1=有，依次為黃骷髏、綠骷髏、藍骷髏
+BP = 是否有背包，1=有
+CW = 目前使用的武器
+NW = 目前武器彈藥用盡準備替換的武器，0Ah表不更換
+W1～W8 = 是否有該武器，1=有，依次為木杖、精靈魔杖、太虛弩、魔龍爪、地獄魔杖、
+         鳳凰魔杖、火鎚、死靈手套
+A1～A6 = 現有彈藥量，依次為精靈魔杖、太虛弩、魔龍爪、地獄魔杖、鳳凰魔杖、火鎚
+M1～M6 = 最大彈藥量，依次為精靈魔杖、太虛弩、魔龍爪、地獄魔杖、鳳凰魔杖、火鎚
+</font>
+</pre>
+</body>
+</html>
