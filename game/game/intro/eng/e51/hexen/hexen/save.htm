@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>存檔修改</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>存檔修改</b></FONT></CENTER>
+<b>修改</b>：存檔HEXNDATA\HEX?.HXS
+
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+0240 -- -- -- -- -- -- -- -- -- CL CL CL CL -- -- --
+0250 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+0260 -- -- -- -- -- -- -- -- -- HT HT HT HT A1 A1 A1
+0270 A1 A2 A2 A2 A2 A3 A3 A3 A3 A4 A4 A4 A4 IT IT IT
+0280 IT IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT
+  :
+0370 IT IN IN IN IN IT IT IT IT IN IN IN IN IT IT IT
+0380 IT IN IN IN IN ST ST ST ST TN TN TN TN SN SN SN
+0390 SN 00 00 00 00 P1 P1 P1 P1 P2 P2 P2 P2 P3 P3 P3
+03A0 P3 P4 P4 P4 P4 P5 P5 P5 P5 P6 P6 P6 P6 P7 P7 P7
+03B0 P7 P8 P8 P8 P8 KY KY KY KY -- -- -- -- -- -- --
+03C0 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+03D0 -- -- -- -- -- -- -- -- -- -- -- -- -- CW CW CW
+03E0 CW NW NW NW NW W1 W1 W1 W1 W2 W2 W2 W2 W3 W3 W3
+03F0 W3 W4 W4 W4 W4 M1 M1 M1 M1 M2 M2 M2 M2 -- -- --
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+CL = 職業，0=戰士，1=牧師，2=法師
+HT = 生命，最多100=64h
+     直接修改可能會和顯示的數據不同步，必須切換關卡後才能正常
+A1～A4 = 護甲AC值*50000h，依次為戰甲、盾牌、頭盔、項鍊
+IT,IN = 寶物形態與數量，共34個
+ST = 目前選擇的寶物形態
+TN = 寶物總數
+SN = 物品欄總數
+P1～P8 = 是否有強化裝置，非0=有/剩餘作用時間（單位tics=1/35秒）
+         依次為無敵、地圖、火把、飛行、不明、不明、速度、召喚
+KY = 已撿到的鑰匙（各位元代表有無）
+CW = 目前使用的武器
+NW = 目前武器法力用盡準備替換的武器，05h表不更換
+W1～W4 = 是否有該武器，1=有，依次為初始、一階、二階、終極
+M1～M2 = 目前法力，依次為藍魔法、綠魔法
+
+<font color=blue><b>*** 寶物形態值</b></font>
+
+1 = 護衛圖騰（Icon Of The Defender）
+2 = 補血藥瓶（Quartz Flask）
+3 = 神秘骨灰（Mystic Urn）
+4 = 神秘咒語（Mystic Ambit Incant）
+5 = 黑暗僕從（Dark Servant）
+6 = 火把（Torch）
+7 = 化形豬（Porkalator）
+8 = 飛翔之翼（Wings of Wrath）
+9 = 斥力盤（Disc Of Repulsion）
+10 = 炸彈瓶（Flechette）
+11 = 驅逐裝置（Banishment Device）
+12 = 速度之鞋（Boots Of Speed）
+13 = 力量聖杯（Krater Of Might）
+14 = 龍皮護腕（Dragonskin Bracers）
+15 = 混沌裝置（Chaos Device）
+
+其他為過關物品
+</font>
+</pre>
+</body>
+</html>
