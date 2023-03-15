@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>資訊修改</title>
+</head>
+<body>
+<pre><font face="細明體" size=3><P><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<b>資訊</b>：地圖資訊，整數均低位元組在前
+
+MAPHEAD.xxx：關卡地圖指標檔
+
+  RLEWtag：2 byte整數（RLEW解壓用）
+  關卡地圖指標：4 byte整數，共100個，指向地圖資訊檔，<0表不存在，0表結束
+
+GAMEMAPS.xxx：地圖資訊檔
+
+1.關卡地圖資訊（由關卡地圖指標檔指向）
+  地圖壓縮資料指標：3個4 byte整數，指向地圖資訊檔
+  地圖壓縮資料大小：3個2 byte整數
+  地圖水平大小：2 byte整數，固定40h=64
+  地圖垂直大小：2 byte整數，固定40h=64
+  地圖名稱：16 byte
+2.地圖壓縮資料（由關卡地圖資訊指標指向）：須按後述方式解壓
+
+地圖資料共有3組：
+
+1.地圖背景資料（MapData），例如城牆、地板、電梯等。
+2.地圖物件資料（ObjData），例如寶物、鑰匙、水桶等。
+3.暗格資料
+
+各資料編號均有特定意義，請自行參閱地圖編輯器MapEdit所附的MapData.*和ObjData.*。
+至於秘密關的關卡連結等，均寫死在程式中，外界無法變更。
+
+<font color=blue><b>*** 地圖資料解壓法</b></font>
+
+註：原始資料大小 = 地圖水平大小 * 地圖垂直大小 * 2
+
+src = 地圖壓縮資料
+dest_len = src開頭的2 byte整數
+Carmack解壓(src+2,dest,dest_len)
+地圖原始資料大小 = dest開頭的2 byte整數
+RLEW解壓(dest+2,地圖原始資料,地圖原始資料大小)
+
+<font color=blue><b>*** Carmack解壓(source,dest,length)</b></font>
+
+while (輸出緩衝區尚未填滿)
+    ch = 讀取2 byte整數
+    chhigh = ch高位元組
+    if (chhigh == 0xA7) // NEARTAG //
+        count = ch低位元組
+        if (count == 0)
+            讀取1 byte做為ch的低位元組
+            輸出ch (2 byte整數)
+        else
+            offset = 讀取2 byte整數
+            複製輸出緩衝區目前位置往前offset*2的位置共count個2 byte整數
+        end if
+    else if (chhigh == 0xA8) // FARTAG //
+        count = ch低位元組
+        if (count == 0)
+            讀取1 byte做為ch的低位元組
+            輸出ch (2 byte整數)
+        else
+            offset = 讀取2 byte整數
+            複製輸出緩衝區開始往後offset*2的位置共count個2 byte整數
+        end if
+    else
+        輸出ch (2 byte整數)
+    end if
+
+<font color=blue><b>*** RLEW解壓(source,dest,length)</b></font>
+
+while (輸出緩衝區尚未填滿)
+    value = 讀取2 byte整數
+    if (value != RLEWtag)
+        輸出value (2 byte整數)
+    else
+        count = 讀取2 byte整數
+        value = 讀取2 byte整數
+        輸出count次value (2 byte整數)
+    end if
+</pre>
+</body>
+</html>
