@@ -1,0 +1,109 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>資訊修改</title>
+</head>
+<body>
+<pre><font face="細明體" size=3><P><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<font color=blue><b>*** 物品（Thing）Action</b></font>
+
+1.會掉東西的陶鍋、全套盔甲
+
+Action基本上均為0，參數1表示會掉的物品編號，0表示不掉物品。各編號實際對應的物品，
+可參考原始程式P_THINGS.C，常見的有：
+
+  05 = 火石像鬼
+  11 = 藍魔法
+  12 = 綠魔法
+  19 = 黑暗主教
+  23 = 水晶瓶
+  24 = 補血藥瓶
+  75 = 雙補魔法
+
+2.怪物
+
+Action為80表示殺死時會執行Script，後接地圖編號、Script編號、Script執行參數
+
+<font color=blue><b>*** 控制線（Linedef）Action</b></font>
+
+1.明示線
+
+Action為80，表示觸發時會執行Script，後接Script編號、地圖編號、Script執行參數。
+觸發形式有：
+
+(1)Player walks over：玩家走過時觸發
+(2)Player presses Use：玩家按下時觸發
+(3)Monster walks over：怪物走過時觸發
+(4)Projectile hits：攻擊命中時觸發
+
+2.暗示線
+
+Action為121，後接Line ID，可在Script中變更其作用、樣式等等。常見的Script呼叫有：
+
+(1)setlinespecial(LineID,Action,arg1,arg2,arg3,arg4,arg5)
+
+設定該控制線的作用，通常Action為80，arg1和arg2分別為Script編號、地圖編號。或是
+Action為129，使用物品解謎，arg1為解謎物品ID，arg2、arg3為觸發的Script。
+
+(2)setlinetexture(LineID,arg1,arg2,arg3)
+
+設定該控制線所在面的顯示樣示，例如按下按鈕後變更樣式等等。
+
+(3)Thing_Projectile(LineID,arg1,arg2,arg3,arg4)
+
+從該控制線射出彈體，arg1為彈體形式。
+
+<font color=blue><b>*** Script執行</b></font>
+
+每個Script以下列形式表示：
+
+script 編號
+{
+   script定義
+}
+
+編號後若接OPEN，表示一進入地圖便自動執行，否則為其他方式觸發。script定義裡，常見
+的呼叫有：
+
+ACS_Execute(ScriptID,MapID,arg1,arg2,arg3)
+  執行指定的Script
+Ceiling_CrushAndRaise(TagID,arg1,arg2)
+  區域Tag編號為TagID的天花板往下壓碎後再升起
+Ceiling_RaiseByValue(TagID,arg1,arg2)
+  升起區域Tag編號為TagID的天花板（通常為開啟牆）
+changefloor(TagID,arg1)
+  變更區域Tag編號為TagID的地板形式（如熔岩）
+delay(計數)
+  延遲時間=(計數/35)秒
+Door_Open(TagID,arg1)
+  開啟區域Tag編號為TagID的門
+Door_Close(TagID,arg1)
+  關閉區域Tag編號為TagID的門
+Floor_LowerByValue(TagID,arg1,arg2)
+  降下區域Tag編號為TagID的地板
+Floor_RaiseByValue(TagID,arg1,arg2)
+  升起區域Tag編號為TagID的地板
+Plat_DownWaitUpStay(TagID,arg1,arg2)
+  暫時降下區域Tag編號為TagID的平台
+random(arg1,arg2)
+  產生介於arg1（含）和arg2（含）的亂數
+setlinespecial(LineID,Action,arg1,arg2,arg3,arg4,arg5)
+  變更控制線的作用
+Stairs_BuildDown(TagID,arg1,arg2,arg3,arg4)
+Stairs_BuildUp(TagID,arg1,arg2,arg3,arg4)
+  從區域Tag編號為TagID的平台建立起樓梯
+Teleport(TagID)
+  傳送至物件Tag編號為TagID的物件所在位置
+Teleport_NewMap(MapID,PosID)
+  傳送至指定地圖的指定位置
+Thing_Activate(TagID)
+  激活物件Tag編號為TagID的物件
+Thing_Deactivate(TagID)
+  停用物件Tag編號為TagID的物件
+Thing_Projectile(LineID,arg1,arg2,arg3,arg4)
+  從控制線LineID射出彈體，arg1為彈體形式
+Thing_Spawn(TagID,arg1,arg2)
+  在物件Tag編號為TagID的物件所在位置，各產生一個物品編號為arg1的物品（包括空橋）
+</pre>
+</body>
+</html>
