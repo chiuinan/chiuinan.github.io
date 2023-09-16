@@ -1,0 +1,47 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>事件列表</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>事件列表</b></FONT></CENTER>
+<font color=blue><b><A name="time">*** 定期事件</b></font>
+
+1.週日：發薪日
+  (1)擁有的領地上繳稅金
+  (2)給付傭兵已工作天數的薪資，資金不足時則自動離去。解雇傭兵時，仍需支付該週已
+     工作天數之薪資。
+
+2.週一：固定發生<A href="#chance">命運事件</A>。
+
+
+<font color=blue><b><A name="chance">*** 命運事件</b></font>
+
+<TABLE BORDER=1 cellspacing=0 cellpadding=1>
+<TR bgcolor="#ffffc0"><TH>編號<TH>機率<TH>事件
+<TR><TD>0<TD align=right>2%<TD>領地發生瘟疫，守軍生命減半或死亡
+<TR><TD>1<TD align=right>10%<TD>領地發生饑荒，收入減半
+<TR><TD>2<TD align=right>2%<TD>領地發生地震，規模下降一級
+<TR><TD>3<TD align=right>10%<TD>領地豐收，收入加倍
+<TR><TD>4<TD align=right>5%<TD>半路遭竊，損失1/16～1/4金錢（最少50元）
+<TR><TD>5<TD align=right>5%<TD>拾獲寶物，錢財增加(200-1900)*LV元、<font color=red>獲得0～2項寶物</font>
+<TR><TD>6<TD align=right>15%<TD>遭遇怪物
+<TR><TD>7<TD align=right>5%<TD>遇上魔法傳送，隨機移往地圖上的某一處
+<TR><TD>8<TD align=right>5%<TD><A name="8">遇到陷阱，無法行動1回合、<font color=red>損失1/4～2/3的目前生命</font>、法力全部消失
+<TR><TD>9<TD align=right>5%<TD>傭兵加入（會詢問是否願意）
+<TR><TD>10<TD align=right>5%<TD>傭兵離開
+<TR><TD>11<TD align=right>5%<TD>紮營休息，停止1回合、隊伍生命、法力全滿
+<TR><TD>12<TD align=right>10%<TD>幸運降臨，獲得一張卡片
+<TR><TD>13<TD align=right>10%<TD>不幸降臨，失去一張卡片
+<TR><TD>14<TD align=right>2%<TD>遭到詛咒，無法行動1～3回合
+<TR><TD>15<TD align=right>2%<TD>獻城歸降，獲得領地
+<TR><TD>16<TD align=right>2%<TD>守軍叛變，失去領地
+</TABLE>
+1.拾獲寶物時，因程式誤寫，導致永遠拿不到寶物，可進行<A href="modify1.htm">程式修正</A>。
+2.中陷阱時，因程式誤將損失的生命設為目前剩餘的生命，而非扣除，若未進行<A href="modify1.htm">程式修正</A>，
+  則實際損失的生命會是1/3～3/4，而且顯示出來的文字資訊也不正確。
+</font>
+</pre>
+</body>
+</html>
