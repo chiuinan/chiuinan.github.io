@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>紅樓夢之玲瓏彩玉</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：紅樓夢之玲瓏彩玉 (中文版)
+<b>簡介</b>：龍愛科技1997年出品的益智遊戲，由智冠代理發行。遊戲的內容衍生自俄羅斯方塊，
+      玩家必須連接相同顏色的彩玉，累積三個以上時即可消去，任一方無法消去的彩玉滿
+      出時即失敗。遊戲共提供了單人劇情和雙人對抗兩種模式，也有一些特殊作用的彩玉。
+      在劇情模式裡，玩家可從紅樓夢的八位角色裡挑選一位，再打敗九位對手。每位角色
+      均有不同的劇情，只是這些劇情大都挺無聊的，主要內容還是在於類似俄羅斯方塊的
+      遊戲，拿來消磨時間似乎也還可以。不過電腦對手有點過份厲害，快滿出時都還能夠
+      救回，即便最簡易的困難等級，玩家想獲勝依然不是易事，玩家需有心理準備。
+<IMG src="red/game1.png">  <IMG src="red/game2.png">
+<b>保護</b>：光碟，破解碼（破解後無背景音樂）：
+      PLAY.EXE
+        EB 00 5F 5E C9 CB C8 10 00 00 C7 46 F0 00 15 C7 46 F2 00 00 16 8D 46 F0 50 16 8D 46 F0 50 6A 2F 9A D8 22 00 00 83 C4 0A C4 5E 06 8A 46 F4
+        -- -- -- -- -- -- -- -- -- -- -- -- -- -- 19 -- -- -- 01 -- -- -- -- -- -- -- -- -- -- -- -- 21 -- -- -- -- -- -- -- -- -- -- -- -- -- F0
+        75 05 B8 01 00 EB 02 33 C0 C9 CB C9 CB C8 18 00
+        -- 00 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+<b>備註</b>：正常版請執行PLAY.EXE，必勝版請執行UPLAY.EXE
+<b>修改</b>：PLAY.EXE
+
+1.略過開頭動畫
+  E8 BB 1B 83 C4 04
+  90 90 90 -- -- --
+2.單人模式時，使對手無法移子，迅速獲勝
+  83 7E FE 01 75 7C 83 3E C0 7E 00
+  -- -- -- -- EB -- -- -- -- -- --
+  83 7E FC 01 75 7C 83 3E C0 7E 00
+  -- -- -- -- EB -- -- -- -- -- --
+  83 7E F8 01 75 1D 83 3E C0 7E 00
+  -- -- -- -- EB -- -- -- -- -- --
+
+<b>操作</b>：
+
+左鍵/A = 往左移
+右鍵/D = 往右移
+下鍵/S = 加速下移
+Enter/Space = 旋轉
+Esc = 結束遊戲
+P = 暫停
+
+<b>說明</b>：
+
+1.單人劇情模式可選角色：
+    林黛玉、王熙鳳、史湘雲、薛寶釵、尤二姐、秦可卿、花襲人、晴雯
+  必須獲勝九次才算破關，愈後面掉下的速度會愈快。
+2.消去正常彩玉後，有機會讓對方掉落一堆冰凍彩玉。
+
+<font color=blue><b>*** 彩玉種類</b></font>
+
+1.正常彩玉：<img valign=middle src="red/rb.png"><img valign=middle src="red/gb.png"><img valign=middle src="red/bb.png"><img valign=middle src="red/yb.png"> 連接三個以上即可消去，鄰近的冰凍彩玉也會恢復成正常。
+2.冰凍彩玉：<img valign=middle src="red/rrb.png"><img valign=middle src="red/rgb.png"><img valign=middle src="red/rbb.png"><img valign=middle src="red/ryb.png"> 暫時無法消去，必須等恢復成正常狀態。
+3.陰冷彩玉：<img valign=middle src="red/nb.png"> 碰觸後消失，鄰近的彩玉會變成冰凍狀態。可設定有無。
+4.溫暖彩玉：<img valign=middle src="red/db.png"> 碰觸後消失，鄰近的彩玉會恢復正常狀態。可設定有無。
+
+</font>
+</pre>
+</body>
+</html>
