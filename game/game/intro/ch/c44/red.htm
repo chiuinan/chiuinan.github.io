@@ -14,7 +14,7 @@
       遊戲，拿來消磨時間似乎也還可以。不過電腦對手有點過份厲害，快滿出時都還能夠
       救回，即便最簡易的困難等級，玩家想獲勝依然不是易事，玩家需有心理準備。
 <IMG src="red/game1.png">  <IMG src="red/game2.png">
-<b>保護</b>：光碟，破解碼（破解後無背景音樂）：
+<b>保護</b>：光碟，破解碼（但需掛載光碟才有背景音樂）：
       PLAY.EXE
         EB 00 5F 5E C9 CB C8 10 00 00 C7 46 F0 00 15 C7 46 F2 00 00 16 8D 46 F0 50 16 8D 46 F0 50 6A 2F 9A D8 22 00 00 83 C4 0A C4 5E 06 8A 46 F4
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- 19 -- -- -- 01 -- -- -- -- -- -- -- -- -- -- -- -- 21 -- -- -- -- -- -- -- -- -- -- -- -- -- F0
@@ -23,10 +23,13 @@
 <b>備註</b>：正常版請執行PLAY.EXE，必勝版請執行UPLAY.EXE
 <b>修改</b>：PLAY.EXE
 
-1.略過開頭動畫
+1.修正DosBox掛載光碟會當機的問題
+  C6 46 FD 01 16
+  -- -- -- -- 90
+2.略過開頭動畫
   E8 BB 1B 83 C4 04
   90 90 90 -- -- --
-2.單人模式時，使對手無法移子，迅速獲勝
+3.單人模式時，使對手無法移子，迅速獲勝
   83 7E FE 01 75 7C 83 3E C0 7E 00
   -- -- -- -- EB -- -- -- -- -- --
   83 7E FC 01 75 7C 83 3E C0 7E 00
@@ -54,8 +57,8 @@ P = 暫停
 
 1.正常彩玉：<img valign=middle src="red/rb.png"><img valign=middle src="red/gb.png"><img valign=middle src="red/bb.png"><img valign=middle src="red/yb.png"> 連接三個以上即可消去，鄰近的冰凍彩玉也會恢復成正常。
 2.冰凍彩玉：<img valign=middle src="red/rrb.png"><img valign=middle src="red/rgb.png"><img valign=middle src="red/rbb.png"><img valign=middle src="red/ryb.png"> 暫時無法消去，必須等恢復成正常狀態。
-3.陰冷彩玉：<img valign=middle src="red/nb.png"> 碰觸後消失，鄰近的彩玉會變成冰凍狀態。可設定有無。
-4.溫暖彩玉：<img valign=middle src="red/db.png"> 碰觸後消失，鄰近的彩玉會恢復正常狀態。可設定有無。
+3.陰冷天氣：<img valign=middle src="red/nb.png"> 碰觸後消失，鄰近的彩玉會變成冰凍狀態。可設定有無。
+4.溫暖天氣：<img valign=middle src="red/db.png"> 碰觸後消失，鄰近的彩玉會恢復正常狀態。可設定有無。
 
 </font>
 </pre>
