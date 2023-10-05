@@ -1,0 +1,460 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Hoyle Majestic Chess</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：Hoyle Majestic Chess (英文版)
+<b>簡介</b>：Fluent 2003年出品的西洋棋遊戲，由雪樂山（Sierra）代理發行。遊戲除了傳統與
+      電腦對戰和連線下棋外，最特別的是結合冒險遊戲來做西洋棋教學，讓玩家在玩樂中
+      逐一學到西洋棋的各種知識。遊戲本身的棋力雖不算高，但已非一般玩家能輕鬆對付。
+      冒險遊戲的部份則做得相當不錯，由淺而深，有些任務還需要動一些腦筋，再加上可
+      買賣道具協助玩家過關，娛樂性很高，非常值得推薦的一款遊戲。只是因為需要進行
+      西洋棋教學，會有大量的英文，對於英文不好的玩家，玩起來可能會很吃力。
+<IMG src="mjchess/game1.jpg">
+
+<IMG src="mjchess/game2.jpg">
+<b>保護</b>：SecuROM+序號：TUF6-DAB8-GUC5-JYB3-3739、XYN6-NAB4-FES2-MUX7-3485。
+<b>限制</b>：必須有D3D加速，否則會當機。
+<b>檔案</b>：NoCD.rar = 免光碟檔
+<b>修改</b>：存檔Saved Games\*.mcg
+
+"PLYR"字串之後（各數字均4 byte）：
+
+"INVT"第二個數字為金錢
+"RETN"第二個以下的數字為各棋子的數目，依次為皇后、城堡、主教、騎士、士兵
+"ARTS"第二個以下的數字為各道具的數目，作用隨各章節而定
+
+<b>修改</b>：res\User.ini
+
+加入或修改成以下資訊，則冒險模式各章均會開放。
+
+[LandEnabled]
+2=1
+3=1
+4=1
+5=1
+6=1
+7=1
+8=1
+
+<b>操作</b>：
+
+一、主選單
+
+1.Single Player：單人下棋
+2.Adventure：冒險遊戲
+3.Multi Player：連線下棋
+4.Exit：離開遊戲
+
+二、單人下棋（Single Player）
+
+0.頭像
+  左邊：頭像，下方箭頭可變更
+  第一行：變更計時方式
+  第二行：目前計時
+  第三行：圖像1=黑棋/白棋，圖像2=玩家/電腦（後面為棋力等級）
+  第四行：名字
+  第五行：電腦棋力
+  最右下角按鈕可變更人物資訊
+1.Game
+  New Game：重新下棋
+  Change Game：變更人物資訊
+  Puzzle：解殘局
+  Save：棋局存檔
+  Load：讀取棋局
+  About：關於本遊戲
+2.Actions
+  Takeback：悔棋
+  Force move：強迫電腦立即著子
+  Pause：暫停
+  Offer draw：提出和局
+  Resign：投降
+  Switch sides：黑白雙方交換
+  Flip board：棋盤上下顛倒
+3.Teacher
+  Quick hint：快速提示
+  Advice：完整建議
+  AI thinking：顯示AI思考過程
+  Opening book：查詢佈局辭典
+  Annotations：加入註釋
+  Historic games：歷史名局
+  Tutorial：進入教學課程
+4.Options
+  Chess set：可變更2D/3D、棋盤類型、棋子類型、背景等
+  Setup board：設定殘局
+  Create opponent：建立電腦對手，可調整其各種參數與強度
+  Notation：設定棋譜記號方式
+  Settings：設定音樂、音效、3D棋盤繪製方式等
+5.Exit：回主選單
+
+三、冒險遊戲（Adventure）
+
+Esc = 離開商店、棋局。
+
+1.地點：雙擊滑鼠左鍵可迅速進入地點（不用等人物過來）。
+2.商店：下方為己方金錢與物品，可賣出（原價）。
+
+<b>說明</b>：<a href="../../ch/c41/chess2/chess_rule/chess_rule.htm">西洋棋規則</a>。
+<b>攻略</b>：（作者－青衫）
+
+以下說明冒險遊戲的部份。
+
+1.每一章都是重新開始：無棋子、無金錢、無道具。亦即獲得道具只在該章有效，當用則用。
+2.各章開始的首要目標都是尋找下棋用的棋子，其次才是賺錢買道具。棋子與金錢可從完成
+  任務獲得。
+3.各地點任務失敗後均可無限次挑戰，所以不用怕失敗。
+4.有些地點可以多次挑戰任務，只要進入時有Accept按鈕即可。
+5.每章結束的分數，主要以剩餘金錢數計算。
+
+<font color=blue><b>*** 第1章 無臉騎士的詛咒（Chapter 1 Curse of the Faceless Knight）</b></font>
+
+說明：本章主要是西洋棋基礎知識的教學與問答，以及簡單的殘局測試。
+過程：
+
+1.一開始先收集士兵x4、城堡x1、騎士x1、主教x1。當收集到城堡、騎士、或主教時，記得
+  回三頭巨人要塞（Keep of the Tricephalic Gargantuan）回報，完成殘局測試後，才能
+  打開其他通道。
+2.百達克關隘（Gateway of Baidaq）：進行棋局一，對手只有士兵x4，很簡單。
+3.進商店後，先往南取得城堡x1，再往東取得主教x1、騎士x1。回商店購買士兵，再往北到
+  小丑酒館。
+4.小丑酒館（Jester's Tavern）：棋局二，對手有主教x1、騎士x1、士兵x3，獲勝可得鑰匙。
+5.回商店，用鑰匙換得魔鎚。士兵不足8個時要買齊（多買無益）。
+6.女獵人堡壘（Citadel of the Huntress）：棋局三，對手有皇后、士兵x1，獲勝可得皇后。
+7.無臉騎士城堡（Castle of the Faceless Knight）：最終戰，對手只有皇后、城堡x1、
+  主教x1、騎士x1、士兵x4。一開始先用魔鎚殺掉對方皇后，再移動兩邊士兵到底換成皇后，
+  簡單便能獲勝。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>士兵<td>Pawn<td>100<td>增加一個士兵棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>魔鎚<td>Mandible's Magic Hammer<td>1000<br>任務獲得<td>殺掉對手國王以外的一個棋子
+</TABLE>
+<font color=blue><b>*** 第2章 巨魔女王的暴政（Chapter 2 Tyranny of the Troll Queen）</b></font>
+
+說明：本章主要是殺棋技巧的教學與試下（有限時）。
+過程：
+
+1.本章需要獲得對應的寶石交給守橋員，才能開啟道路。
+2.到西北取得城堡x2，西南取得皇后，東北取得騎士x1、主教x1，東南取得主教x1、騎士x1。
+3.回商店買士兵x4。
+4.西北，克魯格寶藏堡壘（Kruger's Treasure Fortress）：棋局一，對手有士兵x4。獲勝
+  可得士兵x1。
+5.西南，女巫廢墟（Witches' Ruin）：棋局二，對手有城堡x2、士兵x4。獲勝可得士兵x1。
+6.東北，瘋狂恐怖堡壘（Dread Fortress of Bedlam）：棋局三，對手有城堡x2、騎士x1、
+  士兵x6。獲勝可得士兵x1。
+7.東南，埃吉爾城堡（Egil's Castle）：棋局四，對手有城堡x2、主教x1、騎士x2、士兵x6。
+  獲勝可得士兵x1。
+8.瓦達拉城堡（Vadara's Dread Castle）：最終戰，對手少了一個皇后，應該不難對付。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>士兵<td>Pawn<td>100<td>增加一個士兵棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>50<td>暫停計時直到著子（限時答題時使用）
+<tr><td>殺士兵之鎚<td>Hammer of Pawn Striking<td>100<td>殺掉對手一個士兵
+<tr><td>城堡復活聖杯<td>Grail of Rook Renewal<td>500<td>恢復一個死掉的城堡
+<tr><td>傳送護身符<td>Talisman of Transport<td>任務獲得<td>移動國王到任一位置
+</TABLE>
+<font color=blue><b>*** 第3章 活石城堡（Chapter 3 Fortress of the Living Monolith）</b></font>
+
+說明：本章主要是防守與吃子技巧的教學與試下（有限時）。從本章開始有點難度。
+過程：
+
+1.取得城堡x1後，進佐塔爾關隘（Zotar' Gate）再出來（單靠城堡x1下不贏士兵x8的）。
+2.到北邊解謎（將騎士都放在同一顏色的格子），再到南邊答題（有些要進兩次），以去除
+  佐塔爾關隘的士兵。
+3.佐塔爾關隘（Zotar' Gate）：棋局一，對手有士兵x3，但我方只有一個城堡，有點難度。
+  先將國王往前移，與對方國王對峙，再用城堡倚靠國王保護，叫將殺子。
+4.進商店後，到西南取得騎士x1（先犧牲城堡換對方皇后），回商店買士兵（持續買到8個）。
+  以下棋局獲勝後，記得回高原城（Plateau City）領取酬金。
+5.腐皮之塔（Tower of the Skin Rotter）：棋局二，對手有主教x2。獲勝可得主教x1。
+6.九頭蛇墳場（Hydra Bone Yard）：棋局三，對手有騎士x2、士兵x4。獲勝可得主教x1、
+  騎士x1。
+7.蟻獅沃納普火山口（Crater of Vonap the Ant-Lion）：棋局四，對手有城堡x2、主教x1、
+  士兵x4。獲勝可得城堡x1。
+8.沃拉納神秘塔（Vollana Mystic Tower）：棋局五，對手有皇后、主教x1、騎士x1、士兵x6。
+  獲勝可得皇后。
+9.魯克堡壘（Rhuk's Fortress）：最終戰，為第一次真正的棋局，只能靠真本事了。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>士兵<td>Pawn<td>100<td>增加一個士兵棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>50<td>暫停計時直到著子（限時答題時使用）
+<tr><td>騎士復活聖杯<td>Grail of Knight Renewal<td>300<td>恢復一個死掉的騎士
+<tr><td>狂風號角<td>Horn of the Storm Twister<td>任務獲得<td>重新隨機放置所有棋子的位置
+</TABLE>
+<font color=blue><b>*** 第4章 混沌王之戰（Chapter 4 War of the Chaos King）</b></font>
+
+說明：本章主要是佈局的教學與問答。有些題目似乎無解，只能多次嘗試，直到完成為止。
+過程：
+
+1.先往南到希望之城（Castle Hope）取得主教x1、騎士x1、士兵x4。商店已無法買到士兵，
+  但可購買殺騎士、主教的道具，下棋時很有幫助。
+2.火鳥關隘（Black Gate of the Firebird）：棋局一，對手有騎士x1、士兵x3。獲勝後需
+  到希望之城回報，可得城堡x1、主教x1。若沒回報又下了一個棋局，就再也拿不到了。
+3.先回答問題取得4士兵。
+4.火鳥塔（Firebird Tower）：棋局二，對手有城堡x1、主教x1、騎士x1、士兵x5。獲勝後
+  回報希望之城，可得城堡x1、騎士x1。
+5.永恆之火要塞（Fortress of Everlasting Flame）：棋局三，對手有城堡x2、主教x2、
+  騎士x1、士兵x7。獲勝後回報希望之城，可得皇后。
+6.鳳凰城（Castle of Phoneix King）：棋局四，對手少了主教x1。獲勝後回報希望之城，
+  以繼續劇情。
+7.火法師要塞（Keep of Fire Mage）：最終戰，完整對局。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>50<td>暫停計時直到著子（限時答題時使用）
+<tr><td>殺騎士之劍<td>Sword of Knight Slaying<td>300<td>殺掉對手一個騎士
+<tr><td>殺主教之鎚<td>Hammer of Bishop Striking<td>300<td>殺掉對手一個主教
+</TABLE>
+<font color=blue><b>*** 第5章 圖烏斯迷霧（Chapter 5 The Mists of Thuvus）</b></font>
+
+說明：本章的教學必須完成任務才會開啟，主要是進階的佈局概念與攻防技巧。但這些教學
+      與過關無關，過關任務改以殘局實戰代替。
+過程：
+
+1.一開始小屋的問題有點難度，可參考後面答案回答。但回答錯誤也不影響過關，但會少了
+  幾個課程，以及獲得的金錢。
+2.初始有四個殘局需要選邊下贏（無論選那一邊，均由我方先手）。各地點建議選擇棋種：
+    (1)失魂之船（Ship of Lost Souls）：白棋
+    (2)食人者廢墟（Cannibal Ruin）：黑棋
+    (3)戰鬥遺駭（Bone Battle）：黑棋
+    (4)食屍鬼墓穴（Ghoul Crypt）：白棋
+  依打敗局數可得：
+    (1)主教x1、騎士x1、士兵x4
+    (2)城堡x1、士兵x2
+    (3)主教x1、騎士x1、士兵x2
+    (4)皇后、城堡x1
+3.進黃紅藍綠四個磁石塔下棋獲勝，可打開最後的隱藏堡壘。依獲勝局數，各對手棋子為：
+    (1)主教x1、騎士x1、士兵x2
+    (2)城堡x1、主教x1、騎士x1、士兵x4
+    (3)城堡x1、主教x2、騎士x2、士兵x5
+    (4)少3個士兵
+4.隱藏堡壘（The Hidden Fortress）：最終戰，完整對局。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>傳送護身符<td>Talisman of Transport<td>100<td>移動國王到任一位置
+<tr><td>主教復活聖杯<td>Grail of Bishop Renewal<td>300<td>恢復一個死掉的城堡
+<tr><td>殺騎士之劍<td>Sword of Knight Slaying<td>400<td>殺掉對手一個騎士
+<tr><td>迷惑之笛<td>Pipes of Befuddlement<td>500<td>使對手胡亂下一手
+<tr><td>城堡皇冠<td>Crown of the Rook<td>500<td>將我方一個棋子變成城堡（一局只能一次，可重複使用）
+</TABLE>
+答案：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>最少皇后<th>最多皇后<th>最少武士
+<tr><td>
+
+<TABLE BORDER=0 cellspacing="0" cellpadding="0">
+<tr><td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+</TABLE>
+
+<td>
+
+<TABLE BORDER=0 cellspacing="0" cellpadding="0">
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｑ
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｑ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｑ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+</TABLE>
+
+<td>
+
+<TABLE BORDER=0 cellspacing="0" cellpadding="0">
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>Ｎ<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+<tr><td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>Ｎ<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　
+<tr><td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　<td bgcolor=#DCA078>　<td bgcolor=#FFDCB4>　
+</TABLE>
+
+</TABLE>
+<font color=blue><b>*** 第6章 戰士決鬥（Chapter 6 Gladiator Duel）</b></font>
+
+說明：本章主要是進階棋子走法與攻殺的教學。和前幾章不太一樣的是，本章所有棋子都是
+      用買的，因此首要目標就是賺錢。而過關方式是到格羅布競技場，打贏就過關，只要
+      覺得棋子數與棋力足夠，便可前去挑戰。
+過程：
+
+1.先賺800元，買城堡x1和士兵x3。
+2.雙子星大樓（Tower of the Twins）：棋局一，對手有士兵x3。
+3.累積賺到1200元，買皇后、主教x1。
+4.夜行者城堡（Nightrider Castle）：棋局二，對手有騎士x1、士兵x3。
+5.累積賺到1000元，買城堡x1、騎士x1、士兵x2。
+6.野獸墳場（Beast Grave）：棋局三，對手有城堡x1、主教x2、騎士x1、士兵x5。
+7.累積賺到900元，買主教x1、騎士x1、士兵x3。此時已可到格羅布競技場挑戰。
+8.獎盃塔（Tower of Trophiese）：棋局四，對手有城堡x1、主教x2、騎士x2、士兵x8。
+9.暗父堡壘（The Fortress of the Dark Father）：棋局五，對手有皇后、城堡x2、主教x1、
+  騎士x1、士兵x6。
+10.格羅布競技場（Grob Coliseum）：最終戰，愈早進場，對手子力愈弱。最初是主教x1、
+  騎士x1、士兵x4。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>士兵<td>Pawn<td>100<td>增加一個士兵棋子
+<tr><td>騎士<td>Knight<td>300<td>增加一個騎士棋子
+<tr><td>主教<td>Bishop<td>300<td>增加一個主教棋子
+<tr><td>城堡<td>Rook<td>500<td>增加一個城堡棋子
+<tr><td>皇后<td>Queen<td>900<td>增加一個皇后棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>25<td>暫停計時直到著子（限時答題時使用）
+<tr><td>殺騎士之劍<td>Sword of Knight Slaying<td>400<td>殺掉對手一個騎士
+<tr><td>殺主教之鎚<td>Hammer of Bishop Striking<td>400<td>殺掉對手一個主教
+<tr><td>殺城堡之劍<td>Sword of Rook Slaying<td>600<td>殺掉對手一個城堡
+</TABLE>
+<font color=blue><b>*** 第7章 龍之國度（Chapter 7 The Dragon's Land）</b></font>
+
+說明：本章主要是進階棋子走法與攻殺的教學。任務包括了一些趣味棋局、快棋，有些困難。
+      此外，本章還分成四個區域，每個區域結束後便無法回頭，但已購買道具可以沿用。
+
+<font color=blue><b>第一區：</b></font>
+
+過程：
+
+1.骷髏墓地（Skull-Delver Boneyard）殘局建議選黑，獲勝可得騎士x1。
+2.買士兵x3。
+3.鋼鐵牧師大廳（The Iron Priest's Hall）：棋局一，對手有主教x1、士兵x1、得士兵x2。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>士兵<td>Pawn<td>100<td>增加一個士兵棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>25<td>暫停計時直到著子（限時答題時使用）
+</TABLE>
+<font color=blue><b>第二區：</b></font>
+
+過程：
+
+1.僕人方尖碑（The Obelisk of the Ever-Faithful Servant）：殘局獲勝可取得城堡x1。
+  將左士兵往前引黑王去吃，右邊士兵互吃剩一個先行到底變成皇后，後面就簡單了。
+2.錢夠便買騎士x1，否則便棋局下完再買。
+3.風雕城堡（Wind Carver Castle）：棋局二，對手有城堡x1、主教x1、騎士x1、士兵x4。
+  獲勝可得士兵x1。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>騎士<td>Knight<td>300<td>增加一個騎士棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>30<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>50<td>暫停計時直到著子（限時答題時使用）
+<tr><td>殺騎士之劍<td>Sword of Knight Slaying<td>400<td>殺掉對手一個騎士
+</TABLE>
+<font color=blue><b>第三區：</b></font>
+
+過程：
+
+1.取得主教x1。
+2.錢夠便買主教x1，否則便棋局下完再買。
+3.蜘蛛遺跡（Spider Ruins）：棋局三，對手有城堡x1、主教x2、騎士x2、士兵x5。獲勝可
+  得士兵x2。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>主教<td>Bishop<td>300<td>增加一個主教棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>30<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>50<td>暫停計時直到著子（限時答題時使用）
+<tr><td>主教復活聖杯<td>Grail of Bishop Renewal<td>300<td>恢復一個死掉的城堡
+</TABLE>
+<font color=blue><b>第四區：</b></font>
+
+過程：
+
+1.懷疑者之門（Portal of the Doubters）：下贏殘局快棋可得皇后。
+2.買城堡x1。
+3.龍之頂峰（Dragon's Pinnacle）：最終戰，完整對局。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>城堡<td>Rook<td>500<td>增加一個城堡棋子
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>25<td>暫停計時直到著子（限時答題時使用）
+<tr><td>中央爆炸結界<td>Ward of Central Explosion<td>500<td>殺掉對手在中央的一個棋子
+</TABLE>
+答案：
+
+<img src="mjchess/r7-1.jpg"> <img src="mjchess/r7-2.jpg">  <img src="mjchess/r7-3.jpg"> 
+
+<font color=blue><b>*** 第8章 對抗大師（Chapter 8 Against the Master）</b></font>
+
+說明：本章主要是進階攻防技巧的教學。大部份的任務都頗有難度。
+過程：
+
+1.先收集全部棋子後，再來下快棋，或直接進薩爾貢要塞進行決戰。
+2.監工塔（Taskmaster Tower）：快棋，對手有主教x1、騎士x1、士兵x2。
+3.暗空要塞（Dark Skied Keep）：快棋，對手有城堡x1、主教x1、騎士x2、士兵x4。
+4.吸血鬼領主城堡（Castle of the Nasal Vampire Lord）：快棋，對手有城堡x2、主教x2、
+  騎士x2、士兵x6。
+5.薩爾貢要塞（Sargon Fortress of Astral Despair）：最終戰，完整對局。
+
+道具：
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>名稱<th>英文<th>售價<th>作用
+<tr><td>智慧捲軸<td>Scroll of Wisdom<td>25<td>建議一手棋
+<tr><td>悔手之藥<td>Potion of Temporal Replay<td>50<td>悔一手棋
+<tr><td>停滯沙漏<td>Hourglass of Stasis<td>25<td>暫停計時直到著子（限時答題時使用）
+<tr><td>殺士兵之鎚<td>Hammer of Pawn Striking<td>200<td>殺掉對手一個士兵
+<tr><td>主教復活聖杯<td>Grail of Bishop Renewal<td>300<td>恢復一個死掉的城堡
+<tr><td>殺騎士之劍<td>Sword of Knight Slaying<td>400<td>殺掉對手一個騎士
+<tr><td>中央爆炸結界<td>Ward of Central Explosion<td>500<td>殺掉對手在中央的一個棋子
+<tr><td>迷惑之笛<td>Pipes of Befuddlement<td>500<td>使對手胡亂下一手
+<tr><td>騎士皇冠<td>Crown of the Rook<td>500<td>將我方一個棋子變成城堡（一局只能一次，可重複使用）
+</TABLE>
+答案：
+
+<img src="mjchess/r8-1.jpg">
+
+</font>
+</pre>
+</body>
+</html>
