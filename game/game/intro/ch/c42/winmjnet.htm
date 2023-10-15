@@ -1,0 +1,142 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WIN麻將NET</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：WIN麻將NET (中文版)
+<b>簡介</b>：捷友1999年出品的16張四人麻將遊戲，主要目的是連線與網友打麻將。不過由於連線
+      伺服器均已關閉，因此網路打牌功能形同虛設，只能與電腦打牌。本遊戲提供了自由
+      對戰和麻將大賽等兩種模式，且打牌時不會做弊，玩家可以憑實力來獲勝。不過因為
+      電腦AI做得很不錯，不會亂碰亂吃，因此想贏還真的需要一點運氣。遊戲最大的缺點
+      就是每打一張都會暫停一下，等玩家按滑鼠左鍵確認後才繼續，嚴重拖慢打牌的速度，
+      讓人很覺得很煩。尤其對手碰牌胡牌的處理，也在玩家確認之後，造成玩家決定想要
+      吃牌時，牌卻被碰走，令人頗為生氣。而為了加快打牌速度，持續點擊滑鼠左鍵，也
+      常常略掉了想吃或想碰的牌。這個致命缺點，便足以讓遊戲的娛樂性大打折扣。
+<IMG src="winmjnet/game1.png">
+
+<IMG src="winmjnet/game2.png">
+<b>保護</b>：光碟，破解碼（必須按後述修改win.ini，掛載光碟仍可以有音樂）：
+      MJNet.exe
+        85 C0 74 0D 46 83 FE 0B
+        -- -- -- 06 -- -- -- --
+        83 3D 90 50 47 00 00 75 16
+        -- -- -- -- -- -- -- 90 90
+        85 C0 74 32 6A 00
+        -- -- EB -- -- --
+        85 C0 75 30 85 ED  (共3個)
+        -- -- EB -- -- --
+        85 C0 75 2A 85 DB
+        -- -- EB -- -- --
+<b>限制</b>：只能在Win95/98上安裝，否則會出現找不到程序輸入點SUnMapLS_IP_EBP_12的錯誤。
+      執行時亦必須在Win95/98，否則會出現找不到光碟的錯誤（MCI播放光碟音軌的問題，
+      必須在Win95/98才能正確播放背景音樂）。破解後可在XP以上的系統執行，但仍無法
+      播放光碟音軌。
+<b>備註</b>：遊戲安裝後，會將安裝資訊寫在[Windows目錄]\win.ini中：
+
+[WinChessNet]
+Path=安裝目錄
+Data=安裝目錄\Data
+Save=安裝目錄\Save
+AppState=1
+Exe=安裝目錄\NETCHESS.exe
+
+假設安裝在C:\WinMJNet，則可修改成：
+
+[WinMJNet]
+Path=C:\WinMJNet
+Data=C:\WinMJNet\Data
+Save=C:\WinMJNet\Save
+AppState=1
+Exe=C:\WinMJNet\MJNet.exe
+
+<b>修改</b>：記憶體
+
+位置2xxxF7A8h = 上家分數
+位置2xxxF9D0h = 對家分數
+位置2xxxFBF8h = 下家分數
+位置2xxxFE20h = 我方分數
+
+以上數值均4 byte。麻將大賽時，將我方分數設高一些，每場均託管給電腦，便可輕鬆坐等
+最終總決賽。
+
+<b>說明</b>：
+
+一、主選單
+
+1.豪華麻將館：與電腦進行自由對戰。
+2.網路科技中心：連線與其他網友進行遊戲。
+3.麻將大賽會場：參加麻將大賽和電腦對抗，以奪得冠軍為目的。
+  (1)所有人初始分數5000，打完七場計算總分，取最高分三位與麻將天龍進入最後總決賽。
+  (2)每場底台為300/100，必須打完一雀才計分，即使有人分數為負。
+  (3)每打完一場，可選擇是否儲存進度。
+  (4)最後總決賽四家初始分數重設為5000，打一雀後最高分者為優勝。
+4.系統設定工廠：設定在豪華麻將館和網路連線時的台數和組態。音量的大小也在此設定。
+5.捷友資訊科技公司：顯示出品公司的相關資訊。
+6.離開：結束遊戲。
+
+二、打麻將
+
+1.起莊：在牌桌上有一顆東、南、西、北的標記，標記的所在即起莊的位置。
+2.莊家：骰子所在的位置即莊家的位置。
+3.圈風：在牌桌上有一顆東、南、西、北的標記，代表現在的圈風。
+4.連莊數和餘牌：在螢幕左下方的狀態框會顯示現在的連莊數目和餘下的牌數。
+5.吃碰槓胡：在遊戲中若想要吃碰槓牌或是胡牌，便按下右下角對應的按鈕。若不需要，則
+  在其他處按下滑鼠左鍵即可。
+6.託管：按下託管鍵，可由電腦幫忙打牌（亦可觀摩電腦的打法），若要解除託管狀態，則
+  再按一下託管鍵即可。
+7.不玩了：若想結束此牌局，可按下此鍵。
+8.語庫說明：用來傳送給打牌網友的語庫。
+
+<font color=blue><b>*** 胡台牌型與預設台數</b></font>
+
+<table border=1 cellspacing=0 cellpadding=0>
+ <tr><th>名稱<th>預設台數<th>說明
+ <tr><td>自摸<td align=center>1<td>自己摸牌而胡牌
+ <tr><td>門清<td align=center>1<td>胡牌時，不曾吃也不曾碰
+ <tr><td>見花見台<td align=center>0<td>有花就有台
+ <tr><td>平胡<td align=center>2<td>手上全是順子，且是雙對頭，沒有字牌
+ <tr><td>天胡<td align=center>16<td>無吃、碰、槓且第一輪即胡牌
+ <tr><td>地胡<td align=center>8<td>無吃、碰、槓且第二輪即胡牌
+ <tr><td>地聽<td align=center>8<td>在每家不吃不碰四張海底牌禸，宣佈聽牌
+ <tr><td>莊家<td align=center>1<td>做莊家者，胡牌或放槍都必須加一台
+ <tr><td>連莊<td align=center>1<td>做莊家每連一次莊，可在胡牌和放槍時多加一台，逐次增加
+ <tr><td>門風台<td align=center>1<td>本身的座風有三張以上，就以一台計算
+ <tr><td>圈風台<td align=center>1<td>圈風有三張以上，就以一台計算
+ <tr><td>碰碰胡台<td align=center>4<td>胡牌時所有牌牌都是對子或刻子 
+ <tr><td>混一色<td align=center>4<td>胡牌時，萬、索、筒三種中，只能有一種
+ <tr><td>全求人<td align=center>1<td>吃碰到手中剩一張時，而由他人放槍，加一台
+ <tr><td>三元台<td align=center>1<td>中、發、白任一種三張以上
+ <tr><td>三暗刻<td align=center>2<td>三組暗刻在手上
+ <tr><td>四暗刻<td align=center>5<td>四組暗刻在手上
+ <tr><td>五暗刻<td align=center>8<td>五組暗刻在手上
+ <tr><td>小三元<td align=center>4<td>中、發、白有三組刻子，一組對子
+ <tr><td>大三元<td align=center>8<td>中、發、白各有三張以上
+ <tr><td>小四喜<td align=center>4<td>東、南、西、北中，有一組對仔，三組刻子
+ <tr><td>大四喜<td align=center>8<td>東、南、西、北各有三張以上
+ <tr><td>清一色<td align=center>8<td>手上的牌均為同一種
+ <tr><td>七搶一<td align=center>8<td>七朵花搶對方一朵花
+ <tr><td>八仙過海<td align=center>8<td>八朵花全為一方所拿
+ <tr><td>花台<td align=center>1<td>持有座位的牌，可以加一台
+ <tr><td>花槓<td align=center>1<td>拿齊春夏秋冬或梅蘭竹菊
+ <tr><td>門清自摸<td align=center>3<td>門清自摸不求人
+ <tr><td>槓上開花<td align=center>1<td>所槓後摸取的牌，剛好可胡牌
+ <tr><td>海底撈月<td align=center>1<td>摸到最後一張牌而自摸
+ <tr><td>單騎聽牌<td align=center>0<td>胡牌時為單吊聽牌
+ <tr><td>邊張聽牌<td align=center>0<td>胡牌時為邊搭聽牌
+ <tr><td>嵌張聽牌<td align=center>0<td>胡牌時為中空聽牌
+ <tr><td>斷么九<td align=center>0<td>吃胡時完全沒有么九和字牌
+ <tr><td>雙龍抱<td align=center>0<td>相同的順子有兩組，但不包括吃、碰
+ <tr><td>清老頭<td align=center>0<td>全部都是數目一、九的老頭牌
+ <tr><td>混老頭<td align=center>0<td>全部都是數目一、九的老頭牌和字牌
+ <tr><td>一條龍<td align=center>0<td>同一色從一到九都有
+ <tr><td>混全帶么<td align=center>0<td>四組和一對都有么九和字牌
+ <tr><td>純全帶么<td align=center>0<td>四組和一對都有么九，但無字牌
+ <tr><td>雙雙龍抱<td align=center>0<td>兩組雙色同順
+</table>
+
+</font>
+</pre>
+</body>
+</html>

@@ -1,0 +1,260 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>星座美少女 麻將日記</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：星座美少女 麻將日記 (中文版)
+<b>簡介</b>：新造科技2009年出品的麻將遊戲，可玩16張或13張四人麻將。劇情描寫主角追求12位
+      星座美少女的過程。玩家必須與美少女打牌贏錢，並購買禮物贈送，以提升其崇拜度
+      和好感度，才有機會進行約會，留下紀念照片。遊戲的CG圖比較偏向純愛系。打牌的
+      過程算很順暢，但有幾個小缺點，例如對手立直時不會顯示出來，必須等被胡算台時
+      才會知道；我方立直時無法觀看各家牌等等，稍微減低了娛樂性。比較大的問題是，
+      電腦有很大的作弊嫌疑，雖然不會亂吃亂碰，但迅速聽牌胡牌的機率有點過高，我方
+      的進牌機率也沒有調高，再加上無道具與存取檔的協助，想贏錢確實有點困難。於是
+      玩家必須長時間的反覆嘗試，很容易磨掉打牌的樂趣。
+<IMG SRC="hbmj/game1.jpg">
+
+<IMG SRC="hbmj/game2.jpg">
+<b>保護</b>：光碟，破解碼（需拷貝CBGsflm.avi到安裝目錄）：
+      HBMj.exe
+        41 00 44 00 3A 00 5C
+        -- -- -- -- -- -- 00
+        1A 00 00 00 3A 00 5C 00 43 00 42 00 47 00 73 00 66 00 6C 00 6D 00 2E 00 61 00 76 00 69
+        18 -- -- -- -- -- 43 -- 42 -- 47 -- 73 -- 66 -- 6C -- 6D -- 2E -- 61 -- 76 -- 69 -- 00
+        04 00 00 00 3A 00 5C
+        02 -- -- -- -- -- 00
+        66 C7 45 DC 43 00
+        -- -- -- -- 41 --
+<b>備註</b>：執行後若出現"找不到vids:IV41解壓縮程式"，請找解碼程式ir41_32.dll，將之拷貝
+      到Windows目錄，再用regsvr32.exe登錄即可。
+<b>修改</b>：HBMj.exe
+
+1.修正遊戲結束後，不會設回全彩顯示模式的問題
+  66 83 3D 68 22 58 03 10
+  -- -- -- -- -- -- -- 20
+2.不變更畫面解析度
+  66 3D 01 00 75 6A
+  -- -- -- -- EB --
+
+<b>修改</b>：存檔CBGsav
+
+所有數字均採用固定長度之字串方式記錄，各數字字元使用的記錄數值為：
+
+  0 = 3Ah  1 = 3Eh  2 = 42h  3 = 46h  4 = 4Ah
+  5 = 4Eh  6 = 52h  7 = 56h  8 = 5Ah  9 = 5Eh
+
+以下均以第一個存檔為例：
+
+0000 -- -- -- -- MN MN MN MN MN MN MN MN HP HP HP HP
+0010 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+0020 -- -- -- -- -- -- -- -- -- -- G1 G1 G1 G1 G1 G1
+0030 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1 G1
+0040 G1 G1 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2
+0050 G2 G2 G2 G2 G2 G2 G2 G2 G2 G2 -- -- -- -- -- --
+
+MN = 金錢，第一個改成5Eh，則一開始便有90000000元
+HP = 體力，最大1000（3E 3A 3A 3A）
+G1 = 好感度，每個女孩2字元，最大99（5E 5E）
+G2 = 崇拜度，每個女孩2字元，最大99（5E 5E）
+
+<b>修改</b>：記憶體
+
+M1 M1 M1 M1 M2 M2 M2 M2 M3 M3 M3 M3 M4 M4 M4 M4
+
+M1 = 東家籌碼
+M2 = 南家籌碼
+M3 = 西家籌碼
+M4 = 北家籌碼
+
+將任一對手的籌碼改成0，牌局立刻結束。
+
+<b>備註</b>：<A href="hbmj/cg.7z">CG圖</A>無露點
+<b>操作</b>：
+
+1.按空白鍵可略過開頭動畫。
+2.送禮時，先點選禮物，再點選送禮。
+3.吃牌時若有多種組合，先移動滑鼠挑出要吃的牌組，再按下吃。
+
+<b>說明</b>：（作者－青衫）
+
+<IMG SRC="hbmj/map.jpg">
+
+1.進入每個地點，或打工、打牌時均會消耗體力，體力太低將無法進行任何事，必須回自宅
+  休息才行。
+2.至少要有2000元才能打牌，因此一開始要先打工賺到2000元。
+3.打工地點必須上班前2小時內進入，才能打工。
+4.打完一將或有人籌碼為0時牌局結束，會依勝負結果提升所有陪打女孩的崇拜度（最高99，
+  不會倒扣）。
+5.買禮物送給女孩，可增加好感度（最高99，買喜好的禮物增加幅度會稍多一些）。
+6.約會條件（可獲得照片）：
+  (1)第一次：崇拜度25以上，好感度25以上。
+  (1)第二次：崇拜度50以上，好感度50以上。
+  (1)第三次：崇拜度75以上，好感度75以上。
+  (1)第四次：崇拜度99，好感度99。
+
+<font color=blue><b>*** 打工時間地點一覽表</b></font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>地點<th>04:00<th>05:00<th>06:00<th>07:00<th>09:00<th>10:00<th>11:30<th>12:00<th>14:00<th>14:30<th>16:30<th>17:00<th>18:00<th>18:30<th>19:30<th>21:30<th>22:00<th>01:00<th>06:00
+<tr><td>報社<td bgcolor="#80ffff" align=center colspan=5>120x5=600<td><td><td><td><td bgcolor="#80ffff" align=center colspan=6>110x5=550<td><td><td><td>
+<tr><td rowspan=2>便利商店<td><td><td bgcolor="#80ffff" align=center colspan=7>85x8=680<td><td><td><td><td><td><td><td bgcolor="#80ffff" align=center colspan=3><font color=red><b>110x8=880</b></font>
+<tr><td><td><td><td><td><td><td><td><td bgcolor="#80ffff" align=center colspan=9>85x8=680<td><td>
+<tr><td>餐廳<td><td><td><td><td><td bgcolor="#80ffff" align=center colspan=5>95x5=475<td bgcolor="#80ffff" align=center colspan=6>100*5=500<td><td><td>
+<tr><td rowspan=2>加油站<td><td bgcolor="#80ffff" align=center colspan=7>95x7=665<td><td><td><td><td bgcolor="#80ffff" align=center colspan=6>100x7=700<td>
+<tr><td><td><td><td><td><td><td bgcolor="#80ffff" align=center colspan=8>90x7=63<td><td><td><td><td>
+<tr><td rowspan=2>速食店<td><td><td><td bgcolor="#80ffff" align=center colspan=5>85x5=425<td><td><td><td bgcolor="#80ffff" align=center colspan=6>90x5=450<td><td>
+<tr><td><td><td><td><td><td><td><td bgcolor="#80ffff" align=center colspan=5>85x5=425<td><td><td><td><td><td><td>
+</TABLE>
+<font color=blue><b>*** 美少女一覽表</b></font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr bgcolor=#FFFFC0 align=center><th>火象<th>土象<th>風象<th>水象
+<tr align=center><td>茉莉<td>惠里<td>優妮<td>果美
+<tr align=center><td>牡羊座<td>金牛座<td>雙子座<td>巨蟹座
+<tr align=center><td>3/21-4/19<td>4/20-5/20<td>5/21-6/20<td>6/21-7/22
+<tr align=center><td><img src="hbmj/g1.jpg"><td><img src="hbmj/g2.jpg"><td><img src="hbmj/g3.jpg"><td><img src="hbmj/g4.jpg">
+<tr bgcolor=#FFFFC0 align=center><th>火象<th>土象<th>風象<th>水象
+<tr align=center><td>香晴<td>和冬<td>美羽<td>黛麗
+<tr align=center><td>獅子座<td>處女座<td>天秤座<td>天蠍座
+<tr align=center><td>7/23-8/22<td>8/23-9/22<td>9/23-10/22<td>10/23-11/21
+<tr align=center><td><img src="hbmj/g5.jpg"><td><img src="hbmj/g6.jpg"><td><img src="hbmj/g7.jpg"><td><img src="hbmj/g8.jpg">
+<tr bgcolor=#FFFFC0 align=center><th>火象<th>土象<th>風象<th>水象
+<tr align=center><td>百燕<td>詩泉<td>佳容<td>蘭月
+<tr align=center><td>射手座<td>魔羯座<td>水瓶座<td>雙魚座
+<tr align=center><td>11/22-12/21<td>12/22-1/19<td>1/20-2/18<td>2/19-3/20
+<tr align=center><td><img src="hbmj/g9.jpg"><td><img src="hbmj/g10.jpg"><td><img src="hbmj/g11.jpg"><td><img src="hbmj/g12.jpg">
+</TABLE>
+<font color=blue><b>*** 禮物喜好一覽表</b></font>
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<tr><th>星座<th>喜好禮物
+<tr><td>牡羊座<td>鬱金香、名牌包、名牌香水、鋼筆、別緻絲巾、品味外套、流行毛衣、珍珠別針
+<tr><td>金牛座<td>牽生花、牛皮包、保養品、休閒鞋、流行毛衣、可愛帽子
+<tr><td>雙子座<td>紫玫瑰、巧克力、別緻香水、化妝品盒
+<tr><td>巨蟹座<td>洋桔梗、指甲油、棉質浴袍
+<tr><td>獅子座<td>向日葵、名牌包、牛皮包、名牌手錶、流行毛衣、長靴
+<tr><td>處女座<td>鈴蘭花、金質項鍊、音樂盒
+<tr><td>天秤座<td>海芋、小背包、茶杯組、品味外套、流行毛衣、絲質襯衫
+<tr><td>天蠍座<td>秋海棠、名牌香水、絲質襯衫、金質手鍊
+<tr><td>射手座<td>瑪格麗特、巧克力、溫暖手套、心形首飾
+<tr><td>魔羯座<td>紫色鬱金香、名牌手錶、太陽眼鏡、別緻香水、心形首飾
+<tr><td>水瓶座<td>蝴蝶蘭、別緻香水、條紋襯衫、精緻手鍊
+<tr><td>雙魚座<td>香水百合、小背包、油畫、毛線帽、品味外套、可愛圍巾
+</TABLE>
+<font color=blue><b>*** 13張胡牌牌型台數</b></font>（需3台以上才能胡）
+
+自摸：其他家各付x2（兩倍）
+放炮：放炮者付x2，其他家各付x1
+
+允許的台/底（每台=1/5底，最大底=玩家金錢數/20）：1000/5000、800/4000、600/3000、
+400/2000、200/1000、160/800、100/500、60/300、40/200、20/100
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>牌型<TH>台數<TH>說明</TR>
+<TR><TD>自摸<TD>1<TD>自己摸牌胡牌</TR>
+<TR><TD>門清<TD>1<TD>沒有吃碰，全部牌都是自己摸到的</TR>
+<TR><TD>門清自摸<TD>3<TD>門清狀態下自摸，即門清、自摸、不求的台數</TR>
+<TR><TD>立直<TD>1<TD>宣告聽牌（<font color=red>沒門清也能宣告</font>）</TR>
+<TR><TD>三元牌<TD>1/組<TD>拿到任何一副中發白的刻子</TR>
+<TR><TD>風牌<TD>1/組<TD>拿到門風牌或圈風牌的刻子</TR>
+<TR><TD>海底撈月<TD>1<TD>海底最後一張自摸</TR>
+<TR><TD>槓上開花<TD>1<TD>槓牌後再摸牌時自摸</TR>
+<TR><TD>搶槓胡<TD>1<TD>搶別人的明槓牌胡牌</TR>
+<TR><TD>半求<TD>2<TD>全副牌落地（含暗槓），最後剩一張牌獨聽自摸</TR>
+<TR><TD>全求<TD>3<TD>全部的牌都是吃碰槓，最後的獨聽亦胡別人</TR>
+<TR><TD>缺門<TD>1<TD>只有兩個花色，且沒有字牌</TR>
+<TR><TD>五門齊<TD>5<TD>整副牌由筒、條、萬、風牌及三元牌五種花色組成</TR>
+<TR><TD>卡五<TD>1<TD>拿四六胡五</TR>
+<TR><TD>缺五<TD>1<TD>整副牌中沒有五這個數字</TR>
+<TR><TD>將<TD>1<TD>將為一對二、五或八</TR>
+<TR><TD>全將碰<TD>10<TD>整副牌由二、五、八三數的刻子組成（不與三數重複計台）</TR>
+<TR><TD>一條龍<TD>3<TD>拿齊一至九同一花色的牌</TR>
+<TR><TD>短么<TD>1<TD>整副牌中沒有一、九及字牌</TR>
+<TR><TD>老少<TD>1<TD>胡到並同時有123及789的順子或111及999的刻子</TR>
+<TR><TD>渾帶么<TD>2<TD>所有的順子、刻子及將都至少有一張一、九或字牌</TR>
+<TR><TD>清么<TD>3<TD>所有的順子、刻子及將都至少有一張一或九</TR>
+<TR><TD>混老頭<TD>4<TD>全部為一、九與字牌的刻子或對子</TR>
+<TR><TD>清老頭<TD>20<TD>全部為一、九的刻子與對子</TR>
+<TR><TD>四歸一<TD>1<TD>同花色的四張同數牌分成一個順子及一個刻子</TR>
+<TR><TD>四歸二<TD>2<TD>同花色的四張同數牌分成兩個順子及一個將</TR>
+<TR><TD>般高<TD>1<TD>有兩副相同的順子（不能為吃牌）</TR>
+<TR><TD>雙龍抱<TD>8<TD>拿到兩副般高</TR>
+<TR><TD>三色同刻<TD>2<TD>拿到三副同數但不同花的刻子</TR>
+<TR><TD>三相逢<TD>3<TD>拿到三副同數但不同花的順子</TR>
+<TR><TD>全帶<TD>8<TD>整副牌的順子、刻子及將都帶有同一數字</TR>
+<TR><TD>三數<TD>5<TD>整副牌由三個數字組成（風牌及三元牌各算一數）</TR>
+<TR><TD>兩數<TD>10<TD>整副牌由兩個數字組成（風牌及三元牌各算一數）</TR>
+<TR><TD>清四碰<TD>1<TD>碰出四個刻子</TR>
+<TR><TD>平胡<TD>1<TD>全部都是順子而沒有刻子</TR>
+<TR><TD>對對胡<TD>3<TD>全部是刻子，沒有順子</TR>
+<TR><TD>七對子<TD>7<TD>整副牌由七個對子組成</TR>
+<TR><TD>三暗刻<TD>2<TD>有三副自己摸到的刻子</TR>
+<TR><TD>四暗刻<TD>8<TD>有四副自己摸到的刻子</TR>
+<TR><TD>三連刻<TD>2<TD>同花色連續數字的三組刻子</TR>
+<TR><TD>四連刻<TD>10<TD>同花色連續數字的四組刻子</TR>
+<TR><TD>二槓<TD>1<TD>有兩個槓（明槓或暗槓）</TR>
+<TR><TD>三槓<TD>5<TD>有三個槓（明槓或暗槓）</TR>
+<TR><TD>四槓<TD>10<TD>有四個槓（明槓或暗槓）</TR>
+<TR><TD>湊一色<TD>3<TD>整副牌由字牌及另外單一花色（筒、條或萬）組成</TR>
+<TR><TD>清一色<TD>10<TD>整副牌由同一花色組成，可以全部是字牌</TR>
+<TR><TD>字一色<TD>20<TD>全部為字牌</TR>
+<TR><TD>綠一色<TD>20<TD>全部為2,3,4,6,8的索子與字牌發</TR>
+<TR><TD>小三元<TD>5<TD>拿齊中發白三種三元牌，但其中一種是將</TR>
+<TR><TD>大三元<TD>10<TD>拿齊中、發、白三種三元牌，但不可是將</TR>
+<TR><TD>小四喜<TD>10<TD>拿齊東南西北四種風牌，但其中一種是將</TR>
+<TR><TD>大四喜<TD>20<TD>拿齊東南西北四種風牌，但不可是將</TR>
+<TR><TD>地聽<TD>4<TD>起牌後海底四張牌內，且四家未吃碰牌下宣告聽牌</TR>
+<TR><TD>天聽<TD>8<TD>莊家取完牌後便宣告聽牌</TR>
+<TR><TD>地胡<TD>10<TD>任何在第一圈由非莊家所胡的牌</TR>
+<TR><TD>天胡<TD>20<TD>莊家取完牌後便胡牌</TR>
+<TR><TD>十三么<TD>20<TD>拿齊十三種么九牌各一張，再加上其中任何一張</TR>
+<TR><TD>九蓮寶燈<TD>20<TD>同色數字1112345678999門清聽牌</TR>
+</TABLE>
+<font color=blue><b>*** 16張胡牌牌型台數</b></font>
+
+自摸：全部各家付
+放炮：放炮者付
+
+允許的台/底（每台=2/5底，最大底=玩家金錢數/8）：4000/10000、2800/7000、2000/5000、
+1200/3000、800/2000、600/1500、400/1000、280/700、200/500、100/250
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+<TR><TH>牌型<TH>台數<TH>說明</TR>
+<TR><TD>莊家<TD>1<TD>當莊時胡牌或被胡</TR>
+<TR><TD>連拉<TD>N*2<TD>連莊時胡牌或被胡，N=連莊次數</TR>
+<TR><TD>自摸<TD>1<TD>自己摸牌胡牌</TR>
+<TR><TD>門清<TD>1<TD>沒有吃碰，全部牌都是自己摸到的</TR>
+<TR><TD>門清自摸<TD>3<TD>門清狀態下自摸，即門清、自摸、不求的台數</TR>
+<TR><TD>立直<TD>1<TD>宣告聽牌（<font color=red>沒門清也能宣告</font>）</TR>
+<TR><TD>三元牌<TD>1/組<TD>拿到任何一副中發白的刻子</TR>
+<TR><TD>風牌<TD>1/組<TD>拿到門風牌或圈風牌的刻子</TR>
+<TR><TD>花牌<TD>1/組<TD>拿到任何一張花牌</TR>
+<TR><TD>海底撈月<TD>1<TD>海底最後一張自摸</TR>
+<TR><TD>槓上開花<TD>1<TD>槓牌後或補花牌再摸牌時自摸</TR>
+<TR><TD>搶槓胡<TD>1<TD>搶別人的明槓牌胡牌</TR>
+<TR><TD>平胡<TD>1<TD>全部都是順子而沒有刻子</TR>
+<TR><TD>斷么九<TD>1<TD>沒有一或九</TR>
+<TR><TD>混老頭<TD>5<TD>全部為一、九與字牌的刻子或對子</TR>
+<TR><TD>清老頭<TD>8<TD>全部為一、九的刻子與對子</TR>
+<TR><TD>對對胡<TD>4<TD>全部是刻子，沒有順子</TR>
+<TR><TD>三暗刻<TD>2<TD>有三副自己摸到的刻子</TR>
+<TR><TD>四暗刻<TD>6<TD>有四副自己摸到的刻子</TR>
+<TR><TD>五暗刻<TD>8<TD>有五副自己摸到的刻子</TR>
+<TR><TD>混一色<TD>4<TD>整副牌由字牌及另外單一花色（筒、條或萬）組成</TR>
+<TR><TD>清一色<TD>6<TD>整副牌由同一花色組成</TR>
+<TR><TD>字一色<TD>8<TD>全部為字牌</TR>
+<TR><TD>小三元<TD>4<TD>拿齊中發白三種三元牌，但其中一種是將</TR>
+<TR><TD>大三元<TD>8<TD>拿齊中、發、白三種三元牌，但不可是將</TR>
+<TR><TD>小四喜<TD>6<TD>拿齊東南西北四種風牌，但其中一種是將</TR>
+<TR><TD>大四喜<TD>8<TD>拿齊東南西北四種風牌，但不可是將</TR>
+<TR><TD>天聽<TD>8<TD>莊家取完牌後便宣告聽牌</TR>
+<TR><TD>天胡<TD>16<TD>莊家取完牌後便胡牌</TR>
+<TR><TD>八仙過海<TD>8<TD>拿到八張花牌，立即算一底八台的自摸胡牌</TR>
+</TABLE>
+
+</font>
+</pre>
+</body>
+</html>
