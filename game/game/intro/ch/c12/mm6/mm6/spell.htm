@@ -1,6 +1,6 @@
 ﻿<HTML>
 <HEAD>
-   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <meta charset="utf-8">
    <TITLE>法術列表</TITLE>
 </HEAD>
 
@@ -10,14 +10,14 @@
 
 法術列表：<A HREF="#total">總表</A>、<A HREF="#offensive">攻擊</A>、<A HREF="#offensive2">助攻</A>、<A HREF="#defensive">防禦</A>、<A HREF="#enhance">強化</A>、<A HREF="#utility">輔助</A>、<A HREF="#condition">復原</A>、<A HREF="#healing">治療</A>（LV=法術等級）
 
-<A name="total">
+<P id="total">
 <TABLE BORDER=1 width="100%" cellspacing="0" cellpadding="1">
 <TR>
-<TD ALIGN=CENTER COLSPAN=12 BGCOLOR="#80ffff">
-<B><FONT COLOR="#FF0000">法術總表</FONT></B>
-</TR>
+<TH COLSPAN=12 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">法術總表</FONT>
+
 <TR>
-    <TH align=center>類型<TH align=center>法術1<TH align=center>法術2<TH align=center>法術3<TH align=center>法術4<TH align=center>法術5<TH align=center>法術6<TH align=center>法術7<TH align=center>法術8<TH align=center>法術9<TH align=center>法術10<TH align=center>法術11
+    <TH>類型<TH>法術1<TH>法術2<TH>法術3<TH>法術4<TH>法術5<TH>法術6<TH>法術7<TH>法術8<TH>法術9<TH>法術10<TH>法術11
 <TR>
     <TD nowrap>火系<br>Fire
     <TD nowrap>照明術<BR>光明之火<br>Torch Light
@@ -137,25 +137,23 @@
     <TD nowrap>黑盒術<BR>暗黑之神<br>Dark Containment
 </TABLE>
 
-<p>
-
-<A name="offensive">
+<p id="offensive">
 <TABLE BORDER=1 width="100%" cellspacing="0" cellpadding="1">
 <TR>
-<TD ALIGN=CENTER COLSPAN=10 BGCOLOR="#80ffff">
-<B><FONT COLOR="#FF0000">攻擊法術</FONT></B>
-</TR>
+<TH COLSPAN=10 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">攻擊法術</FONT>
+
 <TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>屬性
-    <TH align=center nowrap>傷害力
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>限制
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>屬性
+    <TH nowrap>傷害力
+    <TH nowrap>耗法
+    <TH nowrap>限制
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 <TR>
   <TD rowspan=9>火系<br>Fire
   <TR>
@@ -188,8 +186,8 @@
     <TD>中等恢復
     <TD>較快恢復
     <TD>最快恢復
-  <TR>
-    <TD><font color=#FF0000><A name="RingofFire">(7)火燄結界/赤焰火圈<br>Ring of Fire
+  <TR id="RingofFire">
+    <TD><font color=#FF0000>(7)火燄結界/赤焰火圈<br>Ring of Fire
     <TD>火
     <TD>LV+6
     <TD>10
@@ -252,7 +250,7 @@
     <TD>消耗1法力<br>較快恢復
     <TD>消耗0法力<br>最快恢復
   <TR>
-    <TD><A name="Sparks">(4)星星之火/遍地開花<br>Sparks
+    <TD id="Sparks">(4)星星之火/遍地開花<br>Sparks
     <TD>電
     <TD>LV+2<br>(每束)
     <TD>4
@@ -561,8 +559,8 @@
     <TD>每天最多1次
     <TD>每天最多2次
     <TD>每天最多3次
-  <TR>
-    <TD>(11)<A name="DarkContainment">黑盒術/暗黑之神<br>Dark Containment
+  <TR id="DarkContainment">
+    <TD>(11)黑盒術/暗黑之神<br>Dark Containment
     <TD>魔法
     <TD>-
     <TD>200
@@ -577,20 +575,19 @@
 <p>
 <TABLE BORDER=1 width="100%" cellspacing="0" cellpadding="1">
 
+<TR id="offensive2">
+<TH COLSPAN=10 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">助攻法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=10 BGCOLOR="#80ffff">
-<A name="offensive2">
-<B><FONT COLOR="#FF0000">助攻法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>時限
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>時限
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=3>土系<br>Earth
@@ -691,20 +688,19 @@
     <TD>縮小1/3
     <TD>縮小1/4
 
+<TR id="defensive">
+<TH COLSPAN=10 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">防禦法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=10 BGCOLOR="#80ffff">
-<A name="defensive">
-<B><FONT COLOR="#FF0000">防禦法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>時限
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>時限
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=2>火系<br>Fire
@@ -783,20 +779,19 @@
     <TD>LV*3抗性
     <TD>LV*4抗性
 
+<TR id="enhance">
+<TH COLSPAN=8 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">強化法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=8 BGCOLOR="#80ffff">
-<A name="enhance">
-<B><FONT COLOR="#FF0000">強化法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>時限
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>時限
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=2>火系<br>Fire
@@ -872,8 +867,8 @@
     <TD>作用於全隊
 <TR>
   <TD rowspan=3>光系<br>Light
-  <TR>
-    <TD><font color=#FF0000>(6)<A name="DayoftheGods">神選之日/天佑一日<br>Day of the Gods
+  <TR id="DayoftheGods">
+    <TD><font color=#FF0000>(6)神選之日/天佑一日<br>Day of the Gods
     <TD>45
     <TD>-
     <TD>同時施展守護天使、以及五個暫時增加屬性值的法術
@@ -889,20 +884,19 @@
     <TD>LV*9分+1小時<br>LV*45分+1小時
     <TD>LV*12分+1小時<br>LV*60分+1小時
 
+<TR id="utility">
+<TH COLSPAN=8 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">輔助法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=8 BGCOLOR="#80ffff">
-<A name="utility">
-<B><FONT COLOR="#FF0000">輔助法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>時限
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>時限
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=2>火系<br>Fire
@@ -917,7 +911,7 @@
 <TR>
   <TD rowspan=5>風系<br>Air
   <TR>
-    <TD><A name="WizardEye">(1)巫師之眼/魔力神眼<br>Wizard Eye
+    <TD id="WizardEye">(1)巫師之眼/魔力神眼<br>Wizard Eye
     <TD>1
     <TD>LV*1小時
     <TD>在地圖上標示記號
@@ -975,7 +969,7 @@
     <TD>可在室內施展
     <TD>可指定城鎮
   <TR>
-    <TD><font color=#FF0000><A name="LloydBeacon">(11)洛伊指標/時空道標<br>Lloyd's Beacon
+    <TD id="LloydBeacon"><font color=#FF0000>(11)洛伊指標/時空道標<br>Lloyd's Beacon
     <TD>30
     <TD>-
     <TD>設定道標，並可將隊伍傳送到道標的位置
@@ -995,7 +989,7 @@
 <TR>
   <TD rowspan=2>心智<br>Mind
   <TR>
-    <TD><A name="Telekinesis">(11)心靈傳動/隔空取物<br>Telekinesis
+    <TD id="Telekinesis">(11)心靈傳動/隔空取物<br>Telekinesis
     <TD>30
     <TD>-
     <TD>遠距操縱一個物品
@@ -1029,20 +1023,19 @@
     <TD>較快恢復
     <TD>最快恢復
 
+<TR id="condition">
+<TH COLSPAN=8 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">復原法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=8 BGCOLOR="#80ffff">
-<A name="condition">
-<B><FONT COLOR="#FF0000">復原法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>限制
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>限制
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=2>水系<br>Water
@@ -1143,20 +1136,19 @@
     <TD>疾病時限LV*1小時
     <TD>疾病時限LV*1天
 
+<TR id="healing">
+<TH COLSPAN=8 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">治療法術</FONT>
+
 <TR>
-<TD ALIGN=CENTER COLSPAN=8 BGCOLOR="#80ffff">
-<A name="healing">
-<B><FONT COLOR="#FF0000">治療法術</FONT></B>
-</TR>
-<TR>
-    <TH align=center nowrap>類型
-    <TH align=center nowrap>名稱
-    <TH align=center nowrap>耗法
-    <TH align=center nowrap>限制
-    <TH align=center nowrap>說明
-    <TH align=center nowrap>普通級
-    <TH align=center nowrap>專家級
-    <TH align=center nowrap>大師級
+    <TH nowrap>類型
+    <TH nowrap>名稱
+    <TH nowrap>耗法
+    <TH nowrap>限制
+    <TH nowrap>說明
+    <TH nowrap>普通級
+    <TH nowrap>專家級
+    <TH nowrap>大師級
 
 <TR>
   <TD rowspan=3>靈魂<br>Spirit
@@ -1204,8 +1196,8 @@
     <TD>最快恢復
 <TR>
   <TD rowspan=2>光系<br>Light
-  <TR>
-    <TD><font color=#FF0000><A name="DivineIntervention">(11)神恩浩蕩/普渡眾生<br>Divine Intervention
+  <TR id="DivineIntervention">
+    <TD><font color=#FF0000>(11)神恩浩蕩/普渡眾生<br>Divine Intervention
     <TD>70
     <TD>日出或日落
     <TD>回復全隊的生命、法力與狀態，施法者魔法老化10歲

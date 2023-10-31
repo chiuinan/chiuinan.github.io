@@ -1,6 +1,6 @@
 ﻿<HTML>
 <HEAD>
-   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <meta charset="utf-8">
    <TITLE>敵人列表</TITLE>
 </HEAD>
 
@@ -13,270 +13,256 @@
 法術：N=普通級，E=專家級，M=大師級
 
 <TABLE BORDER=1 cellspacing="0" cellpadding="1">
-<TR>
-<TD ALIGN=CENTER COLSPAN=20 BGCOLOR="#80ffff">
-<A name="human">
-<B><FONT COLOR="#FF0000">人類</FONT></B>
-</TR>
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR id="human">
+<TH COLSPAN=20 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">人類</FONT>
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2 nowrap>出現地點
-    <TR BGCOLOR="#ffffa0"><TH nowrap>等級<TH nowrap>生命<TH nowrap>防禦<TH nowrap>經驗<TH nowrap>特殊技能<TH colSpan=2 align=center nowrap>攻擊形態一<TH colSpan=2 align=center nowrap>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH nowrap>等級<TH nowrap>生命<TH nowrap>防禦<TH nowrap>經驗<TH nowrap>特殊技能<TH colSpan=2 nowrap>攻擊形態一<TH colSpan=2 nowrap>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=7><b>法師</b>
-  <td rowspan=3>法師<TD><A name="ApprenticeMage">見習法師<BR>低級魔法師<br>Apprentice Mage<TD>2<TD>6<TD>3<TD>24<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>N1熾火神箭<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
-  <TR><TD><A name="JourneymanMage">學徒期滿法師<BR>遊方魔法師<br>Journeyman Mage<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>2D4+2<TD>-<TD>-<TD>N1極寒冰彈<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
-  <TR><TD><A name="Mage">法師<BR>魔法師<br>Mage<TD>10<TD>40<TD>7<TD>200<TD>-<TD>物理<TD>2D4+6<TD>-<TD>-<TD>N2霹靂閃電<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
-  <tr><td rowspan=3>巫師<TD><A name="Sorcerer">魔法師<BR>巫師<br>Sorcerer<TD>25<TD>137<TD>14<TD>875<TD>-<TD>電<TD>9D4<TD>-<TD>-<TD>M8霹靂閃電<TD>10<TD>免疫<TD>10<TD>10<TD>10<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="Magician">魔術師<BR>魔法師<br>Magician<TD>35<TD>227<TD>18<TD>1575<TD>-<TD>電<TD>12D4<TD>-<TD>-<TD>M12霹靂閃電<TD>20<TD>免疫<TD>20<TD>20<TD>20<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="Warlock">邪惡法師<BR>軍閥<br>Warlock<TD>50<TD>400<TD>30<TD>3000<TD>痴狂<TD>能量<TD>16D4<TD>-<TD>-<TD>M16霹靂閃電<TD>30<TD>免疫<TD>30<TD>30<TD>30<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <tr><td rowspan=1>神秘人物<TD><A name="Q"><FONT color=#cc0000>Q</FONT><TD>100<TD>16000<TD>60<TD>75<TD>-<TD>魔法<TD>10D5+2<TD>-<TD>-<TD>N10死神之手<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
+  <td rowspan=3>法師<TD id="ApprenticeMage">見習法師<BR>低級魔法師<br>Apprentice Mage<TD>2<TD>6<TD>3<TD>24<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>N1熾火神箭<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
+  <TR><TD id="JourneymanMage">學徒期滿法師<BR>遊方魔法師<br>Journeyman Mage<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>2D4+2<TD>-<TD>-<TD>N1極寒冰彈<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
+  <TR><TD id="Mage">法師<BR>魔法師<br>Mage<TD>10<TD>40<TD>7<TD>200<TD>-<TD>物理<TD>2D4+6<TD>-<TD>-<TD>N2霹靂閃電<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="FreeHaven.htm">自由天堂</A>
+  <tr><td rowspan=3>巫師<TD id="Sorcerer">魔法師<BR>巫師<br>Sorcerer<TD>25<TD>137<TD>14<TD>875<TD>-<TD>電<TD>9D4<TD>-<TD>-<TD>M8霹靂閃電<TD>10<TD>免疫<TD>10<TD>10<TD>10<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="Magician">魔術師<BR>魔法師<br>Magician<TD>35<TD>227<TD>18<TD>1575<TD>-<TD>電<TD>12D4<TD>-<TD>-<TD>M12霹靂閃電<TD>20<TD>免疫<TD>20<TD>20<TD>20<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="Warlock">邪惡法師<BR>軍閥<br>Warlock<TD>50<TD>400<TD>30<TD>3000<TD>痴狂<TD>能量<TD>16D4<TD>-<TD>-<TD>M16霹靂閃電<TD>30<TD>免疫<TD>30<TD>30<TD>30<TD>-<TD><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <tr><td rowspan=1>神秘人物<TD id="Q"><FONT color=#cc0000>Q</FONT><TD>100<TD>16000<TD>60<TD>75<TD>-<TD>魔法<TD>10D5+2<TD>-<TD>-<TD>N10死神之手<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
 
 <tr>
 <td rowspan=13><b>牧師</b>
-  <td rowspan=7>羊鳴教徒<TD><A name="FollowerBaa">巴的追隨者<BR>羊鳴教教徒<br>Follower of Baa<TD>3<TD>9<TD>3<TD>39<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
-  <TR><TD><A name="MysticBaa">巴的神秘家<BR>羊鳴教神秘教徒<br>Mystic of Baa<TD>5<TD>17<TD>5<TD>75<TD>-<TD>物理<TD>2D4+2<TD>-<TD>-<TD>N1驚心動魄<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
-  <TR><TD><A name="FanaticBaa">巴的狂熱者<BR>羊鳴教狂熱教徒<br>Fanatic of Baa<TD>7<TD>25<TD>6<TD>119<TD>-<TD>物理<TD>2D4+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
-  <TR><TD><A name="AcolyteofBaa">巴之寺僧<BR>羊鳴教僧徒<br>Acolyte of Baa<TD>8<TD>30<TD>14<TD>144<TD>-<TD>電<TD>2D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <TR><TD><A name="ClericofBaa">巴之牧師<BR>羊鳴教牧師<br>Cleric of Baa<TD>15<TD>67<TD>18<TD>375<TD>-<TD>電<TD>2D4+4<TD>-<TD>-<TD>N3魔法傷害<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <TR><TD><A name="PriestofBaa">巴之祭司<BR>羊鳴教教父<br>Priest of Baa<TD>25<TD>137<TD>22<TD>875<TD>-<TD>電<TD>2D4+8<TD>-<TD>-<TD>N5神拳出擊<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <TR><TD><FONT color=#cc0000><A name="SlickerSilvertoungue">斯里克<br>Slicker Silvertoungue</FONT><TD>25<TD>137<TD>22<TD>875<TD>-<TD>物理<TD>2D4+8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <tr><td rowspan=3>僧侶<TD><A name="NoviceMonk">入門級僧侶<BR>初級僧侶<br>Novice Monk<TD>8<TD>30<TD>16<TD>144<TD>-<TD>火<TD>2D4+2<TD>-<TD>-<TD>N2霹靂火焰<TD>10<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <TR><TD><A name="InitiateMonk">初學級僧侶<BR>低級僧侶<br>Initiate Monk<TD>16<TD>73<TD>19<TD>416<TD>-<TD>電<TD>2D4+8<TD>-<TD>-<TD>N3霹靂閃電<TD>-<TD>10<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <TR><TD><A name="MasterMonk">大師級僧侶<BR>高級僧侶<br>Master Monk<TD>27<TD>153<TD>28<TD>999<TD>虛弱<TD>冰<TD>2D4+16<TD>-<TD>-<TD>M6霹靂寒冰<TD>5<TD>5<TD>20<TD>5<TD>免疫<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <tr><td rowspan=3>德魯伊<TD><A name="Druid">德魯依教徒<BR>僧侶<br>Druid<TD>10<TD>40<TD>12<TD>200<TD>-<TD>火<TD>2D4+3<TD>-<TD>-<TD>N2魔法傷害<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
-  <TR><TD><A name="GreatDruid">大德魯依教士<BR>祭司<br>Great Druid<TD>16<TD>73<TD>16<TD>416<TD>-<TD>冰<TD>2D4+6<TD>-<TD>-<TD>N3致命毒蜂<TD>20<TD>20<TD>20<TD>20<TD>20<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
-  <TR><TD><A name="GrandDruid">大德魯依教士長<BR>大祭司<br>Grand Druid<TD>28<TD>162<TD>22<TD>1064<TD>吸乾法力<TD>魔法<TD>2D4+12<TD>-<TD>-<TD>M6連珠火球<TD>30<TD>30<TD>30<TD>30<TD>30<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
+  <td rowspan=7>羊鳴教徒<TD id="FollowerBaa">巴的追隨者<BR>羊鳴教教徒<br>Follower of Baa<TD>3<TD>9<TD>3<TD>39<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
+  <TR><TD id="MysticBaa">巴的神秘家<BR>羊鳴教神秘教徒<br>Mystic of Baa<TD>5<TD>17<TD>5<TD>75<TD>-<TD>物理<TD>2D4+2<TD>-<TD>-<TD>N1驚心動魄<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
+  <TR><TD id="FanaticBaa">巴的狂熱者<BR>羊鳴教狂熱教徒<br>Fanatic of Baa<TD>7<TD>25<TD>6<TD>119<TD>-<TD>物理<TD>2D4+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="MistyIsland.htm">濃霧島</A>
+  <TR><TD id="AcolyteofBaa">巴之寺僧<BR>羊鳴教僧徒<br>Acolyte of Baa<TD>8<TD>30<TD>14<TD>144<TD>-<TD>電<TD>2D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <TR><TD id="ClericofBaa">巴之牧師<BR>羊鳴教牧師<br>Cleric of Baa<TD>15<TD>67<TD>18<TD>375<TD>-<TD>電<TD>2D4+4<TD>-<TD>-<TD>N3魔法傷害<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <TR><TD id="PriestofBaa">巴之祭司<BR>羊鳴教教父<br>Priest of Baa<TD>25<TD>137<TD>22<TD>875<TD>-<TD>電<TD>2D4+8<TD>-<TD>-<TD>N5神拳出擊<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <TR><TD id="SlickerSilvertoungue"><FONT color=#cc0000>斯里克<br>Slicker Silvertoungue</FONT><TD>25<TD>137<TD>22<TD>875<TD>-<TD>物理<TD>2D4+8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <tr><td rowspan=3>僧侶<TD id="NoviceMonk">入門級僧侶<BR>初級僧侶<br>Novice Monk<TD>8<TD>30<TD>16<TD>144<TD>-<TD>火<TD>2D4+2<TD>-<TD>-<TD>N2霹靂火焰<TD>10<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <TR><TD id="InitiateMonk">初學級僧侶<BR>低級僧侶<br>Initiate Monk<TD>16<TD>73<TD>19<TD>416<TD>-<TD>電<TD>2D4+8<TD>-<TD>-<TD>N3霹靂閃電<TD>-<TD>10<TD>-<TD>-<TD>-<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <TR><TD id="MasterMonk">大師級僧侶<BR>高級僧侶<br>Master Monk<TD>27<TD>153<TD>28<TD>999<TD>虛弱<TD>冰<TD>2D4+16<TD>-<TD>-<TD>M6霹靂寒冰<TD>5<TD>5<TD>20<TD>5<TD>免疫<TD>-<TD><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="TempleOfTheSun.htm">太陽廟</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <tr><td rowspan=3>德魯伊<TD id="Druid">德魯依教徒<BR>僧侶<br>Druid<TD>10<TD>40<TD>12<TD>200<TD>-<TD>火<TD>2D4+3<TD>-<TD>-<TD>N2魔法傷害<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
+  <TR><TD id="GreatDruid">大德魯依教士<BR>祭司<br>Great Druid<TD>16<TD>73<TD>16<TD>416<TD>-<TD>冰<TD>2D4+6<TD>-<TD>-<TD>N3致命毒蜂<TD>20<TD>20<TD>20<TD>20<TD>20<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
+  <TR><TD id="GrandDruid">大德魯依教士長<BR>大祭司<br>Grand Druid<TD>28<TD>162<TD>22<TD>1064<TD>吸乾法力<TD>魔法<TD>2D4+12<TD>-<TD>-<TD>M6連珠火球<TD>30<TD>30<TD>30<TD>30<TD>30<TD>-<TD><A HREF="SilverCove.htm">銀灣鎮</A><br><A HREF="Monolith.htm">獨立碑</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="SuperiorTempleOfBaa.htm">頂級羊鳴廟</A>
 
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=10><b>盜賊</b>
-  <td rowspan=3>扒手<TD><A name="Cutpurse">扒手<br>Cutpurse<TD>3<TD>9<TD>3<TD>39<TD>偷竊<TD>物理<TD>2D2+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><A name="BountyHunter">賞金獵人<BR>懸賞的獵人<br>Bounty Hunter<TD>5<TD>17<TD>5<TD>75<TD>偷竊<TD>物理<TD>2D2+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><A name="Assassin">殺手<BR>刺客<br>Assassin<TD>7<TD>25<TD>10<TD>119<TD>死亡<TD>物理<TD>2D2+10<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <tr><td rowspan=4>盜賊<TD><A name="Thief">盜賊<br>Thief<TD>8<TD>30<TD>10<TD>144<TD>偷竊<TD>物理<TD>3D4+3<TD nowrap>物理<TD>3D4+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><A name="Burglar">夜賊<BR>夜盜<br>Burglar<TD>12<TD>50<TD>14<TD>264<TD>偷竊<TD>物理<TD>3D4+6<TD>物理<TD>3D4+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><A name="Rogue">流氓<BR>歹徒<br>Rogue<TD>18<TD>86<TD>20<TD>504<TD>偷竊<TD>物理<TD>3D4+12<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><FONT color=#cc0000><A name="RogueLeader">歹徒首領<br>Rogue Leader</FONT><TD>25<TD>133<TD>20<TD>0<TD>偷竊<TD>物理<TD>2D10+12<TD>魔法<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><td rowspan=3>匪徒<TD><A name="Thug">惡棍<BR>惡徒<br>Thug<TD>8<TD>30<TD>12<TD>144<TD>-<TD>物理<TD>2D4+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
-  <TR><TD><A name="Ruffian">兇漢<BR>歹徒<br>Ruffian<TD>14<TD>61<TD>14<TD>336<TD>-<TD>物理<TD>2D4+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
-  <TR><TD><A name="Brigand">土匪<br>Brigand<TD>22<TD>114<TD>16<TD>704<TD>-<TD>物理<TD>2D4+10<TD>物理<TD>2D4+20<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <td rowspan=3>扒手<TD id="Cutpurse">扒手<br>Cutpurse<TD>3<TD>9<TD>3<TD>39<TD>偷竊<TD>物理<TD>2D2+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="BountyHunter">賞金獵人<BR>懸賞的獵人<br>Bounty Hunter<TD>5<TD>17<TD>5<TD>75<TD>偷竊<TD>物理<TD>2D2+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="Assassin">殺手<BR>刺客<br>Assassin<TD>7<TD>25<TD>10<TD>119<TD>死亡<TD>物理<TD>2D2+10<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="MistyIsland.htm">濃霧島</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <tr><td rowspan=4>盜賊<TD id="Thief">盜賊<br>Thief<TD>8<TD>30<TD>10<TD>144<TD>偷竊<TD>物理<TD>3D4+3<TD nowrap>物理<TD>3D4+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="Burglar">夜賊<BR>夜盜<br>Burglar<TD>12<TD>50<TD>14<TD>264<TD>偷竊<TD>物理<TD>3D4+6<TD>物理<TD>3D4+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="Rogue">流氓<BR>歹徒<br>Rogue<TD>18<TD>86<TD>20<TD>504<TD>偷竊<TD>物理<TD>3D4+12<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="RogueLeader"><FONT color=#cc0000>歹徒首領<br>Rogue Leader</FONT><TD>25<TD>133<TD>20<TD>0<TD>偷竊<TD>物理<TD>2D10+12<TD>魔法<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><td rowspan=3>匪徒<TD id="Thug">惡棍<BR>惡徒<br>Thug<TD>8<TD>30<TD>12<TD>144<TD>-<TD>物理<TD>2D4+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <TR><TD id="Ruffian">兇漢<BR>歹徒<br>Ruffian<TD>14<TD>61<TD>14<TD>336<TD>-<TD>物理<TD>2D4+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <TR><TD id="Brigand">土匪<br>Brigand<TD>22<TD>114<TD>16<TD>704<TD>-<TD>物理<TD>2D4+10<TD>物理<TD>2D4+20<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="ShadowGuildHideout.htm">陰影教隱蔽所</A><BR><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
 
 <tr>
 <td rowspan=9><b>種族</b>
-  <td rowspan=6>食人族<TD><A name="Cannibal">食人族(男)<br>Cannibal<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>3D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <TR><TD><A name="HeadHunter">獵頭人(男)<BR>獵人首領<br>Head Hunter<TD>8<TD>30<TD>7<TD>144<TD>虛弱<TD>物理<TD>3D3+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <TR><TD><A name="WitchDoctor">巫醫(男)<br>Witch Doctor<TD>10<TD>40<TD>9<TD>200<TD>-<TD>物理<TD>3D3+6<TD>-<TD>-<TD>N2致命毒蜂<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <TR><TD><A name="Cannibal">食人族(女)<br>Cannibal<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>1D9+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <TR><TD><A name="HeadHunter">獵頭人(女)<BR>獵人首領<br>Head Hunter<TD>8<TD>30<TD>7<TD>144<TD>中毒<TD>物理<TD>1D9+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <TR><TD><A name="WitchDoctor">巫醫(女)<br>Witch Doctor<TD>10<TD>40<TD>9<TD>200<TD>-<TD>物理<TD>1D9+6<TD>-<TD>-<TD>N2霹靂火焰<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
-  <tr><td rowspan=3>馬扎爾人<TD><A name="Magyar">馬札兒人<BR>馬扎爾人<br>Magyar<TD>14<TD>61<TD>16<TD>336<TD>-<TD>物理<TD>3D7+3<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>10<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="MagyarSoldier">馬札兒士兵<BR>馬扎爾士兵<br>Magyar Soldier<TD>25<TD>137<TD>22<TD>875<TD>-<TD>物理<TD>3D7+6<TD>物理<TD>3D7+18<TD>-<TD>30<TD>30<TD>30<TD>30<TD>-<TD>20<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="MagyarMatron">馬札兒婦女<BR>馬扎爾總督<br>Magyar Matron<TD>37<TD>247<TD>28<TD>1739<TD>-<TD>物理<TD>3D7+12<TD>電<TD>7D8<TD>-<TD>50<TD>50<TD>50<TD>50<TD>-<TD>30<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <td rowspan=6>食人族<TD id="Cannibal">食人族(男)<br>Cannibal<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>3D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <TR><TD id="HeadHunter">獵頭人(男)<BR>獵人首領<br>Head Hunter<TD>8<TD>30<TD>7<TD>144<TD>虛弱<TD>物理<TD>3D3+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <TR><TD id="WitchDoctor">巫醫(男)<br>Witch Doctor<TD>10<TD>40<TD>9<TD>200<TD>-<TD>物理<TD>3D3+6<TD>-<TD>-<TD>N2致命毒蜂<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <TR><TD id="Cannibal">食人族(女)<br>Cannibal<TD>6<TD>21<TD>5<TD>96<TD>-<TD>物理<TD>1D9+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <TR><TD id="HeadHunter">獵頭人(女)<BR>獵人首領<br>Head Hunter<TD>8<TD>30<TD>7<TD>144<TD>中毒<TD>物理<TD>1D9+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <TR><TD id="WitchDoctor">巫醫(女)<br>Witch Doctor<TD>10<TD>40<TD>9<TD>200<TD>-<TD>物理<TD>1D9+6<TD>-<TD>-<TD>N2霹靂火焰<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD><A HREF="BootlegBay.htm">布特雷格灣</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A>
+  <tr><td rowspan=3>馬扎爾人<TD id="Magyar">馬札兒人<BR>馬扎爾人<br>Magyar<TD>14<TD>61<TD>16<TD>336<TD>-<TD>物理<TD>3D7+3<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>10<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="MagyarSoldier">馬札兒士兵<BR>馬扎爾士兵<br>Magyar Soldier<TD>25<TD>137<TD>22<TD>875<TD>-<TD>物理<TD>3D7+6<TD>物理<TD>3D7+18<TD>-<TD>30<TD>30<TD>30<TD>30<TD>-<TD>20<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="MagyarMatron">馬札兒婦女<BR>馬扎爾總督<br>Magyar Matron<TD>37<TD>247<TD>28<TD>1739<TD>-<TD>物理<TD>3D7+12<TD>電<TD>7D8<TD>-<TD>50<TD>50<TD>50<TD>50<TD>-<TD>30<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
 
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=9><b>戰士</b>
-  <td rowspan=3>劍客<TD><A name="Swordsman">劍術家<BR>劍客<br>Swordsman<TD>10<TD>40<TD>10<TD>200<TD>-<TD>物理<TD>3D7+4<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="ExpertSwordsman">專家級劍術家<BR>劍術專家<br>Expert Swordsman<TD>17<TD>79<TD>15<TD>459<TD>-<TD>物理<TD>3D7+6<TD>-<TD>-<TD>-<TD>10<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="MasterSwordsman">大師級劍術家<BR>劍術大師<br>Master Swordsman<TD>24<TD>129<TD>20<TD>816<TD>破壞武器<TD>物理<TD>3D7+8<TD>物理<TD>3D7+20<TD>-<TD>15<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <tr><td rowspan=3>士兵<TD><A name="Guard">守衛<BR>士兵<br>Guard<TD>11<TD>45<TD>16<TD>231<TD>-<TD>物理<TD>3D3+5<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <TR><TD><A name="Lieutenant">副隊長<BR>中尉<br>Lieutenant<TD>19<TD>93<TD>24<TD>551<TD>-<TD>物理<TD>3D3+10<TD>物理<TD>3D3+20<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <TR><TD><A name="Captain">隊長<BR>上尉<br>Captain<TD>33<TD>207<TD>32<TD>1419<TD>破壞盔甲<TD>物理<TD>3D3+20<TD>物理<TD>3D3+40<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
-  <tr><td rowspan=3>戰士<TD><A name="Fighter">戰士<BR>鬥士<br>Fighter<TD>14<TD>61<TD>18<TD>336<TD>-<TD>物理<TD>3D3+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
-  <TR><TD><A name="Soldier">士兵<BR>戰士<br>Soldier<TD>24<TD>129<TD>24<TD>816<TD>-<TD>物理<TD>3D3+10<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>10<TD>20<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
-  <TR><TD><A name="Veteran">老兵<BR>精兵<br>Veteran<TD>35<TD>227<TD>30<TD>1575<TD>破壞武器<TD>物理<TD>3D3+14<TD>物理<TD>3D3+45<TD>-<TD>30<TD>30<TD>30<TD>30<TD>10<TD>30<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <td rowspan=3>劍客<TD id="Swordsman">劍術家<BR>劍客<br>Swordsman<TD>10<TD>40<TD>10<TD>200<TD>-<TD>物理<TD>3D7+4<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="ExpertSwordsman">專家級劍術家<BR>劍術專家<br>Expert Swordsman<TD>17<TD>79<TD>15<TD>459<TD>-<TD>物理<TD>3D7+6<TD>-<TD>-<TD>-<TD>10<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="MasterSwordsman">大師級劍術家<BR>劍術大師<br>Master Swordsman<TD>24<TD>129<TD>20<TD>816<TD>破壞武器<TD>物理<TD>3D7+8<TD>物理<TD>3D7+20<TD>-<TD>15<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="SilverHelmOutpost.htm">銀舵前哨</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <tr><td rowspan=3>士兵<TD id="Guard">守衛<BR>士兵<br>Guard<TD>11<TD>45<TD>16<TD>231<TD>-<TD>物理<TD>3D3+5<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <TR><TD id="Lieutenant">副隊長<BR>中尉<br>Lieutenant<TD>19<TD>93<TD>24<TD>551<TD>-<TD>物理<TD>3D3+10<TD>物理<TD>3D3+20<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <TR><TD id="Captain">隊長<BR>上尉<br>Captain<TD>33<TD>207<TD>32<TD>1419<TD>破壞盔甲<TD>物理<TD>3D3+20<TD>物理<TD>3D3+40<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD><A HREF="IcewindKeep.htm">冰風堡壘</A><BR><A HREF="SilverHelmOutpost.htm">銀舵前哨</A>
+  <tr><td rowspan=3>戰士<TD id="Fighter">戰士<BR>鬥士<br>Fighter<TD>14<TD>61<TD>18<TD>336<TD>-<TD>物理<TD>3D3+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <TR><TD id="Soldier">士兵<BR>戰士<br>Soldier<TD>24<TD>129<TD>24<TD>816<TD>-<TD>物理<TD>3D3+10<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>10<TD>20<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
+  <TR><TD id="Veteran">老兵<BR>精兵<br>Veteran<TD>35<TD>227<TD>30<TD>1575<TD>破壞武器<TD>物理<TD>3D3+14<TD>物理<TD>3D3+45<TD>-<TD>30<TD>30<TD>30<TD>30<TD>10<TD>30<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A><br><A HREF="SilverHelmStronghold.htm">銀舵堡壘</A><br><A HREF="WarlordFortress.htm">軍閥堡壘</A>
 
 <tr>
 <td rowspan=3><b>箭手</b>
-  <td rowspan=3>弓箭手<TD><A name="Archer">弓箭手<br>Archer<TD>9<TD>35<TD>14<TD>171<TD>-<TD>物理<TD>1D6+1<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>-<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
-  <TR><TD><A name="MasterArcher">大師級弓箭手<BR>弓箭大師<br>Master Archer<TD>19<TD>93<TD>16<TD>551<TD>-<TD>物理<TD>2D6+2<TD>火<TD>3D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
-  <TR><TD><A name="FireArcher">火焰弓箭手<BR>火弩手<br>Fire Archer<TD>29<TD>171<TD>22<TD>1131<TD>-<TD>物理<TD>3D6+3<TD>火<TD>4D6<TD>N5連珠火球<TD>30<TD>30<TD>30<TD>30<TD>10<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
+  <td rowspan=3>弓箭手<TD id="Archer">弓箭手<br>Archer<TD>9<TD>35<TD>14<TD>171<TD>-<TD>物理<TD>1D6+1<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>-<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
+  <TR><TD id="MasterArcher">大師級弓箭手<BR>弓箭大師<br>Master Archer<TD>19<TD>93<TD>16<TD>551<TD>-<TD>物理<TD>2D6+2<TD>火<TD>3D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
+  <TR><TD id="FireArcher">火焰弓箭手<BR>火弩手<br>Fire Archer<TD>29<TD>171<TD>22<TD>1131<TD>-<TD>物理<TD>3D6+3<TD>火<TD>4D6<TD>N5連珠火球<TD>30<TD>30<TD>30<TD>30<TD>10<TD>-<TD><A HREF="FreeHaven.htm">自由天堂</A><BR><A HREF="FrozenHighlands.htm">冰凍高原</A>
 
-<TR>
-<TD ALIGN=CENTER COLSPAN=20 BGCOLOR="#80ffff">
-<A name="beast">
-<B><FONT COLOR="#FF0000">怪獸</FONT></B>
-</TR>
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR id="beast">
+<TH COLSPAN=20 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">怪獸</FONT>
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=32><b>動物</b>
-  <td rowspan=3>老鼠<TD><A name="CommonRat">普通老鼠<BR>老鼠<BR>Common Rat<TD>2<TD>6<TD>4<TD>24<TD>疾病<TD>物理<TD>1D8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
-  <TR><TD><A name="LargeRat">大老鼠<BR>Large Rat<TD>4<TD>13<TD>5<TD>56<TD>疾病<TD>物理<TD>1D8+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
-  <TR><TD><A name="GiantRat">巨型老鼠<BR>Giant Rat<TD>6<TD>21<TD>8<TD>96<TD>疾病<TD>物理<TD>1D8+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
-  <tr><td rowspan=3>蝙蝠<TD><A name="Bat">蝙蝠<br>Bat<TD>3<TD>9<TD>5<TD>39<TD>疾病<TD>物理<TD>1D3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <TR><TD><A name="GiantBat">巨型蝙蝠<BR>大蝙蝠<br>Giant Bat<TD>6<TD>21<TD>8<TD>96<TD>疾病<TD>物理<TD>1D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <TR><TD><A name="VampireBat">吸血蝙蝠<br>Vampire Bat<TD>9<TD>35<TD>10<TD>171<TD>疾病<TD>物理<TD>2D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <tr><td rowspan=4>蜘蛛<TD><A name="Spider">蜘蛛<BR>Spider<TD>5<TD>17<TD>10<TD>75<TD>中毒<TD>物理<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
-  <TR><TD><A name="GiantSpider">大蜘蛛<BR>巨型蜘蛛<BR>Giant Spider<TD>8<TD>30<TD>12<TD>144<TD>中毒<TD>物理<TD>3D2+3<TD>毒<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
-  <TR><TD><A name="HugeSpider">巨型蜘蛛<BR>超巨型蜘蛛<BR>Huge Spider<TD>12<TD>50<TD>16<TD>264<TD>中毒<TD>物理<TD>3D2+6<TD>毒<TD>4D2<TD>-<TD>-<TD>5<TD>5<TD>免疫<TD>5<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
-  <TR><TD><font color=cc0000><A name="QueenSpider">蜘蛛女王<BR>Queen Spider</FONT><TD>12<TD>50<TD>16<TD>0<TD>中毒<TD>物理<TD>3D2+6<TD>毒<TD>4D2<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A>
-  <tr><td rowspan=3>眼鏡蛇<TD><A name="Cobra">眼鏡蛇<BR>Cobra<TD>5<TD>17<TD>10<TD>75<TD>中毒<TD>物理<TD>1D3+6<TD>毒<TD>2D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
-  <TR><TD><A name="KingCobra">眼鏡蛇王<BR>眼鏡蛇之王<BR>King Cobra<TD>10<TD>40<TD>12<TD>200<TD>中毒<TD>物理<TD>2D3+6<TD>毒<TD>3D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
-  <TR><TD><A name="QueenCobra">眼鏡蛇女王<BR>眼鏡蛇皇后<BR>Queen Cobra<TD>14<TD>61<TD>16<TD>336<TD>中毒<TD>物理<TD>3D3+6<TD>毒<TD>4D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
-  <tr><td rowspan=3>鴨<TD><A name="FlameDrake">火焰杜雷克<BR>火焰鴨<br>Flame Drake<TD>24<TD>129<TD>20<TD>816<TD>-<TD>火<TD>10D4<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>30<TD>10<TD>20<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="FrostDrake">冰霜杜雷克<BR>冰凍鴨<br>Frost Drake<TD>28<TD>162<TD>25<TD>1064<TD>-<TD>冰<TD>12D4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>免疫<TD>10<TD>10<TD>30<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="EnergyDrake">能量杜雷克<BR>能量鴨<br>Energy Drake<TD>32<TD>198<TD>30<TD>1344<TD>破壞物品<TD>能量<TD>15D4<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>10<TD>10<TD>40<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <tr><td rowspan=3>海蛇<TD><A name="SeaSerpent">大海蛇<BR>海妖<br>Sea Serpent<TD>28<TD>162<TD>30<TD>1064<TD>-<TD>冰<TD>1D20+25<TD>-<TD>-<TD>-<TD>5<TD>-<TD>免疫<TD>-<TD>5<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="SeaMonster">大海怪<BR>海怪<br>Sea Monster<TD>36<TD>237<TD>35<TD>1656<TD>-<TD>冰<TD>1D20+35<TD>-<TD>-<TD>-<TD>10<TD>-<TD>免疫<TD>-<TD>10<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="SeaTerror">恐怖海怪<BR>海魔<br>Sea Terror<TD>48<TD>374<TD>40<TD>2784<TD>恐懼<TD>冰<TD>1D20+45<TD>-<TD>-<TD>-<TD>20<TD>-<TD>免疫<TD>-<TD>10<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <tr><td rowspan=3>蜥蜴<TD><A name="FireLizard">噴火蜥蜴<BR>烈火蜥蜴<br>Fire Lizard<TD>40<TD>280<TD>40<TD>2000<TD>-<TD>火<TD>10D6<TD>-<TD>-<TD>-<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>20<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><A name="LightningLizard">閃光蜥蜴<BR>閃電蜥蜴<br>Lightning Lizard<TD>50<TD>400<TD>50<TD>3000<TD>破壞物品<TD>電<TD>12D6<TD>-<TD>-<TD>-<TD>40<TD>免疫<TD>40<TD>40<TD>40<TD>30<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><A name="ThunderLizard">雷電蜥蜴<BR>雷霆蜥蜴<br>Thunder Lizard<TD>60<TD>540<TD>60<TD>4200<TD>破壞物品<TD>冰<TD>14D6<TD>-<TD>-<TD>-<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD>40<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <tr><td rowspan=3>九頭蛇<TD><A name="Hydra">多頭大蛇<BR>海蛇怪<br>Hydra<TD>45<TD>337<TD>22<TD>2475<TD>-<TD>物理<TD>15D5<TD>火<TD>8D5<TD>-<TD>免疫<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="VenomousHydra">有毒多頭大蛇<BR>劇毒海蛇怪<br>Venomous Hydra<TD>55<TD>467<TD>44<TD>3575<TD>中毒<TD>物理<TD>20D5<TD>毒<TD>10D5<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>20<TD>20<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="ColossalHydra">巨型多頭大蛇<BR>巨型海蛇怪<br>Colossal Hydra<TD>65<TD>617<TD>66<TD>4875<TD>破壞物品<TD>物理<TD>20D5<TD>能量<TD>10D5<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <tr><td rowspan=3>威猛獸<TD><A name="Wyrm">雙足飛龍<BR>威猛獸<br>Wyrm<TD>50<TD>400<TD>40<TD>3000<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>免疫<TD>30<TD>30<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><A name="GiantWyrm">巨型雙足飛龍<BR>巨型威猛獸<br>Giant Wyrm<TD>60<TD>540<TD>50<TD>4200<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>40<TD>40<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><A name="GreatWyrm">巨大雙足飛龍<BR>超級威猛獸<br>Great Wyrm<TD>70<TD>700<TD>60<TD>5600<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <tr><td rowspan=4>巨龍<TD><A name="RedDragon">紅龍<br>Red Dragon<TD>80<TD>880<TD>60<TD>7200<TD>-<TD>火<TD>12D8<TD>-<TD>-<TD>-<TD>免疫<TD>50<TD>30<TD>50<TD>50<TD>50<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><FONT color=#cc0000><A name="LongfangWitherhide">長牙巨龍<br>Longfang Witherhide</FONT><TD>80<TD>880<TD>60<TD>7200<TD>-<TD>火<TD>12D8<TD>-<TD>-<TD>-<TD>免疫<TD>50<TD>30<TD>50<TD>50<TD>50<TD><A HREF="DragonLair.htm">龍穴</A>
-  <TR><TD><A name="BlueDragon">藍龍<br>Blue Dragon<TD>90<TD>1080<TD>80<TD>9000<TD>破壞物品<TD>冰<TD>14D8<TD>-<TD>-<TD>-<TD>30<TD>70<TD>免疫<TD>70<TD>70<TD>70<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
-  <TR><TD><A name="GoldDragon">金龍<br>Gold Dragon<TD>100<TD>1300<TD>100<TD>11000<TD>破壞物品<TD>能量<TD>16D8<TD>-<TD>-<TD>-<TD>90<TD>90<TD>90<TD>90<TD>免疫<TD>90<TD><A HREF="TempleOfTheSnake.htm">巨蛇廟</A><br><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <td rowspan=3>老鼠<TD id="CommonRat">普通老鼠<BR>老鼠<BR>Common Rat<TD>2<TD>6<TD>4<TD>24<TD>疾病<TD>物理<TD>1D8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
+  <TR><TD id="LargeRat">大老鼠<BR>Large Rat<TD>4<TD>13<TD>5<TD>56<TD>疾病<TD>物理<TD>1D8+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
+  <TR><TD id="GiantRat">巨型老鼠<BR>Giant Rat<TD>6<TD>21<TD>8<TD>96<TD>疾病<TD>物理<TD>1D8+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="TempleOfTheFist">神拳廟</A><BR><A HREF="FreeHavenSewers.htm">自由天堂的下水道</A><br><A HREF="DragoonsKeep.htm">龍騎兵堡壘</A>
+  <tr><td rowspan=3>蝙蝠<TD id="Bat">蝙蝠<br>Bat<TD>3<TD>9<TD>5<TD>39<TD>疾病<TD>物理<TD>1D3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <TR><TD id="GiantBat">巨型蝙蝠<BR>大蝙蝠<br>Giant Bat<TD>6<TD>21<TD>8<TD>96<TD>疾病<TD>物理<TD>1D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <TR><TD id="VampireBat">吸血蝙蝠<br>Vampire Bat<TD>9<TD>35<TD>10<TD>171<TD>疾病<TD>物理<TD>2D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <tr><td rowspan=4>蜘蛛<TD id="Spider">蜘蛛<BR>Spider<TD>5<TD>17<TD>10<TD>75<TD>中毒<TD>物理<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
+  <TR><TD id="GiantSpider">大蜘蛛<BR>巨型蜘蛛<BR>Giant Spider<TD>8<TD>30<TD>12<TD>144<TD>中毒<TD>物理<TD>3D2+3<TD>毒<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
+  <TR><TD id="HugeSpider">巨型蜘蛛<BR>超巨型蜘蛛<BR>Huge Spider<TD>12<TD>50<TD>16<TD>264<TD>中毒<TD>物理<TD>3D2+6<TD>毒<TD>4D2<TD>-<TD>-<TD>5<TD>5<TD>免疫<TD>5<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A>
+  <TR><TD id="QueenSpider"><font color=cc0000>蜘蛛女王<BR>Queen Spider</FONT><TD>12<TD>50<TD>16<TD>0<TD>中毒<TD>物理<TD>3D2+6<TD>毒<TD>4D2<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A>
+  <tr><td rowspan=3>眼鏡蛇<TD id="Cobra">眼鏡蛇<BR>Cobra<TD>5<TD>17<TD>10<TD>75<TD>中毒<TD>物理<TD>1D3+6<TD>毒<TD>2D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
+  <TR><TD id="KingCobra">眼鏡蛇王<BR>眼鏡蛇之王<BR>King Cobra<TD>10<TD>40<TD>12<TD>200<TD>中毒<TD>物理<TD>2D3+6<TD>毒<TD>3D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
+  <TR><TD id="QueenCobra">眼鏡蛇女王<BR>眼鏡蛇皇后<BR>Queen Cobra<TD>14<TD>61<TD>16<TD>336<TD>中毒<TD>物理<TD>3D3+6<TD>毒<TD>4D6<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD><A HREF="AbandonedTemple.htm">廢廟</A><BR><A HREF="TempleOfTsantsa.htm">海神廟</A><br><A HREF="TempleOfTheMoon.htm">月亮廟</A>
+  <tr><td rowspan=3>鴨<TD id="FlameDrake">火焰杜雷克<BR>火焰鴨<br>Flame Drake<TD>24<TD>129<TD>20<TD>816<TD>-<TD>火<TD>10D4<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>30<TD>10<TD>20<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="FrostDrake">冰霜杜雷克<BR>冰凍鴨<br>Frost Drake<TD>28<TD>162<TD>25<TD>1064<TD>-<TD>冰<TD>12D4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>免疫<TD>10<TD>10<TD>30<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="EnergyDrake">能量杜雷克<BR>能量鴨<br>Energy Drake<TD>32<TD>198<TD>30<TD>1344<TD>破壞物品<TD>能量<TD>15D4<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>10<TD>10<TD>40<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <tr><td rowspan=3>海蛇<TD id="SeaSerpent">大海蛇<BR>海妖<br>Sea Serpent<TD>28<TD>162<TD>30<TD>1064<TD>-<TD>冰<TD>1D20+25<TD>-<TD>-<TD>-<TD>5<TD>-<TD>免疫<TD>-<TD>5<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="SeaMonster">大海怪<BR>海怪<br>Sea Monster<TD>36<TD>237<TD>35<TD>1656<TD>-<TD>冰<TD>1D20+35<TD>-<TD>-<TD>-<TD>10<TD>-<TD>免疫<TD>-<TD>10<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="SeaTerror">恐怖海怪<BR>海魔<br>Sea Terror<TD>48<TD>374<TD>40<TD>2784<TD>恐懼<TD>冰<TD>1D20+45<TD>-<TD>-<TD>-<TD>20<TD>-<TD>免疫<TD>-<TD>10<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <tr><td rowspan=3>蜥蜴<TD id="FireLizard">噴火蜥蜴<BR>烈火蜥蜴<br>Fire Lizard<TD>40<TD>280<TD>40<TD>2000<TD>-<TD>火<TD>10D6<TD>-<TD>-<TD>-<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>20<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="LightningLizard">閃光蜥蜴<BR>閃電蜥蜴<br>Lightning Lizard<TD>50<TD>400<TD>50<TD>3000<TD>破壞物品<TD>電<TD>12D6<TD>-<TD>-<TD>-<TD>40<TD>免疫<TD>40<TD>40<TD>40<TD>30<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="ThunderLizard">雷電蜥蜴<BR>雷霆蜥蜴<br>Thunder Lizard<TD>60<TD>540<TD>60<TD>4200<TD>破壞物品<TD>冰<TD>14D6<TD>-<TD>-<TD>-<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD>40<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <tr><td rowspan=3>九頭蛇<TD id="Hydra">多頭大蛇<BR>海蛇怪<br>Hydra<TD>45<TD>337<TD>22<TD>2475<TD>-<TD>物理<TD>15D5<TD>火<TD>8D5<TD>-<TD>免疫<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="VenomousHydra">有毒多頭大蛇<BR>劇毒海蛇怪<br>Venomous Hydra<TD>55<TD>467<TD>44<TD>3575<TD>中毒<TD>物理<TD>20D5<TD>毒<TD>10D5<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>20<TD>20<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="ColossalHydra">巨型多頭大蛇<BR>巨型海蛇怪<br>Colossal Hydra<TD>65<TD>617<TD>66<TD>4875<TD>破壞物品<TD>物理<TD>20D5<TD>能量<TD>10D5<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <tr><td rowspan=3>威猛獸<TD id="Wyrm">雙足飛龍<BR>威猛獸<br>Wyrm<TD>50<TD>400<TD>40<TD>3000<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>免疫<TD>30<TD>30<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="GiantWyrm">巨型雙足飛龍<BR>巨型威猛獸<br>Giant Wyrm<TD>60<TD>540<TD>50<TD>4200<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>40<TD>40<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="GreatWyrm">巨大雙足飛龍<BR>超級威猛獸<br>Great Wyrm<TD>70<TD>700<TD>60<TD>5600<TD>中毒<TD>毒<TD>10D10<TD>-<TD>-<TD>-<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <tr><td rowspan=4>巨龍<TD id="RedDragon">紅龍<br>Red Dragon<TD>80<TD>880<TD>60<TD>7200<TD>-<TD>火<TD>12D8<TD>-<TD>-<TD>-<TD>免疫<TD>50<TD>30<TD>50<TD>50<TD>50<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="LongfangWitherhide"><FONT color=#cc0000>長牙巨龍<br>Longfang Witherhide</FONT><TD>80<TD>880<TD>60<TD>7200<TD>-<TD>火<TD>12D8<TD>-<TD>-<TD>-<TD>免疫<TD>50<TD>30<TD>50<TD>50<TD>50<TD><A HREF="DragonLair.htm">龍穴</A>
+  <TR><TD id="BlueDragon">藍龍<br>Blue Dragon<TD>90<TD>1080<TD>80<TD>9000<TD>破壞物品<TD>冰<TD>14D8<TD>-<TD>-<TD>-<TD>30<TD>70<TD>免疫<TD>70<TD>70<TD>70<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
+  <TR><TD id="GoldDragon">金龍<br>Gold Dragon<TD>100<TD>1300<TD>100<TD>11000<TD>破壞物品<TD>能量<TD>16D8<TD>-<TD>-<TD>-<TD>90<TD>90<TD>90<TD>90<TD>免疫<TD>90<TD><A HREF="TempleOfTheSnake.htm">巨蛇廟</A><br><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="Dragonsands.htm">飛龍沙漠</A>
 
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=15><b>怪物</b>
-  <td rowspan=3>吞噬怪<TD><A name="BloodSucker">吸血獸<BR>吸血者<br>Blood Sucker<TD>2<TD>6<TD>6<TD>24<TD>疾病<TD>物理<TD>1D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
-  <TR><TD><A name="BrainSucker">吸腦獸<BR>嗜腦髓者<br>Brain Sucker<TD>4<TD>13<TD>8<TD>56<TD>疾病<TD>物理<TD>1D2+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
-  <TR><TD><A name="SoulSucker">吸魂獸<BR>招魂者<br>Soul Sucker<TD>8<TD>30<TD>10<TD>144<TD>疾病<TD>物理<TD>2D2+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
-  <tr><td rowspan=3>粘土怪<TD><A name="Ooze">黏怪<BR>粘土怪<br>Ooze<TD>12<TD>50<TD>8<TD>264<TD>中毒<TD>毒<TD>1D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="AcidicOoze">酸性黏怪<BR>酸性粘土怪<br>Acidic Ooze<TD>18<TD>86<TD>10<TD>504<TD>破壞物品<TD>毒<TD>3D6<TD>-<TD>-<TD>N4毒液噴發<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="CorrosiveOoze">腐蝕黏怪<BR>腐蝕粘土怪<br>Corrosive Ooze<TD>25<TD>137<TD>12<TD>875<TD>破壞物品<TD>毒<TD>5D6<TD>-<TD>-<TD>M5毒雲籠罩<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <tr><td rowspan=3>雞蛇獸<TD><A name="AgarPet">亞格的寵物<BR>阿加的怪物<br>Agar's Pet<TD>13<TD>55<TD>13<TD>299<TD>麻痺<TD>物理<TD>1D12<TD>-<TD>-<TD>N10驚心動魄<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="AgarMonster">亞格的怪獸<BR>阿加的怪獸<br>Agar's Monster<TD>15<TD>67<TD>15<TD>375<TD>麻痺<TD>物理<TD>1D12+6<TD>-<TD>-<TD>N15驚心動魄<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="AgarAbomination">亞格之恨<BR>阿加的超獸<br>Agar's Abomination<TD>17<TD>79<TD>17<TD>459<TD>石化<TD>物理<TD>2D12+6<TD>-<TD>-<TD>N20驚心動魄<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <tr><td rowspan=3>美杜莎<TD><A name="Medusa">蛇髮妖女<BR>美杜莎女妖<br>Medusa<TD>35<TD>227<TD>20<TD>1575<TD>石化<TD>魔法<TD>4D4+8<TD>-<TD>-<TD>M12魔法傷害<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
-  <TR><TD><A name="MedusaEnchantress">蛇髮女巫<BR>美杜莎魔女<br>Medusa Enchantress<TD>40<TD>280<TD>25<TD>2000<TD>石化<TD>魔法<TD>5D4+10<TD>-<TD>-<TD>M8定身大法<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
-  <TR><TD><A name="Gorgon">蛇髮女怪<br>Gorgon<TD>45<TD>337<TD>30<TD>2475<TD>石化<TD>魔法<TD>6D4+12<TD>-<TD>-<TD>M9魂飛魄散<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
-  <tr><td rowspan=3>魔眼<TD><A name="FlyingEye">飛行眼球<BR>飛翔之眼<br>Flying Eye<TD>30<TD>180<TD>25<TD>1200<TD>沉睡<TD>冰<TD>5D6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>免疫<TD>-<TD>免疫<TD>30<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="TerribleEye">恐怖之眼<br>Terrible Eye<TD>40<TD>280<TD>30<TD>2000<TD>恐懼<TD>火<TD>6D6<TD>-<TD>-<TD>N8連珠火球<TD>免疫<TD>30<TD>30<TD>-<TD>免疫<TD>40<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="MaddeningEye">狂暴之眼<BR>狂亂之眼<br>Maddening Eye<TD>50<TD>400<TD>35<TD>3000<TD>痴狂<TD>電<TD>7D6<TD>-<TD>-<TD>N10驅散魔法<TD>50<TD>免疫<TD>50<TD>-<TD>免疫<TD>50<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <td rowspan=3>吞噬怪<TD id="BloodSucker">吸血獸<BR>吸血者<br>Blood Sucker<TD>2<TD>6<TD>6<TD>24<TD>疾病<TD>物理<TD>1D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
+  <TR><TD id="BrainSucker">吸腦獸<BR>嗜腦髓者<br>Brain Sucker<TD>4<TD>13<TD>8<TD>56<TD>疾病<TD>物理<TD>1D2+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
+  <TR><TD id="SoulSucker">吸魂獸<BR>招魂者<br>Soul Sucker<TD>8<TD>30<TD>10<TD>144<TD>疾病<TD>物理<TD>2D2+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="CastleIronfist.htm">鐵拳城堡</A>
+  <tr><td rowspan=3>粘土怪<TD id="Ooze">黏怪<BR>粘土怪<br>Ooze<TD>12<TD>50<TD>8<TD>264<TD>中毒<TD>毒<TD>1D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="AcidicOoze">酸性黏怪<BR>酸性粘土怪<br>Acidic Ooze<TD>18<TD>86<TD>10<TD>504<TD>破壞物品<TD>毒<TD>3D6<TD>-<TD>-<TD>N4毒液噴發<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="CorrosiveOoze">腐蝕黏怪<BR>腐蝕粘土怪<br>Corrosive Ooze<TD>25<TD>137<TD>12<TD>875<TD>破壞物品<TD>毒<TD>5D6<TD>-<TD>-<TD>M5毒雲籠罩<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="DragoonsCaverns.htm">龍騎兵岩洞</A><br><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <tr><td rowspan=3>雞蛇獸<TD id="AgarPet">亞格的寵物<BR>阿加的怪物<br>Agar's Pet<TD>13<TD>55<TD>13<TD>299<TD>麻痺<TD>物理<TD>1D12<TD>-<TD>-<TD>N10驚心動魄<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="AgarMonster">亞格的怪獸<BR>阿加的怪獸<br>Agar's Monster<TD>15<TD>67<TD>15<TD>375<TD>麻痺<TD>物理<TD>1D12+6<TD>-<TD>-<TD>N15驚心動魄<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="AgarAbomination">亞格之恨<BR>阿加的超獸<br>Agar's Abomination<TD>17<TD>79<TD>17<TD>459<TD>石化<TD>物理<TD>2D12+6<TD>-<TD>-<TD>N20驚心動魄<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>-<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <tr><td rowspan=3>美杜莎<TD id="Medusa">蛇髮妖女<BR>美杜莎女妖<br>Medusa<TD>35<TD>227<TD>20<TD>1575<TD>石化<TD>魔法<TD>4D4+8<TD>-<TD>-<TD>M12魔法傷害<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
+  <TR><TD id="MedusaEnchantress">蛇髮女巫<BR>美杜莎魔女<br>Medusa Enchantress<TD>40<TD>280<TD>25<TD>2000<TD>石化<TD>魔法<TD>5D4+10<TD>-<TD>-<TD>M8定身大法<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
+  <TR><TD id="Gorgon">蛇髮女怪<br>Gorgon<TD>45<TD>337<TD>30<TD>2475<TD>石化<TD>魔法<TD>6D4+12<TD>-<TD>-<TD>M9魂飛魄散<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD><A HREF="TempleOfTheMoon.htm">月亮廟</A><br><A HREF="TempleOfTheSnake.htm">巨蛇廟</A>
+  <tr><td rowspan=3>魔眼<TD id="FlyingEye">飛行眼球<BR>飛翔之眼<br>Flying Eye<TD>30<TD>180<TD>25<TD>1200<TD>沉睡<TD>冰<TD>5D6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>免疫<TD>-<TD>免疫<TD>30<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="TerribleEye">恐怖之眼<br>Terrible Eye<TD>40<TD>280<TD>30<TD>2000<TD>恐懼<TD>火<TD>6D6<TD>-<TD>-<TD>N8連珠火球<TD>免疫<TD>30<TD>30<TD>-<TD>免疫<TD>40<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="MaddeningEye">狂暴之眼<BR>狂亂之眼<br>Maddening Eye<TD>50<TD>400<TD>35<TD>3000<TD>痴狂<TD>電<TD>7D6<TD>-<TD>-<TD>N10驅散魔法<TD>50<TD>免疫<TD>50<TD>-<TD>免疫<TD>50<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
 
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=42><b>人形</b>
-  <td rowspan=3>大耳怪<TD><A name="Goblin">小惡鬼<BR>大耳怪<br>Goblin<TD>4<TD>13<TD>6<TD>56<TD>-<TD>物理<TD>1D9<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A>
-  <TR><TD><A name="GoblinShaman">小惡鬼巫師<BR>高級大耳怪<br>Goblin Shaman<TD>6<TD>21<TD>10<TD>96<TD>-<TD>物理<TD>1D9+2<TD>-<TD>-<TD>N1霹靂火焰<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><br><A HREF="NewWorldComputing.htm">NWC公司</A>
-  <TR><TD><A name="GoblinKing">小惡鬼王<BR>大耳怪之王<br>Goblin King<TD>10<TD>40<TD>14<TD>200<TD>破壞物品<TD>物理<TD>1D9+4<TD>-<TD>-<TD>N2霹靂火焰<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><br><A HREF="NewWorldComputing.htm">NWC公司</A>
-  <tr><td rowspan=3>蜥蜴人<TD><A name="LizardMan">蜥蜴人<br>Lizard Man<TD>4<TD>13<TD>10<TD>56<TD>-<TD>物理<TD>1D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
-  <TR><TD><A name="LizardArcher">蜥蜴射手<BR>蜥蜴弓箭手<br>Lizard Archer<TD>7<TD>25<TD>15<TD>119<TD>-<TD>物理<TD>1D6+2<TD>火<TD>2D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
-  <TR><TD><A name="LizardWizard">蜥蜴巫師<BR>Lizard Wizard<TD>11<TD>45<TD>20<TD>231<TD>-<TD>物理<TD>1D6+5<TD>-<TD>-<TD>N2霹靂閃電<TD>10<TD>10<TD>10<TD>10<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
-  <tr><td rowspan=4>矮人<TD><A name="Dwarf">矮人<br>Dwarf<TD>10<TD>40<TD>6<TD>200<TD>-<TD>物理<TD>4D2+4<TD>物理<TD>8D2+8<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>30<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <TR><TD><A name="DwarfWarrior">矮人戰士<BR>矮人勇士<br>Dwarf Warrior<TD>20<TD>100<TD>12<TD>600<TD>-<TD>物理<TD>4D2+8<TD>物理<TD>8D2+16<TD>-<TD>30<TD>30<TD>30<TD>免疫<TD>40<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <TR><TD><A name="Snergle"><FONT color=#cc0000>斯納格<br>Snergle</FONT></A><TD>27<TD>150<TD>20<TD>0<TD>破壞盔甲<TD>物理<TD>4D2+10<TD>魔法<TD>8D2+20<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>-<TD>50<TD><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <TR><TD><A name="DwarfLord">矮人領主<BR>矮人爵士<br>Dwarf Lord<TD>30<TD>180<TD>20<TD>1200<TD>破壞盔甲<TD>物理<TD>4D2+16<TD>物理<TD>8D2+32<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>50<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
-  <tr><td rowspan=3>鳥人<TD><A name="Harpy">鳥身女妖<BR>鳥身怪獸<br>Harpy<TD>14<TD>61<TD>12<TD>336<TD>酒醉<TD>物理<TD>2D7+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>10<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="HarpyHag">鳥身女精<BR>鳥身女巫<br>Harpy Hag<TD>17<TD>79<TD>14<TD>459<TD>詛咒<TD>物理<TD>2D7+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>20<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="HarpyWitch">鳥身女魔<BR>鳥身男巫<br>Harpy Witch<TD>19<TD>93<TD>16<TD>551<TD>老化<TD>物理<TD>2D7+10<TD>-<TD>-<TD>N3詛天咒地<TD>-<TD>-<TD>-<TD>-<TD>30<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <tr><td rowspan=3>食人妖<TD><A name="Ogre">食人巨魔<BR>食人妖<br>Ogre<TD>15<TD>67<TD>12<TD>375<TD>-<TD>物理<TD>2D5+10<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="OgreRaider">食人巨魔攻擊隊員<BR>戰鬥食人妖<br>Ogre Raider<TD>20<TD>100<TD>14<TD>600<TD>-<TD>物理<TD>2D5+15<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="OgreChieftain">食人巨魔首領<BR>食人妖首領<br>Ogre Chieftain<TD>28<TD>162<TD>16<TD>1064<TD>中毒<TD>物理<TD>2D5+25<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <tr><td rowspan=3>石像鬼<TD><A name="StoneGargoyle">石頭怪人<BR>岩石惡獸<br>Stone Gargoyle<TD>16<TD>73<TD>18<TD>416<TD>虛弱<TD>物理<TD>2D12<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>10<TD>20<TD><A HREF="SilverCove.htm">銀灣鎮</A>
-  <TR><TD><A name="MarbleGargoyle">大理石怪人<BR>大理石惡獸<br>Marble Gargoyle<TD>22<TD>114<TD>22<TD>704<TD>麻痺<TD>物理<TD>2D12+4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>15<TD>30<TD><A HREF="SilverCove.htm">銀灣鎮</A>
-  <TR><TD><A name="DiamondGargoyle">鑽石怪人<BR>鑽石怪獸<br>Diamond Gargoyle<TD>33<TD>207<TD>26<TD>1419<TD>麻痺<TD>物理<TD>2D12+8<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>20<TD>免疫<TD><A HREF="SilverCove.htm">銀灣鎮</A>
-  <tr><td rowspan=4>狼人<TD><A name="Wolfman">小狼人<BR>狼人<br>Wolfman<TD>20<TD>100<TD>20<TD>600<TD>疾病<TD>物理<TD>2D12+12<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="Werewolf">狼人<BR>高級狼人<br>Werewolf<TD>30<TD>180<TD>25<TD>1200<TD>疾病<TD>物理<TD>2D12+16<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><A name="GreaterWerewolf">大狼人<BR>超級狼人<br>Greater Werewolf<TD>40<TD>280<TD>30<TD>2000<TD>昏迷<TD>物理<TD>2D12+20<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>15<TD>15<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <TR><TD><FONT color=#cc0000><A name="WerewolfLeader">狼人首領<br>Werewolf Leader</FONT><TD>50<TD>420<TD>30<TD>0<TD>昏迷<TD>物理<TD>3D12+25<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD><A HREF="LairOfTheWolf.htm">狼穴</A>
-  <tr><td rowspan=4>狗頭人<TD><A name="DefenderVARN">法老王的防禦者<BR>維蘭衛士<br>Defender of VARN<TD>35<TD>227<TD>40<TD>1575<TD>-<TD>物理<TD>3D6+20<TD>能量<TD>5D6<TD>M7魂飛魄散<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>10<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
-  <TR><TD><FONT color=#cc0000><A name="FallenDefender">倒下的衛士<br>Fallen Defender</FONT><TD>35<TD>227<TD>40<TD>0<TD>-<TD>物理<TD>3D6+20<TD>能量<TD>5D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>免疫<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A>
-  <TR><TD><A name="SentinelVARN">法老王的衛兵<BR>維蘭守衛<br>Sentinel of VARN<TD>55<TD>467<TD>50<TD>3575<TD>-<TD>物理<TD>3D6+35<TD>能量<TD>6D6<TD>M11魂飛魄散<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>20<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
-  <TR><TD><A name="GuardianVARN">法老王的守護者<BR>維蘭守護神<br>Guardian of VARN<TD>65<TD>617<TD>60<TD>4875<TD>破壞武器<TD>物理<TD>3D6+50<TD>能量<TD>8D6<TD>M13魂飛魄散<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
-  <tr><td rowspan=4>牛頭怪<TD><A name="Minotaur">人身牛頭怪<BR>牛頭怪<br>Minotaur<TD>39<TD>269<TD>30<TD>1911<TD>-<TD>物理<TD>3D7+25<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>10<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="MinotaurMage">人身牛頭法師<BR>牛頭魔法師<br>Minotaur Mage<TD>59<TD>525<TD>35<TD>4071<TD>-<TD>物理<TD>3D7+40<TD>-<TD>-<TD>M12霹靂閃電<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>20<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><A name="MinotaurKing">人身牛頭王<BR>牛頭國王<br>Minotaur King<TD>79<TD>861<TD>40<TD>7031<TD>-<TD>物理<TD>3D7+60<TD>-<TD>-<TD>N14死神之手<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>30<TD><A HREF="TempleOfTheSun.htm">太陽廟</A><br><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <TR><TD><FONT color=#cc0000><A name="Lurch">妖怪<br>Lurch</FONT><TD>85<TD>2000<TD>40<TD>7031<TD>-<TD>物理<TD>3D7+60<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
-  <tr><td rowspan=3>泰坦<TD><A name="Titan">巨人<br>Titan<TD>65<TD>617<TD>60<TD>4875<TD>破壞物品<TD>電<TD>2D20+60<TD>-<TD>-<TD>M15魂飛魄散<TD>30<TD>免疫<TD>30<TD>30<TD>免疫<TD>30<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="NobleTitan">貴族巨人<BR>高級巨人<br>Noble Titan<TD>75<TD>787<TD>70<TD>6375<TD>破壞物品<TD>電<TD>2D20+80<TD>-<TD>-<TD>M18魂飛魄散<TD>50<TD>免疫<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <TR><TD><A name="SupremeTitan">至上巨人<BR>超級巨人<br>Supreme Titan<TD>95<TD>1187<TD>80<TD>9975<TD>死亡<TD>電<TD>2D20+120<TD>-<TD>-<TD>M25魂飛魄散<TD>80<TD>免疫<TD>80<TD>80<TD>免疫<TD>80<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
-  <tr><td rowspan=8>惡魔<TD><A name="DevilSpawn">初生惡魔<BR>魔鬼小子<br>Devil Spawn<TD>20<TD>100<TD>20<TD>600<TD>疾病<TD>物理<TD>2D6+8<TD>火<TD>3D6<TD>N4霹靂火焰<TD>免疫<TD>20<TD>20<TD>20<TD>20<TD>50<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><A name="DevilWorker">惡魔工人<BR>魔鬼勞工<br>Devil Worker<TD>40<TD>280<TD>30<TD>2000<TD>疾病<TD>物理<TD>2D6+14<TD>火<TD>4D6<TD>N8霹靂火焰<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>50<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><A name="DevilWarrior">惡魔戰士<BR>魔鬼勇士<br>Devil Warrior<TD>60<TD>540<TD>40<TD>4200<TD>吸乾法力<TD>物理<TD>2D6+20<TD>火<TD>5D6<TD>N12連珠火球<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><FONT color=#cc0000><A name="DevilBaa">羊鳴教惡魔<br>Devil of Baa</FONT></A><TD>60<TD>540<TD>40<TD>0<TD>吸乾法力<TD>物理<TD>2D6+20<TD>火<TD>5D6<TD>-<TD>30<TD>30<TD>30<TD>30<TD>-<TD>30<TD><A HREF="DevilOutpost.htm">惡魔據點</A>
-  <TR><TD><A name="DevilCaptain">惡魔隊長<BR>魔鬼首領<br>Devil Captain<TD>30<TD>180<TD>25<TD>1200<TD>疾病<TD>物理<TD>2D8+10<TD>火<TD>3D8<TD>N6連珠火球<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><A name="DevilMaster">惡魔大師<BR>魔鬼大師<br>Devil Master<TD>50<TD>400<TD>35<TD>3000<TD>疾病<TD>物理<TD>2D8+15<TD>火<TD>4D8<TD>M10流星火雨<TD>免疫<TD>40<TD>40<TD>40<TD>40<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><A name="DevilKing">惡魔之王<BR>魔鬼國王<br>Devil King<TD>70<TD>700<TD>45<TD>5600<TD>吸乾法力<TD>物理<TD>2D8+20<TD>火<TD>5D8<TD>M14烈火威彈<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
-  <TR><TD><FONT color=#cc0000><A name="DemonQueen">惡魔女王<BR>魔鬼女王<br>Demon Queen</FONT><TD>100<TD>1300<TD>40<TD>11000<TD>吸乾法力<TD>物理<TD>2D8+20<TD>-<TD>-<TD>M14烈火威彈<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="TheHive.htm">蜂房</A>
+  <td rowspan=3>大耳怪<TD id="Goblin">小惡鬼<BR>大耳怪<br>Goblin<TD>4<TD>13<TD>6<TD>56<TD>-<TD>物理<TD>1D9<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A>
+  <TR><TD id="GoblinShaman">小惡鬼巫師<BR>高級大耳怪<br>Goblin Shaman<TD>6<TD>21<TD>10<TD>96<TD>-<TD>物理<TD>1D9+2<TD>-<TD>-<TD>N1霹靂火焰<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><br><A HREF="NewWorldComputing.htm">NWC公司</A>
+  <TR><TD id="GoblinKing">小惡鬼王<BR>大耳怪之王<br>Goblin King<TD>10<TD>40<TD>14<TD>200<TD>破壞物品<TD>物理<TD>1D9+4<TD>-<TD>-<TD>N2霹靂火焰<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="NewSorpigal.htm">新索匹格</A><BR><A HREF="Goblinwatch.htm">大耳怪前哨</A><BR><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><br><A HREF="NewWorldComputing.htm">NWC公司</A>
+  <tr><td rowspan=3>蜥蜴人<TD id="LizardMan">蜥蜴人<br>Lizard Man<TD>4<TD>13<TD>10<TD>56<TD>-<TD>物理<TD>1D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
+  <TR><TD id="LizardArcher">蜥蜴射手<BR>蜥蜴弓箭手<br>Lizard Archer<TD>7<TD>25<TD>15<TD>119<TD>-<TD>物理<TD>1D6+2<TD>火<TD>2D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
+  <TR><TD id="LizardWizard">蜥蜴巫師<BR>Lizard Wizard<TD>11<TD>45<TD>20<TD>231<TD>-<TD>物理<TD>1D6+5<TD>-<TD>-<TD>N2霹靂閃電<TD>10<TD>10<TD>10<TD>10<TD>-<TD>-<TD><A HREF="CastleIronfist.htm">鐵拳城堡</A><BR><A HREF="BootlegBay.htm">布特雷格灣</A>
+  <tr><td rowspan=4>矮人<TD id="Dwarf">矮人<br>Dwarf<TD>10<TD>40<TD>6<TD>200<TD>-<TD>物理<TD>4D2+4<TD>物理<TD>8D2+8<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>30<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <TR><TD id="DwarfWarrior">矮人戰士<BR>矮人勇士<br>Dwarf Warrior<TD>20<TD>100<TD>12<TD>600<TD>-<TD>物理<TD>4D2+8<TD>物理<TD>8D2+16<TD>-<TD>30<TD>30<TD>30<TD>免疫<TD>40<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <TR><TD id="Snergle"><FONT color=#cc0000>斯納格<br>Snergle</FONT></A><TD>27<TD>150<TD>20<TD>0<TD>破壞盔甲<TD>物理<TD>4D2+10<TD>魔法<TD>8D2+20<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>-<TD>50<TD><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <TR><TD id="DwarfLord">矮人領主<BR>矮人爵士<br>Dwarf Lord<TD>30<TD>180<TD>20<TD>1200<TD>破壞盔甲<TD>物理<TD>4D2+16<TD>物理<TD>8D2+32<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>50<TD>-<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="SnergleCaverns.htm">斯納格的岩洞</A>
+  <tr><td rowspan=3>鳥人<TD id="Harpy">鳥身女妖<BR>鳥身怪獸<br>Harpy<TD>14<TD>61<TD>12<TD>336<TD>酒醉<TD>物理<TD>2D7+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>10<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="HarpyHag">鳥身女精<BR>鳥身女巫<br>Harpy Hag<TD>17<TD>79<TD>14<TD>459<TD>詛咒<TD>物理<TD>2D7+5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>20<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="HarpyWitch">鳥身女魔<BR>鳥身男巫<br>Harpy Witch<TD>19<TD>93<TD>16<TD>551<TD>老化<TD>物理<TD>2D7+10<TD>-<TD>-<TD>N3詛天咒地<TD>-<TD>-<TD>-<TD>-<TD>30<TD>-<TD><A HREF="FrozenHighlands.htm">冰凍高原</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <tr><td rowspan=3>食人妖<TD id="Ogre">食人巨魔<BR>食人妖<br>Ogre<TD>15<TD>67<TD>12<TD>375<TD>-<TD>物理<TD>2D5+10<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="OgreRaider">食人巨魔攻擊隊員<BR>戰鬥食人妖<br>Ogre Raider<TD>20<TD>100<TD>14<TD>600<TD>-<TD>物理<TD>2D5+15<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="OgreChieftain">食人巨魔首領<BR>食人妖首領<br>Ogre Chieftain<TD>28<TD>162<TD>16<TD>1064<TD>中毒<TD>物理<TD>2D5+25<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A><BR><A HREF="IcewindKeep.htm">冰風堡壘</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <tr><td rowspan=3>石像鬼<TD id="StoneGargoyle">石頭怪人<BR>岩石惡獸<br>Stone Gargoyle<TD>16<TD>73<TD>18<TD>416<TD>虛弱<TD>物理<TD>2D12<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>10<TD>20<TD><A HREF="SilverCove.htm">銀灣鎮</A>
+  <TR><TD id="MarbleGargoyle">大理石怪人<BR>大理石惡獸<br>Marble Gargoyle<TD>22<TD>114<TD>22<TD>704<TD>麻痺<TD>物理<TD>2D12+4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>15<TD>30<TD><A HREF="SilverCove.htm">銀灣鎮</A>
+  <TR><TD id="DiamondGargoyle">鑽石怪人<BR>鑽石怪獸<br>Diamond Gargoyle<TD>33<TD>207<TD>26<TD>1419<TD>麻痺<TD>物理<TD>2D12+8<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>20<TD>免疫<TD><A HREF="SilverCove.htm">銀灣鎮</A>
+  <tr><td rowspan=4>狼人<TD id="Wolfman">小狼人<BR>狼人<br>Wolfman<TD>20<TD>100<TD>20<TD>600<TD>疾病<TD>物理<TD>2D12+12<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="Werewolf">狼人<BR>高級狼人<br>Werewolf<TD>30<TD>180<TD>25<TD>1200<TD>疾病<TD>物理<TD>2D12+16<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="GreaterWerewolf">大狼人<BR>超級狼人<br>Greater Werewolf<TD>40<TD>280<TD>30<TD>2000<TD>昏迷<TD>物理<TD>2D12+20<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>15<TD>15<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <TR><TD id="WerewolfLeader"><FONT color=#cc0000>狼人首領<br>Werewolf Leader</FONT><TD>50<TD>420<TD>30<TD>0<TD>昏迷<TD>物理<TD>3D12+25<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD><A HREF="LairOfTheWolf.htm">狼穴</A>
+  <tr><td rowspan=4>狗頭人<TD id="DefenderVARN">法老王的防禦者<BR>維蘭衛士<br>Defender of VARN<TD>35<TD>227<TD>40<TD>1575<TD>-<TD>物理<TD>3D6+20<TD>能量<TD>5D6<TD>M7魂飛魄散<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>10<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <TR><TD id="FallenDefender"><FONT color=#cc0000>倒下的衛士<br>Fallen Defender</FONT><TD>35<TD>227<TD>40<TD>0<TD>-<TD>物理<TD>3D6+20<TD>能量<TD>5D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>-<TD>免疫<TD><A HREF="HallOfTheFireLord.htm">烈火爵士的大廳</A>
+  <TR><TD id="SentinelVARN">法老王的衛兵<BR>維蘭守衛<br>Sentinel of VARN<TD>55<TD>467<TD>50<TD>3575<TD>-<TD>物理<TD>3D6+35<TD>能量<TD>6D6<TD>M11魂飛魄散<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>20<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <TR><TD id="GuardianVARN">法老王的守護者<BR>維蘭守護神<br>Guardian of VARN<TD>65<TD>617<TD>60<TD>4875<TD>破壞武器<TD>物理<TD>3D6+50<TD>能量<TD>8D6<TD>M13魂飛魄散<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <tr><td rowspan=4>牛頭怪<TD id="Minotaur">人身牛頭怪<BR>牛頭怪<br>Minotaur<TD>39<TD>269<TD>30<TD>1911<TD>-<TD>物理<TD>3D7+25<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>10<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="MinotaurMage">人身牛頭法師<BR>牛頭魔法師<br>Minotaur Mage<TD>59<TD>525<TD>35<TD>4071<TD>-<TD>物理<TD>3D7+40<TD>-<TD>-<TD>M12霹靂閃電<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>20<TD><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="MinotaurKing">人身牛頭王<BR>牛頭國王<br>Minotaur King<TD>79<TD>861<TD>40<TD>7031<TD>-<TD>物理<TD>3D7+60<TD>-<TD>-<TD>N14死神之手<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>30<TD><A HREF="TempleOfTheSun.htm">太陽廟</A><br><A HREF="Kriegspire.htm">克里格斯</A><br><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <TR><TD id="Lurch"><FONT color=#cc0000>妖怪<br>Lurch</FONT><TD>85<TD>2000<TD>40<TD>7031<TD>-<TD>物理<TD>3D7+60<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD><A HREF="CastleKriegspire.htm">克里格斯城堡</A>
+  <tr><td rowspan=3>泰坦<TD id="Titan">巨人<br>Titan<TD>65<TD>617<TD>60<TD>4875<TD>破壞物品<TD>電<TD>2D20+60<TD>-<TD>-<TD>M15魂飛魄散<TD>30<TD>免疫<TD>30<TD>30<TD>免疫<TD>30<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="NobleTitan">貴族巨人<BR>高級巨人<br>Noble Titan<TD>75<TD>787<TD>70<TD>6375<TD>破壞物品<TD>電<TD>2D20+80<TD>-<TD>-<TD>M18魂飛魄散<TD>50<TD>免疫<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <TR><TD id="SupremeTitan">至上巨人<BR>超級巨人<br>Supreme Titan<TD>95<TD>1187<TD>80<TD>9975<TD>死亡<TD>電<TD>2D20+120<TD>-<TD>-<TD>M25魂飛魄散<TD>80<TD>免疫<TD>80<TD>80<TD>免疫<TD>80<TD><A HREF="ParadisValley.htm">天堂谷</A><br><A HREF="HermitIsle.htm">隱士島</A>
+  <tr><td rowspan=8>惡魔<TD id="DevilSpawn">初生惡魔<BR>魔鬼小子<br>Devil Spawn<TD>20<TD>100<TD>20<TD>600<TD>疾病<TD>物理<TD>2D6+8<TD>火<TD>3D6<TD>N4霹靂火焰<TD>免疫<TD>20<TD>20<TD>20<TD>20<TD>50<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DevilWorker">惡魔工人<BR>魔鬼勞工<br>Devil Worker<TD>40<TD>280<TD>30<TD>2000<TD>疾病<TD>物理<TD>2D6+14<TD>火<TD>4D6<TD>N8霹靂火焰<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>50<TD><A HREF="SnergleIronMines.htm">斯納格的鐵礦</A><br><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DevilWarrior">惡魔戰士<BR>魔鬼勇士<br>Devil Warrior<TD>60<TD>540<TD>40<TD>4200<TD>吸乾法力<TD>物理<TD>2D6+20<TD>火<TD>5D6<TD>N12連珠火球<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="DevilOutpost.htm">惡魔據點</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A><br><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DevilBaa"><FONT color=#cc0000>羊鳴教惡魔<br>Devil of Baa</FONT></A><TD>60<TD>540<TD>40<TD>0<TD>吸乾法力<TD>物理<TD>2D6+20<TD>火<TD>5D6<TD>-<TD>30<TD>30<TD>30<TD>30<TD>-<TD>30<TD><A HREF="DevilOutpost.htm">惡魔據點</A>
+  <TR><TD id="DevilCaptain">惡魔隊長<BR>魔鬼首領<br>Devil Captain<TD>30<TD>180<TD>25<TD>1200<TD>疾病<TD>物理<TD>2D8+10<TD>火<TD>3D8<TD>N6連珠火球<TD>免疫<TD>30<TD>30<TD>30<TD>30<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DevilMaster">惡魔大師<BR>魔鬼大師<br>Devil Master<TD>50<TD>400<TD>35<TD>3000<TD>疾病<TD>物理<TD>2D8+15<TD>火<TD>4D8<TD>M10流星火雨<TD>免疫<TD>40<TD>40<TD>40<TD>40<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DevilKing">惡魔之王<BR>魔鬼國王<br>Devil King<TD>70<TD>700<TD>45<TD>5600<TD>吸乾法力<TD>物理<TD>2D8+20<TD>火<TD>5D8<TD>M14烈火威彈<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="SweetWater.htm">甜水鎮</A><br><A HREF="TheHive.htm">蜂房</A>
+  <TR><TD id="DemonQueen"><FONT color=#cc0000>惡魔女王<BR>魔鬼女王<br>Demon Queen</FONT><TD>100<TD>1300<TD>40<TD>11000<TD>吸乾法力<TD>物理<TD>2D8+20<TD>-<TD>-<TD>M14烈火威彈<TD>免疫<TD>50<TD>50<TD>50<TD>免疫<TD>50<TD><A HREF="TheHive.htm">蜂房</A>
 
-<TR>
-<TD ALIGN=CENTER COLSPAN=20 BGCOLOR="#80ffff">
-<A name="special">
-<B><FONT COLOR="#FF0000">特殊</FONT></B>
-</TR>
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR id="special">
+<TH COLSPAN=20 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">特殊</FONT>
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=14><b>亡靈</b>
-  <td rowspan=3>骷髏<TD><A name="Skeleton">骸骨怪<BR>骷髏<br>Skeleton<TD>6<TD>21<TD>8<TD>96<TD>-<TD>物理<TD>3D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="SkeletonKnight">骸骨武士<BR>骷髏騎士<br>Skeleton Knight<TD>10<TD>40<TD>10<TD>200<TD>恐懼<TD>物理<TD>3D4+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="SkeletonLord">骸骨領主<BR>骷髏爵士<br>Skeleton Lord<TD>14<TD>61<TD>14<TD>336<TD>詛咒<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <tr><td rowspan=3>亡魂<TD><A name="Ghost">鬼魂<br>Ghost<TD>9<TD>35<TD>25<TD>171<TD>恐懼<TD>魔法<TD>1D6+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="EvilSpirit">惡靈<BR>邪惡精靈<br>Evil Spirit<TD>13<TD>55<TD>30<TD>299<TD>老化<TD>魔法<TD>2D6+6<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>15<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <TR><TD><A name="Spectre">幽靈<br>Spectre<TD>19<TD>93<TD>35<TD>551<TD>昏迷<TD>魔法<TD>3D6+6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>20<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
-  <tr><td rowspan=5>死神<TD><A name="Lich">巫妖<BR>死神<br>Lich<TD>20<TD>100<TD>15<TD>600<TD>-<TD>電<TD>3D8+6<TD>-<TD>-<TD>N10驅散魔法<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>-<TD><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="GreaterLich">大巫妖<BR>大死神<br>Greater Lich<TD>30<TD>180<TD>20<TD>1200<TD>-<TD>火<TD>4D8+12<TD>-<TD>-<TD>N10驅散魔法<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>5<TD><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><A name="PowerLich">強力殭屍<BR>力量死神<br>Power Lich<TD>40<TD>280<TD>25<TD>2000<TD>-<TD>能量<TD>5D8+20<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>10<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <TR><TD><FONT color=#cc0000><A name="Agar">阿加<br>Agar</FONT><TD>50<TD>320<TD>25<TD>11000<TD>-<TD>物理<TD>5D9+30<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>10<TD>免疫<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A>
-  <TR><TD><FONT color=#cc0000><A name="LichKing">死神之王<br>Lich King</FONT><TD>60<TD>600<TD>60<TD>2000<TD>-<TD>物理<TD>5D8+20<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>10<TD>免疫<TD><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
-  <tr><td rowspan=3>騎士<TD><A name="DeathKnight">死亡武士<BR>死亡騎士<br>Death Knight<TD>40<TD>280<TD>45<TD>2000<TD>恐懼<TD>物理<TD>4D5+20<TD>魔法<TD>4D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>10<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
-  <TR><TD><A name="DoomKnight">破壞武士<BR>毀滅騎士<br>Doom Knight<TD>60<TD>540<TD>65<TD>4200<TD>恐懼<TD>物理<TD>4D5+30<TD>魔法<TD>6D6<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>20<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
-  <TR><TD><A name="Cuisinart">毀滅武士<BR>終極騎士<br>Cuisinart<TD>80<TD>880<TD>85<TD>7200<TD>恐懼<TD>物理<TD>4D5+40<TD>魔法<TD>8D6<TD>-<TD>50<TD>50<TD>50<TD>50<TD>50<TD>30<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
+  <td rowspan=3>骷髏<TD id="Skeleton">骸骨怪<BR>骷髏<br>Skeleton<TD>6<TD>21<TD>8<TD>96<TD>-<TD>物理<TD>3D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="SkeletonKnight">骸骨武士<BR>骷髏騎士<br>Skeleton Knight<TD>10<TD>40<TD>10<TD>200<TD>恐懼<TD>物理<TD>3D4+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="SkeletonLord">骸骨領主<BR>骷髏爵士<br>Skeleton Lord<TD>14<TD>61<TD>14<TD>336<TD>詛咒<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>-<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TempleOfBaa.htm">羊鳴廟</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <tr><td rowspan=3>亡魂<TD id="Ghost">鬼魂<br>Ghost<TD>9<TD>35<TD>25<TD>171<TD>恐懼<TD>魔法<TD>1D6+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="EvilSpirit">惡靈<BR>邪惡精靈<br>Evil Spirit<TD>13<TD>55<TD>30<TD>299<TD>老化<TD>魔法<TD>2D6+6<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>15<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <TR><TD id="Spectre">幽靈<br>Spectre<TD>19<TD>93<TD>35<TD>551<TD>昏迷<TD>魔法<TD>3D6+6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>20<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><BR><A HREF="MireOfDamned.htm">幽靈沼澤</A>
+  <tr><td rowspan=5>死神<TD id="Lich">巫妖<BR>死神<br>Lich<TD>20<TD>100<TD>15<TD>600<TD>-<TD>電<TD>3D8+6<TD>-<TD>-<TD>N10驅散魔法<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>-<TD><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="GreaterLich">大巫妖<BR>大死神<br>Greater Lich<TD>30<TD>180<TD>20<TD>1200<TD>-<TD>火<TD>4D8+12<TD>-<TD>-<TD>N10驅散魔法<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>5<TD><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="PowerLich">強力殭屍<BR>力量死神<br>Power Lich<TD>40<TD>280<TD>25<TD>2000<TD>-<TD>能量<TD>5D8+20<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>10<TD><A HREF="CorlagonEstate.htm">考勒根的豪宅</A><BR><A HREF="TombOfEthricTheMad.htm">瘋子埃斯里克的墳墓</A><br><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <TR><TD id="Agar"><FONT color=#cc0000>阿加<br>Agar</FONT><TD>50<TD>320<TD>25<TD>11000<TD>-<TD>物理<TD>5D9+30<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>10<TD>免疫<TD><A HREF="AgarLaboratory.htm">阿加的實驗室</A>
+  <TR><TD id="LichKing"><FONT color=#cc0000>死神之王<br>Lich King</FONT><TD>60<TD>600<TD>60<TD>2000<TD>-<TD>物理<TD>5D8+20<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>10<TD>免疫<TD><A HREF="CastleDarkmoor.htm">黑摩爾城堡</A>
+  <tr><td rowspan=3>騎士<TD id="DeathKnight">死亡武士<BR>死亡騎士<br>Death Knight<TD>40<TD>280<TD>45<TD>2000<TD>恐懼<TD>物理<TD>4D5+20<TD>魔法<TD>4D6<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>10<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
+  <TR><TD id="DoomKnight">破壞武士<BR>毀滅騎士<br>Doom Knight<TD>60<TD>540<TD>65<TD>4200<TD>恐懼<TD>物理<TD>4D5+30<TD>魔法<TD>6D6<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>20<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
+  <TR><TD id="Cuisinart">毀滅武士<BR>終極騎士<br>Cuisinart<TD>80<TD>880<TD>85<TD>7200<TD>恐懼<TD>物理<TD>4D5+40<TD>魔法<TD>8D6<TD>-<TD>50<TD>50<TD>50<TD>50<TD>50<TD>30<TD><A HREF="WarlordFortress.htm">軍閥堡壘</A><br><A HREF="CavesOfTheDragonRiders.htm">馴龍者洞穴</A>
 
-<TR ALIGN=CENTER BGCOLOR="#ffffa0">
+<TR BGCOLOR="#ffffa0">
     <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=6>抗性<TH rowSpan=2>出現地點
-    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2 align=center>攻擊形態一<TH colSpan=2 align=center>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
-</TR>
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特殊技能<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>電<TH>冰<TH>毒<TH>魔法<TH>物理
 
 <tr>
 <td rowspan=16><b>精靈</b>
-  <td rowspan=3>火<TD><A name="FireBeast">火獸<br>Fire Beast<TD>13<TD>55<TD>12<TD>299<TD>-<TD>火<TD>2D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <TR><TD><A name="FireSpirit">火精靈<BR>烈火精靈<br>Fire Spirit<TD>26<TD>145<TD>15<TD>936<TD>-<TD>火<TD>5D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <TR><TD><A name="FireElemental">火系元素<BR>烈火元素<br>Fire Elemental<TD>39<TD>269<TD>18<TD>1911<TD>破壞物品<TD>火<TD>8D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
-  <tr><td rowspan=3>水<TD><A name="WaterBeast">水獸<br>Water Beast<TD>14<TD>61<TD>10<TD>336<TD>-<TD>物理<TD>3D12<TD>-<TD>-<TD>N3霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
-  <TR><TD><A name="WaterSpirit">水精靈<br>Water Spirit<TD>24<TD>129<TD>13<TD>816<TD>-<TD>物理<TD>4D12<TD>-<TD>-<TD>N5霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
-  <TR><TD><A name="WaterElemental">水系元素<BR>水元素<br>Water Elemental<TD>36<TD>237<TD>16<TD>1656<TD>破壞物品<TD>物理<TD>6D12<TD>-<TD>-<TD>N7霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
-  <tr><td rowspan=3>風<TD><A name="DustDevil">風沙惡魔<BR>塵土惡魔<br>Dust Devil<TD>16<TD>73<TD>10<TD>416<TD>-<TD>電<TD>3D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="Twister">龍捲風<BR>陸龍捲<br>Twister<TD>22<TD>114<TD>12<TD>704<TD>-<TD>電<TD>5D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <TR><TD><A name="AirElemental">風系元素<BR>空氣元素<br>Air Elemental<TD>33<TD>207<TD>14<TD>1419<TD>破壞物品<TD>電<TD>8D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
-  <tr><td rowspan=3>土<TD><A name="RockBeast">岩石怪獸<BR>石獸<br>Rock Beast<TD>25<TD>137<TD>20<TD>875<TD>-<TD>物理<TD>10D3<TD>物理<TD>8D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
-  <TR><TD><A name="EarthSpirit">大地精靈<BR>泥土精靈<br>Earth Spirit<TD>30<TD>180<TD>25<TD>1200<TD>破壞盔甲<TD>物理<TD>15D3<TD>物理<TD>12D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
-  <TR><TD><A name="EarthElemental">地系元素<BR>泥土元素<br>Earth Elemental<TD>40<TD>280<TD>30<TD>2000<TD>昏迷<TD>物理<TD>25D3<TD>物理<TD>20D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
-  <tr><td rowspan=4>精靈<TD><FONT color=#cc0000><A name="LesserGenie">小妖怪<br>Lesser Genie</FONT><TD>25<TD>136<TD>35<TD>0<TD>-<TD>冰<TD>6D4+8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD>75<TD><A HREF="ShadowGuild.htm">陰影教</A>
-  <TR><TD><A name="Genie">精靈<BR>小妖怪<br>Genie<TD>33<TD>207<TD>35<TD>1419<TD>-<TD>冰<TD>8D4+8<TD>-<TD>-<TD>M10霹靂寒冰<TD>-<TD>30<TD>免疫<TD>30<TD>免疫<TD>30<TD><A HREF="ShadowGuild.htm">陰影教</A><br><A HREF="TombOfVARN.htm">維蘭墳墓</A>
-  <TR><TD><A name="Djinn">神怪<BR>中妖怪<br>Djinn<TD>44<TD>325<TD>45<TD>2376<TD>沉睡<TD>電<TD>10D4+10<TD>-<TD>-<TD>M12霹靂閃電<TD>30<TD>免疫<TD>30<TD>-<TD>免疫<TD>30<TD><A HREF="ShadowGuild.htm">陰影教</A><br><A HREF="TombOfVARN.htm">維蘭墳墓</A>
-  <TR><TD><A name="Efreet">神魔<BR>大妖怪<br>Efreet<TD>55<TD>467<TD>55<TD>3575<TD>恐懼<TD>火<TD>12D4+12<TD>-<TD>-<TD>M15連珠火球<TD>免疫<TD>30<TD>-<TD>30<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <td rowspan=3>火<TD id="FireBeast">火獸<br>Fire Beast<TD>13<TD>55<TD>12<TD>299<TD>-<TD>火<TD>2D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <TR><TD id="FireSpirit">火精靈<BR>烈火精靈<br>Fire Spirit<TD>26<TD>145<TD>15<TD>936<TD>-<TD>火<TD>5D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <TR><TD id="FireElemental">火系元素<BR>烈火元素<br>Fire Elemental<TD>39<TD>269<TD>18<TD>1911<TD>破壞物品<TD>火<TD>8D8<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="GharikForge.htm">加里克的煉鐵廠</A><br><A HREF="SupremeTempleOfBaa.htm">超級羊鳴廟</A>
+  <tr><td rowspan=3>水<TD id="WaterBeast">水獸<br>Water Beast<TD>14<TD>61<TD>10<TD>336<TD>-<TD>物理<TD>3D12<TD>-<TD>-<TD>N3霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
+  <TR><TD id="WaterSpirit">水精靈<br>Water Spirit<TD>24<TD>129<TD>13<TD>816<TD>-<TD>物理<TD>4D12<TD>-<TD>-<TD>N5霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
+  <TR><TD id="WaterElemental">水系元素<BR>水元素<br>Water Elemental<TD>36<TD>237<TD>16<TD>1656<TD>破壞物品<TD>物理<TD>6D12<TD>-<TD>-<TD>N7霹靂寒冰<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>10<TD><A HREF="EelInfestedWaters.htm">魔鬼水域</A><br><A HREF="Monolith.htm">獨立碑</A>
+  <tr><td rowspan=3>風<TD id="DustDevil">風沙惡魔<BR>塵土惡魔<br>Dust Devil<TD>16<TD>73<TD>10<TD>416<TD>-<TD>電<TD>3D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="Twister">龍捲風<BR>陸龍捲<br>Twister<TD>22<TD>114<TD>12<TD>704<TD>-<TD>電<TD>5D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <TR><TD id="AirElemental">風系元素<BR>空氣元素<br>Air Elemental<TD>33<TD>207<TD>14<TD>1419<TD>破壞物品<TD>電<TD>8D6<TD>-<TD>-<TD>-<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Blackshire.htm">布萊克郡</A><br><A HREF="CastleAlamos.htm">阿拉莫斯城堡</A>
+  <tr><td rowspan=3>土<TD id="RockBeast">岩石怪獸<BR>石獸<br>Rock Beast<TD>25<TD>137<TD>20<TD>875<TD>-<TD>物理<TD>10D3<TD>物理<TD>8D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
+  <TR><TD id="EarthSpirit">大地精靈<BR>泥土精靈<br>Earth Spirit<TD>30<TD>180<TD>25<TD>1200<TD>破壞盔甲<TD>物理<TD>15D3<TD>物理<TD>12D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
+  <TR><TD id="EarthElemental">地系元素<BR>泥土元素<br>Earth Elemental<TD>40<TD>280<TD>30<TD>2000<TD>昏迷<TD>物理<TD>25D3<TD>物理<TD>20D3<TD>-<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>10<TD><A HREF="Monolith.htm">獨立碑</A><br><A HREF="Kriegspire.htm">克里格斯</A>
+  <tr><td rowspan=4>精靈<TD id="LesserGenie"><FONT color=#cc0000>小妖怪<br>Lesser Genie</FONT><TD>25<TD>136<TD>35<TD>0<TD>-<TD>冰<TD>6D4+8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD>75<TD><A HREF="ShadowGuild.htm">陰影教</A>
+  <TR><TD id="Genie">精靈<BR>小妖怪<br>Genie<TD>33<TD>207<TD>35<TD>1419<TD>-<TD>冰<TD>8D4+8<TD>-<TD>-<TD>M10霹靂寒冰<TD>-<TD>30<TD>免疫<TD>30<TD>免疫<TD>30<TD><A HREF="ShadowGuild.htm">陰影教</A><br><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <TR><TD id="Djinn">神怪<BR>中妖怪<br>Djinn<TD>44<TD>325<TD>45<TD>2376<TD>沉睡<TD>電<TD>10D4+10<TD>-<TD>-<TD>M12霹靂閃電<TD>30<TD>免疫<TD>30<TD>-<TD>免疫<TD>30<TD><A HREF="ShadowGuild.htm">陰影教</A><br><A HREF="TombOfVARN.htm">維蘭墳墓</A>
+  <TR><TD id="Efreet">神魔<BR>大妖怪<br>Efreet<TD>55<TD>467<TD>55<TD>3575<TD>恐懼<TD>火<TD>12D4+12<TD>-<TD>-<TD>M15連珠火球<TD>免疫<TD>30<TD>-<TD>30<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A>
 
 <tr>
 <td rowspan=4><b>機器</b>
-  <td rowspan=4>機器人<TD><A name="PatrolUnit">巡邏部隊<BR>巡邏隊<br>Patrol Unit<TD>50<TD>400<TD>60<TD>3000<TD>破壞物品<TD>能量<TD>10D5+10<TD>-<TD>-<TD>-<TD>30<TD>10<TD>30<TD>免疫<TD>免疫<TD>20<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A><br><A HREF="ControlCenter.htm">控制中心</A>
-  <TR><TD><A name="EnforcerUnit">強制執行部隊<BR>戰鬥部隊<br>Enforcer Unit<TD>70<TD>700<TD>80<TD>5600<TD>破壞物品<TD>能量<TD>12D5+15<TD>-<TD>-<TD>-<TD>40<TD>20<TD>40<TD>免疫<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A><br><A HREF="ControlCenter.htm">控制中心</A>
-  <TR><TD><A name="TerminatorUnit">終結者部隊<BR>毀滅部隊<br>Terminator Unit<TD>90<TD>1080<TD>100<TD>9000<TD>滅絕<TD>能量<TD>20D5+20<TD>-<TD>-<TD>-<TD>60<TD>30<TD>60<TD>免疫<TD>免疫<TD>50<TD><A HREF="ControlCenter.htm">控制中心</A>
-  <TR><TD><FONT color=#cc0000><A name="Reactor">反應器<br>Reactor</FONT><TD>100<TD>1300<TD>40<TD>11000<TD>-<TD>能量<TD>20D5+20<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="TheHive.htm">蜂房</A>
+  <td rowspan=4>機器人<TD id="PatrolUnit">巡邏部隊<BR>巡邏隊<br>Patrol Unit<TD>50<TD>400<TD>60<TD>3000<TD>破壞物品<TD>能量<TD>10D5+10<TD>-<TD>-<TD>-<TD>30<TD>10<TD>30<TD>免疫<TD>免疫<TD>20<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A><br><A HREF="ControlCenter.htm">控制中心</A>
+  <TR><TD id="EnforcerUnit">強制執行部隊<BR>戰鬥部隊<br>Enforcer Unit<TD>70<TD>700<TD>80<TD>5600<TD>破壞物品<TD>能量<TD>12D5+15<TD>-<TD>-<TD>-<TD>40<TD>20<TD>40<TD>免疫<TD>免疫<TD>30<TD><A HREF="TombOfVARN.htm">維蘭墳墓</A><br><A HREF="ControlCenter.htm">控制中心</A>
+  <TR><TD id="TerminatorUnit">終結者部隊<BR>毀滅部隊<br>Terminator Unit<TD>90<TD>1080<TD>100<TD>9000<TD>滅絕<TD>能量<TD>20D5+20<TD>-<TD>-<TD>-<TD>60<TD>30<TD>60<TD>免疫<TD>免疫<TD>50<TD><A HREF="ControlCenter.htm">控制中心</A>
+  <TR><TD id="Reactor"><FONT color=#cc0000>反應器<br>Reactor</FONT><TD>100<TD>1300<TD>40<TD>11000<TD>-<TD>能量<TD>20D5+20<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD><A HREF="TheHive.htm">蜂房</A>
 
 </table>
 

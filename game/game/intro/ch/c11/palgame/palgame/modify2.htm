@@ -4,8 +4,8 @@
 <title>資訊修改</title>
 </head>
 <body>
-<pre>
-<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU; font-size: 16px;">
 以下為新仙劍奇俠傳各遊戲資訊檔的作用：
 
 <A href="#geindex">GeIndex.dat</A>    各類資訊位置索引檔
@@ -17,7 +17,7 @@
 gmap.dat       場景資訊檔
 maps.dat       場景物件檔
 
-<FONT COLOR=BLUE><B><A name="geindex">*** 各類資訊位置索引檔 GeIndex.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="geindex">*** 各類資訊位置索引檔 GeIndex.dat</B></FONT>
 
 檔頭資訊數：4 byte整數
 檔頭資訊：每組8 byte，格式作用不明
@@ -59,7 +59,7 @@ maps.dat       場景物件檔
 資訊所在位置的內容均以特徵碼表示，類似腳本Script的執行，最後以特徵碼
 7F00FFFFh做為結束。
 
-<FONT COLOR=BLUE><B><A name="ghero">*** 初登場人物資訊檔 ghero.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="ghero">*** 初登場人物資訊檔 ghero.dat</B></FONT>
 
 7F101000h + 人物內部編號
 7FF2F000h + 人物名稱
@@ -92,7 +92,7 @@ maps.dat       場景物件檔
   :
 7F00FFFFh (結束)
 
-<FONT COLOR=BLUE><B><A name="gmon">*** 怪物資訊檔 gmon.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="gmon">*** 怪物資訊檔 gmon.dat</B></FONT>
 
 7F101000h + 怪物內部編號
 7FF2F000h + 怪物名稱
@@ -142,7 +142,7 @@ maps.dat       場景物件檔
 7F201001h + 219 + 掉落金錢
 7F00FFFFh (結束)
 
-<FONT COLOR=BLUE><B><A name="glevel">*** 升級資訊檔 glevel.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="glevel">*** 升級資訊檔 glevel.dat</B></FONT>
 
 7F101000h + 升級內部編號
 7FF2F000h + 名稱
@@ -162,7 +162,7 @@ maps.dat       場景物件檔
 7F201001h + 220 + 仙術編號
 7F00FFFFh (結束)
 
-<FONT COLOR=BLUE><B><A name="gitem">*** 物品資訊檔 gitem.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="gitem">*** 物品資訊檔 gitem.dat</B></FONT>
 
 7F100000h + 物品編號
 7FF2F000h + 物品名稱
@@ -180,7 +180,7 @@ maps.dat       場景物件檔
 7F200001h + 11 + 目前經驗
 7F00FFFFh (結束)
 
-<FONT COLOR=BLUE><B><A name="gmagic">*** 仙術資訊檔 gmagic.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="gmagic">*** 仙術資訊檔 gmagic.dat</B></FONT>
 
 7F100000h + 仙術編號
 7FF2F000h + 仙術名稱
@@ -215,7 +215,7 @@ maps.dat       場景物件檔
 7FF2F000h + 名稱，BIG5或GB碼，以%%做為字串結束
 7FF2F001h + 說明文字，BIG5或GB碼，以%%做為字串結束
 
-<FONT COLOR=BLUE><B><A name="attrb">*** 屬性編號一覽表</B></FONT>
+<FONT COLOR=BLUE><B><A id="attrb">*** 屬性編號一覽表</B></FONT>
 
 0 = 使用時是否選人
 1 = 平時使用／施展執行代碼，EFFFh表無
@@ -290,7 +290,7 @@ maps.dat       場景物件檔
 219 = 掉落金錢
 221 = 裝備編號
 220 = 仙術編號
-  
+
 </font>
 </pre>
 </body>

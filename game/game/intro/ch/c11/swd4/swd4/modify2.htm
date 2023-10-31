@@ -4,15 +4,15 @@
 <title>資訊修改</title>
 </head>
 <body>
-<pre>
-<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU; font-size: 16px;">
 以下為軒轅劍4各遊戲資訊檔的作用：
 
 <A href="#objdata">ObjData.GLL</A>    名稱資訊檔
 <A href="#level">LEVEL.GLL</A>      升級資訊檔
 
 
-<FONT COLOR=BLUE><B><A name="objdata">*** 名稱資訊檔 ObjData.GLL</B></FONT>
+<FONT COLOR=BLUE><B><A id="objdata">*** 名稱資訊檔 ObjData.GLL</B></FONT>
 
 檔頭標記：16 byte，固定"GLL022"，其餘補00h
 名稱資訊位置：每個名稱4 byte，按名稱代碼排列。位置=名稱資訊位置[名稱代碼-1]+16
@@ -25,7 +25,7 @@
   天書：26ADh～26C9h
 
 
-<FONT COLOR=BLUE><B><A name="level">*** 升級資訊檔 LEVEL.GLL</B></FONT>
+<FONT COLOR=BLUE><B><A id="level">*** 升級資訊檔 LEVEL.GLL</B></FONT>
 
 檔頭標記：16 byte，固定"GLL022"，其餘補00h
 升級資訊位置：每個主角4 byte（次序：水鏡、姬良、疾鵬），位置=升級資訊位置+16

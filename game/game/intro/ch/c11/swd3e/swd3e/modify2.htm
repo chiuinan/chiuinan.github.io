@@ -4,13 +4,13 @@
 <title>資訊修改</title>
 </head>
 <body>
-<pre>
-<font face=細明體 size=3><CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU; font-size: 16px;">
 <A href="#mon">mon.dat</A>       怪物／物品／奇術資訊檔
 <A href="#maps">MAPS.dat</A>      場景／雜項資訊檔
 <A href="#level">level.dat</A>     升級資訊檔
 
-<FONT COLOR=BLUE><B><A name="mon">*** 怪物／物品／奇術資訊檔 mon.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="mon">*** 怪物／物品／奇術資訊檔 mon.dat</B></FONT>
 
 檔頭：200h=512 byte
 資訊位置指標：各4 byte（實際位置=位置指標+200h），0表沒有定義
@@ -24,7 +24,7 @@
 各參數未特別標示時，內定為2 byte
 機率單位值為5%
 
-0001 + 活物代碼 + 類別 + 屬性x9 + 不明 + 
+0001 + 活物代碼 + 類別 + 屬性x9 + 不明 +
   (攻擊奇術+機率)x3 + (不明攻擊代碼+機率)x2 + (恢復奇術+機率)x2 +
   掉落物品+機率 + 可偷物品+數量 + 掉落金錢 + 不明10 byte + 抗性 + 不明
   活物代碼 = 0表非敵人
@@ -164,7 +164,7 @@
 001E = 不明
 001F + 不明
 
-<FONT COLOR=BLUE><B><A name="maps">*** 場景／雜項資訊檔 MAPS.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="maps">*** 場景／雜項資訊檔 MAPS.dat</B></FONT>
 
 檔頭：200h=512 byte
 資訊位置指標：各4 byte（實際位置=位置指標+200h），0表沒有定義
@@ -177,7 +177,7 @@
 字串位置表：按代碼排列（例如葉舞術=177Dh），指向字串內容位置（實際位置=位置指標+200h）
 字串內容：以%Q為結束
 
-<FONT COLOR=BLUE><B><A name="level">*** 升級資訊檔 level.dat</B></FONT>
+<FONT COLOR=BLUE><B><A id="level">*** 升級資訊檔 level.dat</B></FONT>
 
 檔頭：200h=512 byte
 資訊位置指標：各4 byte（實際位置=位置指標+200h），0表沒有定義

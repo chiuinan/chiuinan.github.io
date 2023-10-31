@@ -1,14 +1,14 @@
 ﻿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
 <title>選單說明</title>
 </head>
 <body>
-<pre>
-<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>選單說明</b></FONT></CENTER>
+<CENTER><FONT COLOR=FF0000 size=5><b>選單說明</b></FONT></CENTER>
+<pre style="font-family: MingLiU; font-size: 16px;">
 選單說明：<A href="#0">主畫面選單</A>、<A href="#1">大地圖選單</A>、<A href="#2">戰鬥選單</A>
 
-<font color=blue><b><A name="0">一、主畫面選單</b></font>
+<font color=blue><b><A id="0">一、主畫面選單</b></font>
 
 1.劇情模式：由單一玩家與三位電腦控制對手，從第一章挑戰至第四章，每章有各自會出現
   的<A href="monster.htm">怪物</A>與<A href="item.htm">物品</A>。各角色優劣，請參見<A href="role.htm">主角列表</A>。
@@ -18,7 +18,7 @@
 4.離開遊戲：結束遊戲，回到DOS。
 
 
-<font color=blue><b><A name="1">二、大地圖選單</b></font>
+<font color=blue><b><A id="1">二、大地圖選單</b></font>
 
 1.移動：擲一顆骰子決定前進步數（0～6）。
 2.使用：使用卡片或道具（無法使用者不會出現）。
@@ -71,7 +71,7 @@ G：金錢
   (6)結束遊戲：回到主畫面。
 
 
-<font color=blue><b><A name="2">三、戰鬥選單</b></font>
+<font color=blue><b><A id="2">三、戰鬥選單</b></font>
 
 <img src="amenu1.PNG" valign=middle>攻擊  <img src="amenu2.PNG" valign=middle>法術  <img src="amenu3.PNG" valign=middle>物品  <img src="amenu4.PNG" valign=middle>防禦  <img src="amenu5.PNG" valign=middle>交談  <img src="amenu6.PNG" valign=middle>逃跑
 
@@ -83,10 +83,10 @@ G：金錢
 註：程式原本應該在戰鬥回合結束後重置防禦力數值（以消去暫時增加的50%防禦力），但
     誤放在每次敵人攻擊之後，於是第一位敵人攻擊之後，防禦力就被重置了，後面敵人的
     攻擊，防禦暫時增加的50%防禦力便沒有了。而且<font color=red>重置防禦力數值時，也沒有加上裝備
-    增加的防禦力</font>，於是玩家會覺得被愈打愈痛，實則只有被第一位敵人攻擊時有裝備增加
-    的防禦力，之後等於就是裸身被打。可進行<A href="modify1.htm">程式修改</A>，但修改後不會重置防禦力數值，
-    也就是防禦暫時增加的50%防禦力會持續到戰鬥結束，且每次防禦都會再增加50%防禦力，
-    算是很有幫助的bug密技。
+    增加的防禦力，取AP值時又讀錯了位置，造成實際的防禦力數值變得極低</font>，於是玩家會
+    覺得被愈打愈痛，實則只有被第一位敵人攻擊時有防禦力，之後等於就是無防禦力被打。
+    可進行<A href="modify1.htm">程式修改</A>，建議是不重置防禦力數值，也就是防禦暫時增加的50%防禦力會持續
+    到戰鬥結束，且每次防禦都會再增加50%防禦力，變成很有幫助的bug密技。
 
 5.交談：只限第一回合開始前
   (1)好言相勸：無作用的交談，對方可能直接進入戰鬥，先行攻擊。
@@ -100,7 +100,7 @@ G：金錢
 6.逃跑：逃離戰鬥，成功率為50%。
 
 
-<font color=blue><b><A name="news">*** 消息一覽表</b></font>
+<font color=blue><b><A id="news">*** 消息一覽表</b></font>
 
 1-1 聽說神之草只生長在山洞中。
 1-2 在『沙多里』的老人擁有真實之珠。

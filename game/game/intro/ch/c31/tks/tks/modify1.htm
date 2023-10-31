@@ -1,11 +1,11 @@
 ﻿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
 <title>程式修改</title>
 </head>
 <body>
-<pre>
-<font face="細明體" size=3><CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU; font-size: 16px;">
 <b>修正</b>：126關長安防衛戰出現找不到script\126chanandef.tks的錯誤
 
 將檔案script\126chanan.tks更名為126chanandef.tks
@@ -79,7 +79,7 @@
    8D 54 24 10 6A 01 52
    EB 0B -- -- -- -- --
 
-<A name="402"><b>修改</b>：script\stage.txt
+<A id="402"><b>修改</b>：script\stage.txt
 
 1.加入下列文字，可每7回合增加陸遜單挑事件（可增加弓箭技能）：
 
@@ -89,7 +89,7 @@
 [stagecount>(4)]
 }
 
-<A name="pos"><b>修改</b>：pos\402bowfight.pos
+<A id="pos"><b>修改</b>：pos\402bowfight.pos
 
 1.陸遜單挑關卡，敵我雙方位置調換，避免陸遜血少時逃開，造成卡關：
   位置0008h：10 00 00 00 11 00 00 00  (上下兩行第一個數字互換)
