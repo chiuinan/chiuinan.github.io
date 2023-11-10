@@ -6,24 +6,7 @@
 <body>
 <CENTER><FONT COLOR=FF0000 size=5><b>卡片列表</b></FONT></CENTER>
 <pre style="font-family: MingLiU; font-size: 16px;">
-1.機率為踏中機會可獲得卡片的機率。小丑卡轉變、福袋卡獲得、進入卡片店出現的機率，
-  各卡片是相同的，並不採用此數值。
-2.使用傭兵卡時，最多人數為5+(0～7)，所有傭兵出現機率均相同（必須該章可出現，且該
-  角色可雇用者），可重複出現，其等級為主角的等級再隨機增加0～3級。
-3.原本瘟疫卡作用對象為不死族與魔族以外的守軍、淨化卡作用對象為不死族與魔族的守軍，
-  但因程式並未做種族判斷，且將兩卡合併在一起處理，於是<font color=red>所有種族均會作用</font>。此處程式
-  無法進行修正。
-4.瘟疫卡、淨化卡、流星卡的作業對象也可以是中立的領地，但遊戲限制必須有對手時才能
-  使用，明顯不合理，可進行<A href="modify1.htm">程式修正</A>。
-5.交換卡的限制條件原本為我方有額外領地，遊戲卻誤設為對手有額外領地，為一明顯Bug，
-  可進行<A href="modify1.htm">程式修正</A>。若未修正，若我方無額外領地，而對手有額外領地時，使用交換卡即可
-  直接強佔一塊領地，為此Bug衍生出來的密技。
-6.使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時去更新地圖資訊</font>，導致移動踏上時，
-  仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。
-  此bug目前無法修正。
-7.戰鬥類卡片施展的法術，只能攻擊單一敵人，即便原本是全體攻擊的法術。
-8.因程式誤寫，導致月神卡無法在戰鬥中使用，可進行<A href="modify1.htm">程式修正</A>。
-
+<A href="#notes"><b>注意事項</b></A>
 <TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <TR bgcolor="#c0ffff"><TH colspan=20>移動類
 <TR bgcolor="#ffffc0"><TH>編號<TH>名稱<th>機率<TH>價格<TH>使用時機<TH>對象<TH>作用
@@ -33,14 +16,14 @@
 <TR><TD align=center>40<TD>四步卡<TD ALIGN=center>5%<TD align=right>100<TD>地圖<TD>自己<TD>在地圖畫面上移動4步
 <TR><TD align=center>41<TD>五步卡<TD ALIGN=center>5%<TD align=right>300<TD>地圖<TD>自己<TD>在地圖畫面上移動5步
 <TR><TD align=center>42<TD>六步卡<TD ALIGN=center>5%<TD align=right>500<TD>地圖<TD>自己<TD>在地圖畫面上移動6步
-<TR><TD align=center>43<TD>任意步卡<TD ALIGN=center>2%<TD align=right>1000<TD>地圖<TD>自己<TD>可自行決定移動步數（1～6）
+<TR><TD align=center>43<TD>任意步卡<TD ALIGN=center>2%<TD align=right>1000<TD>地圖<TD>自己<TD>可自行決定移動步數（1～6），使用後無法取消
 <TR><TD align=center>44<TD>倍速卡<TD ALIGN=center>2%<TD align=right>200<TD>地圖<TD>自己<TD>擲2顆骰子決定移動步數
 <TR><TD align=center>45<TD>神行卡<TD ALIGN=center>2%<TD align=right>500<TD>地圖<TD>自己<TD>擲3顆骰子決定移動步數
 <TR><TD align=center>46<TD>轉移卡<TD ALIGN=center>1%<TD align=right>2000<TD>地圖<TD>自己<TD>可自行決定前往的地圖位置（禁區除外）
 <TR bgcolor="#c0ffff"><TH colspan=20>攻擊類
 <TR bgcolor="#ffffc0"><TH>編號<TH>名稱<th>機率<TH>價格<TH>使用時機<TH>對象<TH>作用
 <TR><TD align=center>47<TD>吹跑卡<TD ALIGN=center>1%<TD align=right>200<TD>地圖<TD>對手<TD>將指定對象隨機移往地圖上的某一處
-<TR><TD align=center>48<TD>詛咒卡<TD ALIGN=center>2%<TD align=right>500<TD>地圖<TD>對手<TD>使指定對象無法行動1～3回合（可累加）
+<TR><TD align=center>48<TD>詛咒卡<TD ALIGN=center>2%<TD align=right>500<TD>地圖<TD>對手<TD>使指定對象無法行動1～3回合（<font color=red>可累加</font>）
 <TR><TD align=center>61<TD>封印卡<TD ALIGN=center>2%<TD align=right>800<TD>地圖<TD>對手<TD>可使指定對象3回合內無法使用卡片（無法累加）
 <TR><TD align=center>5F<TD>奪取卡<TD ALIGN=center>2%<TD align=right>1000<TD>地圖<TD>對手<TD>可奪取指定對象之任一卡片，對手有卡片時才能使用
 <TR><TD align=center>60<TD>破壞卡<TD ALIGN=center>2%<TD align=right>2000<TD>地圖<TD>對手<TD>可消除指定對象一半的卡片（無條件進位，除去後半卡片），對手有卡片時才能使用
@@ -48,7 +31,7 @@
 <TR><TD align=center>5D<TD>天罰卡<TD ALIGN=center>2%<TD align=right>1000<TD>地圖<TD>對手<TD>使指定對象損失1/8～1/2金錢
 <TR><TD align=center>5B<TD>機運卡<TD ALIGN=center>4%<TD align=right>100<TD>地圖<TD>對手<TD>使指定對象隨機發生一個<A href="event.htm#chance">命運事件</A>
 <TR><TD align=center>5C<TD>小丑卡<TD ALIGN=center>3%<TD align=right>500<TD>地圖<TD>自己<TD>將小丑卡隨機轉變成某種卡並直接使用
-<TR><TD align=center>5E<TD>平均卡<TD ALIGN=center>1%<TD align=right>2000<TD>地圖<TD>全體<TD>均分所有人之資金（若有人擁有防禦卡時無效）
+<TR><TD align=center>5E<TD>平均卡<TD ALIGN=center>1%<TD align=right>2000<TD>地圖<TD>全體<TD>均分所有人之資金
 <TR><TD align=center>5A<TD>陷阱卡<TD ALIGN=center>2%<TD align=right>500<TD>地圖<TD>所在格<TD>佈下陷阱，若有人踏中時即發生<A href="event.htm#8">中陷阱事件</A>
 <TR bgcolor="#c0ffff"><TH colspan=20>領地類
 <TR bgcolor="#ffffc0"><TH>編號<TH>名稱<th>機率<TH>價格<TH>使用時機<TH>對象<TH>作用
@@ -80,6 +63,49 @@
 <TR><TD align=center>51<TD>聚氣卡<TD ALIGN=center>3%<TD align=right>800<TD>戰鬥/地圖<TD>我方<TD>恢復全體50%法力
 <TR><TD align=center>52<TD>月神卡<TD ALIGN=center>1%<TD align=right>2000<TD><font color=red>地圖</A><TD>我方<TD>恢復全體100%法力
 </TABLE>
+<A id="notes"><b>說明</b>：
+
+01.機率為踏中機會可獲得卡片的機率。小丑卡轉變、福袋卡獲得、進入卡片店出現的機率，
+   各卡片都是相同的，並不採用此數值。
+02.詛咒卡效果可以累加，玩家可利用<A href="trick.htm">密技</A>將所有對手長時間定住。如果覺得這種方式會破壞
+   遊戲平衡，也可進行<A href="modify1.htm">程式修正</A>。
+03.小丑卡不會轉變成小丑卡、戰鬥類卡片，其他卡片的限制條件為：
+   (1)叛亂卡：必須有對手，對手必須有額外領地
+   (2)交換卡：我方必須有額外領地，<font color=red>對手必須有額外領地</font> (若沒修正的話)
+   (3)瘟疫卡、淨化卡、流星卡：<font color=red>必須有對手</font> (若沒修正的話)
+   (4)奪取卡、破壞卡：對手必須有卡片
+04.使用英雄卡，進入裝備店後，會在離開商店時才清除英雄卡效果，因此可以不斷買賣迅速
+   致富。但若是卡片店，則在進入購買後，便會清除英雄卡效果，因此只能有一次購買原價
+   50%物品的機會。若覺得兩者不一致，可依自己喜好進行<A href="modify1.htm">程式修正</A>。
+05.使用傭兵卡時，最多人數為5+(0～7)，所有傭兵出現機率均相同（必須該章可出現，且該
+   角色可雇用者），可重複出現，其等級為主角的等級再隨機增加0～3級。
+06.戰鬥類卡片施展的法術，只能攻擊單一敵人，即便原本是全體攻擊的法術。如果認為攻擊
+   全體比較實用，也可進行<A href="modify1.htm">程式修正</A>。
+
+<b>Bug</b>：
+
+01.使用轉移卡時，按Esc應為取消，但遊戲卻視為指定主角所在地點，可進行<A href="modify1.htm">程式修正</A>。
+02.吹跑卡、詛咒卡、封印卡、腐朽卡、天罰卡、機運卡等需要指定對手的卡片，<font color=red>在沒有對手
+   時仍能使用，但使用後因無法指定對手，可能導致當機</font>。同樣問題也發生在小丑卡，當沒
+   有對手時，若轉變成前述卡，一樣會當機。可進行<A href="modify1.htm">程式修正</A>。
+03.破壞卡在指定對手時，按Esc應為取消，但<font color=red>因遊戲誤寫，導致仍繼續執行，以致可能發生
+   不可預期的現象</font>，可進行<A href="modify1.htm">程式修正</A>。
+04.平均卡若<font color=red>第一個人物（希洛）陣亡時使用，會引發當機</font>，可進行<A href="modify1.htm">程式修正</A>。
+05.原本瘟疫卡作用對象為不死族與魔族以外的守軍、淨化卡作用對象為不死族與魔族的守軍，
+   但程式並未做種族判斷，於是<font color=red>所有種族均會作用</font>。可進行<A href="modify1.htm">程式修正</A>。
+06.瘟疫卡、淨化卡、流星卡的作用對象也可以是中立的領地，但<font color=red>遊戲限制必須有對手時才能
+   使用</font>，明顯不合理，可進行<A href="modify1.htm">程式修正</A>。
+07.判亂卡雖限制必須對手有額外領地，但<font color=red>在選擇目標時，卻可以選擇中立領地</font>（必定失敗），
+   為一明顯bug，可進行<A href="modify1.htm">程式修正</A>。
+08.交換卡的限制條件原本為我方有額外領地，<font color=red>遊戲卻誤設為對手有額外領地</font>，為一明顯Bug，
+   可進行<A href="modify1.htm">程式修正</A>。若未修正，若我方無額外領地，而對手有額外領地時，使用交換卡即可
+   直接強佔一塊領地，為此Bug衍生出來的密技。
+09.使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時去更新地圖資訊</font>，導致移動踏上時，
+   仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。
+   可進行<A href="modify1.htm">程式修正</A>。
+10.小丑卡轉變成瘟疫卡、淨化卡等需要指定領地的卡片，<font color=red>若已無領地可選時可能導致當機</font>，
+   可進行<A href="modify1.htm">程式修正</A>。
+11.因程式誤寫，導致<font color=red>月神卡無法在戰鬥中使用</font>，可進行<A href="modify1.htm">程式修正</A>。
 </font>
 </pre>
 </body>
