@@ -1,0 +1,647 @@
+﻿<HTML>
+<HEAD>
+   <meta charset="utf-8">
+   <TITLE>敵人列表</TITLE>
+</HEAD>
+
+<body>
+
+<CENTER>
+<P>
+敵人列表：<A HREF="#human">人類</A>、<A HREF="#beast">怪獸</A>、<A HREF="#special">特殊</A>
+<br>
+法術：N=普通級，E=專家級，M=大師級
+
+<TABLE BORDER=1 cellspacing="0" cellpadding="1">
+
+<TR id="human">
+<TH COLSPAN=24 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">人類</FONT>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2 nowrap>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2 nowrap>出現地點
+    <TR BGCOLOR="#ffffa0"><TH nowrap>等級<TH nowrap>生命<TH nowrap>防禦<TH nowrap>經驗<TH nowrap>特技<TH colSpan=2 nowrap>攻擊形態一<TH colSpan=2 nowrap>攻擊形態二<TH nowrap>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=6><b>盜賊</b>
+
+  <td rowspan=3>小偷<TD id="Thief">小偷<br>竊賊<br>Thief
+      <TD>8<TD>30<TD>10<TD>144<TD>偷竊<TD>物理<TD>3D4+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="bandit.htm">強盜窩</A><br><A HREF="tide.htm">潮穴</A>
+  <TR><TD id="Rogue">飛賊<br>盜賊<br>Rogue
+      <TD>12<TD>50<TD>14<TD>264<TD>偷竊<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="bandit.htm">強盜窩</A><br><A HREF="tide.htm">潮穴</A>
+  <TR><TD id="MasterThief">賊王<br>神偷<br>Master Thief
+      <TD>18<TD>86<TD>20<TD>504<TD>偷竊<TD>物理<TD>3D4+12<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="bandit.htm">強盜窩</A><br><A HREF="tide.htm">潮穴</A>
+
+  <tr><td rowspan=3>強盜<TD id="Robber">強盜<br>劫匪<br>Robber
+      <TD>8<TD>30<TD>12<TD>144<TD>-<TD>物理<TD>2D4+1<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>10<TD>10<TD>10<TD>-<TD>-<TD>5
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bandit.htm">強盜窩</A>
+  <TR><TD id="Raider">劫匪<br>強盜<br>Raider
+      <TD>14<TD>61<TD>14<TD>336<TD>-<TD>物理<TD>2D4+5<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD>15<TD>-<TD>-<TD>10
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bandit.htm">強盜窩</A>
+  <TR><TD id="Bandit">盜賊<br>大盜<br>Bandit
+      <TD>22<TD>114<TD>16<TD>704<TD>-<TD>物理<TD>2D4+10<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>20<TD>10<TD>20<TD>-<TD>-<TD>15
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bandit.htm">強盜窩</A>
+
+<tr>
+<td rowspan=9><b>牧師</b>
+
+  <td rowspan=3>僧侶<TD id="Monk">沙彌<br>僧侶<br>Monk
+      <TD>8<TD>30<TD>16<TD>144<TD>-<TD>物理<TD>2D8+4<TD>-<TD>-<TD>N3命運<br>E3重錘手<TD>5<TD>5<TD>5<TD>5<TD>10<TD>5<TD>10<TD>30<TD>-<TD>5
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+  <TR><TD id="Initiate">僧侶<br>隱士<br>Initiate
+      <TD>16<TD>73<TD>19<TD>416<TD>-<TD>物理<TD>2D8+12<TD>-<TD>-<TD>E6傷害<br>E6重錘手<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD>15<TD>30<TD>-<TD>10
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+  <TR><TD id="Master">大師<br>智者<br>Master
+      <TD>27<TD>114<TD>16<TD>704<TD>-<TD>物理<TD>2D8+20<TD>-<TD>-<TD>E9心靈震爆<br>E9重錘手<TD>15<TD>15<TD>15<TD>15<TD>25<TD>15<TD>25<TD>30<TD>-<TD>15
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+
+  <tr><td rowspan=3>崇陽教<TD id="AcolyteSun">崇陽教司祭<br>太陽教教徒<br>Acolyte of the Sun
+      <TD>10<TD>40<TD>10<TD>200<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>N4光箭<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD>5<TD>免疫<TD>-<TD>10
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+  <TR><TD id="ClericSun">崇陽教牧師<br>太陽教牧師<br>Cleric of the Sun
+      <TD>20<TD>100<TD>15<TD>600<TD>-<TD>物理<TD>2D4+4<TD>-<TD>-<TD>E7心靈震爆<br>E7祝福術<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD>10<TD>免疫<TD>-<TD>15
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+  <TR><TD id="PriestSun">崇陽教祭司<br>太陽教主教<br>Priest of the Sun
+      <TD>30<TD>180<TD>25<TD>1200<TD>-<TD>物理<TD>2D4+8<TD>-<TD>-<TD>N10光箭<br>G10強力治療<TD>15<TD>15<TD>15<TD>15<TD>15<TD>-<TD>15<TD>免疫<TD>-<TD>20
+      <TD><A HREF="sun.htm">陽之聖殿</A>
+
+  <tr><td rowspan=3>拜月教<TD id="AcolyteMoon">拜月教司祭<br>月亮教教徒<br>Acolyte of the Moon
+      <TD>10<TD>40<TD>10<TD>200<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>N4毒雲術<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD>5<TD>-<TD>免疫<TD>10
+      <TD><A HREF="moon.htm">月之聖殿</A>
+  <TR><TD id="ClericMoon">拜月教牧師<br>月亮教牧師<br>Cleric of the Moon
+      <TD>20<TD>100<TD>15<TD>600<TD>-<TD>物理<TD>2D4+4<TD>-<TD>-<TD>E7毒雲術<br>E7祝福術<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD>10<TD>-<TD>免疫<TD>15
+      <TD><A HREF="moon.htm">月之聖殿</A>
+  <TR><TD id="PriestMoon">拜月教祭司<br>月亮教主教<br>Priest of the Moon
+      <TD>30<TD>180<TD>25<TD>1200<TD>-<TD>物理<TD>2D4+8<TD>-<TD>-<TD>M10金屬碎片<br>G10強力治療<TD>15<TD>15<TD>15<TD>15<TD>15<TD>-<TD>15<TD>-<TD>免疫<TD>20
+      <TD><A HREF="moon.htm">月之聖殿</A>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=10><b>法師</b>
+
+  <td rowspan=3>法師<TD id="FireWarlock">火法師<br>火魔法師<br>Fire Warlock
+      <TD>25<TD>137<TD>14<TD>875<TD>-<TD>火<TD>9D4<TD>-<TD>-<TD>E6火球術<TD>30<TD>30<TD>30<TD>30<TD>10<TD>10<TD>10<TD>-<TD>10<TD>10
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="WaterWarlock">水法師<br>水魔法師<br>Water Warlock
+      <TD>35<TD>227<TD>18<TD>1575<TD>-<TD>水<TD>12D4<TD>-<TD>-<TD>M9酸爆<TD>40<TD>40<TD>40<TD>40<TD>20<TD>10<TD>20<TD>-<TD>10<TD>20
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="AirWarlock">風法師<br>空氣魔法師<br>Air Warlock
+      <TD>50<TD>400<TD>30<TD>3000<TD>-<TD>風<TD>16D4<TD>-<TD>-<TD>M12閃電術<TD>50<TD>50<TD>50<TD>50<TD>30<TD>10<TD>30<TD>-<TD>10<TD>30
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+
+  <tr><td rowspan=4>巫師<TD id="Sorcerer">妖術師<br>術士<br>Sorcerer
+      <TD>25<TD>137<TD>14<TD>875<TD>召喚光元素<TD>光<TD>9D4<TD>-<TD>-<TD>E4解除魔法<TD>20<TD>20<TD>20<TD>20<TD>15<TD>5<TD>15<TD>免疫<TD>5<TD>10
+      <TD><A HREF="school.htm">巫術學校</A>
+  <TR><TD id="Wizard">巫師<br>法師<br>Wizard
+      <TD>35<TD>227<TD>18<TD>1575<TD>召喚光元素<TD>光<TD>12D4<TD>-<TD>-<TD>M8解除魔法<br>M8力量之時<TD>30<TD>30<TD>30<TD>30<TD>20<TD>10<TD>20<TD>免疫<TD>5<TD>20
+      <TD><A HREF="school.htm">巫術學校</A>
+  <TR><TD id="Archmage">大法師<br>Archmage
+      <TD>50<TD>400<TD>30<TD>3000<TD>召喚光元素<TD>能量<TD>16D4<TD>-<TD>-<TD nowrap>M12力量之時<br>M12諸神之日<TD>40<TD>40<TD>40<TD>40<TD>25<TD>15<TD>25<TD>免疫<TD>5<TD>30
+      <TD><A HREF="school.htm">巫術學校</A>
+  <TR><TD id="EricSwarrel"><font color=red>愛瑞克．史瓦羅<br>埃利克．斯維羅<br>Eric Swarrel</font>
+      <TD>50<TD>400<TD>30<TD>3000<TD>召喚光元素<TD>能量<TD>16D4<TD>-<TD>-<TD>M12力量之時<br>M12諸神之日<TD>40<TD>40<TD>40<TD>40<TD>25<TD>15<TD>25<TD>免疫<TD>5<TD>30
+      <TD><A HREF="school.htm">巫術學校</A>
+
+  <tr><td rowspan=3>死靈<TD id="Necromancer">死靈法師<br>巫師<br>Necromancer
+      <TD>25<TD>137<TD>14<TD>875<TD>召喚影鬼<TD>暗<TD>9D4<TD>-<TD>-<TD>E4毒雲術<TD>20<TD>20<TD>20<TD>20<TD>15<TD>5<TD>15<TD>-<TD>免疫<TD>10
+      <TD><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="SpeakerDead">亡靈代言人<br>大巫師<br>Speaker for the Dead
+      <TD>35<TD>227<TD>18<TD>1575<TD>召喚邪鬼<TD>暗<TD>12D4<TD>-<TD>-<TD>M8金屬碎片<TD>30<TD>30<TD>30<TD>30<TD>20<TD>10<TD>20<TD>-<TD>免疫<TD>20
+      <TD><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="QueenDead">死亡之后<br>巫師王<br>Queen of the Dead
+      <TD>50<TD>400<TD>30<TD>3000<TD>召喚鬼<TD>暗<TD>16D4<TD>-<TD>-<TD>M10龍息<br>M10疼痛反射<TD>40<TD>40<TD>40<TD>40<TD>25<TD>15<TD>25<TD>-<TD>免疫<TD>30
+      <TD><A HREF="wine.htm">酒窖</A>
+
+<tr>
+<td rowspan=10><b>戰士</b>
+
+  <td rowspan=4>劍士<TD id="Swordsman">劍士<br>遊俠<br>Swordsman
+      <TD>10<TD>40<TD>10<TD>200<TD>-<TD>物理<TD>3D7+4<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD>-<TD>5
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A><br><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="Guard">守衛<br>Guard
+      <TD>17<TD>79<TD>15<TD>459<TD>-<TD>物理<TD>3D7+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A><br><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="Adventurer">冒險者<br>探險家<br>Adventurer
+      <TD>24<TD>129<TD>20<TD>816<TD>破壞武器<TD>物理<TD>3D7+8<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>15<TD>5<TD>15<TD>-<TD>-<TD>15
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A><br><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="SalSharktooth"><font color=red>沙爾．鯊齒<br>紹爾．沙克斯<br>Sal Sharktooth
+      <TD>17<TD>79<TD>15<TD>459<TD>-<TD>物理<TD>3D7+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="moon0.htm">月之神殿</A>
+
+  <tr><td rowspan=3>士兵<TD id="Conscript">募集兵<br>士兵<br>Conscript
+      <TD>14<TD>61<TD>18<TD>336<TD>-<TD>物理<TD>3D3+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD>15<TD>-<TD>-<TD>10
+      <TD><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="Soldier">士兵<br>戰士<br>Soldier
+      <TD>24<TD>129<TD>24<TD>816<TD>-<TD>物理<TD>3D3+10<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>25<TD>10<TD>25<TD>-<TD>-<TD>20
+      <TD><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="Fighter">戰士<br>勇士<br>Fighter
+      <TD>35<TD>227<TD>30<TD>1575<TD>破壞武器<TD>物理<TD>3D3+14<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>35<TD>10<TD>35<TD>-<TD>-<TD>30
+      <TD><A HREF="fort.htm">溪流要塞</A>
+
+  <tr><td rowspan=3>劍客<TD id="InitiateSword">劍客<br>劍士<br>Initiate of the Sword
+      <TD>40<TD>280<TD>45<TD>2000<TD>-<TD>物理<TD>4D5+20<TD>-<TD>-<TD>N3祝福術<br>N3豪氣術<TD>20<TD>20<TD>20<TD>20<TD>30<TD>10<TD>30<TD>5<TD>5<TD>20
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A>
+  <TR><TD id="ChampionSword">劍師<br>劍客<br>Champion of the Sword
+      <TD>60<TD>540<TD>65<TD>4200<TD>-<TD>物理<TD>4D5+30<TD>-<TD>-<TD>E6祝福術<br>E6豪氣術<TD>30<TD>30<TD>30<TD>30<TD>40<TD>10<TD>40<TD>5<TD>5<TD>30
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A>
+  <TR><TD id="MasterSword">劍主<br>劍俠<br>Master of the Sword
+      <TD>80<TD>880<TD>85<TD>7200<TD>-<TD>物理<TD>4D5+40<TD>-<TD>-<TD>M9祝福術<br>M9豪氣術<TD>60<TD>60<TD>60<TD>60<TD>60<TD>10<TD>60<TD>5<TD>5<TD>50
+      <TD><A HREF="markham.htm">馬克漢爵士宅邸</A>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=3><b>箭手</b>
+
+  <td rowspan=3>弓箭手<TD id="Archer">弓箭手<br>Archer
+      <TD>9<TD>35<TD>14<TD>171<TD>-<TD>物理<TD>2D6+2<TD>火<TD>3D6+2<TD>N4護盾術<TD>5<TD>5<TD>5<TD>5<TD>10<TD>10<TD>10<TD>-<TD>-<TD>5
+      <TD><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="Bowman">神射手<br>高級弓箭手<br>Bowman
+      <TD>19<TD>93<TD>16<TD>551<TD>-<TD>物理<TD>3D6+3<TD>火<TD>4D6+3<TD>E8護盾術<br>E4閃電術<TD>10<TD>10<TD>10<TD>10<TD>15<TD>10<TD>15<TD>-<TD>-<TD>10
+      <TD><A HREF="fort.htm">溪流要塞</A>
+  <TR><TD id="EliteArcher">菁英弓箭手<br>神射手<br>Elite Archer
+      <TD>29<TD>171<TD>22<TD>1131<TD>-<TD>物理<TD>3D7+3<TD>火<TD>4D7+3<TD>M12護盾術<br>M8閃電術<TD>15<TD>15<TD>15<TD>15<TD>20<TD>10<TD>20<TD>-<TD>-<TD>15
+      <TD><A HREF="fort.htm">溪流要塞</A>
+
+<tr>
+<td rowspan=14><b>種族</b>
+
+  <td rowspan=5>地精<TD id="Goblin">地精<br>大耳怪<br>Goblin
+      <TD>4<TD>13<TD>6<TD>56<TD>-<TD>物理<TD>1D9<TD>物理<TD>4D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="harmon.htm">和諧谷</A><br><A HREF="castleha.htm">和諧谷城堡</A>
+  <TR><TD id="Hobgoblin">大地精<br>大耳怪首領<br>Hobgoblin
+      <TD>6<TD>21<TD>10<TD>96<TD>-<TD>物理<TD>1D9+2<TD>物理<TD>4D2+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="harmon.htm">和諧谷</A><br><A HREF="castleha.htm">和諧谷城堡</A>
+  <TR><TD id="GoblinLord">地精王<br>大耳怪王<br>Goblin Lord
+      <TD>10<TD>40<TD>14<TD>200<TD>-<TD>物理<TD>1D9+4<TD>物理<TD>4D2+4<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="harmon.htm">和諧谷</A><br><A HREF="castleha.htm">和諧谷城堡</A>
+  <TR><TD id="Hairbaugh"><font color=red>賀爾包<br>海爾博<br>Hairbaugh</font>
+      <TD>6<TD>21<TD>10<TD>96<TD>-<TD>物理<TD>1D9+2<TD>物理<TD>4D2+1<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="harmon.htm#letter">和諧谷城區</A>
+  <TR><TD id="Grognard"><font color=red>葛羅葛那<br>格拉內達<br>Grognard</font>
+      <TD>10<TD>40<TD>14<TD>200<TD>-<TD>物理<TD>1D9+4<TD>物理<TD>4D2+4<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="harmon.htm">和諧谷</A>
+
+  <tr><td rowspan=3>矮人<TD id="DwarvenSoldier">矮人戰士<br>Dwarven Soldier
+      <TD>10<TD>40<TD>6<TD>200<TD>-<TD>物理<TD>4D2+4<TD>-<TD>-<TD>-<TD>10<TD>20<TD>20<TD>30<TD>5<TD>-<TD>10<TD>-<TD>-<TD>30
+      <TD><A HREF="stone.htm">石頭城</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+  <TR><TD id="DwarvenLieutenant">矮人軍官<br>矮人勇士<br>Dwarven Lieutenant
+      <TD>20<TD>100<TD>12<TD>600<TD>-<TD>物理<TD>4D2+8<TD>-<TD>-<TD>-<TD>20<TD>30<TD>30<TD>40<TD>5<TD>-<TD>20<TD>-<TD>-<TD>40
+      <TD><A HREF="stone.htm">石頭城</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+  <TR><TD id="DwarvenCommander">矮人將領<br>矮人首領<br>Dwarven Commander
+      <TD>30<TD>180<TD>20<TD>1200<TD>破壞護甲<TD>物理<TD>4D2+16<TD>-<TD>-<TD>-<TD>30<TD>40<TD>40<TD>50<TD>5<TD>-<TD>30<TD>-<TD>-<TD>50
+      <TD><A HREF="stone.htm">石頭城</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+
+  <tr><td rowspan=6>精靈<TD id="ElvenWarrior">精靈戰士<br>Elven Warrior
+      <TD>14<TD>61<TD>15<TD>336<TD>-<TD>物理<TD>2D4+4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>5<TD>5<TD>5<TD>-<TD>-<TD>5
+      <TD><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="ElvenDefender">精靈衛士<br>Elven Defender
+      <TD>22<TD>114<TD>20<TD>704<TD>-<TD>物理<TD>3D4+6<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>10<TD>5<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="ElvenLancer">精靈長槍兵<br>精靈勇士<br>Elven Lancer
+      <TD>30<TD>180<TD>28<TD>1200<TD>-<TD>物理<TD>4D4+8<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>15<TD>5<TD>15<TD>-<TD>-<TD>15
+      <TD><A HREF="tulacave.htm">土拉立安洞穴</A>
+
+  <TR><TD id="ElvenArcher">精靈弓箭手<br>Elven Archer
+      <TD>11<TD>45<TD>12<TD>231<TD>-<TD>物理<TD>4D2+2<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>5<TD>5<TD>5<TD>-<TD>-<TD>5<TD>
+  <TR><TD id="ElvenScout">精靈斥候<br>精靈偵察兵<br>Elven Scout
+      <TD>23<TD>121<TD>14<TD>759<TD>-<TD>物理<TD>6D2+4<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>10<TD>5<TD>10<TD>-<TD>-<TD>10<TD>
+  <TR><TD id="ElvenRanger">精靈遊俠<br>精靈巡邏兵<br>Elven Ranger
+      <TD>35<TD>227<TD>20<TD>1575<TD>-<TD>物理<TD>8D2+6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>15<TD>5<TD>15<TD>-<TD>-<TD>15<TD>
+
+<tr>
+<td rowspan=6><b>特殊</b>
+
+  <td rowspan=3>天使<TD id="Angel">天使<br>Angel
+      <TD>30<TD>180<TD>25<TD>1200<TD>-<TD>物理<TD>2D8+10<TD>-<TD>-<TD nowrap>M8光箭<br>M8解除魔法<TD>20<TD>20<TD>20<TD>20<TD>30<TD>15<TD>30<TD>免疫<TD>10<TD>20<TD>
+  <TR><TD id="AngelLord">王天使<br>熾天使<br>Angel Lord
+      <TD>50<TD>400<TD>35<TD>3000<TD>-<TD>物理<TD>2D8+15<TD>-<TD>-<TD>M12光箭<br>M12防護之日<TD>30<TD>30<TD>30<TD>30<TD>40<TD>15<TD>40<TD>免疫<TD>10<TD>20<TD>
+  <TR><TD id="Archangel">天使長<br>大天使<br>Archangel
+      <TD>70<TD>700<TD>45<TD>5600<TD>-<TD>物理<TD>2D8+20<TD>-<TD>-<TD>G16光箭<br>G16力量之時<TD>40<TD>40<TD>40<TD>40<TD>50<TD>15<TD>50<TD>免疫<TD>10<TD>20<TD>
+
+  <tr><td rowspan=3>槍手<TD id="Tolberti">托伯提<br>托爾伯蒂<br>Tolberti
+      <TD>80<TD>880<TD>80<TD>7200<TD>滅絕<TD>能量<TD>5D5<TD>-<TD>-<TD>G15強力治療<br>G15力量之時<TD>60<TD>60<TD>60<TD>60<TD>免疫<TD>60<TD>60<TD>免疫<TD>免疫<TD>60<TD>
+  <TR><TD id="RobertWise">智者羅伯特<br>Robert the Wise
+      <TD>80<TD>880<TD>80<TD>7200<TD>滅絕<TD>能量<TD>5D5<TD>-<TD>-<TD>G15強力治療<br>G15力量之時<TD>60<TD>60<TD>60<TD>60<TD>免疫<TD>60<TD>60<TD>免疫<TD>免疫<TD>60<TD>
+  <TR><TD id="BlasterGuyC">拿能量槍的傢伙<br>榴彈槍手<br>Blaster Guy C
+      <TD>80<TD>880<TD>80<TD>7200<TD>滅絕<TD>能量<TD>5D5<TD>-<TD>-<TD>G15強力治療<br>G15力量之時<TD>60<TD>60<TD>60<TD>60<TD>免疫<TD>60<TD>60<TD>免疫<TD>免疫<TD>60<TD>
+
+<TR id="beast">
+<TD COLSPAN=24 BGCOLOR="#80ffff">
+<B><FONT COLOR="#FF0000">怪獸</FONT></B>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=35><b>動物</b>
+
+  <td rowspan=3>老鼠<TD id="GiantRat">巨鼠<br>Giant Rat
+      <TD>2<TD>6<TD>4<TD>24<TD>生病<TD>物理<TD>1D8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD nowrap><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="LightningRat">閃電鼠<br>Lightning Rat
+      <TD>4<TD>13<TD>5<TD>56<TD>生病<TD>物理<TD>1D8+2<TD>風<TD>2D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="FireRat">火焰鼠<br>Fire Rat
+      <TD>6<TD>21<TD>8<TD>96<TD>生病<TD>物理<TD>1D8+6<TD>火<TD>2D5<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="erasewer.htm">伊拉西亞城下水道</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+
+  <tr><td rowspan=3>龍蠅<TD id="Dragonfly">龍蠅<br>Dragonfly
+      <TD>2<TD>6<TD>4<TD>24<TD>-<TD>物理<TD>2D2<TD>-<TD>-<TD>-<TD>10<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="emerald.htm">翡翠島</A><br><A HREF="hallhill.htm">山下廳堂</A>
+  <TR><TD id="FireDragonfly">火龍蠅<br>Fire Dragonfly
+      <TD>4<TD>13<TD>8<TD>56<TD>-<TD>物理<TD>3D2+1<TD>-<TD>-<TD>N2火焰箭<TD>20<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="emerald.htm">翡翠島</A><br><A HREF="hallhill.htm">山下廳堂</A>
+  <TR><TD id="QueenDragonfly">后龍蠅<br>龍蠅皇后<br>Queen Dragonfly
+      <TD>8<TD>30<TD>12<TD>144<TD>-<TD>物理<TD>4D2+2<TD>-<TD>-<TD>N4火焰箭<TD>30<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="emerald.htm">翡翠島</A><br><A HREF="hallhill.htm">山下廳堂</A>
+
+  <tr><td rowspan=3>蝙蝠<TD id="GiantBat">巨蝙蝠<br>大蝙蝠<br>Giant Bat
+      <TD>3<TD>9<TD>5<TD>39<TD>生病<TD>物理<TD>1D3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="VampireBat">吸血蝙蝠<br>Vampire Bat
+      <TD>6<TD>21<TD>8<TD>96<TD>生病<TD>物理<TD>1D3+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="InfernoBat">煉獄蝙蝠<br>地獄蝙蝠<br>Inferno Bat
+      <TD>9<TD>35<TD>10<TD>171<TD>生病<TD>物理<TD>2D3+2<TD>火<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="castleha.htm">和諧谷城堡</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="wine.htm">酒窖</A>
+
+  <tr><td rowspan=3>蜘蛛<TD id="GiantSpider">巨蜘蛛<br>大蜘蛛<br>Giant Spider
+      <TD>5<TD>17<TD>10<TD>75<TD>中毒<TD>物理<TD>3D2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="moon0.htm">月之神殿</A>
+  <TR><TD id="VenemousSpider">毒蜘蛛<br>Venemous Spider
+      <TD>8<TD>30<TD>12<TD>144<TD>中毒<TD>物理<TD>3D2+3<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="moon0.htm">月之神殿</A>
+  <TR><TD id="Widowmaker">黑寡婦<br>蜘蛛王<br>Widowmaker
+      <TD>12<TD>50<TD>16<TD>264<TD>中毒<TD>物理<TD>3D2+6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="moon0.htm">月之神殿</A>
+
+  <tr><td rowspan=3>獅鷲<TD id="Griffin">獅鷲獸<br>獅鷲<br>Griffin
+      <TD>15<TD>67<TD>15<TD>375<TD>-<TD>物理<TD>2D8+2<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>30<TD>-<TD>5
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bracada.htm">布拉卡達沙漠</A>
+  <TR><TD id="HuntingGriffin">狩獵獅鷲獸<br>大獅鷲<br>Hunting Griffin
+      <TD>23<TD>121<TD>22<TD>759<TD>-<TD>物理<TD>2D8+6<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>30<TD>-<TD>10
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bracada.htm">布拉卡達沙漠</A>
+  <TR><TD id="RoyalGriffin">皇家獅鷲獸<br>皇家獅鷲<br>Royal Griffin
+      <TD>30<TD>180<TD>30<TD>1200<TD>-<TD>物理<TD>3D8+10<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>30<TD>-<TD>15
+      <TD><A HREF="erathia.htm">伊拉西亞</A><br><A HREF="bracada.htm">布拉卡達沙漠</A>
+
+  <tr><td rowspan=3>蠍獅<TD id="Minicore">小人面獅<br>蠍獅<br>Minicore
+      <TD>18<TD>86<TD>18<TD>504<TD>中毒<TD>物理<TD>1D12+4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>
+  <TR><TD id="Manticore">人面獅<br>蠍獅怪<br>Manticore
+      <TD>27<TD>153<TD>25<TD>999<TD>中毒<TD>物理<TD>1D12+8<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD>20<TD>
+  <TR><TD id="Scorpicore">蠍獅<br>毒蠍獅<br>Scorpicore
+      <TD>36<TD>237<TD>32<TD>1656<TD>中毒<TD>物理<TD>2D12+10<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD>30<TD>
+
+  <tr><td rowspan=3>雙足龍<TD id="Wyvern">雙足龍<br>飛龍<br>Wyvern
+      <TD>19<TD>93<TD>14<TD>551<TD>中毒<TD>物理<TD>7D6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>5<TD>5<TD>10
+      <TD><A HREF="avlee.htm">愛佛黎</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="HornedWyvern">雙足角龍<br>大飛龍<br>Horned Wyvern
+      <TD>28<TD>162<TD>28<TD>1064<TD>中毒<TD>物理<TD>9D6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>5<TD>20<TD>5<TD>5<TD>20
+      <TD><A HREF="avlee.htm">愛佛黎</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="AncientWyvern">雙足古龍<br>飛龍王<br>Ancient Wyvern
+      <TD>37<TD>247<TD>42<TD>1739<TD>死亡<TD>物理<TD>12D6<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>5<TD>30<TD>5<TD>5<TD>30
+      <TD><A HREF="avlee.htm">愛佛黎</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+
+  <tr><td rowspan=3>鯊魚<TD id="GiantShark">巨鯊<br>鯊魚<br>Giant Shark
+      <TD>28<TD>162<TD>30<TD>1064<TD>-<TD>水<TD>1D20+25<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>30<TD>
+  <TR><TD id="PiranhaShark">水虎鯊<br>大鯊魚<br>Piranha Shark
+      <TD>36<TD>237<TD>35<TD>1656<TD>-<TD>水<TD>1D20+35<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>40<TD>
+  <TR><TD id="DragonShark">龍鯊<br>巨鯊<br>Dragon Shark
+      <TD>48<TD>374<TD>40<TD>2784<TD>恐懼<TD>水<TD>1D20+45<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>50<TD>
+
+  <tr><td rowspan=3>大鵬<TD id="Roc">大鵬<br>Roc
+      <TD>27<TD>153<TD>20<TD>999<TD>-<TD>物理<TD>3D10+20<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>-<TD>-<TD>20
+      <TD><A HREF="nighon.htm">尼弘山</A>
+  <TR><TD id="GreaterRoc">巨鵬<br>Greater Roc
+      <TD>39<TD>269<TD>30<TD>1911<TD>-<TD>物理<TD>4D10+25<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>5<TD>20<TD>5<TD>5<TD>30
+      <TD><A HREF="nighon.htm">尼弘山</A>
+  <TR><TD id="Thunderbird">雷鳥<br>Thunderbird
+      <TD>51<TD>413<TD>40<TD>3111<TD>破壞護甲<TD>物理<TD>5D10+30<TD>-<TD>-<TD>-<TD>30<TD>免疫<TD>30<TD>30<TD>30<TD>5<TD>30<TD>10<TD>10<TD>40
+      <TD><A HREF="nighon.htm">尼弘山</A>
+
+  <tr><td rowspan=3>九頭龍<TD id="FireHydra">火焰九頭龍<br>烈火九頭怪<br>Fire Hydra
+      <TD>45<TD>337<TD>22<TD>2475<TD>-<TD>火<TD>15D5<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>10<TD>10<TD>10<TD>5<TD>5<TD>20
+      <TD><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="AirHydra">大氣九頭龍<br>暴風九頭怪<br>Air Hydra
+      <TD>55<TD>467<TD>44<TD>3575<TD>-<TD>風<TD>20D5<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>20<TD>20<TD>20<TD>5<TD>5<TD>30
+      <TD><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="ChaosHydra">渾沌九頭龍<br>終級九頭怪<br>Chaos Hydra
+      <TD>65<TD>617<TD>66<TD>4875<TD>破壞護甲<TD>能量<TD>20D5<TD>-<TD>-<TD>-<TD>40<TD>40<TD>40<TD>40<TD>30<TD>30<TD>30<TD>5<TD>5<TD>40
+      <TD><A HREF="nighon.htm">尼弘山</A><br><A HREF="maze.htm">迷宮</A>
+
+  <tr><td rowspan=5>龍<TD id="GreenDragon">綠龍<br>Green Dragon
+      <TD>80<TD>880<TD>60<TD>7200<TD>-<TD>風<TD>12D8<TD>-<TD>-<TD>-<TD>50<TD>免疫<TD>50<TD>50<TD>50<TD>15<TD>免疫<TD>30<TD>30<TD>50<TD>
+  <TR><TD id="BlueDragon">藍龍<br>青龍<br>Blue Dragon
+      <TD>90<TD>1080<TD>80<TD>9000<TD>-<TD>水<TD>14D8<TD>-<TD>-<TD>-<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD>15<TD>免疫<TD>30<TD>30<TD>50<TD>
+  <TR><TD id="RedDragon">紅龍<br>赤龍<br>Red Dragon
+      <TD>100<TD>1300<TD>100<TD>11000<TD>破壞護甲<TD>火<TD>16D8<TD>-<TD>-<TD>-<TD>免疫<TD>70<TD>70<TD>70<TD>70<TD>15<TD>免疫<TD>30<TD>30<TD>70<TD>
+  <TR><TD id="Wromthrax"><font color=red>羅姆賽克斯<br>勞斯萊克<br>Wromthrax</font>
+      <TD>90<TD>1080<TD>80<TD>9000<TD>-<TD>水<TD>14D8<TD>-<TD>-<TD>-<TD>50<TD>50<TD>免疫<TD>50<TD>50<TD>15<TD>免疫<TD>30<TD>30<TD>50
+      <TD><A HREF="wromthrax.htm">羅姆賽克斯的洞穴</A>
+  <TR><TD id="RedDragon0"><font color=red>紅龍<br>赤龍<br>Red Dragon
+      <TD>100<TD>1300<TD>100<TD>11000<TD>破壞護甲<TD>火<TD>16D8<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-
+      <TD><A HREF="dragon.htm">龍穴</A>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=12><b>怪物</b>
+
+  <td rowspan=3>樹妖<TD id="TreeA">樹1<br>樹妖1<br>Tree A
+      <TD>12<TD>50<TD>8<TD>264<TD>-<TD>物理<TD>2D10<TD>土<TD>2D6<TD>-<TD>-<TD>20<TD>20<TD>免疫<TD>免疫<TD>10<TD>免疫<TD>5<TD>5<TD>20
+      <TD><A HREF="tularean.htm">土拉立安森林</A>
+  <TR><TD id="TreeB">樹2<br>樹妖2<br>Tree B
+      <TD>18<TD>86<TD>10<TD>504<TD>-<TD>物理<TD>4D10<TD>土<TD>4D6<TD>-<TD>-<TD>30<TD>30<TD>免疫<TD>免疫<TD>10<TD>免疫<TD>5<TD>5<TD>30
+      <TD><A HREF="tularean.htm">土拉立安森林</A>
+  <TR><TD id="TreeC">樹3<br>樹妖3<br>Tree C
+      <TD>25<TD>137<TD>12<TD>875<TD>破壞物品<TD>物理<TD>6D10<TD>土<TD>6D6<TD>-<TD>-<TD>40<TD>40<TD>免疫<TD>免疫<TD>10<TD>免疫<TD>5<TD>5<TD>40
+      <TD><A HREF="tularean.htm">土拉立安森林</A>
+
+  <tr><td rowspan=3>粘土怪<TD id="EmeraldOoze">翡翠淤泥怪<br>綠色粘土怪<br>Emerald Ooze
+      <TD>12<TD>50<TD>8<TD>264<TD>破壞武器<TD>水<TD>1D6<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>免疫
+      <TD><A HREF="white.htm">白崖穴</A><br><A HREF="dwarf.htm">紅矮人礦坑</A>
+  <TR><TD id="SapphireOoze">藍寶石淤泥怪<br>紫色粘土怪<br>Sapphire Ooze
+      <TD>18<TD>86<TD>10<TD>504<TD>破壞護甲<TD>水<TD>2D6<TD>-<TD>-<TD>E1毒雲術<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>免疫
+      <TD><A HREF="dwarf.htm">紅矮人礦坑</A>
+  <TR><TD id="BloodstoneOoze">血玉髓淤泥怪<br>紅色粘土怪<br>Bloodstone Ooze
+      <TD>25<TD>137<TD>12<TD>875<TD>破壞物品<TD>水<TD>5D6<TD>-<TD>-<TD>E2毒雲術<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>免疫
+      <TD><A HREF="dwarf.htm">紅矮人礦坑</A>
+
+  <tr><td rowspan=3>眼魔<TD id="FloatingEye">浮眼<br>毒眼<br>Floating Eye
+      <TD>30<TD>180<TD>20<TD>1200<TD>沉睡<TD>水<TD>5D6<TD>-<TD>-<TD>-<TD>30<TD>30<TD>免疫<TD>30<TD>免疫<TD>15<TD>免疫<TD>10<TD>15<TD>30
+      <TD><A HREF="thunder.htm">雷拳山</A>
+  <TR><TD id="Gazer">眼魔<br>恐怖之眼<br>Gazer
+      <TD>40<TD>280<TD>30<TD>2000<TD>恐懼<TD>火<TD>6D6<TD>-<TD>-<TD>-<TD>免疫<TD>40<TD>30<TD>40<TD>免疫<TD>15<TD>免疫<TD>10<TD>15<TD>40
+      <TD><A HREF="thunder.htm">雷拳山</A>
+  <TR><TD id="EvilEye">邪眼<br>Evil Eye
+      <TD>50<TD>400<TD>40<TD>3000<TD>痴狂<TD>風<TD>7D6<TD>-<TD>-<TD>-<TD>40<TD>免疫<TD>40<TD>50<TD>免疫<TD>15<TD>免疫<TD>10<TD>15<TD>50
+      <TD><A HREF="thunder.htm">雷拳山</A>
+
+  <tr><td rowspan=3>比蒙獸<TD id="YoungBehemoth">幼末日巨獸<br>比蒙幼獸<br>Young Behemoth
+      <TD>45<TD>337<TD>35<TD>2475<TD>破壞護甲<TD>物理<TD>3D10+20<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>-<TD>30<TD>15<TD>15<TD>20<TD>
+  <TR><TD id="Behemoth">末日巨獸<br>比蒙怪獸<br>Behemoth
+      <TD>60<TD>540<TD>50<TD>4200<TD>破壞護甲<TD>物理<TD>4D10+30<TD>-<TD>-<TD>-<TD>40<TD>40<TD>40<TD>40<TD>免疫<TD>-<TD>40<TD>15<TD>15<TD>25<TD>
+  <TR><TD id="AncientBehemoth">古末日巨獸<br>比蒙巨獸<br>Ancient Behemoth
+      <TD>85<TD>977<TD>80<TD>8075<TD>破壞護甲<TD>物理<TD>5D10+40<TD>-<TD>-<TD>-<TD>50<TD>50<TD>50<TD>50<TD>免疫<TD>-<TD>50<TD>15<TD>15<TD>30<TD>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=27><b>人形</b>
+
+  <td rowspan=3>哥魔<TD id="Gogling">小哥魔<br>小妖精<br>Gogling
+      <TD>7<TD>25<TD>6<TD>119<TD>自爆<TD>火<TD>1D10+2<TD>-<TD>-<TD>-<TD>免疫<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>-<TD>-<TD>10
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+  <TR><TD id="Gog">哥魔<br>妖精<br>Gog
+      <TD>11<TD>45<TD>10<TD>231<TD>自爆<TD>火<TD>1D10+6<TD>-<TD>-<TD>-<TD>免疫<TD>15<TD>15<TD>15<TD>15<TD>5<TD>15<TD>-<TD>-<TD>15
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+  <TR><TD id="Magog">馬哥魔<br>大妖精<br>Magog
+      <TD>18<TD>86<TD>14<TD>504<TD>自爆<TD>火<TD>2D10+8<TD>-<TD>-<TD>-<TD>免疫<TD>20<TD>20<TD>20<TD>20<TD>5<TD>20<TD>-<TD>-<TD>20
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="nighontn.htm">尼弘隧道</A>
+
+  <tr><td rowspan=3>穴居人<TD id="TroglodyteDrone">穴居人工人<br>洞穴人<br>Troglodyte Drone
+      <TD>9<TD>35<TD>5<TD>171<TD>-<TD>物理<TD>2D4<TD>-<TD>-<TD>-<TD>5<TD>10<TD>10<TD>10<TD>-<TD>-<TD>-<TD>-<TD>5<TD>5
+      <TD><A HREF="white.htm">白崖穴</A><br><A HREF="stone.htm">石頭城</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="TroglodyteSoldier">穴居人士兵<br>洞穴勇士<br>Troglodyte Soldier
+      <TD>14<TD>61<TD>9<TD>336<TD>-<TD>物理<TD>2D4+2<TD>-<TD>-<TD>-<TD>10<TD>20<TD>20<TD>20<TD>-<TD>-<TD>-<TD>-<TD>5<TD>10
+      <TD><A HREF="white.htm">白崖穴</A><br><A HREF="stone.htm">石頭城</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+  <TR><TD id="TroglodyteQueen">穴居人女皇<br>洞穴女皇<br>Troglodyte Queen
+      <TD>19<TD>93<TD>14<TD>551<TD>中毒<TD>物理<TD>2D4+6<TD>-<TD>-<TD>-<TD>15<TD>30<TD>30<TD>30<TD>-<TD>-<TD>-<TD>-<TD>5<TD>15
+      <TD><A HREF="white.htm">白崖穴</A><br><A HREF="stone.htm">石頭城</A><br><A HREF="tulacave.htm">土拉立安洞穴</A>
+
+  <tr><td rowspan=3>鳥人<TD id="Harpy">鳥身女妖<br>鷹身女妖<br>Harpy
+      <TD>14<TD>61<TD>12<TD>336<TD>酒醉<TD>物理<TD>2D7+2<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD>-<TD>5
+      <TD><A HREF="deyja.htm">戴加</A>
+  <TR><TD id="HarpyHag">鳥身女魔<br>鷹身女巫<br>Harpy Hag
+      <TD>17<TD>79<TD>14<TD>459<TD>詛咒<TD>物理<TD>2D7+5<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>5<TD>-<TD>-<TD>10
+      <TD><A HREF="deyja.htm">戴加</A>
+  <TR><TD id="HarpyQueen">鳥身魔后<br>鷹身女皇<br>Harpy Queen
+      <TD>19<TD>93<TD>16<TD>551<TD>老化<TD>物理<TD>2D7+10<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>10<TD>-<TD>-<TD>15
+      <TD><A HREF="deyja.htm">戴加</A>
+
+  <tr><td rowspan=3>石像鬼<TD id="StoneGargoyle">石像鬼<br>石像妖<br>Stone Gargoyle
+      <TD>16<TD>73<TD>18<TD>416<TD>虛弱<TD>物理<TD>2D12<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>40<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>20
+      <TD><A HREF="barrow.htm">丘陵地</A>
+  <TR><TD id="MarbleGargoyle">大理石像鬼<br>石像鬼<br>Marble Gargoyle
+      <TD>22<TD>114<TD>22<TD>704<TD>麻痺<TD>物理<TD>2D12+4<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>50<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>40
+      <TD><A HREF="barrow.htm">丘陵地</A>
+  <TR><TD id="ObsidianGargoyle">黑曜石石像鬼<br>石像怪<br>Obsidian Gargoyle
+      <TD>33<TD>207<TD>26<TD>1419<TD>麻痺<TD>物理<TD>2D12+8<TD>-<TD>-<TD>-<TD>50<TD>50<TD>50<TD>70<TD>免疫<TD>免疫<TD>免疫<TD>-<TD>-<TD>免疫
+      <TD><A HREF="barrow.htm">丘陵地</A>
+
+  <tr><td rowspan=3>食人妖<TD id="SwampTroll">沼澤食人妖<br>泥怪<br>Swamp Troll
+      <TD>18<TD>86<TD>18<TD>504<TD>-<TD>物理<TD>2D10+4<TD>-<TD>-<TD>-<TD>5<TD>10<TD>10<TD>免疫<TD>5<TD>5<TD>5<TD>-<TD>5<TD>10
+      <TD><A HREF="tatalia.htm">塔塔力雅</A>
+  <TR><TD id="RiverTroll">河流食人妖<br>河妖<br>River Troll
+      <TD>28<TD>162<TD>28<TD>1064<TD>-<TD>物理<TD>3D10+6<TD>-<TD>-<TD>-<TD>10<TD>20<TD>20<TD>免疫<TD>10<TD>5<TD>10<TD>-<TD>5<TD>20
+      <TD><A HREF="tatalia.htm">塔塔力雅</A>
+  <TR><TD id="MountainTroll">高山食人妖<br>山妖<br>Mountain Troll
+      <TD>38<TD>258<TD>38<TD>1824<TD>-<TD>物理<TD>4D10+10<TD>-<TD>-<TD>-<TD>15<TD>30<TD>30<TD>免疫<TD>15<TD>5<TD>15<TD>-<TD>5<TD>30
+      <TD><A HREF="tatalia.htm">塔塔力雅</A>
+
+  <tr><td rowspan=3>美杜莎<TD id="Medusa">蛇髮女妖<br>美杜莎<br>Medusa
+      <TD>35<TD>227<TD>20<TD>1575<TD>麻痺<TD>物理<TD>4D4+8<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>-
+      <TD><A HREF="dwarf.htm">紅矮人礦坑</A>
+  <TR><TD id="QueenMedusa">蛇髮妖后<br>美杜莎女王<br>Queen Medusa
+      <TD>40<TD>280<TD>25<TD>2000<TD>石化<TD>物理<TD>5D4+10<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>-
+      <TD><A HREF="dwarf.htm">紅矮人礦坑</A>
+  <TR><TD id="EmpressMedusa">蛇髮女帝<br>美杜莎女皇<br>Empress Medusa
+      <TD>45<TD>337<TD>30<TD>2475<TD>石化<TD>物理<TD>6D4+12<TD>-<TD>-<TD>-<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>-
+      <TD><A HREF="dwarf.htm">紅矮人礦坑</A>
+
+  <tr><td rowspan=3>惡魔<TD id="DevilWorker">惡魔工人<br>惡魔<br>Devil Worker
+      <TD>30<TD>180<TD>25<TD>1200<TD>生病<TD>物理<TD>2D6+8<TD>-<TD>-<TD>E6火球術<TD>免疫<TD>20<TD>20<TD>20<TD>免疫<TD>25<TD>20<TD>20<TD>20<TD>20<TD>
+  <TR><TD id="DevilWarrior">惡魔戰士<br>大惡魔<br>Devil Warrior
+      <TD>50<TD>400<TD>35<TD>3000<TD>生病<TD>物理<TD>2D6+14<TD>-<TD>-<TD>E8火球術<br>M8隕石雨<TD>免疫<TD>30<TD>30<TD>30<TD>免疫<TD>25<TD>30<TD>30<TD>30<TD>30<TD>
+  <TR><TD id="DevilCaptain">惡魔軍官<br>惡魔首領<br>Devil Captain
+      <TD>70<TD>700<TD>45<TD>5600<TD>吸乾法力<TD>物理<TD>2D6+20<TD>-<TD>-<TD>M12炎灼術<br>M12隕石雨<TD>免疫<TD>40<TD>40<TD>40<TD>免疫<TD>25<TD>40<TD>40<TD>40<TD>40<TD>
+
+  <tr><td rowspan=3>牛頭人<TD id="Minotaur">牛頭人<br>牛頭怪<br>Minotaur
+      <TD>39<TD>269<TD>30<TD>1911<TD>-<TD>物理<TD>3D7+25<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>10<TD>5<TD>10<TD>5<TD>5<TD>10
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="MinotaurHeadsman">牛頭人劊子手<br>牛頭怪首領<br>Minotaur Headsman
+      <TD>59<TD>525<TD>35<TD>4071<TD>痴狂<TD>物理<TD>3D7+40<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>20<TD>10<TD>20<TD>10<TD>10<TD>20
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="maze.htm">迷宮</A>
+  <TR><TD id="MinotaurLord">牛頭人首領<br>牛頭王<br>Minotaur Lord
+      <TD>79<TD>861<TD>40<TD>7031<TD>死亡<TD>物理<TD>3D7+60<TD>-<TD>-<TD>-<TD>30<TD>30<TD>30<TD>30<TD>30<TD>15<TD>30<TD>15<TD>15<TD>30
+      <TD><A HREF="thunder.htm">雷拳山</A><br><A HREF="maze.htm">迷宮</A>
+
+  <tr><td rowspan=3>泰坦<TD id="Titan">巨人<br>泰坦<br>Titan
+      <TD>65<TD>617<TD>60<TD>4875<TD>破壞護甲<TD>風<TD>2D20+60<TD>-<TD>-<TD>M8精神震撼<br>M8火花術<TD>30<TD>免疫<TD>30<TD>30<TD>免疫<TD>15<TD>30<TD>30<TD>30<TD>30<TD>
+  <TR><TD id="StormTitan">暴風巨人<br>泰坦首領<br>Storm Titan
+      <TD>75<TD>787<TD>70<TD>6375<TD>破壞武器<TD>風<TD>2D20+80<TD>-<TD>-<TD>M12精神震撼<br>M12火花術<TD>50<TD>免疫<TD>50<TD>50<TD>免疫<TD>15<TD>50<TD>30<TD>30<TD>50<TD>
+  <TR><TD id="BloodTitan">血巨人<br>泰坦王<br>Blood Titan
+      <TD>95<TD>1187<TD>80<TD>9975<TD>死亡<TD>風<TD>2D20+120<TD>-<TD>-<TD>G16精神震撼<br>G16火花術<TD>80<TD>免疫<TD>80<TD>80<TD>免疫<TD>15<TD>80<TD>30<TD>30<TD>80<TD>
+
+<TR id="special">
+<TH COLSPAN=24 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">特殊</FONT>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=21><b>亡靈</b>
+
+  <td rowspan=3>骷髏<TD id="Skeleton">骷髏<br>骷髏兵<br>Skeleton
+      <TD>6<TD>21<TD>8<TD>96<TD>-<TD>物理<TD>3D4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>5
+      <TD><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+  <TR><TD id="SkeletonWarrior">骷髏戰士<br>骷髏勇士<br>Skeleton Warrior
+      <TD>10<TD>40<TD>10<TD>200<TD>恐懼<TD>物理<TD>3D4+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>5
+      <TD><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+  <TR><TD id="SkeletonLord">骷髏王<br>Skeleton Lord
+      <TD>14<TD>61<TD>14<TD>336<TD>詛咒<TD>物理<TD>3D4+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>5
+      <TD><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+
+  <tr><td rowspan=3>食屍鬼<TD id="Ghast">妖鬼<br>醜怪<br>Ghast
+      <TD>9<TD>35<TD>8<TD>171<TD>生病<TD>物理<TD>1D7<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>-
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="Ghoul">食屍鬼<br>Ghoul
+      <TD>13<TD>55<TD>14<TD>299<TD>麻痺<TD>物理<TD>2D7+2<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>-
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="Revenant">亡魂<br>Revenant
+      <TD>17<TD>79<TD>20<TD>459<TD>麻痺<TD>物理<TD>3D7+4<TD>-<TD>-<TD>-<TD>-<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>-
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+
+  <tr><td rowspan=3>喪屍<TD id="RottedCorpse">腐屍<br>Rotted Corpse
+      <TD>9<TD>35<TD>8<TD>171<TD>生病<TD>物理<TD>1D7<TD>-<TD>-<TD>-<TD>5<TD>5<TD>5<TD>5<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>10
+      <TD><A HREF="deyja.htm">戴加</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="WalkingDead">活死人<br>喪屍<br>Walking Dead
+      <TD>13<TD>55<TD>14<TD>299<TD>生病<TD>物理<TD>2D7+2<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>20
+      <TD><A HREF="deyja.htm">戴加</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+  <TR><TD id="Zombie">殭屍<br>僵屍<br>Zombie
+      <TD>17<TD>79<TD>20<TD>459<TD>生病<TD>物理<TD>3D7+4<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>30
+      <TD><A HREF="deyja.htm">戴加</A><br><A HREF="zokarr.htm">柔卡陵寢</A>
+
+  <tr><td rowspan=3>鬼魂<TD id="Shade">影鬼<br>鬼魂<br>Shade
+      <TD>9<TD>35<TD>25<TD>171<TD>恐懼<TD>物理<TD>1D6+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>免疫<TD>10<TD>免疫<TD>10<TD>免疫<TD>-<TD>30<TD>10
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+  <TR><TD id="Specter">邪鬼<br>幽靈<br>Specter
+      <TD>13<TD>55<TD>30<TD>299<TD>老化<TD>物理<TD>2D6+6<TD>-<TD>-<TD>-<TD>15<TD>15<TD>免疫<TD>15<TD>免疫<TD>15<TD>免疫<TD>-<TD>30<TD>15
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+  <TR><TD id="Ghost">鬼<br>陰魂<br>Ghost
+      <TD>19<TD>93<TD>35<TD>551<TD>昏迷<TD>物理<TD>3D6+6<TD>-<TD>-<TD>-<TD>20<TD>20<TD>免疫<TD>20<TD>免疫<TD>20<TD>免疫<TD>-<TD>30<TD>20
+      <TD><A HREF="barrow.htm">丘陵地</A><br><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="tide.htm">潮穴</A><br><A HREF="evenmorn.htm">晨昏島</A>
+
+  <tr><td rowspan=3>幽靈<TD id="Wight">幽靈<br>野鬼<br>Wight
+      <TD>14<TD>61<TD>15<TD>336<TD>恐懼<TD>物理<TD>2D5+6<TD>-<TD>-<TD>-<TD>10<TD>10<TD>免疫<TD>10<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>10
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="moon.htm">月之聖殿</A>
+  <TR><TD id="Wraith">死靈<br>鬼怪<br>Wraith
+      <TD>19<TD>93<TD>20<TD>551<TD>吸乾法力<TD>物理<TD>2D5+12<TD>-<TD>-<TD>-<TD>20<TD>20<TD>免疫<TD>20<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>20
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="moon.htm">月之聖殿</A>
+  <TR><TD id="BarrowWight">墓穴幽靈<br>遊魂<br>Barrow Wight
+      <TD>26<TD>145<TD>25<TD>936<TD>老化<TD>物理<TD>4D5+12<TD>-<TD>-<TD>-<TD>30<TD>30<TD>免疫<TD>30<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>30
+      <TD><A HREF="haunted.htm">鬧鬼大宅</A><br><A HREF="zokarr.htm">柔卡陵寢</A><br><A HREF="moon.htm">月之聖殿</A>
+
+  <tr><td rowspan=3>巫妖<TD id="Lich">巫妖<br>屍巫<br>Lich
+      <TD>20<TD>100<TD>15<TD>600<TD>-<TD>火<TD>3D8+6<TD>-<TD>-<TD>E4毒雲術<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>20<TD>
+  <TR><TD id="PowerLich">強力巫妖<br>屍巫首領<br>Power Lich
+      <TD>30<TD>180<TD>20<TD>1200<TD>-<TD>風<TD>4D8+12<TD>-<TD>-<TD>M8金屬碎片<TD>25<TD>25<TD>25<TD>25<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>25<TD>
+  <TR><TD id="LichKing">巫妖王<br>屍巫王<br>Lich King
+      <TD>40<TD>280<TD>25<TD>2000<TD>痴狂<TD>暗<TD>5D8+20<TD>-<TD>-<TD>M12龍息<br>M12疼痛反射<TD>30<TD>30<TD>30<TD>30<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>30<TD>
+
+  <tr><td rowspan=3>吸血鬼<TD id="MinionVampire">吸血鬼爪牙1<br>吸血鬼<br>Minion Vampire
+      <TD>20<TD>100<TD>25<TD>600<TD>生病<TD>物理<TD>3D8+15<TD>-<TD>-<TD>-<TD>5<TD>10<TD>免疫<TD>10<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>10
+      <TD><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="Vampire">吸血鬼爪牙2<br>吸血怪<br>Vampire
+      <TD>33<TD>207<TD>35<TD>1419<TD>吸乾法力<TD>物理<TD>3D8+25<TD>-<TD>-<TD>-<TD>10<TD>20<TD>免疫<TD>20<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>20
+      <TD><A HREF="wine.htm">酒窖</A>
+  <TR><TD id="ElderVampire">吸血鬼長老<br>吸血王<br>Elder Vampire
+      <TD>48<TD>374<TD>45<TD>2784<TD>吸乾法力<TD>物理<TD>3D8+35<TD>-<TD>-<TD>-<TD>15<TD>30<TD>免疫<TD>30<TD>免疫<TD>-<TD>免疫<TD>-<TD>30<TD>30
+      <TD><A HREF="wine.htm">酒窖</A>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=21><b>精靈</b>
+
+  <td rowspan=3>風元素<TD id="Tempest">風暴<br>暴風<br>Tempest
+      <TD>16<TD>73<TD>10<TD>416<TD>-<TD>風<TD>3D6<TD>-<TD>-<TD>E4火花術<TD>10<TD>免疫<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>10<TD>
+  <TR><TD id="Cyclone">颶風<br>Cyclone
+      <TD>22<TD>114<TD>12<TD>704<TD>-<TD>風<TD>5D6<TD>-<TD>-<TD>M8火花術<br>M8閃電術<TD>15<TD>免疫<TD>15<TD>15<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>15<TD>
+  <TR><TD id="AirElemental">風元素<br>氣元素<br>Air Elemental
+      <TD>33<TD>207<TD>14<TD>1419<TD>-<TD>風<TD>8D6<TD>-<TD>-<TD>G12火花術<br>G12閃電術<TD>20<TD>免疫<TD>20<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>20<TD>
+
+  <tr><td rowspan=3>水元素<TD id="Sprite">水靈<br>水妖<br>Sprite
+      <TD>14<TD>61<TD>10<TD>336<TD>-<TD>水<TD>3D12<TD>-<TD>-<TD>E4冰錐術<TD>10<TD>10<TD>免疫<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>10
+      <TD><A HREF="avlee.htm">愛佛黎</A>
+  <TR><TD id="Sylph">水精<br>水精靈<br>Sylph
+      <TD>24<TD>129<TD>13<TD>816<TD>-<TD>水<TD>4D12<TD>-<TD>-<TD>M8酸爆<TD>15<TD>15<TD>免疫<TD>15<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>15
+      <TD><A HREF="avlee.htm">愛佛黎</A>
+  <TR><TD id="WaterElemental">水元素<br>Water Elemental
+      <TD>36<TD>237<TD>16<TD>1656<TD>-<TD>水<TD>6D12<TD>-<TD>-<TD>G12冰爆<TD>20<TD>20<TD>免疫<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>20
+      <TD><A HREF="avlee.htm">愛佛黎</A>
+
+  <tr><td rowspan=3>光元素<TD id="LesserLightElemental">下級光元素<br>低級光元素<br>Lesser Light Elemental
+      <TD>15<TD>67<TD>11<TD>375<TD>自爆<TD>光<TD>4D4<TD>-<TD>-<TD>-<TD>10<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>10<TD>
+  <TR><TD id="LightElemental">光元素<br>中級光元素<br>Light Elemental
+      <TD>23<TD>121<TD>14<TD>759<TD>自爆<TD>光<TD>9D4<TD>-<TD>-<TD>-<TD>15<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>15<TD>
+  <TR><TD id="GreaterLightElemental">高等光元素<br>光元素<br>Greater Light Elemental
+      <TD>38<TD>258<TD>19<TD>1824<TD>自爆<TD>光<TD>14D4<TD>-<TD>-<TD>-<TD>20<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>20<TD>
+
+  <tr><td rowspan=3>火元素<TD id="WardenFire">火之典獄長<br>火精靈<br>Warden of Fire
+      <TD>13<TD>55<TD>12<TD>299<TD>-<TD>火<TD>2D8<TD>-<TD>-<TD>E6火焰箭<br>E4快速術<TD>免疫<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>10<TD>
+  <TR><TD id="GuardianFlame">炎之守護者<br>烈火精靈<br>Guardian of Flame
+      <TD>26<TD>145<TD>15<TD>936<TD>-<TD>火<TD>5D8<TD>-<TD>-<TD>M8火球術<br>M8快速術<TD>免疫<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>15<TD>
+  <TR><TD id="FireElemental">火元素<br>Fire Elemental
+      <TD>39<TD>269<TD>18<TD>1911<TD>-<TD>火<TD>8D8<TD>-<TD>-<TD>G12炎灼術<br>G12快速術<TD>免疫<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>20<TD>
+
+  <tr><td rowspan=3>土元素<TD id="ClayElemental">黏土元素<br>泥妖<br>Clay Elemental
+      <TD>25<TD>137<TD>20<TD>875<TD>-<TD>土<TD>10D3<TD>-<TD>-<TD>E6刀鋒<br>E4石膚術<TD>10<TD>10<TD>10<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>10<TD>
+  <TR><TD id="StoneElemental">岩石元素<br>石妖<br>Stone Elemental
+      <TD>30<TD>180<TD>25<TD>1200<TD>破壞護甲<TD>土<TD>15D3<TD>-<TD>-<TD>M8岩爆術<br>M8石膚術<TD>15<TD>15<TD>15<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>15<TD>
+  <TR><TD id="EarthElemental">土元素<br>Earth Elemental
+      <TD>40<TD>280<TD>30<TD>2000<TD>昏迷<TD>土<TD>25D3<TD>-<TD>-<TD>G12刀鋒<br>G12石膚術<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>5<TD>5<TD>20<TD>
+
+  <tr><td rowspan=3>巨像<TD id="BronzeGolem">銅巨像<br>黃銅人<br>Bronze Golem
+      <TD>22<TD>114<TD>40<TD>704<TD>自爆<br>破壞護甲<TD>物理<TD>5D6+20<TD>物理<TD>5D4<TD>-<TD>20<TD>20<TD>20<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>30<TD>-<TD>30
+      <TD><A HREF="bracada.htm">布拉卡達沙漠</A><br><A HREF="school.htm">巫術學校</A>
+  <TR><TD id="BrassGolem">青銅巨像<br>青銅人<br>Brass Golem
+      <TD>35<TD>227<TD>60<TD>1575<TD>自爆<br>破壞武器<TD>物理<TD>7D6+25<TD>物理<TD>5D4+4<TD>-<TD>30<TD>30<TD>30<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>30<TD>-<TD>30
+      <TD><A HREF="bracada.htm">布拉卡達沙漠</A><br><A HREF="school.htm">巫術學校</A>
+  <TR><TD id="GoldGolem">黃金巨像<br>金人<br>Gold Golem
+      <TD>50<TD>400<TD>80<TD>3000<TD>自爆<br>破壞物品<TD>物理<TD>9D6+30<TD>物理<TD>5D4+8<TD>-<TD>40<TD>40<TD>40<TD>免疫<TD>免疫<TD>免疫<TD>免疫<TD>30<TD>-<TD>50
+      <TD><A HREF="bracada.htm">布拉卡達沙漠</A><br><A HREF="school.htm">巫術學校</A>
+
+  <tr><td rowspan=3>精靈<TD id="Djinni">風精靈<br>神怪<br>Djinni
+      <TD>33<TD>207<TD>35<TD>1419<TD>-<TD>水<TD>8D4+8<TD>-<TD>-<TD>M8酸爆<TD>30<TD>30<TD>免疫<TD>30<TD>50<TD>-<TD>50<TD>10<TD>10<TD>30<TD>
+  <TR><TD id="Genie">神燈精靈<br>神怪主<br>Genie
+      <TD>44<TD>325<TD>45<TD>2376<TD>沉睡<TD>火<TD>10D4+10<TD>-<TD>-<TD>M8火球術<TD>免疫<TD>30<TD>30<TD>30<TD>50<TD>-<TD>50<TD>10<TD>10<TD>30<TD>
+  <TR><TD id="Efreet">火精靈<br>神怪王<br>Efreet
+      <TD>55<TD>467<TD>55<TD>3575<TD>恐懼<TD>風<TD>9D6+30<TD>-<TD>-<TD>M10閃電術<TD>50<TD>免疫<TD>50<TD>50<TD>50<TD>-<TD>50<TD>10<TD>10<TD>50<TD>
+
+<TR BGCOLOR="#ffffa0">
+    <TH rowSpan=2>種族<TH rowSpan=2>類別<TH rowSpan=2>名稱<TH colSpan=4>基本<TH colSpan=6>攻擊<TH colSpan=10>抗性<TH rowSpan=2>出現地點
+    <TR BGCOLOR="#ffffa0"><TH>等級<TH>生命<TH>防禦<TH>經驗<TH>特技<TH colSpan=2>攻擊形態一<TH colSpan=2>攻擊形態二<TH>法術<TH>火<TH>風<TH>水<TH>土<TH>心<TH>魂<TH>體<TH>光<TH>暗<TH>物理
+
+<tr>
+<td rowspan=3><b>機器</b>
+
+  <td rowspan=3>機器人<TD id="SeekerDroid">搜尋機器人<br>機械人<br>Seeker Droid
+      <TD>50<TD>400<TD>60<TD>3000<TD>-<TD>能量<TD>10D5+10<TD>-<TD>-<TD>-<TD>30<TD>10<TD>10<TD>30<TD>免疫<TD>免疫<TD>免疫<TD>25<TD>25<TD>20<TD>
+  <TR><TD id="SentinelDroid">尖兵機器人<br>機械守衛<br>Sentinel Droid
+      <TD>70<TD>700<TD>80<TD>5600<TD>沉睡<TD>能量<TD>12D5+15<TD>-<TD>-<TD>-<TD>40<TD>20<TD>20<TD>40<TD>免疫<TD>免疫<TD>免疫<TD>25<TD>25<TD>30<TD>
+  <TR><TD id="AssassinDroid">殺手機器人<br>機械殺手<br>Assassin Droid
+      <TD>90<TD>1080<TD>100<TD>9000<TD>恐懼<TD>能量<TD>20D5+20<TD>-<TD>-<TD>-<TD>60<TD>30<TD>30<TD>60<TD>免疫<TD>免疫<TD>免疫<TD>25<TD>25<TD>50<TD>
+
+</TABLE>
+
+</BODY>
+</HTML>
