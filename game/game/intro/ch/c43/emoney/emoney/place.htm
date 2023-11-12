@@ -4,8 +4,7 @@
 <title>地點列表</title>
 </head>
 <body>
-<CENTER><FONT COLOR=FF0000 size=5><b>地點列表</b></FONT></CENTER>
-<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<CENTER><FONT COLOR=FF0000 size=5><b>地點列表</b></FONT>
 <TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <TR bgcolor="#c0ffff"><TH colspan=20>事件與商店
 <TR bgcolor="#ffffc0"><TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用
@@ -51,140 +50,169 @@
 
 <TR bgcolor="#ffffc0"><TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用<TH>編號<TH>圖示<TH>作用
 </TABLE>
-
-<font color=blue><b>*** 各地點說明</b></font>
-
-<A id="d2">D2.精靈村莊：提供傭兵5-12位<A href="monster.htm#0C">精靈</A>，等級為主角的等級再隨機增加0～3級。
-
-<A id="d3">D3.裝備店：依下列次序每種裝備均檢測一次，故同一種裝備只會出現一次，最多16種。
-   (1)禮物類：肉塊、寶石、魔水晶必定出現。
-   (2)道具類：75%機率出現，必須該關卡允許者。
-   (3)裝備類：30%機率出現，必須該關卡允許、且該人物可裝備者。
-
-<A id="d4">D4.魔法公會：提供傭兵5-12位<A href="monster.htm#06">法師</A>，等級為主角的等級再隨機增加0～3級。
-   <font color=red>凱麗無法進入</font>
-
-<A id="d5">D5.教堂：提供傭兵5-12位<A href="monster.htm#05">僧侶</A>，等級為主角的等級再隨機增加0～3級。
-   <font color=red>凱麗無法進入</font>
-
-<A id="d6">D6.地下組織：提供傭兵5-12位<A href="monster.htm#03">盜賊</A>、<A href="monster.htm#04">忍者</A>，等級為主角的等級再隨機增加0～3級。
-   <font color=red>凱麗無法進入</font>
-
-<A id="d7">D7.獸人部落：提供傭兵5-12位<A href="monster.htm#09">地精</A>、<A href="monster.htm#0A">獸人</A>，等級為主角的等級再隨機增加0～3級。
-
-<A id="d8">D8.矮人礦坑：提供傭兵5-12位<A href="monster.htm#0B">矮人</A>，等級為主角的等級再隨機增加0～3級。
-
-<A id="d9">D9.墓場：提供傭兵5-12位<A href="monster.htm#19">骷髏兵</A>、<A href="monster.htm#1A">僵屍</A>、<A href="monster.htm#1B">鬼魂</A>、<A href="monster.htm#1C">惡靈</A>，等級為主角的等級再隨機增加0～3級。
-   <font color=red>希洛、雪莉無法進入。</font>
-
-<A id="da">DA.傭兵公會：提供傭兵5-12位<A href="monster.htm#01">戰士</A>、<A href="monster.htm#02">鬥士</A>，等級為主角的等級再隨機增加0～3級。
-   <font color=red>凱麗無法進入</font>
-
-<A id="db">DB.山洞遊樂場：隨機進行下列小遊戲：
-   (1)<A href="#game1">射擊場</A>
-   (2)<A href="#game2">山洞賽狗場</A>
-   (3)<A href="#game3">對對碰</A>
-   (4)<A href="#game4">單挑擂台賽</A>（必須有傭兵才會進入）
-
-DC.無事空地：不會發生任何事件。
-
-<A id="dd">DD.傳送：踏上魔法傳送點，隨機移往地圖上另一處魔法傳送點。
-
-<A id="de">DE.怪物：遭遇敵人，怪物等級為主角的等級再隨機增減0～3級，最高50級。
-   敵人空位數機率為：1=5%，2=20%，3=50%，4=20%，5=5%，會按敵人體型決定最終數目
-
-DF.任務領地或地點：依不同關卡發生不同事件。
-
-<A id="e0">E0.機會：隨機獲得一張卡片，出現機率請參見<A href="card.htm">卡片列表</A>。若身上已擁有16張卡片，則必須
-   捨棄一張，或按Esc捨棄獲得的卡片。
-
-<A id="e1">E1.命運：發生一件<A href="event.htm#chance">命運事件</A>。
-
-<A id="e2">E2.財寶：發現財寶，獲得金錢200*LV+(0～700)。
-
-<A id="e3">E3.中立領地：可選擇攻打或買下。
-   買下金額 = 基礎稅金*5*(規模+1)
-   領地實際稅金 = 基礎稅金*(2^規模)
-   規模：1=村落、2=鄉鎮、3=城市、4=城堡
-
-<A id="e4">E4.卡片店：先決定最多10+(0～5)張，再依編號由小到大檢測，出現機率為(最多張數/43)，
-   達到最多張數即結束，故每種卡片只會出現一張，編號愈大的卡片愈不易出現。
-
-<A id="e6">E6～E9.角色領地：
-   (1)別人領地：可選擇付過路費或進攻，過路費 = 基礎稅金
-                <font color=red>右下顯示的守軍資訊有誤</font>，可進行<A href="modify1.htm">程式修正</A>。
-   (2)自己領地：可選擇擴充城鎮（非城堡規模時才有，每升一級稅金加倍）或召募守軍
-                擴充城鎮金額：村落=200、鄉鎮=500、城市=1000
-
-
-<font color=blue><b>*** 小遊戲說明</b></font>
-
-<A id="game1">1.<font color=blue><b>射擊場</b></font>：小蜜蜂射擊遊戲
-
-<img src="game1.png">
-
-左右=移動、Space=射擊、Esc=結束射擊（開始結算）。全部28隻，打中：
-
-  18～28隻：隨機贈送火焰劍、魔法杖、魔法盔、魔法項鍊、皮靴其中一件
-  15～17隻：隨機贈送魔法劍、法師袍、鐵盾、妖精緞帶、回復劑其中一件
-   1～14隻：隨機贈送鐵劍、流星鎚、旅行服、布靴、皮靴其中一件
-
-以上不會檢測角色是否能使用，所以可能得到無法使用的裝備。
-
-
-<A id="game2">2.<font color=blue><b>山洞賽狗場</b></font>：每次賭金500元
-
-<img src="game2.png">
-
-選擇會獲得前兩名的犬隻，中一隻時獲得2500元，兩隻都中時獲得15000元。
-
-
-<A id="game3">3.<font color=blue><b>對對碰</b></font>
-
-<img src="game3.png">
-
-給與玩家5秒記下各圖案位置，然後蓋牌看玩家在30秒內翻中多少對（全部共15對）。
-
- 0～ 2：隨機贈送一件200元(含)以下的裝備。
- 3～ 5：隨機贈送魔法劍、戰斧、法師袍、皮甲、鐵盾、妖精緞帶、皮靴其中一件。
- 6～ 8：隨機贈送火焰劍、長戟、魔法杖、鎖子甲、魔法盔其中一件。
- 9～11：隨機贈送鎧甲、魔法盾、精靈靴其中一件。
-12～15：隨機贈送斬鐵劍、魔法斧、妖精披風、魔法袍、龍盾、神聖護符、疾走靴其中一件。
-
-以上不會檢測角色是否能使用，所以可能得到無法使用的裝備。
-
-
-<A id="game4">4.<font color=blue><b>單挑擂台賽</b></font>：每次彩金1000元
-
-派一位傭兵與電腦對手單挑（自動戰鬥），獲勝時彩金加倍，並可將彩金全部押注繼續挑戰，
-最多4場，獲得16000元。
-
-如果想離開但傭兵不足4位，請按Esc離開，<font color=red>若按選單中的離開，則仍然會進入單挑</font>。可進行
-<A href="modify1.htm">程式修正</A>。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</font>
-</pre>
+</CENTER>
+
+<p><font color=blue><b>*** 各地點說明</b></font>
+
+<p><TABLE BORDER=1 cellspacing=0 cellpadding=1>
+<tr valign=top>
+<td id="d2">D2.精靈村莊
+<td>提供傭兵5-12位<A href="monster.htm#0C">精靈</A>，等級為主角的等級再隨機增加0～3級。
+<tr valign=top>
+<td id="d3">D3.裝備店
+<td>依下列次序每種裝備均檢測一次，故同一種裝備只會出現一次，最多16種。
+<ol>
+   <li>禮物類：肉塊、寶石、魔水晶必定出現。
+   <li>道具類：75%機率出現，必須該關卡允許者。
+   <li>裝備類：30%機率出現，必須該關卡允許、且該人物可裝備者。
+</ol>
+<tr valign=top>
+<td id="d4">D4.魔法公會
+<td>提供傭兵5-12位<A href="monster.htm#06">法師</A>，等級為主角的等級再隨機增加0～3級。<font color=red>凱麗無法進入</font>
+<tr valign=top>
+<td id="d5">D5.教堂
+<td>提供傭兵5-12位<A href="monster.htm#05">僧侶</A>，等級為主角的等級再隨機增加0～3級。<font color=red>凱麗無法進入</font>
+<tr valign=top>
+<td id="d6">D6.地下組織
+<td>提供傭兵5-12位<A href="monster.htm#03">盜賊</A>、<A href="monster.htm#04">忍者</A>，等級為主角的等級再隨機增加0～3級。<font color=red>凱麗無法進入</font>
+<tr valign=top>
+<td id="d7">D7.獸人部落
+<td>提供傭兵5-12位<A href="monster.htm#09">地精</A>、<A href="monster.htm#0A">獸人</A>，等級為主角的等級再隨機增加0～3級。
+<tr valign=top>
+<td id="d8">D8.矮人礦坑
+<td>提供傭兵5-12位<A href="monster.htm#0B">矮人</A>，等級為主角的等級再隨機增加0～3級。
+<tr valign=top>
+<td id="d9">D9.墓場
+<td>提供傭兵5-12位<A href="monster.htm#19">骷髏兵</A>、<A href="monster.htm#1A">僵屍</A>、<A href="monster.htm#1B">鬼魂</A>、<A href="monster.htm#1C">惡靈</A>，等級為主角的等級再隨機增加0～3級。<font color=red>希洛、雪莉無法進入。</font>
+<tr valign=top>
+<td id="da">DA.傭兵公會
+<td>提供傭兵5-12位<A href="monster.htm#01">戰士</A>、<A href="monster.htm#02">鬥士</A>，等級為主角的等級再隨機增加0～3級。<font color=red>凱麗無法進入</font>
+<tr valign=top>
+<td id="db">DB.山洞遊樂場
+<td>隨機進行下列小遊戲：
+<ol>
+   <li><A href="#game1">射擊場</A>
+   <li><A href="#game2">山洞賽狗場</A>
+   <li><A href="#game3">對對碰</A>
+   <li><A href="#game4">單挑擂台賽</A>（必須有傭兵才會進入）
+</ol>
+<tr valign=top>
+<td>DC.無事空地
+<td>不會發生任何事件。
+<tr valign=top>
+<td id="dd">DD.傳送
+<td>踏上魔法傳送點，隨機移往地圖上另一處魔法傳送點。
+<tr valign=top>
+<td id="de">DE.怪物
+<td>遭遇敵人，怪物等級為主角的等級再隨機增減0～3級，最高50級。<br>
+敵人空位數機率為：1=5%，2=20%，3=50%，4=20%，5=5%，會按敵人體型決定最終數目。
+<tr valign=top>
+<td>DF.任務領地
+<td>依不同關卡發生不同事件。
+<tr valign=top>
+<td id="e0">E0.機會
+<td>隨機獲得一張卡片，出現機率請參見<A href="card.htm">卡片列表</A>。若身上已擁有16張卡片，則必須捨棄一張，或按Esc捨棄獲得的卡片。
+<tr valign=top>
+<td id="e1">E1.命運
+<td>發生一件<A href="event.htm#chance">命運事件</A>。
+<tr valign=top>
+<td id="e2">E2.財寶
+<td>發現財寶，獲得金錢200*LV+(0～700)。
+<tr valign=top>
+<td id="e3">E3.中立領地
+<td>可選擇攻打或買下。<br>
+　　買下金額 = 基礎稅金*5*(規模+1)<br>
+　　領地實際稅金 = 基礎稅金*(2^規模)<br>
+　　規模：1=村落、2=鄉鎮、3=城市、4=城堡<br>
+<tr valign=top>
+<td id="e4">E4.卡片店
+<td>先決定最多10+(0～5)張，再依編號由小到大檢測，出現機率為(最多張數/43)，達到最多張數即結束，故每種卡片只會出現一張，編號愈大的卡片愈不易出現。
+<tr valign=top>
+<td id="e6">E6～E9.角色領地
+<td>別人領地：可選擇付過路費或進攻，過路費 = 基礎稅金<br>
+　　　　　<font color=red>右下顯示的守軍資訊有誤</font>，可進行<A href="modify1.htm">程式修正</A>。<br>
+自己領地：可選擇擴充城鎮（非城堡規模時才有，每升一級稅金加倍）或召募守軍<br>
+　　　　　擴充城鎮金額：村落=200、鄉鎮=500、城市=1000
+</TABLE>
+
+<p><font color=blue><b>*** 小遊戲說明</b></font>
+
+<p><A id="game1">1.<font color=blue><b>射擊場</b></font>：小蜜蜂射擊遊戲
+
+<p><img src="game1.png">
+
+<p>左右=移動、Space=射擊、Esc=結束射擊（開始結算）。全部28隻，打中：
+
+<ul>
+  <li>18～28隻：隨機贈送火焰劍、魔法杖、魔法盔、魔法項鍊、皮靴其中一件
+  <li>15～17隻：隨機贈送魔法劍、法師袍、鐵盾、妖精緞帶、回復劑其中一件
+  <li>1～14隻：隨機贈送鐵劍、流星鎚、旅行服、布靴、皮靴其中一件
+</ul>
+
+<p>以上不會檢測角色是否能使用，所以可能得到無法使用的裝備。
+
+<p><A id="game2">2.<font color=blue><b>山洞賽狗場</b></font>：每次賭金500元
+
+<p><img src="game2.png">
+
+<p>選擇會獲得前兩名的犬隻，中一隻時獲得2500元，兩隻都中時獲得15000元。
+
+<p><A id="game3">3.<font color=blue><b>對對碰</b></font>
+
+<p><img src="game3.png">
+
+<p>給與玩家5秒記下各圖案位置，然後蓋牌看玩家在30秒內翻中多少對（全部共15對）。
+
+<ul>
+<li>0～ 2：隨機贈送一件200元(含)以下的裝備。
+<li>3～ 5：隨機贈送魔法劍、戰斧、法師袍、皮甲、鐵盾、妖精緞帶、皮靴其中一件。
+<li>6～ 8：隨機贈送火焰劍、長戟、魔法杖、鎖子甲、魔法盔其中一件。
+<li>9～11：隨機贈送鎧甲、魔法盾、精靈靴其中一件。
+<li>12～15：隨機贈送斬鐵劍、魔法斧、妖精披風、魔法袍、龍盾、神聖護符、疾走靴其中一件。
+</ul>
+
+<p>以上不會檢測角色是否能使用，所以可能得到無法使用的裝備。
+
+<p><A id="game4">4.<font color=blue><b>單挑擂台賽</b></font>：每次彩金1000元
+
+<p>派一位傭兵與電腦對手單挑（自動戰鬥），獲勝時彩金加倍，並可將彩金全部押注繼續挑戰，最多4場，獲得16000元。
+
+<p>如果想離開但傭兵不足4位，請按Esc離開，<font color=red>若按選單中的離開，則仍然會進入單挑</font>。可進行<A href="modify1.htm">程式修正</A>。
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>

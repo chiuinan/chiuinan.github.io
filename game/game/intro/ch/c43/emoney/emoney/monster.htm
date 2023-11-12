@@ -5,28 +5,22 @@
 </head>
 <body>
 <CENTER><FONT COLOR=FF0000 size=5><b>怪物／傭兵列表</b></FONT></CENTER>
-<pre style="font-family: MingLiU, monospace; font-size: 16px;">
 怪物／傭兵列表：<A href="#t">怪物資訊表</A>、<A href="#k">種族相性表</A>
 
-<font color=blue><b><A id="t">*** 怪物資訊表</b></font>
+<p><font color=blue><b>*** 怪物資訊表</b></font>
 
-1.生命=H1+H0*(LV-1)，法力=M1+M0*(LV-1)，攻擊力=AP1+AP0*(LV-1)，防禦力=攻擊力/2
-2.準確度=HIT+LV_HIT，閃避率=EV+LV_HIT/2，其中LV_HIT=HT1+HT0*(LV-1)
-3.雇用價格=掉落金錢=價格*LV，獲得經驗值=經驗*LV
-4.關卡裡的數字，表示劇情模式下，怪物會出現的章節。一般模式則都會出現。
-5.隊伍最多有5個位置，扣除主角，最多只會有4個傭兵，但大型傭兵一次會佔掉2個位置。
-6.二次普攻的怪物在攻擊時，<font color=red>因程式誤以第一位傭兵做為被攻擊敵人進行陣亡檢驗</font>，因此若
-  第一位傭兵已陣亡或不存在，則只會攻擊一次；若第一位傭兵未陣亡，而被攻擊的傭兵已
-  陣亡，則仍會攻擊第二次。正常應該是被攻擊敵人未陣亡前，一律攻擊兩次，若已陣亡則
-  停止攻擊。可進行<A href="modify1.htm">程式修正</A>。
-7.擁有最強法術的傭兵，單人攻擊法術的是牛頭人，相當於LV*7傷害。全體攻擊法術的則是
-  祭司和龍，為LV*3傷害。但龍的法術攻擊屬性是炎，龍族、鬼魂、地獄犬、巨蛇都免疫，
-  祭司則沒有免疫的怪物。
-8.法師的轉移、點石成金術，祭師的分解術，都有無視主角屬性、秒殺主角的可能，遇到時
-  要優先除去（尤其分解術的機率高達50%）。普攻傷害最高的是龍，低防低命的凱麗遇到
-  也要小心。
+<ol>
+<li>生命=H1+H0*(LV-1)，法力=M1+M0*(LV-1)，攻擊力=AP1+AP0*(LV-1)，防禦力=攻擊力/2
+<li>準確度=HIT+LV_HIT，閃避率=EV+LV_HIT/2，其中LV_HIT=HT1+HT0*(LV-1)
+<li>雇用價格=掉落金錢=價格*LV，獲得經驗值=經驗*LV
+<li>關卡裡的數字，表示劇情模式下，怪物會出現的章節。一般模式則都會出現。
+<li>隊伍最多有5個位置，扣除主角，最多只會有4個傭兵，但大型傭兵一次會佔掉2個位置。
+<li>二次普攻的怪物在攻擊時，<font color=red>因程式誤以第一位傭兵做為被攻擊敵人進行陣亡檢驗</font>，因此若第一位傭兵已陣亡或不存在，則只會攻擊一次；若第一位傭兵未陣亡，而被攻擊的傭兵已陣亡，則仍會攻擊第二次。正常應該是被攻擊敵人未陣亡前，一律攻擊兩次，若已陣亡則停止攻擊。可進行<A href="modify1.htm">程式修正</A>。
+<li>法師的轉移、點石成金術，祭師的分解術，都有無視主角屬性、秒殺主角的可能，遇到時要優先除去（尤其分解術的機率高達50%）。普攻傷害最高的是龍，低防低命的凱麗遇到也要小心。
+<li>擁有最強法術的傭兵，單人攻擊法術的是牛頭人，相當於LV*7傷害。全體攻擊法術的則是祭司和龍，為LV*3傷害。但龍的法術攻擊屬性是炎，龍族、鬼魂、地獄犬、巨蛇都免疫，祭司則沒有免疫的怪物。
+</ol>
 
-<TABLE BORDER=1 cellspacing=0 cellpadding=1>
+<p align=center id="t"><TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <tr bgcolor="#c0ffff"><TH colspan=40>人類
 <TR bgcolor="#ffffc0"><TH>編號<TH>圖像<TH>名稱<TH>記號<TH>相性種族<TH>體型<TH>H0<TH>H1<TH>M0<TH>M1<TH>AP0<TH>AP1<TH>HIT<TH>HT0<TH>HT1<TH>EV<TH>經驗<TH>價格<TH>普攻<TH>等級/法術<TH nowrap>可偷物品<TH>關卡
 <TR align=right><TD align=center>01<TD align=center id="01"><img src="FI.PNG"><TD nowrap align=left>戰士<TD align=center>fi<TD align=left><A href="#k1">人族(戰)</A><TD align=center>小<TD>6<TD>20<TD>0<TD>0<TD>3<TD>10<TD>75<TD>3<TD>3<TD>2<TD>3<TD>30<TD align=center><TD align=left><TD align=left><A href="item.htm#44">神聖護符</A><TD align=center>1234
@@ -70,9 +64,9 @@
 <TR bgcolor="#ffffc0"><TH>編號<TH>圖像<TH>名稱<TH>記號<TH>相性種族<TH>體型<TH>H0<TH>H1<TH>M0<TH>M1<TH>AP0<TH>AP1<TH>HIT<TH>HT0<TH>HT1<TH>EV<TH>經驗<TH>價格<TH>普攻<TH>等級/法術<TH>可偷物品<TH>關卡
 </TABLE>
 
-<font color=blue><b><A id="k">*** 種族相性表</b></font>（對各種攻擊形態的傷害倍率，單位%）
+<p><font color=blue><b><A id="k">*** 種族相性表</b></font>（對各種攻擊形態的傷害倍率，單位%）
 
-<TABLE BORDER=1 cellspacing=0 cellpadding=1>
+<p align=center><TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <TR bgcolor="#ffffc0"><TH>編號<TH>名稱<TH>物理<TH>火系<TH>冰系<TH>雷系<TH>法術<TH>毒<TH>炎<TH>冰<TH>特殊
 <TR align=right><TD align=center id="k1">1<TD align=left>人族(戰)<TD>100<TD>100<TD>100<TD>100<TD>100<TD>100<TD>75<TD>75<TD>100
 <TR align=right><TD align=center id="k2">2<TD align=left>人族(法)<TD>100<TD>50<TD>50<TD>50<TD>50<TD>100<TD>100<TD>100<TD>100
@@ -88,30 +82,42 @@
 <TR bgcolor="#ffffc0"><TH>編號<TH>名稱<TH>物理<TH>火系<TH>冰系<TH>雷系<TH>法術<TH>毒<TH>炎<TH>冰<TH>特殊
 </TABLE>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </font>
 </pre>
 </body>
