@@ -51,7 +51,7 @@
 <TR><TD align=center id="45">2D<TD align=center>－<TD>魔體轟<TD>敵方<TD align=center>全體<TD align=center>法術<TD align=right>20<TD>傷害=24+LV*3<TD>
 <TR><TD align=center id="47">2F<TD align=center>－<TD>地獄爆炎<TD>敵方<TD align=center>全體<TD align=center>炎<TD align=right>25<TD>傷害=32+LV*3<TD>
 <TR><TD align=center id="57">39<TD align=center>07<TD bgcolor="#c0ffff">暴風雪<TD>敵方<TD align=center>全體<TD align=center>冰系<TD align=right>15<TD>傷害=12+LV*4<TD>
-<TR><TD align=center id="59">3B<TD align=center>09<TD bgcolor="#c0ffff">天雷轟<TD>敵方<TD align=center>全體<TD align=center>雷系<TD align=right>20<TD>傷害=15+LV*5<TD>
+<TR><TD align=center id="59">3B<TD align=center>09<TD bgcolor="#c0ffff">天雷轟<TD>敵方<TD align=center>全體<TD align=center>雷系<TD align=right>20<TD>傷害=15+LV*5<TD>不隨機增減傷害
 <TR><TD align=center id="55">37<TD align=center>05<TD bgcolor="#c0ffff">炎龍破<TD>敵方<TD align=center>全體<TD align=center>火系<TD align=right>12<TD>傷害=18+LV*8<TD>
 <TR><TD align=center id="41">29<TD align=center>－<TD>巨大蝙蝠<TD>敵方<TD align=center>全體<TD align=center>物理<TD align=right>12<TD>傷害=AP/2<TD>
 <TR bgcolor="#ffffc0"><TH>編號<TH>編號<TH>名稱<TH>對象<TH>範圍<TH>型態<TH>耗法<TH>作用<TH>限制
@@ -85,7 +85,7 @@
 <li>戰鬥時，敵人有20%機率會施展法術，各法術施展機率均相同。
 <li>中毒時，每回合減少10%生命（以最大生命計算），直到戰鬥結束或解除中毒。但是法術【解毒】卻因遊戲設計失誤，並沒有任何主角有此一法術，且<font color=red>解毒法術實際上也並無作用</font>，可進行<A href="modify1.htm">程式修正</A>。
 <li>毒蛛攻擊按照遊戲內隱藏的文件所述，應該有30%機率中毒，但實際並未實作。想調整的話，可進行<A href="modify1.htm">程式修正</A>。
-<li>敵人施展盜取物品法術時，只會偷取角色的金錢，不會偷取裝備或卡片。而我方施展時，同一個敵人的物品只能偷取一次。
+<li>我方施展盜取物品法術時，同一個敵人的物品只能偷取一次。敵人施展盜取物品法術時，只會偷取角色的金錢（50～500），不會偷取裝備或卡片（<font color=red>但我方金錢實際上並未減少</font>，可進行<A href="modify1.htm">程式修正</A>）。
 <li>麻痺回合的算法，是輪到他行動時算一回合。由於敵方後行動，所以敵方被麻痺的該回合，就已算一回合，下回合很有可能可以行動。而我方先行動，因此我方被麻痺後的下一回合，才是第一回合。此外，<font color=red>【解麻】法術實際上並無作用</font>，可進行<A href="modify1.htm">程式修正</A>。但因解麻需浪費主角一個回合的行動，以及被麻痺人員一回合的行動，如果麻痺回合數剛好是一回合的話，等於主角浪費了一回合的動作，而主角的行動通常是最有價值的，因此解麻法術並不實用。
 <li>因遊戲程式誤寫，<font color=red>更高級的法術【神恩】使用的是【治癒】的計算公式，醫療效果反不如【回復】</font>，可進行<A href="modify1.htm">程式修正</A>（暫定神恩醫療效果為30+LV*12）。
 <li>因遊戲程式誤寫，<font color=red>必中／虛幻並沒有準確度／閃避率加倍效果</font>，可進行<A href="modify1.htm">程式修正</A>。

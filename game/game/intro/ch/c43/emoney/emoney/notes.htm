@@ -56,18 +56,15 @@ Esc = 取消
 
 <p>若有倍力、必中、鐵壁、虛幻狀態者，該人員的攻擊力、準確度、防禦力、閃避率加倍<br>
 命中率 = (攻方準確度HIT - 守方閃避率EV)%，最低0%，最高100%<br>
-<font color=red>實際命中率 = 命中率 + 1%</font><br>
 傷害 = 攻方攻擊力AP - 守方防禦力DP<br>
 實際傷害 = 傷害*<A href="monster.htm#k">相性[守方種族][物理]</A> * <font color=red>100/(80～119)</font>
-
-<p>註1：<font color=red>因遊戲程式誤寫，實際命中率檢測落在1～100%</font>，因此即便攻方準確度HIT遠低於守方閃避率EV，依然有1%的命中率。可進行<A href="modify1.htm">程式修正</A>。<br>
-註2：遊戲原本是要寫成增減20%的隨機傷害或醫療，但<font color=red>除數與被除數寫錯，變成-16%～+25%</font>，可進行<A href="modify1.htm">程式修正</A>。
 
 <li>法術攻擊 (必定命中、無視防禦)
 
 <p>傷害 = <A href="spell.htm">法術傷害計算公式</A><br>
 施法人員若有倍力狀態時，傷害加倍<br>
-實際傷害 = 傷害*<A href="monster.htm#k">相性[守方種族][法術形態]</A> * <font color=red>100/(80～119)</font>
+實際傷害 = 傷害*<A href="monster.htm#k">相性[守方種族][法術形態]</A> * <font color=red>100/(80～119)</font><br>
+天雷轟不隨機增減傷害
 
 <li>醫療
 
@@ -75,7 +72,12 @@ Esc = 取消
 實際恢復 = 恢復 * <font color=red>100/(80～119)</font>
 </ol>
 
-<p>註：實際傷害，至少1點，<font color=red>即便是免疫或回復的敵人仍會受到1點傷害</font>，可進行<A href="modify1.htm">程式修正</A>。
+<p>註：
+<ol>
+<li>因遊戲程式誤寫，<font color=red>實際命中率檢測會落在1～100%</font>，因此即便攻方準確度HIT遠低於守方閃避率EV，依然有1%的命中率。可進行<A href="modify1.htm">程式修正</A>。<br>
+<li>遊戲原本是要寫成增減20%的隨機傷害或醫療，但<font color=red>除數與被除數寫錯，變成-16%～+25%</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>實際傷害，至少1點，<font color=red>即便是免疫或回復的敵人仍會受到1點傷害</font>，可進行<A href="modify1.htm">程式修正</A>。
+</ol>
 
 </body>
 </html>
