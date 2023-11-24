@@ -5,6 +5,7 @@
 </head>
 <body>
 <CENTER><FONT COLOR=FF0000 size=5><b>程式修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
 <TABLE BORDER=0 cellspacing=0 cellpadding=0>
 <tr valign=top>
 <th nowrap>修改：
@@ -18,11 +19,28 @@
 
 <p>[settings]<br>
 use_cd=是否使用CD背景音樂，0或1<br>
-nointro=是否略過開頭動畫，0或1（簡中版）<br>
-nosound=是否無聲音，0或1（簡中版）<br>
+nointro=是否略過開頭動畫，0或1<br>
+nosound=是否無聲音，0或1<br>
+nowalksound=是否無走路聲音，0或1<br>
 [debug]<br>
-nodamage=被攻擊時是否不受傷害（包括狀態），0或1（簡中版）<br>
-nodirect3d=是否不使用Direct3D，0或1（簡中版）
+nomonster=是否無怪物，0或1<br>
+nodamage=被攻擊時是否不受傷害（包括狀態），0或1<br>
+<tr valign=top>
+<th>修改：
+<td>mm7.exe (簡中版因執行檔有壓縮，無法修改)<br>
+<ol>
+<li>無限撿屍 (修改後容易當機，請自行斟酌)<br>
+6A 64 99 59 F7 F9 83 FA 5A 7D 07<br>
+-- -- -- -- -- -- -- -- 00 -- --<br>
+<li>提高撿屍時神器出現機率 (怪物等級必須足夠)<br>
+6A 64 99 59 F7 F9 83 FA 05 7D 31  (繁中版)<br>
+-- -- -- -- -- -- -- -- 64 -- --<br>
+6A 64 99 59 F7 F9 83 FA 05 7D 2D  (英文版)<br>
+-- -- -- -- -- -- -- -- 64 -- --<br>
+<li>隨機神器不限制只出現13種<br>
+75 22 83 7D 0C 0D 7D 1C<br>
+XX XX -- -- -- 1E -- --  (將XX改成90，則出現過的神器可再出現)<br>
+</ol>
 </TABLE>
 </body>
 </html>

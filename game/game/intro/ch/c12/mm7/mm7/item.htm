@@ -9,7 +9,7 @@
 
 <P>裝備列表：<A HREF="#weapon">武器</A>、<A HREF="#armor">防具</A>、<A HREF="#magic">魔法字首</A>
 
-<p><font color=red><b>註：由於程式bug，特殊裝備的隱藏功能並無實質作用 (紫色字體部份)。</b></font>
+<p><font color=red><b>註：由於程式bug，特殊裝備的隱藏功能並無實質作用 (紫色字體部份)，也無法賣出。部份神器的隱藏功能亦無實質作用。</b></font>
 <TABLE BORDER=1 cellspacing="0" cellpadding="1">
 <TR id="weapon">
 <TH COLSPAN=6 BGCOLOR="#80ffff">
@@ -129,15 +129,15 @@
        <td>-
        <td>4d5+8
     <tr>
-       <td><font color=#008000>鐵羽毛／鐵翎 (Iron Feather)
+       <td><font color=#FF0000>鐵羽毛／鐵翎 (Iron Feather)
        <td>6
        <td>-
-       <td><font color=#008000>4d5+10，6-15電擊傷害，力量+40
+       <td><font color=#FF0000>4d5+10，6-15電擊傷害，力量+40
     <tr id="Elfbane">
-       <td><font color=#008000>精靈剋星／精靈殺手 (Elfbane)
-       <td>6
+       <td><font color=#FF0000>精靈剋星／精靈殺手 (Elfbane)
+       <td>-
        <td>地精
-       <td><font color=#008000>4d6+12，對精靈傷害加倍，盾牌技能+50%</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
+       <td><font color=#FF0000>4d6+12，對精靈傷害加倍，盾牌技能+50%</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
 
 <tr>
 <td rowspan=10><b>匕首</b>
@@ -156,11 +156,11 @@
        <td>3
        <td>-
        <td>2d2+3
-    <tr>
+    <tr id="CarminesDagger">
        <td><font color=#008000>卡明小姐的匕首／卡米爾女士的匕首 (Lady Carmine's Dagger)
        <td>-
        <td>-
-       <td><font color=#008000>2d2+4</font>，<font color=#FF00C0><b>5體系傷害，解除陷阱技能+2</b></font>，在<A HREF="celeste.htm">賽勒斯提</A>
+       <td><font color=#008000>2d2+4</font>，<font color=#FF00C0><b>5體系傷害，解除陷阱技能+2</b></font>，在<A HREF="celeste.htm">賽勒斯提</A>#24
     <tr>
        <td>刺客匕首 (Assassin's Dagger)
        <td>4
@@ -386,7 +386,7 @@
        <td><font color=#FF0000>公正流星錘／正義 (Justice)
        <td>6
        <td>正義
-       <td><font color=#FF0000>2d4+14，對亡靈傷害加倍，心智、肢體技能+50%，速度-40
+       <td><font color=#FF0000>2d4+14，心智、肢體技能+50%，對亡靈傷害加倍，速度-40
 <tr>
     <td rowspan=4>錘子
        <td>大錘／錘 (Hammer)
@@ -489,7 +489,7 @@
        <td><font color=#FF0000>完美之弓 (The Perfect Bow)
        <td>-
        <td>-
-       <td><font color=#FF0000>5d2+12
+       <td><font color=#FF0000>5d2+12</font>，弓箭手最終轉職報酬
 
 <tr>
 <td rowspan=2><b>上古兵器</b>
@@ -578,7 +578,7 @@
        <td>36
     <tr id="ElevenChainmail">
        <td><font color=#FF0000>精靈鎖子甲／精靈鎖甲 (Eleven Chainmail)
-       <td>6
+       <td>-
        <td>精靈
        <td><font color=#FF0000>30，速度+15，精確度+15，加快攻擊恢復速度</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
     <tr>
@@ -668,10 +668,10 @@
        <td>-
        <td>19
     <tr>
-       <td><font color=#FF0000>榮耀之盾／神聖之盾 (Glory Shield)
+       <td><font color=#008000>榮耀之盾／神聖之盾 (Glory Shield)
        <td>6
        <td>-
-       <td><font color=#FF0000>24，靈魂技能+50%，盾牌技能+5，肢體、心抗-10
+       <td><font color=#008000>24，<font color=#FF00C0><b>靈魂技能+50%</b></font>，盾牌技能+5，肢體、心抗-10
 
 <tr>
 <td rowspan=10><b>頭盔</b>
@@ -714,19 +714,19 @@
        <td>12
     <tr id="MindsEye">
        <td><font color=#FF0000>心靈之眼／心眼 (Mind's Eye)
-       <td>6
+       <td>-
        <td>人類
        <td><font color=#FF0000>10，智力+15，個性+15，恢復魔法</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
-    <tr>
+    <tr id="ShadowsMask">
        <td><font color=#008000>陰影面罩／幻影面具 (Shadow's Mask)
        <td>-
        <td>-
-       <td><font color=#008000>12</font>，<font color=#FF00C0><b>偷竊技能+3，解除陷阱技能+3</b>
+       <td><font color=#008000>12</font>，<font color=#FF00C0><b>偷竊技能+3，解除陷阱技能+3</b></font>，在<A HREF="tomb.htm">隱藏的陵寢</A>#2
     <tr>
-       <td><font color=#FF0000>泰爾頓之盔／塔里頓頭盔 (Taledon's Helm)
+       <td><font color=#008000>泰爾頓之盔／塔里頓頭盔 (Taledon's Helm)
        <td>6
        <td>正義
-       <td><font color=#FF0000>14，光明技能+50%，個性+15，力量+15，幸運-40
+       <td><font color=#008000>14，<font color=#FF00C0><b>光明技能+50%</b></font>，個性+15，力量+15，幸運-40
 
 <tr>
 <td rowspan=7><b>手套</b>
@@ -757,7 +757,7 @@
        <td>12
     <tr id="ForgeGauntlets">
        <td><font color=#FF0000>熔爐手套／大地手套 (Forge Gauntlets)
-       <td>6
+       <td>-
        <td>矮人
        <td><font color=#FF0000>10，力量+15，耐力+15，火抗+30</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
     <tr>
@@ -797,11 +797,11 @@
        <td>6
        <td>-
        <td><font color=#FF0000>15，速度+40，水系技能+50%
-    <tr>
+    <tr id="HermesSandals">
        <td><font color=#FF0000>信使神的涼鞋／赫爾密斯草鞋 (Hermes' Sandals)
-       <td>－
        <td>-
-       <td><font color=#FF0000>20，速度+100，精確度+50，風抗+50，恢復生命和魔法，凌空飛降</font><br>在...
+       <td>-
+       <td><font color=#FF0000>20，速度+100，精確度+50，風抗+50，恢復生命和魔法，凌空飛降</font><br>在<A HREF="dcave.htm">龍穴</A>#4
 <tr>
 <td rowspan=10><b>斗篷<br>披風</b>
     <td rowspan=10>斗篷<br>披風
@@ -836,7 +836,7 @@
        <td><font color=#008000>9</font>，<font color=#FF00C0><b>智力+10，幸運+10</b>
     <tr id="CloakSheep">
        <td><font color=#FF0000>羔羊之斗篷／羊鳴披風 (Cloak of the Sheep)
-       <td>6
+       <td>-
        <td>-
        <td><font color=#FF0000>10，防禦疾病、痴狂、麻痺、中毒、睡眠、石化，智力-20，個性-20<br>在<A HREF="baa.htm">巴之神殿</A>#3
     <tr id="suncloak">
@@ -862,23 +862,23 @@
        <td>6
        <td>-
        <td><font color=#008000>0，力量+75，速度-40
-    <tr>
+    <tr id="HerosBelt">
        <td><font color=#FF0000>英雄腰帶 (Hero's Belt)
-       <td>6
+       <td>-
        <td>男性
-       <td><font color=#FF0000>0，武器使用術+5，力量+15，恢復生命
+       <td><font color=#FF0000>0，武器使用術+5，力量+15，恢復生命</font>，<A href="quests.htm#tower">方尖塔隱藏寶藏</A>
 <tr>
 <td rowspan=2><b>項鍊</b>
     <td rowspan=2>項鍊
-       <td><font color=#008000>蛇髮女妖之鏡／美杜莎之鏡 (Medusa's Mirror)
+       <td id="MedusasMirror"><font color=#008000>蛇髮女妖之鏡／美杜莎之鏡 (Medusa's Mirror)
        <td>-
        <td>-
-       <td><font color=#FF00C0><b>對石化免疫</b>
+       <td><font color=#FF00C0><b>對石化免疫</b></font>，在<A HREF="dwarf.htm#2">紅矮人礦坑下層</A>#3
     <tr id="clanker">
        <td><font color=#008000>噹噹護身符／科蘭克護身符 (Clanker's Amulet)
        <td>-
        <td>-
-       <td><font color=#FF00C0><b>煉金術技能+15</b></font>，在<A HREF="school.htm">巫術學校</A>#10
+       <td><font color=#FF00C0><b>煉金術技能+15</b></font>，在<A HREF="labor.htm">噹噹實驗室</A>#7或<A HREF="school.htm">巫術學校</A>#10
 <tr>
 <td rowspan=4><b>戒指</b>
     <td rowspan=4>戒指
@@ -891,16 +891,23 @@
        <td>-
        <td>-
        <td><font color=#FF00C0><b>靈魂技能+50%</b></font>，在<A HREF="haunted.htm">鬧鬼大宅</A>#3
-    <tr>
+    <tr id="LadysEscort">
        <td><font color=#008000>女士護身戒／旅行之寶 (Lady's Escort)
-       <td>6
+       <td>-
        <td>女性
-       <td><font color=#008000>凌波微步魔法，凌空飛降魔法，遠程攻擊傷害減半
+       <td><font color=#008000>凌波微步魔法，凌空飛降魔法，遠程攻擊傷害減半</font>，<A href="quests.htm#tower">方尖塔隱藏寶藏</A>
     <tr>
        <td><font color=#FF0000>統治者之戒／王者指環 (Ruler's Ring)
        <td>6
        <td>-
        <td><font color=#FF0000>心智技能+50%，暗黑技能+50%
+<tr>
+<td rowspan=1><b>其他</b>
+    <td rowspan=1>其他
+       <td id="TempleBottle">瓶子裡面的神廟／瓶中之城 (Temple in a Bottle)
+       <td>-
+       <td>-
+       <td>使用可進入<A HREF="temple.htm">奇詭神殿</A>，在<A HREF="shoals.htm">蕭爾</A>#3
 </table>
 
 <p>
