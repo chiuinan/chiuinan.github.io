@@ -1,0 +1,69 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>資訊修改</title>
+</head>
+<body>
+<CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU, monospace; font-size: 16px; white-space: pre-wrap">
+<font color=blue><b>一、神器屬性增減程式</b></font>
+
+尋找：
+
+05 0C FE FF FF  add eax,-1F4h
+83 F8 24        cmp eax,24
+
+後面程式為各神器的屬性增減處理：
+
+1.輸入
+
+eax = 物品編號 (1F4h=500開始為神器,共24h=36個,不含特殊裝備)
+si=屬性/技能編號
+di=屬性總值
+[esp+10]=技能總值
+ebx=指向原始技能值
+
+2.輸出
+
+di=屬性總值
+[esp+10]=技能總值
+[esp+14]=額外技能增值
+
+屬性/技能編號：
+
+00 力量
+01 智力
+02 人格
+03 耐力
+04 精確度
+05 速度
+06 幸運
+09 防禦
+0A 火抗
+0B 風抗
+0C 水抗
+0D 地抗
+0E 心抗
+0F 體抗
+11 偷竊技能
+12 解除陷阱技能
+15 武器大師技能
+16 閃躲技能
+17 徒手搏擊技能
+21 (隱藏抗性)
+22 火系技能，原始技能值在[ebx+120]
+23 風系技能，原始技能值在[ebx+122]
+24 水系技能，原始技能值在[ebx+124]
+25 地系技能，原始技能值在[ebx+126]
+26 魂系技能，原始技能值在[ebx+128]
+27 心系技能，原始技能值在[ebx+12A]
+28 體系技能，原始技能值在[ebx+12C]
+29 光系技能，原始技能值在[ebx+12E]
+2A 暗系技能，原始技能值在[ebx+130]
+2B 祈禱技能
+2C 弓箭技能
+2D 盾牌技能
+2E 學習技能
+</pre>
+</body>
+</html>

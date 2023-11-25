@@ -5,11 +5,13 @@
 </HEAD>
 
 <body>
+<P align=center>裝備列表：<A HREF="#weapon">武器</A>、<A HREF="#armor">防具</A>、<A HREF="#magic">魔法字首</A>
+
+<ol>
+<li><font color=red><b>原版榮耀之盾、泰爾頓之盔的技能加乘並未實作而無效 (紫色字體部份)</b></font>，英文版可用GrayFace Patch修正，繁中版可進行<A href="modify1.htm">程式修正</A>。
+<li>中文版翻譯了STDITEMS.TXT與SPCITEMS.TXT中的魔法物品前導字串，卻未修改ITEMS.TXT中特殊裝備對應的魔法物品前導字串，以致<font color=red><b>所有特殊裝備的特殊功能均無效 (紫色字體部份)</b></font>，可自行加以修正，或使用青衫版繁中更新檔 (但已撿拾的特殊物品不會變更)。
+</ol>
 <CENTER>
-
-<P>裝備列表：<A HREF="#weapon">武器</A>、<A HREF="#armor">防具</A>、<A HREF="#magic">魔法字首</A>
-
-<p>註：<font color=red><b>中文版取消了特殊裝備與部份神器的特殊功能 (紫色字體部份)</b></font>，英文版則有。
 <TABLE BORDER=1 cellspacing="0" cellpadding="1">
 <TR id="weapon">
 <TH COLSPAN=6 BGCOLOR="#80ffff">
@@ -19,8 +21,8 @@
 <TH>類別
 <TH>子類
 <TH>名稱
-<TH>等級
-<TH>限制
+<TH nowrap>等級
+<TH nowrap>限制
 <TH>攻擊力
 
 <tr>
@@ -49,7 +51,7 @@
        <td><font color=#FF0000>海盜劍／海盜 (Corsair)
        <td>6
        <td>-
-       <td><font color=#FF0000>2d4+13，偷竊術+5，拆卸術+5，幸運+40
+       <td><font color=#FF0000>2d4+13，偷竊技能+5，解除陷阱技能+5，幸運+40
     <tr id="LieutenantCutlass">
        <td><font color=#FF0000>隊長短劍／中尉之刀 (Lieutenant's Cutlass)
        <td>-
@@ -82,7 +84,7 @@
        <td>-
        <td>3d3+12
     <tr id="VilliansBlad">
-       <td><font color=#008000>惡人之刃／邪惡之刃 (Villian's Blad)
+       <td><font color=#FF0000>惡人之刃／邪惡之刃 (Villian's Blad)
        <td>-
        <td>-
        <td><font color=#008000>3d4+12</font>，<font color=#FF00C0><b>吸血敵傷20%</b></font>，在<A HREF="william.htm">賽塔軻的高塔</A>#4
@@ -92,7 +94,7 @@
        <td>-
        <td><font color=#FF0000>3d4+14，速度+40
 <tr>
-    <td rowspan=4>闊劍<br>寬刃劍
+    <td rowspan=4 nowrap>闊劍<br>寬刃劍
        <td>闊劍／寬刃劍 (Broadsword)
        <td>1
        <td>-
@@ -111,7 +113,7 @@
        <td><font color=#FF0000>華萊士之劍／華里斯 (Wallace)
        <td>6
        <td>-
-       <td><font color=#FF0000>3d4+12，武器使用術+10，個性+40
+       <td><font color=#FF0000>3d4+12，武器大師技能+10，人格+40
 <tr>
     <td rowspan=5>雙手劍
        <td>雙手巨劍／雙手劍 (Tow-handed Sword)
@@ -137,7 +139,7 @@
        <td><font color=#FF0000>精靈剋星／精靈殺手 (Elfbane)
        <td>-
        <td>地精
-       <td><font color=#FF0000>4d6+12，對精靈傷害加倍，盾牌技能+50%</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
+       <td><font color=#FF0000>4d6+12，對精靈傷害加倍</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
 
 <tr>
 <td rowspan=10><b>匕首</b>
@@ -175,7 +177,7 @@
        <td><font color=#FF0000>老尼克的匕首／尼克 (Old Nick)
        <td>6
        <td>邪惡
-       <td><font color=#FF0000>2d2+8，8中毒傷害，對精靈傷害加倍，拆卸術+5
+       <td><font color=#FF0000>2d2+8，8中毒傷害，對精靈傷害加倍，解除陷阱技能+5
 <tr>
     <td rowspan=3>長匕首
        <td>長匕首 (Long Dagger)
@@ -355,7 +357,7 @@
        <td><font color=#008000>重壓棍棒／麥斯 (Mash)
        <td>6
        <td>-
-       <td><font color=#008000>1d3+15，力量+150，智力-40，個性-40，速度-40
+       <td><font color=#008000>1d3+15，力量+150，智力-40，人格-40，速度-40
 <tr>
     <td rowspan=6>釘頭錘<br>錘棍
        <td>釘頭錘／錘棍 (Mace)
@@ -386,7 +388,7 @@
        <td><font color=#FF0000>公正流星錘／正義 (Justice)
        <td>6
        <td>正義
-       <td><font color=#FF0000>2d4+14，心智、肢體技能+50%，對亡靈傷害加倍，速度-40
+       <td><font color=#FF0000>2d4+14，心系、體系技能+50%，對亡靈傷害加倍，速度-40
 <tr>
     <td rowspan=4>錘子
        <td>大錘／錘 (Hammer)
@@ -407,7 +409,7 @@
        <td><font color=#FF0000>馬克力格之錘／麥克林的錘棍 (Mekorig's Hammer)
        <td>6
        <td>-
-       <td><font color=#FF0000>2d5+13，靈魂技能+50%，力量+75，風抗-50
+       <td><font color=#FF0000>2d5+13，魂系技能+50%，力量+75，風抗-50
 
 <tr>
 <td rowspan=4><b>手杖<br>棍棒</b>
@@ -430,7 +432,7 @@
        <td><font color=#008000>愛斯力克之杖／埃斯里克之杖 (Ethric's Staff)
        <td>6
        <td>邪惡
-       <td><font color=#008000>2d4+9，冥想術+15，暗黑技能+50%，生命持續減少
+       <td><font color=#008000>2d4+9，暗系技能+50%，祈禱技能+15，生命持續減少
 <tr>
 
 <td rowspan=11><b>弓箭</b>
@@ -548,7 +550,7 @@
        <td><font color=#008000>哈瑞克皮甲／海里克之甲 (Hareck's Leather)
        <td>6
        <td>-
-       <td><font color=#008000>30，偷竊術+5，拆卸術+5，凌波微步魔法，幸運+50，所有抗性-10
+       <td><font color=#008000>30，偷竊技能+5，解除陷阱技能+5，凌波微步魔法<br>幸運+50，所有抗性-10
 <tr>
 <td rowspan=7><b>鎖子甲<br>鎖甲</b>
     <td rowspan=7>鎖子甲<br>鎖甲
@@ -607,7 +609,7 @@
        <td><font color=#FF0000>幽魯巴之鎧甲／余爾波 (Yoruba)
        <td>6
        <td>-
-       <td><font color=#FF0000>60，耐力+25，防禦疾病、痴狂、麻痺、中毒、睡眠、石化
+       <td><font color=#FF0000>60，耐力+25，防禦染病、瘋狂、麻痺、中毒、睡眠、石化
 
 <tr>
 <td rowspan=12><b>盾牌</b>
@@ -668,10 +670,10 @@
        <td>-
        <td>19
     <tr>
-       <td><font color=#008000>榮耀之盾／神聖之盾 (Glory Shield)
+       <td><font color=#FF0000>榮耀之盾／神聖之盾 (Glory Shield)
        <td>6
        <td>-
-       <td><font color=#008000>24，<font color=#FF00C0><b>靈魂技能+50%</b></font>，盾牌技能+5，肢體、心抗-10
+       <td><font color=#008000>24，<font color=#FF00C0><b>魂系技能+50%</b></font>，盾牌技能+5，體抗、心抗-10
 
 <tr>
 <td rowspan=10><b>頭盔</b>
@@ -679,13 +681,13 @@
        <td><font color=#FF0000>菲南希頭盔／菲尼克斯皇冠 (Phynaxian Crown)
        <td>6
        <td>-
-       <td><font color=#FF0000>0，火系技能+50%，水抗+50，個性+30，防禦等級-20
+       <td><font color=#FF0000>0，火系技能+50%，水抗+50，人格+30，防禦等級-20
 <tr>
     <td rowspan=1>帽子
        <td><font color=#008000>學者之帽 (Scholar's Cap)
        <td>6
        <td>-
-       <td><font color=#008000>2，學習術+15，耐力-50
+       <td><font color=#008000>2，學習技能+15，耐力-50
 <tr>
     <td rowspan=8>頭盔
        <td>角盔／守護頭盔 (Horned Helm)
@@ -716,17 +718,17 @@
        <td><font color=#FF0000>心靈之眼／心眼 (Mind's Eye)
        <td>-
        <td>人類
-       <td><font color=#FF0000>10，智力+15，個性+15，恢復魔法</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
+       <td><font color=#FF0000>10，智力+15，人格+15，恢復魔法</font>，<A href="quests.htm#card">圓法師競賽</A>任務獎品
     <tr id="ShadowsMask">
        <td><font color=#008000>陰影面罩／幻影面具 (Shadow's Mask)
        <td>-
        <td>-
        <td><font color=#008000>12</font>，<font color=#FF00C0><b>偷竊技能+3，解除陷阱技能+3</b></font>，在<A HREF="tomb.htm">隱藏的陵寢</A>#2
     <tr>
-       <td><font color=#008000>泰爾頓之盔／塔里頓頭盔 (Taledon's Helm)
+       <td><font color=#FF0000>泰爾頓之盔／塔里頓頭盔 (Taledon's Helm)
        <td>6
        <td>正義
-       <td><font color=#008000>14，<font color=#FF00C0><b>光明技能+50%</b></font>，個性+15，力量+15，幸運-40
+       <td><font color=#008000>14，<font color=#FF00C0><b>光系技能+50%</b></font>，人格+15，力量+15，幸運-40
 
 <tr>
 <td rowspan=7><b>手套</b>
@@ -764,7 +766,7 @@
        <td><font color=#FF0000>大師手套／王者之手 (Hands of the Master)
        <td>6
        <td>-
-       <td><font color=#FF0000>12，空手搏鬥技能+10，躲避技能+10
+       <td><font color=#FF0000>12，徒手搏擊技能+10，閃躲技能+10
 <tr>
 <td rowspan=7><b>靴子</b>
     <td rowspan=7>靴子
@@ -838,22 +840,22 @@
        <td><font color=#FF0000>羔羊之斗篷／羊鳴披風 (Cloak of the Sheep)
        <td>-
        <td>-
-       <td><font color=#FF0000>10，防禦疾病、痴狂、麻痺、中毒、睡眠、石化，智力-20，個性-20<br>在<A HREF="baa.htm">巴之神殿</A>#3
+       <td><font color=#FF0000>10，防禦染病、瘋狂、麻痺、中毒、睡眠、石化，智力-20，人格-20<br>在<A HREF="baa.htm">巴之神殿</A>#3
     <tr id="suncloak">
-       <td><font color=#008000>陽光斗篷／驕陽披風 (Sun Cloak)
+       <td><font color=#FF0000>陽光斗篷／驕陽披風 (Sun Cloak)
        <td>-
        <td>-
-       <td><font color=#008000>11</font>，<font color=#FF00C0><b>光明技能+50%</b></font>，在<A HREF="sun.htm">陽之聖殿</A>#4
+       <td><font color=#008000>11</font>，<font color=#FF00C0><b>光系技能+50%</b></font>，在<A HREF="sun.htm">陽之聖殿</A>#4
     <tr id="mooncloak">
-       <td><font color=#008000>月亮斗篷／月光披風 (Moon Cloak)
+       <td><font color=#FF0000>月亮斗篷／月光披風 (Moon Cloak)
        <td>-
        <td>-
-       <td><font color=#008000>11</font>，<font color=#FF00C0><b>黑暗技能+50%</b></font>，在<A HREF="moon.htm">月之聖殿</A>#10
+       <td><font color=#008000>11</font>，<font color=#FF00C0><b>暗系技能+50%</b></font>，在<A HREF="moon.htm">月之聖殿</A>#10
     <tr>
        <td><font color=#008000>曙光／昏暗 (Twilight)
        <td>6
        <td>邪惡
-       <td><font color=#008000>13，速度+50，幸運+50，所有抗性-5
+       <td><font color=#008000>13，速度+50，幸運+50，所有抗性-15
 
 <tr>
 <td rowspan=2><b>腰帶</b>
@@ -866,7 +868,7 @@
        <td><font color=#FF0000>英雄腰帶 (Hero's Belt)
        <td>-
        <td>男性
-       <td><font color=#FF0000>0，武器使用術+5，力量+15，恢復生命</font>，<A href="quests.htm#tower">方尖塔隱藏寶藏</A>
+       <td><font color=#FF0000>0，武器大師技能+5，力量+15，恢復生命</font>，<A href="quests.htm#tower">方尖塔隱藏寶藏</A>
 <tr>
 <td rowspan=2><b>項鍊</b>
     <td rowspan=2>項鍊
@@ -882,15 +884,15 @@
 <tr>
 <td rowspan=4><b>戒指</b>
     <td rowspan=4>戒指
-       <td id="faeriering"><font color=#008000>小仙子戒指／精靈指環 (Faerie Ring)
+       <td id="faeriering"><font color=#FF0000>小仙子戒指／精靈指環 (Faerie Ring)
        <td>-
        <td>-
-       <td><font color=#FF00C0><b>空氣技能+50%</b></font>，在<A HREF="hallhill.htm">山下廳堂</A>#5
+       <td><font color=#FF00C0><b>風系技能+50%</b></font>，在<A HREF="hallhill.htm">山下廳堂</A>#5
     <tr id="ghostring">
-       <td><font color=#008000>幽魂戒指／鬼魂指環 (Ghost Ring)
+       <td><font color=#FF0000>幽魂戒指／鬼魂指環 (Ghost Ring)
        <td>-
        <td>-
-       <td><font color=#FF00C0><b>靈魂技能+50%</b></font>，在<A HREF="haunted.htm">鬧鬼大宅</A>#3
+       <td><font color=#FF00C0><b>魂系技能+50%</b></font>，在<A HREF="haunted.htm">鬧鬼大宅</A>#3
     <tr id="LadysEscort">
        <td><font color=#008000>女士護身戒／旅行之寶 (Lady's Escort)
        <td>-
@@ -900,10 +902,23 @@
        <td><font color=#FF0000>統治者之戒／王者指環 (Ruler's Ring)
        <td>6
        <td>-
-       <td><font color=#FF0000>心智技能+50%，暗黑技能+50%
+       <td><font color=#FF0000>心系技能+50%，暗系技能+50%
+
 <tr>
-<td rowspan=1><b>其他</b>
-    <td rowspan=1>其他
+<TH COLSPAN=6 BGCOLOR="#80ffff">
+<FONT COLOR="#FF0000">其他道具</FONT>
+
+<TR>
+<TH>類別
+<TH>子類
+<TH>名稱
+<TH>等級
+<TH>限制
+<TH>作用
+
+<tr>
+<td rowspan=1><b>道具</b>
+    <td rowspan=1>道具
        <td id="TempleBottle">瓶子裡面的神廟／瓶中之城 (Temple in a Bottle)
        <td>-
        <td>-
@@ -1293,7 +1308,7 @@
 <td rowspan=3><b>免疫</b>
    <TD><font color=#0000FF>免疫 (Immunity)
    <TD>4
-   <TD>對疾病免疫
+   <TD>對染病免疫
 
    <TD><font color=#0000FF>理智 (Sanity)
    <TD>4
