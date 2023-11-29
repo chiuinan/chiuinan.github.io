@@ -54,7 +54,7 @@
 <TR><TD align=center>4A<TD>火神卡<TD ALIGN=center>2%<TD align=right>300<TD>戰鬥<TD>敵人<TD>施展最強火系法術<A href="spell.htm#55">炎龍破</A>（固定攻擊第一位敵人）
 <TR><TD align=center>4B<TD>冰神卡<TD ALIGN=center>2%<TD align=right>300<TD>戰鬥<TD>敵人<TD>施展最強冰系法術<A href="spell.htm#57">暴風雪</A>（固定攻擊第一位敵人）
 <TR><TD align=center>4C<TD>雷神卡<TD ALIGN=center>2%<TD align=right>300<TD>戰鬥<TD>敵人<TD>施展最強雷系法術<A href="spell.htm#59">天雷轟</A>（固定攻擊第一位敵人）
-<TR><TD align=center>4E<TD>魅惑卡<TD ALIGN=center>1%<TD align=right>1000<TD>戰鬥<TD>敵人<TD>指定一個敵人加入我方，並結束戰鬥（領地守軍無效，隊伍需有空間）
+<TR><TD align=center>4E<TD>魅惑卡<TD ALIGN=center>1%<TD align=right>1000<TD>戰鬥<TD>敵人<TD>指定一個敵人加入我方，並結束戰鬥（對領地守軍無效，且隊伍需有空間，否則必定失敗）
 <TR><TD align=center>4D<TD>風神卡<TD ALIGN=center>2%<TD align=right>100<TD>戰鬥<TD>我方<TD>100%機率逃脫（攻擊領地時無效，必定失敗）
 <TR bgcolor="#c0ffff"><TH colspan=20>回復類
 <TR><TD align=center>4F<TD>回復卡<TD ALIGN=center>3%<TD align=right>400<TD>戰鬥/地圖<TD>我方<TD>恢復全體50%生命
@@ -77,7 +77,7 @@
 </ul>
 <li>平安卡可擋下瘟疫卡、淨化卡、流星卡、叛亂卡（通過機率判定時）對我方領地的攻擊，防禦卡還可擋下詛咒卡、封印卡、奪取卡、破壞卡、腐朽卡、天罰卡對我方的攻擊。二者同時作用時，會先消耗防禦卡的效果。
 <li>使用英雄卡，進入裝備店後，會在離開商店時才清除英雄卡效果，因此可以不斷買賣迅速致富。但若是卡片店，則在進入購買後，便會清除英雄卡效果，因此只能有一次購買原價50%物品的機會。若覺得兩者不一致，可依自己喜好進行<A href="modify1.htm">程式修正</A>。
-<li>使用傭兵卡時，最多人數為5+(0～7)，所有傭兵出現機率均相同（必須該章可出現，且該角色可雇用者），可重複出現，其等級為主角的等級再隨機增加0～3級。
+<li>使用傭兵卡時，最多人數為5～12，所有傭兵出現機率均相同（必須該章可出現，且該角色可雇用者），可重複出現，其等級為主角的等級再隨機增加0～3級。
 <li>戰鬥類卡片施展的法術，只能攻擊單一敵人，即便原本是全體攻擊的法術。如果認為攻擊全體比較實用，也可進行<A href="modify1.htm">程式修正</A>。
 <li>魅惑卡不會檢查陣營立場，因此可讓主角平時無法招募的怪物加入。
 </ol>
@@ -94,8 +94,8 @@
 <li>瘟疫卡、淨化卡、流星卡的作用對象也可以是中立的領地，但<font color=red>遊戲限制必須有對手時才能使用</font>，明顯不合理，可進行<A href="modify1.htm">程式修正</A>。
 <li>判亂卡雖限制必須對手有額外領地，但<font color=red>在選擇目標時，卻可以選擇中立領地</font>（必定失敗），為一明顯bug，可進行<A href="modify1.htm">程式修正</A>。
 <li>交換卡的限制條件原本為我方有額外領地，<font color=red>遊戲卻誤設為對手有額外領地</font>，為一明顯Bug，可進行<A href="modify1.htm">程式修正</A>。若未修正，若我方無額外領地，而對手有額外領地時，使用交換卡即可直接強佔一塊領地，為此Bug衍生出來的密技。
-<li>使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時去更新地圖資訊</font>，導致移動踏上時，仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。可進行<A href="modify1.htm">程式修正</A>。
-<li>瘟疫卡、淨化卡等需要指定領地的卡片，<font color=red>在無領地可選時使用可能導致當機</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時更新地圖資訊</font>，導致移動踏上時，仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。可進行<A href="modify1.htm">程式修正</A>。
+<li>瘟疫卡、淨化卡等需要指定領地的卡片，<font color=red>在無領地可選時使用可能導致卡在選擇介面無法離開</font>，可進行<A href="modify1.htm">程式修正</A>。
 <li>因程式誤寫，導致<font color=red>月神卡無法在戰鬥中使用</font>，可進行<A href="modify1.htm">程式修正</A>。
 <li>因程式誤寫，導致<font color=red>回復卡／聚氣卡在地圖畫面使用時，傭兵會回復100%生命／法力</font>，可進行<A href="modify1.htm">程式修正</A>。
 </ol>
