@@ -42,7 +42,7 @@
 <TR bgcolor="#c0ffff"><TH colspan=20>防禦類
 <TR><TD align=center>53<TD>平安卡<TD ALIGN=center>5%<TD align=right>500<TD>地圖<TD>自己<TD>使用後可免除一次領地的災難（無法累加）
 <TR><TD align=center>54<TD>防禦卡<TD ALIGN=center>5%<TD align=right>500<TD>地圖<TD>自己<TD>使用後可免除一次對我方或領地的卡片攻擊（無法累加）
-<TR><TD align=center>55<TD>祝福卡<TD ALIGN=center>2%<TD align=right>200<TD>地圖<TD>自己<TD>使用後可避開一次陷阱（無法累加）
+<TR><TD align=center>55<TD>祝福卡<TD ALIGN=center>2%<TD align=right>200<TD>地圖<TD>自己<TD>使用後可避開一次陷阱（避開時，地點上的事件不會發生）（無法累加）
 <TR bgcolor="#c0ffff"><TH colspan=20>商店類
 <TR><TD align=center>56<TD>英雄卡<TD ALIGN=center>1%<TD align=right>500<TD>地圖<TD>自己<TD>使用後，下次進入商店時物品全部半價（無法累加）
 <TR><TD align=center>57<TD>外賣卡<TD ALIGN=center>1%<TD align=right>800<TD>地圖<TD>自己<TD>直接進入<A href="place.htm#e4">卡片店</A>買賣卡片
@@ -75,9 +75,11 @@
    <li>瘟疫卡、淨化卡、流星卡：<font color=red>必須有對手</font> (若沒修正的話)
    <li>奪取卡、破壞卡：對手必須有卡片
 </ul>
+<li>平安卡可擋下瘟疫卡、淨化卡、流星卡、叛亂卡（通過機率判定時）對我方領地的攻擊，防禦卡還可擋下詛咒卡、封印卡、奪取卡、破壞卡、腐朽卡、天罰卡對我方的攻擊。二者同時作用時，會先消耗防禦卡的效果。
 <li>使用英雄卡，進入裝備店後，會在離開商店時才清除英雄卡效果，因此可以不斷買賣迅速致富。但若是卡片店，則在進入購買後，便會清除英雄卡效果，因此只能有一次購買原價50%物品的機會。若覺得兩者不一致，可依自己喜好進行<A href="modify1.htm">程式修正</A>。
 <li>使用傭兵卡時，最多人數為5+(0～7)，所有傭兵出現機率均相同（必須該章可出現，且該角色可雇用者），可重複出現，其等級為主角的等級再隨機增加0～3級。
 <li>戰鬥類卡片施展的法術，只能攻擊單一敵人，即便原本是全體攻擊的法術。如果認為攻擊全體比較實用，也可進行<A href="modify1.htm">程式修正</A>。
+<li>魅惑卡不會檢查陣營立場，因此可讓主角平時無法招募的怪物加入。
 </ol>
 
 <p><b>Bug</b>：
@@ -93,8 +95,9 @@
 <li>判亂卡雖限制必須對手有額外領地，但<font color=red>在選擇目標時，卻可以選擇中立領地</font>（必定失敗），為一明顯bug，可進行<A href="modify1.htm">程式修正</A>。
 <li>交換卡的限制條件原本為我方有額外領地，<font color=red>遊戲卻誤設為對手有額外領地</font>，為一明顯Bug，可進行<A href="modify1.htm">程式修正</A>。若未修正，若我方無額外領地，而對手有額外領地時，使用交換卡即可直接強佔一塊領地，為此Bug衍生出來的密技。
 <li>使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時去更新地圖資訊</font>，導致移動踏上時，仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。可進行<A href="modify1.htm">程式修正</A>。
-<li>小丑卡轉變成瘟疫卡、淨化卡等需要指定領地的卡片，<font color=red>若已無領地可選時可能導致當機</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>瘟疫卡、淨化卡等需要指定領地的卡片，<font color=red>在無領地可選時使用可能導致當機</font>，可進行<A href="modify1.htm">程式修正</A>。
 <li>因程式誤寫，導致<font color=red>月神卡無法在戰鬥中使用</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>因程式誤寫，導致<font color=red>回復卡／聚氣卡在地圖畫面使用時，傭兵會回復100%生命／法力</font>，可進行<A href="modify1.htm">程式修正</A>。
 </ol>
 </body>
 </html>
