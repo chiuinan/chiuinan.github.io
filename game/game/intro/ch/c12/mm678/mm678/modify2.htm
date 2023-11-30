@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<title>資訊修改</title>
+</head>
+<body>
+<CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
+<pre style="font-family: MingLiU, monospace; font-size: 16px; white-space: pre-wrap">
+GrayFace可接收的中文字串格式：
+
+    <0Eh>中文字串<0Fh>
+
+中文字串裡的每個中文字必須為（加空白字元20h是為了長度滿了後能夠自動換行）：
+
+    <20h><0Eh>中文字<07h>
+</pre>
+</body>
+</html>
