@@ -62,7 +62,7 @@
 <TR><TD align=center id="11">0B<TD align=center>－<TD>分解術<TD>敵方<TD align=center>單人<TD align=center>法術<TD align=right>28<TD>50%機率死亡<TD>關卡魔王所在城堡守軍無效
 <TR><TD align=center id="46">2E<TD align=center>－<TD>鬼哭神號<TD>敵方<TD align=center>全體<TD align=center>法術<TD align=right>40<TD>20%機率死亡<TD>主角除外
 <TR><TD align=center id="2">02<TD align=center>－<TD>盜取物品<TD>敵方<TD align=center>單人<TD align=center>特殊<TD align=right>6<TD>100%機率盜取敵人物品<TD>
-<TR><TD align=center id="20">14<TD align=center>－<TD>再生<TD>我方<TD align=center>自己<TD align=center>醫療<TD align=right>5<TD>恢復12+LV*3<TD>
+<TR><TD align=center id="20">14<TD align=center>－<TD>再生<TD>我方<TD align=center><font color=red>自己</font><TD align=center>醫療<TD align=right>5<TD>恢復12+LV*3<TD>
 <TR><TD align=center id="6">06<TD align=center>－<TD>治癒術<TD>我方<TD align=center>單人<TD align=center>醫療<TD align=right>3<TD>恢復16+LV*4<TD>
 <TR><TD align=center id="60">3C<TD align=center>0A<TD bgcolor="#c0ffff">治癒<TD>我方<TD align=center>單人<TD align=center>醫療<TD align=right>4<TD>恢復10+LV*5<TD>
 <TR><TD align=center id="15">0F<TD align=center>－<TD>醫療術<TD>我方<TD align=center>全體<TD align=center>醫療<TD align=right>12<TD>恢復8+LV*2<TD>
@@ -87,6 +87,7 @@
 <li>毒蛛攻擊按照遊戲內隱藏的文件所述，應該有30%機率中毒，但實際並未實作。想調整的話，可進行<A href="modify1.htm">程式修正</A>。
 <li>我方施展盜取物品法術時，同一個敵人的物品只能偷取一次。敵人施展盜取物品法術時，只會偷取角色的金錢（50～500），不會偷取裝備或卡片，次數不限（<font color=red>但我方金錢實際上並未減少</font>，可進行<A href="modify1.htm">程式修正</A>）。
 <li>麻痺回合的算法，是輪到他行動時算一回合。由於敵方後行動，所以敵方被麻痺的該回合，就已算一回合，下回合很有可能可以行動。而我方先行動，因此我方被麻痺後的下一回合，才是第一回合。此外，<font color=red>【解麻】法術實際上並無作用</font>，可進行<A href="modify1.htm">程式修正</A>。但因解麻需浪費主角一個回合的行動，以及被麻痺人員一回合的行動，如果麻痺回合數剛好是一回合的話，等於主角浪費了一回合的動作，而主角的行動通常是最有價值的，因此解麻法術並不實用。
+<li>因遊戲程式誤寫，<font color=red>玩家操作的角色施展【再生】會作用於全體友軍，而電腦操作的角色施展【再生】會隨機指定友軍</font>，可進行<A href="modify1.htm">程式修正</A>
 <li>因遊戲程式誤寫，<font color=red>更高級的法術【神恩】使用的是【治癒】的計算公式，醫療效果反不如【回復】</font>，可進行<A href="modify1.htm">程式修正</A>（暫定神恩醫療效果為30+LV*12）。
 <li>因遊戲程式誤寫，<font color=red>必中／虛幻並沒有準確度／閃避力加倍效果</font>，可進行<A href="modify1.htm">程式修正</A>。
 <li>因遊戲程式誤寫，<font color=red>倍力、鐵壁、必中、虛幻、神力會使目標扣減生命值</font>，可進行<A href="modify1.htm">程式修正</A>。
