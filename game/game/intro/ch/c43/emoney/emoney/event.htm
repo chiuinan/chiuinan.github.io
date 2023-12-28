@@ -11,7 +11,7 @@
 <li>週日：發薪日
 <ul>
   <li>擁有的領地上繳稅金。
-  <li>給付隨從傭兵已工作天數的薪資，資金不足時則自動離去。當中途解雇傭兵時，仍需支付該週已工作天數之薪資。領地守軍不用定期支付薪資，召募時支付一次即可。
+  <li>給付隨從傭兵已工作天數的薪資=(雇用價格/10)*天數，資金不足時則自動離去。當中途解雇傭兵時，仍需支付該週已工作天數之薪資。領地守軍不用定期支付薪資，召募時支付一次即可。
 </ul>
 <li>每天有30%機率發生<A href="#chance">命運事件</A>。
 </ol>
@@ -21,7 +21,7 @@
 <blockquote>
 <TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <TR bgcolor="#ffffc0"><TH>編號<TH>機率<TH>事件
-<TR><TD align=center>1<TD align=right>2%<TD>領地發生瘟疫，各守軍有50%機率生命減半
+<TR><TD align=center>1<TD align=right>2%<TD>領地發生瘟疫，各守軍有80%機率生命減半、20%機率死亡（和瘟疫卡、淨化卡效果不同）
 <TR><TD align=center>2<TD align=right>10%<TD>領地發生饑荒，收入減半
 <TR><TD align=center>3<TD align=right>2%<TD>領地發生地震，規模下降一級
 <TR><TD align=center>4<TD align=right>10%<TD>領地豐收，收入加倍
@@ -30,7 +30,7 @@
 <TR><TD align=center>7<TD align=right>15%<TD>遭遇怪物
 <TR><TD align=center>8<TD align=right>5%<TD>遇上魔法傳送，隨機移往地圖上的某一處
 <TR><TD align=center>9<TD align=right>5%<TD id="8">遇到陷阱，無法行動1回合、<font color=red>損失1/4～2/3的目前生命</font>、法力全部消失
-<TR><TD align=center>10<TD align=right>5%<TD>傭兵加入（會詢問是否願意）
+<TR><TD align=center>10<TD align=right>5%<TD>傭兵加入
 <TR><TD align=center>11<TD align=right>5%<TD>傭兵離開
 <TR><TD align=center>12<TD align=right>5%<TD>紮營休息，停止1回合、隊伍生命、法力全滿
 <TR><TD align=center>13<TD align=right>10%<TD>幸運降臨，獲得一張卡片

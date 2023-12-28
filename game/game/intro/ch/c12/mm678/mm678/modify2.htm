@@ -1,18 +1,51 @@
 ﻿<html>
 <head>
-<meta http-equiv=Content-Type content=text/html; charset=utf-8>
+<meta charset="utf-8">
 <title>資訊修改</title>
 </head>
 <body>
 <CENTER><FONT COLOR=FF0000 size=5><b>資訊修改</b></FONT></CENTER>
 <pre style="font-family: MingLiU, monospace; font-size: 16px; white-space: pre-wrap">
-GrayFace可接收的中文字串格式：
+<font color=blue><b>*** GrayFace可接收的中文字串格式</b></font>
 
     <0Eh>中文字串<0Fh>
 
 中文字串裡的每個中文字必須為（加空白字元20h是為了長度滿了後能夠自動換行）：
 
     <20h><0Eh>中文字<07h>
+
+<font color=blue><b>*** Debug Console常用的Script命令</b></font>
+
+輸入命令後（可多行），按下Ctrl+Enter執行，按Esc離開Debug Console。
+
+1.獲得物品：evt.Add("Inventory",物品編號)
+  物品編號可查閱ZHTW_ItemsTxt.txt
+2.增加金錢食物：
+  金錢：evt.Add("Gold",增加數量)
+  食物：evt.Add("Food",增加數量)
+3.增加屬性值（屬性值不含裝備最高255）：
+  對象：evt.ForPlayer("All")或evt.ForPlayer("Current")，內定為Current目前人物
+  力量：evt.Add("BaseMight",增加數量)
+  智力：evt.Add("BaseIntellect",增加數量)
+  人格：evt.Add("BasePersonality",增加數量)
+  耐力：evt.Add("BaseEndurance",增加數量)
+  速度：evt.Add("BaseSpeed",增加數量)
+  準度：evt.Add("BaseAccuracy",增加數量)
+  運氣：evt.Add("BaseLuck",增加數量)
+  火抗：evt.Add("FireResistance",增加數量)
+  風抗：evt.Add("AirResistance",增加數量)
+  水抗：evt.Add("WaterResistance",增加數量)
+  地抗：evt.Add("EarchResistance",增加數量)
+  魂抗：evt.Add("SpiritResistance",增加數量)
+  心抗：evt.Add("MindResistance",增加數量)
+  體抗：evt.Add("BodyResistance",增加數量)
+4.增加技能點數或經驗值等其他數值：
+  對象：evt.ForPlayer("All")或evt.ForPlayer("Current")，內定為Current目前人物
+  技能點數：evt.Add("SkillPoints",增加數量)
+  經驗值：evt.Add("Experience",增加數量)
+  聲譽：evt.Sub("Reputation",增加數量)
+5.直接前往某個地圖：evt.MoveToMap{Name="地圖檔名"}
+  地圖檔名需查閱MapStats.txt，例如匕傷群島為out01.odm。<font color=red>錯誤的檔名會導致遊戲結束</font>。
 </pre>
 </body>
 </html>
