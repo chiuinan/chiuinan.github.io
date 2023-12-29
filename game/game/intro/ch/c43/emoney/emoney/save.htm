@@ -28,19 +28,19 @@ MD = 模式，0=一般模式，1=劇情模式
 
      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 0070 -- -- -- -- NN NN NN NN NN NN NN NN NN NN MI --
-0080 -- -- -- EX EX EX EX LV LV LV LV H1 H1 H1 H1 H2
-0090 H2 H2 H2 H0 H0 H0 H0 M1 M1 M1 M1 M2 M2 M2 M2 M0
-00A0 M0 M0 M0 A1 A1 A1 A1 A0 A0 A0 A0 A2 A2 A2 A2 A3
-00B0 A3 A3 A3 -- -- -- -- -- -- -- -- -- -- -- -- AP
+0080 -- -- -- EX EX EX EX LV LV LV LV HP HP HP HP HX
+0090 HX HX HX H0 H0 H0 H0 MP MP MP MP MX MX MX MX M0
+00A0 M0 M0 M0 S1 S1 S1 S1 S0 S0 S0 S0 D1 D1 D1 D1 D0
+00B0 D0 D0 D0 I1 I1 I1 I1 I0 I0 I0 I0 LK LK LK LK AP
 00C0 AP AP AP HT HT HT HT DP DP DP DP EV EV EV EV AT
 00D0 AT AT AT E1 E1 E1 E1 E2 E2 E2 E2 E3 E3 E3 E3 E4
-00E0 E4 E4 E4 E5 E5 E5 E5 E6 E6 E6 E6 H3 H3 H3 H3 M3
-00F0 M3 M3 M3 S1 S1 S1 S1 S1 S1 S1 S1 S1 S1 S2 S2 S2
-0100 S2 S2 S2 S2 S2 S2 S2 ID ID ID ID ID ID ID ID ID
+00E0 E4 E4 E4 E5 E5 E5 E5 E6 E6 E6 E6 H1 H1 H1 H1 M1
+00F0 M1 M1 M1 KD KD KD KD KD KD KD KD KD KD KL KL KL
+0100 KL KL KL KL KL KL KL ID ID ID ID ID ID ID ID ID
 0110 ID ID ID ID ID ID ID IN IN IN IN CD CD CD CD CD
 0120 CD CD CD CD CD CD CD CD CD CD CD CN CN CN CN MN
 0130 MN MN MN FL FL FL FL CT CT CT CT MC MC MC MC --
-0140 -- -- -- XX XX XX XX YY YY YY YY -- -- -- -- P1
+0140 -- -- -- XX XX XX XX YY YY YY YY DI DI DI DI P1
 0150 P2 P3 P4 P5 P6 -- -- -- -- -- -- -- -- -- -- --
 0160 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- T1
 0170 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T2
@@ -63,16 +63,23 @@ MD = 模式，0=一般模式，1=劇情模式
 (+27)M1/M2 = 目前法力/最大法力 = M3+M0*(等級-1)（升級會重算）
      (+2F)M0 (+7F)M3
 (+33)A1=AP1 (+37)A0=AP0 (+3B)A2=HT1 (+3F)A3=HT0
-<font color=red>BASE_AP = A1+A0*等級-1
-BASE_HT = A2+A0*等級-1</font>
-(+4F)AP = 攻擊力 = BASE_AP+裝備攻擊力（升級會重算）
-(+53)HT = 準確度 = BASE_HT+武器準確度（升級會重算）
-(+57)DP = 防禦力 = BASE_AP/2+裝備防禦力（升級會重算）
-(+5B)EV = 閃避率 = BASE_HT/2+裝備閃避率（升級會重算）
+
+(+1B)HP/HX = 目前生命/最大生命 = H1+H0*(LV-1)（升級會重算）
+     (+23)H0 (+7B)H1
+(+27)MP/MX = 目前法力/最大法力 = M1+M0*(LV-1)（升級會重算）
+     (+2F)M0 (+7F)M1
+(+33)S1=STR1 (+37)S0=STR0 (+3B)D1=DEX1 (+3F)D0=DEX0
+<font color=red>STR = S1+S0*LV-1
+DEX = D1+S0*LV-1</font>
+(+43)I1=INT1 (+47)I0=INT0 (+4B)LK=LUK
+(+4F)AP = 攻擊力 = STR+裝備攻擊力（升級會重算）
+(+53)HT = 準確度 = DEX+武器準確度（升級會重算）
+(+57)DP = 防禦力 = STR/2+裝備防禦力（升級會重算）
+(+5B)EV = 閃避力 = DEX/2+裝備閃避力（升級會重算）
 (+5F)AT = 一般攻擊次數，1=1次，2=2次，5=全體攻擊
           （<font color=red>但希洛的資料在進入戰鬥時會修正，修改無用</font>，可進行<A href="modify1.htm">程式修正</A>）
 (+63)E1～E6 = <a href="item.htm">身上裝備編號</a>，依次為武器、衣服、盾牌、頭盔、項鍊、鞋子
-(+83)S1/S2 = 主角法術編號/可施展的最低等級
+(+83)KD/KL = <a href="spell.htm">主角法術編號</a>/可施展的最低等級
    01 爆音擊  02 破空刃  03 龍神斬  04 熾焰閃  05 炎龍破
    06 冰霜箭  07 暴風雪  08 狂雷擊  09 天雷轟  0A 治癒
    0B 醫療    0C 回復    0D 神恩    0E 解毒    0F 解麻
@@ -84,6 +91,7 @@ BASE_HT = A2+A0*等級-1</font>
 (+C7)CT = 是否電腦控制，1表是，0表否，FFFFFFFF表陣亡（必須清除所屬領地）
 (+CB)MC = 主城編號
 (+D3)XX,YY = 位置，陣亡時需清為FFFFFFFF
+(+DB)DI = 方向，0=上、1=右、2=下、3=左
 (+DF)P1 = 無法行動的剩餘回合
 (+E0)P2 = 無法使用卡片的剩餘回合
 (+E1)P3 = 英雄卡是否作用，0=否
@@ -99,10 +107,10 @@ T6 = 傭兵最大法力，每4 BYTE一組，共4組
 T7 = 傭兵經驗值，每4 BYTE一組，共4組
 T8 = 傭兵已工作天數，每4 BYTE一組，共4組
 
-註：<font color=red>因程式誤寫，導致BASE_AP和BASE_HT的值計算錯誤</font>，實際應為：
+註：<font color=red>因程式誤寫，導致STR和DEX的值計算錯誤</font>，實際應為：
 
-BASE_AP = A1+A0*(等級-1)
-BASE_HT = A2+A3*(等級-1)
+STR = S1+S0*(LV-1)
+DEX = D1+D0*(LV-1)
 
 
 <font color=blue><b><A id="2">二、領地</b></font>
@@ -112,7 +120,7 @@ BASE_HT = A2+A3*(等級-1)
      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 0710 -- -- -- -- -- -- ID ID ID ID NN NN NN NN NN NN
 0720 NN NN NN NN NN NN XX XX XX XX YY YY YY YY SS SS
-0730 SS SS MN MN MN MN LL LL LL LL -- -- -- -- TY TY
+0730 SS SS MN MN MN MN LL LL LL LL HV HV HV HV TY TY
 0740 TY TY -- -- -- -- -- -- T1 T1 T1 T1 T1 T1 T1 T1
 0750 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T1 T2 T2 T2 T2
 0760 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2 T2
@@ -122,19 +130,20 @@ BASE_HT = A2+A3*(等級-1)
 07A0 T5 T5 T5 T5 T5 T5 T5 T5 T5 T5 T5 T5 T6 T6 T6 T6
 07B0 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6 T6
 
-ID = 編號
-NN = 名稱
-XX,YY = 位置
-SS = 規模，1=村落、2=鄉鎮、3=城市、4=城堡
-MN = 基礎稅金
-LL = 領主（0～3），-1表中立
-TY = 守軍型態，1=人類、2=類人族、3=獸類、4=魔族，5=矮人，6=精靈，7=龍族，17=龍
-T1 = <a href="monster.htm">守軍種類編號</A>，每4 BYTE一組，共5組
-T2 = 守軍等級，每4 BYTE一組，共5組
-T3 = 守軍目前生命，每4 BYTE一組，共5組
-T4 = 守軍最大生命，每4 BYTE一組，共5組
-T5 = 守軍目前法力，每4 BYTE一組，共5組
-T6 = 守軍最大法力，每4 BYTE一組，共5組
+(+00)ID = 編號
+(+04)NN = 名稱
+(+10)XX,YY = 位置
+(+18)SS = 規模，1=村落、2=鄉鎮、3=城市、4=城堡
+(+1C)MN = 基礎稅金
+(+20)LL = 領主（0～3），-1表中立
+(+24)HV = 收成狀態，0=正常、1=饑荒、2=豐收、3=饑荒+豐收
+(+28)TY = 守軍型態，1=人類、2=類人族、3=獸類、4=魔族，5=矮人，6=精靈，7=龍族，17=龍
+(+32)T1 = <a href="monster.htm">守軍種類編號</A>，每4 BYTE一組，共5組
+(+46)T2 = 守軍等級，每4 BYTE一組，共5組
+(+5A)T3 = 守軍目前生命，每4 BYTE一組，共5組
+(+6E)T4 = 守軍最大生命，每4 BYTE一組，共5組
+(+82)T5 = 守軍目前法力，每4 BYTE一組，共5組
+(+96)T6 = 守軍最大法力，每4 BYTE一組，共5組
 </font>
 </pre>
 </body>

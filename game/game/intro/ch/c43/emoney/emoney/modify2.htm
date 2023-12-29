@@ -164,26 +164,26 @@
 0012h 記號字串：4 byte (只有2 byte英文字母)
 0016h 怪物類別：4 byte，0=人類，1=類人族，2=獸類，3=魔族
 001Ah 不明：4 byte，固定0
-001Eh 等級：4 byte
-0022h 生命：12 byte，目前生命、H1、H0，最大生命=H1+H0*(LV-1)
-002Eh 法力：12 byte，目前法力、M1、M0，最大法力=M1+M0*(LV-1)
-003Ah AP：8 byte，AP1、AP0 = AP1+AP0*(LV-1)
-0042h HIT：8 byte，HIT1、HIT0 = HIT1+HIT0*(LV-1)
-004Ah 提供的經驗值：8 byte，EXP1、EXP0 = EXP1+EXP0*(LV-1)
-0052h 不明：4 byte
-0056h 實際AP：4 byte = AP
-005Ah 實際準確度：4 byte = HIT+附加HIT
-005Eh 實際DP：4 byte = AP/2
-0062h 實際EV：4 byte = HIT/2+附加EV
+001Eh 等級(LV)：4 byte
+0022h 生命(HP)：12 byte，目前生命、H1、H0，最大生命=H1+H0*(LV-1)
+002Eh 法力(MP)：12 byte，目前法力、M1、M0，最大法力=M1+M0*(LV-1)
+003Ah 力量(STR)：8 byte，STR1、STR0 = STR1+STR0*(LV-1)
+0042h 敏捷(DEX)：8 byte，DEX1、DEX0 = DEX1+DEX0*(LV-1)
+004Ah 智慧(INT)：8 byte，INT1、INT0 = INT1+INT0*(LV-1) (實際上未使用)
+0052h 運氣(LUK)：4 byte (實際上未使用)
+0056h 攻擊力(AP)：4 byte = STR
+005Ah 準確度(HIT)：4 byte = DEX+HIT1
+005Eh 防禦力(DP)：4 byte = STR/2
+0062h 閃避力(EV)：4 byte = DEX/2+EV1
 0066h 一般攻擊次數：4 byte，1=一次，2=兩次，5=攻擊全體
-006Ah 附加HIT：4 byte
-006Eh 附加EV：4 byte
+006Ah 附加準確度(HIT1)：4 byte
+006Eh 附加閃避力(EV1)：4 byte
 0072h 法術編號：3x4 byte，0表沒有
 007Eh 施展法術的最低等級：3x4 byte
 008Ah 法術數目：4 byte
 008Eh 種族相性編號：4 byte
-0092h 基礎價格：4 byte，雇用價格=掉落金錢=基礎價格*10*LV
-0096h 基礎經驗值：4 byte，獲得經驗值=基礎經驗值*2*LV
+0092h 基礎價格(PR0)：4 byte，雇用價格=掉落金錢=PR0*10*LV
+0096h 基礎經驗值(EXP0)：4 byte，獲得經驗值=EXP0*2*LV
 009Ah 可偷物品編號：4 byte
 009Eh 不明：4 byte，固定0
 00A2h 體型：4 byte，1=小，2以上為大
