@@ -21,30 +21,30 @@
 <blockquote>
 <TABLE BORDER=1 cellspacing=0 cellpadding=1>
 <TR bgcolor="#ffffc0"><TH>編號<TH>機率<TH>事件
-<TR><TD align=center>1<TD align=right>2%<TD>領地發生瘟疫，各守軍有80%機率生命減半、20%機率死亡（和瘟疫卡、淨化卡效果不同）
+<TR><TD align=center>1<TD align=right>2%<TD>領地發生瘟疫，各守軍有80%機率生命減半（最低剩1）、20%機率死亡（和瘟疫卡、淨化卡效果不同）
 <TR><TD align=center>2<TD align=right>10%<TD>領地發生饑荒，收入減半
-<TR><TD align=center>3<TD align=right>2%<TD>領地發生地震，規模下降一級
+<TR><TD align=center>3<TD align=right>2%<TD>領地發生地震，規模下降一級（無鄉鎮規模以上領地時不會發生）
 <TR><TD align=center>4<TD align=right>10%<TD>領地豐收，收入加倍
 <TR><TD align=center>5<TD align=right>5%<TD>半路遭竊，損失1/16～1/4金錢（最少50元）
-<TR><TD align=center>6<TD align=right>5%<TD>拾獲寶物，錢財增加(200-1900)*LV元、<font color=red>獲得0～2項寶物</font>
+<TR><TD align=center>6<TD align=right>5%<TD>拾獲寶物，錢財增加(200-1900)*LV元、<font color=red>獲得0～2項物品</font>（限關卡可販賣者，空位不足則不會獲得）
 <TR><TD align=center>7<TD align=right>15%<TD>遭遇怪物
 <TR><TD align=center>8<TD align=right>5%<TD>遇上魔法傳送，隨機移往地圖上的某一處
-<TR><TD align=center>9<TD align=right>5%<TD id="8">遇到陷阱，無法行動1回合（已無法行動者略過）、<font color=red>損失1/4～2/3的目前生命</font>、法力全部消失
-<TR><TD align=center>10<TD align=right>5%<TD>傭兵加入
-<TR><TD align=center>11<TD align=right>5%<TD>傭兵離開
-<TR><TD align=center>12<TD align=right>5%<TD>紮營休息，停止1回合、隊伍生命、法力全滿
-<TR><TD align=center>13<TD align=right>10%<TD>幸運降臨，獲得一張卡片
-<TR><TD align=center>14<TD align=right>10%<TD>不幸降臨，失去一張卡片
-<TR><TD align=center>15<TD align=right>2%<TD>遭到詛咒，無法行動1～3回合
-<TR><TD align=center>16<TD align=right>2%<TD>獻城歸降，獲得領地
-<TR><TD align=center>17<TD align=right>2%<TD>守軍叛變，失去領地
+<TR><TD align=center>9<TD align=right>5%<TD id="8">遇到陷阱，無法行動1回合（已無法行動者略過），主角<font color=red>損失1/4～2/3的目前生命</font>、法力全部消失（傭兵不受影響）
+<TR><TD align=center>10<TD align=right>5%<TD>傭兵加入（隊伍空間已滿時不會發生）
+<TR><TD align=center>11<TD align=right>5%<TD>傭兵離開（無傭兵時不會發生）
+<TR><TD align=center>12<TD align=right>5%<TD>紮營休息，停止1回合（已無法行動者強制改為1回合無法行動）、隊伍生命、法力全滿
+<TR><TD align=center>13<TD align=right>10%<TD>幸運降臨，獲得一張卡片（卡片已滿時不會發生）
+<TR><TD align=center>14<TD align=right>10%<TD>不幸降臨，失去一張卡片（無卡片時不會發生）
+<TR><TD align=center>15<TD align=right>2%<TD>遭到詛咒，無法行動1～3回合（已無法行動者不會增加無法行動回合數）
+<TR><TD align=center>16<TD align=right>2%<TD>獻城歸降，獲得領地（無中立領地可獲得時不會發生）
+<TR><TD align=center>17<TD align=right>2%<TD>守軍叛變，失去領地（無額外領地時不會發生）
 </TABLE>
 </blockquote>
 
 <ol>
-<li>拾獲寶物時，<font color=red>因程式誤寫，導致永遠拿不到寶物</font>，可進行<A href="modify1.htm">程式修正</A>。
-<li>中陷阱時，<font color=red>因程式誤將損失的生命設為目前剩餘的生命，而非扣除</font>，若未進行<A href="modify1.htm">程式修正</A>，則實際損失的生命會是1/3～3/4，而且顯示出來的文字資訊也不正確。
 <li>同一領地若發生過饑荒與豐收事件，則稅收為平常值，且之後不再受饑荒或豐收事件影響，直到計算收稅後重設。但因程式誤寫，使得<font color=red>饑荒或豐收的效果在收稅後仍會持續作用</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>拾獲寶物時，<font color=red>因程式誤寫，導致幾乎不可能拿到物品</font>，可進行<A href="modify1.htm">程式修正</A>。
+<li>中陷阱時，<font color=red>因程式誤將損失的生命設為目前剩餘的生命，而非扣除</font>，若未進行<A href="modify1.htm">程式修正</A>，則實際損失的生命會是1/3～3/4，而且顯示出來的文字資訊也不正確。
 </ol>
 </body>
 </html>
