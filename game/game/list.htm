@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>遊戲總表</title>
+<style>
+table.sortable > thead > tr > td { cursor: pointer; }
+table.sortable > thead > tr > td::after { content: "↕"; }
+table.sortable > thead > tr > td[data-order="1"]::after { content: "↓"; }
+table.sortable > thead > tr > td[data-order="-1"]::after { content: "↑"; }
+</style>
+<script>
+(function (globalThis) {
+
+const tableLoader = {
+  conf: {
+    filelist: 'menu.htm',
+    tableSelector: 'table',
+    tableRowTemplateSelector: 'template',
+    loggerSelector: '#message',
+  },
+  async init() {
+    const tableElem = document.querySelector(this.conf.tableSelector);
+    const tbodyElem = tableElem.tBodies[0];
+    const tableRowTemplateElem = document.querySelector(this.conf.tableRowTemplateSelector);
+    const loggerElem = this.loggerElem = document.querySelector(this.conf.loggerSelector);
+
+    loggerElem.textContent = '載入中...';
+    tableElem.hidden = true;
+
+    try {
+      // initialize header key map
+      const mapKeyToIdx = Array.prototype.reduce.call(
+        tableElem.querySelectorAll(':scope > thead:first-of-type > tr:first-of-type > td'),
+        (map, elem, idx) => {
+          const key = this.parseKey(elem.textContent);
+          map[key] = idx;
+          return map;
+        }, {});
+
+      // load file list
+      const url = this.conf.filelist;
+      const xhr = await this.xhr({
+        url,
+        responseType: 'document',
+        overrideMimeType: 'text/html',
+      }).catch(ex => {
+        throw new Error(`無法載入 "${url}": ${ex.message}`);
+      });
+      const filelistDoc = xhr.response;
+
+      // load files
+      const p = Array.prototype.map.call(filelistDoc.querySelectorAll('a.toc'), (a) => {
+        const url = a.href;
+        return this.xhr({
+          url,
+          responseType: 'document',
+          overrideMimeType: 'text/html',
+        })
+        .then(r => r.response)
+        .catch((ex) => {
+          throw new Error(`無法載入 "${url}": ${ex.message}`);
+        });
+      });
+      const listDocs = await Promise.all(p);
+
+      // insert loaded data
+      for (const listDoc of listDocs) {
+        for (const table of listDoc.querySelectorAll('table')) {
+          const mapIdxToKey = Array.prototype.map.call(
+            table.querySelector(':scope > tbody > tr').querySelectorAll(':scope > td'),
+            (elem) => {
+              return this.parseKey(elem.textContent);
+            });
+
+          let first = true;
+          for (const row of table.querySelectorAll(':scope tbody > tr')) {
+            if (first) {
+              first = false;
+              continue;
+            }
+            const newRow = document.importNode(tableRowTemplateElem.content, true);
+            const newRowCells = newRow.querySelectorAll('td');
+            let i = 0, elem;
+            for (const cell of row.querySelectorAll(':scope > td')) {
+              const idx = mapKeyToIdx[mapIdxToKey[i++]];
+              if (!Number.isInteger(idx)) { continue; }
+              const newCell = newRowCells[idx];
+              if (!newCell) { continue; }
+              while (elem = cell.firstChild) { newCell.appendChild(elem); }
+            }
+            tbodyElem.appendChild(newRow);
+          }
+        }
+      }
+    } catch (ex) {
+      console.error(ex);
+      loggerElem.textContent = ex.message;
+      return;
+    }
+
+    loggerElem.textContent = '';
+    tableElem.hidden = false;
+  },
+  async xhr(params = {}) {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.onload = (event) => {
+        resolve(xhr);
+      };
+      xhr.onabort = (event) => {
+        resolve();
+      };
+      xhr.onerror = (event) => {
+        reject(new Error('Network request failed.'));
+      };
+      xhr.ontimeout = (event) => {
+        reject(new Error('Request timeout.'));
+      };
+      xhr.responseType = params.responseType;
+      if (params.overrideMimeType) { xhr.overrideMimeType(params.overrideMimeType); }
+      xhr.open(params.method || 'GET', params.url, true);
+      if (params.timeout) { xhr.timeout = params.timeout; }
+      xhr.send(params.formData);
+    });
+  },
+  parseKey(str) {
+    return str.trim();
+  },
+};
+
+globalThis.document.addEventListener('DOMContentLoaded', () => {
+  tableLoader.init();
+}, false);
+
+globalThis.tableLoader = tableLoader;
+
+})(this);
+</script>
+<script>
+(function (globalThis) {
+
+const tableSorter = {
+  conf: {
+    tableSelector: 'table.sortable',
+    defaultParser: 'utf8',
+    parsers: {
+      /**
+       * Retrieve data from elem.
+       * May be a single value or multiple <data> defined values.
+       */
+      getData(elem) {
+        const dataElems = elem.querySelectorAll('data');
+        if (dataElems.length) {
+          return Array.prototype.map.call(dataElems, (elem) => {
+            if (elem.hasAttribute('value')) {
+              return elem.value;
+            }
+            return this.getText(elem);
+          });
+        }
+        return [this.getText(elem)];
+      },
+      /**
+       * Retrieve text from elem.
+       * Replace <br> with \n and trim leading and trailing spaces.
+       */
+      getText(elem) {
+        const elemClone = elem.cloneNode(true);
+        for (const e of elemClone.querySelectorAll('br')) {
+          e.replaceWith('\n');
+        }
+        return elemClone.textContent.trim();
+      },
+      utf16(elem) {
+        return this.getData(elem);
+      },
+      utf8(elem) {
+        return this.getData(elem).map(text => {
+          return unescape(encodeURIComponent(text));
+        });
+      },
+      int(elem) {
+        return this.getData(elem).map(text => {
+          const val = parseInt(text, 10);
+          return !Number.isNaN(val) ? val : -Infinity;
+        });
+      },
+      float(elem) {
+        return this.getData(elem).map(text => {
+          const val = parseFloat(text);
+          return !Number.isNaN(val) ? val : -Infinity;
+        });
+      },
+    },
+  },
+  init() {
+    for (const table of document.querySelectorAll(this.conf.tableSelector)) {
+      for (const elem of table.querySelectorAll(':scope > thead:first-of-type > tr:first-of-type > td')) {
+        elem.addEventListener('click', this.onHeaderClickOrKeyPress.bind(this), false);
+        elem.addEventListener('keypress', this.onHeaderClickOrKeyPress.bind(this), false);
+      }
+    }
+  },
+  sortBy(table, idx, order) {
+    const headerCell = table.querySelectorAll(':scope > thead:first-of-type > tr:first-of-type > td')[idx];
+    if (order === undefined) {
+      order = (parseInt(headerCell.getAttribute('data-order'), 10) === 1) ? -1 : 1;
+    }
+    headerCell.setAttribute('data-order', order);
+
+    const defaultParser = this.conf.defaultParser;
+    const parsers = this.conf.parsers;
+    const method = headerCell.getAttribute('data-sort');
+    const parser = parsers[method] || parsers[defaultParser];
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    rows.sort((a, b) => {
+      const da = parser.call(parsers, a.cells[idx]);
+      const db = parser.call(parsers, b.cells[idx]);
+      for (let i = 0, I = Math.max(da.length, db.length); i < I; i++) {
+        const ka = da[i];
+        const kb = db[i];
+        if (ka === undefined) {
+          return -order;
+        }
+        if (kb === undefined) {
+          return order;
+        }
+        if (ka < kb) {
+          return -order;
+        }
+        if (ka > kb) {
+          return order;
+        }
+      }
+      return 0;
+    });
+    for (let row of rows) {
+      tbody.appendChild(row);
+    }
+  },
+  onHeaderClickOrKeyPress(event) {
+    const elem = event.currentTarget;
+
+    // pass if a link inside the cell is clicked
+    const a = event.target.closest('a[href], area[href]');
+    if (a && elem.contains(a)) { return; }
+
+    if (event.type === 'keypress' && event.key !== 'Enter') { return; }
+
+    event.preventDefault();
+    const tr = elem.closest('tr');
+    const idx = Array.prototype.indexOf.call(tr.querySelectorAll(':scope > td'), elem);
+    if (idx < 0) { return; }
+    this.sortBy(tr.closest('table'), idx);
+  },
+};
+
+globalThis.document.addEventListener('DOMContentLoaded', () => {
+  tableSorter.init();
+}, false);
+
+globalThis.tableSorter = tableSorter;
+
+})(this);
+</script>
+</head>
+<body>
+
+<div style="text-align: center; color: #800000; font-family: 標楷體;">
+<b><big><big>遊戲總表</big></big></b>
+</div>
+
+<div id="message">
+瀏覽器須支援 JavaScript (版本 ES2015) 才能正常執行本頁功能。
+</div>
+
+<small>
+<table class="sortable" border="1" width="100%" cellspacing="0" cellpadding="2" hidden>
+<thead>
+<tr bgcolor=blue style="color:white; position:sticky; top:0;">
+  <td tabindex=0>遊戲名稱
+  <td tabindex=0>評價
+  <td tabindex=0 data-sort="int">年代
+  <td tabindex=0>公司
+  <td tabindex=0 data-sort="float">大小
+  <td tabindex=0>限制
+  <td tabindex=0>位置
+<tbody>
+</table>
+</small>
+
+<template id="tablerow">
+<tr>
+ <td>
+ <td>
+ <td>
+ <td>
+ <td>
+ <td>
+ <td>
+</template>
+
+</body>
+</html>
