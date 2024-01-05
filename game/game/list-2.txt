@@ -1,12 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>遊戲簡表</title>
-</head>
-<body>
-<pre style="font-family: MingLiU, monospace; font-size: 16px;">
-0204真情麻將
+﻿0204真情麻將
 0204麻將情人夢
 0204麻將館
 16張臺灣麻將
@@ -644,6 +636,3 @@ Zebra
 龍之傳奇
 龍騎士3
 龍騎士4
-</pre>
-</body>
-</html>
