@@ -65,6 +65,7 @@ const tableLoader = {
       const listDocs = await Promise.all(p);
 
       // insert loaded data
+      let tableIdx = 0;
       for (const listDoc of listDocs) {
         for (const table of listDoc.querySelectorAll('table')) {
           const mapIdxToKey = Array.prototype.map.call(
@@ -72,6 +73,9 @@ const tableLoader = {
             (elem) => {
               return this.parseKey(elem.textContent);
             });
+
+          const captionElem = table.querySelector(':scope > caption');
+          const caption = captionElem ? this.parseKey(captionElem.textContent) : '';
 
           let first = true;
           for (const row of table.querySelectorAll(':scope tbody > tr')) {
@@ -89,8 +93,18 @@ const tableLoader = {
               if (!newCell) { continue; }
               while (elem = cell.firstChild) { newCell.appendChild(elem); }
             }
+
+            // add type
+            const cell = newRowCells[mapKeyToIdx['分類']];
+            if (cell) {
+              if (caption) { cell.title = caption; }
+              cell.textContent = tableIdx + 1;
+            }
+
             tbodyElem.appendChild(newRow);
           }
+
+          tableIdx++;
         }
       }
     } catch (ex) {
@@ -280,6 +294,7 @@ globalThis.tableSorter = tableSorter;
 <table class="sortable" border="1" width="100%" cellspacing="0" cellpadding="2" hidden>
 <thead>
 <tr bgcolor=blue style="color:white; position:sticky; top:0;">
+  <td tabindex=0 data-sort="int">分類
   <td tabindex=0>遊戲名稱
   <td tabindex=0>評價
   <td tabindex=0 data-sort="int">年代
@@ -293,6 +308,7 @@ globalThis.tableSorter = tableSorter;
 
 <template id="tablerow">
 <tr>
+ <td>
  <td>
  <td>
  <td>
