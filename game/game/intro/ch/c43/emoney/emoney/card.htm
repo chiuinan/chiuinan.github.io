@@ -29,7 +29,7 @@
 <TR><TD align=center>60<TD>破壞卡<TD ALIGN=center>2%<TD align=right>2000<TD>地圖<TD>對手<TD>可消除指定對象一半的卡片（無條件進位，除去後半卡片），對手有卡片時才能使用
 <TR><TD align=center>64<TD>腐朽卡<TD ALIGN=center>1%<TD align=right>800<TD>地圖<TD>對手<TD>可消除指定對象一半的物品（無條件進位，除去後半物品）
 <TR><TD align=center>5D<TD>天罰卡<TD ALIGN=center>2%<TD align=right>1000<TD>地圖<TD>對手<TD>使指定對象損失1/8～1/2金錢
-<TR><TD align=center>5B<TD>機運卡<TD ALIGN=center>4%<TD align=right>100<TD>地圖<TD>對手<TD>使指定對象隨機發生一個<A href="event.htm#chance">命運事件</A>
+<TR><TD align=center>5B<TD>機運卡<TD ALIGN=center>4%<TD align=right>100<TD>地圖<TD>對手<TD>使指定對象隨機發生一個<A href="event.htm#chance">突發事件</A>
 <TR><TD align=center>5E<TD>平均卡<TD ALIGN=center>1%<TD align=right>2000<TD>地圖<TD>全體<TD>均分所有人之資金
 <TR><TD align=center>5A<TD>陷阱卡<TD ALIGN=center>2%<TD align=right>500<TD>地圖<TD>所在格<TD>佈下陷阱，若有人踏中時即發生<A href="event.htm#8">中陷阱事件</A>
 <TR bgcolor="#c0ffff"><TH colspan=20>領地類
@@ -95,7 +95,7 @@
 <li>原本瘟疫卡作用對象為不死族與魔族以外的守軍、淨化卡作用對象為不死族與魔族的守軍，但程式並未做種族判斷，於是<font color=red>所有種族均會作用</font>。可進行<A href="modify1.htm">程式修正</A>。
 <li>瘟疫卡、淨化卡、流星卡的作用對象也可以是中立的領地，但<font color=red>遊戲限制必須有對手時才能使用</font>，明顯不合理，可進行<A href="modify1.htm">程式修正</A>。
 <li>瘟疫卡、淨化卡等需要指定領地的卡片時，<font color=red>若已無領地可選時會導致異常行為或當機</font>，可進行<A href="modify1.htm">程式修正</A>（改為自動取消使用）。
-<li>判亂卡雖限制必須對手有額外領地，但<font color=red>在選擇目標時，卻可以選擇中立領地</font>（必定失敗），為一明顯bug，可進行<A href="modify1.htm">程式修正</A>。
+<li>叛亂卡只能用於對手額外領地，但<font color=red>在選擇目標時，卻可以選擇中立領地</font>（必定失敗），為一明顯bug，可進行<A href="modify1.htm">程式修正</A>。
 <li>交換卡的限制條件原本為我方及對手皆有額外領地，但<font color=red>檢查我方是否有額外領地的程式被誤寫成檢查對手是否有額外領地</font>，故實際上只檢查了對手是否有額外領地。此外，交換卡的交換對象也可以是中立的領地，限制對手必須有額外領地也不合理，可進行<A href="modify1.htm">程式修正</A>。若未修正，若我方無額外領地，而對手有額外領地時，使用交換卡即可直接強佔一塊領地，為此Bug衍生出來的密技。
 <li>使用交換卡後，雖然領地資料變動，但<font color=red>遊戲卻未同時更新地圖資訊</font>，導致移動踏上時，仍以未交換前的舊地圖資訊處理，必須存檔再讀檔、重新更新地圖資訊之後才會恢復正常。可進行<A href="modify1.htm">程式修正</A>。
 <li>因程式誤寫，導致<font color=red>月神卡無法在戰鬥中使用</font>，可進行<A href="modify1.htm">程式修正</A>。
