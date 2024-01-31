@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>麻將三國爭霸</title>
+</head>
+<body>
+<pre>
+<font face="細明體" size=3><b>名稱</b>：麻將三國爭霸 (中文版)
+<b>簡介</b>：新造科技2007年出品的策略遊戲，但戰鬥方面採用16張麻將方式進行 [待補]。
+<IMG src="mjsanns/game1.jpg">
+
+<IMG src="mjsanns/game2.jpg">
+<b>保護</b>：無，但必須在C:\MjSanNS下執行。以下修正碼可在任一目錄上執行：
+      MjSango.exe
+        24 00 00 00 43 00 3A 00 5C 00 4D 00 6A 00 53 00 61 00 6E 00 4E 00 53
+        12 -- -- -- 2E -- 5C -- 4D -- 6A -- 53 -- 61 -- 6E -- 44 -- 30 -- 00
+        26 00 00 00 43 00 3A 00 5C 00 4D 00 6A 00 53 00 61 00 6E 00 4E 00 53 00 5C
+        14 -- -- -- 2E -- 5C -- 4D -- 6A -- 53 -- 61 -- 6E -- 44 -- 31 -- 30 -- 00
+        16 00 00 00 43 00 3A 00 5C
+        04 -- -- -- 2E -- 5C -- 00
+<b>備註</b>：播放影音若出現「無法使用視訊，找不到vids:WMV3解壓縮程式」時，請下載wmv9vcm.dll
+      檔，拷貝到windows\system32目錄裡，然後再以下列reg檔註冊：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.WMV3"="wmv9vcm.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.WMV3"="wmv9vcm.dll"
+
+<b>修改</b>：MjSango.exe
+
+1.修正結束遊戲時未設回全彩的問題
+  66 83 3D 24 F3 60 01 10 75 18
+  -- -- -- -- -- -- -- 20 -- --
+2.不變更螢幕解析度
+  66 3D 01 00 75 6A
+  -- -- -- -- EB --
+
+<b>操作</b>：
+
+1.按Space鍵可略過開頭動畫。
+</font>
+</pre>
+</body>
+</html>

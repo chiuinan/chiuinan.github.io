@@ -16,10 +16,10 @@
         83 FF 0D 75 A6
         -- -- -- -- 00
       或
-        9A 40 36 CE 0B
+        9A 40 36 CE 0B  (無Password畫面)
         90 90 90 90 --
       或（解壓前）
-        0B C0 75 05
+        0B C0 75 05  (有Password畫面)
         -- -- EB --
 修改：MASTER.EXE
 

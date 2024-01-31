@@ -7,9 +7,20 @@
       因此使得外交在本遊戲上顯得格外重要。此外，戰爭時係以即時方式進
       行，而且必須列陣進行攻防，使得戰爭較為複雜，且不利於使用高速PC
       的玩家。
-保護：不明。
+保護：不明，執行檔WS.EXE有壓縮：
+
+1.WS.EXE分成二部份(EXE及OVERLAY)，其中EXE部份佔1DEEh的長度，採LZEXE壓縮。可先將
+  WS.EXE切出EXE部份解壓後，使用EXEWRITE或EXESHAPE來回存(建議長度：CE90h)，重定位
+  表格應該有13h個。
+2.從WS.EXE切開OVERLAY部份，長度28CAAh，切開後將OVERLAY部份接到前面回存檔案的後面。
+3.亦即：
+  原始檔案：EXE(LZEXE壓縮) + OVERLAY
+             1DEEh BYTES     28CAAh BYTES
+  解壓檔案：EXE(回存後)    + OVERLAY
+             CE90h+檔頭      28CAAh BYTES
+
 修改：DosBox當機問題：
-      WS.EXE
+      WS.EXE (需先解壓)
         75 02 E2 E7
         -- -- 90 90
 修改：存檔WSGMDT.SAV裡，郡縣資料格式為：

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>安琪莉可女王之路</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：安琪莉可女王之路 (中文版)
+<b>簡介</b>：KOEI 1994年出品的女性向戀愛養成遊戲，由第三波於1997年中文化並代理發行 [待補]。
+<IMG SRC="angew95/game1.png">
+
+<IMG SRC="angew95/game2.png">
+<b>保護</b>：光碟
+<b>限制</b>：必須在Win9x系統下執行。下列修改可在XP以上系統執行：
+      ANGEW95.EXE
+        0F 82 2C 02 00 00
+        90 90 90 90 90 90
+        75 0A 68 24 D5 43 00
+        EB -- -- -- -- -- --
+      Angerun.exe
+        0F 82 BE 00 00 00
+        90 90 90 90 90 90
+        75 21 E8 7D 01 00 00
+        EB -- -- -- -- -- --
+      建議相容性最好改成Win9x相容。若要能從Angerun.exe啟動遊戲，必須有下列registry
+      （假設安裝目錄是C:\Ange95）：
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\安琪莉可 中文版]
+"UninstallString"="C:\\Ange95\\unKOEI.exe *C:\\Ange95\\unKOEI.dat"
+
+</pre>
+</body>
+</html>
