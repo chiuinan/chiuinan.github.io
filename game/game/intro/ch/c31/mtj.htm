@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Q女天使學園</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：Q女天使學園 (中文版)
+<b>簡介</b>：ANJIN 1996年出品的策略角色扮演遊戲，由華義中文化並代理發行 [待補]。
+<IMG SRC="mtj/game1.png">
+<b>保護</b>：無，但必須放入光碟才能有背景音樂。
+<b>備註</b>：DosBox執行時要修改下列Options，否則進入選單會當（SVN版則會有雜音）：
+
+sbtype=sbpro2
+
+<b>修改</b>：解決CD音源播放當機問題
+      CDDRV.EXE
+        06 50 53 51 52 EB 40 90
+        90 90 90 90 90 -- -- --
+      這是因為原始程式誤寫，有PUSH卻沒有對應的POP，會造成後面的程式大亂。
+<b>備註</b>：SETUP.INI裡有記錄安裝目錄，換目錄時要加以修改。
+<b>備註</b>：若不想看開頭動畫，將NO_OPEN子目錄的檔案拷貝上來即可。
+</pre>
+</body>
+</html>

@@ -14,8 +14,13 @@
 <b>保護</b>：光碟StarForce，光碟檢驗序號：
         1.繁中：8NGSX-LS9V5-EK9TT-ZLDB5-SWG4R
         2.簡中：PSU7N-MD6WS-C9H3D-WGU7A-5TNWA
-      使用Deamon掛載時，必須以SCSI光碟機掛載第4片，且不能有實體光碟機。
-<b>限制</b>：由於StarForce保護的緣故，只能在XP系統上執行。
+      使用Deamon掛載時，必須以SCSI光碟機掛載第4片，且不能有實體光碟機。若掛載網路
+      磁碟的光碟映像檔無法通過檢驗，便拷貝到虛擬機本機硬碟後再試。
+<b>限制</b>：由於StarForce保護的緣故，只能在XP系統上執行。使用VMware者，必須修改虛擬機
+      的「vmx」檔，加入下列一行，否則會跳出不是支援的作業系統訊息：
+
+monitor_control.restrict_backdoor = "TRUE"
+
 <b>限制</b>：繁中版、簡中版均必須在所屬的作業系統語系上安裝。
 </pre>
 </body>
