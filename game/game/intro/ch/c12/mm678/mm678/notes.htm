@@ -13,19 +13,23 @@
 
 <P>https://www.celestialheavens.com/forum/10/16657#p369458
 
-<P>必須先有原始的八代英文版，然後再加入上述整合版內容。中文語言包載點：
+<P>必須先有原始的八代英文版，然後再加入上述整合版內容（如果有mm678的Patch檔，要在中文語言包加入之前加入）。中文語言包載點：
 
 <P>https://github.com/might-and-magic/mm678-i18n/releases/
 
-<P>由於中文語言包的版本比英文版舊了很多，因此下列3個Script檔不要覆蓋，比較不會出問題：
+<P>由於中文語言包的版本比英文版舊了很多，因此下列3個Script檔不要覆蓋，否則會造成無法執行的問題：
 
 <P>ExtraArtifacts.lua<br>
 MonsterPathfinding.lua<br>
 Quest_CrossContinents.lua
 
+<p>建議是用7z解開中文語言包執行檔，將Scripts\Global裡的這3個檔案刪除，再將其他檔案覆蓋過去。不然便先將原來的這3個檔案另存起來，等執行完中文語言包後再拷回。
+
 <p>最後請再使用魔法門678三代整合版青衫繁中更新檔，以修正一些原版已變更的資訊，並採用原繁中版名詞。不過由於各代的繁簡中文版名詞本身並不統一，因此所有名詞將依次以六代簡中、八代繁中、七代繁中的次序，儘可能符合原版，或修改成簡單易懂者為準。
 
-<p>第一次執行時，務必執行MM8Setup.eng.Exe (英文版) 選擇硬體加速後，再啟動魔法門8。中文版MM8Setup.Exe常會找不到3D加速硬體。第一次執行時因需要轉換一些資料檔，所以會比較慢。第二次以後可直接執行mm8.exe，但<font color=red>要先設定為Administrator權限，或是XP相容</font>，否則會無法啟用3D硬體加速。
+<p>已做成mm678繁中版者，如有新的mm678或Patch檔，可以直接覆蓋後，再重做一次中文語言包與青衫繁中更新檔的加入即可，不必重新安裝起。
+
+<p>第一次執行時，務必執行MM8Setup.Exe選擇硬體加速後，再啟動魔法門8。第一次執行時因需要轉換一些資料檔，所以會比較慢。第二次以後可直接執行mm8.exe，但<font color=red>要先設定為Administrator權限，或是XP相容</font>，否則會無法啟用3D硬體加速。
 
 <P>各代原本攻略，請參見<a href="../../mm6/index.htm" target="_blank">６代攻略</a>、<a href="../../mm7/index.htm" target="_blank">７代攻略</a>、<a href="../../mm8/index.htm" target="_blank">８代攻略</a>，本攻略主要列出差異的地方。
 
@@ -148,7 +152,7 @@ Quest_CrossContinents.lua
 <p><FONT COLOR=0000FF><b>版本2023-11-05已知Bug</b></FONT>
 
 <ol>
-<li><font color=red>施展物品附魔法術時，有時會引發當機</font>。此為較嚴重的Bug，施展前最好先存檔。若會當機，可試著將物品換到另一人身上再試看看。
+<li><font color=red>施展物品附魔法術時，有時會引發當機</font>。此為較嚴重的Bug，施展前最好先存檔。若會當機，可試著將物品換到另一人身上再試看看 (<font color=red>後續Patch已修正此一問題</font>)。
 <li>技能值達到60，若再使用增加技能裝備時，並沒有將總技能值上限限制在60。因此技能值若加上裝備超過63時，實際技能值會直接減去64 (即Overflow)，效果反而會變差。
 <li>八代低語之森(Murmurwoods)：考瑞黑王座救下後，若未交談便離開，會導致永遠無法完成該任務。此Bug雖不影響過關，但會造成黑暗精靈無法升職，雖然黑暗精靈用的人極少，但影響仍不算小 (<font color=red>原GrayFace Patch已修正此Bug</font>，但本版因已另行製作evt檔來處理跨代傳送，無法直接更新其evt檔)。
 <li>七代選擇黑暗路線後，仍可接下光明線大督伊德轉職任務。此Bug影響其實很小。
