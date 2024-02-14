@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>A列車3／鐵路A計劃</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：A列車3／鐵路A計劃 (A-Train，中文版)
+<b>簡介</b>：Artdink 1992年出品的都市開發鐵道模擬遊戲，由智冠中文化並代理發行，為該遊戲
+      系列第一部中文化的遊戲 [待補]。
+<IMG SRC="atrain/game1.png">
+
+<IMG SRC="atrain/game2.png">
+<b>備註</b>：本版為1.01版，且包含開天闢地篇資料片內容。
+<b>保護</b>：數字密碼
+<b>檔案</b>：atrain 1.02英文版.rar = 1.02英文版(無開天闢地篇資料片內容)
+<b>修改</b>：
+
+智冠中文版本身有做硬體環境檢測，在安裝時會寫在OUT.???的檔案裡面（例如OUT.480），
+同時在執行時會檢查硬體環境是否變更，有的話在進入遊戲後會便會自動關閉跳出，並顯示
+Configuration is no longer correct訊息。
+
+這樣的檢驗會造成安裝好的版本無法適用在各種不同的環境，包括用DosBox 0.74版安裝好的
+版本不能在SVN版DosBox上執行，反之亦然。由於英文版並沒有這項檢驗，因此是在中文化時，
+由智冠自行加上去的，當然目的應該也是在保護，但這樣卻讓玩家很不方便，硬體環境一變
+更就得重新安裝。因此追蹤了一下程式，找出略過此段檢查的方法：
+
+AT.EXE (先用UNP解壓)
+  26 3B 07 75 06 26 3B 57 02 74 1B
+  -- -- -- 90 90 -- -- -- -- EB --
+
+這樣只要安裝好一次，便可以在各種環境上執行了，不必保留原版磁片，每次重安裝。但解
+壓AT.EXE會造成另一種問題，就是人物提示的文字顯示會不正確，因此必須改用常駐程式來
+修改解決：
+
+    EB 2F                 jmp  $start
+    90                    nop
+$int1C:
+    9C                    pushf
+    06                    push es
+    50                    push ax
+    33 C0                 xor  ax,ax
+    8E C0                 mov  es,ax
+    26 A1 22 00           mov  ax,word ptr es:[0022h]
+    2D A4 52              sub  ax,52A4h
+    8E C0                 mov  es,ax
+    26 81 3E 6D 3F 75 06  cmp  word ptr es:[3F6Dh],0675h
+    75 0D                 jne  $exit
+    26 C7 06 6D 3F 90 90  mov  word ptr es:[3F6Dh],9090h
+    26 C6 06 73 3F EB     mov  byte ptr es:[3F73h],0EBh
+$exit:
+    58                    pop  ax
+    07                    pop  es
+    9D                    popf
+    EA                    db   0EAh
+$1C_addr:
+    00 00 00 00           dd   ?
+$start:
+    0E                    push cs
+    1F                    pop  ds
+    B8 1C 35              mov  ax,351Ch
+    CD 21                 int  21h
+    89 1E 2D 01           mov  word ptr [$1C_addr],bx
+    8C 06 2F 01           mov  word ptr [$1C_addr+2],es
+    B8 1C 25              mov  ax,251Ch
+    BA 03 01              mov  dx,offset $int1C
+    CD 21                 int  21h
+    BA 31 01              mov  dx,offset $start
+    CD 27                 int  27h
+</pre>
+</body>
+</html>
