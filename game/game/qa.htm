@@ -63,6 +63,7 @@ Windos遊戲
 <li>若現有作業系統無法執行，請改用VMware或VirtualBox配合Windows XP作業系統執行。
 <li>若VirtualBox全螢幕顯示時，畫面太小，請使用Host+C的縮放模式，或是在虛擬機顯示設定處改變縮放係數。
 <li>VMWware若要縮放全螢幕，必須使用付費的Worksation Pro，在顯示設定中有縮放的選項。
+<li>VirtualBox不支援Direct3D 7，若遊戲必須使用D3D7，便只能改用VMWware。
 <li>出現"找不到vids:IV32解壓縮程式"，請找解碼程式ir32_32.dll，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
 <li>出現"找不到vids:IV41解壓縮程式"，請找解碼程式ir41_32.ax，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
 <li>出現"找不到vids:IV50解壓縮程式"，請找解碼程式ir50_32.dll，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
@@ -97,6 +98,7 @@ REGEDIT4<br>
  </ol>
 <li>VMware+XP若要支援StarForce檢驗，必須修改虛擬機的「vmx」檔，加入下列一行，否則會跳出不是支援的作業系統訊息：
 <blockquote>monitor_control.restrict_backdoor = "TRUE"</blockquote>
+但修正後會無法使用與外界共通的剪貼簿，同時登入與關機也可能出現不正常的現象。
 </ul>
 
 </small>
