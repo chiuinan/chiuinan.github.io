@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>俠客遊：前途道標</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：俠客遊：前途道標 (Lunatic Dawn: Passage of The Book，中文版)
+<b>簡介</b>：Artdink 1997年出品的角色扮演遊戲，1999年由第三波中文化並代理發行。本遊戲為
+      俠客遊系列的第二部外傳，但中文版常被誤認為第三代 [待補]。
+<IMG SRC="ld95/game1.png">
+
+<IMG SRC="ld95/game2.png">
+<b>保護</b>：光碟，破解碼（需放入光碟才有背景音樂，注意要開啟音樂）：
+      LD95.EXE
+        75 14 E8 0E 37 07 00
+        90 90 -- -- -- -- --
+        74 19 8B 4E 68 6A 00
+        EB -- -- -- -- -- --
+        85 ED 75 33
+        -- -- 90 90
+        74 3D 8B 56 68 6A 00
+        EB -- -- -- -- -- --
+        74 25 E8 05 5C 04 00
+        EB -- -- -- -- -- --
+<b>修改</b>：LD95.EXE
+
+1.解決名字誤顯示日文或亂碼的問題
+  C6 44 24 2B 80  (共3個)
+  -- -- -- -- 88
+2.解決對話文字過小重疊的問題
+  C7 44 24 28 FF FF FF FF 6A 0D
+  -- -- -- -- -- -- -- -- -- 10
+3.開頭標題不等待
+  72 09 83 FE FF 0F 85 14 01 00 00
+  90 90 -- -- -- 90 E9 -- -- -- -- 
+</pre>
+</body>
+</html>
