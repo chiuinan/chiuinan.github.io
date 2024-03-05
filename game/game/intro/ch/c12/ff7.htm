@@ -1,0 +1,165 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>最終幻想7／太空戰士7</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：最終幻想7／太空戰士7 (Final Fantasy 7，中文／英文版)
+<b>簡介</b>：日本Square 1997年出品的角色扮演遊戲，台灣舊譯為太空戰士，以3D畫面呈現，團隊
+      即時（半回合）制戰鬥。1998年移植至Windows，2013年藉由Steam推出重製版。但無
+      論那個版本，都不支援中文，只能藉助網友自行漢化成中文版 [待補]。
+<IMG SRC="ff7/game1.jpg">
+
+<IMG SRC="ff7/game2.jpg">
+<b>備註</b>：本版為1998年原始光碟高清繁化版
+<b>保護</b>：光碟或Steam
+<b>備註</b>：非安裝者，必須進行下列Registry註冊（假設安裝目錄在F:\Final Fantasy VII，光
+      碟機在H）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Square Soft, Inc.\Final Fantasy VII]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Square Soft, Inc.\Final Fantasy VII]
+
+"DataDrive"="H:\\"
+"AppPath"="F:\\Final Fantasy VII\\"
+"DataPath"="F:\\Final Fantasy VII\\Data\\"
+"MoviePath"="H:\\FF7\\Movies\\"
+"DiskNo"=dword:00000000
+"FullInstall"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Square Soft, Inc.\Final Fantasy VII\1.00\Graphics]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Square Soft, Inc.\Final Fantasy VII\1.00\Graphics]
+
+"DD_GUID"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"DriverPath"=""
+"Driver"=dword:00000000
+"Mode"=dword:00000001
+"Options"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Square Soft, Inc.\Final Fantasy VII\1.00\MIDI]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Square Soft, Inc.\Final Fantasy VII\1.00\MIDI]
+
+"MIDI_DeviceID"=dword:00000000
+"MIDI_data"="GENERAL_MIDI"
+"MusicVolume"=dword:00000064
+"Options"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Square Soft, Inc.\Final Fantasy VII\1.00\Sound]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Square Soft, Inc.\Final Fantasy VII\1.00\Sound]
+
+"Sound_GUID"=hex:1a,d7,6d,bd,eb,3d,d1,11,b1,71,00,c0,4f,c2,00,00
+"Options"=dword:00000000
+"SFXVolume"=dword:00000064
+
+<b>備註</b>：進入遊戲後畫面全黑，有可能是Logo影片無法播放，由於Logo影片無法略過（大約15
+      秒左右），其後會緊接著開頭動畫（可略過），因此可不斷按Enter鍵，等Logo影片播
+      完，便能進到遊戲。
+<b>備註</b>：關於部分CG不能播放的問題，大部份是因為與播放軟件相衝突。
+<b>備註</b>：原始光碟繁化法
+
+一、舊式繁化法（需光碟），適用XP以上系統
+
+1.原始光碟進行最大安裝。
+2.執行XP補丁
+3.執行中文化補丁，最好切到簡中系統安裝，否則安裝完的部份檔案名稱會是亂碼。安裝時，
+  第二選項「簡體字庫」要勾掉，第七選項「繁體字庫」要勾選。<font color=red>中文化補丁執行檔可能會
+  被報毒</font>，請自行斟酌。
+4.進入遊戲前，請執行FF7Config.exe，點選Graphics，Renderer選Software Renderer，並
+  選擇Full Screen模式，否則進到遊戲會顯示亂碼。
+5.若是出現畫面顛倒情形，則再執行動畫顛倒補丁。
+6.最後執行路行鳥當機補丁，或按修改部份修改。
+
+二、新式繁化法（高清免光碟），適用Win64
+
+1.原始光碟進行最大安裝，並將另三片ff7\movies裡的檔案，拷貝到安裝目錄\data\movies。
+  有相同檔案時，覆蓋與否皆可。
+2.解開FFNx 1998光碟版補丁，將檔案全部拷入安裝目錄裡。FFNx補丁可到下列網址下載：
+  https://github.com/julianxhokaxhiu/FFNx/releases
+3.解開新式繁中化補丁，將目錄拷入安裝目錄裡。進入ff7_cht_v1.2.1目錄，以系統管理員
+  身份執行「安裝繁體補丁.cmd」，輸入選項4，選擇想要的字體（建議1或2），開始進行繁
+  化。若有出現缺少檔案的情況（2個），略過即可。繁化後會變更Registry（免光碟）。
+4.拷貝msvcp100.dll、msvcr100.dll到安裝目錄裡。如果Windows\System32目錄裡沒找到，
+  便執行vcredist_x86-2010-SP1.exe（ff7_cht_v1.2.1裡有）。若沒有這兩個檔案，執行時
+  中文字會整個糊掉。此時ff7_cht_v1.2.1已可刪除。
+
+(以下為移機後的執行過程，若不是移機，可直接略過步驟5)
+
+5.進行下列Registry註冊（步驟3繁化過程會自動設定）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Square Soft, Inc.\Final Fantasy VII]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Square Soft, Inc.\Final Fantasy VII]
+
+"DataDrive"=".\\"
+"AppPath"=".\\"
+"DataPath"=".\\Data\\"
+"MoviePath"=".\\Data\\Movies\\"
+"DiskNo"=dword:00000000
+"FullInstall"=dword:00000001
+
+6.執行FFNx.reg變更Registry（每次執行FF7Config.exe後均必須再執行一次）。
+7.執行ff7.exe啟動遊戲，若有顯示FFNx的畫面便表示成功。初始按鍵為Steam版按鍵，可進
+  入遊戲後，再到選項中變更。
+
+<b>檔案</b>：FF7在XP下的補丁1.4.rar = XP補丁
+      中文化.rar = 原始光碟中文化補丁(含繁中/簡中)
+      路行鳥當機補丁.rar = 路行鳥比賽當機補丁
+      FF7動畫顛倒的補丁.rar = 動畫顛倒補丁
+      ff7_old.rar = 舊式繁化版
+      ff7102zx.7z = 1.02補丁
+      FFNx-FF7_1998-v1.18.1.0.rar = FFNx 1998光碟版補丁v1.18.1.0
+      ff7_cht_v1.2.1.rar = 1.2.1版新式繁中化補丁
+<b>修改</b>：FF7.exe
+
+1.修正路行鳥比賽當機問題
+  0F BF 94 01 B8 86 01 00
+  90 90 90 90 90 90 90 90
+
+<b>修改</b>：FF7Config.exe
+
+1.修正執行後，整個當死的問題
+  74 04 0C 01 EB 02
+  EB 25 -- -- -- --
+
+<b>操作</b>：
+
+一、原版光碟
+
+Pad上下左右鍵 = 移動
+PadEnter = 確定/動作
+PadIns = 取消/跑步
+Pad+ = 系統選單
+Pad5 = 開始
+PadHome = 視角
+PadEnd = 目標
+PadDel = 切換
+Pad- = 幫助
+PadPgUp/PadPgDn = 上下頁
+
+二、Steam版
+
+上下左右鍵 = 移動
+X = 確定/動作
+C = 取消/跑步
+V = 系統選單
+B = 開始
+Home = 視角
+End = 目標
+Ins = 切換
+Del = 幫助
+PgUp/PgDn = 上下頁
+
+三、FFNx版新增按鈕
+
+Ctrl-S = 略過動畫
+Ctrl-Q = 離開遊戲
+Alt-Enter = 全螢幕/視窗
+Ctrl-B = 不遇敵模式切換
+Ctrl-A = 自動攻擊模式切換
+Ctrl-右鍵 = 開啟加速器效果（必須關閉垂直同步）
+Ctrl-左鍵 = 關閉加速器效果
+Ctrl-上鍵 = 增加速度
+Ctrl-下鍵 = 減少速度
+</font>
+</pre>
+</body>
+</html>
