@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>戀愛物語</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：戀愛物語 (中文版)
+<b>簡介</b>：FUJITSU 1997年出品的戀愛養成遊戲，由華義中文化並代理發行 [待補]。
+<IMG SRC="eberouge/game1.jpg">
+
+<IMG SRC="eberouge/game2.png">
+<b>保護</b>：光碟
+<b>限制</b>：程式為16位元，只能在XP以下系統執行。但XP會因為語系問題，將文字顯示成亂碼，
+      因此只能在Win31/9x系統上執行。建議是在Win31，但使用DosBox時，必須使用SVN之
+      後的版本（例如ECE、Daum等版本），否則新遊戲時會因為無法播放語音，卡死在輸入
+      名字過程裡。
+<b>備註</b>：進入遊戲顯示主選單後，必須再聽完一小段主題曲後才能動作（約10幾秒，此時游標
+      才會出現）。
+<b>修改</b>：EBE.EXE或EBE32.EXE
+
+1.不限制256色顯示模式（但仍會顯示訊息）
+  0F 84 C9 01
+  90 90 90 90
+</pre>
+</body>
+</html>

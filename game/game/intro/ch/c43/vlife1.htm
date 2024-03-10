@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>虛擬人生1</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：虛擬人生1 (Virtual Life，中文版)
+<b>簡介</b>：明日工作室與岡業1998年共同出品的大富翁遊戲 [待補]。
+<IMG SRC="vlife1/game1.jpg">
+
+<IMG SRC="vlife1/game2.png">
+<b>保護</b>：光碟
+<b>備註</b>：非安裝者必須設定下列Registry（假設安裝在C:\VirtualLife，光碟機為D）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Inventec\Virtual Life]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Inventec\Virtual Life]
+
+"Version"="1.01"
+"Install Type"="Full"
+"Program"="N2Game.EXE"
+"CD Path"="D:\\"
+"Install Path"="C:\\VirtualLife\\"
+
+<b>備註</b>：不建議使用VirtualBox或VMware虛擬機玩，以下為測試結果：
+
+1.PCem或DosBox+Win9x：可以正常執行（<font color=red><b>推薦</b></font>）。
+2.Win64：要設定XP相容，並將減少的色彩模式設成256色。大抵可以正常執行，但不同系統
+  可能會有不同的問題，不保證100%可執行。
+3.VirtualBox+Win98
+  (1)進入遊戲後無音樂：目前找不到解決方法。
+  (2)遊戲速度過快：目前無解。
+4.VirtualBox+XP
+  (1)執行會當：可到桌面按滑鼠右鍵選[內容]，然後選[設定值]-[進階]-[疑難排除]，將
+     [硬體加速]往左調至停用DirectDraw，才能正常執行。
+  (2)進入遊戲滑鼠亂跳：停用滑鼠整合可以解決。
+  (3)進入小遊戲，畫面顏色亂掉：目前找不到解決方法。
+  (4)遊戲速度過快：目前無解。
+5.VMware+XP
+  (1)進入遊戲滑鼠亂跳：按下[Edit]-[Preferences]，選擇Input，將Optimize mouse for games
+     改成always，即可解決。
+  (2)進入小遊戲，畫面顏色亂掉：目前找不到解決方法。
+  (3)遊戲速度過快：目前無解。
+
+<b>修改</b>：N2Game.exe
+
+1.不在最上層顯示
+  68 14 2E 47 00 6A 08
+  -- -- -- -- -- -- 00
+</pre>
+</body>
+</html>
