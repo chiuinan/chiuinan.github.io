@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>大逆鱗2</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：大逆鱗2 (Die Gekirn 2，中文版)
+<b>簡介</b>：Nihon Application 1997年出品的動作角色扮演遊戲，1999年由智冠中文化並代理發
+      行，以3D斜角畫面呈現，採單人即時方式戰鬥 [待補]。
+<IMG SRC="dk2/game1.png">
+
+<IMG SRC="dk2/game2.png">
+<b>保護</b>：無，放入光碟才有背景音樂
+<b>備註</b>：XP以上系統需將WING32.DLL放入SYSTEM32裡才能執行。
+<b>備註</b>：一代只有日文版。
+<b>修改</b>：
+
+1.不檢驗256色螢幕模式
+  Diegeki2.exe
+    85 DB 0F 84 BA 01 00 00
+    -- -- EB 10 90 90 90 90
+2.WING32.DLL可放在遊戲安裝目錄中
+  WING32.DLL
+    0B C0 75 11
+    -- -- 90 90
+
+<b>修改</b>：存檔C:\My Documents\DieGeki2\*.G3S
+
+1.位置0501h開始，2 byte一個整數，分別為：
+  武器ID、剩餘次數；鎧甲ID、剩餘次數；盾牌ID、剩餘次數；道具ID、剩餘次數
+2.位置0520h開始，2 byte一個整數，分別為［道具ID、道具數量］。
+
+<b>操作</b>：
+
+上下左右 = 移動人物（城鎮／迷宮）、要前往的地點（大地圖）
+Space = 交談／開箱／進入／攻擊
+Alt+F4 = 離開遊戲
+</pre>
+</body>
+</html>
