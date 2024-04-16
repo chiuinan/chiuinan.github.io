@@ -21,6 +21,7 @@
         1.安裝在根目錄下的CrhDVD目錄，例如C:\CrhDVD。
         2.修改Crh.CFG,CrhChs.CFG或CrhSP.CFG，將"DEVICE="最後一個參數改成遊戲安裝
           所在的磁碟代碼即可（例如C）。
+備註：大富翁世界之旅2第一片光碟中有「桃花傳奇資料片」安裝檔
 檔案：UserJoy.rar = 測試人員密技檔
       cd12a.7z = CD版1.2a差異檔（含桃花傳奇），覆蓋DVD1.2b版即成
       crhsp.7z = 桃花傳奇資料片，覆蓋原資料再執行CrhSp.exe開始遊戲（1.2a版，已免CD）。

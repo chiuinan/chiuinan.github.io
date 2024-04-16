@@ -8,9 +8,9 @@
       該有的元素也都一應俱全，娛樂性大抵還算不錯，頗值得一玩。
 保護：光碟（StarForce）＋序號
 序號：VRN13-3100E-P8K40-3510K-LB2P1
-檔案：TTH3_110.7z = 光碟版更新檔
+檔案：TTH3_110.7z = 光碟版1.10更新檔
       Tth3spSetup.7z = 明月孤星資料片（執行Tth3SP.exe）
-      UJSG132.7z = 明月孤星更新檔
+      UJSG132.7z = 明月孤星1.3.2 CD版更新檔
       Tth3SpNoCD.rar = 明月孤星免光碟（需將第三片光碟的Image\Stage.BKS3
         和第四片光碟的Image\Stage.BKS4拷到遊戲Image目錄中）
 密技：

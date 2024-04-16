@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>激戰女狼2</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：激戰女狼2 (Casino Girls 2，中文版)
+<b>簡介</b>：極真科技2006年出品的18禁美女對賭遊戲，為<A href="jzav.htm">激戰女優</A>的續作，收錄在「激戰賭后」
+      中，由秀橋代理發行。遊戲提供10位女優供挑戰，獲勝即可觀看其圖片與影片。對賭
+      方式計有大老二、配對、找碴、猜玫魂等四種，無論採用那一種方式，獲勝結果都是
+      一樣。本作除了需要運氣的大老二之外，其餘遊戲，玩家都可靠著自己的本事獲勝，
+      比起前作容易很多，因此娛樂性也比較好。
+<IMG SRC="jzav2/game1.jpg">
+
+<IMG SRC="jzav2/game2.jpg">
+<b>保護</b>：光碟，破解碼：
+      AV2.exe
+        83 F8 05 75 72
+        -- -- -- EB 43
+      必須拷貝光碟中的Anim和Mus目錄到安裝目錄裡。另外，TRUETECH.CFG開頭需改成
+      2E 5C 00，將光碟目錄換成目前目錄。
+<b>備註</b>：若無法執行，或執行時出現"ICDecompressOpen error"，請將執行檔的相容性設成XP
+      相容。若還是出現同樣的錯誤，表示沒有WMV3解壓縮程式，請找解碼程式wmv9vcm.dll，
+      將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用下列reg檔
+      登錄即可（或執行光碟上的wmv9VCMsetup.exe）：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.WMV3"="wmv9vcm.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.WMV3"="wmv9vcm.dll"
+
+<b>修改</b>：將Gfx\charsA.dat拷貝成chars.dat，圖片就會變成完全裸露版了。
+<b>修改</b>：TRUETECH.CFG，位置115h～11Eh都設成01，即可看全部圖片與影片。
+<b>修改</b>：AV2.exe
+
+1.配對隨便配都正確
+  75 5F 8D 0C 89
+  90 90 -- -- --
+2.找碴按錯不倒扣
+  C7 86 58 0F 00 00 9C FF FF FF
+  -- -- -- -- -- -- 00 00 00 00
+3.找碴時間不減
+  2B C3 03 C8 89 4E 18
+  -- -- 90 90 -- -- --
+
+<b>資訊</b>：圖片檔Gfx\*.dat
+
+檔頭：固定18 00 00 00
+圖片數：4 byte
+圖片指標：各4 byte
+圖片資料
+  圖片資料形態：4 byte
+  圖片寬度：2 byte，通常為320h=800
+  圖片高度：2 byte，通常為258h=600
+  圖片寬度：4 byte，通常為320h=800
+  圖片高度：4 byte，通常為258h=600
+  圖片資料大小：4 byte
+  圖片壓縮資料（每點2 byte整數，RGB各5bit）
+
+<font color=blue><b>*** 圖片資料解壓法</b></font>
+
+char buffer[0x1000];
+memset(buffer,0x20,0x3FB*4);
+memset(buffer+0x3FB*4,0,4);
+int buffer_index = 0xFEE;
+int flag = 0;
+for (;;)
+{
+  for (;;)
+  {
+    flag >>= 1;
+    if ((flag & 0x100) == 0)
+    {
+      if 已無資料 then return;
+      flag = (讀取1 byte) | 0xFF00;
+    }
+    if ((flag & 1) == 0) break;
+    if 已無資料 then return;
+    b = 讀取1 byte
+    輸出b
+    buffer[buffer_index++] = b;
+    buffer_index &= 0xFFF;
+  } 
+  if 已無資料 then return;
+  offset = 讀取1 byte
+  no = 讀取1 byte
+  offset |= (no & 0xF0) << 4;
+  no &= 0x0F;
+  no += 3;
+  for (i=0; i<no; ++i)
+  {
+    index = offset+i;
+    index &= 0xFFF;
+    b = buffer[index];
+    輸出b
+    buffer[buffer_index++] = b;
+    buffer_index &= 0xFFF;
+  }
+}
+
+<b>資訊</b>：影片檔Anim\MOVIE.DAT
+
+影片數量：4 byte
+各影片內容指標：每個4 byte
+影片內容：
+  影片資訊：6Ch=108 byte
+  串流資訊1：2Ch=44 byte
+    串流形態：4 byte，通常為"vids"
+    串流格式：4 byte，通常為"wmv3"
+    串流資訊2大小：4 byte
+  串流資訊2
+  串流資訊1：2Ch=44 byte
+    串流形態：4 byte，通常"auds"
+    串流格式：4 byte，通常00
+    串流資訊2大小：4 byte
+  串流資訊2
+
+<b>備註</b>：<A href="jzav2/cg.7z">CG圖</A>有露點
+<b>說明</b>：
+
+1.遊戲會自動存檔，離開遊戲後可選擇繼續上一次的挑戰。
+2.對賭時，旁邊會有一張美女圖。每獲勝一次，便會變清晰，但每落敗一次，便會變模糊。
+  玩家必須連續獲勝，讓它完全清晰後換下一張。
+3.當籌碼有20000以上時，可以選擇付費20000進行［脫衣］，將圖片變完全清晰後換下一張。
+4.每位女優均有10張圖，10張圖全開之後，便可觀賞其影片。
+
+<font color=blue><b>*** 遊戲說明</b></font>
+
+1.配對：每找出一對可獲200籌碼，連續找對時獎金再增加200，找完可獲剩餘時間x100籌碼，
+  若花不到10秒便全部找出，可再多得5000，但時間用盡仍沒找完會倒扣5000。
+2.找碴：每個圖有5個錯誤，每找出一個可獲200以上不等籌碼，每找錯一次倒扣100，成功時
+  獲得剩餘時間x100籌碼，若花不到10秒便全部找出，可再多得5000，但時間用盡仍沒找完
+  會倒扣5000。
+3.猜玫魂：帽子蓋住玫魂後移動，必須猜出玫魂所在位置，連勝時獎金加倍。為最容易獲勝
+  的遊戲。
+</pre>
+</body>
+</html>
