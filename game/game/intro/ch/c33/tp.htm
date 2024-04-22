@@ -11,23 +11,23 @@
 <IMG SRC="tp/game1.jpg">
 
 <IMG SRC="tp/game2.jpg">
-<b>保護</b>：光碟+SafeDisc
+<b>保護</b>：光碟SafeDisc 1.35，破解碼（先去除SafeDisc保護）：
+      TP.exe
+        88 44 24 0F 75 1B
+        -- -- -- -- EB --
+      需將光碟中data\Movies目錄拷入安裝目錄才有動畫（也可不拷貝，變成無動畫）
 <b>限制</b>：
 
 1.必須在Win9x系統下安裝，XP以上系統安裝會當機。
-2.因為SafeDisc緣故，無法在Win7以上系統執行，必須先用UnSafeDisc去除SafeDisc保護。
-3.較新系統有DirectDraw相容問題，必須使用DDrawCompat的ddraw.dll。建議使用0.1.3版，
-  以便在XP以前的系統也能執行（0.2以後的版本不行）。不過若要遊戲截圖，則必須使用
-  較新的版本。
-4.顯示卡必須支援特定模式，VirtualBox、VMware都無法支援：
-  (1)VirtualBox執行會出現"DD error code 8876017c" (沒有這個顯示模式)
-  (2)Vmware執行有動畫和主選單，但畫面是疊影看不清 (因為顯示模式不相容)
-5.CPU必須支援MMX，故RetroArch搭配DosBox-pure無法執行 (會顯示CPU限制的錯誤訊息)。
-  可先試著在實體機（包括Win10以後的系統）直接執行看看，能看到開頭動畫就沒問題了。
+2.因為SafeDisc緣故，無法在Win7以上系統執行，同時也會干擾到XP系統上的執行，必須先
+  用UnSafeDisc去除SafeDisc保護。
+3.較新系統有DirectDraw相容問題，必須使用DxWnd、dgVoodoo、或DDrawCompat等協助軟體
+  執行（D3DWindower不行）。
+4.CPU必須支援MMX，RetroArch搭配DosBox-pure無法執行（會顯示CPU限制的錯誤訊息）。
 
 <b>備註</b>：
 
-1.遊戲安裝好後可以直接移機，不用重新安裝，只需進行下列registry登錄（附檔TP.reg）：
+1.遊戲安裝好後可以直接移機，不用重新安裝，只需進行下列registry檔登錄：
 
 REGEDIT4
 
@@ -47,7 +47,8 @@ REGEDIT4
 
 2.在XP以後的系統執行時，會出現usp10.dll錯誤，此為安裝目錄裡面的usp10.dll版本太舊，
   可將它改名或刪除，使用系統的usp10.dll即可。
-3.Win7以後的系統要將TP.exe設成XP相容，否則會出現"無法使遊戲引擎初始化"的訊息。
+3.Win7以後的系統若出現"無法使遊戲引擎初始化"的訊息，需將TP.exe設成XP相容（沒有時
+  不要設定，否則會干擾到DxWnd等軟體的執行）。
 4.若進入遊戲沒聽到中文語音，或選擇進入小島沒反應，表示3D貼圖失敗，請按Esc鍵進入
   [選項]，將貼圖方式從[3D加速卡貼圖]改成[軟體貼圖]。
 </pre>
