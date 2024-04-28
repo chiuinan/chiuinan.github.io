@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>超世紀戰警：殺出屠夫灣</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：超世紀戰警：殺出屠夫灣 (The Chronicles of Riddick: Escape from Butcher Bay，英文版)
+<b>簡介</b>：Starbreeze 2004年出品的第一人稱射擊動作潛行遊戲，由利迪娜代理發行 [待補]。
+<IMG SRC="ridefbb/game1.jpg">
+
+<IMG SRC="ridefbb/game2.jpg">
+<b>保護</b>：光碟SecuROM 5.03（放入第一片）
+<b>備註</b>：由於OpenGL的相容問題，目前找不到通用的可執行方法，只能在NVIDIA顯卡的Win64系
+      統上執行：
+
+1.執行1.9.7.3版NVIDIA Inspector，按下在Driver Version最右邊的按鈕（新版已無此按鈕），
+  在上方Profiles裡搜尋The Chronicles of Riddick，往下拉到Common項，變更Extension
+  limit為0x00001B58 (Hired Team, Quake3,...)，然後按下右上的Apply changes。接著便
+  可成功啟動遊戲。
+2.若無NVIDIA Inspector，或不會設定，也可以到安裝目錄\System裡任挑一個目錄進入（有
+  4個，Win64系統均可執行，最低階的便是Win32_x86），將SbzEngine.exe更名為quake3.exe，
+  然後直接執行此程式，亦可成功啟動遊戲（NVIDIA會自動使用前述的Quake3設定值）。
+
+<b>檔案</b>：riddick_update_en_10_11.rar = 1.1更新檔
+      nocd11.rar = 1.1版免光碟
+      nvidiaInspector_1.9.7.3.rar = 1.9.7.3版NVIDIA Inspector
+<b>修改</b>：Environment.cfg
+
+1.視窗化（大小可自行更改）
+  VID_MODE=desktop
+  VID_DWIDTH=640
+  VID_DHEIGHT=480
+2.全螢幕（大小、色彩數、Sync）
+  VID_MODE=640 480 32 60
+
+<b>操作</b>：
+
+移動滑鼠 = 變更方向
+滑鼠左鍵 = 攻擊
+滑鼠右鍵 = 防禦
+W/S = 前進後退
+A/D = 左右平移
+Space = 跳躍
+E = 使用／交談
+C = 潛行
+Q = 切換夜視能力
+F = 武器照明
+J = 物品欄
+F1 = 幫功
+F5 = 快速存檔
+F9 = 快速讀檔
+</pre>
+</body>
+</html>

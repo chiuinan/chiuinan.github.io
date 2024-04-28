@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VR終極戰警2／VR戰警2</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：VR終極戰警2／VR戰警2 (Vritua Cop 2，英文版)
+<b>簡介</b>：SEGA 1996年出品的射擊遊戲 [待補]。
+<IMG SRC="vcop2/game1.png">
+
+<IMG SRC="vcop2/game2.png">
+<b>保護</b>：光碟，破解碼（放入光碟才有背景音樂）：
+      PPJ2DD.EXE
+        E8 64 FF FF FF
+        90 90 90 90 90
+        25 63 3A 5C 76 63 6F 70 32 5C
+        2E 2E 5C 00 00 00 00 00 00 00
+<b>修改</b>：
+
+1.Arcade Game生命不減（無敵）
+  FE C9 88 48 02
+  90 90 -- -- --
+2.Arcade Game彈藥不減
+  66 FF 4E 28  (共4個)
+  90 90 90 90
+
+<b>密技</b>：修改PROJECT\vcop2.ini，在[GameSetting]裡加入一行文字：
+
+Extra=2
+
+進入遊戲後在標題畫面按F6鍵，會看到兩個新選項：Special和Cheat：
+
+1.Special
+
+Single Click Reload = 滑鼠點一下即可填裝彈藥
+Random Mode = 敵人隨機出現
+Mirror Mode = 遊戲視窗顯現出反射的影子
+Big Head Mode = 將遊戲主角變成大頭狀
+
+2.Cheat（使用後無法輸入排行榜名字）
+
+Auto Reload = 用完彈藥後自動填裝
+Gun Select = 在遊戲進行時可以選擇想要的武器
+Special Gun Select = 在遊戲進行時可以選擇特殊槍械
+
+亦可修改vcop2.ini的Continue=#，將數字改成10，即可無限接關。
+
+<b>操作</b>：
+
+F3 = 暫停
+F4 = 變更螢幕顯示方式
+F5 = 變更操作方式與按鍵
+Alt = 開啟系統選單
+Alt+F2 = 重新開始
+Alt+F4 = 結束遊戲
+滑鼠左鍵 = 射擊
+滑鼠右鍵 = 裝載（連按兩次，隨時可裝填）
+Enter = 開始
+
+<b>說明</b>：
+
+<font color=blue><b>*** 武器一覽表</b></font>
+
+1.自動手槍(AUTOMATIC)
+  彈數：15
+2.步槍(RIFLE)
+  彈數：24
+3.機槍(MACHINE GUN)
+  彈數：30
+4.散彈槍(SHOT GUN)
+  彈數：6
+5.大口徑左輪(MAGNUM)
+  彈數：6
+6.特殊槍械(SPECIAL)
+  彈數：？？？
+</pre>
+</body>
+</html>
