@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>超級大戰略／Super大戰略DOS/V</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：超級大戰略／Super大戰略DOS/V (中文版)
+<b>簡介</b>：SystemSoft 1991年出品的戰略遊戲，由琪珊中文化並代理發行。名稱雖有DOS/V，只
+      是表示是由DOS/V改版而來，主要是移植日本大戰略三代 [待補]。
+<IMG SRC="superwar/game1.png">
+
+<IMG SRC="superwar/game2.png">
+<b>備註</b>：手冊答案密碼，破解碼不明。
+<b>備註</b>：DosBox玩本遊戲有下列的限制：
+
+1.偵測磁碟時，是從A開始，偵測到無該磁碟即停止。因此若要遊戲能讀取C碟的地圖，就必
+  須模擬出A碟和B碟。
+2.遊戲存檔，只能儲存在磁片上，因此必須掛載一個磁片映像檔。
+
+假設存檔用磁片映像檔為Save.ima，則在執行遊戲前，先進行下列命令，即可正確存取檔：
+
+imgmount a .\Save.ima -t floppy
+subst b: .
+
+</pre>
+</body>
+</html>
