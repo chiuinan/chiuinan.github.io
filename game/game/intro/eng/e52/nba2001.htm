@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>勁爆美國職籃2001</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：勁爆美國職籃2001 (NBA LIVE 2001，英文版)
+<b>簡介</b>：EA 2000年出品的籃球遊戲 [待補]。
+<IMG SRC="nba2001/game1.jpg">
+
+<IMG SRC="nba2001/game2.jpg">
+<b>保護</b>：光碟SafeDisc 2.05+序號（2500-0822555-6967902-5088）
+<b>備註</b>：執行時若出現Cannot access hard drive，表示沒有註冊碼，請進行下列註冊（假設
+      安裝目錄在C:\NBA2001，光碟在D）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\EA SPORTS\NBA Live 2001]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\EA SPORTS\NBA Live 2001]
+
+"Install Dir"="C:\\NBA2001"
+"CD Drive"="D:\\"
+
+<b>備註</b>：由於遊戲顯示處理方式的關係，目前所有系統，包括虛擬機、模擬器均無法執行，只
+      能在Win64藉助dxVoodoo執行（必須使用無SafeDisc保護的執行檔）。執行後，要按下
+      [Settings]-[Details]，將TEXTURE DETAIL改成MEDIUM，否則進入遊戲後，貼圖會有
+      問題。
+<b>備註</b>：遊戲啟動成功後，若在某個階段當死，可能是缺少某個檔案所致。可嘗試將光碟上的
+      檔案全部拷入安裝目錄中看看。
+<b>限制</b>：不可切回桌面，否則切回去可能會當機。
+<b>修改</b>：nbawin.exe（先去除SafeDisc保護）
+
+1.不限制在最上層，以免萬一當死可以切出來砍掉
+  BD 08 00 00 00 E9 AF
+  -- 00 -- -- -- -- --
+  6A 14 2B CA 51 8B
+  -- 00 -- -- -- --
+
+<b>檔案</b>：no_safedisc.rar = 無SafeDisc保護之執行檔
+</pre>
+</body>
+</html>
