@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>歡樂大航海</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：歡樂大航海 (中文版)
+<b>簡介</b>：立體派1998年出品的大富翁遊戲，以航海為主題 [待補]。
+<IMG SRC="sailing/game1.png">
+
+<IMG SRC="sailing/game2.png">
+<b>保護</b>：光碟，破解碼（需放入光碟才有動畫）：
+      PLAY.EXE
+        0F 84 2B 00 00 00 6A 00
+        90 E9 -- -- -- -- -- --
+<b>備註</b>：只能在Win9x系統上執行，Win64可利用dxVoodoo執行。XP以上系統播完動畫後會無法
+      正常顯示，可破解後不播動畫，變成視窗模式玩。但必須進行下列修改（PLAY.EXE）：
+
+1.不檢驗DirectX 5
+  0F 85 2D 00 00 00 6A 00
+  90 E9 -- -- -- -- -- --
+2.調整視窗大小與模式 (1.28版不適用)
+  6A 00 6A 01 FF 15 30 D6 4A 00 50 6A 00 FF 15 30 D6 4A 00 50 6A 00 6A 00 68 00 00 08 81
+  -- -- B8 02 02 00 00 90 90 90 -- B8 88 02 00 00 90 90 90 -- -- -- -- -- -- -- -- CF --
+
+<b>檔案</b>：patch128.rar = 1.28更新檔（必須有播放動畫才能繼續遊戲，否則會當機，XP不適用）
+</pre>
+</body>
+</html>

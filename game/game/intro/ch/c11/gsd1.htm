@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>幻想水滸傳1</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：幻想水滸傳1 (Genso Suikoden，中文版)
+<b>簡介</b>：KONAMI 1995年出品的角色扮演遊戲，1998年移植至Windows，並由智冠中文化並代理
+      發行。遊戲以3D斜角畫面呈現，團隊回合制方式戰鬥 [待補]。
+<IMG SRC="gsd1/game1.png">
+
+<IMG SRC="gsd1/game2.png">
+<b>保護</b>：光碟
+<b>備註</b>：非安裝者必須進行下列Registry登錄，以指示光碟機所在位置（此處假設是D）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\幻想水滸伝]
+"InstallDrive"="D:\\"
+
+<b>限制</b>：不能有標題為「幻想水滸伝」的視窗（包括檔案總管），否則無法啟動。可進行修改：
+      suikoden.exe
+        0F 84 07 00 00 00 33 C0
+        90 E9 -- -- -- -- -- --
+<b>備註</b>：執行後若遊戲畫面顯示不正常，可執行dxdiag將DirectDraw加速關閉。
+</font>
+</pre>
+</body>
+</html>
