@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>大航海時代2外傳</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：大航海時代2外傳 (Daikoukai Jidai Gaiden，中文版)
+<b>簡介</b>：KOEI 1995年出品的策略模擬冒險遊戲，1998年由第三波中文化並代理發行。劇情衍自
+      二代 [待補]。
+<IMG SRC="koukaigd/game1.png">
+
+<IMG SRC="koukaigd/game2.png">
+<b>保護</b>：光碟，破解碼（必須放入光碟才有背景音樂和動畫）：
+      koukaigd.exe
+        00 85 C0 75 15
+        -- -- -- EB --
+        8B 0D B8 00 4C 00 6A 00
+        33 C0 EB 21 90 90 -- --
+<b>備註</b>：必須在Win9x系統上安裝，或是直接拷貝出KOUKAIGD目錄亦可。
+<b>修改</b>：koukaigd.exe
+
+1.略過第三波Logo顯示（避免當機）
+  75 4A 8B 0D
+  EB 4F -- --
+2.修正點擊或切換到視窗外時當機問題
+  FF 51 14 EB CB
+  -- -- -- 90 90
+
+<b>限制</b>：必須設定螢幕顯示模式為256色，若強制略過，則顯示會不正常。
+<b>備註</b>：XP以上系統執行會沒有背景音樂，請更新KOEICDA.DLL與KOEIDSND.DLL。
+<b>備註</b>：若進入遊戲後，顯示偏移或疊影，便切到其他視窗再切回來，該它重繪即可。
+<b>檔案</b>：KOEICDA_XP.rar = XP適用的KOEICDA.DLL(1.2.0.2)與KOEIDSND.DLL(1.2.1.1)
+</pre>
+</body>
+</html>

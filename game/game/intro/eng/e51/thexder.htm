@@ -14,7 +14,34 @@
 <IMG SRC="thexder/game1.png">
 
 <IMG SRC="thexder/game2.png">
-<b>保護</b>：不明。
+<b>保護</b>：磁片（部份程式放在磁軌中），破解碼（修改THEXDER.COM）：
+
+1.回填缺少的程式碼
+
+00000040: 00 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          -- 43 B7 45 5D 97 49 2F F2 D8 12 7B 0E C0 3A D2
+00000050: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          65 DE 85 64 41 22 51 01 D4 03 B9 D5 AA 4E D6 BE
+00000060: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          3D 8C 25 4C A1 10 03 56 5F 9C 54 35 5F AE 42 9F
+00000070: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          FE 6C 22 21 3F 28 72 39 1D 91 FE 0F FE 78 22 CF
+00000080: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          43 3B 29 A5 FB D1 D4 55 B6 72 F5 75 77 E2 3A 49
+00000090: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          C2 59 07 3A D5 11 7C F4 F3 6C 95 1A DA C1 70 A7
+000000A0: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          56 C3 A8 E4 EE 8E DF 00 BB 4F 5A 50 59 8E C6 24
+000000B0: 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B 6B
+          F5 19 19 43 86 8F 92 04 18 88 E1 0A 43 5D 63 9B
+000000C0: 6B 73 73 73 73 73 73 73 73 73 73 73 73 73 73 73
+          BA -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+2.略過插入磁片要求
+
+00000600: 72 2E 2A 00 BB 00 02 B4 48 CD 21 A3 2C 03 BB 00
+          -- -- -- -- C3 -- -- -- -- -- -- -- -- -- -- --
+
 <b>限制</b>：DosBox執行時若會當機，請調降速度。
 <b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT
 <b>修改</b>：MAINEG
