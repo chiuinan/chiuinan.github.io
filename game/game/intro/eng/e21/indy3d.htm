@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>印第安納瓊斯4：末日危機／印第安納瓊斯與惡魔機器</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：印第安納瓊斯4：末日危機／印第安納瓊斯與惡魔機器 (Indiana Jones and the Infernal Machine，英文版)
+<b>簡介</b>：Lucas 1999年出品的冒險解謎遊戲，為印第安納瓊斯冒險遊戲系列第四部作品 [待補]。
+<IMG SRC="indy3d/game1.jpg">
+
+<IMG SRC="indy3d/game2.jpg">
+<b>保護</b>：光碟，破解碼（必須採用完全安裝）：
+      Jones3D.exe
+        39 5D 08 74 32
+        -- -- -- EB 2D
+<b>備註</b>：非安裝者，需執行SETUPREG.EXE進行Registry註冊。
+<b>備註</b>：虛擬機+XP，或PCem+Win98執行都有問題，請使用VMware+Win98，或Win64實體機（須
+      將Jones3D.exe和Indy3D.exe設成Win9x相容）。建議前者，問題會較少。
+<b>備註</b>：
+
+1.XP以上系統使用1.2版，在新遊戲開始不久後，若出現錯誤訊息sithCamera.c(1288)，只需
+  略過初始動畫即可，可利用下列方式解決：
+
+(a)建出一個初始存檔（若已有便不用了）：將Resouece\Cog資料夾更名，或移到其他地方，
+   然後開始新遊戲。等到可以按Esc鍵時存檔離開，並恢復Resouece\Cog資料夾。
+(b)再次啟動遊戲，讀取初始存檔，繼續遊戲。
+
+2.巴拉望神殿第七層開始過場動畫時遊戲當機，請修改Resource\Cog\TEM_IntroCut.cog檔案，
+  在第171行# draw imp#1之後，加入一行：
+
+player = GetLocalPlayerThing();
+
+<b>檔案</b>：j3dup1_2.rar = 1.2更新檔
+      SETUPREG.rar = Registry註冊程式
+</pre>
+</body>
+</html>
