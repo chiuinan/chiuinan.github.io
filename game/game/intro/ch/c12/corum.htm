@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>科隆戰記1：受咒之地</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：科隆戰記1：受咒之地 (Corum: Jeoju Badeun Ttang，中文版)
+<b>簡介</b>：韓國Hicom 1997年出品的角色扮演遊戲，1998年由富峰群代理並中文化，交由
+      智冠發行。遊戲以3D斜角畫面呈現，採單人即時方式戰鬥 [待補]。
+<IMG SRC="corum/game1.png">
+
+<IMG SRC="corum/game2.png">
+<b>保護</b>：光碟，修改Windows目錄下的CORUM.INI內容如下，並將對應的光碟目錄拷入安裝目錄，
+      即可免光碟：
+
+[PATH]
+MAINPATH=.
+MAPPATH=.\MAP
+SPRITEPATH=.\SPRITE
+SOUNDPATH=.\SOUND
+EVENTPATH=.\EVENT
+ANIMATIONPATH=.\ANI
+
+<b>備註</b>：執行第一片光碟裡的Disk1\Setup.exe進行安裝。
+<b>備註</b>：執行參數加/w為視窗模式，但螢幕顯示模式必須為256色。
+<b>備註</b>：XP以上系統無法執行，只能用DosBox或PCem+Win95，或RetroArch+Win98執行。Win95
+      要有D3D，並安裝光碟上的DirectX 5.0
+<b>修改</b>：CORUM.EXE
+
+1.被攻擊不損血（但中毒等仍會）
+  2B C8 89 8E 92 00 00 00  (共4個)
+  90 90 -- -- -- -- -- --
+
+<b>修改</b>：存檔CORUM00?.SAV (在Windows目錄下)
+
+最大HP：位置0036h，2 byte
+最大SP：位置0038h，2 byte
+物品：位置0056h開始，每2 byte一組，分別表示物品ID與數量。
+
+<b>修改</b>：記憶體
+
+位置00496B0Eh = 目前生命
+
+<b>操作</b>：
+
+上下左右鍵 = 移動（雙按=跑步）
+X = 確定／攻擊
+Z = 取消／防禦
+C = 系統選單
+</pre>
+</body>
+</html>
