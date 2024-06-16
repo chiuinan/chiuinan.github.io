@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>終極動員令：將軍</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：終極動員令：將軍 (Command and Conquer: Generals，中文／英文版)
+<b>簡介</b>：EA 2003年出品的戰略遊戲，為終極動員令遊戲系列「紅色警戒」外的另一個分支，只
+      是沒有繼續延續下去。同年再推出資料片「絕命時刻／零時（Zero Hour）」，2006年
+      收錄在「十周年紀念DVD」中。由於虛構劇情破壞中國形象，且涉及到政治爭議，成為
+      少數被中國文化部禁止銷售的電子遊戲之一 [待補]。
+<IMG SRC="general/game1.jpg">
+
+<IMG SRC="general/game2.jpg">
+<b>保護</b>：主程式為光碟SafeDisc 2.80+序號（8024-0694917-9155643-3730）
+      資料片為光碟SafeDisc 2.90+序號（FDZ9-N4ND-2003-FGTI-G0IH）
+      十周年紀念版為光碟SafeDisc 4.60+序號（2SRR-T77D-WK2C-AEMI-RROR）
+<b>備註</b>：非安裝者，必須進行下列Registry註冊（主程式的安裝目錄必須是絕對路徑）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Electronic Arts\EA Games\Generals]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Generals]
+"InstallPath"="主程式的安裝目錄"
+"Language"="chinese"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour]
+"Language"="chinese"
+
+或是進行下列修正：
+
+1.免光碟檔game.dat中的"english"改成"chinese"，即可不用設定Language。
+2.將主程式安裝目錄放入資料片安裝目錄，並更名變成最後一個目錄，即可不用設定主程式
+  的安裝目錄。
+
+<b>備註</b>：資料片安裝時，並不會修改主程式，但在執行時會讀取主程式的內容使用。
+<b>備註</b>：遊戲若無法啟動，可試著自行建立Options.ini檔：
+
+AntiAliasing = 1
+BuildingOcclusion = yes
+DrawScrollAnchor =
+DynamicLOD = no
+ExtraAnimations = yes
+GameSpyIPAddress = 0.0.0.0
+Gamma = 50
+IPAddress = 0.0.0.0
+IdealStaticGameLOD = High
+LanguageFilter = true
+MaxParticleCount = 5000
+MoveScrollAnchor =
+MusicVolume = 55
+Resolution = 1024 768
+Retaliation = yes
+SFX3DVolume = 79
+SFXVolume = 71
+ScrollFactor = 50
+SendDelay = no
+ShowSoftWaterEdge = yes
+ShowTrees = yes
+StaticGameLOD = Custom
+TextureReduction = 0
+UseAlternateMouse = no
+UseCloudMap = yes
+UseDoubleClickAttackMove = no
+UseLightMap = yes
+UseShadowDecals = yes
+UseShadowVolumes = yes
+VoiceVolume = 100
+
+然後將Options.ini檔拷貝到下列目錄：
+
+[我的文件]\Command and Conquer Generals Data
+[我的文件]\Command and Conquer Generals Zero Hour Data
+
+<b>備註</b>：執行參數後面加-win，可使用視窗模式執行。
+<b>檔案</b>：Generals-108-chinese.rar = 繁中版主程式1.08更新檔
+      GeneralsZH-104-chinese.rar = 繁中版資料片1.04更新檔
+      nocd_108.rar = 主程式1.08免光碟檔（中英文通用）
+      cht_nocd_108.rar = 繁中版主程式1.08免光碟檔（繁中專用，不需註冊Registry）
+      nocd_zh104.rar = 資料片1.04免光碟檔（中英文通用）
+      nocd_10.rar = 十周年紀念版免光碟檔
+      options.rar = 無法啟動修正檔（放入[我的文件]中）
+</pre>
+</body>
+</html>
