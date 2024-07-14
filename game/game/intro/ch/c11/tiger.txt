@@ -11,7 +11,7 @@
 備註：如果新遊戲時跳出，error.txt有寫MMStream OpenFile failed時，試著
       拷貝ir50_32.dll，並用regsvr32註冊（cg\story0.avi必須能播放，其
       影片格式為Indeo 5，但安裝K-Lite Codec是無效的）。
-秘技：先按F6，畫面左上角出現RAYS，然後輸入下列密技字串，最後再按~鍵：
+密技：先按F6，畫面左上角出現RAYS，然後輸入下列密技字串，最後再按~鍵：
         升級＝promises
         無敵模式＝stephen
         狀態無敵＝zsc
