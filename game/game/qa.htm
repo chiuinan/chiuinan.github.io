@@ -52,7 +52,7 @@ Win9x遊戲
 <ol>
 <li>請使用PCem、DosBox配合Windows 95或98作業系統執行（可利用UltraISO或Win64掛載放入遊戲，或直接外掛光碟檔）。
 <li>或使用RetroArch(DosBox Pure)執行Windows 98作業系統（將遊戲壓成ZIP檔，或直接放入光碟檔）。
-<li>或使用VMware或VirtualBox執行Windows 98，但要先做<A href="https://github.com/JHRobotics/patcher9x/releases">JHRobotics Patch</A>修正，並安裝SoftGPU以啟用Direct3D。比較需要效能的遊戲推薦此一方式，建議使用VMware，因為VirtualBox對Win98的支援度較差。
+<li>或使用VMware或VirtualBox執行Windows 98，但要先做<A href="https://github.com/JHRobotics/patcher9x/releases">JHRobotics Patch</A>修正，並安裝SoftGPU以啟用Direct3D。比較需要效能的遊戲推薦此一方式，建議使用VMware，因為VirtualBox對Win98的支援度較差，通常會沒有聲音。
 </ol>
 
 <div style="padding: 2px; background: blue; color: white;">
@@ -60,10 +60,10 @@ Windos遊戲
 </div>
 
 <ol>
-<li>若現有Win64系統無法執行，請改用VMware或VirtualBox配合Windows XP作業系統執行，或嘗試搭配DxWnd或dgVoodoo執行看看。
+<li>若現有Win64系統無法執行，請改用VMware或VirtualBox配合Windows XP作業系統執行，或嘗試搭配DxWnd或dgVoodoo2執行看看。
 <li>若VirtualBox全螢幕顯示時，畫面太小，請使用Host+C的縮放模式，或是在虛擬機顯示設定處改變縮放係數。
 <li>VMWware若要縮放全螢幕，必須使用付費的Worksation Pro，在顯示設定中有縮放的選項。
-<li>VirtualBox不支援Direct3D 7，若遊戲必須使用D3D7，便只能改用VMWware。
+<li>VirtualBox不支援Direct3D 7，若遊戲必須使用D3D7，便只能改用VMWware（2000～2003年的遊戲較容易遇到）。
 <li>出現"找不到vids:IV32解壓縮程式"，請找解碼程式ir32_32.dll，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
 <li>出現"找不到vids:IV41解壓縮程式"，請找解碼程式ir41_32.ax，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
 <li>出現"找不到vids:IV50解壓縮程式"，請找解碼程式ir50_32.dll，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。
@@ -108,7 +108,7 @@ REGEDIT4<br>
 <li>酒精燒錄的帶音軌cue檔映像檔，第三軌開始都會慢兩秒，也就是第二軌開始最後面都會播放到下一軌前兩秒的音樂，若音樂的靜音間隔較短時會很明顯。判斷酒精燒錄的cue檔格式如下：<br>
 <blockquote>TRACK 02 AUDIO<br>
 &nbsp;&nbsp;PREGAP 00:02:00</blockquote>
-如果第二軌之後有PREGAP，之後各軌都沒有，且皆只有一個INDEX，基本上就是酒精燒錄的cue檔格式。然後再看檔案日期是否cue檔和bin檔相同，若相同便是沒有修正過。修正的方法便是從第3軌開始，起始時間都減2秒（不可刪除PREGAP那一行，再將下方的INDEX秒數加2，音軌資訊看起來正確，但實際播起來不對）。修正後最好與其他格式的光碟映像檔音軌資料比對是否完全一致，如果沒有可以比對，便只能用播放器播放各音軌，聽聽看音軌最後是否有播放到下一軌的音樂。因為有時光碟是經過二次以上燒錄，此時音軌偏差可能已不只2秒。
+如果第二軌之後有PREGAP，之後各軌都沒有，且皆只有一個INDEX，基本上就是酒精燒錄的cue檔格式。然後再看檔案日期是否cue檔和bin檔相同，若相同便是沒有修正過。修正的方法便是從第3軌開始，起始時間都減2秒（不可刪除PREGAP那一行，再將下方的INDEX秒數加2，音軌資訊看起來正確，但實際播起來不對）。修正後最好使用播放器播放各音軌，聽聽看音軌最後是否有播放到下一軌的音樂。因為有時光碟是經過二次以上燒錄，此時音軌偏差可能已不只2秒。
 </ul>
 
 </small>
