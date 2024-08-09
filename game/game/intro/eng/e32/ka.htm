@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>星際爭霸戰／星艦迷航記：克林貢學院／星際迷航：王國學院</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：星際爭霸戰／星艦迷航記：克林貢學院／星際迷航：王國學院 (Star Trek: Klingon Academy，英文版)
+<b>簡介</b>：14 Degrees East 2000年出品的太空飛行戰鬥模擬與即時戰術遊戲，為「<A href="..\e33\sfa.htm">星際神鷹</A>」
+      的續集，由Interplay代理發行 [待補]。
+<IMG SRC="ka/game1.jpg">
+
+<IMG SRC="ka/game2.jpg">
+<b>保護</b>：光碟SafeDisc 1.45
+<b>備註</b>：非安裝者，必須修改options.cfg，將moviepath目錄指向光碟機。同時必須進行下列
+      Registry註冊，才能使用KALaunch.exe（假設安裝目錄為C:\ka）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\ka.exe]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\App Paths\ka.exe]
+"Path"="C:\\ka"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Klingon Academy]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Klingon Academy]
+"UninstallString"="IsUninst.exe -f\"C:\\ka\\Uninst.isu\""
+
+<b>備註</b>：XP以上系統無法執行，請搭配KA專用ddraw.dll，或在VMware+Win98上執行。
+<b>修改</b>：
+
+1.多重執行緒當機修正
+  ka.exe
+  0F 94 C0 50 FF
+  90 90 90 -- --
+2.螢幕解析度設定檢驗修正
+  KALaunch.exe
+  75 1D 81 FB
+  90 90 -- --
+  0F 84 84 00 00 00 5F
+  E9 85 00 -- -- -- --
+
+<b>檔案</b>：crack100.rar = 1.00無SafeDisc保護執行檔
+      KA_Patch102.rar = 1.02更新檔（已去除SafeDisc保護，無法在Win9x系統上更新）
+      KALaunch_Fix.rar = 螢幕解析度設定檢驗修正程式
+      Screenshot_Fix.rar = 遊戲截圖功能修正檔（1.02更新檔專用）
+      ka_ddraw.rar = KA專用ddraw.dll
+</pre>
+</body>
+</html>

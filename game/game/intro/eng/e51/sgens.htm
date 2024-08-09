@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>星際爭霸戰／星艦迷航記／星際迷航：日換星移</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：星際爭霸戰／星艦迷航記／星際迷航：日換星移 (Star Trek Generations，英文版)
+<b>簡介</b>：MicroProse 1997年出品的第一人稱射擊遊戲，兼具冒險與戰略遊戲的元素 [待補]。
+<IMG SRC="sgens/game1.jpg">
+
+<IMG SRC="sgens/game2.png">
+<b>保護</b>：光碟，免光碟法請參見下面移機方式。
+<b>備註</b>：未安裝移機者，需進行下列Registry註冊（假設安裝在c:\sgens）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\MicroProse\Star Trek Generations\1.0]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\MicroProse\Star Trek Generations\1.0]
+
+"Path"="c:\\sgens"
+"CDPath"="c:\\sgens\\DATA"
+
+其中CDPath原為"光碟機:\\GENS"，此處改成安裝目錄的DATA子目錄，因此必須將兩片光碟的
+GENS目錄檔案全數拷貝到DATA子目錄中，即可免光碟。
+
+<b>修改</b>：sgens.exe
+
+1.修正XP以上系統無法啟動問題（修改後不用再設定Win9x相容）
+  BA B4 03 00 00 B0 0F EE
+  32 C0 C3 -- -- -- -- --
+2.修正較新顯示卡無法播放動畫問題（沒有65536色顯示模式者，仍需要有後述解碼程式）
+  83 C4 04 6A 01 6A 10
+  -- -- -- -- -- -- 20
+
+<b>備註</b>：以下為各作業系統執行狀況：
+
+1.VirtualBox或VMware+XP：選擇TRANSPORT後跳出。搭配D3DWindower可成功執行，但滑鼠座
+  標位置不正確，且無法修正。DxWnd無效，使用DDrawCompat或WineD3D會無法啟動。
+2.VMware+Win98：畫面全黑。
+3.86Box或PCem+Win98：進入第一人稱射擊畫面不久後跳出。
+4.PCem+Win95：成功。
+5.Win64系統：成功。若使用dgVoodoo2會無法啟動。
+
+<b>備註</b>：若無法播放影片，請找解碼程式iccvid.dll，將之拷貝到Windows\system32（32位元）
+      或SysWOW64（64位元）目錄，再用下列reg檔登錄即可：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+
+<b>限制</b>：不可切回桌面，否則會當機。
+</pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>銀河前哨／星際迷航：深空九號：主權戰爭</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：銀河前哨／星際迷航：深空九號：主權戰爭 (Star Trek: Deep Space Nine - Dominion Wars，英文版)
+<b>簡介</b>：Gizmo 2001年出品的太空飛行戰鬥模擬與即時戰略遊戲，由Simon & Schuster代理發
+      行 [待補]。
+<IMG SRC="ds9dw/game1.jpg">
+
+<IMG SRC="ds9dw/game2.jpg">
+<b>保護</b>：光碟，破解碼：
+      ds9dw.exe
+        74 06 88 5C 24 12  (1.04與1.05版)
+        90 90 -- -- -- --
+      或
+        74 06 88 5C 24 50  (1.01版)
+        90 90 -- -- -- --
+      或
+        75 06 88 5C 24 12  (1.04錯誤破解版)
+        90 90 -- -- -- --
+<b>備註</b>：遊戲目前測試結果只能在86Box或PCem+Win98系統上執行（但速度略慢），其餘均不行。
+      Win64系統必須以下列方式修正後方能執行（虛擬機+XP仍無法執行）：
+
+1.進行DDraw呼叫修正。
+2.搭配dgVoodoo2。
+3.將螢幕解析度設成1280x960後再執行，否則滑鼠游標會卡死。可利用QRes進行設定，例如
+  使用下列批次檔執行：
+
+set __COMPAT_LAYER=WIN98 HIGHDPIAWARE
+QRes.exe /x:1280 /y:960
+start ds9dw.exe
+QRes.exe /x:1920 /y:1080
+
+<b>檔案</b>：ds9dw1to4.rar = 1.01至1.04更新檔
+      dwpatch5.rar = 1.04至1.05更新檔
+      DDrawPatch.rar = DDraw呼叫修正（已免光碟，需先更新至1.04或1.05）
+         （將程式裡的DDRAW.DLL字串改成DDRA2.DLL，1.01版可比照辦理）
+      QRes.rar = QRes執行工具（內含本遊戲啟動批次檔）
+</pre>
+</body>
+</html>
