@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新龍門客棧</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：新龍門客棧 (中文版)
+<b>簡介</b>：歡樂盒1999年出品的策略角色扮演遊戲 [待補]。
+<IMG SRC="newlm/game1.png">
+
+<IMG SRC="newlm/game2.png">
+<b>保護</b>：光碟，破解碼（放入光碟才有背景音樂）：
+      Nlm.exe
+        75 1A 6A 00
+        EB -- -- --
+        75 17 6A 00
+        EB -- -- --
+        74 39 8D 95
+        90 90 -- --
+        75 15 8D 45
+        90 90 -- --
+      需拷貝光碟上所有的avi檔以及4個子目錄到安裝目錄中。
+<b>備註</b>：Win64系統需搭配dgVoodoo2。
+<b>備註</b>：動畫若無法播放（有聲無影），請找解碼程式iccvid.dll，將之拷貝到Windows\system32
+      （32位元）或SysWOW64（64位元）目錄，再用下列reg檔登錄即可：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+
+<b>備註</b>：開始的選單畫面，要點擊出現的中文字選項。
+</pre>
+</body>
+</html>
