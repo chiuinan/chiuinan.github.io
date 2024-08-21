@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>倉庫番：史上完整版</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：倉庫番：史上完整版 (Sokoban - Perfect，中文版)
+<b>簡介</b>：Thinking Rabbit 1991年出品的推箱子解謎遊戲，1995年由大宇中文化並代理發行。
+      遊戲全部共有306關，玩家必須依照各關倉庫內的地形，將各箱子推到指定的位置上。
+      除了遊戲內定的關卡數外，玩家也可以自行設計關卡。整個遊戲為一單純的益智解謎
+      遊戲，是否好玩要看玩家的喜好而定。
+<IMG SRC="soko/game1.jpg">
+
+<IMG SRC="soko/game2.png">
+<b>保護</b>：顏色密碼（程式分別經由PKLITE與LZEXE壓縮，並附加字形資訊，不可直接解壓）。
+<b>檔案</b>：crack.rar = 破解檔
+<b>修改</b>：DosBox當機問題：
+
+1.不可將執行檔解壓縮，因為遊戲一開始會載入主程式檔到EMS解壓出字形，若先行解壓，會
+  造成字形資訊不正確，使得搜尋字形資訊的程式當掉。因此必須撰寫常駐程式來解決。
+2.DosBox第一個當機點，是在遊戲程式控制8042鍵盤控制器觸發int 09h，然後檢視BIOS資料
+  區裡的40:97資訊是否有正確設立。DosBox似乎沒有正確處理到此一情形，因而導致當機，
+  故常駐程式可以定時設定40:97的資訊來騙過遊戲程式。
+3.0.74版DosBox在執行本遊戲主程式的int 15h呼叫時，中途會跳到不正確的位址造成改到部
+  份程式碼內容，因而造成當機。故常駐程式亦必須攔掉int 15h。
+
+以下為避免當機的常駐程式碼，將程式前面的16進位數值依次寫入一個COM執行檔中（共計69
+byte），並於play.bat一開始的地方便執行本常駐程式，便可以在DosBox程式裡正常地玩了。
+
+  EB14        jmp  $start
+$int1C:
+  50          push ax
+  1E          push ds
+  B84000      mov  ax,40h
+  8ED8        mov  ds,ax
+  800E970010  or   byte ptr [97h],10h
+  1F          pop  ds
+  58          pop  ax
+$1C_addr:
+  EA00000000  jmp 0:0
+$int15:
+  CF          iret
+$start:
+  0E          push cs
+  1F          pop  ds
+  B81C35      mov  ax,351Ch
+  CD21        int  21h
+  891E1101    mov  [$1C_addr+1],bx
+  8C061301    mov  [$1C_addr+3],es
+  B81C25      mov  ax,251Ch
+  BA0201      mov  dx,$int1C
+  CD21        int  21h
+  B81525      mov  ax,2515
+  BA1501      mov  dx,$int15
+  CD21        int  21h
+  BA1501      mov  dx,$start
+  CD27        int  27h
+
+<b>操作</b>：
+
+滑鼠左鍵 = 移動人物
+滑鼠右鍵 = 選擇箱子移動位置
+滑鼠右鍵＋左鍵 = 開始移動箱子
+</pre>
+</body>
+</html>

@@ -17,7 +17,36 @@ disk1=.
 disk2=.\DISK2
 
 <b>檔案</b>：SGW_XP_Patch.rar = XP更新檔（更新後才能在XP以上系統執行）
+<b>密技</b>：遊戲原本有除錯密技，但Windows版已被隔絕，無法觸發。以下的修改可使得[說明]-
+      [著作權表示]選項變成除錯密技觸發功能，但必須在沒有任何事件會觸發的地點使用，
+      避免蓋掉原本會發生的事件：
+
+SGW.exe (XP更新檔)
+  6A FF 68 C8 09 46 00
+  E8 FB BB FD FF C3 90
+
+<b>資訊</b>：Script檔（script.pak）
+
+script數目：2 byte
+script指標：每個4 byte，指向script內容（由下一個指標可得知大小）
+script內容：Script命令集，由多個script命令依順序所組成
+
+script命令格式：
+  長度：2 byte，表示本Script命令的總byte數，0表Script命令集結束
+  功能：1 byte
+  參數：依功能而定
+
+例如功能08h意義為"依照變數值前往指定位置的Script命令"，以下為其參數：
+  分支數：1 byte
+  變數值：2 byte
+  指定位置Script命令（即第幾個Script命令）：共[分支數]個，每個2 byte
+功能05h意義為"顯示文字"
+功能06h意義為"顯示選單，選擇後進行分支"
+功能0Fh意義為"啟用除錯密技"
+
+變數值定義：
+  8000h=1時，其他位元表示第幾個變數
+  8000h=0時，其他位元表示指定數值，其中4000h表示正負號位元（Sign bit）
 </pre>
 </body>
 </html>
-
