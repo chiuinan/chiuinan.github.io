@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>惡靈古堡1／生化危機1</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：惡靈古堡1／生化危機1 (Resident Evil／Bio Hazard，簡中／英文版)
+<b>簡介</b>：CAPCOM 1996年出品的動作冒險解謎遊戲，1997年移植至Windows。台灣由第三波引進，
+      但並未中文化；大陸則由上海育碧簡中化並代理發行 [待補]。
+<IMG SRC="horr/game1.png">
+
+<IMG SRC="horr/game2.jpg">
+<b>保護</b>：光碟
+<b>備註</b>：XP以上系統安裝時，需將Setup.exe設成Win9x相容。
+<b>備註</b>：安裝後的主程式仍在光碟上，必須直接從光碟上執行。因此如果不是實體光碟，可不
+      安裝任何檔案，完全使用光碟上的檔案即可（安裝目錄只用來存檔）。
+<b>備註</b>：非安裝移機者，必須進行下列Registry註冊（假設安裝目錄在C:\horr）
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\CAPCOM\RESIDENT EVIL]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\CAPCOM\RESIDENT EVIL]
+
+"Install Path"="C:\\"
+"Create Directory"="horr"
+"Play Number"=dword:00000000
+"Clear Number"=dword:00000000
+"Key Def"=hex(0):26,28,25,27,00,56,00,00,00,00,58,43,00,5a,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,41,11,0d,20,1b
+"Joy Def"=hex(0):00,10,00,00,00,40,00,00,00,80,00,00,00,20,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,80,00,00,00,40,00,00,00,08,00,00,00,00,\
+  08,00,00,00,09,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00
+"Side Def"=hex(0):00,10,00,00,00,40,00,00,00,80,00,00,00,20,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,80,00,00,00,40,00,00,00,00,08,00,00,00,\
+  09,00,00,00,00,00,00,00,00,00,00,00,00,00,00,08,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00
+"Display Driver"=dword:00000000
+"Install Flag"=dword:00000000
+"X Size"=dword:00000280
+"Y Size"=dword:000001e0
+"Bit Depth"=dword:00000010
+"FullScreen?"=dword:00000001
+"Display Mode"=dword:00000000
+
+以上註冊為[無安裝檔案]，亦即安裝目錄只需是一個空目錄。
+
+<b>備註</b>：XP以上系統執行時，需將光碟上的launch.exe與ResidentEvil.exe設成Win9x相容。
+<b>備註</b>：需先安裝Cinepack解碼器，否則無法播放動畫。亦即將解碼程式iccvid.dll，拷貝到
+      Windows\system32（32位元）或SysWOW64（64位元）目錄，再用下列reg檔登錄即可：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+
+<b>備註</b>：先執行launch.exe，到Options裡選擇各種顯示卡嘗試，如果都無法正常進入遊戲，則
+      選擇最後的System Memory，但解析度會較差（簡中版無此選項）。
+<b>備註</b>：簡中版需要dplay.dll，且必須將顯示模式設成16 bit High Color（65536）色，同時
+      亦無System Memory選項，目前只能在安裝有3dfx顯卡的Win98系統上執行。
+<b>備註</b>：ResidentEvil.exe後面可直接加參數，指定使用的顯示卡：
+
+/monster	使用 Diamond Monster 3D
+/mystique	使用 Matrox Mystique 4MB
+/total		使用 Canopus TOTAL 3D
+/blaster	使用 Creative 3D Blaster
+/righteous	使用 Orchid Righteous
+/intense	使用 Intergraph Intense
+/rage_pro	使用 ATI XPERT@Play TM,ATI XPERT@Work
+/stingray	使用 Hercules Stingray 128/3D
+/nocard1	使用 VideoMemory
+
+由於Win9x系統下無法啟動launch.exe變更設定，可利用前述方式變更，其餘參數可修改前述
+Registry。
+
+<b>修改</b>：launch.exe
+
+1.執行同目錄下的ResidentEvil.exe執行檔（可拷貝到暫存目錄中執行）
+  68 B4 73 40 00  (英文版)
+  -- B5 -- -- --
+  5C 00 00 00 5C 55
+  2E -- -- -- -- --
+或
+  68 88 81 40 00  (簡中版)
+  -- 89 -- -- --
+  5C 00 00 00 54 68
+  2E -- -- -- -- --
+
+<b>操作</b>：
+
+C或Enter或Space = 動作（攻擊、開門、撿拾等）／確定
+V或Esc = 跑步（配合上鍵）／取消
+X = 準備攻擊（配合上下鍵與動作鍵進行攻擊）
+上鍵 = 前進／上段攻擊
+下鍵 = 後退／下段攻擊
+左右鍵 = 左右轉
+A = 控制設定
+Z = 遊戲選單
+
+</pre>
+</body>
+</html>

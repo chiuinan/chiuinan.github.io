@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>超級魂斗羅</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：超級魂斗羅 (Super Contra，英文版)
+<b>簡介</b>：Konami 1988年出品的動作射擊遊戲，1990年移植到DOS，2002年移植Windows，收錄在
+      「<A href="cvania.htm">惡魔城與魂斗羅系列合集（Konami Collector's Series: Castlevania & Contra）</A>」
+      [待補]。
+<IMG SRC="superc/game1.png"> <IMG SRC="superc/game2.png">
+<b>保護</b>：DOS版為手冊密碼
+<b>備註</b>：DOS版電腦速度不可太快，否則會當機跳出。
+<b>備註</b>：DOS版密碼輸入程式在EGA.CMN，有壓縮加密，無法直接修改，必須以常駐程式破解：
+
+一、破解資訊（針對EGA模式）
+
+從0:22h取得程式所在Segment=SEG1，再從SEG1:[8F49h]處取得EGA.CMN所在的Segment=SEG2，
+最後修改（按呼叫次序反向進行）：
+
+SEG2:00A9h
+  1D FF FF 0B C0 75 14
+  -- -- -- -- -- -- 00 (00AFh處)
+SEG2:01E4h
+  39 46 E0 74 03
+  -- -- -- EB 0B (01E7h處)
+SEG2:019Fh
+  9A C2 02 72 0E
+  90 90 90 90 90
+
+二、破解用的常駐程式
+
+EB65            jmp  $start
+90              nop
+$int1C:
+9C              pushf
+06              push es
+50              push ax
+33C0            xor  ax,ax
+8EC0            mov  es,ax
+26813E20000006  cmp  word ptr es:[20h],0600h
+754C            jne  $exit
+26A12200        mov  ax,word ptr es:[22h]
+8EC0            mov  es,ax
+26813E0006FA1E  cmp  word ptr es:[0600h],1EFAh
+753D            jne  $exit
+26A1498F        mov  ax,word ptr es:[8F49h]
+8EC0            mov  es,ax
+26813EAE007514  cmp  word ptr es:[00AEh],1475h
+752E            jne  $exit
+26813EE7017403  cmp  word ptr es:[01E7h],0374h
+7525            jne  $exit
+26813EA001C202  cmp  word ptr es:[01A0h],02C2h
+751C            jne  $exit
+26C606AF0000    mov  byte ptr es:[00AFh],00h
+26C706E701EB0B  mov  word ptr es:[01E7h],0BEBh
+B89090          mov  ax,9090h
+26A29F01        mov  byte ptr es:[019Fh],al
+26A3A001        mov  word ptr es:[01A0h],ax
+26A3A201        mov  word ptr es:[01A2h],ax
+$exit:
+58              pop  ax
+07              pop  es
+9D              popf
+EA              db   0EAh
+$1C_addr:
+00000000        dd   ?
+$start:
+0E              push cs
+1F              pop  ds
+B81C35          mov  ax,351Ch
+CD21            int  21h
+891E6301        mov  word ptr [$1C_addr],bx
+8C066501        mov  word ptr [$1C_addr+2],es
+B81C25          mov  ax,251Ch
+BA0301          mov  dx,offset $int1C
+CD21            int  21h
+BA6701          mov  dx,offset $start
+CD27            int  27h
+
+<b>操作</b>：
+
+一、DOS版
+
+Ins = 攻擊
+Del = 跳躍
+Ctrl+S = 存檔
+Ctrl+Q = 離開
+
+二、Windows版
+
+F = 開始
+D = 移動選項
+A = 攻擊
+S = 跳躍
+F1 = 系統選單
+
+</pre>
+</body>
+</html>
