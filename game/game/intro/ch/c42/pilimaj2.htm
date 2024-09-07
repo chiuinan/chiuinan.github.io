@@ -19,18 +19,20 @@
 <IMG src="pilimaj2/game1.jpg">
 
 <IMG src="pilimaj2/game2.jpg">
-<b>保護</b>：序號＋光碟（SafeDisc，執行檔有加密），安裝時需輸入身份證字號與序號。序號為
-      U8S6HQUDW3NJK5S，身份證字號可輸入Z249904541（隨機產生的連江縣女性身份證字號）。
-<b>備註</b>：執行時若出現「尚未安裝或找不到安裝目錄」，請增加下列註冊機碼：
+<b>保護</b>：光碟SafeDisc 2.10+序號（U8S6HQUDW3NJK5S），且安裝時需輸入身份證字號與序號。
+      身份證字號可輸入Z249904541（隨機產生的連江縣女性身份證字號）。
+<b>備註</b>：執行時若出現「尚未安裝或找不到安裝目錄」，請增加下列Registry註冊機碼：
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\PiliMaj2]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\App Paths\PiliMaj2]
+
 "Path"="C:\\Pilimaj2"
 
-64位元系統應修改[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\App Paths\PiliMaj2]
-
-<b>備註</b>：螢幕解析度必須設為16位元高彩模式。
+<b>備註</b>：螢幕解析度必須設為16位元高彩模式（可設定相容性），或在Pilimaj2.exe後面加/F
+      參數，強制使用全螢幕。
 <b>限制</b>：不可切回Windows視窗桌面，畫面會全黑無法玩，必須按Esc跳出。
 <b>備註</b>：Data\User.dat記錄了安裝時輸入的資訊，可隨時進行修改，但仍必須保持資訊正確性。
+<b>檔案</b>：nocd.rar = 免光碟檔
 
 <b>攻略</b>：請參閱<a href="pilimaj2\index.htm" target="_blank">pilimaj2\index.htm</a>
 
