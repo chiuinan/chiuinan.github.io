@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>阿曼尼斯傳說／亞瑪蘭斯</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：阿曼尼斯傳說／亞瑪蘭斯 (Amaranth，中文版)
+<b>簡介</b>：FUGA 1990年出品的角色扮演遊戲，1999年由歡樂盒中文化並代理發行，以3D斜角畫面
+      呈現，採團隊即時方式戰鬥 [待補]。
+<IMG SRC="amaranth/game1.png">
+
+<IMG SRC="amaranth/game2.jpg">
+<b>保護</b>：光碟
+<b>備註</b>：非安裝移機者，必須設定下列Registry註冊（假設安裝在C:\amaranth，光碟機在D）:
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\FUGA System\Amaranth1]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\FUGA System\Amaranth1]
+
+"CD"="D:"
+"SAVE"="C:\\amaranth\\DATA\\"
+"SPELL"="C:\\amaranth\\SPELL\\"
+"PATH"="C:\\amaranth\\"
+"Setup"=dword:00000000
+"VISUAL"="C:\\amaranth\\VISUAL\\"
+"CHARACT"="C:\\amaranth\\CHARACT\\"
+"MAPPCG"="C:\\amaranth\\PCG\\"
+"MOVIE"="C:\\amaranth\\MOVIE\\"
+"MUSIC"="C:\\amaranth\\MUSIC\\"
+"Device"=dword:00000000
+"BGM"=dword:00000000
+"SOUND"=dword:00000000
+"SafeMode"=dword:00000000
+"Exclusive"=dword:00000001
+"Halftone"=dword:00000000
+"Opening"=dword:00000001
+
+<b>備註</b>：全螢幕若執行有問題，包括物品視窗回應緩慢等，請設定為視窗模式。
+<b>備註</b>：Win64系統必須搭配dgVoodoo2，並設定AMARANTH.EXE為XP相容，否則會出現BMP LOAD
+      失敗的錯誤。
+<b>備註</b>：遊戲需要d3drm.dll
+<b>備註</b>：全螢幕模式不可切換至桌面或其他視窗，會當機。
+<b>修改</b>：AMARANTH.EXE
+
+1.不播放開頭動畫
+  74 09 FF 74 24 0C FF D0
+  -- -- -- -- -- -- 90 90
+</pre>
+</body>
+</html>
