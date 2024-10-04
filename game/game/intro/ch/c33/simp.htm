@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>模擬總統大選／模擬總統選舉</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：模擬總統大選／模擬總統選舉 (中文版)
+<b>簡介</b>：智冠1996年出品的選舉模擬遊戲，以台灣1996年總統大選為模擬對象 [待補]。
+<IMG SRC="simp/game1.png">
+
+<IMG SRC="simp/game2.png">
+<b>備註</b>：本版DAT資料檔均已改成明碼（包括存檔），方便修改。
+<b>保護</b>：數字密碼，破解碼：
+      GAME.EXE
+        75 3A BF 14  (密碼隨便進入)
+        -- 00 -- --
+      或
+        BE 5F F3 00 75 1E  (密碼錯誤三次後進入)
+        -- -- -- 01 -- --
+<b>修改</b>：SAVEDATA.DAT，位置26h將01改成00，則之後的存檔內容均不會再加密，可進行修改。
+<b>資訊</b>：DAT檔格式定義（包括存檔）
+
+檔頭：40h=64 byte
+  [1Dh] = 2 byte，有多少組資料
+  [21h] = 2 byte，每組資料的byte數
+  [24h] = 資料開始位置
+  [26h] = 是否加密，00表無加密，01表有加密
+  [27h] = 加密時，第一個byte互斥的值
+  [2Ah] = 2 byte，資料欄位定義數目
+資料欄位定義：每個欄位定義為16 byte
+資料：各組資料定義依檔案不同而異
+
+*** 資料解密法
+
+由最後一個byte開始，該位置值與前一個byte互斥
+第一個byte與檔頭[27h]位置值互斥
+
+*** 各檔案資料定義
+
+EVENT.DAT（32h=50 byte一組，無加密）：1 byte ID+事件名稱+其他資料
+PERSON.DAT（6Ch=108 byte一組，有加密）：1 byte ID+姓名+其他資料
+PERSONX.DAT（6Ch=108 byte一組，有加密）：1 byte ID+姓名+其他資料
+POLICY.DAT（32h=50 byte一組，有加密）：2 byte ID+政策名稱+其他資料
+TAIWAN.DAT（23h=35 byte一組，有加密）：1 byte ID+縣市名稱+其他資料
+TALK.DAT（84h=132 byte一組，有加密）：1 byte ID+訊息文字內容
+
+<b>密技</b>：進入新遊戲後，選擇任一時期任一組人馬，到一切無誤時，選擇取消，再用以上方法
+      重複25次，但每次競選總部都不同省份，最後才加以確定，如此一開始便可以在全省
+      各縣市都擁有競選總部。
+</pre>
+</body>
+</html>
