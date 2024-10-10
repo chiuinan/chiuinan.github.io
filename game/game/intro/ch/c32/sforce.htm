@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>聖魔戰記1：艾拉降臨／鬼魂力量</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：聖魔戰記1：艾拉降臨／鬼魂力量 (Spectral Force，中文版)
+<b>簡介</b>：IDEA 1997年出品的策略遊戲，由NEC代理發行，1999年由協和國際中文化並代理發行
+       [待補]。
+<IMG SRC="sforce/game1.png">
+
+<IMG SRC="sforce/game2.jpg">
+<b>保護</b>：光碟，破解碼（需將光碟上DATA3目錄拷貝到安裝目錄）：
+      sforce.exe
+        74 4E 8D 95 00 FC FF FF
+        EB -- -- -- -- -- -- --
+<b>限制</b>：必須在Win9x系統上執行，XP以上系統執行時，文字會顯示成亂碼，可進行下列修正：
+      sforce.exe
+        C6 45 BF 80
+        -- -- -- 88
+        C6 45 DB 80 (共2個)
+        -- -- -- 88
+        C6 45 D7 80 (共3個)
+        -- -- -- 88
+        C6 85 2F FF FF FF 80 (共2個)
+        -- -- -- -- -- -- 88
+        C6 45 B3 80
+        -- -- -- 88
+        68 80 00 00 00 6A 00
+        -- 88 -- -- -- -- --
+<b>限制</b>：
+      螢幕顯示模式必須為16 bit高彩，可進行下列修改以略過此一限制（自動設定），同
+      時亦修正Win64系統上設定相容性的顯示問題：
+      sforce.exe
+        83 7D CC 10 74 18
+        C6 45 -- -- EB --
+        C7 45 8C 00 00 18 00
+        -- -- -- -- -- 1C --
+</pre>
+</body>
+</html>
