@@ -11,9 +11,10 @@
 <IMG SRC="haf/game1.jpg">
 
 <IMG SRC="haf/game2.jpg">
-<b>備註</b>：本版為1.6.2版
+<b>備註</b>：本版為1.2版
 <b>保護</b>：光碟，將後述的註冊碼目錄都設為"."，再將光碟中JULIET目錄裡的檔案拷入安裝目錄，
       即可免光碟。
+<b>備註</b>：XP以上系統安裝1.2版時（包括升級更新檔），要先將Loader.exe設成Win9x相容。
 <b>備註</b>：非安裝移機時，要進行下列Registry註冊（假設光碟在D，安裝目錄為C:\haf）：
 
 [HKEY_CURRENT_USER\Software\HumanSoft\Honour & Freedom]
@@ -22,8 +23,30 @@
 "CDDir"="D:\\Juliet"
 "HDDir"="C:\\haf"
 
-<b>備註</b>：虛擬機+XP或Win9x皆無法正常執行，只能在Win64實體機配合DxWnd（dgVoodoo不行）。
+<b>備註</b>：遊戲需要d3drm.dll。
+<b>備註</b>：本遊戲有下列版本（更早版本略）：
 
+(1)1.2版（1999/12/14）：為最穩定的版本。必須在PCem或DosBox+Win9x系統中執行，即使
+   繁中系統也不會有亂碼。
+(2)1.6.2更新版（2001/01/22）：本版存在雙倍傷害錯誤，嚴重破壞遊戲的平衡性。雖然更
+   新成XP可執行，但目前虛擬機+XP均無法正常執行。Win64+DxWnd或dgVoodoo則可以執行，
+   但在繁中系統下，部份文字會變亂碼（包括Win9x），需使用AppLocale等轉碼工具執行。
+(3)1.6.2歡樂億派版（2001/11/22）：歡樂億派以1.6.2版為基準修改的版本（右上有該公司
+   Logo），需要DirextX 8。由於隨意變更了遊戲的基本機制、並刪除一些重要的遊戲功能，
+   也未修正雙倍傷害錯誤，因此並不推薦。
+
+<b>備註</b>：若無法播放影片，請找解碼程式iccvid.dll，將之拷貝到Windows\system32（32位元）
+      或SysWOW64（64位元）目錄，再用下列reg檔登錄即可：
+
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32]
+"vidc.cvid"="iccvid.dll"
+
+<b>檔案</b>：JUpdate_1.6.2.rar = 1.6.2更新檔
+      haf162.rar = 1.6.2歡樂億派版
+<b>說明</b>：推薦攻略網站：https://www.youtube.com/@MicroGoldHuman
 </pre>
 </body>
 </html>
