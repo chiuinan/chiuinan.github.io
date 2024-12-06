@@ -7,14 +7,13 @@
 <body>
 <pre style="font-family: MingLiU, monospace; font-size: 16px;">
 <b>名稱</b>：Stockfish (英文版)
-<b>簡介</b>：一款開源的西洋棋遊戲，最初由Marco Costalba於2008年，以Romstad
-      2004年所撰寫的西洋棋程式Glaurung為基礎進行改良，並於2014年轉由
-      志願開發小組接手。2020年的第12版，再引入類神經網路技術，棋力更
-      加突發猛進。從2014年至今，多次獲得世界電腦西洋棋比賽的冠軍，與
-      Leela Chess Zero並列為現今最強的西洋棋程式之一。其強大的棋力，
-      已足供玩家下棋與學習之用。
+<b>簡介</b>：一款開源的西洋棋遊戲，最初由Marco Costalba於2008年，以Romstad 2004年所撰寫
+      的西洋棋程式Glaurung為基礎進行改良，並於2014年轉由志願開發小組接手。2020年
+      的第12版，再引入類神經網路技術，棋力更加突發猛進。從2014年至今，已多次獲得
+      世界電腦西洋棋比賽的冠軍，與Leela Chess Zero並列為現今最強的西洋棋程式之一。
+      其強大的棋力，已足供玩家下棋與學習之用。
 <IMG src="stckfish/game1.png"> <IMG src="stckfish/game2.png">
-<b>備註</b>：本版為第13～16版搭配Tarrasch v3.13b GUI
+<b>備註</b>：本版為第13～17版搭配Tarrasch v3.13b GUI
 <b>保護</b>：無
 <b>檔案</b>：millionbase-2.5.rar = 收錄至2015年為止的250萬個棋譜(TDB格式)
       tarrasch-base.rar = 收錄1995年至2020年的120萬個棋譜(TDB格式)
@@ -23,18 +22,17 @@
 1.Stockfish 11 (2020)
   2020年之前未引入類神經網路技術的最後一個版本。
 2.Komodo 12.1.1 (2020)
-  一款商用的西洋棋引擎，由Don Dailey於2010年開發，為電腦西洋棋比賽長
-  期的前3名，2021年棋力排行亦為第3。版本12以前的舊版允許免費非商業性
-  使用。
+  一款商用的西洋棋引擎，由Don Dailey於2010年開發，為電腦西洋棋比賽長期的前3名，
+  2021年棋力排行亦為第3。版本12以前的舊版允許免費非商業性使用。
 3.Houdini 1.5a (2011)
-  一款商用的西洋棋引擎，由比利時程序員Robert Houdart開發。2017年的版
-  本6曾獲得TCEC大賽冠軍，由於之後被TCEC懷疑程式碼抄襲自Stockfish，作
-  者又拒絕提供程式碼證明，於是被TCEC禁賽。2019年棋力排行第四。2021年
-  則掉至第8名。版本1.5a以前的舊版允許免費非商業性使用。
+  一款商用的西洋棋引擎，由比利時程序員Robert Houdart開發。2017年的版本6曾獲得TCEC
+  大賽冠軍，由於之後被TCEC懷疑程式碼抄襲自Stockfish，作者又拒絕提供程式碼證明，於
+  是被TCEC禁賽。2019年棋力排行第四。2021年則掉至第8名。版本1.5a以前的舊版允許免費
+  非商業性使用。
 4.Rybka v2.3.2a (2007)
-  國際西洋棋大師Vasik Rajlich開發的西洋棋程式，於2007年到2010年間獲得
-  無數電腦西洋棋比賽冠軍。2011年被ICGA認定抄襲自Crafty與Fruit等西洋棋
-  程式，因而被禁賽，並剝奪所有獲得的獎項頭銜。
+  國際西洋棋大師Vasik Rajlich開發的西洋棋程式，於2007年到2010年間獲得無數電腦西洋
+  棋比賽冠軍。2011年被ICGA認定抄襲自Crafty與Fruit等西洋棋程式，因而被禁賽，並剝奪
+  所有獲得的獎項頭銜。
 5.Sargon 1978 V1.00
   第一屆電腦西洋棋比賽冠軍，由Spracklen於1978年所撰寫。
 6.Tarrasch Toy Engine Beta V0.905 (2009)
@@ -53,8 +51,8 @@ Tarrasch GUI載點：https://www.triplehappy.com/
   (1)Highlighted Square Light Colour：改成紅色。
   (2)Highlighted Square Dark Colour：改成綠色。
 3.[Options]-[Clocks]：設定雙方思考時間，建議將我方時間設成不限。
-4.[Database]-[Select current database]：選擇棋譜資料庫（TDB格式），方
-  便在下棋時參考使用（非必要）。
+4.[Database]-[Select current database]：選擇棋譜資料庫（TDB格式），方便在下棋時參
+  考使用（非必要）。
 
 二、開始下棋
 
@@ -62,15 +60,13 @@ Tarrasch GUI載點：https://www.triplehappy.com/
   (1)Play white against engine：我方執白（先手），電腦執黑。
   (2)Play black against engine：我方執黑（後手），電腦執白。
   (3)Setup a position：設定殘局。
-  (4)Search database for this position：搜尋棋譜資料庫，關於本局面的
-     下一手。
-2.當我方執黑時，棋盤會改成黑棋在下方，可按下[Commands]-[Flip board]
-  將盤面翻轉回白棋在下方。
-3.若在開局庫範圍時，右上會顯示"xx book moves"，點選可得知開局庫裡，關
-  於本局面的下一手。
-4.右邊會顯示本局棋譜，點選可跳至該局面，並停止與電腦下棋。若要繼續與
-  電腦下棋，需再進行步驟1。
-
+  (4)Search database for this position：搜尋棋譜資料庫，關於本局面的下一手。
+2.當我方執黑時，棋盤會改成黑棋在下方，可按下[Commands]-[Flip board]將盤面翻轉回白
+  棋在下方。
+3.若在開局庫範圍時，右上會顯示"xx book moves"，點選可得知開局庫裡，關於本局面的下
+  一手。
+4.右邊會顯示本局棋譜，點選可跳至該局面，並停止與電腦下棋。若要繼續與電腦下棋，需
+  再進行步驟1。
 </pre>
 </body>
 </html>
