@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>夢幻西餐廳2：挑戰全世界</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：夢幻西餐廳2：挑戰全世界 (中文版)
+<b>簡介</b>：日本PSD 1998年出品的餐廳經營模擬遊戲，1999年由華義中文化並代理發行 [待補]。
+<IMG SRC="bistro2/game1.jpg">
+
+<IMG SRC="bistro2/game2.png">
+<b>保護</b>：光碟，破解碼：
+      bistro2.exe
+        83 F8 FF 74 3B 50
+        -- -- -- -- 07 --
+<b>備註</b>：非安裝移機者，必須進行下列Registry註冊：
+
+[HKEY_CURRENT_USER\Software\PSD\bistro2\Directory]
+"BGM"=".\\BIS_DATA\\sounds\\BGM"
+"CLEAN"=".\\BIS_DATA\\clean"
+"COOK"=".\\BIS_DATA\\person\\%s\\cook"
+"ENTRANCE"=".\\BIS_DATA\\item\\%s\\entrance"
+"EQUITEM"=".\\BIS_DATA\\item\\%s\\equitem"
+"EVENT"=".\\BIS_DATA\\event\\%s"
+"FLOOR"=".\\BIS_DATA\\item\\%s\\floor"
+"IMAGE"=".\\BIS_DATA\\image;.\\BIS_DATA\\world"
+"MOVIE"=".\\BIS_DATA\\movie"
+"ORNER"=".\\BIS_DATA\\person\\orner"
+"SAMPLE"=".\\BIS_DATA\\sample"
+"SE"=".\\BIS_DATA\\sounds\\se"
+"SPOT"=".\\BIS_DATA\\spot"
+"TABLEITEM"=".\\BIS_DATA\\item\\%s\\TabItem"
+"UNIFORM"=".\\BIS_DATA\\uniform"
+"VISITOR"=".\\BIS_DATA\\person\\%s\\visitor"
+"WAITER"=".\\BIS_DATA\\person\\%s\\waiter"
+"WALL1"=".\\BIS_DATA\\item\\%s\\wall1"
+"WALL2"=".\\BIS_DATA\\item\\%s\\wall2"
+"MENU"=".\\BIS_DATA\\menu\\%s"
+
+[HKEY_CURRENT_USER\Software\PSD\bistro2\Option]
+"CD-ROM"="D:"
+
+[HKEY_CURRENT_USER\Software\PSD\bistro2\time]
+"date"=dword:00000007
+"time1"="070000 112959 30"
+"time2"="113000 135959 180"
+"time3"="140000 182959 40"
+"time4"="183000 215959 120"
+"time5"="220000 235959 10"
+"time6"="000000 065959 1"
+
+以上假設光碟在D，目錄資訊裡的.\\要改成實際安裝目錄，如C:\\bistro2\\，不可使用相對
+目錄，否則在讀檔後會因目錄變更，造成資料讀取問題。若想使用相對目錄，存取檔便都必
+須在執行檔所在目錄。Time的部份若未註冊，可能會發生月底結算時當機等問題。
+
+<b>備註</b>：若設定營業時間時，發現只有顯示一位數，可在桌面按滑鼠右鍵，選擇[內容]，然後
+      到[設定值]-[進階]-[一般]，變更字型大小為較小的字型。
+<b>操作</b>：擺設物品或設備時，可按滑鼠右鍵變更方向。
+</pre>
+</body>
+</html>

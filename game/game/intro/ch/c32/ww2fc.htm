@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>二戰風雲：前線指揮官</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：二戰風雲：前線指揮官 (World War II: Frontline Command，簡中／英文版)
+<b>簡介</b>：The Bitmap Brothers 2003年出品的即時戰術遊戲，由Strategy First代理發行，大
+      陸由陽光互動簡中化並代理發行 [待補]。
+<IMG SRC="ww2fc/game1.jpg">
+
+<IMG SRC="ww2fc/game2.jpg">
+<b>備註</b>：本版缺簡中光碟，英文版為USA版
+<b>保護</b>：英文版為光碟StarForce 3.03
+<b>備註</b>：執行前要先執行bin\wwisetup.exe設定顯示卡與顯示模式。
+<b>備註</b>：非安裝移裝者，必須設定下列Registry，否則啟動launcher後無法進行設定或進入遊
+      戲（但可直接執行bin目錄裡的wwisetup.exe和WWII.exe設定與進入遊戲，所以不設也
+      無所謂）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\The Bitmap Brothers\WWII Frontline Command\1.00]
+"ExePath"="安裝目錄"
+
+<b>備註</b>：使用免光碟時，必須特別注意語言別的區分。如果安裝USA版，則使用歐版免光碟後，
+      必須進行下列修正，否則執行後會因讀不到需要的檔案而當機跳出（建議使用修正後
+      的USA版免光碟）：
+
+1.修正options.zed（執行wwisetup.exe後會產生），將language裡的數值改成0（USA版會設
+  成5），在歐版對應的是波蘭文，目錄名為pol。
+2.將下列usa目錄全改成eng目錄：
+
+Movies\usa
+Sfx\Speech\usa
+Symbols\usa
+WorldData\Briefings\usa
+WorldData\WorldA\campaign\usa
+WorldData\WorldB\campaign\usa
+WorldData\WorldC\campaign\usa
+WorldData\WorldD\campaign\usa
+
+<b>檔案</b>：patch10b.rar = 1.0b更新檔
+      nocd_eng.rar = 歐版免光碟
+      nocd_usa.rar = USA版免光碟（修訂自歐版）
+</pre>
+</body>
+</html>
