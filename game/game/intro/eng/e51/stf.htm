@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>快打旋風1／街頭霸王1／街霸1</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：快打旋風1／街頭霸王1／街霸1 (Street Fighter／Fighting Street，英文版)
+<b>簡介</b>：CAPCOM 1987年出品的格鬥遊戲，1988年移植至DOS，台灣由智冠代理發行。玩家必須
+      連續挑戰10人以獲得最後冠軍 [待補]。
+<IMG SRC="stf/game1.png"> <IMG SRC="stf/game2.png">
+<b>備註</b>：本版為智冠版
+<b>保護</b>：無
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT。
+<b>備註</b>：電腦速度不可太快，否則會很快就死了。DosBox建議cycles設成500～1000。
+<b>修改</b>：
+
+1.生命不減
+  (智冠版)
+  SF.EXE
+  D0 E0 28 06 DB 45
+  30 00 -- -- -- --
+  80 2E DB 45 02  (共2處)
+  -- -- -- -- 00
+  80 2E DB 45 08  (共2處)
+  -- -- -- -- 00
+  (新版)
+  STF (先用UNP解壓，可更名為SF.EXE直接執行)
+  D0 E0 28 06 DF 45
+  30 00 -- -- -- --
+  80 2E DF 45 02  (共2處)
+  -- -- -- -- 00
+  80 2E DF 45 08  (共2處)
+  -- -- -- -- 00
+
+<b>備註</b>：智冠版和新版有兩個地方不同：
+
+1.智冠版會隨著CPU速度加快，計時速度也跟著加快，新版則較為穩定。
+2.智冠版因政治問題，已將中國國旗塗掉（C.FLG）。
+
+<b>檔案</b>：stf-new.rar = 新版
+<b>操作</b>：
+
+Ins = 拳
+Del = 腳
+F10 = 離開遊戲
+</pre>
+</body>
+</html>
