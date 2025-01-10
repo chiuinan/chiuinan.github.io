@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>聖戰奇兵</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：聖戰奇兵 (Trinity，中文版)
+<b>簡介</b>：亞博克1999年出品的角色扮演遊戲，由智冠代理發行，以3D斜角畫面呈現，採團隊即
+      時方式戰鬥。遊戲中的戰鬥方式很奇特，令人難以上手，玩家初戰幾乎都是失敗告終，
+      最後因卡關而放棄 [待補]。
+<IMG SRC="trinity/game1.jpg">
+
+<IMG SRC="trinity/game2.jpg">
+<b>保護</b>：光碟，破解碼（必須放入光碟才有動畫及背景音樂）：
+      Trinity.exe
+        75 22 68 E8 03 00 00
+        EB -- -- -- -- -- --
+        A3 28 5E 4F 00 75 1D
+        -- -- -- -- -- EB --
+        75 1B 89 3D 78 64 9A 00
+        EB -- -- -- -- -- -- --
+<b>限制</b>：只能在Win9x系統上執行。PCem+Win98遊戲不順暢，畫面會有雜訊，VMware+Win98則遊
+      戲速度略快，建議使用PCem/DosBox+Win95玩。XP以上系統須修改程式、關閉動畫才能
+      執行，但速度會過快（Win64須搭配dgVoodoo2）。
+<b>限制</b>：不能切回桌面，否則再切回遊戲時，滑鼠會無法移動。若有需要，可以DxWnd執行，並
+      勾選"Do not notify on task switch"。
+<b>修改</b>：Trinity.exe
+
+1.關閉動畫播放（XP以上系統可執行）
+  0F 84 71 FF FF FF C7 05 5C
+  90 E9 -- -- -- -- -- -- --
+2.敵人攻擊變成攻擊自己
+  0F 84 DE 03 00 00 39 7E 2C
+  90 90 90 90 90 90 -- -- --
+
+<b>操作</b>：
+
+滑鼠左鍵 = 點擊自己會出現人物選單
+滑鼠右鍵 = 行走
+Esc = 系統選單
+</pre>
+</body>
+</html>
