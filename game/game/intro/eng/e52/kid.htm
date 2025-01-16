@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>足球小子</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：足球小子 (Soccer Kid，英文版)
+<b>簡介</b>：Krisalis 1993年出品的動作遊戲，台灣由松崗代理進口 [待補]。
+<IMG SRC="kid/game1.png"> <IMG SRC="kid/game2.png">
+<b>保護</b>：無
+<b>限制</b>：不能有EMS記憶體，DosBox須設定ems=false
+<b>備註</b>：正常版請執行PLAY.BAT，不死版請執行UPLAY.BAT。
+<b>修改</b>：KID.EXE
+
+1.隻數不減
+  A3 42 00 83 3E 42 
+  90 90 90 -- -- --
+2.生命不減 (修改後要注意避免掉入陷阱，否則可能因不死而無法重來)
+  FF 0E 84 00 C7 06
+  90 90 90 90 -- --
+3.時間不減
+  2C 01 2F A2 FB 6F
+  -- 00 -- -- -- --
+
+<b>操作</b>：
+
+左右 = 移動
+上 = 跳起
+下 = 蹲下
+Space = 踢球
+</pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>龍魂</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：龍魂 (Dragon Spirit，英文版)
+<b>簡介</b>：Namco 1987年出品的垂直捲軸射擊遊戲，由Atari代理發行，台灣由新世界軟體代理進
+      口 [待補]。
+<IMG SRC="dragonsp/game1.png"> <IMG SRC="dragonsp/game2.png">
+<b>備註</b>：本版為修正版
+<b>保護</b>：無
+<b>備註</b>：執行參數E=EGA、C=CGA、H=Hercules
+<b>備註</b>：DosBox 0.74無法執行的修正程式：
+
+0100 EB0D           JMP	010F
+0102 90             NOP	
+0103 80FC00         CMP	AH,00
+0106 7502           JNZ	010A
+0108 CD0E           INT	0E
+010A EA00000000     JMP	0000:0000
+010F B81335         MOV	AX,3513
+0112 CD21           INT	21
+0114 891E0B01       MOV	[010B],BX
+0118 8C060D01       MOV	[010D],ES
+011C B81325         MOV	AX,2513
+011F BA0301         MOV	DX,0103
+0122 CD21           INT	21
+0124 BA0F01         MOV	DX,010F
+0127 CD27           INT	27
+
+<b>備註</b>：電腦速度不可太快，否則不好操控。DosBox建議cycles=1000。
+<b>檔案</b>：dragonsp-old.rar = 原始版（須使用修正程式）
+      fix_patch.rar = 修正檔（不必使用修正程式）
+<b>操作</b>：
+
+OP = 左右
+QA = 上下
+Space = 射擊
+Esc = 離開遊戲
+</pre>
+</body>
+</html>

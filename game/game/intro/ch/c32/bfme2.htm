@@ -14,6 +14,7 @@
 <IMG SRC="bfme2/game1.jpg">
 
 <IMG SRC="bfme2/game2.jpg">
+<b>備註</b>：本版資料片光碟為英文，缺繁中光碟
 <b>保護</b>：主程式為光碟SafeDisc 4.60+序號（BRU4-T26A-QQGT-4FHS-QGDM）
       資料片為光碟SafeDisc 4.60+序號（7FRR-P794-5MGC-X5MC-GRLD）
 <b>備註</b>：VirtualBox無法執行，虛擬機請使用VMware。
@@ -37,6 +38,16 @@ Resolution = 1024 768
 StaticGameLOD = High
 SuppressCahPromo = false
 TimesInGame = 0
+
+<b>修改</b>：防自爆修正（系統檢測到Registry登錄的序號與記錄在安裝檔裡的序號不符合時，進
+      入遊戲後3分半鐘會自動失敗結束）：
+
+lotrbfme2.exe
+  50 8D 94 24 40 11 00 00 52 8D 4C 24 58 E8 4B B2 FF FF 8B 44 24 10 8B 4C 24 0C 57 50 51 8D 4C 24 5C E8 D7 B5 FF FF
+  E8 88 A2 00 00 50 57 E8 01 E9 03 00 83 C4 08 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+lotrbfme2ep1.exe
+  50 8D 94 24 40 11 00 00 52 8D 4C 24 58 E8 DB A8 FF FF 8B 44 24 10 8B 4C 24 0C 57 50 51 8D 4C 24 5C E8 67 AC FF FF
+  E8 78 B2 00 00 50 57 E8 31 EC 03 00 83 C4 08 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
 
 <b>檔案</b>：LotrBfMe2-65542-chinese_t.rar = 繁中主程式1.06更新檔
       LotrBfMe2-65542-english.rar = 英文主程式1.06更新檔
