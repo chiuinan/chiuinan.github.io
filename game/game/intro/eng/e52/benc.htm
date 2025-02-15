@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>一路狂飆</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：一路狂飆 (NASCAR Challenge／Bill Elliott's NASCAR Challenge，英文版)
+<b>簡介</b>：Distinctive Software 1991年出品的賽車遊戲，由Konami代理發行，台灣由歐風代理
+      進口 [待補]。
+<IMG SRC="benc/game1.png"> <IMG SRC="benc/game2.png">
+<b>保護</b>：圖案密碼，破解碼：
+      EGA.HDR
+        3B F0 75 09 B8 01 00
+        -- -- -- 00 -- -- --
+
+由於EGA.HDR有壓縮加密，必須採外掛方式破解。最好的方式是在遊戲呼叫int 16h鍵盤輸入
+時破解，但此岔斷已被遊戲封死，可利用定時岔斷進行判斷處理還原：
+
+0100 EB66           JMP 0168
+0102 90             NOP
+; INT 16鍵盤輸入岔斷
+0103 9C             PUSHF
+0104 06             PUSH ES
+0105 50             PUSH AX
+0106 53             PUSH BX
+0107 55             PUSH BP
+0108 8BEC           MOV BP,SP
+010A 8B4612         MOV AX,[BP+12]     ; 遊戲呼叫INT 16時，破解碼所在SEG位置
+010D 8EC0           MOV ES,AX
+010F 5D             POP BP
+0110 26813EF7017509 CMP Word Ptr ES:[01F7],0975  ; 檢查破解碼
+0117 750F           JNZ 0128
+0119 26813EF5013BF0 CMP Word Ptr ES:[01F5],F03B
+0120 7506           JNZ 0128
+0122 26C606F80100   MOV Byte Ptr ES:[01F8],00
+0128 5B             POP BX
+0129 58             POP AX
+012A 07             POP ES
+012B 9D             POPF
+012C EA00000000     JMP 0000:0000      ; 遊戲的INT 16位址
+0131 00000000       DB 00000000        ; 原本的INT 16位址（目前用不到，遊戲會自己還原）
+; INT 1C定時岔斷
+0135 9C             PUSHF
+0136 50             PUSH AX
+0137 52             PUSH DX
+0138 06             PUSH ES
+0139 33C0           XOR AX,AX
+013B 8EC0           MOV ES,AX
+013D 268B165800     MOV DX,ES:[0058]   ; INT 16的位址值
+0142 81FA5D16       CMP DX,165D        ; 遊戲變更後的位址值（若變成這個就改成破解用的）
+0146 7517           JNZ 015F
+0148 26A15A00       MOV AX,ES:[005A]
+014C 1E             PUSH DS
+014D 0E             PUSH CS
+014E 1F             POP DS
+014F 89162D01       MOV [012D],DX
+0153 A32F01         MOV [012F],AX
+0156 B81625         MOV AX,2516
+0159 BA0301         MOV DX,0103
+015C CD21           INT 21
+015E 1F             POP DS
+015F 07             POP ES
+0160 5A             POP DX
+0161 58             POP AX
+0162 9D             POPF
+0163 EA00000000     JMP 0000:0000
+; 主程式
+0168 0E             PUSH CS
+0169 1F             POP DS
+016A B81635         MOV AX,3516
+016D CD21           INT 21
+016F 891E3101       MOV [0131],BX
+0173 8C063301       MOV [0133],ES
+0177 B81C35         MOV AX,351C
+017A CD21           INT 21
+017C 891E6401       MOV [0164],BX
+0180 8C066601       MOV [0166],ES
+0184 B81C25         MOV AX,251C
+0187 BA3501         MOV DX,0135
+018A CD21           INT 21
+018C BA6801         MOV DX,0168
+018F CD27           INT 27
+
+<b>備註</b>：電腦速度不可太快，否則難以操控，DosBox cycles建議5000～10000。
+<b>操作</b>：選擇Start Racing後，按Space開始進入賽車。
+</pre>
+</body>
+</html>
