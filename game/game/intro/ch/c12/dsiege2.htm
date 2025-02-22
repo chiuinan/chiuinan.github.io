@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>末日危城2／地牢圍攻2</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：末日危城2／地牢圍攻2 (Dungeon Siege 2，中文／英文版)
+<b>簡介</b>：Gas Powered Games 2005年出品的角色扮演遊戲，由Microsoft代理發行，以斜角3D畫
+      面呈現，採團隊即時方式戰鬥。2006年推出「破碎的世界（Broken World）」資料片，
+      但並無繁中版 [待補]。
+<IMG SRC="dsiege2/game1.jpg">
+
+<IMG SRC="dsiege2/game2.jpg">
+
+<IMG SRC="dsiege2/game3.jpg">
+<b>保護</b>：主程式為光碟SmartE+序號（JF282-YTKJM-H76H8-XQP96-8PTBQ）
+      資料片為光碟SecuROM 7.24+序號（0204-76D3-82F5-F884）
+<b>備註</b>：非安裝移機者，必須進行下列Registry註冊，才能啟動資料片程式：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Games\DungeonSiege2]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft Games\DungeonSiege2]
+
+"InstallationDirectory"="C:\\Dungeon Siege 2"
+"AppPath"="C:\\Dungeon Siege 2"
+
+假設主程式安裝目錄在C:\Dungeon Siege 2。
+
+<b>備註</b>：繁中版安裝完版本為2.0，英文版資料片安裝完版本2.30
+<b>備註</b>：英文資料片安裝後，不會影響繁中主程式。
+<b>備註</b>：執行參數加上fullscreen=false，可採視窗模式執行。
+<b>備註</b>：VirtualBox雖可啟動遊戲，但少數顯示會有點不太正常，資料片漢化後部份文字也會
+      顯示不正常。VMware則只有滑鼠顯示不太正常，改用視窗模式即可解決。
+<b>備註</b>：Win64系統執行，滑鼠會無法顯示與作用，可採視窗模式執行解決，或進行下列修改：
+      DungeonSiege2.exe
+        85 C0 74 4C 8B 85
+        -- -- EB -- -- --
+        B6 C0 85 C0 75 5C
+        -- -- -- -- EB --
+        B7 C0 85 C0 75 4F
+        -- -- -- -- EB --
+        8B 4D F0 03 81 24 01 00 00 50 FF 15 ?? ?? ?? ??
+        -- -- -- -- -- -- -- -- -- -- 90 90 90 90 90 90
+        85 C0 74 08 6A 00 FF 15
+        -- -- EB -- -- -- -- --
+      修改後不可再使用視窗模式執行。
+<b>檔案</b>：DS2_Patch_2.2.rar = 主程式2.2更新檔
+      nocd20.rar = 主程式2.0免光碟檔
+      nocd22.rar = 主程式2.2免光碟檔
+      BW繁中漢化包V2.0.rar = 資料片繁化檔
+      nocdx.rar = 資料片免光碟檔
+</pre>
+</body>
+</html>
