@@ -60,12 +60,27 @@ Windos遊戲
 </div>
 
 <ol>
-<li>若現有Win64系統無法執行，請改用VMware或VirtualBox配合Windows XP作業系統執行，或嘗試搭配DxWnd或dgVoodoo2執行看看。
+<li>若現有Win64系統無法執行，請改用VMware或VirtualBox配合Windows XP作業系統執行，或嘗試搭配dgVoodoo2或DxWnd等軟體執行看看。
 <li>若VirtualBox全螢幕顯示時，畫面太小，請使用Host+C的縮放模式，或是在虛擬機顯示設定處改變縮放係數。
 <li>VMWware若要縮放全螢幕，必須使用付費的Worksation Pro，在顯示設定中有縮放的選項。
 <li>VirtualBox若滑鼠無法正常運作，請到[輸入]選單中，關閉[滑鼠整合]。
 <li>VMware若滑鼠無法正常運作，請選擇[Edit]-[Preferences]選單，再選擇[Input]，將Optimize mouse for games改成Always。
 <li>VirtualBox不支援Direct3D 7，若遊戲必須使用D3D7，便只能改用VMWware（2000～2003年的遊戲較容易遇到）。
+<li>Win64系統無法執行時，常用來搭配的執行工具：
+<ul>
+<li>dgVoodoo2：專門用來模擬早期顯示卡的執行工具，幾乎可以解決絕大部份老遊戲的執行問題。
+<li>DxWnd：主要以視窗模式執行3D顯卡的遊戲，以便可以切到桌面或其他視窗。也可以用來解決部份老遊戲的執行問題。
+<li>dxwrapper：專門用來模擬早期DirectX API，實用度雖不如dgVoodoo2，但有時也能解決dgVoodoo2無法解決的問題。
+<li>DDrawCompact：專門用來模擬早期DirectX API，實用度雖不如dgVoodoo2，但有時也能解決dgVoodoo2無法解決的問題。
+</ul>
+<li>虛擬機+XP系統無法執行時，常用來搭配的執行工具：
+<ul>
+<li>nGlide：專門用來模擬3dfx的執行工具，幾乎可以用來解決絕大部份支援3dfx老遊戲的執行問題。
+<li>DxWnd for XP：主要以視窗模式執行3D顯卡的遊戲，以便可以切到桌面或其他視窗。也可以用來解決部份老遊戲的執行問題。
+<li>WineD3D：直接模擬D3D界面的執行工具，主要用來彌補VirtualBox未完全支援D3D的問題，但使用後或多或少都還是有貼圖或文字顯示問題，只有少部份遊戲能夠完全解決。通常建議是改在完全支援D3D的VMware上執行。
+<li>cnc-ddraw for XP：專門用來模擬早期DirectX API，但極少能夠解決老遊戲的執行問題。最常用來支援VMware，解決部份遊戲畫面或文字無法顯示的問題。
+<li>DDrawCompact for XP（0.1.3版）：專門用來模擬早期DirectX API，但極少能夠解決老遊戲的執行問題。
+</ul>
 <li>出現"找不到vids:mvi1解壓縮程式"，請安裝Motion Pixels Codec。
 <li>出現"找不到vids:aasc解壓縮程式"，請安裝Antodesk's Animator Player。
 <li>出現"找不到vids:IV32解壓縮程式"，請找解碼程式ir32_32.dll，將之拷貝到Windows\system32（32位元）或SysWOW64（64位元）目錄，再用regsvr32.exe登錄即可。

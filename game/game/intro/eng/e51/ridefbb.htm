@@ -12,20 +12,12 @@
 
 <IMG SRC="ridefbb/game2.jpg">
 <b>保護</b>：光碟SecuROM 5.03（放入第一片）
-<b>備註</b>：由於OpenGL的相容問題，目前找不到通用的可執行方法，只能在NVIDIA顯卡的Win64系
-      統上執行：
-
-1.執行1.9.7.3版NVIDIA Inspector，按下在Driver Version最右邊的按鈕（新版已無此按鈕），
-  在上方Profiles裡搜尋The Chronicles of Riddick，往下拉到Common項，變更Extension
-  limit為0x00001B58 (Hired Team, Quake3,...)，然後按下右上的Apply changes。接著便
-  可成功啟動遊戲。
-2.若無NVIDIA Inspector，或不會設定，也可以到安裝目錄\System裡任挑一個目錄進入（有
-  4個，Win64系統均可執行，最低階的便是Win32_x86），將SbzEngine.exe更名為quake3.exe，
-  然後直接執行此程式，亦可成功啟動遊戲（NVIDIA會自動使用前述的Quake3設定值）。
-
+<b>備註</b>：由於OpenGL的相容問題，請務必進行顯卡相容性修正更新，否則只能在NVIDIA顯卡的
+      Win64系統上，將執行檔SbzEngine.exe更名為quake3.exe後，才能執行。修正更新後，
+      即可在VMware+XP或Win64系統上執行（VirtualBox+XP無法執行）。
 <b>檔案</b>：riddick_update_en_10_11.rar = 1.1更新檔
       nocd11.rar = 1.1版免光碟
-      nvidiaInspector_1.9.7.3.rar = 1.9.7.3版NVIDIA Inspector
+      fix.rar = 顯卡相容性修正檔（亦為免光碟檔）
 <b>修改</b>：Environment.cfg
 
 1.視窗化（大小可自行更改）
