@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>極速房車賽1</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：極速房車賽1 (TOCA Race Driver／V8 Supercars／DTM Race Driver，英文版)
+<b>簡介</b>：Codemasters 2002年出品的賽車遊戲，2003年移植至Windows [待補]。
+<IMG SRC="tocard1/game1.jpg">
+
+<IMG SRC="tocard1/game2.jpg">
+<b>保護</b>：光碟SecuROM 4.84
+<b>備註</b>：目前系統均無法安裝（Error Reading Install Configuration錯誤），必須手動安裝，
+      方式如下（假設安裝目錄在C:\tocard1，光碟在D）：
+
+1.先利用rar或7z解壓cab檔
+
+cab檔         解壓目錄
+--------------------------------------------
+root.cab      C:\tocard1\GameData
+anim.cab      C:\tocard1\GameData\anim
+cardata.cab   C:\tocard1\GameData\cardata
+cars.cab      C:\tocard1\GameData\cars
+chamship.cab  C:\tocard1\GameData\chamship
+frontend.cab  C:\tocard1\GameData\frontend
+shaders.cab   C:\tocard1\GameData\shaders
+sky.cab       C:\tocard1\GameData\sky
+sound.cab     C:\tocard1\GameData\sound
+trakmod0.cab  C:\tocard1\GameData\trakmod0
+trakmod1.cab  C:\tocard1\GameData\trakmod1
+traktex0.cab  C:\tocard1\GameData\traktex0
+traktex1.cab  C:\tocard1\GameData\traktex1
+SOUNDC~1.cab  C:\tocard1\GameData\sound\cars
+SOUNDC~2.cab  C:\tocard1\GameData\sound\collamb
+SOUNDF~1.cab  C:\tocard1\GameData\sound\frontend
+SOUNDP~1.cab  C:\tocard1\GameData\sound\ptspech
+MATHCP~1.cab  C:\tocard1\GameData\dll
+MATHPI~1.cab  C:\tocard1\GameData\dll
+
+2.拷貝光碟裡，program files\Codemasters\Race Driver子目錄裡的檔案（不含目錄），到
+  C:\tocard1。
+3.拷貝光碟裡，program files\Codemasters\Race Driver\GameData\dll子目錄裡的dll檔到
+  C:\tocard1\GameData\dll。
+4.更名C:\tocard1\GameData\frontend裡的檔案：
+  _dfe.big 變 3dfe.big
+  _dfe.ini 變 3dfe.ini
+5.進行下列Registry註冊（假設光碟在D）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Codemasters\Race Driver]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Codemasters\Race Driver]
+
+"PATH_MAIN"="C:\\tocard1\\GameData"
+"PATH_APPLICATION"="C:\\tocard1"
+"PATH_CD"="D:\\"
+"LANGUAGE"="eng"
+"SKU"="eur"
+"NAME_APPLICATION"="ToCA Race Driver"
+"NAME_CD"="ToCA Race Driver Game Disc (Disc 1)"
+"TITLEBAR"="ToCA Race Driver"
+"NO_DRIVE"="Please insert the disc labelled ToCA Race Driver Game Disc (Disc 1) into your CD drive."
+"NO_DISC"="Please insert the disc labelled ToCA Race Driver Game Disc (Disc 1) into your CD drive."
+"WRONG_DISC"="Please insert the disc labelled ToCA Race Driver Game Disc (Disc 1) into your CD drive."
+
+<b>備註</b>：VirtualBox無法執行，虛擬機請使用VMware。
+<b>備註</b>：遊戲需要eax.dll。
+<b>檔案</b>：tocard1120.rar = 1.1.20更新檔
+      crack1120.rar = 1.1.20破解檔
+</pre>
+</body>
+</html>

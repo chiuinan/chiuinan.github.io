@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GT賽車97</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：GT賽車97 (GT Racing 97，英文版)
+<b>簡介</b>：Blue Sphere 1997年出品的賽車遊戲，由Ocean代理發行 [待補]。
+<IMG SRC="gt97/game1.jpg">
+
+<IMG SRC="gt97/game2.png">
+<b>保護</b>：光碟，破解碼（放入光碟才能在賽車時有背景音樂）：
+      GTRACING.EXE
+        EB 05 E9 68 FD FF FF
+        -- -- 90 90 90 90 90
+        0B DB 0F 85 A8
+        31 -- -- -- --
+<b>備註</b>：正常版請執行PLAY.BAT，修改版請執行UPLAY.BAT。
+<b>備註</b>：若安裝時無法設定音效卡，可進入遊戲後，再到OPTIONS裡設定。
+<b>備註</b>：遊戲速度不可太快，否則可能會偵測不到音效卡，但也不可太慢，否則玩起來會很不
+      順，建議cycles=30000。若設定cycles=max，則對手似乎會因為bug而變得寸步難行，
+      我方可輕鬆獲勝，若一直無法挑戰成功可試著設定看看。
+<b>修改</b>：GTRACING.EXE
+
+1.增加經過CheckPoint的秒數 (10 0E也可改成A0 0F或20 1C，愈大愈多)
+  C8 00 00 00 81 C2 C7 00 00 00 01 57 52 8B
+  64 -- -- -- -- -- 10 0E -- -- -- -- -- --
+2.不計時
+  29 47 52 8B 47 52 3D
+  90 90 90 -- -- -- --
+3.不會與其他車輛相撞
+  7F B4 66 C7 45 DC 00 00 EB 34
+  -- -- -- -- -- -- -- -- -- 40
+</pre>
+</body>
+</html>

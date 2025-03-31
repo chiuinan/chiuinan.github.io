@@ -2,20 +2,31 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>狂飆越野賽／冠軍拉力賽</title>
+<title>狂飆越野賽／冠軍拉力賽／拉力賽車2000</title>
 </head>
 <body>
 <pre style="font-family: MingLiU, monospace; font-size: 16px;">
-<b>名稱</b>：狂飆越野賽／冠軍拉力賽 (Rally Championship 2000／Mobil 1 Rally Championship，英文版)
-<b>簡介</b>：Creative Asylum 1999年出品的越野競速遊戲，由Actualize代理發行 [待補]。
+<b>名稱</b>：狂飆越野賽／冠軍拉力賽／拉力賽車2000 (Rally Championship 2000／Mobil 1 Rally Championship，英文版)
+<b>簡介</b>：Creative Asylum與Magnetic Fields 1999年共同出品的越野競速遊戲，由Actualize
+      代理發行 [待補]。
 <IMG SRC="rc2000/game1.png">
 
 <IMG SRC="rc2000/game2.jpg">
-<b>保護</b>：光碟
-<b>備註</b>：VirtualBox無法安裝執行，虛擬機請使用VMware。VMware可能部份畫面無法顯示，最
-      好搭配DxWnd（可全螢幕）。
+<b>保護</b>：光碟，破解碼（需最大安裝）：
+      RAL.EXE
+        75 47 E8 EC 0A 00 00 75 52 83 3D  (5.30版)
+        90 90 90 90 90 90 90 90 90 -- --
+<b>備註</b>：VirtualBox無法直接安裝，可將光碟內容拷貝到安裝目錄後，再進行後述Regitry註冊。
+      VMware可能部份畫面無法顯示，最好搭配DxWnd（可全螢幕）。建議Win64系統執行。
+<b>備註</b>：非安裝移機者，需進行下列Registry註冊（假設安裝目錄在c:\rc2000）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Magnetic Fields\RC99]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Magnetic Fields\RC99]
+"source"="c:\\rc2000\\"
+"status"=hex:01
+
 <b>檔案</b>：PAL5_30.rar = 5.30更新檔
-<b>操作</b>：（可到Options的player details設定）
+<b>操作</b>：不同版本的內定值可能不太一樣，可到Options的player details自行設定
 
 ZX = 左右轉
 上 = 加速
@@ -24,6 +35,28 @@ ZX = 左右轉
 Space = 手剎車
 L = 燈光
 P = 暫停
+
+或
+
+左右 = 左右轉
+上 = 加速
+下 = 剎車
+\ = 換下一檔
+右Shift = 換上一檔／倒檔
+Enter/F1 = 變更視角
+P = 暫停
+] = 不顯示樹蔭
+; = 重置車輛回到道路（長按3秒）
+F3/F4 = 增減音量
+F5 = 進度表開關
+F6 = 計時表開關
+F7 = 賽道提示開關
+F8 = 後照鏡開關
+F9 = 訊息欄開關
+F10 = 加速表開關
+F11 = 檔次開關
+F12 = 地圖開關
+Esc = 結束賽事
 </pre>
 </body>
 </html>
