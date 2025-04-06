@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>最終賽車2001／終極賽車：賽博空間2001</title>
+<title>世紀終極賽車／最終賽車2001／終極賽車：賽博空間2001</title>
 </head>
 <body>
 <pre style="font-family: MingLiU, monospace; font-size: 16px;">
-<b>名稱</b>：最終賽車2001／終極賽車：賽博空間2001 (Final Racing: Cyber Space 2001，英文版)
+<b>名稱</b>：世紀終極賽車／最終賽車2001／終極賽車：賽博空間2001 (Final Racing: Cyber Space 2001，英文版)
 <b>簡介</b>：正先1997年出品的賽車遊戲，由智冠代理發行。由於遊戲為純英文，因此在國內乏人
       問津，在國外亦無名氣，加上問題一堆，難以執行，現今已成為相當罕見的遊戲 [待補]。
 <IMG SRC="frcs2001/game1.jpg">
@@ -25,14 +25,17 @@
 7.UNLIMITED OUTPOST
 8.BLIZZARD STORM
 
-<b>備註</b>：原始光碟無法正常安裝，有三種方式可以進行安裝：
+<b>備註</b>：熱血版若無法正常安裝，有三種方式可以進行安裝：
 
 1.自行建立一個捷徑，目標為X:\Racing\RACING.EXE，開始位置為X:\，其中X為光碟所在磁
   碟機。執行後選擇Install即可安裝。
-2.拷貝光碟裡的Racing目錄出來，並進行後述的Registry設定。
-3.修正setup.exe：
+2.修正setup.exe：
   81 7C 24 44 05 00 04 00 74
   -- -- -- -- -- -- -- -- 7D
+3.拷貝光碟裡的Racing目錄出來，並進行後述的Registry設定。
+
+完整版若無法正常安裝（如缺少DSETUP.DLL等），直接執行光碟上的racing.exe即可。若無
+法執行racing.exe，則執行dxdiag關閉DirectDraw後再試試看。
 
 <b>備註</b>：非安裝移機者，必須進行下列Registry設定（假設光碟在D，安裝路徑為C:\Racing）：
 
@@ -40,26 +43,24 @@
 "RacingCD"="D:\\"
 "RacingDir"="C:\\Racing\\"
 
-<b>備註</b>：完整版程式（211KB）必須光碟檔案非唯讀才能啟動，可將光碟檔案拷貝到某個目錄，
-      再用subst命令模擬成磁碟後再安裝，但如此一來會沒有音樂。建議使用熱血版的程式
-      （3.8MB），並進行後述的修正。
 <b>修改</b>：halh.exe, hall.exe, rmh.exe, rml.exe
 
 1.修正遊戲一執行就當機的問題（檔案唯讀問題）：
-  72 74 2B 00 25 6C 66
-  -- -- 00 -- -- -- --
-2.取消熱血版賽道限制（光碟內必須存放完整版94MB資料檔FX.pak，熱血版則為12MB）
+  72 62 2B 00  (完整版才有)
+  -- -- 00 --
+  72 74 2B 00
+  -- -- 00 --
+2.取消熱血版賽道限制（光碟內必須存放完整版94MB或33MB資料檔fx.pak，熱血版則為12MB）
   B8 E8 03 00 00 2B D2 F7 35 08 F9 44 00  (僅限rmh.exe,rml.exe)
   -- 64 00 -- -- -- -- 90 90 90 90 90 90
   83 3D 30 FB 44 00 04 0F 84 0D 00 00 00  (共2個)
   -- -- -- -- -- -- -- 90 E9 -- -- -- --
 
-<b>備註</b>：XP或Win98系統需執行dxdiag關閉DirectDraw，然後以No Hardware Acceleration方式
-      執行（或直接執行rmh.exe）。Win64請搭配dgVoodoo2或DxWnd執行（需要d3drm.dll）。
-      在XP或Win64系統執行時，必須限制FPS，否則對手速度會異常的快，根本不可能獲勝。
+<b>備註</b>：XP或Win98系統需執行dxdiag關閉DirectDraw後再執行。完整版無法在XP上執行，但熱
+      血版可以。Win64請搭配dgVoodoo2（需要d3drm.dll）。
+<b>備註</b>：在XP或Win64系統執行時，必須限制FPS，否則對手速度會異常的快，根本不可能獲勝。
       dgVoodoo2請在主視窗按滑鼠右鍵，選Show all sections，再點選GeneralExt，限制
-      FPS limit為30。DxWnd則到Timing裡勾選Frame per Second為Limit，並填入delay為
-      50。虛擬機+XP目前無法限制FPS，不建議使用。
+      FPS limit為30。虛擬機+XP目前無法限制FPS，不建議使用。
 <b>操作</b>：
 
 左右 = 左右轉

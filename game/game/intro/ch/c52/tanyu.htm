@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天諭</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：天諭 (The Lost Prophecy，中文版)
+<b>簡介</b>：次方科技2000年出品的3D動作遊戲，兼具部份角色扮演遊戲的元素，由皇統代理發行
+      [待補]。
+<IMG SRC="tanyu/game1.jpg">
+
+<IMG SRC="tanyu/game2.jpg">
+<b>保護</b>：光碟
+<b>備註</b>：非安裝移機者，必須設定下列Registry（假設安裝目錄為C:\天諭）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Trigger\Ameba\Paths]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Trigger\Ameba\Paths]
+
+"AmebaRoot"="C:\\天諭\\"
+
+<b>備註</b>：請到子目錄Engine執行Tanyu Setup.exe啟動遊戲，或是以下列命令直接啟動：
+
+AClient.exe -game ..\TanYu\TanYu.ags
+
+<b>備註</b>：XP以上系統須設定Tanyu Setup.exe與AClient.exe為Win9x相容。
+<b>備註</b>：遊戲無法使用任何外掛DirectX模擬器，包括dgVoodoo2、DxWnd、dxwrapper、WineD3D、
+      cnc-ddraw、DDrawCompact等，只能直接執行。以下為各環境的執行狀況：
+
+1.VirtualBox+XP：無法執行。
+2.VMware+XP：畫面無法顯示，可修改Engine\Plugins\GrDx6.ini，將Emulation設成TRUE，
+  但修改後，畫面會固定變成320x240。
+3.VMware+Win98：開頭動畫無法按Esc略過（可使用Ctrl-Alt-Del強制關閉ActiveMovie視窗
+  解決），全螢幕畫面上方會多一行選單，其餘正常。
+4.PCem+Win98：一切正常，不過讀檔較慢，更換場景時需要點耐心。
+5.Win64實機：隨顯示卡而有不同情況，若有問題，可同VMware+XP將Emulation設成TRUE。亦
+  可將FullScreen設成FALSE，使用視窗模式執行（固定在左上角，但可切換至其他視窗）。
+  注意在實機上無法拷出螢幕遊戲圖（任何外掛皆無法，如Fraps等）。
+
+<b>備註</b>：加強版光碟，其實內容就是1.00原版+1.01修正檔（可按鍵略過開頭動畫）+劇情介紹
+      網頁，仍須做1.02修正更新。做完更新後，和原版做1.02更新後的遊戲內容完全相同。
+<b>備註</b>：第二、三片的音軌很多是音效中帶有一些音樂，會讓人以為遊戲中無背景音樂，其實
+      這就是背景音樂了。
+<b>修改</b>：
+
+1.Emulation設成TRUE時，不限定畫面為320x240（但可能有其他副作用，請自行斟酌）
+  Engine\Plugins\GrDX6.dll
+    75 0E C7 43 58 40 01 00 00
+    EB -- -- -- -- -- -- -- --
+
+<b>檔案</b>：TY_P102F.rar = 1.02F修正檔（含聲音）
+</pre>
+</body>
+</html>
