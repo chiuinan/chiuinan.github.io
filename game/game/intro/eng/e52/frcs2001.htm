@@ -8,13 +8,18 @@
 <pre style="font-family: MingLiU, monospace; font-size: 16px;">
 <b>名稱</b>：世紀終極賽車／最終賽車2001／終極賽車：賽博空間2001 (Final Racing: Cyber Space 2001，英文版)
 <b>簡介</b>：正先1997年出品的賽車遊戲，由智冠代理發行。由於遊戲為純英文，因此在國內乏人
-      問津，在國外亦無名氣，加上問題一堆，難以執行，現今已成為相當罕見的遊戲 [待補]。
+      問津，在國外亦無名氣，現今已成為相當罕見的遊戲 [待補]。
 <IMG SRC="frcs2001/game1.jpg">
 
 <IMG SRC="frcs2001/game2.png">
-<b>備註</b>：本版為完整版修正版，可選8個賽道。
 <b>保護</b>：光碟
-<b>備註</b>：熱血版（Hot Blood Version）為簡化版，不會播放動畫，且只能選擇第5和第7賽道：
+<b>備註</b>：遊戲程式會以可修改模式開啟光碟上的唯讀檔，在Win9x系統可通過，但XP以後的系統
+      會失敗。因此在XP以後的系統若要能執行，必須進行後述的唯讀檔問題修正。
+<b>備註</b>：本遊戲共計有最初1997年用來推銷的熱血版、智冠代理的完整版、以及1999年新造科
+      技代理的重訂完整版等三種：
+
+一、熱血版（Hot Blood Version）為簡化版，2首音軌，不會播放動畫，而且只能選擇第5和
+    第7賽道：
 
 1.CAPITAL CITY
 2.MOON LIGHTING
@@ -25,17 +30,21 @@
 7.UNLIMITED OUTPOST
 8.BLIZZARD STORM
 
-<b>備註</b>：熱血版若無法正常安裝，有三種方式可以進行安裝：
+熱血版的安裝程式因限定DirectX必須剛好等於5.0版才能安裝，因此已安裝較新的DirectX之
+系統會無法安裝，變通的安裝方式如下（擇一）：
 
-1.自行建立一個捷徑，目標為X:\Racing\RACING.EXE，開始位置為X:\，其中X為光碟所在磁
-  碟機。執行後選擇Install即可安裝。
-2.修正setup.exe：
+1.修正setup.exe對於DirectX版本的檢查：
   81 7C 24 44 05 00 04 00 74
   -- -- -- -- -- -- -- -- 7D
+2.自行建立一個捷徑，目標為X:\Racing\RACING.EXE，開始位置為X:\，其中X為光碟所在磁
+  碟機。執行後選擇Install即可安裝。
 3.拷貝光碟裡的Racing目錄出來，並進行後述的Registry設定。
 
-完整版若無法正常安裝（如缺少DSETUP.DLL等），直接執行光碟上的racing.exe即可。若無
-法執行racing.exe，則執行dxdiag關閉DirectDraw後再試試看。
+二、智冠代理的完整版，9首音軌，會播放動畫，可選擇全部8個賽道，其fx.pak大小為94MB。
+    此版安裝情況同熱血版，請參閱前述處理。
+三、新造代理的完整版，10首音軌，會播放動畫，可選擇全部8個賽道，其fx.pak大小為33MB。
+    此版安裝時會出現缺少DSETUP.DLL而無法安裝，可直接執行光碟上的racing.exe即可。
+    若無法執行racing.exe，則執行dxdiag關閉DirectDraw後再試試。
 
 <b>備註</b>：非安裝移機者，必須進行下列Registry設定（假設光碟在D，安裝路徑為C:\Racing）：
 
@@ -43,9 +52,11 @@
 "RacingCD"="D:\\"
 "RacingDir"="C:\\Racing\\"
 
+<b>備註</b>：XP或Win98系統需執行dxdiag關閉DirectDraw後再執行。完整版無法在XP上執行，但熱
+      血版可以。Win64請搭配dgVoodoo2（需要d3drm.dll）。
 <b>修改</b>：halh.exe, hall.exe, rmh.exe, rml.exe
 
-1.修正遊戲一執行就當機的問題（檔案唯讀問題）：
+1.修正遊戲一執行就當機的問題（唯讀檔問題）：
   72 62 2B 00  (完整版才有)
   -- -- 00 --
   72 74 2B 00
@@ -56,11 +67,9 @@
   83 3D 30 FB 44 00 04 0F 84 0D 00 00 00  (共2個)
   -- -- -- -- -- -- -- 90 E9 -- -- -- --
 
-<b>備註</b>：XP或Win98系統需執行dxdiag關閉DirectDraw後再執行。完整版無法在XP上執行，但熱
-      血版可以。Win64請搭配dgVoodoo2（需要d3drm.dll）。
 <b>備註</b>：在XP或Win64系統執行時，必須限制FPS，否則對手速度會異常的快，根本不可能獲勝。
       dgVoodoo2請在主視窗按滑鼠右鍵，選Show all sections，再點選GeneralExt，限制
-      FPS limit為30。虛擬機+XP目前無法限制FPS，不建議使用。
+      FPS limit為20～30。虛擬機+XP目前無法限制FPS，不建議使用。
 <b>操作</b>：
 
 左右 = 左右轉
