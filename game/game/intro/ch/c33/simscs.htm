@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>模擬市民趴趴走3：荒島歷險記／模擬人生：孤島物語／漂流者物語</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：模擬市民趴趴走3：荒島歷險記／模擬人生：孤島物語／漂流者物語 (The Sims Castaway Stories，中文／英文版)
+<b>簡介</b>：Maxis 2008年出品的人物生活模擬遊戲，由EA代理發行，為模擬市民遊戲系列的衍生
+      作品 [待補]。
+<IMG SRC="simscs/game1.jpg">
+
+<IMG SRC="simscs/game2.jpg">
+<b>保護</b>：光碟SecuROM 7.35+序號（G88G-GTNF-YERP-WYEZ-QRLD）
+<b>備註</b>：VirtualBox無法執行，虛擬機請使用VMware。
+<b>備註</b>：非安裝移機者，必須進行下列Registry設定（假設安裝目錄為C:\SimsCS）：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SimsCS.exe]
+"Path"="C:\\SimsCS"
+"Game Registry"="SOFTWARE\\Electronic Arts\\The Sims Castaway Stories"
+"Installed"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Electronic Arts\The Sims Castaway Stories]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Electronic Arts\The Sims Castaway Stories]
+"DisplayName"="The Sims Castaway Stories"
+"Region"="129397"
+
+以及下面的繁中語系設定。
+
+<b>備註</b>：本版為英文版光碟，但安裝後只需變更下列Registry，即可變成繁中版：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Electronic Arts\The Sims Castaway Stories\1.0]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Electronic Arts\The Sims Castaway Stories\1.0]
+"Language"=dword:00000012
+
+此外，務必將前述Registry設定中"DisplayName"裡的問號?去除（中文系統無法顯示的字），
+否則在中文系統裡執行，會造成主選單3個選項都是「學習遊戲進行（Learn to Play）」，
+點選進入後即當機跳出（亞洲語系Windows安裝英文版都會遇到的問題）。
+
+<b>備註</b>：如果進入遊戲時顯示紅色閃爍的牆，請修改TSData\Res\Config\Graphic Rules.sgr，
+      將boolProp forceSoftwareDevice後的true改成false。
+<b>檔案</b>：nocd.rar = 免光碟檔
+</pre>
+</body>
+</html>
