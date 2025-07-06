@@ -11,7 +11,18 @@
 <IMG SRC="vlife2/game1.jpg">
 
 <IMG SRC="vlife2/game2.jpg">
-<b>保護</b>：光碟
+<b>保護</b>：光碟，免光碟法：
+
+1.先將光碟上的avi檔拷貝到安裝目錄
+2.進行下列Registry註冊：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Tomorrow Studio\VirtualLife2]
+"CDPATH"=".\\"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Tomorrow Studio\VirtualLife2]
+"CDPATH"=".\\"
+
+<b>備註</b>：遊戲必須安裝IV50解碼器（ir50_32.dll），否則會無法播放動畫。
 <b>檔案</b>：patchvl2_01a.rar = 1.01a更新檔
       patchvl2_for_K6.rar = K6 CPU問題修正檔
 </pre>
