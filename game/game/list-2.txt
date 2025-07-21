@@ -40,11 +40,9 @@ C.E.O／AIV Network／A4 Networks
 CC桃色醫院
 DDR99
 Di Gi Charat Fantasy：仲夏夜之夢
-Edax
 EQ大富翁
 ES方程式
-e族在賽車
-e路狂飆
+Edax
 F-22猛禽戰鬥機
 F-22雷霆戰機
 F1一級方程式賽車2000／F1方程式大賽2000
@@ -61,10 +59,9 @@ F1賽車模擬2／摩納哥大獎賽：賽車模擬2
 F1賽車經理
 F1賽車經理專業版
 F1車隊經理2000
+FRB右腦飛行
 FinFin海豚鳥／FinFin另一個地球
 Fool Panda歷險記
-FRB右腦飛行
-Go-Moku 95
 GP3-F1世界冠軍賽
 GP500摩托賽
 GP大賽車
@@ -72,13 +69,13 @@ GP賽車傳奇
 GTI賽車
 GT賽車97
 GT超級房車賽／微地馬拉運動賽車
+Go-Moku 95
 Hello Kitty 25週年紀念珍藏CD-ROM
 Herakles
 H！神探
 IL-2暴風雪／伊爾2
 IL-2暴風雪／伊爾2：1946
 IL-2暴風雪／伊爾2：被遺忘之戰鬥／榮譽重生
-iM1A2艾布拉姆斯坦克
 Iris鳶尾花物語
 Jane's F-15戰鬥飛行模擬器
 KataGo
@@ -91,14 +88,14 @@ NBA全場緊迫盯人
 NBA灌籃奇兵
 NTest
 P2K總統大選
-Pango
 PC拉力賽
 PC魔術方塊
+Pango
 QQ三國志
 Q女天使學園
 RS-2
-Shift!
 SODA越野賽車
+Shift!
 Stockfish
 T2終結者西洋棋
 Taiwan麻雀／台灣麻將
@@ -118,6 +115,9 @@ YES!HG
 Yes！封神榜
 Young Guns大富翁
 Z
+e族在賽車
+e路狂飆
+iM1A2艾布拉姆斯坦克
 一九八九年中日圍棋擂臺賽
 一休和尚：自然攻略集
 一級方程式賽車96
@@ -153,6 +153,7 @@ Z
 三國志7
 三國志8
 三國志9
+三國志BattleField
 三國志之牌戰風雲
 三國志孔明傳
 三國志武將爭霸1
@@ -1692,12 +1693,12 @@ Z
 洛克人X7
 洛克人X8
 洛克人X數學炫風
+洛克人ZX
+洛克人ZX降臨
 洛克人Zero 1
 洛克人Zero 2
 洛克人Zero 3
 洛克人Zero 4
-洛克人ZX
-洛克人ZX降臨
 洛汗騎兵
 洪荒時代
 浣花洗劍錄
