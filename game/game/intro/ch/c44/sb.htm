@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>霹靂磚塊</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<b>名稱</b>：霹靂磚塊 (Space Block，中文版)
+<b>簡介</b>：第三波1988年出品的打磚塊遊戲 [待補]。
+<IMG SRC="sb/game1.png"> <IMG SRC="sb/game2.png">
+<b>保護</b>：磁片，破解碼：
+      SB.EXE（執行檔有加密，只能以常駐程式破解）
+        74 45 3D 01 00 75 4A 80 3E
+        EB -- -- -- -- -- -- -- --
+<b>限制</b>：遊戲只能從磁片上執行，可使用"SUBST A: ."，模擬成A碟後，再到該碟執行。
+<b>備註</b>：電腦速度不可太快，否則一下子就陣亡了。
+<b>備註</b>：破解程式如下，請寫成一個COM檔：
+
+0100 EB25           JMP 0127
+0102 90             NOP
+0103 9C             PUSHF
+0104 50             PUSH AX
+0105 06             PUSH ES
+0106 33C0           XOR AX,AX
+0108 8EC0           MOV ES,AX
+010A 26A10200       MOV AX,ES:[0002]
+010E 8EC0           MOV ES,AX
+0110 26A11319       MOV AX,ES:[1913]
+0114 3D745F         CMP AX,5F74
+0117 7506           JNZ 011F
+0119 B0EB           MOV AL,EB
+011B 26A21319       MOV ES:[1913],AL
+011F 07             POP ES
+0120 58             POP AX
+0121 9D             POPF
+0122 EA00000000     JMP 0000:0000
+0127 0E             PUSH CS
+0128 1F             POP DS
+0129 B81335         MOV AX,3513
+012C CD21           INT 21
+012E 891E2301       MOV [0123],BX
+0132 8C062501       MOV [0125],ES
+0136 B81325         MOV AX,2513
+0139 BA0301         MOV DX,0103
+013C CD21           INT 21
+013E BA2701         MOV DX,0127
+0141 CD27           INT 27
+</pre>
+</body>
+</html>
