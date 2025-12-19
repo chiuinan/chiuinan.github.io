@@ -12,9 +12,10 @@
 <IMG SRC="ww2fc/game1.jpg">
 
 <IMG SRC="ww2fc/game2.jpg">
-<b>備註</b>：本版缺簡中光碟，英文版為USA版
-<b>保護</b>：英文版為光碟StarForce 3.03
-<b>備註</b>：執行前要先執行bin\wwisetup.exe設定顯示卡與顯示模式。
+<b>保護</b>：英文版為光碟StarForce 3.03，簡中版為光碟，破解碼：
+      WWII.exe
+        84 C0 75 1C 6A 00 68
+        -- -- EB -- -- -- --
 <b>備註</b>：非安裝移裝者，必須設定下列Registry，否則啟動launcher後無法進行設定或進入遊
       戲（但可直接執行bin目錄裡的wwisetup.exe和WWII.exe設定與進入遊戲，所以不設也
       無所謂）：
@@ -22,12 +23,14 @@
 [HKEY_LOCAL_MACHINE\SOFTWARE\The Bitmap Brothers\WWII Frontline Command\1.00]
 "ExePath"="安裝目錄"
 
+<b>備註</b>：執行前要先執行bin\wwisetup.exe設定顯示卡與顯示模式。
+<b>備註</b>：簡中版可執行安裝目錄"launcher -ch"啟動，或執行bin\launch_ch.exe啟動。
 <b>備註</b>：使用免光碟時，必須特別注意語言別的區分。如果安裝USA版，則使用歐版免光碟後，
       必須進行下列修正，否則執行後會因讀不到需要的檔案而當機跳出（建議使用修正後
       的USA版免光碟）：
 
 1.修正options.zed（執行wwisetup.exe後會產生），將language裡的數值改成0（USA版會設
-  成5），在歐版對應的是波蘭文，目錄名為pol。
+  成5，在歐版對應的是波蘭文，目錄名為pol）。
 2.將下列usa目錄全改成eng目錄：
 
 Movies\usa
@@ -39,7 +42,7 @@ WorldData\WorldB\campaign\usa
 WorldData\WorldC\campaign\usa
 WorldData\WorldD\campaign\usa
 
-<b>檔案</b>：patch10b.rar = 1.0b更新檔
+<b>檔案</b>：patch10b.rar = 英文1.0b更新檔（簡中版使用後只能執行英文版）
       nocd_eng.rar = 歐版免光碟
       nocd_usa.rar = USA版免光碟（修訂自歐版）
 </pre>
