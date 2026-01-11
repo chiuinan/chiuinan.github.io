@@ -7,12 +7,21 @@
 <body>
 <pre style="font-family: MingLiU, monospace; font-size: 16px;">
 <b>名稱</b>：迷走都市 (Runaway City，中文版)
-<b>簡介</b>：JAST旗下Tiare 1995年出品的故事閱讀遊戲，由飛鯨國際中文化並代理發行 [待補]。
+<b>簡介</b>：JAST旗下Tiare 1995年出品的故事閱讀遊戲，1996年由飛鯨國際中文化並代理發行 [待補]。
 <IMG src="mei/game1.png">
 
 <IMG src="mei/game2.png">
-<b>備註</b>：本版已修正DosBox執行後無音樂與畫面破壞的問題。
-<b>保護</b>：不明
+<b>保護</b>：無
+<b>備註</b>：DosBox執行時需進行下列修正，以避免執行後無音樂與畫面破壞的問題：
+
+1.EM_DRV.BAT
+  最前面加上@echo off
+  最後面改成pmp %1 >nul:
+2.STOP.BAT
+  全清空
+3.從MEI_HD.BAT執行起，或將之拷貝為PLAY.BAT，亦即刪除所有set或path命令。
+
+<b>備註</b>：中文版已取消MIDI音樂的設定，所以［系統設定］是無效的。
 </pre>
 </body>
 </html>
