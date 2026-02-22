@@ -1,0 +1,3540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>整數大數運算演算法研究</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<font color=blue><b>整數大數運算演算法研究</b></font> -- 邱奕南，2009/3/16
+
+所謂整數大數運算，指的是整數數目超過電腦暫存器可儲存的極限，必須切分成多個小整數來加以表
+示。例如32位元電腦能運算的整數值最大必須小於4G，超過這個數目，便必須進行整數大數運算。由
+於整數大數運算，多採用陣列結構，故亦常當作資料結構的一個練習題。
+
+整數大數運算和多項式（Polynomial）運算相當相似，因此其運算演算法亦大多類似。而現今的整數
+大數運算，則多運用在RSA加解密運算。RSA加解密運算的基礎為：
+
+    y = x^e mod n
+
+n稱為Modulus，一般要求在1024位元（128 byte）以上，因此便需要1024位元以上的整數大數乘法與
+餘數運算。而這兩個運算的效率，便成為RSA加解密效率的關鍵。
+
+在開始探討整數大數運算演算法前，我們需要先定出表示整數大數的結構。其結構有兩種表示方式，
+一是以固定大小的陣列來表示，一是以動態記憶體的陣列來表示。兩者的優缺點為：
+
+1.固定大小陣列：
+  (1)只能運算限定位數以內的整數大數，超過便會Overflow（結果不正確）
+  (2)遞迴運算時，可能導致堆疊Overflow而程式錯誤結束
+  (3)運算時可能需要進行資料搬移而減低速度
+  (4)採用operator運算時，可能會因大量資料拷貝而減低速度（視Compiler最佳化而異）
+
+2.動態大小陣列：
+  (1)可運算不定位數的整數大數
+  (2)運算時，可能因記憶體不足而導致運算失敗
+  (3)運算時，需要額外的動態記憶體配置與還回的時間，但可藉由指標轉移省去資料搬移時間
+  (4)採用operator運算時，會因暫存物件拷貝與解構問題，導致動態記憶體被誤還回
+
+兩者均各有其優缺點。以下我們先以固定大小陣列為準，最後再修正為動態記憶體陣列，以符合各種
+的用途。而每個陣列元素（小整數）亦考慮1、2、4 byte等不同的大小，以供效率的比較。
+
+
+一．固定大小陣列
+
+（一）基本成員變數
+
+#define BIG_NUMBER_DATA_TYPE_SIZE       1       // 陣列元素大小 (byte數)，可為1,2,4 //
+#define BIG_NUMBER_MAX_BYTES            16384   // 限制的數目總byte數 //
+
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    typedef unsigned char BIG_NUMBER_DATA_TYPE;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    typedef unsigned short BIG_NUMBER_DATA_TYPE;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    typedef unsigned long BIG_NUMBER_DATA_TYPE;
+#elif
+    #error Unknown BIG_NUMBER_DATA_TYPE_SIZE
+#endif
+
+#define BIG_NUMBER_DATA_NO (BIG_NUMBER_MAX_BYTES/sizeof(BIG_NUMBER_DATA_TYPE)) // 陣列中最大的元素數目 //
+
+class BigNumber  // 整數大數運算物件 //
+{
+private:
+    BIG_NUMBER_DATA_TYPE m_Data[BIG_NUMBER_DATA_NO];  // 數目使用空間 //
+    int m_Len;                                        // 數目佔用的資料數 //
+    bool m_Neg;                                       // 是否為負數 //
+public:
+    inline const BIG_NUMBER_DATA_TYPE* GetData(void) const { return m_Data; }
+    inline int GetLen(void) const { return m_Len; }
+    inline bool IsNeg(void) const { return m_Neg; } // 是否為負數 //
+    inline Abs(void) { m_Neg = false; } // 取絕對值 //
+};
+
+接下來便是要考慮數目在陣列中的表示方式。RSA公私鑰均以ANS.1 DER編碼結構來呈現，其整數數值
+是以位元組進行拆分，高位元組在前，低位元組在後。對於整數大數運算而言，常需要有運算基準線，
+對於固定大小的陣列而言，容易以右邊靠齊，因左邊進位後超過陣列空間，即視為溢位錯誤。然而對
+於動態大小的陣列而言，進位後超過陣列空間，表示必須重新配置記憶體空間，然後再搬移資料，這
+點會影響到運算速度，故此處我們採用低位數在前的表示法。而為了避免記錄過多不必要的前導0，
+所有的前導0均不加以記錄。依此，我們可寫出一些基本的處理函數（直接置入class BigNumber裡）：
+
+inline BigNumber(void) { Set0(); }
+inline void Set0(void) { m_Len = 0; m_Neg = false; } // 將值設為0 //
+inline bool Is0(void) const { return m_Len == 0; } // 是否為0 //
+inline bool IsAbs1(void) const { return (m_Len == 1) && (m_Data[0] == 1); } // 絕對值是否為1 //
+inline bool Is1(void) const { return IsAbs1() && (!IsNeg()); } // 是否為1 //
+inline bool IsNeg1(void) const { return IsAbs1() && IsNeg(); } // 是否為-1 //
+inline void Neg(void) { if (!Is0()) m_Neg = !m_Neg; } // 數值正負轉換 //
+
+以下則為基本的大數數值指定函數：
+
+inline static int standardize(const BIG_NUMBER_DATA_TYPE* data, int len)
+//說明：將大數資料標準化
+//輸入：data, len = 大數資料與長度
+//傳回：大數資料去除前導0後的實際長度
+{
+    int index = len-1;
+    while ((index >= 0) && (data[index] == 0)) --index;
+    return index+1;
+}
+
+void BigNumber::standardize(void)
+//說明：將資料標準化
+//備註：標準格式為去除所有前導0
+{
+    if ((m_Len = ::standardize(m_Data,m_Len)) == 0) m_Neg = false; // 0不為負數 //
+}
+
+void BigNumber::set_internal_data(const BIG_NUMBER_DATA_TYPE* data, int len, bool neg)
+//說明：設定數目
+//輸入：data, len = 數目資料與大小，內部格式, neg = 是否為負數
+//備註：本函數不進行標準化
+{
+    m_Neg = neg;
+    if ((m_Len = len) != 0) memcpy(m_Data,data,len*sizeof(BIG_NUMBER_DATA_TYPE));
+}
+
+void BigNumber::SetNumber(const BigNumber &bn)
+//說明：設定數目
+//輸入：bn = 數目
+{
+    set_internal_data(bn.GetData(),bn.GetLen(),bn.IsNeg());
+}
+
+void BigNumber::SetNumber(int number)
+//說明：設定數目
+//輸入：number = 數目
+{
+    m_Neg = false;
+    if (number < 0)
+    {
+        m_Neg = true;
+        number = -number;
+    }
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    m_Data[3] = number >> 24;
+    m_Data[2] = number >> 16;
+    m_Data[1] = number >> 8;
+    m_Data[0] = number;
+    m_Len = 4;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    m_Data[1] = number >> 16;
+    m_Data[0] = number;
+    m_Len = 2;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    m_Data[0] = number;
+    m_Len = 1;
+#else
+    #error Not Implement
+#endif
+    standardize();
+}
+
+void BigNumber::overflow(void)
+//說明：處理溢位錯誤
+{
+    // 目前略過不處理 //
+}
+
+void BigNumber::SetNumber(const char* data, int len)
+//說明：設定數目
+//輸入：data, len = 數目資料與大小（正數），高位元組在前
+{
+    if ((data == NULL) || (len == 0))
+    {
+        Set0();
+        return;
+    }
+    if (len > BIG_NUMBER_MAX_BYTES) // Overflow //
+    {
+        overflow();
+        data += len-BIG_NUMBER_MAX_BYTES;
+        len = BIG_NUMBER_MAX_BYTES;
+    }
+    Abs();
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    m_Len = len;
+    for (int i=len-1; i>=0; --i) m_Data[i] = data[len-i-1];
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    m_Len = (len+1)/2;
+    if (len & 1)
+    {
+        m_Data[(len--)/2] = (unsigned char)data[0];
+        ++data;
+    }
+    for (int i=0; i<len; i+=2) m_Data[(len-i)/2-1] = ((unsigned char)data[i] << 8) | (unsigned char)data[i+1];
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    m_Len = (len+3)/4;
+    switch(len&3)
+    {
+    case 1:
+        m_Data[(len--)/4] = (unsigned char)data[0];
+        ++data;
+        break;
+    case 2:
+        m_Data[len/4] = ((unsigned char)data[0]<<8) | (unsigned char)data[1];
+        data += 2;
+        len -= 2;
+        break;
+    case 3:
+        m_Data[len/4] = ((unsigned char)data[0]<<16) | ((unsigned char)data[1]<<8) | (unsigned char)data[2];
+        data += 3;
+        len -= 3;
+        break;
+    }
+    for (int i=0; i<len; i+=4) m_Data[(len-i)/4-1] = ((unsigned char)data[i] << 24) | ((unsigned char)data[i+1] << 16) | ((unsigned char)data[i+2] << 8) | (unsigned char)data[i+3];
+#else
+    #error Not Implement
+#endif
+    standardize();
+}
+
+BigNumber& BigNumber::operator=(const BigNumber& bn)
+{
+    SetNumber(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator=(int number)
+{
+    SetNumber(number);
+    return *this;
+}
+
+以下則為基本的大數數值比對函數：
+
+int BigNumber::compare_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2) const
+//說明：比對數目絕對值
+//輸入：data1, len1, data2, len2 = 欲比對的兩數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    int data;
+    if ((data = len1-len2) != 0) return data;
+    for (int i=len1-1; i>=0; --i)
+    {
+        register BIG_NUMBER_DATA_TYPE value1 = data1[i];
+        register BIG_NUMBER_DATA_TYPE value2 = data2[i];
+        if (value1 < value2) return -1;
+        if (value1 > value2) return 1;
+    }
+    return 0;
+}
+
+int BigNumber::compare_abs(const BigNumber& bn) const
+//說明：比對數目絕對值
+//輸入：bn = 來源數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    return compare_abs(m_Data,m_Len,bn.GetData(),bn.GetLen());
+}
+
+int BigNumber::compare(const BigNumber& bn) const
+//說明：比對數目
+//輸入：bn = 來源數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    if (IsNeg())
+    {
+        if (bn.IsNeg()) return -compare_abs(bn); // 皆負數，絕對值愈大，實際值愈小 //
+        else return -1; // A負B正 //
+    }
+    else
+    {
+        if (bn.IsNeg()) return 1; // A正B負 //
+        else return compare_abs(bn); // 皆正數 //
+    }
+}
+
+bool BigNumber::operator==(const BigNumber& bn) const
+{
+    return compare(bn) == 0;
+}
+
+bool BigNumber::operator!=(const BigNumber& bn) const
+{
+    return compare(bn) != 0;
+}
+
+bool BigNumber::operator>=(const BigNumber& bn) const
+{
+    return compare(bn) >= 0;
+}
+
+bool BigNumber::operator<=(const BigNumber& bn) const
+{
+    return compare(bn) <= 0;
+}
+
+bool BigNumber::operator>(const BigNumber& bn) const
+{
+    return compare(bn) > 0;
+}
+
+bool BigNumber::operator<(const BigNumber& bn) const
+{
+    return compare(bn) < 0;
+}
+
+
+（二）加法與減法
+
+兩個n位元數的相加，其效率必定是O(n)，這點是無庸置疑的，所差別的，只是單純寫法上的效率差
+異而已。加法中最需要考慮的便是進位的問題，在組合語言裡有add與adc的輔助，而直接將進位加入
+數值中，但在C語言便沒有這麼方便了。一種通用性的判斷法，假設C=A+B，則：
+
+    if (C < max(A,B)) then 有進位
+
+這點是很容易證明的。當沒有進位時，C值必定>=A或B，有進位時，進位在C裡已經移出，於是形成相
+加後變小的情況。當然，這樣的判斷法，速度會稍慢些。對於陣列元素的大小較CPU暫存器為小者，
+其實也可利用多出的部份做進位記錄。例如陣列元素為byte者，便可利用short來加以記錄並判斷進
+位：
+
+    unsigned char A, B; // 要加的兩數字 //
+    unsigned short D;   // 暫存用空間 //
+    unsigned char C = (unsigned char) (D = A+B);
+    unsigned char carry = *((char*)&D+1); // 假設資料在記憶體裡是低位元組在前 //
+
+最後的carry實際上不必取出，而直接在下次要加時，直接以*((char*)&D+1)的形態加入數值中。
+*((char*)&D+1)見似寫法複雜，對組語而言只是一個位址，且會與前後的運算子，如=、+等合併一起，
+本身並不會耗時。然而這樣的寫法會隨著CPU的存取格式（Big Endian，即高位元組在前，Little 
+Endian，即低位元組在前）與陣列元素大小而異。由於此部份影響效率的程度並不高，故此處我們仍
+採用通用性判斷法。以下為加入一位數的函數：
+
+inline bool BigNumber::add_abs(BIG_NUMBER_DATA_TYPE* data, int len, int max_len, BIG_NUMBER_DATA_TYPE value)
+//說明：加入一位數字（絕對值）
+//輸入：data, len = 數目資料, max_len = 資料空間最大數目, value = 欲新增的值（正數）
+//輸出：data = 相加後的資料
+//傳回：是否進位
+{
+    if (len <= 0)
+    {
+        // 原值沒資料，直接置入 //
+        if (max_len <= 0)
+        {
+            overflow();
+            return false;
+        }
+        data[0] = value;
+        return true;
+    }
+    if (value == 0) return false;
+    register BIG_NUMBER_DATA_TYPE value2 = data[0];
+    if ((BIG_NUMBER_DATA_TYPE)(data[0] += value) >= max(value,value2)) return false; // 沒進位 //
+    for (int i=1; i<len; ++i) // 將進位加入前位數 //
+    {
+        if (++data[i] != 0) return false;
+    }
+    if (max_len <= len)
+    {
+        overflow();
+        return false;
+    }
+    data[len] = 1;
+    return true;
+}
+
+這個函數除了可供Increment運算元（數值只加1）使用外，亦可供傳統乘法演算法使用（後述）。由
+於傳統乘法演算法會大量呼叫本函數，故此處以inline方式展開，以加快運算速度。至於兩數相加的
+函數，則可呼叫前述函數來完成：
+
+int BigNumber::add_abs(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, int max_len)
+//說明：加入一個數值（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相加的數值, max_len = data1資料空間最大數目
+//輸出：data1 = 相加後的數值
+//傳回：相加後的數值長度 (未標準化)
+{
+    for (int i=0; i<len2; i++)
+    {
+        if (add_abs(data1+i,len1-i,max_len-i,data2[i])) len1++;
+    }
+    return len1;
+}
+
+然而這樣的寫法會有點問題。如果自我相加，也就是data1與data2都指向同一空間時，那麼呼叫加入
+一位數後，可能因為進位的關係，而破壞了data2的值。因此兩數相加的函數，需要依相同觀念另行
+撰寫：
+
+int BigNumber::add_abs(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, int max_len)
+//說明：加入一個數值（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相加的數值, max_len = data1資料空間最大數目
+//輸出：data1 = 相加後的數值
+//傳回：相加後的數值長度 (未標準化)
+{
+    if (len2 <= 0) return len1;
+    if (len1 <= 0)
+    {
+        // 原值沒資料，直接置入 //
+        if (max_len < len2)
+        {
+            overflow();
+            len2 = max_len;
+        }
+        memcpy(data1,data2,len2*sizeof(BIG_NUMBER_DATA_TYPE));
+        return len2;
+    }
+    bool carry = false;
+    bool new_carry;
+    BIG_NUMBER_DATA_TYPE value1, value2;
+    for (int i=0; i<len1; ++i)
+    {
+        value1 = data1[i];
+        if (i >= len2) 
+        {
+            if (!carry) return len1;
+            value2 = 0;
+        }
+        else
+        {
+            value2 = data2[i];
+        }
+        new_carry = false;
+        if ((BIG_NUMBER_DATA_TYPE)(data1[i] += value2) < max(value1,value2)) new_carry = true; // 有進位 //
+        if (carry)
+        {
+            if (++data1[i] == 0) new_carry = true;
+        }
+        carry = new_carry;
+    }
+    // 處理剩下的data2 //
+    if (i < len2)
+    {
+        for (; i<len2; ++i)
+        {
+            if (carry)
+            {
+                carry = false;
+                if ((data1[i] = data2[i]+1) == 0) carry = true;
+            }
+            else
+            {
+                // 將剩下的直接複製 //
+                memcpy(data1+i,data2+i,(len2-i)*sizeof(BIG_NUMBER_DATA_TYPE));
+                return len2;
+            }
+        }
+        len1 = len2;
+    }
+    if (!carry) return len1;
+    // 處理最後的carry //
+    if (max_len <= len1)
+    {
+        overflow();
+        return max_len;
+    }
+    data1[len1] = 1;
+    return len1+1;
+}
+
+整數大數的減法和加法類似，主要的考量點在於借位的問題。當然這裡亦不考慮sub、sbc的組合語言
+使用，而直接使用判斷式來決定是否有借位。另由於我們記錄的是數值的絕對值，數值的正負由另一
+變數記錄，故此處均假設被減數>=減數，如此便沒有任何溢位的問題。
+
+void BigNumber::sub_abs(BIG_NUMBER_DATA_TYPE* data, int len, BIG_NUMBER_DATA_TYPE value)
+//說明：減去一位數字（絕對值）
+//輸入：data, len = 數目資料與大小, value = 欲減去的值（正數）
+//輸出：data = 相減後的資料 (未標準化)
+//限制：data數值必須 >= value
+{
+    if (value == 0) return;
+    if (len <= 0) // 錯誤呼叫 //
+    {
+        overflow();
+        return;
+    }
+    if (data[0] >= value)
+    {
+        data[0] -= value;
+        return;
+    }
+    // 有借位 //
+    data[0] -= value;
+    for (int i=1; i<len; ++i)
+    {
+        if (--data[i] != (BIG_NUMBER_DATA_TYPE)-1) return;
+    }
+    // 錯誤呼叫 //
+    overflow();
+    return;
+}
+
+void BigNumber::sub_abs(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2)
+//說明：減去一個數值（絕對值）
+//輸入：data1, len1 = 原數, data2, len2 = 被減數
+//輸出：data1 = 相減後的數值 (未標準化)
+//限制：data1數值需>=data2的數值
+{
+    if (len2 <= 0) return;
+    bool carry = false;
+    BIG_NUMBER_DATA_TYPE value1, value2;
+    for (int i=0; i<len1; ++i)
+    {
+        value1 = data1[i];
+        if (i >= len2)
+        {
+            if (!carry) return;
+            value2 = 0;
+        }
+        else
+        {
+            value2 = data2[i];
+        }
+        data1[i] -= value2;
+        if (carry)
+        {
+            carry = false;
+            if (--data1[i] == (BIG_NUMBER_DATA_TYPE)-1) carry = true;
+        }
+        if (value1 < value2) carry = true;
+    }
+    if (carry || (len2 > len1)) overflow();
+}
+
+有了前述的基本加減函數後，便可以完成整個完整的加減法函數了：
+
+void BigNumber::add_abs(const BigNumber& bn)
+//說明：數值相加（絕對值）
+//輸入：bn = 欲加入的數值
+{
+    m_Len = add_abs(m_Data,m_Len,bn.GetData(),bn.GetLen(),BIG_NUMBER_DATA_NO);
+    standardize();
+}
+
+void BigNumber::sub_abs(const BigNumber& bn)
+//說明：數值相減（絕對值）
+//輸入：bn = 欲減去的數值
+//限制：目前的數值需>=bn的數值
+{
+    sub_abs(m_Data,m_Len,bn.GetData(),bn.GetLen());
+    standardize();
+}
+
+void BigNumber::Inc(void)
+//說明：將數值加1
+{
+    if (IsNeg())
+    {
+        sub_abs(m_Data,m_Len,1);
+    }
+    else
+    {
+        if (add_abs(m_Data,m_Len,BIG_NUMBER_DATA_NO,1)) ++m_Len;
+    }
+    standardize();
+}
+
+void BigNumber::Dec(void)
+//說明：將數值減1
+{
+    if (Is0())
+    {
+        m_Len = m_Data[1] = 1;
+        m_Neg = true;
+    }
+    else if (IsNeg())
+    {
+        if (add_abs(m_Data,m_Len,BIG_NUMBER_DATA_NO,1)) ++m_Len;
+    }
+    else
+    {
+        sub_abs(m_Data,m_Len,1);
+    }
+    standardize();
+}
+
+void BigNumber::Add(const BigNumber& bn)
+//說明：加入一個數值
+//輸入：bn = 欲加入的數值
+{
+    if (bn.Is0()) return; // 0不用加 //
+    if (Is0()) // 本身為0，直接複製 //
+    {
+        *this = bn;
+        return;
+    }
+    if (IsNeg())
+    {
+        if (bn.IsNeg()) // 兩數皆負，直接相加 //
+        {
+            add_abs(bn);
+        }
+        else
+        {
+            // A負B正 //
+            int result = compare_abs(bn);
+            if (result < 0) // A+B變正, 計算|B|-|A| //
+            {
+                BigNumber tbn;
+                tbn = bn;
+                Abs();
+                tbn -= *this;
+                *this = tbn;
+            }
+            else if (result > 0) // A+B仍負, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B, 相加變0 //
+            {
+                Set0();
+            }
+        }
+    }
+    else
+    {
+        if (bn.IsNeg())
+        {
+            // A正B負 //
+            int result = compare_abs(bn);
+            if (result < 0) // A+B變負, 計算|B|-|A| //
+            {
+                BigNumber tbn;
+                tbn = bn;
+                tbn.Abs();
+                tbn -= *this;
+                *this = tbn;
+                Neg();
+            }
+            else if (result > 0) // A+B仍正, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B, 相加變0 //
+            {
+                Set0();
+            }
+        }
+        else // 兩數皆正，直接相加 //
+        {
+            add_abs(bn);
+        }
+    }
+}
+
+void BigNumber::Sub(const BigNumber& bn)
+//說明：減去一個數值
+//輸入：bn = 欲減去的數值
+{
+    if (bn.Is0()) return; // 0不用減 //
+    if (Is0()) // 本身為0，複製後變負 //
+    {
+        *this = bn;
+        Neg();
+        return;
+    }
+    if (IsNeg())
+    {
+        if (bn.IsNeg())
+        {
+            // 兩數皆負 //
+            int result = compare_abs(bn);
+            if (result < 0) // A-B變正, 計算|B|-|A| //
+            {
+                BigNumber tbn;
+                tbn = bn;
+                tbn.Abs();
+                Abs();
+                tbn -= *this;
+                *this = tbn;
+            }
+            else if (result >= 0) // A-B仍負, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B // 相減為0 //
+            {
+                Set0();
+            }
+        }
+        else
+        {
+            // A負B正，結果仍為負，計算|A|+|B| //
+            add_abs(bn);
+        }
+    }
+    else
+    {
+        if (bn.IsNeg())
+        {
+            // A正B負，結果仍為正，計算|A|+|B| //
+            add_abs(bn);
+        }
+        else // 兩數皆正 //
+        {
+            int result = compare_abs(bn);
+            if (result < 0) // A-B變負, 計算|B|-|A| //
+            {
+                BigNumber tbn;
+                tbn = bn;
+                tbn -= *this;
+                *this = tbn;
+                Neg();
+            }
+            else if (result >= 0) // A-B仍正, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B // 相減為0 //
+            {
+                Set0();
+            }
+        }
+    }
+}
+
+BigNumber& BigNumber::operator++(void)
+{
+    Inc();
+    return *this;
+}
+
+BigNumber& BigNumber::operator--(void)
+{
+    Dec();
+    return *this;
+}
+
+BigNumber& BigNumber::operator+=(const BigNumber& bn)
+{
+    Add(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator-=(const BigNumber& bn)
+{
+    Sub(bn);
+    return *this;
+}
+
+
+（三）乘法
+
+兩個整數大數相乘，最簡單的做法便是採用傳統的移位累加法，亦即：
+
+             7 3
+     *       2 9
+    -------------
+             2 7 (9*3)
+           6 3   (9*7)
+           0 6   (2*3)
+     +   1 4     (2*7)
+    -------------
+         2 1 1 7
+
+對於兩個n位數相乘，需要n^2個基礎乘法，故其效率為O(n^2)。傳統移位累加法在撰寫時有兩種方式，
+一是每次乘得兩位數時，即分別加入結果中，一是按乘數的每位數計算後，集結成兩個數字陣列，再
+進行兩個整數大數加法。例如前例以9乘時，可得{3,7}、{6,2}兩個陣列，以2乘時，可得{4,6}、{1,0}
+兩個陣列，各陣列依其基準位加入結果數中。而為了比較採用組合語言，以及不同陣列元素大小的執
+行效率，以下的函數均按不同的定義進行不同的寫法：
+
+int BigNumber::mul_abs_basic(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3 = 相乘後的數值
+//傳回：相乘後的數值長度 (未標準化)
+//備註：本函數採用傳統的移位累加法（乘後直接加入），效率為O(n^2)
+{
+    int result_len = 0;
+    unsigned int value1;
+    unsigned int value2;
+    BIG_NUMBER_DATA_TYPE low_data, high_data;
+    for (int i=0; i<len2; ++i)
+    {
+        if ((value1 = data2[i]) == 0)
+        {
+            while (result_len <= i) data3[result_len++] = 0;
+            continue;
+        }
+        for (int j=0; j<len1; ++j)
+        {
+            int bound = i+j;
+            if ((value2 = data1[j]) == 0)
+            {
+                while (result_len <= bound) data3[result_len++] = 0;
+                continue;
+            }
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+#ifdef USE_ASM
+            __asm
+            {
+                mov al,byte ptr [value1]
+                mul byte ptr [value2]
+                mov byte ptr [low_data],al
+                mov byte ptr [high_data],ah
+            }
+#else
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>8);
+#endif
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+#ifdef USE_ASM
+            __asm
+            {
+                mov ax,word ptr [value1]
+                mul word ptr [value2]
+                mov word ptr [low_data],ax
+                mov word ptr [high_data],dx
+            }
+#else
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>16);
+#endif
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+#ifdef USE_ASM
+            __asm
+            {
+                mov eax,dword ptr [value1]
+                mul dword ptr [value2]
+                mov dword ptr [low_data],eax
+                mov dword ptr [high_data],edx
+            }
+#else
+            unsigned __int64 value = (unsigned __int64)value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>32);
+#endif
+#else
+    #error Not Implement
+#endif
+            if (add_abs(data3+bound,result_len-bound,BIG_NUMBER_DATA_NO-bound,low_data)) ++result_len;
+            if (high_data != 0) 
+            {
+                ++bound;
+                if (add_abs(data3+bound,result_len-bound,BIG_NUMBER_DATA_NO-bound,high_data)) ++result_len;
+            }
+        }
+    }
+    return result_len;
+}
+
+int BigNumber::mul_abs_basic(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3 = 相乘後的數值
+//傳回：相乘後的數值長度 (未標準化)
+//備註：本函數採用傳統的移位累加法（乘後暫存再統一加入），效率為O(n^2)
+{
+    if (len1 < len2) // 最小值要在外迴圈 //
+    {
+        int temp = len1;
+        len1 = len2;
+        len2 = temp;
+        const BIG_NUMBER_DATA_TYPE* temp_data = data1;
+        data1 = data2;
+        data2 = temp_data;
+    }
+    int result_len = 0;
+    BIG_NUMBER_DATA_TYPE ldata[BIG_NUMBER_DATA_NO]; // 存乘數低值 //
+    BIG_NUMBER_DATA_TYPE hdata[BIG_NUMBER_DATA_NO]; // 存乘數高值 //
+    unsigned int value1, value2, high_len;
+    BIG_NUMBER_DATA_TYPE low_data, high_data;
+    for (int i=0; i<len2; ++i)
+    {
+        if ((value1 = data2[i]) == 0)
+        {
+            while (result_len <= i) data3[result_len++] = 0;
+            continue;
+        }
+        high_len = 0;
+        for (int j=0; j<len1; ++j)
+        {
+            if ((value2 = data1[j]) == 0)
+            {
+                ldata[j] = hdata[j] = 0;
+                continue;
+            }
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+#ifdef USE_ASM
+            __asm
+            {
+                mov al,byte ptr [value1]
+                mul byte ptr [value2]
+                mov byte ptr [low_data],al
+                mov byte ptr [high_data],ah
+            }
+#else
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>8);
+#endif
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+#ifdef USE_ASM
+            __asm
+            {
+                mov ax,word ptr [value1]
+                mul word ptr [value2]
+                mov word ptr [low_data],ax
+                mov word ptr [high_data],dx
+            }
+#else
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>16);
+#endif
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+#ifdef USE_ASM
+            __asm
+            {
+                mov eax,dword ptr [value1]
+                mul dword ptr [value2]
+                mov dword ptr [low_data],eax
+                mov dword ptr [high_data],edx
+            }
+#else
+            unsigned __int64 value = (unsigned __int64)value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>32);
+#endif
+#else
+    #error Not Implement
+#endif
+            ldata[j] = low_data;
+            if ((hdata[j] = high_data) != 0) high_len = j+1;
+        }
+        result_len = add_abs(data3+i,result_len-i,ldata,len1,BIG_NUMBER_DATA_NO-i) + i;
+        if (high_len != 0) result_len = add_abs(data3+i+1,result_len-i-1,hdata,high_len,BIG_NUMBER_DATA_NO-i-1) + i+1;
+    }
+    return result_len;
+}
+
+在進行效率測驗之前，必須先完成整個乘法運算函數：
+
+void BigNumber::mul_abs_basic(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+//備註：本函數採用傳統移位累加法
+{
+    BIG_NUMBER_DATA_TYPE result[BIG_NUMBER_DATA_NO];
+    int result_len = mul_abs_basic(m_Data,m_Len,bn.GetData(),bn.GetLen(),result);
+    set_internal_data(result,result_len,IsNeg());
+    standardize();
+}
+
+void BigNumber::mul_abs(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+{
+    mul_abs_basic(bn);
+}
+
+void BigNumber::Mul(const BigNumber& bn)
+//說明：乘上一個數值
+//輸入：bn = 乘數
+{
+    if (Is0() || bn.Is0()) // 乘以0必為0 //
+    {
+        Set0();
+        return;
+    }
+    if (bn.IsAbs1()) // 乘數絕對值為1 //
+    {
+        if (bn.IsNeg()) Neg(); // 乘以1不必乘, 乘以-1等於自我變負 //
+        return;
+    }
+    if (IsAbs1()) // 被乘數絕對值為1 //
+    {
+        bool neg = IsNeg();
+        *this = bn; // 直接複製乘數內容 //
+        if (neg) Neg(); // 本身為-1，需再變負 //
+        if (IsNeg()) Neg(); // 本身為-1，需再變負 //
+        return;
+    }
+    m_Neg ^= bn.IsNeg(); // 決定正負 //
+    mul_abs(bn);
+}
+
+BigNumber& BigNumber::operator*=(const BigNumber& bn)
+{
+    Mul(bn);
+    return *this;
+}
+
+關於乘法效率的測試，我們設計了六種測試案例：
+
+1.極大數乘極小數
+  10000!的計算，由1乘起（結果為14808 byte的數字)
+2.RSA運算模擬
+  010203..FDFEFFh與FFFEFD..030201h兩255 byte數字，相乘10,000次（結果為509 byte數字）
+3.平方
+  010203..FDFEFFFFFEFD...020100h之511 byte數字的平方，相乘3000次（結果為1021 byte數字）
+4.大數乘小數
+  1234567890循環1000次與循環200次的兩數字（4153 byte與831 byte），相乘300次（結果為4983 byte數字）
+5.位數值多為0
+  前後byte為FFh，中間皆0的兩256 byte數字，相乘200,000次（結果為512 byte數字）
+6.移位
+  FFFEFD..030201h與010000..00h兩255 byte數字，相乘300,000次（結果為509 byte數字）
+
+以下為測試程式：
+
+void test_mul_speed(void)
+//說明：測試乘法效率性
+{
+    BigNumber bn1, bn2, bn3, bn4;
+    int count1, count2, n, i;
+    char s[512];
+    // 測試1: 10000!, 由1乘起 (需14808 bytes) //
+    n = 10000;
+    bn1 = 1;
+    bn2 = 2;
+    count1 = clock();
+    for (i=2; i<=n; ++i)
+    {
+        bn1 *= bn2;
+        ++bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試2: 0x010203..FDFEFF與0xFFFEFD..030201兩數字，相乘10,000次 (需509 bytes) //
+    for (i=1; i<=0xFF; ++i) s[i-1] = i;
+    bn3.SetNumber(s,255);
+    for (i=1; i<=0xFF; ++i) s[0xFF+1-i] = i;
+    bn2.SetNumber(s,255);
+    n = 10000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 *= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試3: 010203..FDFEFFFFFEFD...020100h的平方，相乘3000次 (需1021 bytes) //
+    for (i=1; i<=0xFF; ++i) s[i-1] = i;
+    for (i=0xFF; i>=0; i--) s[0xFF+0xFF-i] = i;
+    bn3.SetNumber(s,511);
+    n = 3000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 *= bn1;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試4: 1234567890循環1000次與循環200次的兩數字，相乘300次 (需4983 bytes) //
+    bn4 = 100000;
+    bn4 *= bn4;
+    bn3 = bn1 = 1234567890;
+    for (i=1; i<200; i++)
+    {
+        bn3 *= bn4;
+        bn3 += bn1;
+    }
+    bn2 = bn3;
+    for (; i<1000; i++)
+    {
+        bn2 *= bn4;
+        bn2 += bn1;
+    }
+    n = 300;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 *= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試5: 只有前後byte為FF,中間皆00的兩256 byte數字，相乘200,000次 (需512 bytes) //
+    memset(s,0,sizeof(s));
+    s[0] = s[255] = (char)0xFF;
+    bn2.SetNumber(s,256);
+    n = 200000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn2;
+        bn1 *= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試6: 0xFFFEFD..030201h與0x010000..00h兩255 byte數字，相乘300,000次 (需509 bytes) //
+    for (i=1; i<=0xFF; ++i) s[0xFF+1-i] = i;
+    bn3.SetNumber(s,255);
+    memset(s,0,sizeof(s));
+    s[0] = 1;
+    bn2.SetNumber(s,255);
+    n = 300000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 *= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+}
+
+以下則為測試結果（單位為秒）：
+
+1.直接加入式乘法
+  無inline無assembly
+     1 byte：  3.515, 20.172, 24.828, 35.547,  2.250,  2.282
+     2 byte：  0.640,  5.485,  6.484,  9.015,  1.516,  1.453
+     4 byte：  0.296,  1.422,  1.703,  2.437,  0.469,  0.625
+  無inline有assembly
+     1 byte：  3.906, 22.234, 26.735, 38.313,  2.250,  2.515
+     2 byte：  0.781,  6.250,  7.484, 10.516,  1.563,  1.625
+     4 byte：  0.328,  1.422,  1.688,  2.328,  0.484,  0.656
+  有inline無assembly
+     1 byte：  2.359, 12.453, 15.281, 23.266,  2.328,  2.093
+     2 byte：  0.484,  3.625,  4.406,  6.549,  1.531,  1.375
+     4 byte：  0.187,  0.984,  1.188,  1.719,  0.468,  0.547
+  有inline有assembly
+     1 byte：  2.734, 14.687, 18.328, 27.782,  2.421,  2.328
+     2 byte：  0.625,  4.719,  5.812,  8.390,  1.750,  1.515
+     4 byte：  0.218,  1.078,  1.344,  1.875,  0.500,  0.578
+2.暫存後加入式乘法
+  無assembly
+     1 byte：  2.250, 13.344, 16.765, 25.359,  0.937,  1.937
+     2 byte：  0.375,  4.250,  5.234,  7.438,  0.593,  1.250
+     4 byte：  0.156,  1.000,  1.250,  1.734,  0.312,  0.531
+  有assembly
+     1 byte：  2.593, 14.938, 18.672, 28.016,  0.969,  2.078
+     2 byte：  0.421,  4.594,  5.593,  7.984,  0.578,  1.312
+     4 byte：  0.187,  1.109,  1.406,  1.922,  0.297,  0.578
+
+方法一有否inline，效率相差頗大，因為呼叫次數為O(n^2)，因此使用方法一時，必須將add_abs函
+數設定成inline。又，元素大小愈大者，速度亦愈快，故在設計整數大數運算物件時，應儘可能將陣
+列元素提高到系統可接受的大小（但必須考慮能否算出單一乘法與除法）。比較訝異的是，採用內插
+組合語言，速度不增反慢，可能是因為內插組合語言干擾到最佳化的過程吧，因此並沒有必要使用組
+合語言來加速。於是兩種方法按其最佳的效能相比起來，方法一在通用性的乘法（測例2,3,4）效能
+略佳，方法二則在特殊性的乘法（測例1,5,6），亦即極小數或位數多為0的情況，效能較佳，特別是
+測例5，效能相差了一倍以上。由於整數大數的運算，多半用於RSA加解密，因此通用性乘法效率較佳
+的方法一，比較是考慮採用的對象。事實上，在後述的分割解決法中，也證實了方法一確實比較好。
+
+要改良傳統移位累加法O(n^2)效率的問題，最簡單的方式便是採用分割解決法來處理。假設要計算兩
+個2n位數x與y相乘的結果，令：
+
+    x = a*t^n + b
+    y = c*t^n + d
+
+其中t為數值基底（如2為位元，256為byte），則：
+
+    u = (a+b)*(c+d)
+    v = a*c
+    w = b*d
+    z = v*t^2n + (u-v-w)*t^n + w
+
+如此等於用3個n*n的乘法與6個加減法以算出2n*2n的乘法，因此其效率為O(n^log3)=O(n^1.59)。在
+撰寫分割解決法的程式前，有幾個議題是需要考量的：
+
+1.m位數乘n位數，若m<>n時，在分割上應採用最大值或最小值進行分割（最大分割與最小分割）？
+2.遞迴返回條件一般在某個元素數目<=1時，此時可轉呼叫傳統乘法來處理。但按演算法的通則，愈
+  複雜有效率的演算法，愈不適用於少量元素時，故此一數目限制應為何方能達到最佳狀態？
+
+#define MUL_DIVIDE_BOUND    1    // 分割解決法轉送傳統乘法的數目限制 //
+
+int BigNumber::add_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相加（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相加的數值
+//輸出：data3 = 相加後的數值
+//傳回：相加後的數值長度 (未標準化)
+{
+    if (len1 <= 0)
+    {
+        // 複製data2 //
+        if (BIG_NUMBER_DATA_NO < len2)
+        {
+            overflow();
+            len2 = BIG_NUMBER_DATA_NO;
+        }
+        if (data3 != data2) memcpy(data3,data2,len2*sizeof(BIG_NUMBER_DATA_TYPE));
+        return len2;
+    }
+    if (len2 <= 0)
+    {
+        // 複製data1 //
+        if (BIG_NUMBER_DATA_NO < len1)
+        {
+            overflow();
+            len1 = BIG_NUMBER_DATA_NO;
+        }
+        if (data3 != data1) memcpy(data3,data1,len1*sizeof(BIG_NUMBER_DATA_TYPE));
+        return len1;
+    }
+    bool carry = false;
+    bool new_carry;
+    BIG_NUMBER_DATA_TYPE value1, value2;
+    for (int i=0; i<len1; ++i)
+    {
+        value1 = data1[i];
+        if (i >= len2)
+        {
+            if (!carry)
+            {
+                // 將剩下的直接複製 //
+                if (data3 != data1) memcpy(data3+i,data1+i,(len1-i)*sizeof(BIG_NUMBER_DATA_TYPE));
+                return len1;
+            }
+            value2 = 0;
+        }
+        else
+        {
+            value2 = data2[i];
+        }
+        new_carry = false;
+        if ((BIG_NUMBER_DATA_TYPE)(data3[i] = value1+value2) < max(value1,value2)) new_carry = true; // 有進位 //
+        if (carry)
+        {
+            if (++data3[i] == 0) new_carry = true;
+        }
+        carry = new_carry;
+    }
+    // 處理剩下的data2 //
+    if (i < len2)
+    {
+        for (; i<len2; ++i)
+        {
+            if (carry)
+            {
+                carry = false;
+                if ((data3[i] = data2[i]+1) == 0) carry = true;
+            }
+            else
+            {
+                // 將剩下的直接複製 //
+                if (data3 != data2) memcpy(data3+i,data2+i,(len2-i)*sizeof(BIG_NUMBER_DATA_TYPE));
+                return len2;
+            }
+        }
+        len1 = len2;
+    }
+    if (!carry) return len1;
+    // 處理最後的carry //
+    if (BIG_NUMBER_DATA_NO <= len1)
+    {
+        overflow();
+        return BIG_NUMBER_DATA_NO;
+    }
+    data3[len1] = 1;
+    return len1+1;
+}
+
+int BigNumber::mul_abs_divide(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3 = 相乘後的數值 (未標準化)
+//傳回：相乘後的數值長度
+//備註：本函數採用分割解決法（最小分割），效率為O(n^log3)=O(n^1.59)
+{
+    if ((len1 <= MUL_DIVIDE_BOUND) || (len2 <= MUL_DIVIDE_BOUND))
+    {
+        if ((len1 == 0) || (len2 == 0)) return 0;
+        return mul_abs_basic(data1,len1,data2,len2,data3);
+    }
+    int len = min(len1,len2) / 2;
+    // 決定切分後各部份的長度 //
+    const BIG_NUMBER_DATA_TYPE *v, *w;
+    int alen, blen, clen, dlen, ulen, vlen, wlen, rlen3;
+    BIG_NUMBER_DATA_TYPE udata[BIG_NUMBER_DATA_NO];
+    BIG_NUMBER_DATA_TYPE vdata[BIG_NUMBER_DATA_NO];
+    alen = len1-len;
+    blen = ::standardize(data1,len);
+    clen = len2-len;
+    dlen = ::standardize(data2,len);
+    // 算出u //
+    // a+b //
+    if (blen == 0) // b=0, 直接使用a //
+    {
+        w = data1+len;
+        wlen = alen;
+    }
+    else // 以data3為空間, 計算w=a+b //
+    {
+        wlen = add_abs(data1+len,len1-len,data1,blen,data3);
+        w = data3;
+    }
+    // c+d //
+    if (dlen == 0) // d=0, 直接使用c //
+    {
+        v = data2+len;
+        vlen = clen;
+    }
+    else // 以vdata為空間, 計算v=c+d //
+    {
+        vlen = add_abs(data2+len,len2-len,data2,dlen,vdata);
+        v = vdata;
+    }
+    ulen = mul_abs_divide(w,wlen,v,vlen,udata); // 使用udata空間, u=w*v=(a+b)*(c+d) //
+    // 算出v //
+    vlen = mul_abs_divide(data1+len,alen,data2+len,clen,vdata); // 使用vdata空間, v=a*c //
+    // 算出w //
+    if ((blen == 0) || (dlen == 0)) // b或d=0, w=b*d=0 //
+    {
+        rlen3 = 0;
+    }
+    else
+    {
+        rlen3 = mul_abs_divide(data1,blen,data2,dlen,data3); // 使用data3空間, data3=b*d //
+    }
+    // 計算u-v-w //
+    sub_abs(udata,ulen,vdata,vlen); // u-=v //
+    sub_abs(udata,ulen,data3,rlen3); // u-=w //
+    ulen = ::standardize(udata,ulen);
+    // 進行移位相加 //
+    while (rlen3 < len) data3[rlen3++] = 0;
+    rlen3 = add_abs(data3+len,rlen3-len,udata,ulen,BIG_NUMBER_DATA_NO-len) + len;
+    len *= 2;
+    while (rlen3 < len) data3[rlen3++] = 0;
+    return add_abs(data3+len,rlen3-len,vdata,vlen,BIG_NUMBER_DATA_NO-len) + len;
+}
+
+int BigNumber::mul_abs_divide(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3 = 相乘後的數值 (未標準化)
+//傳回：相乘後的數值長度
+//備註：本函數採用分割解決法（最大分割），效率為O(n^log3)=O(n^1.59)
+{
+    if ((len1 <= MUL_DIVIDE_BOUND) || (len2 <= MUL_DIVIDE_BOUND))
+    {
+        if ((len1 == 0) || (len2 == 0)) return 0;
+        return mul_abs_basic(data1,len1,data2,len2,data3);
+    }
+    int len = max(len1,len2) / 2;
+    // 決定切分後各部份的長度 //
+    const BIG_NUMBER_DATA_TYPE *v, *w;
+    int alen, blen, clen, dlen, ulen, vlen, wlen, rlen3;
+    BIG_NUMBER_DATA_TYPE udata[BIG_NUMBER_DATA_NO];
+    BIG_NUMBER_DATA_TYPE vdata[BIG_NUMBER_DATA_NO];
+    if (len < len1)
+    {
+        alen = len1-len;
+        blen = ::standardize(data1,len);
+    }
+    else 
+    {
+        alen = 0;
+        blen = len1;
+    }
+    if (len < len2) 
+    {
+        clen = len2-len;
+        dlen = ::standardize(data2,len);
+    }
+    else 
+    {
+        clen = 0;
+        dlen = len2;
+    }
+    // 算出u //
+    // a+b //
+    if (alen == 0) // a=0, 直接使用b //
+    {
+        w = data1;
+        wlen = blen;
+    }
+    else if (blen == 0) // b=0, 直接使用a //
+    {
+        w = data1+len;
+        wlen = alen;
+    }
+    else // 以data3為空間, 計算w=a+b //
+    {
+        wlen = add_abs(data1+len,len1-len,data1,blen,data3);
+        w = data3;
+    }
+    // c+d //
+    if (clen == 0) // c=0, 直接使用d //
+    {
+        v = data2;
+        vlen = dlen;
+    }
+    else if (dlen == 0) // d=0, 直接使用c //
+    {
+        v = data2+len;
+        vlen = clen;
+    }
+    else // 以vdata為空間, 計算v=c+d //
+    {
+        vlen = add_abs(data2+len,len2-len,data2,dlen,vdata);
+        v = vdata;
+    }
+    ulen = mul_abs_divide(w,wlen,v,vlen,udata); // 使用udata空間, u=w*v=(a+b)*(c+d) //
+    // 算出v //
+    if ((alen == 0) || (clen == 0)) // a或c=0, v=a*c=0 //
+    {
+        vlen = 0;
+    }
+    else 
+    {
+        vlen = mul_abs_divide(data1+len,alen,data2+len,clen,vdata); // 使用vdata空間, v=a*c //
+    }
+    // 算出w //
+    if ((blen == 0) || (dlen == 0)) // b或d=0, w=b*d=0 //
+    {
+        rlen3 = 0;
+    }
+    else
+    {
+        rlen3 = mul_abs_divide(data1,blen,data2,dlen,data3); // 使用data3空間, data3=b*d //
+    }
+    // 計算u-v-w //
+    sub_abs(udata,ulen,vdata,vlen); // u-=v //
+    sub_abs(udata,ulen,data3,rlen3); // u-=w //
+    ulen = ::standardize(udata,ulen);
+    // 進行移位相加 //
+    while (rlen3 < len) data3[rlen3++] = 0;
+    rlen3 = add_abs(data3+len,rlen3-len,udata,ulen,BIG_NUMBER_DATA_NO-len) + len;
+    if (vlen != 0)
+    {
+        len *= 2;
+        while (rlen3 < len) data3[rlen3++] = 0;
+        return add_abs(data3+len,rlen3-len,vdata,vlen,BIG_NUMBER_DATA_NO-len) + len;
+    }
+    return rlen3;
+}
+
+void BigNumber::mul_abs(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+{
+    mul_abs_divide(bn);
+}
+
+注意這裡我們又多寫了一個加法的函數。由於之前撰寫的都是加入函數，而在分割解決法中計算a+b
+或c+d時，為避免資料搬移耗時，必須是加出函數，故必須另寫一個。事實上，這兩個函數是可以合
+併在一起，在效率上並沒有太大的差異。又，固定大小陣列在使用分割解決法時，必須特別注意堆疊
+滿溢的問題。
+
+由於採用1 byte數值基底大小，分割解決法可有更多的層數，亦較容易測出效能差異，故之後的測試，
+除非特別說明，否則均以1 byte為準。以下為測試的結果（單位為秒）：
+
+  傳統乘法一： 2.359, 12.453, 15.281, 23.266,  2.328,  2.093
+  傳統乘法二： 2.250, 13.344, 16.765, 25.359,  0.937,  1.937
+1.最大分割法
+  傳統乘法一
+    限制數 1：25.671, 17.735, 15.297, 22.250, 12.985, 24.375
+    限制數 2： 2.390,  9.360,  7.828, 12.109,  8.719, 15.735
+    限制數 4： 2.390,  6.188,  5.109,  8.141,  6.281, 10.797
+    限制數 8： 2.390,  5.266,  4.047,  6.625,  4.937,  7.859
+    限制數16： 2.406,  5.500,  3.922,  6.422,  4.140,  6.093
+  傳統乘法二
+    限制數 1：32.640, 24.188, 21.188, 29.797, 17.875, 27.079
+    限制數 2： 2.265, 12.250, 10.469, 15.563, 10.406, 16.875
+    限制數 4： 2.250,  8.109,  6.593, 10.328,  6.891, 11.188
+    限制數 8： 2.250,  6.453,  4.968,  8.016,  4.891,  7.953
+    限制數16： 2.265,  6.453,  4.703,  7.500,  3.844,  6.062
+2.最小分割法
+  傳統乘法一
+    限制數 1： 3.468, 17.375, 14.859, 54.563, 12.234, 23.687
+    限制數 2： 2.390,  9.250,  7.657, 38.141,  8.188, 15.203
+    限制數 4： 2.421,  6.172,  5.063, 31.360,  6.062, 10.609
+    限制數 8： 2.437,  5.328,  4.047, 25.797,  4.859,  7.813
+    限制數16： 2.406,  5.484,  3.875, 23.406,  4.063,  6.047
+  傳統乘法二
+    限制數 1： 2.953, 23.875, 20.782, 48.422, 16.875, 27.313
+    限制數 2： 2.281, 12.500, 10.531, 35.765, 10.000, 17.360
+    限制數 4： 2.265,  8.110,  6.672, 28.469,  6.718, 11.407
+    限制數 8： 2.265,  6.422,  4.969, 23.953,  4.797,  8.094
+    限制數16： 2.250,  6.515,  4.719, 22.687,  3.766,  6.156
+
+最大分割法，明顯地優於最小分割法（測例4），而傳統乘法一（直接加入法）也明顯優於傳統乘法
+二。接下來便是MUL_DIVIDE_BOUND的值，應該設限多少較佳？前述的測試數據裡，大抵到16，效能都
+還繼續提升，但幅度已明顯愈來愈小，因此底下便針對最大分割法配合傳統乘法一，找出適當的限制
+數。由於測例1,5,6在此部份較無用處，故不必加以測試。以下為相關的測試數據（標示*者為最佳值，
+=者為極接近最佳值）：
+
+限制數 8
+     1 byte：  5.156,  4.031,  6.562
+     2 byte：  1.906,  1.719,  2.391
+     4 byte： *0.593,  0.547,  0.766
+限制數12
+     1 byte： *5.031,  3.828, *6.188
+     2 byte： *1.890, *1.609, *2.281
+     4 byte：  0.609, =0.516, *0.734
+限制數16
+     1 byte：  5.281, *3.812,  6.406
+     2 byte：  1.984,  1.641,  2.359
+     4 byte：  0.625, *0.515,  0.750
+限制數20
+     1 byte：  5.281, *3.812,  6.437
+     2 byte：  2.000,  1.640,  2.360
+     4 byte：  0.625, =0.516,  0.781
+限制數24
+     1 byte：  5.265, =3.813,  6.422
+     2 byte：  2.000,  1.656,  2.390
+     4 byte：  0.640, =0.516,  0.797
+限制數28
+     1 byte：  5.281,  3.844,  6.454
+     2 byte：  2.015,  1.640,  2.421
+     4 byte：  0.640,  0.531,  0.781
+限制數32
+     1 byte：  6.078,  4.203,  6.765
+     2 byte：  2.343,  1.796,  2.562
+     4 byte：  0.750,  0.593,  0.828
+
+由測試數據可看出，最佳值絕大部份皆落在12，故MUL_DIVIDE_BOUND應訂為12較佳。對於測例5,6而
+言，分割解決法仍遠慢於傳統乘法，這點可在mul_abs中加以偵測並處理：
+
+void BigNumber::mul_abs(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+{
+    bool call_divide = true;
+    if ((m_Len <= MUL_DIVIDE_BOUND) || (bn.GetLen() <= MUL_DIVIDE_BOUND)) 
+    {
+        call_divide = false;
+    }
+    else
+    {
+        // 偵測非0值是否有超過MUL_DIVIDE_BOUND //
+        const BIG_NUMBER_DATA_TYPE* data = m_Data;
+        int nonzero_count = 0;
+        for (int i=m_Len-1; i>=0; i--)
+        {
+            if (data[i] == 0) continue;
+            if (++nonzero_count > MUL_DIVIDE_BOUND) break;
+        }
+        if (i < 0)
+        {
+            call_divide = false;
+        }
+        else
+        {
+            data = bn.GetData();
+            nonzero_count = 0;
+            for (int i=bn.GetLen()-1; i>=0; i--)
+            {
+                if (data[i] == 0) continue;
+                if (++nonzero_count > MUL_DIVIDE_BOUND) break;
+            }
+            if (i < 0) call_divide = false;
+        }
+    }
+    if (call_divide) mul_abs_divide(bn);
+    else mul_abs_basic(bn);
+}
+
+最後的測試數據如下：
+
+傳統乘法
+     1 byte：  2.359, 12.453, 15.281, 23.266,  2.328,  2.093
+     2 byte：  0.484,  3.625,  4.406,  6.549,  1.531,  1.375
+     4 byte：  0.187,  0.984,  1.188,  1.719,  0.468,  0.547
+分割解決法
+     1 byte：  2.390,  5.265,  3.891,  6.281,  2.391,  2.234
+     2 byte：  0.484,  1.843,  1.609,  2.281,  1.547,  1.406
+     4 byte：  0.203,  0.593,  0.516,  0.750,  0.484,  0.609
+
+其他的乘法演算法將在後面再探討。
+
+
+（四）除法
+
+兩個整數大數相除，最簡單的做法便是採用傳統的移位累減法，亦即：
+
+              2 5 ------> 商
+       +-------------
+  2 9  |    7 3 0
+         -) 5 8
+        -------------
+            1 5 0
+         -) 1 4 5
+        -------------
+                5 ------> 餘數
+
+對於2n位數除以n位數的計算，共需n^2次乘法，故這個演算法的效率一樣是O(n^2)。這個演算法另一
+個效率的限制，則在於如何預測出可能的位數商值。在電腦運算上，多以位元為單位進行運算，因此
+位數商值不是0便是1，比較沒有預測的問題，然而這類的運算需要移位運算做為輔助。對於整數大數
+而言，移位也是個相當緩慢的運算，OpenSSL的source code裡已明白指出這種計算法速度很慢，故此
+處我們採用以陣列元素單位做為運算的基準，這也是OpenSSL裡的做法。由於位數商值多以除數首位
+數進行預測，故我們先導出其預測誤差模式以供判斷。
+
+假設陣列元素單位值為t（bit=2，byte=256，2 byte=65536等），而目前納入預測的被除數的前3位
+數為a、b、c，除數前2位數為d、e，其中：
+
+    0 <= a <= d
+    1 <= d <= t
+    0 <= b,c,e <= t
+
+一般預測的位數商值多以(a*t+b)/d為準，故：
+
+    (a*t+b)/d = f，餘數g，0<=g<d
+
+由於除數第3位後的數字，對於位數商值的影響很低（只有進借位造成1的誤差），故我們可取
+(a*t^2+b*t+c)/(d*t+e)為正確的位數商值：
+
+    (a*t^2+b*t+c)/(d*t+e) = i，餘數h，0<=h<d*t+e
+
+其中f<=i（可加以證明）。令i=f-x，x便是我們要的誤差值，愈小愈好。按前述的定義，可得：
+
+    (a*t+b) = f*d+g
+    (a*t^2+b*t+c) = i*(d*t+e)+h = (f-x)*(d*t+e)+h
+
+展開得：
+
+    x = (f*e-g*t+h-c)/(d*t+e)
+
+故被除數c值愈小誤差愈大，h則愈大誤差愈大，由於h<d*t+e，而c值需用來調整h這個餘數，大抵可
+推算出h-c最多只會造成1的誤差，這部份可省略不看。g值則是愈小誤差愈大，也就是整除的情況，
+因此可令g=0，於是最後的誤差來自於f*e/(d*t+e)，亦即d愈小，f,e愈大，其誤差愈大。因此最差的
+情況是d=1，f=t-1，e=t-1，可算得x約為t/2，這個誤差相當地大。例如以byte為基準單位，則
+FF00h/01FFh時，預測的位數商為FFh/01h=FFh，但實際卻是7Fh，相差80h=128，與前述估算的最大誤
+差256/2=128相同。若是以4 byte為基準單位，那麼預測後再用loop修正商值誤差，便需要執行2G次，
+耗時甚巨。為了減少此一誤差，我們可令d>=t/2，也就是最高位元為1，這點可在預測位數商值時，
+進行移位運算，由於只處理最多5個位數，因此並不會太耗時。如此最差的情況為d=t/2，f=t-1，
+e=t-1時，可算得x約為2～3，變成一個相當理想的誤差值。
+
+事實上，如何準確預測位數商值，有許多的文件述及，甚至可將誤差值限縮到1以內，但計算偏於複
+雜，實際能提升的效能很有限，故無需對此一部份過份精研。
+
+int BigNumber::div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, BIG_NUMBER_DATA_TYPE dvalue, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len)
+//說明：數值相除（絕對值，除數為一位數）
+//輸入：data1, len1 = 被除數, dvalue = 除數, >1
+//輸出：data1 = 餘數, result, ret_result_len = 商 (未標準化)
+//傳回：餘數長度 (未標準化)
+//備註：本函數採用傳統移位除法，效率為O(n^2)
+{
+    int remain_len = 0;
+    BIG_NUMBER_DATA_TYPE qvalue, hvalue, lvalue;
+    for (int i=len1-1; i>=0; --i)
+    {
+        if (remain_len == 0)
+        {
+            if ((lvalue=data1[i]) == 0) // 被除數為0 //
+            {
+                result[i] = 0;
+            }
+            if (lvalue < dvalue)
+            {
+                // 被除數小於除數，結果為0，餘數不變 //
+                result[i] = 0;
+                ++remain_len;
+            }
+            else if (dvalue == lvalue)
+            {
+                // 被除數等於除數，結果為1，餘數為0 //
+                result[i] = 1;
+            }
+            else
+            {
+                result[i] = qvalue = lvalue/dvalue;
+                if ((data1[i] = lvalue % dvalue) != 0) // 非整除, 餘數留到下回 //
+                {
+                    ++remain_len;
+                }
+            }
+            continue;
+        }
+        // 2位數除法 //
+        lvalue = data1[i];
+        hvalue = data1[i+1];
+        // qvalue = hvalue:lvalue/dvalue //
+#ifdef USE_ASM
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+        __asm
+        {
+            mov al, byte ptr [lvalue]
+            mov ah, byte ptr [hvalue]
+            div byte ptr [dvalue]
+            mov byte ptr [qvalue],al
+            mov byte ptr [lvalue],ah
+        }
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+        __asm
+        {
+            mov ax, word ptr [lvalue]
+            mov dx, word ptr [hvalue]
+            div word ptr [dvalue]
+            mov word ptr [qvalue],ax
+            mov word ptr [lvalue],dx
+        }
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+        __asm
+        {
+            mov eax, dword ptr [lvalue]
+            mov edx, dword ptr [hvalue]
+            div dword ptr [dvalue]
+            mov dword ptr [qvalue],eax
+            mov dword ptr [lvalue],edx
+        }
+#else
+    #error Not Implement
+#endif
+#else
+#if (BIG_NUMBER_DATA_TYPE_SIZE == 1) || (BIG_NUMBER_DATA_TYPE_SIZE == 2)
+        unsigned int value = ((unsigned int)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+        unsigned __int64 value = ((unsigned __int64)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue;
+#endif
+        qvalue = (BIG_NUMBER_DATA_TYPE)(value / dvalue);
+        lvalue = (BIG_NUMBER_DATA_TYPE)(value % dvalue);
+#endif
+        result[i] = qvalue;
+        if ((data1[i] = lvalue) == 0) remain_len = 0;
+    }
+    ret_result_len = len1;
+    return remain_len;
+}
+
+void BigNumber::divide_by_zero(void)
+//說明：處理除以0錯誤
+{
+    // 目前不處理 //
+}
+
+int BigNumber::div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len)
+//說明：數值相除（絕對值）
+//輸入：data1, len1 = 被除數, data2, len2 = 除數, 不與被除數佔用相同空間
+//輸出：data1 = 餘數, result, ret_result_len = 商 (未標準化)
+//傳回：餘數長度 (未標準化)
+//備註：本函數採用傳統移位除法，效率為O(n^2)
+{
+    if (len2 <= 0) // 不可除以0 //
+    {
+        divide_by_zero();
+        ret_result_len = 0;
+        return 0;
+    }
+    if (len1 < len2) // 被除數較小, C=1,R=A (被除數0時同, C=0,R=0) //
+    {
+        ret_result_len = 0;
+        return len1;
+    }
+    if (len2 == 1)
+    {
+        if (data2[0] == 1) // 除數為1, C=A,R=0 //
+        {
+            memcpy(result,data1,len1*sizeof(BIG_NUMBER_DATA_TYPE));
+            ret_result_len = len1;
+            return 0;
+        }
+        else
+        {
+            return div_abs_basic(data1,len1,data2[0],result,ret_result_len);
+        }
+    }
+    // 開始移位除法, 以下除數最少2位以上 //
+    int remain_len = len2-1;
+    int compare_result, temp_len;
+    BIG_NUMBER_DATA_TYPE dvalue = data2[len2-1];
+    BIG_NUMBER_DATA_TYPE dvalue2 = data2[len2-2];
+    BIG_NUMBER_DATA_TYPE hbit = 1 << (sizeof(BIG_NUMBER_DATA_TYPE)*8-1);
+    // 將試除數轉成最高bit為1, 以減少商值猜測時之誤差 (目前誤差最多約為3) //
+    int shift_bit_no = 0;
+    while ((dvalue & hbit) == 0)
+    {
+        dvalue <<= 1;
+        if (dvalue2 & hbit) dvalue |= 1;
+        dvalue2 <<= 1;
+        ++shift_bit_no;
+    }
+    BIG_NUMBER_DATA_TYPE qvalue, hvalue, lvalue, nvalue;
+    BIG_NUMBER_DATA_TYPE temp[BIG_NUMBER_DATA_NO];
+    for (int i=len1-len2; i>=0; --i)
+    {
+        if ((remain_len++ == 0) && (data1[i] == 0)) // 被除數為0 //
+        {
+            result[i] = remain_len = 0;
+            continue;
+        }
+        if ((compare_result = compare_abs(data1+i,remain_len,data2,len2)) < 0)
+        {
+            // 被除數小於除數，結果為0，餘數不變 //
+            result[i] = 0;
+            continue;
+        }
+        if (compare_result == 0)
+        {
+            // 被除數等於除數，結果為1，餘數為0 //
+            result[i] = 1;
+            remain_len = 0;
+            continue;
+        }
+        // 猜測商可能的值 //
+        if (len2 < remain_len)
+        {
+            hvalue = data1[i+remain_len-1];
+            lvalue = data1[i+remain_len-2];
+            nvalue = data1[i+remain_len-3];
+        }
+        else
+        {
+            hvalue = 0;
+            lvalue = data1[i+remain_len-1];
+            nvalue = data1[i+remain_len-2];
+        }
+        // 進行與試除數相同移位 //
+        if (shift_bit_no != 0)
+        {
+            hvalue = (hvalue << shift_bit_no) | (lvalue >> (sizeof(BIG_NUMBER_DATA_TYPE)*8-shift_bit_no));
+            lvalue = (lvalue << shift_bit_no) | (nvalue >> (sizeof(BIG_NUMBER_DATA_TYPE)*8-shift_bit_no));
+        }
+        if (hvalue >= dvalue)
+        {
+            // 位數不同，若餘數最高位數值 >= 除數最高位數值，必為最大值 //
+            qvalue = (BIG_NUMBER_DATA_TYPE)-1;
+        }
+        else
+        {
+            // 找出可能的商 = hvalue:lvalue/dvalue //
+#ifdef USE_ASM
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+            __asm
+            {
+                mov al, byte ptr [lvalue]
+                mov ah, byte ptr [hvalue]
+                div byte ptr [dvalue]
+                mov byte ptr [qvalue],al
+            }
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+            __asm
+            {
+                mov ax, word ptr [lvalue]
+                mov dx, word ptr [hvalue]
+                div word ptr [dvalue]
+                mov word ptr [qvalue],ax
+            }
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+            __asm
+            {
+                mov eax, dword ptr [lvalue]
+                mov edx, dword ptr [hvalue]
+                div dword ptr [dvalue]
+                mov dword ptr [qvalue],eax
+            }
+#else
+    #error Not Implement
+#endif
+#else
+#if (BIG_NUMBER_DATA_TYPE_SIZE == 1) || (BIG_NUMBER_DATA_TYPE_SIZE == 2)
+            qvalue = (((unsigned int)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue) / dvalue;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+            qvalue = (BIG_NUMBER_DATA_TYPE)((((unsigned __int64)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue) / dvalue);
+#else
+    #error Not Implement
+#endif
+#endif
+        }
+        temp_len = mul_abs_basic(data2,len2,&qvalue,1,temp);
+        temp_len = ::standardize(temp,temp_len);
+        // 檢查實際結果修正商 (誤差愈少, 速度愈快) //
+        while ((compare_result = compare_abs(data1+i,remain_len,temp,temp_len)) < 0)
+        {
+            // 結果過大，商減1 //
+            sub_abs(temp,temp_len,data2,len2);
+            temp_len = ::standardize(temp,temp_len);
+            --qvalue;
+        }
+        if (compare_result == 0)
+        {
+            // 相等，餘數為0 //
+            result[i] = qvalue;
+            remain_len = 0;
+            continue;
+        }
+        result[i] = qvalue;
+        sub_abs(data1+i,remain_len,temp,temp_len);
+        remain_len = ::standardize(data1+i,remain_len);
+    }
+    ret_result_len = len1-len2+1;
+    return remain_len;
+}
+
+void BigNumber::div_abs_basic(const BigNumber& bn)
+//說明：絕對值相除
+//輸入：bn = 除數, 不能與被除數佔用相同空間
+//備註：採用傳統移位除法
+{
+    BIG_NUMBER_DATA_TYPE result[BIG_NUMBER_DATA_NO];
+    int result_len;
+    div_abs_basic(m_Data,m_Len,bn.GetData(),bn.GetLen(),result,result_len);
+    set_internal_data(result,result_len,IsNeg());
+    standardize();
+}
+
+void BigNumber::mod_abs_basic(const BigNumber& bn)
+//說明：絕對值mod運算
+//輸入：bn = 除數, 不能與被除數佔用相同空間
+//備註：採用傳統移位除法
+{
+    BIG_NUMBER_DATA_TYPE result[BIG_NUMBER_DATA_NO];
+    int result_len;
+    m_Len = div_abs_basic(m_Data,m_Len,bn.GetData(),bn.GetLen(),result,result_len);
+    standardize();
+    if (IsNeg()) // 由負轉正 //
+    {
+        if (bn.IsNeg()) *this -= bn;
+        else *this += bn;
+    }
+}
+
+void BigNumber::div_abs(const BigNumber& bn)
+//說明：絕對值相除
+//輸入：bn = 除數, 不能與被除數佔用相同空間
+{
+    div_abs_basic(bn);
+}
+
+void BigNumber::mod_abs(const BigNumber& bn)
+//說明：絕對值mod運算
+//輸入：bn = 除數, 不能與被除數佔用相同空間
+{
+    mod_abs_basic(bn);
+}
+
+void BigNumber::Div(const BigNumber& bn)
+//說明：除以一個數值
+//輸入：bn = 除數
+{
+    if (bn.Is0()) // 除數不可為0 //
+    {
+        divide_by_zero();
+        return;
+    }
+    if (Is0()) return;  // 被除數為0必為0 //
+    if (bn.IsAbs1()) // 除數絕對值為1 //
+    {
+        if (bn.IsNeg()) Neg(); // 除以1不必除, 除以-1等於自我變負 //
+        return;
+    }
+    if (this == &bn) // 除數與被除數佔用相同空間，結果必為1 //
+    {
+        m_Data[0] = 1;
+        m_Len = 1;
+        m_Neg = false;
+        return;
+    }
+    m_Neg ^= bn.IsNeg(); // 決定正負 //
+    div_abs(bn);
+}
+
+void BigNumber::Mod(const BigNumber& bn)
+//說明：取得餘數
+//輸入：bn = 除數
+//備註：餘數一律為正值
+{
+    if (bn.Is0()) // 除數不可為0 //
+    {
+        divide_by_zero();
+        return;
+    }
+    if (Is0()) return;  // 被除數為0必為0 //
+    if ((bn.IsAbs1()) || // 除數絕對值為1，餘數必0 //
+        (this == &bn)) // 除數與被除數佔用相同空間，餘數必0 //
+    {
+        Set0();
+        return;
+    }
+    mod_abs(bn);
+}
+
+BigNumber& BigNumber::operator/=(const BigNumber& bn)
+{
+    Div(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator%=(const BigNumber& bn)
+{
+    Mod(bn);
+    return *this;
+}
+
+注意在>> (sizeof(BIG_NUMBER_DATA_TYPE)*8-shift_bit_no)運算前要加入shift_bit_no != 0的條
+件，主要因Intel CPU指令的移位限制。例如：
+
+    mov cl,8
+    shr al,cl
+
+或是
+
+    mov cl,16
+    shr ax,cl
+
+結果al或ax值會變成0，但是：
+
+    mov cl,32
+    shr eax,cl
+
+eax值並不是0，而是維持原值（Intel只取低5位元的值做為移位數，故32 & 0x1F變成了移位0次），
+這樣會導致前述的運算結果不正確。
+
+關於除法效率的測試，我們設計了五種測試案例：
+
+1.極大數除以極小數
+  10000!，由10000除到2
+2.RSA運算模擬
+  FFFEFD..030201h的平方除以010203..FDFEFFh（510 byte與255 byte），計算10,000次
+3.大數除以小數
+  1234567890循環1000次與9876543210循環200次的兩數字（4153 byte與831 byte），相除300次
+4.位數值多為0
+  前後byte為FFh，中間皆0的兩數字（1024 byte與512 byte），相除5,000次
+5.移位
+  FFFEFD..030201h的平方除以010000..00h（510 byte與255 byte），計算10,000次
+
+以下為測試程式：
+
+static void test_div_speed(void)
+//說明：測試除法效率性
+{
+    BigNumber bn1, bn2, bn3, bn4;
+    int count1, count2, n, i;
+    char s[1024];
+    // 測試1: 10000!除以10000到2 (需14808 bytes) //
+    n = 10000;
+    bn1 = 1;
+    bn2 = 1;
+    for (i=2; i<=n; ++i)
+    {
+        ++bn2;
+        bn1 *= bn2;
+    }
+    count1 = clock();
+    for (i=1; i<n; ++i)
+    {
+        bn1 /= bn2;
+        --bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 測試2: FFFEFD..030201h的平方除以010203..FDFEFFh，計算10,000次 //
+    for (i=1; i<=0xFF; ++i) s[i-1] = i;
+    bn2.SetNumber(s,255);
+    for (i=1; i<=0xFF; ++i) s[0xFF+1-i] = i;
+    bn3.SetNumber(s,255);
+    bn3 *= bn3;
+    n = 10000;
+    count1 = clock();
+    for (i=1; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 /= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 檢驗正確性 //
+    bn1 = bn3;
+    bn1 /= bn2;
+    bn4 = bn3;
+    bn4 %= bn2;
+    bn1 *= bn2;
+    bn1 += bn4;
+    if (bn1 != bn3) printf("error\n");
+    // 測試3: 1234567890循環1000次與9876543210循環200次的兩數字，相除300次 //
+    bn4 = 100000;
+    bn4 *= bn4;
+    bn1 = 987564321;
+    bn3 = 10;
+    bn1 *= bn3;
+    bn3 = bn1;
+    for (i=1; i<200; i++)
+    {
+        bn3 *= bn4;
+        bn3 += bn1;
+    }
+    bn2 = bn3;
+    bn3 = bn1 = 1234567890;
+    for (i=1; i<1000; i++)
+    {
+        bn3 *= bn4;
+        bn3 += bn1;
+    }
+    n = 300;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 /= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 檢驗正確性 //
+    bn1 = bn3;
+    bn1 /= bn2;
+    bn4 = bn3;
+    bn4 %= bn2;
+    bn1 *= bn2;
+    bn1 += bn4;
+    if (bn1 != bn3) printf("error\n");
+    // 測試4: 前後byte為FFh，中間皆0的兩數字（1024 byte與512 byte），相除5,000次 //
+    memset(s,0,sizeof(s));
+    s[0] = s[1023] = (char)0xFF;
+    bn3.SetNumber(s,1024);
+    s[511] = (char)0xFF;
+    bn2.SetNumber(s,512);
+    n = 5000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 /= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 檢測結果正確性 //
+    bn1 = bn3;
+    bn1 /= bn2;
+    bn4 = bn3;
+    bn4 %= bn2;
+    bn1 *= bn2;
+    bn1 += bn4;
+    if (bn1 != bn3) printf("error\n");
+    // 測試5: FFFEFD..030201h的平方除以010000..00h（510 byte與255 byte），計算10,000次 //
+    for (i=1; i<=0xFF; ++i) s[0xFF+1-i] = i;
+    bn3.SetNumber(s,255);
+    bn3 *= bn3;
+    memset(s,0,sizeof(s));
+    s[0] = 1;
+    bn2.SetNumber(s,255);
+    n = 10000;
+    count1 = clock();
+    for (i=0; i<n; ++i)
+    {
+        bn1 = bn3;
+        bn1 /= bn2;
+    }
+    count2 = clock();
+    printf("use time=%0.3fs\n",(count2-count1)/1000.0);
+    // 檢測結果正確性 //
+    bn1 = bn3;
+    bn1 /= bn2;
+    bn4 = bn3;
+    bn4 %= bn2;
+    bn1 *= bn2;
+    bn1 += bn4;
+    if (bn1 != bn3) printf("error\n");
+}
+
+以下為測試結果：
+
+無assembly
+   1 byte：  7.937, 12.234, 21.984, 33.750, 16.968
+   2 byte：  0.468,  4.641,  6.453, 10.796,  5.469
+   4 byte：  0.562,  1.109,  1.500,  1.641,  0.828
+有assembly
+   1 byte：  7.141, 12.296, 21.985, 33.922, 16.704
+   2 byte：  0.625,  4.641,  6.422, 10.797,  5.453
+   4 byte：  0.281,  1.093,  1.484,  1.609,  0.828
+
+有無使用內插組合語言，其實並沒有太大差別，除了除數為一位數的情況之外。在2 byte的情況下，
+不使用組合語言反而較快，這應該是最佳化的關係，因此在大部份的情況下，並沒有必要使用內插組
+合語言。但4 byte時就不太一樣了，不但遠慢於使用組合語言，甚至比不使用組合語言的2 byte還慢。
+經解析下列程式產生的組合語言結果：
+
+    unsigned __int64 value = ((unsigned __int64)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue;
+    qvalue = (BIG_NUMBER_DATA_TYPE)(value / dvalue);
+    lvalue = (BIG_NUMBER_DATA_TYPE)(value % dvalue);
+
+共計需呼叫__allmul、__aullrem、__aulldiv各一次來完成64位元整數的運算，裡面至少含了2個除
+法以上，速度當然比一次除法的內插組合語言來得慢。而其他的非單位數的除法測例，因迴圈數不夠
+多，加上有最佳化的抵消，因此差異看起來較不大。因此當使用4 byte做為基準單位時，單位數除數
+除法應儘量採用組合語言來加速。
+
+其他的除法演算法將在後面再探討。
+
+
+二．動態大小陣列
+
+由於基本演算法已在前面提過，此處僅列出程式碼供參考。其中為了加速，主要有兩點需要考慮：
+
+1.一開始配置的記憶體要足夠一定大小，且若有擴展大小後，便不再縮小，以避免過多的記憶體重新
+  配置。
+2.能夠直接轉移記憶體指標的，便不使用內容拷貝法，以節省時間。
+
+#define BIG_NUMBER_DATA_TYPE_SIZE    4        // 陣列元素大小 (byte數)，可為1,2,4 //
+
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    typedef unsigned char BIG_NUMBER_DATA_TYPE;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    typedef unsigned short BIG_NUMBER_DATA_TYPE;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    typedef unsigned long BIG_NUMBER_DATA_TYPE;
+#elif
+    #error Unknown BIG_NUMBER_DATA_TYPE_SIZE
+#endif
+
+class BigNumber        // 整數大數運算物件 //
+{
+private:
+    BIG_NUMBER_DATA_TYPE* m_Data;    // 數目使用空間 //
+    int m_Max_Len;                   // 數目使用空間最大資料數 //
+    int m_Len;                       // 數目佔用的資料數 //
+    bool m_Neg;                      // 是否為負數 //
+private:
+    bool divide_by_zero(void);
+    bool out_of_memory(void);
+    bool extend_max_len(int len, bool copy);
+    void set_data(BIG_NUMBER_DATA_TYPE* data, int max_len);
+    void standardize(void);
+    int  compare_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2) const;
+    int  compare_abs(const BigNumber& bn) const;
+    int  compare(const BigNumber& bn) const;
+    bool add_abs(BIG_NUMBER_DATA_TYPE* data, int len, BIG_NUMBER_DATA_TYPE value);
+    int  add_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3);
+    void sub_abs(BIG_NUMBER_DATA_TYPE* data, int len, BIG_NUMBER_DATA_TYPE value);
+    void sub_abs(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2);
+    int  mul_abs_basic(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3);
+    bool mul_abs_basic(const BigNumber& bn);
+    bool mul_abs_divide(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3, int &len3);
+    bool mul_abs_divide(const BigNumber& bn);
+    int  div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, BIG_NUMBER_DATA_TYPE dvalue, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len);
+    bool div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, int &ret_len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len);
+    bool div_abs_basic(const BigNumber& bn);
+    bool mod_abs_basic(const BigNumber& bn);
+    bool add_abs(const BigNumber& bn);
+    bool sub_abs(const BigNumber& bn1, const BigNumber& bn2);
+    void sub_abs(const BigNumber& bn);
+    bool mul_abs(const BigNumber& bn);
+    bool div_abs(const BigNumber& bn);
+    bool mod_abs(const BigNumber& bn);
+public:
+    inline BigNumber(void) { m_Data = NULL; m_Max_Len = 0; Set0(); }
+    inline ~BigNumber() { set_data(NULL,0); Set0(); }
+    inline const BIG_NUMBER_DATA_TYPE* GetData(void) const { return m_Data; }
+    inline int GetLen(void) const { return m_Len; }
+    inline int GetMaxLen(void) const { return m_Max_Len; }
+    inline bool IsNeg(void) const { return m_Neg; } // 是否為負數 //
+    inline Abs(void) { m_Neg = false; } // 取絕對值 //
+    inline void Set0(void) { m_Len = 0; m_Neg = false; } // 將值設為0 //
+    inline bool Is0(void) const { return m_Len == 0; } // 是否為0 //
+    inline bool IsAbs1(void) const { return (m_Len == 1) && (m_Data[0] == 1); } // 絕對值是否為1 //
+    inline bool Is1(void) const { return IsAbs1() && (!IsNeg()); } // 是否為1 //
+    inline bool IsNeg1(void) const { return IsAbs1() && IsNeg(); } // 是否為-1 //
+    inline void Neg(void) { if (!Is0()) m_Neg = !m_Neg; } // 數值正負轉換 //
+    bool SetNumber(const BigNumber& bn);
+    bool SetNumber(const int number);
+    bool SetNumber(const char* data, int len);
+    bool Inc(void);
+    bool Dec(void);
+    bool Add(const BigNumber& bn);
+    bool Sub(const BigNumber& bn);
+    bool Mul(const BigNumber& bn);
+    bool Div(const BigNumber& bn);
+    bool Mod(const BigNumber& bn);
+    // operator //
+    bool operator==(const BigNumber& bn) const;
+    bool operator!=(const BigNumber& bn) const;
+    bool operator>=(const BigNumber& bn) const;
+    bool operator<=(const BigNumber& bn) const;
+    bool operator>(const BigNumber& bn) const;
+    bool operator<(const BigNumber& bn) const;
+    BigNumber& operator=(const BigNumber& bn);
+    BigNumber& operator=(const int number);
+    BigNumber& operator++(void);
+    BigNumber& operator--(void);
+    BigNumber& operator+=(const BigNumber& bn);
+    BigNumber& operator-=(const BigNumber& bn);
+    BigNumber& operator*=(const BigNumber& bn);
+    BigNumber& operator/=(const BigNumber& bn);
+    BigNumber& operator%=(const BigNumber& bn);
+};
+
+#if (BIG_NUMBER_DATA_TYPE_SIZE == 4)
+    #define USE_ASM               // 是否使用組合語言, 只適用於Intel CPU, VC++ //
+#endif
+
+#define MUL_DIVIDE_BOUND    12    // 分割解決法轉送傳統乘法的數目限制 //
+
+bool BigNumber::divide_by_zero(void)
+//說明：處理除以0錯誤
+//傳回：false
+{
+    // 目前不處理 //
+    return false;
+}
+
+bool BigNumber::out_of_memory(void)
+//說明：處理記憶體不足錯誤
+//傳回：false
+{
+    // 目前不處理 //
+    return false;
+}
+
+void BigNumber::set_data(BIG_NUMBER_DATA_TYPE* data, int max_len)
+//說明：設定數目空間記憶體
+//輸入：data, max_len = 數目空間記憶體與大小
+{
+    delete[] m_Data;
+    m_Data = data;
+    m_Max_Len = max_len;
+}
+
+inline static BIG_NUMBER_DATA_TYPE* alloc_data(int len)
+//說明：配置數目空間記憶體
+//輸入：len = 需要的空間
+//傳回：配置的記憶體，NULL表記憶體不足
+{
+    BIG_NUMBER_DATA_TYPE* data;
+    try
+    {
+        data = new BIG_NUMBER_DATA_TYPE[len];
+    }
+    catch(...)
+    {
+        data = NULL;
+    }
+    return data;
+}
+
+inline static BIG_NUMBER_DATA_TYPE* adjust_and_alloc_data(int len, int &max_len)
+//說明：配置足以容納指定陣列數目的資料
+//輸入：len = 指定陣列數目
+//輸出：max_len = 陣列空間可容納數目
+//傳回：配置的記憶體，NULL表記憶體不足
+{
+    if (len & 0xC0000000) return false; // 超出系統最大極限 //
+    int need_no = 1024; // 從1024 byte開始起跳，每次倍增 //
+    while (len > need_no) need_no <<= 1;
+    max_len = need_no;
+    return alloc_data(need_no);
+}
+
+bool BigNumber::extend_max_len(int len, bool copy)
+//說明：將數目空間擴展到能容納指定陣列數目的資料
+//輸入：len = 指定陣列數目, copy = 是否複製現有資料
+//傳回：記憶體不足傳回false
+{
+    if (len <= m_Max_Len) return true;
+    BIG_NUMBER_DATA_TYPE* data;
+    int max_len;
+    if ((data = adjust_and_alloc_data(len,max_len)) == NULL) return out_of_memory();
+    if (copy) memcpy(data,m_Data,m_Len*sizeof(BIG_NUMBER_DATA_TYPE));
+    set_data(data,max_len);
+    return true;
+}
+
+inline static int standardize(const BIG_NUMBER_DATA_TYPE* data, int len)
+//說明：將大數資料標準化
+//輸入：data, len = 大數資料與長度
+//傳回：大數資料去除前導0後的實際長度
+{
+    int index = len-1;
+    while ((index >= 0) && (data[index] == 0)) --index;
+    return index+1;
+}
+
+void BigNumber::standardize(void)
+//說明：將資料標準化
+//備註：標準格式為去除所有前導0
+{
+    if ((m_Len = ::standardize(m_Data,m_Len)) == 0) m_Neg = false; // 0不為負數 //
+}
+
+int BigNumber::compare_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2) const
+//說明：比對數目絕對值
+//輸入：data1, len1, data2, len2 = 欲比對的兩數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    int data;
+    if ((data = len1-len2) != 0) return data;
+    for (int i=len1-1; i>=0; --i)
+    {
+        register BIG_NUMBER_DATA_TYPE value1 = data1[i];
+        register BIG_NUMBER_DATA_TYPE value2 = data2[i];
+        if (value1 < value2) return -1;
+        if (value1 > value2) return 1;
+    }
+    return 0;
+}
+
+int BigNumber::compare_abs(const BigNumber& bn) const
+//說明：比對數目絕對值
+//輸入：bn = 來源數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    return compare_abs(m_Data,m_Len,bn.GetData(),bn.GetLen());
+}
+
+int BigNumber::compare(const BigNumber& bn) const
+//說明：比對數目
+//輸入：bn = 來源數目
+//傳回：依比對結果傳回負值,0,正值表示<,=,>
+{
+    if (IsNeg())
+    {
+        if (bn.IsNeg()) return -compare_abs(bn); // 皆負數，絕對值愈大，實際值愈小 //
+        else return -1; // A負B正 //
+    }
+    else
+    {
+        if (bn.IsNeg()) return 1; // A正B負 //
+        else return compare_abs(bn); // 皆正數 //
+    }
+}
+
+bool BigNumber::SetNumber(const BigNumber &bn)
+//說明：設定數目
+//輸入：bn = 數目
+//傳回：記憶體不足傳回false
+{
+    if (!extend_max_len(bn.GetLen(),false)) return false;
+    m_Neg = bn.IsNeg();
+    if ((m_Len = bn.GetLen()) != 0) memcpy(m_Data,bn.GetData(),m_Len*sizeof(BIG_NUMBER_DATA_TYPE));
+    return true;
+}
+
+bool BigNumber::SetNumber(int number)
+//說明：設定數目
+//輸入：number = 數目
+//傳回：記憶體不足傳回false
+{
+    if (!extend_max_len(4/sizeof(BIG_NUMBER_DATA_TYPE),false)) return false;
+    m_Neg = false;
+    if (number < 0)
+    {
+        m_Neg = true;
+        number = -number;
+    }
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    m_Data[3] = number >> 24;
+    m_Data[2] = number >> 16;
+    m_Data[1] = number >> 8;
+    m_Data[0] = number;
+    m_Len = 4;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    m_Data[1] = number >> 16;
+    m_Data[0] = number;
+    m_Len = 2;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    m_Data[0] = number;
+    m_Len = 1;
+#else
+    #error Not Implement
+#endif
+    standardize();
+    return true;
+}
+
+bool BigNumber::SetNumber(const char* data, int len)
+//說明：設定數目
+//輸入：data, len = 數目資料與大小（正數），高位元組在前
+//傳回：記憶體不足傳回false
+{
+    if ((data == NULL) || (len == 0))
+    {
+        Set0();
+        return true;
+    }
+    int item_no = (len+sizeof(BIG_NUMBER_DATA_TYPE)-1)/sizeof(BIG_NUMBER_DATA_TYPE);
+    if (!extend_max_len(item_no,false)) return false;
+    Abs();
+    m_Len = item_no;
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+    for (int i=len-1; i>=0; --i) m_Data[i] = data[len-i-1];
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+    if (len & 1)
+    {
+        m_Data[(len--)/2] = (unsigned char)data[0];
+        ++data;
+    }
+    for (int i=0; i<len; i+=2) m_Data[(len-i)/2-1] = ((unsigned char)data[i] << 8) | (unsigned char)data[i+1];
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+    switch(len&3)
+    {
+    case 1:
+        m_Data[(len--)/4] = (unsigned char)data[0];
+        ++data;
+        break;
+    case 2:
+        m_Data[len/4] = ((unsigned char)data[0]<<8) | (unsigned char)data[1];
+        data += 2;
+        len -= 2;
+        break;
+    case 3:
+        m_Data[len/4] = ((unsigned char)data[0]<<16) | ((unsigned char)data[1]<<8) | (unsigned char)data[2];
+        data += 3;
+        len -= 3;
+        break;
+    }
+    for (int i=0; i<len; i+=4) m_Data[(len-i)/4-1] = ((unsigned char)data[i] << 24) | ((unsigned char)data[i+1] << 16) | ((unsigned char)data[i+2] << 8) | (unsigned char)data[i+3];
+#else
+    #error Not Implement
+#endif
+    standardize();
+    return true;
+}
+
+bool BigNumber::Inc(void)
+//說明：將數值加1
+//傳回：記憶體不足傳回false
+{
+    if (IsNeg())
+    {
+        sub_abs(m_Data,m_Len,1);
+    }
+    else
+    {
+        if (!extend_max_len(m_Len+1,true)) return false; // 確認有進位空間 //
+        if (add_abs(m_Data,m_Len,1)) ++m_Len;
+    }
+    standardize();
+    return true;
+}
+
+bool BigNumber::Dec(void)
+//說明：將數值減1
+//傳回：記憶體不足傳回false
+{
+    if (Is0())
+    {
+        if (!extend_max_len(1,false)) return false;
+        m_Len = m_Data[1] = 1;
+        m_Neg = true;
+    }
+    else if (IsNeg())
+    {
+        if (!extend_max_len(m_Len+1,true)) return false; // 確認有進位空間 //
+        if (add_abs(m_Data,m_Len,1)) ++m_Len;
+    }
+    else
+    {
+        sub_abs(m_Data,m_Len,1);
+    }
+    standardize();
+    return true;
+}
+
+bool BigNumber::Add(const BigNumber& bn)
+//說明：加入一個數值
+//輸入：bn = 欲加入的數值
+//傳回：記憶體不足傳回false
+{
+    if (bn.Is0()) return true; // 0不用加 //
+    if (Is0()) return SetNumber(bn); // 本身為0，直接複製 //
+    if (IsNeg())
+    {
+        if (bn.IsNeg()) // 兩數皆負，直接相加 //
+        {
+            return add_abs(bn);
+        }
+        else
+        {
+            // A負B正 //
+            int result = compare_abs(bn);
+            if (result < 0) // A+B變正, 計算|B|-|A| //
+            {
+                if (!sub_abs(bn,*this)) return false;
+                Abs();
+            }
+            else if (result > 0) // A+B仍負, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B, 相加變0 //
+            {
+                Set0();
+            }
+        }
+    }
+    else
+    {
+        if (bn.IsNeg())
+        {
+            // A正B負 //
+            int result = compare_abs(bn);
+            if (result < 0) // A+B變負, 計算|B|-|A| //
+            {
+                if (!sub_abs(bn,*this)) return false;
+                Neg();
+            }
+            else if (result > 0) // A+B仍正, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B, 相加變0 //
+            {
+                Set0();
+            }
+        }
+        else // 兩數皆正，直接相加 //
+        {
+            return add_abs(bn);
+        }
+    }
+    return true;
+}
+
+bool BigNumber::Sub(const BigNumber& bn)
+//說明：減去一個數值
+//輸入：bn = 欲減去的數值
+//傳回：記憶體不足傳回false
+{
+    if (bn.Is0()) return true; // 0不用減 //
+    if (Is0()) // 本身為0，複製後變負 //
+    {
+        if (!SetNumber(bn)) return false;
+        Neg();
+        return true;
+    }
+    if (IsNeg())
+    {
+        if (bn.IsNeg())
+        {
+            // 兩數皆負 //
+            int result = compare_abs(bn);
+            if (result < 0) // A-B變正, 計算|B|-|A| //
+            {
+                if (!sub_abs(bn,*this)) return false;
+                Abs();
+            }
+            else if (result >= 0) // A-B仍負, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B // 相減為0 //
+            {
+                Set0();
+            }
+        }
+        else
+        {
+            // A負B正，結果仍為負，計算|A|+|B| //
+            return add_abs(bn);
+        }
+    }
+    else
+    {
+        if (bn.IsNeg())
+        {
+            // A正B負，結果仍為正，計算|A|+|B| //
+            return add_abs(bn);
+        }
+        else // 兩數皆正 //
+        {
+            int result = compare_abs(bn);
+            if (result < 0) // A-B變負, 計算|B|-|A| //
+            {
+                if (!sub_abs(bn,*this)) return false;
+                Neg();
+            }
+            else if (result >= 0) // A-B仍正, 計算|A|-|B| //
+            {
+                sub_abs(bn);
+            }
+            else // A=B // 相減為0 //
+            {
+                Set0();
+            }
+        }
+    }
+    return true;
+}
+
+bool BigNumber::Mul(const BigNumber& bn)
+//說明：乘上一個數值
+//輸入：bn = 乘數
+//傳回：記憶體不足傳回false
+{
+    if (Is0() || bn.Is0()) // 乘以0必為0 //
+    {
+        Set0();
+        return true;
+    }
+    if (bn.IsAbs1()) // 乘數絕對值為1 //
+    {
+        if (bn.IsNeg()) Neg(); // 乘以1不必乘, 乘以-1等於自我變負 //
+        return true;
+    }
+    if (IsAbs1()) // 被乘數絕對值為1 //
+    {
+        bool neg = IsNeg();
+        if (!SetNumber(bn)) return false; // 直接複製乘數內容 //
+        if (neg) Neg(); // 本身為-1，需再變負 //
+        return true;
+    }
+    m_Neg ^= bn.IsNeg(); // 決定正負 //
+    return mul_abs(bn);
+}
+
+bool BigNumber::Div(const BigNumber& bn)
+//說明：除以一個數值
+//輸入：bn = 除數
+//傳回：記憶體不足傳回false
+{
+    if (bn.Is0()) return divide_by_zero(); // 除數不可為0 //
+    if (Is0()) return true;  // 被除數為0必為0 //
+    if (bn.IsAbs1()) // 除數絕對值為1 //
+    {
+        if (bn.IsNeg()) Neg(); // 除以1不必除, 除以-1等於自我變負 //
+        return true;
+    }
+    if (this == &bn) // 除數與被除數佔用相同空間，結果必為1 //
+    {
+        // 非0，至少有1個空間，故無需再用extend_max_len檢查 //
+        m_Data[0] = 1;
+        m_Len = 1;
+        m_Neg = false;
+        return true;
+    }
+    m_Neg ^= bn.IsNeg(); // 決定正負 //
+    return div_abs(bn);
+}
+
+bool BigNumber::Mod(const BigNumber& bn)
+//說明：取得餘數
+//輸入：bn = 除數
+//傳回：記憶體不足傳回false
+//備註：餘數一律為正值
+{
+    if (bn.Is0()) return divide_by_zero(); // 除數不可為0 //
+    if (Is0()) return true;  // 被除數為0必為0 //
+    if ((bn.IsAbs1()) || // 除數絕對值為1，餘數必0 //
+        (this == &bn)) // 除數與被除數佔用相同空間，餘數必0 //
+    {
+        Set0();
+        return true;
+    }
+    return mod_abs(bn);
+}
+
+inline bool BigNumber::add_abs(BIG_NUMBER_DATA_TYPE* data, int len, BIG_NUMBER_DATA_TYPE value)
+//說明：加入一位數字（絕對值）
+//輸入：data, len = 數目資料, value = 欲新增的值（正數）
+//輸出：data = 相加後的資料
+//傳回：是否進位
+//限制：data必須有進位空間
+{
+    if (len <= 0) // 原值沒資料，直接置入 //
+    {
+        data[0] = value;
+        return true;
+    }
+    if (value == 0) return false;
+    register BIG_NUMBER_DATA_TYPE value2 = data[0];
+    if ((BIG_NUMBER_DATA_TYPE)(data[0] += value) >= max(value,value2)) return false; // 沒進位 //
+    for (int i=1; i<len; ++i) // 將進位加入前位數 //
+    {
+        if (++data[i] != 0) return false;
+    }
+    data[len] = 1;
+    return true;
+}
+
+int BigNumber::add_abs(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相加（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相加的數值
+//輸出：data3 = 相加後的數值
+//傳回：相加後的數值長度 (未標準化)
+//限制：data3必須有足夠空間
+{
+    if (len1 <= 0)
+    {
+        // 複製data2 //
+        if (data3 != data2) memcpy(data3,data2,len2*sizeof(BIG_NUMBER_DATA_TYPE));
+        return len2;
+    }
+    if (len2 <= 0)
+    {
+        // 複製data1 //
+        if (data3 != data1) memcpy(data3,data1,len1*sizeof(BIG_NUMBER_DATA_TYPE));
+        return len1;
+    }
+    bool carry = false;
+    bool new_carry;
+    BIG_NUMBER_DATA_TYPE value1, value2;
+    for (int i=0; i<len1; ++i)
+    {
+        if (i >= len2)
+        {
+            if (!carry)
+            {
+                // 將剩下的直接複製 //
+                if (data3 != data1) memcpy(data3+i,data1+i,(len1-i)*sizeof(BIG_NUMBER_DATA_TYPE));
+                return len1;
+            }
+            value2 = 0;
+        }
+        else
+        {
+            value2 = data2[i];
+        }
+        value1 = data1[i];
+        new_carry = false;
+        if ((BIG_NUMBER_DATA_TYPE)(data3[i] = value1+value2) < max(value1,value2)) new_carry = true; // 有進位 //
+        if (carry)
+        {
+            if (++data3[i] == 0) new_carry = true;
+        }
+        carry = new_carry;
+    }
+    // 處理剩下的data2 //
+    if (i < len2)
+    {
+        for (; i<len2; ++i)
+        {
+            if (carry)
+            {
+                carry = false;
+                if ((data3[i] = data2[i]+1) == 0) carry = true;
+            }
+            else
+            {
+                // 將剩下的直接複製 //
+                if (data3 != data2) memcpy(data3+i,data2+i,(len2-i)*sizeof(BIG_NUMBER_DATA_TYPE));
+                return len2;
+            }
+        }
+        len1 = len2;
+    }
+    if (!carry) return len1;
+    // 處理最後的carry //
+    data3[len1] = 1;
+    return len1+1;
+}
+
+void BigNumber::sub_abs(BIG_NUMBER_DATA_TYPE* data, int len, BIG_NUMBER_DATA_TYPE value)
+//說明：減去一位數字（絕對值）
+//輸入：data, len = 數目資料與大小, value = 欲減去的值（正數）
+//輸出：data = 相減後的資料 (未標準化)
+//限制：data數值必須 >= value
+{
+    if (value == 0) return;
+    if (data[0] >= value)
+    {
+        data[0] -= value;
+        return;
+    }
+    // 有借位 //
+    data[0] -= value;
+    for (int i=1; i<len; ++i)
+    {
+        if (--data[i] != (BIG_NUMBER_DATA_TYPE)-1) return;
+    }
+}
+
+void BigNumber::sub_abs(BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2)
+//說明：減去一個數值（絕對值）
+//輸入：data1, len1 = 原數, data2, len2 = 被減數
+//輸出：data1 = 相減後的數值 (未標準化)
+//限制：data1數值需>=data2的數值
+{
+    if (len2 <= 0) return;
+    bool carry = false;
+    BIG_NUMBER_DATA_TYPE value1, value2;
+    for (int i=0; i<len1; ++i)
+    {
+        value1 = data1[i];
+        if (i >= len2)
+        {
+            if (!carry) return;
+            value2 = 0;
+        }
+        else
+        {
+            value2 = data2[i];
+        }
+        data1[i] -= value2;
+        if (carry)
+        {
+            carry = false;
+            if (--data1[i] == (BIG_NUMBER_DATA_TYPE)-1) carry = true;
+        }
+        if (value1 < value2) carry = true;
+    }
+}
+
+bool BigNumber::add_abs(const BigNumber& bn)
+//說明：數值相加（絕對值）
+//輸入：bn = 欲加入的數值
+//傳回：記憶體不足傳回false
+{
+    // 檢查空間是否足夠 //
+    int need_no = max(m_Len,bn.GetLen()) + 1;
+    if (need_no <= m_Max_Len)
+    {
+        m_Len = add_abs(m_Data,m_Len,bn.GetData(),bn.GetLen(),m_Data);
+    }
+    else
+    {
+        // 空間不夠，另配置一個做加出（省去原資料拷貝） //
+        int max_len;
+        BIG_NUMBER_DATA_TYPE* data;
+        if ((data = adjust_and_alloc_data(need_no,max_len)) == NULL) return out_of_memory();
+        m_Len = add_abs(m_Data,m_Len,bn.GetData(),bn.GetLen(),data);
+        set_data(data,need_no);
+    }
+    standardize();
+    return true;
+}
+
+void BigNumber::sub_abs(const BigNumber& bn)
+//說明：數值相減（絕對值）
+//輸入：bn = 欲減去的數值
+//限制：目前的數值需>=bn的數值
+{
+    sub_abs(m_Data,m_Len,bn.GetData(),bn.GetLen());
+    standardize();
+}
+
+bool BigNumber::sub_abs(const BigNumber& bn1, const BigNumber& bn2)
+//說明：將目前值設為相減的數值（絕對值）
+//輸入：bn1,bn2 = 欲相減的數值，目前的值=bn1-bn2
+//傳回：記憶體不足傳回false
+//限制：bn1需>=bn2
+{
+    BIG_NUMBER_DATA_TYPE* data;
+    if ((data = alloc_data(bn1.GetMaxLen())) == NULL) return out_of_memory();
+    memcpy(data,bn1.GetData(),bn1.GetLen()*sizeof(BIG_NUMBER_DATA_TYPE));
+    sub_abs(data,bn1.GetLen(),bn2.GetData(),bn2.GetLen());
+    m_Len = bn1.GetLen();
+    set_data(data,bn1.GetMaxLen());
+    standardize();
+    return true;
+}
+
+int BigNumber::mul_abs_basic(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3 = 相乘後的數值
+//傳回：相乘後的數值長度 (未標準化)
+//限制：data3必須有足夠空間
+//備註：本函數採用傳統的移位累加法（乘後直接加入），效率為O(n^2)
+{
+    int result_len = 0;
+    unsigned int value1;
+    unsigned int value2;
+    BIG_NUMBER_DATA_TYPE low_data, high_data;
+    for (int i=0; i<len2; ++i)
+    {
+        if ((value1 = data2[i]) == 0)
+        {
+            while (result_len <= i) data3[result_len++] = 0;
+            continue;
+        }
+        for (int j=0; j<len1; ++j)
+        {
+            int bound = i+j;
+            if ((value2 = data1[j]) == 0)
+            {
+                while (result_len <= bound) data3[result_len++] = 0;
+                continue;
+            }
+#if BIG_NUMBER_DATA_TYPE_SIZE == 1
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>8);
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 2
+            unsigned int value = value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>16);
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+            unsigned __int64 value = (unsigned __int64)value1*value2;
+            low_data = (BIG_NUMBER_DATA_TYPE)value;
+            high_data = (BIG_NUMBER_DATA_TYPE)(value>>32);
+#else
+    #error Not Implement
+#endif
+            if (add_abs(data3+bound,result_len-bound,low_data)) ++result_len;
+            if (high_data != 0) 
+            {
+                ++bound;
+                if (add_abs(data3+bound,result_len-bound,high_data)) ++result_len;
+            }
+        }
+    }
+    return result_len;
+}
+
+bool BigNumber::mul_abs_basic(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+//傳回：記憶體不足傳回false
+//備註：本函數採用傳統移位累加法
+{
+    BIG_NUMBER_DATA_TYPE* result;
+    int max_len;
+    int need_no = m_Len + bn.GetLen();
+    if ((result = adjust_and_alloc_data(need_no,max_len)) == NULL) return out_of_memory();
+    m_Len = mul_abs_basic(m_Data,m_Len,bn.GetData(),bn.GetLen(),result);
+    set_data(result,max_len);
+    standardize();
+    return true;
+}
+
+bool BigNumber::mul_abs_divide(const BIG_NUMBER_DATA_TYPE* data1, int len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* data3, int &len3)
+//說明：數值相乘（絕對值）
+//輸入：data1, len1, data2, len2 = 欲相乘的數值
+//輸出：data3, len3 = 相乘後的數值 (未標準化)
+//傳回：記憶體不足傳回false
+//限制：data3必須有足夠空間
+//備註：本函數採用分割解決法（最大分割），亦即x*y = (a*2^n+b)(c*2^n+d)，則
+//          u = (a+b)*(c+d)
+//          v = a*c
+//          w = b*d
+//          z = v*2^2n + (u-v-w)*2^n + w
+//      效率為O(n^log3)=O(n^1.59)
+{
+    len3 = 0;
+    if ((len1 <= MUL_DIVIDE_BOUND) || (len2 <= MUL_DIVIDE_BOUND))
+    {
+        if ((len1 == 0) || (len2 == 0)) return true;
+        len3 = mul_abs_basic(data1,len1,data2,len2,data3);
+        return true;
+    }
+    int len = max(len1,len2);
+    // 配置暫存空間 //
+    BIG_NUMBER_DATA_TYPE *udata, *vdata;
+    int need_no = len*2;
+    if ((udata = alloc_data(need_no)) == NULL) return out_of_memory();
+    if ((vdata = alloc_data(need_no)) == NULL) 
+    {
+        delete[] udata;
+        return out_of_memory();
+    }
+    // 決定切分後各部份的長度 //
+    len /= 2;
+    const BIG_NUMBER_DATA_TYPE *v, *w;
+    int alen, blen, clen, dlen, ulen, vlen, wlen, rlen3;
+    if (len < len1)
+    {
+        alen = len1-len;
+        blen = ::standardize(data1,len);
+    }
+    else 
+    {
+        alen = 0;
+        blen = len1;
+    }
+    if (len < len2) 
+    {
+        clen = len2-len;
+        dlen = ::standardize(data2,len);
+    }
+    else 
+    {
+        clen = 0;
+        dlen = len2;
+    }
+    // 算出u //
+    // a+b //
+    if (alen == 0) // a=0, 直接使用b //
+    {
+        w = data1;
+        wlen = blen;
+    }
+    else if (blen == 0) // b=0, 直接使用a //
+    {
+        w = data1+len;
+        wlen = alen;
+    }
+    else // 以data3為空間, 計算w=a+b //
+    {
+        wlen = add_abs(data1+len,len1-len,data1,blen,data3);
+        w = data3;
+    }
+    // c+d //
+    if (clen == 0) // c=0, 直接使用d //
+    {
+        v = data2;
+        vlen = dlen;
+    }
+    else if (dlen == 0) // d=0, 直接使用c //
+    {
+        v = data2+len;
+        vlen = clen;
+    }
+    else // 以vdata為空間, 計算v=c+d //
+    {
+        vlen = add_abs(data2+len,len2-len,data2,dlen,vdata);
+        v = vdata;
+    }
+    if (!mul_abs_divide(w,wlen,v,vlen,udata,ulen)) // 使用udata空間, u=w*v=(a+b)*(c+d) //
+    {
+        delete[] vdata;
+        delete[] udata;
+        return false;
+    }
+    // 算出v //
+    if ((alen == 0) || (clen == 0)) // a或c=0, v=a*c=0 //
+    {
+        vlen = 0;
+    }
+    else 
+    {
+        if (!mul_abs_divide(data1+len,alen,data2+len,clen,vdata,vlen)) // 使用vdata空間, v=a*c //
+        {
+            delete[] vdata;
+            delete[] udata;
+            return false;
+        }
+    }
+    // 算出w //
+    if ((blen == 0) || (dlen == 0)) // b或d=0, w=b*d=0 //
+    {
+        rlen3 = 0;
+    }
+    else
+    {
+        if (!mul_abs_divide(data1,blen,data2,dlen,data3,rlen3)) // 使用data3空間, data3=b*d //
+        {
+            delete[] vdata;
+            delete[] udata;
+            return false;
+        }
+    }
+    // 計算u-v-w //
+    sub_abs(udata,ulen,vdata,vlen); // u-=v //
+    sub_abs(udata,ulen,data3,rlen3); // u-=w //
+    ulen = ::standardize(udata,ulen);
+    // 進行移位相加 //
+    while (rlen3 < len) data3[rlen3++] = 0;
+    rlen3 = add_abs(data3+len,rlen3-len,udata,ulen,data3+len) + len;
+    if (vlen != 0)
+    {
+        len *= 2;
+        while (rlen3 < len) data3[rlen3++] = 0;
+        rlen3 = add_abs(data3+len,rlen3-len,vdata,vlen,data3+len) + len;
+    }
+    delete[] vdata;
+    delete[] udata;
+    len3 = rlen3;
+    return true;
+}
+
+bool BigNumber::mul_abs_divide(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+//傳回：記憶體不足傳回false
+//備註：本函數採用分割解決法
+{
+    BIG_NUMBER_DATA_TYPE* result;
+    int max_len;
+    int need_no = m_Len + bn.GetLen();
+    if ((result = adjust_and_alloc_data(need_no,max_len)) == NULL) return out_of_memory();
+    if (!mul_abs_divide(m_Data,m_Len,bn.GetData(),bn.GetLen(),result,m_Len))
+    {
+        delete[] result;
+        return false;
+    }
+    set_data(result,max_len);
+    standardize();
+    return true;
+}
+
+bool BigNumber::mul_abs(const BigNumber& bn)
+//說明：數值相乘（絕對值）
+//輸入：bn = 乘數
+//傳回：記憶體不足傳回false
+{
+    bool call_divide = true;
+    if ((m_Len <= MUL_DIVIDE_BOUND) || (bn.GetLen() <= MUL_DIVIDE_BOUND)) 
+    {
+        call_divide = false;
+    }
+    else
+    {
+        // 偵測非0值是否有超過MUL_DIVIDE_BOUND //
+        const BIG_NUMBER_DATA_TYPE* data = m_Data;
+        int nonzero_count = 0;
+        for (int i=m_Len-1; i>=0; i--)
+        {
+            if (data[i] == 0) continue;
+            if (++nonzero_count > MUL_DIVIDE_BOUND) break;
+        }
+        if (i < 0)
+        {
+            call_divide = false;
+        }
+        else
+        {
+            data = bn.GetData();
+            nonzero_count = 0;
+            for (int i=bn.GetLen()-1; i>=0; i--)
+            {
+                if (data[i] == 0) continue;
+                if (++nonzero_count > MUL_DIVIDE_BOUND) break;
+            }
+            if (i < 0) call_divide = false;
+        }
+    }
+    if (call_divide) return mul_abs_divide(bn);
+    else return mul_abs_basic(bn);
+}
+
+int BigNumber::div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, BIG_NUMBER_DATA_TYPE dvalue, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len)
+//說明：數值相除（絕對值）
+//輸入：data1, len1 = 被除數, dvalue = 除數, >1
+//輸出：data1 = 餘數, result, ret_result_len = 商 (未標準化)
+//傳回：餘數長度 (未標準化)
+//限制：result必須有足夠空間
+//備註：本函數採用傳統移位除法
+{
+    int remain_len = 0;
+    BIG_NUMBER_DATA_TYPE qvalue, hvalue, lvalue;
+    for (int i=len1-1; i>=0; --i)
+    {
+        if (remain_len == 0)
+        {
+            if ((lvalue=data1[i]) == 0) // 被除數為0 //
+            {
+                result[i] = 0;
+            }
+            if (lvalue < dvalue)
+            {
+                // 被除數小於除數，結果為0，餘數不變 //
+                result[i] = 0;
+                ++remain_len;
+            }
+            else if (dvalue == lvalue)
+            {
+                // 被除數等於除數，結果為1，餘數為0 //
+                result[i] = 1;
+            }
+            else
+            {
+                result[i] = qvalue = lvalue/dvalue;
+                if ((data1[i] = lvalue % dvalue) != 0) // 非整除, 餘數留到下回 //
+                {
+                    ++remain_len;
+                }
+            }
+            continue;
+        }
+        // 2位數除法 //
+        lvalue = data1[i];
+        hvalue = data1[i+1];
+        // qvalue = hvalue:lvalue/dvalue //
+#if (BIG_NUMBER_DATA_TYPE_SIZE == 1) || (BIG_NUMBER_DATA_TYPE_SIZE == 2)
+        unsigned int value = ((unsigned int)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue;
+        qvalue = (BIG_NUMBER_DATA_TYPE)(value / dvalue);
+        lvalue = (BIG_NUMBER_DATA_TYPE)(value % dvalue);
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+#ifdef USE_ASM
+        __asm
+        {
+            mov eax, dword ptr [lvalue]
+            mov edx, dword ptr [hvalue]
+            div dword ptr [dvalue]
+            mov dword ptr [qvalue],eax
+            mov dword ptr [lvalue],edx
+        }
+#else
+        unsigned __int64 value = ((unsigned __int64)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue;
+        qvalue = (BIG_NUMBER_DATA_TYPE)(value / dvalue);
+        lvalue = (BIG_NUMBER_DATA_TYPE)(value % dvalue);
+#endif
+#else
+    #error Not Implement
+#endif
+        result[i] = qvalue;
+        if ((data1[i] = lvalue) == 0) remain_len = 0;
+    }
+    ret_result_len = len1;
+    return remain_len;
+}
+
+bool BigNumber::div_abs_basic(BIG_NUMBER_DATA_TYPE* data1, int len1, int &ret_len1, const BIG_NUMBER_DATA_TYPE* data2, int len2, BIG_NUMBER_DATA_TYPE* result, int &ret_result_len)
+//說明：數值相除（絕對值）
+//輸入：data1, len1 = 被除數, data2, len2 = 除數, >1, 不與被除數佔用相同空間
+//輸出：data1, ret_len1 = 餘數, result, ret_result_len = 商 (未標準化)
+//傳回：記憶體不足傳回false
+//限制：result必須有足夠空間
+//備註：本函數採用傳統移位除法
+{
+    ret_len1 = len1;
+    ret_result_len = 0;
+    if (len1 < len2) return true; // 被除數較小, C=1,R=A (被除數0時同, C=0,R=0) //
+    if (len2 == 1)
+    {
+        ret_len1 = div_abs_basic(data1,len1,data2[0],result,ret_result_len);
+        return true;
+    }
+    // 開始移位除法, 以下除數最少2位以上 //
+    int remain_len = len2-1;
+    int compare_result, temp_len;
+    BIG_NUMBER_DATA_TYPE dvalue = data2[len2-1];
+    BIG_NUMBER_DATA_TYPE dvalue2 = data2[len2-2];
+    BIG_NUMBER_DATA_TYPE hbit = 1 << (sizeof(BIG_NUMBER_DATA_TYPE)*8-1);
+    // 將試除數轉成最高bit為1, 以減少商值猜測時之誤差 (目前誤差最多約為3) //
+    int shift_bit_no = 0;
+    while ((dvalue & hbit) == 0)
+    {
+        dvalue <<= 1;
+        if (dvalue2 & hbit) dvalue |= 1;
+        dvalue2 <<= 1;
+        ++shift_bit_no;
+    }
+    BIG_NUMBER_DATA_TYPE qvalue, hvalue, lvalue, nvalue;
+    BIG_NUMBER_DATA_TYPE *temp;
+    if ((temp = alloc_data(len1)) == NULL) return false;
+    for (int i=len1-len2; i>=0; --i)
+    {
+        if ((remain_len++ == 0) && (data1[i] == 0)) // 被除數為0 //
+        {
+            result[i] = remain_len = 0;
+            continue;
+        }
+        if ((compare_result = compare_abs(data1+i,remain_len,data2,len2)) < 0)
+        {
+            // 被除數小於除數，結果為0，餘數不變 //
+            result[i] = 0;
+            continue;
+        }
+        if (compare_result == 0)
+        {
+            // 被除數等於除數，結果為1，餘數為0 //
+            result[i] = 1;
+            remain_len = 0;
+            continue;
+        }
+        // 猜測商可能的值 //
+        if (len2 < remain_len)
+        {
+            hvalue = data1[i+remain_len-1];
+            lvalue = data1[i+remain_len-2];
+            nvalue = data1[i+remain_len-3];
+        }
+        else
+        {
+            hvalue = 0;
+            lvalue = data1[i+remain_len-1];
+            nvalue = data1[i+remain_len-2];
+        }
+        // 進行與試除數相同移位 //
+        if (shift_bit_no != 0)
+        {
+            hvalue = (hvalue << shift_bit_no) | (lvalue >> (sizeof(BIG_NUMBER_DATA_TYPE)*8-shift_bit_no));
+            lvalue = (lvalue << shift_bit_no) | (nvalue >> (sizeof(BIG_NUMBER_DATA_TYPE)*8-shift_bit_no));
+        }
+        if (hvalue >= dvalue)
+        {
+            // 位數不同，若餘數最高位數值 >= 除數最高位數值，必為最大值 //
+            qvalue = (BIG_NUMBER_DATA_TYPE)-1;
+        }
+        else
+        {
+            // 找出可能的商 = hvalue:lvalue/dvalue //
+#if (BIG_NUMBER_DATA_TYPE_SIZE == 1) || (BIG_NUMBER_DATA_TYPE_SIZE == 2)
+            qvalue = (((unsigned int)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue) / dvalue;
+#elif BIG_NUMBER_DATA_TYPE_SIZE == 4
+            qvalue = (BIG_NUMBER_DATA_TYPE)((((unsigned __int64)hvalue << (BIG_NUMBER_DATA_TYPE_SIZE*8)) + lvalue) / dvalue);
+#else
+    #error Not Implement
+#endif
+        }
+        temp_len = mul_abs_basic(data2,len2,&qvalue,1,temp);
+        temp_len = ::standardize(temp,temp_len);
+        // 檢查實際結果修正商 (誤差愈少, 速度愈快) //
+        while ((compare_result = compare_abs(data1+i,remain_len,temp,temp_len)) < 0)
+        {
+            // 結果過大，商減1 //
+            sub_abs(temp,temp_len,data2,len2);
+            temp_len = ::standardize(temp,temp_len);
+            --qvalue;
+        }
+        if (compare_result == 0)
+        {
+            // 相等，餘數為0 //
+            result[i] = qvalue;
+            remain_len = 0;
+            continue;
+        }
+        result[i] = qvalue;
+        sub_abs(data1+i,remain_len,temp,temp_len);
+        remain_len = ::standardize(data1+i,remain_len);
+    }
+    ret_len1 = remain_len;
+    ret_result_len = len1-len2+1;
+    delete[] temp;
+    return true;
+}
+
+bool BigNumber::div_abs_basic(const BigNumber& bn)
+//說明：絕對值相除
+//輸入：bn = 除數, >1, 不能與被除數佔用相同空間
+//傳回：記憶體不足傳回false
+//備註：採用傳統移位除法
+{
+    if (Is0()) return true;
+    BIG_NUMBER_DATA_TYPE* result;
+    int result_len;
+    if ((result = alloc_data(m_Max_Len)) == NULL) return out_of_memory();
+    if (!div_abs_basic(m_Data,m_Len,result_len,bn.GetData(),bn.GetLen(),result,m_Len))
+    {
+        delete[] result;
+        return false;
+    }
+    set_data(result,m_Max_Len);
+    standardize();
+    return true;
+}
+
+bool BigNumber::mod_abs_basic(const BigNumber& bn)
+//說明：絕對值mod運算
+//輸入：bn = 除數, >1, 不能與被除數佔用相同空間
+//傳回：記憶體不足傳回false
+//備註：採用傳統移位除法
+{
+    if (Is0()) return true;
+    BIG_NUMBER_DATA_TYPE* result;
+    if ((result = alloc_data(m_Max_Len)) == NULL) return out_of_memory();
+    int result_len;
+    if (!div_abs_basic(m_Data,m_Len,m_Len,bn.GetData(),bn.GetLen(),result,result_len))
+    {
+        delete[] result;
+        return false;
+    }
+    delete[] result;
+    standardize();
+    if (IsNeg()) // 由負轉正 //
+    {
+        if (bn.IsNeg()) return Sub(bn);
+        else return Add(bn);
+    }
+    return true;
+}
+
+bool BigNumber::div_abs(const BigNumber& bn)
+//說明：絕對值相除
+//輸入：bn = 除數, >1, 不能與被除數佔用相同空間
+//傳回：記憶體不足傳回false
+{
+    return div_abs_basic(bn);
+}
+
+bool BigNumber::mod_abs(const BigNumber& bn)
+//說明：絕對值mod運算
+//輸入：bn = 除數, >1, 不能與被除數佔用相同空間
+//傳回：記憶體不足傳回false
+{
+    return mod_abs_basic(bn);
+}
+
+bool BigNumber::operator==(const BigNumber& bn) const
+{
+    return compare(bn) == 0;
+}
+
+bool BigNumber::operator!=(const BigNumber& bn) const
+{
+    return compare(bn) != 0;
+}
+
+bool BigNumber::operator>=(const BigNumber& bn) const
+{
+    return compare(bn) >= 0;
+}
+
+bool BigNumber::operator<=(const BigNumber& bn) const
+{
+    return compare(bn) <= 0;
+}
+
+bool BigNumber::operator>(const BigNumber& bn) const
+{
+    return compare(bn) > 0;
+}
+
+bool BigNumber::operator<(const BigNumber& bn) const
+{
+    return compare(bn) < 0;
+}
+
+BigNumber& BigNumber::operator=(const BigNumber& bn)
+{
+    SetNumber(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator=(int number)
+{
+    SetNumber(number);
+    return *this;
+}
+
+BigNumber& BigNumber::operator++(void)
+{
+    Inc();
+    return *this;
+}
+
+BigNumber& BigNumber::operator--(void)
+{
+    Dec();
+    return *this;
+}
+
+BigNumber& BigNumber::operator+=(const BigNumber& bn)
+{
+    Add(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator-=(const BigNumber& bn)
+{
+    Sub(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator*=(const BigNumber& bn)
+{
+    Mul(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator/=(const BigNumber& bn)
+{
+    Div(bn);
+    return *this;
+}
+
+BigNumber& BigNumber::operator%=(const BigNumber& bn)
+{
+    Mod(bn);
+    return *this;
+}
+
+以下為與固定大小陣列的效率測試比較：
+
+乘法
+  固定大小陣列
+     1 byte：  2.390,  5.265,  3.891,  6.281,  2.391,  2.234
+     2 byte：  0.484,  1.843,  1.609,  2.281,  1.547,  1.406
+     4 byte：  0.203,  0.593,  0.516,  0.750,  0.484,  0.609
+  動態大小陣列
+     1 byte：  2.250,  5.031,  3.953,  6.172,  2.343,  2.078
+     2 byte：  0.421,  1.860,  1.593,  2.234,  1.516,  1.375
+     4 byte：  0.156,  0.578,  0.500,  0.719,  0.484,  0.562
+除法
+  固定大小陣列
+     1 byte：  7.937, 12.234, 21.984, 33.750, 16.968
+     2 byte：  0.468,  4.641,  6.453, 10.796,  5.469
+     4 byte：  0.281,  1.109,  1.500,  1.641,  0.828
+  動態大小陣列
+     1 byte：  7.032, 11.421, 20.797, 32.594, 16.125
+     2 byte：  0.469,  4.172,  6.078, 10.468,  5.328
+     4 byte：  0.281,  1.000,  1.375,  1.609,  0.843
+
+無論乘法或除法，兩種方法的效率都差別不大，但大抵動態大小陣列稍好一些。動態大小陣列效率的
+增加，主要是來自於計算後的資料無需拷回，但卻因需動態記憶體配置與釋放而抵消不少。特別是乘
+法中的分割解決法，對於兩個n位數相乘，約需n/8次動態記憶體配置，耗去不少時間，但也因此避免
+了堆疊滿溢的問題。
+
+
+三．其他的乘除法演算法
+
+乘法演算法尚有Toom-Cook的多重分割解決法，效率為O(n^(1+3.5/sqrt(logn)))；DFT法，效率為
+O(nlognloglogn)。
+
+除法演算法尚有Fourier Division，效率為O(n^2)；Reciprocal法（牛頓逼近法），效率同乘法演算
+法。
+
+這些演算法皆留待將來再研究。其他諸如移位等運算，亦留待將來再補充。
+</pre>
+</body>
+</html>

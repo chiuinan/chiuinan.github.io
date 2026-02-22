@@ -1,0 +1,226 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Hermite與Bezier曲線繪製方法</title>
+</head>
+
+<body>
+
+<p align="center"><big><font color="#800000"><b>Hermite與Bezier曲線繪製方法</b></font></big>
+<p align="right">邱奕南，1995/6/1
+
+<p>Hermite及Bezier曲線為三度空間曲線的常用表示法，以下我們先說明一下這兩個曲線的定義： 
+
+<ol>
+  <li>Hermite曲線<p>Hermite曲線為給定兩端點及兩端點向量所得的三次曲線。令三次曲線：
+    <p>x(t) = Ax * t^3 + Bx * t^2 + Cx * t + d<br>
+    y(t) = Ay * t^3 + By * t^2 + Cy * t + d
+    <p>且令給定的兩端點為(x1,y1)、(x2,y2)，以及兩端點向量(xr1,yr1)、(xr2,yr2)，則：
+    <p>x(0) = x1, y(0) = y1<br>
+    x(1) = x2, y(1) = y2<br>
+    x'(0) = xr1, y'(0) = yr1<br>
+    x'(1) = xr2, y'(1) = yr2
+    <p>繪出(x(t),y(t))，0&lt;=t&lt;=1，即為Hermite曲線。
+  </li>
+  <li>Bezier曲線 <p>Bezier曲線為給定兩端點及另兩參考點所得的三次曲線，它可說是Hermite曲線的另一種表示方式。假設兩端點為P1、P2，以及兩參考點Pr1、Pr2，則Bezier曲線換算成Hermite曲線的方式為：
+    <p>R1 = 3*(Pr1-P1)<br>
+    R2 = 3*(P2-Pr2)
+    <p>R1、R2即為Hermite曲線的兩端點向量。
+  </li>
+</ol>
+
+<p>由於Bezier曲線和Hermite曲線可以說是相同的，因此以下之說明我們便以Hermite曲線為主。由Hermite曲線的定義，首先我們必須求出Ax,Bx...等值。由定義中的條件：
+
+<blockquote>
+  <p>x(0) = x1, x(1) = x2, x'(0) = xr1, x'(1) = xr2
+</blockquote>
+
+<p>以及
+
+<blockquote>
+  <p>x'(t) = 3 * Ax * t^2 + 2 * Bx * t + Cx
+</blockquote>
+
+<p>可得：
+
+<blockquote>
+  <p>┌ <font face="Courier">0 0 0 1 </font>┐┌ <font face="Courier">Ax </font>┐　┌ 
+  <font face="Courier">x1&nbsp; </font>┐<br>
+  │ <font face="Courier">1 1 1 1 </font>││ <font face="Courier">Bx </font>│＝│ <font
+  face="Courier">x2&nbsp; </font>│<br>
+  │ <font face="Courier">0 0 1 0 </font>││ <font face="Courier">Cx </font>│　│ <font
+  face="Courier">xr1 </font>│<br>
+  └ <font face="Courier">3 2 1 0 </font>┘└ <font face="Courier">Dx </font>┘　└ <font
+  face="Courier">xr2 </font>┘
+</blockquote>
+
+<p>解之得：
+
+<blockquote>
+  <p>┌ <font face="Courier">Ax </font>┐　┌ <font face="Courier">2 -2&nbsp; 1&nbsp; 1 </font>┐┌ 
+  <font face="Courier">x1&nbsp; </font>┐<br>
+  │ <font face="Courier">Bx </font>│＝│<font face="Courier">-3&nbsp; 3 -2&nbsp; 1 </font>││ 
+  <font face="Courier">x2&nbsp; </font>│<br>
+  │ <font face="Courier">Cx </font>│　│ <font face="Courier">0&nbsp; 0&nbsp; 1 &nbsp; 
+  0 </font>││ <font face="Courier">xr1 </font>│<br>
+  └ <font face="Courier">Dx </font>┘　└ <font face="Courier">1&nbsp; 0&nbsp; 0 &nbsp; 
+  0 </font>┘└ <font face="Courier">xr2 </font>┘
+</blockquote>
+
+<p>因此
+
+<blockquote>
+  <p>x(t) = (2*t^3 - 3*t^2 + 1) * x1 + (-2*t^3 + 3*t^2) * x2 + (t^3 - 2*t^2 + t) * xr1 + 
+  (t^3 - t^2) * xr2
+</blockquote>
+
+<p>同理
+
+<blockquote>
+  <p>y(t) = (2*t^3 - 3*t^2 + 1) * y1 + (-2*t^3 + 3*t^2) * y2 + (t^3 - 2*t^2 + t) * yr1 + 
+  (t^3 - t^2) * yr2
+</blockquote>
+
+<p>上述的公式中，由於t的值是介於0與1之間，這對於我們在實際繪圖上較不方便，而且運算速度也比較慢。因此假設我們以n條直線來模擬Hermite曲線，則我們必須將t值化成整數，使它成為0&lt;=t&lt;=n（注意n條連續直線需有n+1個點）。令i=n*t代入上述公式，化簡後可得：
+
+<blockquote>
+  <p>x(i) = (m1*x1 + m2*x2 + m3*xr1 + m4*xr2) / n^3<br>
+  y(i) = (m1*y1 + m2*y2 + m3*yr1 + m4*yr2) / n^3
+</blockquote>
+
+<p>其中
+
+<blockquote>
+  <p>m1 = 2*i^3 - 3*n*i^2 + n^3 , 0 &lt;= i &lt;= n<br>
+  m2 = -2*i^3 + 3*n*i^2<br>
+  m3 = i^3 - 2*n*i^2 + n^2*i<br>
+  m4 = i^3 - n*i^2
+</blockquote>
+
+<p>如此我們便能很方便地求出模擬直線的各端點。然而上述公式中的乘法仍相當多，對於m1～m4的計算上至少需5次乘法、2次移位乘法和6次加法（或4次乘法、3次移位乘法和7次加法），在計算上仍然會浪費相當多時間（PC上的乘法約為加法的近20倍，移位乘法則和加法相當），因此有必要再予以化簡。如何簡化呢？由上述公式可發現，主要的乘法來自於i^3的計算，因此欲將之簡化的最簡單的方式便是由前一個m1～m4值來求得後一個m1～m4值，藉此消減掉這個三次方值的運算：
+
+<blockquote>
+  <p>m1(i+1) = m1(i) + 6*i^2 + 6*i + 2 - 3*n*(2*i+1)<br>
+  m2(i+1) = m2(i) - 6*i^2 - 6*i - 2 + 3*n*(2*i+1)<br>
+  m3(i+1) = m3(i) + 3*i^2 + 3*i + 1 - 2*n*(2i+1) + n^2<br>
+  m4(i+1) = m4(i) + 3*i^2 + 3*i + 1 - n*(2*i+1)
+</blockquote>
+
+<p>現在便是要化簡各式中後面的計算項次。由於這些項次有相當多的重複，故可將之寫成：
+
+<blockquote>
+  <p>m1(i+1) = m1(i) + a<br>
+  m2(i+1) = m2(i) - a<br>
+  m3(i+1) = m3(i) + d - c + n^2<br>
+  m4(i+1) = m4(i) + d<br>
+  a = 2*b - 3*c<br>
+  b = 3*i^2 + 3*i + 1<br>
+  c = n*(2*i+1)<br>
+  d = b-c
+</blockquote>
+
+<p>再進一步簡化為：
+
+<blockquote>
+  <p>e = 2*i + 1<br>
+  c = n*e<br>
+  b = 3*i^2 + 3*i + 1 = (3*i+1)*i + (2*i+1) = (e+i)*i + e
+</blockquote>
+
+<p>整理一下成為（依計算順序）：
+
+<blockquote>
+  <p>e = 2*i + 1<br>
+  b = (e+i)*i + e<br>
+  c = n*e<br>
+  d = b-c<br>
+  m4 = m4 + d<br>
+  f = d-c<br>
+  m3 = m3 + f + n^2<br>
+  a = d + f<br>
+  m2 = m2 - a<br>
+  m1 = m1 + a
+</blockquote>
+
+<p>共計2次乘法、1次移位乘法和11次加法，等於是以兩次加法代替了兩次乘法，其速度必然較快。記得m1～m4的初值為：
+
+<blockquote>
+  <p>m1(0) = n^3<br>
+  m2(0) = m3(0) = m4(0) = 0
+</blockquote>
+
+<p>接下來我們要探討一下模擬線數n的問題。倒底取多少模擬線數較為恰當？採用的模擬線數太少，曲線將不夠平滑，但若模擬線數太多，曲線繪製速度又會太慢。據作者實際的測試，一般取n=20以上曲線便已相當平滑，但對於彎度太大的曲線，其轉折處仍約略可見，不過並不嚴重。由於在繪製曲線時，大都以整數來運算（為求速度），因此模擬線數最好不要超出32，以避免運算結果超出整數運算的值域。以下便是Hermite曲線和Bezier曲線的繪製程式：
+
+<p>#define Iterative 24 /* 曲線模擬的線數(必須小於32) */<br>
+#define Iterative2 (Iterative*Iterative)<br>
+#define Iterative3 (Iterative2*Iterative)
+
+<p>void DrawHermiteCurve(int x1,int y1,int x2,int y2,int xr1,int yr1,int xr2,int yr2)<br>
+&nbsp; {<br>
+&nbsp;&nbsp; /* ------------------------------------------------------------<br>
+&nbsp;&nbsp; 作用：畫出Hermite曲線<br>
+&nbsp;&nbsp; 輸入：x1,y1,x2,y2 = 曲線端點<br>
+&nbsp;&nbsp; xr1,yr1,xr2,yr2 = 曲線兩參考向量<br>
+&nbsp;&nbsp; 作者：邱奕南 Chi'u I-Nan<br>
+&nbsp;&nbsp; ------------------------------------------------------------ */<br>
+&nbsp;&nbsp; int i, oldx, oldy, m1, m2, m3, m4, x, y, k1, k2;<br>
+<br>
+&nbsp;&nbsp; oldx = x1;<br>
+&nbsp;&nbsp; oldy = y1;<br>
+&nbsp;&nbsp; m1 = Iterative3;<br>
+&nbsp;&nbsp; m2 = m3 = m4 = 0;<br>
+&nbsp;&nbsp; for (i=0; i&lt;Iterative; i++) /* 用Iterative條直線模擬 */<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k1 = (i &lt;&lt; 1) + 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k2 = (k1+i)*i + k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m4 += (k2 -= (k1 *= Iterative));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m3 += (k1 = k2 - k1) + Iterative2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 -= (k2 += k1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 += k2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = (int) (((long) x1*m1 + (long) x2*m2 + (long) xr1*m3 + 
+(long) xr2*m4) / Iterative3);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = (int) (((long) y1*m1 + (long) y2*m2 + (long) yr1*m3 + 
+(long) yr2*m4) / Iterative3);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DrawLine(oldx,oldy,x,y);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldx = x;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldy = y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; }
+
+<p>void DrawBezierCurve(int x1,int y1,int x2,int y2,int xr1,int yr1,int xr2,int yr2)<br>
+&nbsp; {<br>
+&nbsp;&nbsp; /* ------------------------------------------------------------<br>
+&nbsp;&nbsp; 作用：畫出Bezier曲線<br>
+&nbsp;&nbsp; 輸入：x1,y1,x2,y2 = 曲線端點<br>
+&nbsp;&nbsp; xr1,yr1,xr2,yr2 = 曲線兩參考點<br>
+&nbsp;&nbsp; 作者：邱奕南 Chi'u I-Nan<br>
+&nbsp;&nbsp; ------------------------------------------------------------ */<br>
+&nbsp;&nbsp; DrawHermiteCurve(x1,y1,x2,y2,3*(xr1-x1),3*(yr1-y1),3*(x2-xr2),3*(y2-yr2));<br>
+&nbsp; }
+
+<p>有時，我們也常需要曲線的切向量。對於Hermite曲線的切向量，我們可由微分式而得，即：
+
+<blockquote>
+  <p>x'(t) = (6*t^2 - 6*t) * x1 + (-6*t^2 + 6*t) * x2 + (3*t^2 - 4*t + 1) * xr1 + (3*t^2 - 
+  2*t) * xr2<br>
+  y'(t) = (6*t^2 - 6*t) * y1 + (-6*t^2 + 6*t) * y2 + (3*t^2 - 4*t + 1) * yr1 + (3*t^2 - 2*t) 
+  * yr2
+</blockquote>
+
+<p>因此對於模擬線第i點所在的切向量，我們可以使用下式求得：
+
+<blockquote>
+  <p>k1 = n*i<br>
+  k2 = i*i - k1<br>
+  k3 = 3*k2<br>
+  m1 = 2*k3<br>
+  m3 = k3 - k1 + n^2<br>
+  m4 = k3 + k1<br>
+  x'(i) = (m1*(x1-x2) + m3*xr1 + m4*xr2) / n^2<br>
+  y'(i) = (m1*(y1-y2) + m3*yr1 + m4*yr2) / n^2
+</blockquote>
+
+<p>要將之寫成程式應該不是很難的事吧。
+</body>
+</html>

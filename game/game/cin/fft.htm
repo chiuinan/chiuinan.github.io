@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>傅立葉轉換演算法專論</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+**********************************************************************
+* 主    題：傅立葉轉換演算法專論                                     *
+* 作    者：邱奕南 (Chi'u I-Nan)                                     *
+* 著作日期：1996/1/11                                                *
+* 學習說明：本文將傅立葉轉換，從來源、定義、演算法的觀念、分析、程式 *
+*           撰寫、乃至應用範圍等等均做了一番詳細的說明，以供學習者能 *
+*           從本文中全盤了解傅立葉轉換演算法，並可利用本文所附程式， *
+*           直接運用到所需的領域中。                                 *
+* 版權聲明：以下文章內容本人僅同意供BBS 站上流傳學習，而程式亦同意供 *
+*           任何人使用在任何軟體上（但必須註明原作者），其餘權利一概 *
+*           保留。任何未經本人同意，將本文或程式販賣、刊登、節錄、或 *
+*           其他一切侵害本人著作權之行為者，皆需負擔刑事責任及民事賠 *
+*           償責任。                                                 *
+* 程式編譯：Borland C++、Turbo C                                     *
+**********************************************************************
+
+           目     錄
+============================================
+第一節  傅立葉轉換的定義
+第二節  快速傅立葉轉換演算法
+第三節  二維傅立葉轉換
+第四節  傅立葉轉換的應用
+習題
+參考文獻
+============================================
+
+<font color=blue><b>第一節  傅立葉轉換的定義</b></font>
+
+    什麼是傅立葉轉換（Fourier Transform）？在早期的定義中，傅立葉序列
+（Fourier Series）被看成是一堆波的合成波，其公式約略如下（假設週期為T）：
+
+           ∞
+    F(u) = Σ   (a(k)*cos(ku*2π/T) + b(k)*sin(ku*2π/T))
+          k=-∞
+
+    由於傅立葉序列許多的合成波高低頻特性，在訊號處理（Signal Processing）
+上有很多應用價值，因此傅立葉序列所在的領域一般又稱為頻譜領域（Frequency
+Domain），而傅立葉轉換前的領域便稱為時序領域（Time Domain）。然而有很
+多函數並不屬於週期函數，但我們仍然可以將之寫成類似上面的公式。考慮任
+何一個函數f(x)，令：
+
+            1   ∞
+    A(u) = ─ ∫   f(x) cos(ux) dx
+           π  -∞
+
+            1   ∞
+    B(u) = ─ ∫   f(x) sin(ux) dx
+           π  -∞
+
+如此便可將f(x)改寫下面類似傅立葉序列的公式，稱為傅立葉積分（Fourier
+Integral）：
+
+             ∞
+    f(x) = ∫   (A(u)*cos(ux) + B(u)*sin(ux)) du
+            -∞
+
+再將之化解成複數形態（Complex Form），可得：
+
+            1     ∞     ∞       iuy       -ixu
+    f(x) = ── ∫  〔 ∫   f(y) e   dy 〕 e     du
+           2π   -∞    -∞
+
+然後即可定義出傅立葉轉換公式及反轉公式如下：
+
+             ∞      iux
+    F(u) = ∫  f(x) e   dx
+            -∞
+
+            1     ∞      -ixu
+    f(x) = ── ∫  F(u) e    du
+           2π   -∞
+
+有些書則將傅立葉轉換公式定義為：
+
+               1        ∞      iux
+    F(u) = ───── ∫  f(x) e    dx
+           sqrt(2π)   -∞
+
+               1        ∞      -ixu
+    f(x) = ───── ∫  F(u) e    du
+           sqrt(2π)   -∞
+
+或
+
+             ∞      i2πux
+    F(u) = ∫  f(x) e    dx
+            -∞
+
+             ∞      -i2πxu
+    f(x) = ∫  F(u) e    du
+            -∞
+
+不過在本文中，將都以第一式為準。必須注意的是，上面的i=sqrt(-1)，表示
+複數（Complex Number）值，而非變數。而式中e^(iux)經尤拉（Euler）公式
+化解可得：
+
+     iux
+    e    = cos(ux) + i sin(ux)
+
+當然，這類數學式子的化解較為繁複，因此本文中並不將之全數列出。有興趣
+的人不妨自行導導看，或是參考其他書籍了解。
+
+    由於電腦內的資料都是離散（Discrete）的形式，因此上面這種連續性積
+分的公式，並不太適用於電腦資料的運算上，於是便有離散式傅立葉轉換（簡
+稱DFT）公式的需要。至於如何導出這個公式呢？假設給定一個長度為N的向量A，
+欲轉換成傅立葉頻譜中的向量B，則我們可視向量A的週期為N，且希望向量A可
+寫成下列式子：
+
+           1  N-1       -ikm*2π/N
+    A(k) = ─ Σ  B(m) e           ，k = 0～N-1
+           N  m=0
+
+可算出：
+
+           N-1       imk*2π/N
+    B(m) = Σ  A(k) e              ，m = 0～N-1
+           k=0
+
+這便是離散式傅立葉轉換的公式，而前一個式子便是其反轉公式。但是式子中
+的e^(i2π/N)看起來和寫起來均很不方便，因此我們定義
+
+          i (2π/N)
+    ω = e
+
+則前述轉換公式可寫成：
+
+           N-1        mk
+    B(m) = Σ  A(k) ω          ，m = 0～N-1
+           k=0
+
+           1  N-1        -km
+    A(k) = ─ Σ  B(m) ω       ，k = 0～N-1
+           N  m=0
+
+這個ω便是乘法單位元素的主要N次方根（Principle Nth Root），它具有下列
+特性：
+
+      0       1       2            N-1       N
+    ω ＝1, ω ≠1, ω ≠1, ..., ω   ≠1, ω ＝1
+
+          1    2        N-1
+    1 + ω + ω + ... ω    = 0
+
+      N/2
+    ω   ＝ -1    ，當 N = 2k 時
+
+這些特性對於後面要說明的快速傅立葉轉換演算法（簡稱FFT）是很重要的，請
+各位要記下來。其實這樣的式子可以更進一步擴展至通用的Commutative Ring
+(R,+,*,0,1)數學領域上，但為方便說明，以下我們還是只局限在複數領域上。
+所謂Commutative Ring，其定義為：
+
+    1.具有分配律 (a+b)+c = a+(b+c)、 (a*b)*c = a*(b*c)
+    2.具有結合律 (a+b)*c = a*c + b*c、a*(b+c) = a*b + a*c
+    3.0為加法單位元素 a + 0 = 0 + a = a
+    4.1為乘法單位元素 a * 1 = 1 * a = a
+    5.加法可交換 a + b = b + a
+    6.具有加法反元素 a + b = 0
+    7.乘法可交換 a * b = b * a
+
+若去除第7項特性，則稱為Ring；若加上具有乘法反元素特性，則稱為Field。
+通常傅立葉轉換後的函數，可表示成下式：
+
+    F(u) = ｜F(u)｜ e^iφ(u)
+
+｜F(u)｜為傅立葉頻譜大小（Fourier Spectrum），φ(u)則為相位角度（Phase
+Angle），而｜F(u)｜^2則通常稱為次方頻譜（Power Spectrum）或頻譜密度
+（Spectral Density）。其定義如下：
+
+                            2             2
+    ｜F(u)｜= sqrt(F(u).Real  + F(u).Image )
+
+               -1
+    φ(u) = tan   (F(u).Image/F(u).Real)
+
+上式之Real、Image分別表示該數值的實數及虛數部份。這些定義，在傅立葉頻
+譜的顯示上是相當常用的。而對於二維影像而言，相位角度包含了大部份影像
+的邊緣（Edge）資訊，這點對於影像處理上是很有用的。
+
+    至於傅立葉轉換有那些特性呢？下面我們便列出幾個一維傅立葉轉換的特
+性。
+
+1.線性（Linearity）－對於任兩個時序領域向量A(x)、B(x)，則
+
+      FT(c1*A(x)+c2*B(x)) = c1*FT(A(x)) + c2*FT(B(x))
+
+  其中FT表示傅立葉轉換，c1、c2為任何兩個複數值。
+
+2.平移（Shifting）與調變（Modulation）－對於任一個時序領域向量A(x)，
+  傅立葉轉換後的向量為B(x)，則
+
+      FT(A(x-k)) = B(x) * ω^xk
+      FT(A(x)*ω^-xk) = B(x-k)
+
+3.共輒對稱性（Conjudate Symmetry）－對於任一個時序領域實數向量A(x)，
+  若其傅立葉轉換後的向量為B(y)，則B(y)與B(N-y)互為共軛數，其中N為向量
+  長度。由於這點在傅立葉轉換計算中亦很有用，因此我們特別再加以說明。
+  假設有兩個實數向量f(n)、g(n)，經傅立葉轉換後的向量為F(n)、G(n)，若
+  我們將f、g組合成一複數向量x(n)=f(n)+ig(n)，經傅立葉轉換後的向量為
+  X(n)，則依線性化特性，可得
+
+      X(n) = F(n) + i G(n)
+
+  也就是說
+
+      X(n).Real  = F(n).Real  - G(n).Image
+      X(n).Image = F(n).Image + G(n).Real
+
+  因f(n)、g(n)均為實數，故F(n)、F(N-n)及G(n)、G(N-n)均互為補數，可得：
+
+      X(N-n).Real  =  F(n).Real  + G(n).Image
+      X(N-n).Image = -F(n).Image + G(n).Real
+
+  解這兩組式子便可得到
+
+      F(n).Real  = ( X(n).Real  + X(N-n).Real ) / 2
+      F(n).Image = ( X(n).Image - X(N-n).Image) / 2
+      G(n).Real  = ( X(n).Image + X(N-n).Image) / 2
+      G(n).Image = (-X(n).Real  + X(N-n).Real ) / 2
+
+  由這個結果可知，一次傅立葉轉換計算，其實是可以算出兩個實數向量的傅
+  立葉轉換值的（記得F、G因有共輒數關係，上式真正的計算只需一半）。
+
+4.乘積（Product）與迴旋（Convolution）－對於任兩個時序領域向量a(x)、
+  b(x)，則
+
+      FT(a(x)‧b(x)) = FT(a(x)) × FT(b(x)) / N
+      FT(a(x)×b(x)) = FT(a(x)) ‧ FT(b(x))
+
+  其中‧表向量乘積、×表向量迴旋。
+
+5.滯後乘積（Lagged Products）－滯後乘積為關連運算（Correlation）的主
+  要部份。對於任兩個時序領域向量f(n)、g(n)，經傅立葉轉換後的向量為
+  F(n)、G(n)，則
+
+      N-1
+      Σ  f(n)g(n-k) = F(n)‧G*(n)
+      n=0
+
+  其中G*(n)表G(n)的共輒數。
+
+6.時序差（Cyclic Difference）－對於任一個時序領域向量A(x)，若B(x)=
+  A(x)-A((x-1) mod N)，則FT(B(x)) = FT(A(x)) * (1 - ω^x)。
+
+    當然，傅立葉轉換還有其他特性，如旋轉、放大、積分、微分、Parseval
+理論等等，這裡只是列出其最基本的特性而已。
+
+    至於傅立葉轉換到底有什麼用處？傅立葉轉換除了可用做一般數位訊號或
+影像在傅立葉頻譜上的處理，如影像銳化、平滑、特徵擷取、資料壓縮、濾波
+等等之外，也可以用來解決一些難解的數學問題。例如線性微分方程式（Linear
+Differential Equation），經傅立葉轉換會成為一般的代數方程式（Algebraic
+Equation），要解決這樣的方程式便容易多了。此外，也可加速如多項式迴旋、
+矩陣乘法、代數運算、高精度乘法等數學計算上的速度。其他的應用例子還很
+多，這些便由讀者自行看書並親自試驗去體會了。在本文的最後，我們也會列
+出一些實際應用的例子，供讀者參考。
+
+
+<font color=blue><b>第二節  快速傅立葉轉換演算法</b></font>
+
+    在提到快速傅立葉轉換演算法之前，我們要先算出傳統傅立葉轉換所需的
+時間（Time Complexity），以便和快速傅立葉轉換做一番比較，並進行驗證的
+工作。傳統計算法所需的時間其實很簡單求的，因要向量長度為n時需要計算n
+個元素值，而每個元素值均需cn個乘法和cn個加法，其中c為一常數，因此它的
+時間便是O(n^2)。傳統的傅立葉轉換計算，其程式如下：
+
+#define PI 3.141592653589793
+typedef struct { float real, image; } complex;
+
+void DFT(int data_no,complex *in_data,complex *out_data)
+  {
+   /* ------------------------------------------------------------
+      作用：直接式的離散傅立葉轉換
+      參數：in_data = 輸入資料
+            data_no = 資料數目
+      輸出：out_data = 輸出資料
+      ------------------------------------------------------------ */
+   int m, k;
+   float w_cos, w_sin, angle_step, angle;
+
+   angle_step = 2*PI/data_no;    /* 乘法單位元素根ω之間隔角度 */
+   for (m=0; m < data_no; m++)     /* 計算B(m) */
+     {
+      out_data[m].real = in_data[0].real;
+      out_data[m].image = in_data[0].image;
+      for (k=1; k < data_no; k++)  /* 計算A(k)*ω^(mk) */
+        {
+         angle = (float) m*k*angle_step;
+         w_cos = cos(angle);
+         w_sin = sin(angle);
+         out_data[m].real += in_data[k].real * w_cos -
+                             in_data[k].image * w_sin;
+         out_data[m].image += in_data[k].real * w_sin +
+                              in_data[k].image * w_cos;
+        }
+     }
+  }
+
+至於反向傅立葉轉換程式要如何寫呢？當然我們也可以直接從定義來寫，但其
+實正向與反向傅立葉轉換程式是相當類似的，因此我們提出了兩種做法：
+
+    1.將乘法單位元素根ω之間隔角度2π/N由正變負，然後進行同樣的傅立葉
+      轉換，最後將回傳值全部除以N即可（若一開始將輸入值全部除以N，其
+      效果相同）。下面便是這個方法的反轉程式：
+
+void IDFT(int data_no,complex *in_data,complex *out_data)
+  {
+   /* ------------------------------------------------------------
+      作用：直接式的反向離散傅立葉轉換
+      參數：in_data = 輸入資料
+            data_no = 資料數目
+      輸出：out_data = 輸出資料
+      ------------------------------------------------------------ */
+   int m, k;
+   float w_cos, w_sin, angle_step, angle;
+
+   angle_step = -2*PI/data_no;  /* 乘法單位元素根ω之間隔角度改負 */
+   for (m=0; m < data_no; m++)    /* 計算B(m) */
+     {
+      out_data[m].real = in_data[0].real;
+      out_data[m].image = in_data[0].image;
+      for (k=1; k < data_no; k++)  /* 計算A(k)*ω^(-mk) */
+        {
+         angle = (float) m*k*angle_step;
+         w_cos = cos(angle);
+         w_sin = sin(angle);
+         out_data[m].real += in_data[k].real * w_cos -
+                             in_data[k].image * w_sin;
+         out_data[m].image += in_data[k].real * w_sin +
+                              in_data[k].image * w_cos;
+        }
+     }
+   /* 傳回值全部除以N */
+   for (m=0; m < data_no; m++)
+     {
+      out_data[m].real /= data_no;
+      out_data[m].image /= data_no;
+     }
+  }
+
+    2.將輸入資料改成共輒數，呼叫傅立葉轉換程式後，再將輸出資料全部除
+      以N，並轉成共輒數。以下為這個方法的反轉程式：
+
+void IDFT(int data_no,complex *in_data,complex *out_data)
+  {
+   /* ------------------------------------------------------------
+      作用：直接式的反向離散傅立葉轉換
+      參數：in_data = 輸入資料
+            data_no = 資料數目
+      輸出：out_data = 輸出資料
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) in_data[m].image = -in_data[m].image;
+   /* 進行傅立葉轉換 */
+   DFT(data_no,in_data,out_data);
+   /* 將輸入資料改回原樣 */
+   for (m=0; m < data_no; m++) in_data[m].image = -in_data[m].image;
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      out_data[m].real /= data_no;
+      out_data[m].image = -out_data[m].image/data_no;
+     }
+  }
+
+上面這兩種方式以第一種速度較快些，若能使用預先計算ω^k值方式，將此值
+均除以N，那麼傳回值便不必再全部除以N，速度會更快些。但重複程式碼也比
+較多些，這是無法兩全的事。而第二者卻有不重複程式碼的好處。為了能適應
+各種不同的傅立葉轉換演算法，且不必在反向傅立葉轉換程式中再寫同樣的傅
+立葉轉換程式碼，因此後面各演算法的反轉程式，我們將都採用第二種方法來
+撰寫。如果確實很在意執行速度的話，讀者不妨自行依傅立葉轉換程式碼，將
+之修改成第一種的反轉方式。
+
+    相對於一般直接運算的O(n^2)時間，快速傅立葉轉換所需的時間則只要
+O(nlogn)即可。至於快速傅立葉轉換的計算方式是怎麼來的呢？最早的時候
+是有人將傅立葉轉換公式視為矩陣運算：
+
+           N-1        mk
+    B(m) = Σ  A(k) ω        ，m = 0～N-1
+           k=0
+
+    B    = W * A
+
+其中W為一二維矩陣，且W[m,k]=ω^mk。當N=2^L時，由ω之特性可將矩陣W分解
+成L個Sparse矩陣。所謂Sparse矩陣，指的一個矩陣T，其元素T[i,j]除了i=j時
+有值外，其餘均為0。如此每個二維Sparse矩陣對一維矩陣相乘，只需O(n)次運
+算，共有logn層，因此全部的運算時間只需O(nlogn)。然而分解W成為Sparse矩
+陣並不太容易寫成程式，因此後來便有人利用分割解決法來解決此一問題（請
+參閱拙作”演算法則”）。首先將傅立葉轉換公式寫成下列的多項式格式（注
+意，在這邊我們均假設N=2^k，如果項次不足時只要補係數為0之項次即可）：
+
+           N-1       k             0    N-1
+    B(x) = Σ  A(k) x      ，x = ω ～ω
+           k=0
+
+我們將奇數項放一堆，偶數項放一堆，成為：
+
+    B(x) = C(y)*x + D(y)   ，y = x^2
+
+其中
+
+    C(y) = A(N-1)*y^(N/2-1) + A(N-3)*y^(N/2-2) + ... + A(1)
+    D(y) = A(N-2)*y^(N/2-1) + A(N-4)*y^(N/2-2) + ... + A(0)
+
+由於ω^2亦為乘法單位元素的主要N/2次方根，因此C(y)和D(y)均可視為A的奇
+次項和偶數項之傅立葉轉換後的值。又由於ω是乘法單位元素的主要N次方根，
+依其特性可知ω^(N/2)=-1，因此前式可綜整為：
+
+        j             2j    j       2j
+    B(ω     ) =  C(ω  ) ω  + D(ω  )
+
+        j+N/2         2j    j       2j
+    B(ω     ) = -C(ω  ) ω  + D(ω  )    ，j = 0～N/2-1
+
+假設T(n)為計算長度n向量的傅立葉轉換時間，則依前面公式可得時間計算公式
+為：
+
+    T(n) = 2*T(n/2) + cn     ，c為一常數
+
+由此公式可解得T(n)=O(nlogn)。因此利用分割解決法，便可以得到一個更有效
+率的演算法，我們將分割解決法的遞迴呼叫計算方式寫成下列程式：
+
+void RecursiveFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：遞迴式的快速離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：資料數目必須為2的次方方可呼叫本函數
+      ------------------------------------------------------------ */
+   int i, j, new_pos;
+   complex temp;
+   float angle_step, angle, w_cos, w_sin;
+
+   if (data_no <= 2)
+     {
+      temp = data[1];
+      data[1].real = data[0].real - temp.real;
+      data[1].image = data[0].image - temp.image;
+      data[0].real += temp.real;
+      data[0].image += temp.image;
+      return;
+     }
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 奇偶分堆, 偶在左, 奇在右 */
+   for (i=2; i < data_no; i+=2)
+     {
+      /* 將位置i資料調至i/2 */
+      new_pos = i/2;
+      temp = data[i];
+      for (j=i-1; j>=new_pos; j--) data[j+1] = data[j];
+      data[new_pos] = temp;
+     }
+   /* 呼叫自己計算子向量 */
+   RecursiveFFT(data_no/=2,data);
+   RecursiveFFT(data_no,data+data_no);
+   /* 合併出答案 */
+   for (i=0; i < data_no; i++)
+     {
+      angle = (float) i*angle_step;
+      w_cos = cos(angle);
+      w_sin = sin(angle);
+      new_pos = i+data_no;
+      temp.real = data[new_pos].real * w_cos -
+                  data[new_pos].image * w_sin;
+      temp.image = data[new_pos].real * w_sin +
+                   data[new_pos].image * w_cos;
+      data[new_pos].real = data[i].real - temp.real;
+      data[new_pos].image = data[i].image - temp.image;
+      data[i].real += temp.real;
+      data[i].image += temp.image;
+     }
+  }
+
+void RecursiveIFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：遞迴式的快速反向離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：資料數目必須為2的次方才可呼叫本函數
+      ------------------------------------------------------------ */
+   int i, j, new_pos;
+   complex temp;
+   float angle_step, angle, w_cos, w_sin;
+
+   if (data_no <= 2)
+     {
+      temp = data[1];
+      data[1].real = (data[0].real - temp.real) / 2;
+      data[1].image = (data[0].image - temp.image) / 2;
+      data[0].real = (data[0].real + temp.real) / 2;
+      data[0].image = (data[0].image + temp.image) / 2;
+      return;
+     }
+   angle_step = -2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 奇偶分堆, 偶在左, 奇在右 */
+   for (i=2; i < data_no; i+=2)
+     {
+      /* 將位置i資料調至i/2 */
+      new_pos = i/2;
+      temp = data[i];
+      for (j=i-1; j>=new_pos; j--) data[j+1] = data[j];
+      data[new_pos] = temp;
+     }
+   /* 呼叫自己計算子向量 */
+   RecursiveIFFT(data_no/=2,data);
+   RecursiveIFFT(data_no,data+data_no);
+   /* 合併出答案 */
+   for (i=0; i < data_no; i++)
+     {
+      angle = (float) i*angle_step;
+      w_cos = cos(angle);
+      w_sin = sin(angle);
+      new_pos = i+data_no;
+      temp.real = data[new_pos].real * w_cos -
+                  data[new_pos].image * w_sin;
+      temp.image = data[new_pos].real * w_sin +
+                   data[new_pos].image * w_cos;
+      data[new_pos].real = (data[i].real - temp.real) / 2;
+      data[new_pos].image = (data[i].image - temp.image) / 2;
+      data[i].real = (data[i].real + temp.real) / 2;
+      data[i].image = (data[i].image + temp.image) / 2;
+     }
+  }
+
+    雖然我們已經寫出了一個快速的傅立葉轉換計算程式，而且經實際試驗結
+果，確實比前面直接計算的方式快了相當多，但由於它是遞迴呼叫方式，在效
+率上仍未能達到最佳。而且遞迴呼叫之前的分堆資料搬移動作也佔了相當多的
+時間，這點在資料數增多時便開始逐漸浮現。因此我們必須找出其非遞迴呼叫
+的程式，並設法去除分堆的資料搬移動作，直接併入資料計算中，如此便可再
+提高快速傅立葉轉換的計算速度。但這點必須展開遞迴呼叫的程序，觀察其規
+律性，才能得到結論。不過在展開遞迴呼叫分析前，我們先說明另一種利用多
+項式除法的觀念來解決成非遞迴呼叫的方式，以便後面進行遞迴呼叫展開分析
+時，會比較容易懂些。以下我們便說明一下這個多項式除法的觀念。
+
+    依照前面所提及之多項式：
+
+           N-1       k             0    N-1
+    B(x) = Σ  A(k) x      ，x = ω ～ω
+           k=0
+
+要求B(ω^m) 的值，即是求B(x)除以(x-ω^m)之餘數值，但m=0～N-1，全部要
+除上N次也是很花時間的。由於其中有相當多的重複計算，因此我們可以取適當
+的分式積：
+
+         m1       m2           mk
+    (x-ω  ) (x-ω  ) ... (x-ω  )
+
+求出該式除B(x)的餘式R(x)後，再以各分式除R(x)來得到所要的餘數，這樣的
+計算速度將會快些。當N=2^k次方時（若不足可補係數0，前面已提過），由於
+所有(x-ω^m)的乘積將為(x^N-1)，因此我們可以利用二分的方式持續進行分式
+除法（有點類似分割解決法）。例如N=8時，各層所使用的除式可列舉如下：
+
+                                x^8-1
+                  ┌───────┴──────┐
+                x^4-1                        x^4-ω^4
+          ┌───┴───┐            ┌───┴───┐
+         x^2-1         x^2-ω^4       x^2-ω^2       x^2-ω^6
+      ┌─┴─┐      ┌─┴─┐    ┌─┴─┐      ┌─┴─┐
+    x-ω^0  x-ω^4  x-ω^2  x-ω^6  x-ω  x-ω^5  x-ω^3  x-ω^7
+
+由其結果可發現，利用此種二分分式除法方式，不論如何調換分式，最後得到
+的結果都不會是我們所要的順序，但我們卻可排出一種位元反轉的順序出來。
+所謂位元反轉，指的是數字中的位元順序完全調換，例如3=011b，其位元反轉
+後的值便是110b=6。上例得到的結果便是：
+
+    B[0] B[4] B[2] B[6] B[1] B[5] B[3] B[7]
+
+B[m]即B(ω^m)。讀者可以檢驗看看這個順序便是位元反轉順序。利用這個位元
+反轉順序的關係，我們便可以很容易將這些資料重排回我們所要的順序。但若
+要有效率的重排，不妨使用Cooley、Lewis和Welch所提出的演算法：
+
+   j = 0;
+   for (i=1; i < N-1; i++)  /* N為資料數 */
+     {
+      k = N/2;
+      while (k <= j)
+        {
+         j -= k;
+         k /= 2;
+        }
+      j += k;
+      if (i < j) 資料i和資料j對調
+     }
+
+    接下來我們要說明一下上述這些分項式的除法要如何計算。對於一個2r-1
+次多項式除以(x^r-c)的餘式，其實便是：
+
+           r-1                            r-1
+    A(r-1)x   + ... + A(0) + c * (A(2r-1)x   + ... + A(r))
+
+以上述例子來說，假設各項次係數為[A7 A6 A5 A4 A3 A2 A1 A0]，則除以
+(x^4-ω^4)的餘數便是：
+
+      [A3 A2 A1 A0] + ω^4 [A7 A6 A5 A4]
+    = [A3 A2 A1 A0] - [A7 A6 A5 A4]
+    = [A3-A7 A2-A6 A1-A5 A0-A4]
+
+至於各層除式所應乘上的ω^k，k值應為何呢？上面已提過，各層的分式均保持
+著位元反轉的順序，因此當分式在該層第i個位置時（由0計算起），k值便是i
+的位元反轉值。不過在實際計算時，是兩個分式為一組計算的，除了儲存空間
+上的考量外，也因可使用同一個ω^k值來加快速度。
+
+    依照上述的這些特性，我們已經得到一種非遞迴呼叫方式的快速傅立葉轉
+換演算法。至於其時間Order如何？由於上述之二分結果共有logn層，每層只需
+cn次運算，因此其時間也是O(nlogn)的，有興趣的讀者不妨做一下較正式的證
+明。下面便是我們依照上述的多項式除法觀念所寫成的程式：
+
+void PolynomialFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：多項式除法的快速離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int i, j, k, level, depth, depart_no, sub_data_no, windex;
+   int pre_index, post_index;
+   float w_cos, w_sin, angle_step, angle;
+   complex temp;
+
+   if (data_no < 2) return;
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 計算層次數 */
+   depth = 15;
+   sub_data_no = data_no;
+   while ((sub_data_no & (int)0x8000) == 0)
+     {
+      sub_data_no <<= 1;
+      depth--;
+     }
+   data_no = 1 << depth;
+   /* 開始轉換 */
+   depart_no = sub_data_no = data_no;
+   for (level=0; level < depth; level++)
+     {
+      depart_no /= 2;
+      windex = 0;
+      /* 處理每個多項式除法 */
+      for (j=0; j < data_no; j+=sub_data_no)
+        {
+         /* 計算該多項式所應乘上的ω^k值 */
+         i = 0;
+         for (k=0; k < depth; k++)
+            i = (i << 1) | ((windex >> k) & 1);
+         angle = i*angle_step;
+         w_cos = cos(angle);
+         w_sin = sin(angle);
+         windex += 2;
+         /* 處理該多項式的除法 */
+         for (i=0; i < depart_no; i++)
+           {
+            pre_index = i + j;
+            post_index = pre_index + depart_no;
+            temp.real = data[post_index].real * w_cos -
+                        data[post_index].image * w_sin;
+            temp.image = data[post_index].real * w_sin +
+                         data[post_index].image * w_cos;
+            data[post_index].real = data[pre_index].real - temp.real;
+            data[post_index].image = data[pre_index].image - temp.image;
+            data[pre_index].real += temp.real;
+            data[pre_index].image += temp.image;
+           }
+        }
+      sub_data_no = depart_no;
+     }
+   /* 利用位元反轉重排資料 */
+   j = 0;
+   for (i=1; i < data_no-1; i++)
+     {
+      k = data_no/2;
+      while (k <= j)
+        {
+         j -= k;
+         k /= 2;
+        }
+      j += k;
+      if (i < j)
+        {
+         temp = data[j];
+         data[j] = data[i];
+         data[i] = temp;
+        }
+     }
+  }
+
+void PolynomialIFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：多項式除法的快速反向離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) data[m].image = -data[m].image;
+   /* 進行傅立葉轉換 */
+   PolynomialFFT(data_no,data);
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      data[m].real /= data_no;
+      data[m].image = -data[m].image/data_no;
+     }
+  }
+
+讀者可在本節最後面所列的各演算法程式測試比較表發現，這個程式又比遞迴
+呼叫的方式快了相當多，只不過每次要算ω^k值時都必須做一次位元反轉，比
+較稍費時些。
+
+    現在我們再回到原來的遞迴呼叫演算法上。原來的遞迴呼叫演算法的遞迴
+呼叫部份，主要來自於下式（前面已列過）：
+
+        j             2j    j       2j
+    B(ω     ) =  C(ω  ) ω  + D(ω  )
+
+        j+N/2         2j    j       2j
+    B(ω     ) = -C(ω  ) ω  + D(ω  )    ，j = 0～N/2-1
+
+由於遞迴呼叫計算時，計算資料來源和計算後資料存回的位置都不一樣，因此
+有人便想辦法調換輸入資料的順序，使得計算資料來源和計算後資料存回的位
+置能夠一致，如此只要用迴圈的方式一層一層計算，不必再經由遞迴呼叫的方
+式計算，也不用進行資料分堆搬移的動作。經過展開分析的結果，發現輸入資
+料的順序應該改成上面我們提到的位元反轉順序，而計算公式也改成下式（在
+第k層時，k由0算起）：
+
+    B[i    ] = B[i] + B[i+2^k] ω^(i*N/2^(k+1))
+    B[i+2^k] = B[i] - B[i+2^k] ω^(i*N/2^(k+1))  ，i=0～2^k-1
+
+    由於上面公式這種交叉運算存回的特性，因此一般我們便稱之為Butterfly
+法，而又由於上面的公式是經由時序領域的資料分析所得來的，因此又稱之為
+DIT（Dicimation in Time）Butterfly法（亦稱Cooley-Tukey法）。以下便是
+這個方法的傅立葉轉換程式：
+
+void DITFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：DIT式的快速離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int i, j, k, level, depth, depart_no, sub_data_no, wstep;
+   int pre_index, post_index;
+   float w_cos, w_sin, angle_step, angle;
+   complex temp;
+
+   if (data_no < 2) return;
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 計算層次數 */
+   depth = 15;
+   sub_data_no = data_no;
+   while ((sub_data_no & (int)0x8000) == 0)
+     {
+      sub_data_no <<= 1;
+      depth--;
+     }
+   data_no = 1 << depth;
+   /* 利用位元反轉重排輸入資料 */
+   j = 0;
+   for (i=1; i < data_no-1; i++)
+     {
+      k = data_no/2;
+      while (k <= j)
+        {
+         j -= k;
+         k /= 2;
+        }
+      j += k;
+      if (i < j)
+        {
+         temp = data[j];
+         data[j] = data[i];
+         data[i] = temp;
+        }
+     }
+   /* 開始轉換 */
+   depart_no = 1;
+   wstep = data_no;
+   for (level=0; level < depth; level++)
+     {
+      sub_data_no = depart_no * 2;
+      wstep /= 2;
+      for (i=0; i < depart_no; i++)
+        {
+         /* 計算該butterfly所應乘上的ω^k值 */
+         angle = i*wstep*angle_step;
+         w_cos = cos(angle);
+         w_sin = sin(angle);
+         for (j=0; j < data_no; j+=sub_data_no)
+           {
+            pre_index = i + j;
+            post_index = pre_index + depart_no;
+            temp.real = data[post_index].real * w_cos -
+                        data[post_index].image * w_sin;
+            temp.image = data[post_index].real * w_sin +
+                         data[post_index].image * w_cos;
+            data[post_index].real = data[pre_index].real - temp.real;
+            data[post_index].image = data[pre_index].image - temp.image;
+            data[pre_index].real += temp.real;
+            data[pre_index].image += temp.image;
+           }
+        }
+      depart_no *= 2;
+     }
+  }
+
+void DITIFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：DIT式的快速反向離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) data[m].image = -data[m].image;
+   /* 進行傅立葉轉換 */
+   DITFFT(data_no,data);
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      data[m].real /= data_no;
+      data[m].image = -data[m].image/data_no;
+     }
+  }
+
+這個程式只比多項式除法的方式稍快一點點而已，主要是因為ω^k在計算時，
+不必每次都要位元反轉。
+
+    除了對輸入的時序領域資料進行分析以外，也有人直接對輸出的頻譜領域
+資料進行分析，而得到類似於上述的演算法，這種方法稱之為DIF（Dicimation
+in Frequency）Butterfly法（或稱Sande-Tukey法）。其分析過程是這樣子的。
+對於離散式傅立葉轉換的公式：
+
+           N-1        mk
+    B(m) = Σ  A(k) ω          ，m = 0～N-1
+           k=0
+
+將之分解如下（同樣假設N=2^k的情況）：
+
+           N/2-1       mk    N-1        mk
+    B(m) =  Σ  A(k) ω   +  Σ  A(k) ω
+            k=0             k=N/2
+
+           N/2-1                     mN/2     mk
+         =  Σ  〔 A(k) + A(k+N/2) ω     〕ω
+            k=0
+
+於是
+
+              N/2-1                     2mN/2       2mk
+    B(2m)   =  Σ  〔 A(k) + A(k+N/2) ω      〕  ω
+              k=0
+
+              N/2-1                     (2m+1)N/2   (2m+1)k
+    B(2m+1) =  Σ  〔 A(k) + A(k+N/2) ω      〕  ω
+              k=0
+
+由於
+
+      2mN/2          (2m+1)N/2
+    ω      = 1，  ω          = -1
+
+因此
+
+              N/2-1                       2mk
+    B(2m)   =  Σ  〔 A(k) + A(k+N/2) 〕ω
+              k=0
+
+              N/2-1                       k     2mk
+    B(2m+1) =  Σ  〔 (A(k) - A(k+N/2)) ω  〕ω
+              k=0
+
+這個公式便是DIF Butterfly法的由來。將其計算過程逐一列出，便可發現其運
+算過程恰與DIT Butterfly相反（在第k層時，k由0算起）：
+
+    B[i          ] = B[i] + B[i+N/2^(k+1)]
+    B[i+N/2^(k+1)] = (B[i] - B[i+N/2^(k+1)]) ω^(i*2^k)，i=0～N/2^(k+1)
+
+而所得結果便是位元反轉順序。以下便是DIF Butterfly演算法的程式：
+
+void DIFFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：DIF式的快速離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int i, j, k, level, depth, depart_no, sub_data_no, wstep;
+   int pre_index, post_index;
+   float w_cos, w_sin, angle_step, angle;
+   complex temp, temp2;
+
+   if (data_no < 2) return;
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 計算層次數 */
+   depth = 15;
+   sub_data_no = data_no;
+   while ((sub_data_no & (int)0x8000) == 0)
+     {
+      sub_data_no <<= 1;
+      depth--;
+     }
+   data_no = 1 << depth;
+   /* 開始轉換 */
+   depart_no = sub_data_no = data_no;
+   wstep = 1;
+   for (level=0; level < depth; level++)
+     {
+      depart_no /= 2;
+      for (i=0; i < depart_no; i++)
+        {
+         /* 計算該butterfly所應乘上的ω^k值 */
+         angle = i*wstep*angle_step;
+         w_cos = cos(angle);
+         w_sin = sin(angle);
+         for (j=0; j < data_no; j+=sub_data_no)
+           {
+            pre_index = i + j;
+            post_index = pre_index + depart_no;
+            temp.real = data[pre_index].real + data[post_index].real;
+            temp.image = data[pre_index].image + data[post_index].image;
+            temp2.real = data[pre_index].real - data[post_index].real;
+            temp2.image = data[pre_index].image - data[post_index].image;
+            data[post_index].real = temp2.real*w_cos - temp2.image*w_sin;
+            data[post_index].image = temp2.real*w_sin + temp2.image*w_cos;
+            data[pre_index] = temp;
+           }
+        }
+      sub_data_no = depart_no;
+      wstep *= 2;
+     }
+   /* 利用位元反轉重排輸入資料 */
+   j = 0;
+   for (i=1; i < data_no-1; i++)
+     {
+      k = data_no/2;
+      while (k <= j)
+        {
+         j -= k;
+         k /= 2;
+        }
+      j += k;
+      if (i < j)
+        {
+         temp = data[j];
+         data[j] = data[i];
+         data[i] = temp;
+        }
+     }
+  }
+
+void DIFIFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：DIF式的快速反向離散傅立葉轉換
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) data[m].image = -data[m].image;
+   /* 進行傅立葉轉換 */
+   DIFFFT(data_no,data);
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      data[m].real /= data_no;
+      data[m].image = -data[m].image/data_no;
+     }
+  }
+
+    由於和DIT Butterfly法計算方式相當類似，因此這兩種方法的執行時間也
+相差不多（雖然DIF Butterfly法略快一點點）。那麼為什麼要再找出DIF
+Butterfly法呢？其實這兩種方法在一般的情況下的傅立葉轉換是相同的，但在
+某些條件下的傅立葉轉換卻是有不同的優點的。例如傅立葉轉換修剪（Pruning）
+問題，當輸入訊號或輸出訊號只有一部份有值，其餘均為0的情況下，某些運算
+是可以省略的。而在輸入訊號較少時，可由DIT Butterfly法修改出更有效率的
+演算法，在輸出訊訊號較少時，可由DIF Butterfly法修改出更有效率的演算法，
+因此這兩種不同的方法，仍然是有其不同的應用價值的。但作者對這些特殊條
+件下的傅立葉轉換並不想多談（主要也是因為太多了），因此有興趣的讀者不
+妨多找這方面的書來看，以看完本文後所打下來的基礎，相信看起來應不吃力
+才對。
+
+    其實上述的DIT Butterfly法和DIF Butterfly法還有很多的形式，主要是
+在計算次序的安排上。例如將兩兩交叉運算存回的位置安排成每層都相同，較
+有利於硬體上的製作；或是利用額外的空間暫存，使得輸出入資料的順序都不
+必做位元反轉順序重排等等。不過這些改變對於程式執行效率上來講，改進都
+不大。另外必須提的一點是，資料的位元反轉順序重排，可直接加在輸入資料，
+亦可直接加在輸出資料，兩者的結果是相同的。因此不管DIT Butterfly法或
+DIF Butterfly法，我們均可將位元反轉順序重排的程式調至前頭或後頭。
+
+    雖然我們已經列出各種不同現有的演算法及程式，但實際寫作時卻還有許
+多變化來加速，例如改良指標處理方式、或將ω^k的cos、sin計算提到迴圈外
+面等等，但減少的時間均相當有限。對於後者，我們也以DIF Butterfly為例修
+改程式如下，供讀者參考。其中將記錄ω^k值的變數做成公用變數，以便將來
+能在二維的傅立葉轉換中使用。其實DIT Butterfly或多項式除法等演算法，將
+ω^k的cos、sin計算提到迴圈外面之後，這幾種演算法的計算速度便相差無幾
+了，只是要多使用些記憶體罷了。當然，我們也考慮到了記憶體不夠的情況。
+只不過增加N/2的記憶體只減少N/2的cos、sin計算，是否划算，便取決於讀者
+了。但和一維不同的是，通常在二維的傅立葉轉換計算上都會先算好並記錄ω^k
+的值，主要因使用O(n)的記憶體可節省O(n^2)的時間，是非常划算的事。
+
+static Keep_No=0;
+static complex *W_Root;
+void FFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：加強版的快速離散傅立葉轉換（採DIF Butterfly法）
+      參數：data_no = 資料數目，若為0表示要清除函數內使用之記憶體
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int i, j, k, level, depth, depart_no, sub_data_no, wstep;
+   int pre_index, post_index;
+   float w_cos, w_sin, angle_step, angle;
+   complex temp, temp2;
+
+   if (data_no == 0)
+     {
+      if (Keep_No != 0) free(W_Root);
+      Keep_No = 0;
+     }
+   if (data_no < 2) return;
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 計算層次數 */
+   depth = 15;
+   sub_data_no = data_no;
+   while ((sub_data_no & (int)0x8000) == 0)
+     {
+      sub_data_no <<= 1;
+      depth--;
+     }
+   data_no = 1 << depth;
+   /* 取得並計算ω^k值 */
+   if (data_no != Keep_No)
+     {
+      if (Keep_No != 0) free(W_Root);
+      Keep_No = 0;
+      /* 只需算一半即可 */
+      sub_data_no = data_no / 2;
+      W_Root = (complex*) malloc(sub_data_no*sizeof(complex));
+      if (W_Root != NULL)
+        {
+         Keep_No = data_no;
+         for (i=0; i < sub_data_no; i++)
+           {
+            angle = i*angle_step;
+            W_Root[i].real = cos(angle);
+            W_Root[i].image = sin(angle);
+           }
+        }
+     }
+   /* 開始轉換 */
+   depart_no = sub_data_no = data_no;
+   wstep = 1;
+   for (level=0; level < depth; level++)
+     {
+      depart_no /= 2;
+      for (i=0; i < depart_no; i++)
+        {
+         /* 計算該butterfly所應乘上的ω^k值 */
+         j = i*wstep;
+         if (Keep_No != 0)
+           {
+            w_cos = W_Root[j].real;
+            w_sin = W_Root[j].image;
+           }
+         else
+           {
+            angle = j*angle_step;
+            w_cos = cos(angle);
+            w_sin = sin(angle);
+           }
+         for (j=0; j < data_no; j+=sub_data_no)
+           {
+            pre_index = i + j;
+            post_index = pre_index + depart_no;
+            temp.real = data[pre_index].real + data[post_index].real;
+            temp.image = data[pre_index].image + data[post_index].image;
+            temp2.real = data[pre_index].real - data[post_index].real;
+            temp2.image = data[pre_index].image - data[post_index].image;
+            data[post_index].real = temp2.real*w_cos - temp2.image*w_sin;
+            data[post_index].image = temp2.real*w_sin + temp2.image*w_cos;
+            data[pre_index] = temp;
+           }
+        }
+      sub_data_no = depart_no;
+      wstep *= 2;
+     }
+   /* 利用位元反轉重排輸入資料 */
+   j = 0;
+   for (i=1; i < data_no-1; i++)
+     {
+      k = data_no/2;
+      while (k <= j)
+        {
+         j -= k;
+         k /= 2;
+        }
+      j += k;
+      if (i < j)
+        {
+         temp = data[j];
+         data[j] = data[i];
+         data[i] = temp;
+        }
+     }
+  }
+
+void IFFT(int data_no,complex *data)
+  {
+   /* ------------------------------------------------------------
+      作用：加強版的快速反向離散傅立葉轉換（採DIF Butterfly法）
+      參數：data_no = 資料數目
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.資料數目必須為2的次方方可呼叫本函數
+            2.資料數目不可超過16384個
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) data[m].image = -data[m].image;
+   /* 進行傅立葉轉換 */
+   FFT(data_no,data);
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      data[m].real /= data_no;
+      data[m].image = -data[m].image/data_no;
+     }
+  }
+
+    也許讀者有個問題：如果給定的向量長度不是2的次方，而且也無法預留補
+0係數的空間，那麼要如何運用上面的程式呢？在這個情況下，便無法使用快速
+傅立葉轉換的演算法了，只好使用最原始的計算方式了。不過由於前面所列的
+DFT程式，其ω^k值的cos、sin運算相當頻繁，嚴重影響了執行速度，因此我們
+便將此部份提到迴圈外，而程式便修改如下，但執行效率仍不夠好，這是沒有
+辦法的事（其實仍是有方法的，但由於頗為複雜，故不在此討論）。
+
+void EnhancedDFT(int data_no,complex *in_data,complex *out_data)
+  {
+   /* ------------------------------------------------------------
+      作用：加強版的直接式離散傅立葉轉換
+      參數：data_no = 資料數目，若為0表示要清除函數內使用之記憶體
+            in_data = 輸入資料
+      輸出：out_data = 輸出資料
+      ------------------------------------------------------------ */
+   static keep_no=0;
+   static complex *w_root;
+   int m, k, i;
+   float w_cos, w_sin, angle_step, angle;
+
+   if (data_no == 0)
+     {
+      if (keep_no != 0) free(w_root);
+      keep_no = 0;
+     }
+   if (data_no < 2) return;
+   angle_step = 2*PI/data_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 取得並計算ω^k值 */
+   if (data_no != keep_no)
+     {
+      if (keep_no != 0) free(w_root);
+      keep_no = 0;
+      w_root = (complex*) malloc(data_no*sizeof(complex));
+      if (w_root != NULL)
+        {
+         keep_no = data_no;
+         for (i=0; i < data_no; i++)
+           {
+            angle = i*angle_step;
+            w_root[i].real = cos(angle);
+            w_root[i].image = sin(angle);
+           }
+        }
+     }
+   for (m=0; m < data_no; m++)     /* 計算B(m) */
+     {
+      out_data[m].real = in_data[0].real;
+      out_data[m].image = in_data[0].image;
+      for (k=1; k < data_no; k++)  /* 計算A(k)*ω^(mk) */
+        {
+         if (keep_no != 0)
+           {
+            i = (int) ((long) m*k % data_no);
+            w_cos = w_root[i].real;
+            w_sin = w_root[i].image;
+           }
+         else
+           {
+            angle = (float) m*k*angle_step;
+            w_cos = cos(angle);
+            w_sin = sin(angle);
+           }
+         out_data[m].real += in_data[k].real * w_cos -
+                             in_data[k].image * w_sin;
+         out_data[m].image += in_data[k].real * w_sin +
+                              in_data[k].image * w_cos;
+        }
+     }
+  }
+
+void EnhancedIDFT(int data_no,complex *in_data,complex *out_data)
+  {
+   /* ------------------------------------------------------------
+      作用：加強版的直接式反向離散傅立葉轉換
+      參數：data_no = 資料數目
+            in_data = 輸入資料
+      輸出：out_data = 輸出資料
+      ------------------------------------------------------------ */
+   int m;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (m=0; m < data_no; m++) in_data[m].image = -in_data[m].image;
+   /* 進行傅立葉轉換 */
+   EnhancedDFT(data_no,in_data,out_data);
+   /* 將輸入資料改回原樣 */
+   for (m=0; m < data_no; m++) in_data[m].image = -in_data[m].image;
+   /* 傳回值全部除以N, 並改成共輒數 */
+   for (m=0; m < data_no; m++)
+     {
+      out_data[m].real /= data_no;
+      out_data[m].image = -out_data[m].image/data_no;
+     }
+  }
+
+    現在我們實際對以上七種傅立葉轉換程式的執行速度做一番測試，以便讓
+讀者能直接從這些測試數據裡了解到各個程式的優劣。下表便是上述幾種傅立
+葉轉換計算程式的平均執行時間比較表（取100次平均），內部的數據為秒。
+
+    ┌───────┬───┬───┬───┬───┐
+    │資料數目      │   64 │  256 │ 1024 │ 4096 │
+    ├───────┼───┼───┼───┼───┤
+    │DFT           │  0.13│  2.07│ 33.62│541.43│
+    ├───────┼───┼───┼───┼───┤
+    │RecursiveFFT  │  0.01│  0.09│  1.13│ 15.54│
+    ├───────┼───┼───┼───┼───┤
+    │PolynomialFFT │  0.00│  0.02│  0.09│  0.43│
+    ├───────┼───┼───┼───┼───┤
+    │DITFFT        │  0.00│  0.02│  0.09│  0.41│
+    ├───────┼───┼───┼───┼───┤
+    │DIFFFT        │  0.00│  0.02│  0.09│  0.40│
+    ├───────┼───┼───┼───┼───┤
+    │FFT           │  0.00│  0.01│  0.07│  0.34│
+    ├───────┼───┼───┼───┼───┤
+    │EnhancedDFT   │  0.04│  0.60│  9.83│160.16│
+    └───────┴───┴───┴───┴───┘
+        表一  各傅立葉轉換計算程式執行時間比較表
+
+    最後要再提的一點便是，根據第一節所提的傅立葉轉換特性三，我們可利
+用FFT一次找出兩個實數向量的傅立葉轉換值。由於在時間領域中，我們通常是
+使用實數向量，因此這個方法可使我們在進行多個向量的傅立葉轉換時，可省
+下近一半的時間。至於如何寫成程式，只是呼叫上述傅立葉轉換程式後的一些
+簡單計算而已，我們留給讀者當一個習題好了。但是要注意的是，這個特性在
+反轉過程中便無法適用，而對於二維的傅立葉轉換，也只能節省1/4的時間而已。
+
+
+<font color=blue><b>第三節  二維傅立葉轉換</b></font>
+
+    關於二維傅立葉轉換，其定義如下：
+
+              ∞          i2π(ux+vy)
+    F(u,v) = ∫∫ f(x,y) e           dxdy
+             -∞
+
+              ∞          i2π(xu+yv)
+    f(x,y) = ∫∫ F(u,v) e           dudv
+             -∞
+
+亦可定義成：
+
+              ∞          i(ux+vy)
+    F(u,v) = ∫∫ f(x,y) e       dxdy
+             -∞
+
+                1    ∞         i(xu+yv)
+    f(x,y) = ───∫∫ F(u,v) e       dudv
+             4π^2  -∞
+
+至於二維離散傅立葉轉換之定義則為下式：
+
+             M-1 N-1         i2π(sm/M+tn/N)
+    B(s,t) = Σ  Σ  A(m,n) e               ，s = 0～M-1、t = 0～N-1
+             m=0 n=0
+
+              1  M-1 N-1         -i2π(ms/M+nt/N)
+    A(m,n) = ─  Σ  Σ  B(s,t) e           ，m = 0～M-1、n = 0～N-1
+             MN  s=0 t=0
+
+由於上式可寫成：
+
+             M-1   N-1         i2πtn/N   i2πsm/M
+    B(s,t) = Σ 〔 Σ  A(m,n) e        〕e
+             m=0   n=0
+
+              1 M-1   1 N-1         -i2πnt/N   -i2πms/M
+    A(m,n) = ─ Σ〔 ─ Σ  B(s,t) e         〕e
+              M s=0   N t=0
+
+因此我們可視二維傅立葉轉換為先對行或列進行一維傅立葉轉換後，再對列或
+行進行一維傅立葉轉換的結果。利用第二節所述之快速傅立葉轉換，我們便可
+以得到一個O(n^2logn)的演算法。下面便是這個演算法的程式：
+
+void Decomposed2DFFT(int x_no,int y_no,complex **data)
+  {
+   /* ------------------------------------------------------------
+      作用：行列分解法快速二維離散傅立葉轉換
+      參數：x_no = 列數，若為0表示要清除函數內使用之記憶體
+            y_no = 行數
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.行數及列數均必須為2的次方方可呼叫本函數
+            2.行數或列數不可超過16384個
+      ------------------------------------------------------------ */
+   int i, j, k, level, depth, depart_no, sub_data_no, wstep;
+   int pre_index, post_index;
+   float w_cos, w_sin, angle_step, angle;
+   complex temp, temp2;
+
+   if (x_no == 0)
+     {
+      if (Keep_No != 0) free(W_Root);
+      Keep_No = 0;
+     }
+   /* 先對各行進行一維傅立葉轉換 */
+   for (line=0; line < y_no; line++) FFT(x_no,data[line]);
+   /* 再對各列進行一維傅立葉轉換 */
+   if (y_no < 2) return;
+   angle_step = 2*PI/y_no;   /* 乘法單位元素根ω之間隔角度 */
+   /* 計算層次數 */
+   depth = 15;
+   sub_data_no = y_no;
+   while ((sub_data_no & (int)0x8000) == 0)
+     {
+      sub_data_no <<= 1;
+      depth--;
+     }
+   y_no = 1 << depth;
+   /* 取得並計算ω^k值 */
+   if (y_no != Keep_No)
+     {
+      if (Keep_No != 0) free(W_Root);
+      Keep_No = 0;
+      sub_data_no = y_no / 2;
+      W_Root = (complex*) malloc(sub_data_no*sizeof(complex));
+      if (W_Root != NULL)
+        {
+         Keep_No = y_no;
+         for (i=0; i < sub_data_no; i++)
+           {
+            angle = i*angle_step;
+            W_Root[i].real = cos(angle);
+            W_Root[i].image = sin(angle);
+           }
+        }
+     }
+   /* 開始轉換各列 */
+   for (line=0; line < x_no; line++)
+     {
+      depart_no = sub_data_no = y_no;
+      wstep = 1;
+      for (level=0; level < depth; level++)
+        {
+         depart_no /= 2;
+         for (i=0; i < depart_no; i++)
+           {
+            /* 計算該butterfly所應乘上的ω^k值 */
+            j = i*wstep;
+            if (Keep_No != 0)
+              {
+               w_cos = W_Root[j].real;
+               w_sin = W_Root[j].image;
+              }
+            else
+              {
+               angle = j*angle_step;
+               w_cos = cos(angle);
+               w_sin = sin(angle);
+              }
+            for (j=0; j < y_no; j+=sub_data_no)
+              {
+               pre_index = i + j;
+               post_index = pre_index + depart_no;
+               temp.real = data[pre_index][line].real +
+                           data[post_index][line].real;
+               temp.image = data[pre_index][line].image +
+                            data[post_index][line].image;
+               temp2.real = data[pre_index][line].real -
+                            data[post_index][line].real;
+               temp2.image = data[pre_index][line].image -
+                             data[post_index][line].image;
+               data[post_index][line].real = temp2.real*w_cos -
+                                             temp2.image*w_sin;
+               data[post_index][line].image = temp2.real*w_sin +
+                                              temp2.image*w_cos;
+               data[pre_index][line] = temp;
+              }
+           }
+         sub_data_no = depart_no;
+         wstep *= 2;
+        }
+      /* 利用位元反轉重排輸入資料 */
+      j = 0;
+      for (i=1; i < y_no-1; i++)
+        {
+         k = y_no/2;
+         while (k <= j)
+           {
+            j -= k;
+            k /= 2;
+           }
+         j += k;
+         if (i < j)
+           {
+            temp = data[j][line];
+            data[j][line] = data[i][line];
+            data[i][line] = temp;
+           }
+        }
+     }
+  }
+
+void Decomposed2DIFFT(int x_no,int y_no,complex **data)
+  {
+   /* ------------------------------------------------------------
+      作用：行列分解法快速二維離散傅立葉轉換
+      參數：x_no = 列數
+            y_no = 行數
+            data = 輸入資料
+      輸出：data = 輸出資料
+      限制：1.行數及列數均必須為2的次方方可呼叫本函數
+            2.行數或列數不可超過16384個
+      ------------------------------------------------------------ */
+   float divide;
+   complex *sub_data;
+   int x, y;
+
+   /* 將輸入資料全部改成共輒數 */
+   for (y=0; y < y_no; y++)
+     {
+      sub_data = data[y];
+      for (x=0; x < x_no; x++) sub_data[x].image = -sub_data[x].image;
+     }
+   /* 進行二維傅立葉轉換 */
+   Decomposed2DFFT(data_no,data);
+   /* 傳回值全部除以M*N, 並改成共輒數 */
+   divide = (float) x_no * y_no;
+   for (y=0; y < y_no; y++)
+     {
+      sub_data = data[y];
+      for (x=0; x < x_no; x++)
+        {
+         sub_data[x].real /= divide;
+         sub_data[x].image = -sub_data[x].image/divide;
+        }
+     }
+  }
+
+上面這個程式是假設使用動態記憶體來存放資料，若使用的是靜態記憶體，那
+麼上面的函數宣告上便必須做一些更動，但程式實體並不需改變。為了方便讀
+者使用，作者也寫了一個通用型的二維動態記憶體取得及釋放函數如下：
+
+void** Alloc2DArray(int xsize,int ysize,int item_size)
+  {
+   /* ------------------------------------------------------------
+      作用：取得二維陣列動態記憶體
+      參數：xsize, ysize = 二維陣列大小
+            item_size = 陣列元素大小
+      傳回：記憶體空間指標，若為NULL表記憶體不夠
+      限制：xsize*item_size必須小於65536
+      ------------------------------------------------------------ */
+   int i, j;
+   void** ptr;
+
+   ptr = (void**) malloc(ysize*sizeof(void*));
+   if (ptr == NULL) return NULL;
+   for (i=0; i < ysize; i++)
+     {
+      ptr[i] = (void*) malloc(xsize*item_size);
+      if (ptr[i] == NULL)
+        {
+         /* 記憶體不夠, 釋放原取得之記憶體 */
+         for (j=0; j < i; j++) free(ptr[j]);
+         free(ptr);
+         return NULL;
+        }
+     }
+   return ptr;
+  }
+
+void Free2DArray(int xsize,int ysize,void **ptr)
+  {
+   /* ------------------------------------------------------------
+      作用：釋放二維陣列動態記憶體
+      參數：xsize, ysize = 二維陣列大小
+            ptr = 記憶體空間指標
+      備註：xsize實際上並沒用到，但為容易辨識使用，故加上此一參數
+      ------------------------------------------------------------ */
+   int i;
+
+   if (ptr == NULL) return;
+   for (i=0; i < ysize; i++) free(ptr[i]);
+   free(ptr);
+  }
+
+例如要取得256x128的complex二維陣列記憶體空間，只需呼叫下列函數：
+
+    data = (complex**) Alloc2DArray(256,128,sizeof(complex));
+    if (data == NULL) 記憶體不夠...
+
+要釋放時則呼叫下列函數：
+
+    Free2DArray(256,128,data);
+
+這樣的函數對於二維資料的記憶體空間處理上是頗為方便的。
+
+    現在我們已經得到一個快速的二維傅立葉轉換演算法，但是否有更快的演
+算法？答案是有的，我們仍然可以利用第二節所述的分割解決法來得到更快的
+演算法，此種方法稱為Vector-Radix法。對於二維傅立葉轉換的公式：
+
+             M-1 N-1         i2π(sm/M+tn/N)
+    B(s,t) = Σ  Σ  A(m,n) e               ，s = 0～M-1、t = 0～N-1
+             m=0 n=0
+
+....... (未完) .......
+<font color=red>....... 以下暫略, 可能不再寫下去 .........</font>  青衫 '97 3/29
+
+我們可以分別依A(m,n)中m的奇偶項次和n的奇偶項次區分成四堆如下：
+
+             M/2-1 N/2-1          i2π(sm/M+tn/N)
+    B(s,t) =  Σ    Σ  A(2m,2n) e
+              m=0   n=0
+
+               i2πt/N M/2-1 N/2-1            i2π(sm/M+tn/N)
+            + e         Σ    Σ  A(2m,2n+1) e
+                        m=0   n=0
+
+
+
+    ┌────────┬───┬───┬───┐
+    │資料數目        │   64 │  128 │  256 │
+    ├────────┼───┼───┼───┤
+    │Decomposed2DFFT │  0.41│  1.87│  9.00│
+    ├────────┼───┼───┼───┤
+    │Divide2DFFT     │      │      │      │
+    └────────┴───┴───┴───┘
+     表二  二維傅立葉轉換計算程式執行時間比較表
+
+
+<font color=blue><b>第四節  傅立葉轉換的應用</b></font>
+
+一．傅立葉頻譜顯示
+
+    log(a + b │F(u,v)│)
+    c log(1+│F(u,v)│)
+
+二．地程高度量測誤差模式
+
+三．矩陣乘法
+
+
+<font color=blue><b>習題</b></font>
+
+ 1.試由傅立葉積分式，導出傅立葉轉換公式。
+ 2.證明第一節所述之各種傅立葉轉換特性。
+ 3.證明多項式除法、DIT Butterfly法、DIF Butterfly法之傅立葉轉換計算時
+   間均為O(nlogn)。
+ 4.證明2r-1次多項式除以(x^r-c)的餘式為
+
+            r-1                            r-1
+     A(r-1)x   + ... + A(0) + c * (A(2r-1)x   + ... + A(r))
+
+   其中A(n)為x^n的係數。
+ 5.請以N=16為例，展開DIT Butterfly法和DIF Butterfly法的運算方式，並驗
+   證第二節所列的運算公式無誤。
+ 6.試寫出傅立葉轉換修剪的程式（包括輸入資料修剪和輸出資料修剪兩種）。
+ 7.試利用傅立葉轉換的共輒對稱性，寫出一個同時計算兩個實數向量的傅立葉
+   轉換程式。
+
+
+<font color=blue><b>參考文獻</b></font>
+
+ 1."Image Processing - Theroy, Algorithms, and Architectures"，
+   Maher A. Sid-Ahmed，1995，ISBN 0-07-113697-5。
+ 2."Digital Image Processing"，Rafael C. Gonzalez、Richard E. Woods，
+ 　1992，開發。
+ 3."Fractal Image Compression"，Progress Report，July 1992。
+ 4."C Language Algorithms for Digital Signal Processing"，
+   Paul M. Embree、Bruce Kimble，1991，開發。
+ 5."Principles of Pictorial Information Systems Design"，Shi-Kuo Chang，
+   1989，ISBN 0-13-710393-X。
+ 6."The Fast Fourier Transform and Its Applications"，E. Oran Brigham，
+   1988，ISBN 0-13-307547-8。
+ 7."One-Dimensional Digital Signal Processing"，Chi-Tsong Chen，1985，
+   歐亞。
+ 8."The Art of Computer Programming"，Vol.2，Donald E. Knuth，1985，
+   台北。
+ 9."Discrete Fourier Transformation and Its Application to Power Spectra
+   Estimation"，Nezih C. Geckinli、Davras Yavusz，1985，巨擘。
+10."Two-Dimensional Fast Fourier Transforms in Image Processing"，
+   Donald E. Lewis，Systems Research Laboratories, Inc.，1984。
+11."Advanced Engineering Mathematics"，Erwin Kreyszig，1983，淡江。
+12."Fast Transforms - Algorithms, Analyses, Applications"，
+   Douglas F. Elliott、K. Ramamohan Rao，1982，ISBN 0-12-237080-5。
+13."Fast Fourier Transform and Convolution Algorithms"，
+   Henri J. Nussbaumer，1982，ISBN 0-387-11825-X。
+14."2-D FFTs of Large Images with AP-120B"，Richard E. Twogood，
+   Floating Point Systems Users Group Meeting，Feb. 1980。
+15."Computer Image Processing and Recognition"，Ernest L. Hall，1979，
+   儒林。
+16."Digital Image Processing"，William K. Pratt，1978，儒林。
+17."The Design and Analysis of Computer Algorithms"，Aho、Hopcroft、
+   Ullman，1974，開發。
+18."Terrain Correlation Suitability"，Wang Tang、Robert L. McClintock，
+   SPIE Vol.2220。
+19."數位影像處理"，余松煜、周源華、吳時光編著，1993，儒林。
+20."數位信號處理"，王啟川、郭弘政編譯，1992，全華。
+21."數位影像處理"，衛祖賞編著，1989，全華。
+
+</pre>
+</body>
+</html>

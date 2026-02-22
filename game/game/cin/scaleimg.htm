@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>黑白影像的放大縮小研究</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+黑白影像的放大縮小研究 -- 邱奕南，1996/8/16
+
+    影像資料的放大縮小，係其實便是一種位置對映的關係。由於二維的位置
+對映轉換計算和一維類似，因此我們先簡化，只從水平方向的縮放來考慮：
+
+    0110  放大2倍  00111100
+          縮小2倍  01
+
+解決的方法有兩種：一種是由原始影像的資料算出放大到目的影像所佔的區域，
+從而決定目的影像各點的值；一種是由目的影像各點找出所對應的原始影像區
+域，然後決定該目的影像點的值。很明顯的，以原始影像為主進行計算，比較
+適用於影像放大的情況，因為此時原始影像的點數較少，因此對映轉換的計算
+次數也會較少。同樣的，以目的影像為主進行計算，則較適用於影像縮小的情
+況，其道理也是相同的。這個部份我們會在後面加以證明。
+
+一．原始影像為主進行計算
+
+    這個方法的對映轉換計算，通常不以一點一點來各自算出對應範圍，而是
+直接取出一段一段相同值的點範圍來算出其對應範圍，亦即先找出水平線再縮
+放的觀念。至於將求出的對應範圍全部設成某個值，亦可利用類似畫水平線的
+方法來加速，避免一個位元一個位元的設值。（畫水平線的速度一定快於畫斜
+線，不是嗎？）
+
+二．目的影像為主進行計算
+
+    這個方法在對映轉換計算上，比較難找到連續點與原始影像的相關性，只
+能一點一點來各自算出對應範圍，然後從對應範圍的原始影像值中決定該點的
+值，一般是隨便挑一點來用。這個方法能夠加速的部份，只是在對映轉換的計
+算上，儘量用加減來取代乘除的運算。這點倒是可運用Bresenham畫線演算法中
+的點座標計算公式來改良。
+
+    雖然大致而言，以原始影像為主進行計算的方式適用於影像放大，而以目
+的影像為主進行計算的方式適用於影像縮小，但也並非完全可以如此劃分。因
+為以原始影像為主進行計算的方式，利用了水平線縮放的觀念，當縮小的倍數
+不大時，仍可能快過以目的影像為主進行計算的方式。但是究竟要如何劃分呢？
+我們從數理上來推衍。假設s為原始影像水平大小，t為目的影像水平大小，則
+（可參照後面所列之程式來看會比較清楚）：
+
+    1.原始影像為主進行計算需2～s次對映計算、s次原始影像取值、t/8～t
+      次目的影像寫值（最佳情況為一直線，最差情況為網點）。
+    2.目的影像為主進行計算需t次對映計算、t次原始影像取值、t次目的影像
+      寫值。
+
+如果我們以對映計算為主加以分析（因為對映計算部份最花時間），則在最差
+情況下，當s<=t時，也就是影像放大的情況下，以原始影像為主進行計算會比
+較快些。在最佳情況下，t<=2，亦即影像縮至很小時，以目的影像為主進行計
+算會比較快些。在平均情況下，當s<=2t時，也就是影像縮小不到2倍時，以原
+始影像為主進行計算才會比較快些。不過由於以目的影像為主進行計算的方式，
+可在對映計算上改進來加快速度，而且原始影像取值的次數也隨著影像縮小而
+較少，因此這個倍率應該會更小些，至於小多少，可能要取決於兩種方式對於
+對映計算上的速度。我們以一些測試數據來觀察。下面便是以128x128影像進行
+水平放大1000次的執行時間列表，其中方式一改良版指對映計算部份改成使用
+組合語言，方式二改良版則指利用Bresenham畫線計算公式改進對映計算部份。
+
+  ┌──────┬──────┬──────┬──────┐
+  │            │ 放大1/2倍  │  放大1倍   │  放大2倍   │
+  ├──────┼──────┼──────┼──────┤
+  │方式一      │  8.0-63.7  │  8.0-63.7  │  8.2- 63.7 │
+  │方式一改良版│  8.0-28.3  │  8.0-28.7  │  8.1- 29.1 │
+  │方式二      │ 28.3-30.5  │ 55.8-60.2  │110.7-119.6 │
+  │方式二改良版│  6.9- 9.1  │ 12.8-17.3  │ 24.8- 33.6 │
+  └──────┴──────┴──────┴──────┘
+
+    由上表可約略估出，當兩種方式均未改良時（使用同樣的對映計算），約
+在縮小1.6倍時平均情況達到平衡（與原先之數理分析結果差不多）。而當方式
+二改良後，由於對映計算的部份加快很多，因此若方式一仍未改良，則變成約
+在放大2.5倍時達到平衡。若方式一亦加以改良，則約在放大1.2倍時達到平衡。
+然而為了計算方便，我們可綜合為方式二改良後，當使用組合語言改良方式一
+之對映計算時，應在放大1倍以上才以原始影像為主計算；而當不使用組合語言
+改良時，則在放大2倍以上時才以原始影像為主計算。
+
+    上面所說的均局限於影像水平方向的縮放而已，至於垂直方向縮放，則大
+都直接由目的影像為主進行計算，只不過在計算時偵測是否與前一個目的影像
+行對映至相同的原始影像行。若是，則直接拷貝前一個目的影像行資料便可以
+了，不必再重新產生新的目的影像行。
+
+    以下為利用這個方法寫成的程式，並可做局部影像的放大縮小（但我沒測
+試過局部影像縮放的正確性）。你可以發現這個程式的執行速度比你的程式快
+上了數倍。至於要突破64Kb記憶體的限制，只要將函數修改成使用二維動態記
+憶體便可以了。
+
+#define true -1
+#define false 0
+typedef int BOOLEAN;
+
+void ScaleImage(char *src_buf,unsigned int src_dx,unsigned int src_dy,
+   unsigned int scale_x1,unsigned int scale_y1,unsigned int scale_x2,
+   unsigned int scale_y2,char *dest_buf,int dest_dx,int dest_dy)
+  {
+   /* ------------------------------------------------------------
+      作用：影像資料縮放
+      參數：src_buf = 原始影像資料
+            src_dx, src_dy = 原始影像的水平、垂直點數
+            scale_x1, scale_y1, scale_x2, scale_y2 = 要縮放的影
+               像資料在原始影像中的位置
+            dest_buf = 縮放後影像存放的緩衝區
+            dest_dx, dest_dy = 縮放後影像的水平、垂直點數
+      限制：1.水平、垂直點數不得超出32767
+            2.影像資料大小不得超出64Kb
+      ------------------------------------------------------------ */
+   /* 若編譯器不允許內插組合語言，則將下列敘述刪掉或做成備註行 */
+   #define ASSEMBLY_ENABLE 1
+   static unsigned char bits[] =
+      {0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01};
+   static unsigned char left_bits[] =
+      {0x80,0xC0,0xE0,0xF0,0xF8,0xFC,0xFE,0xFF};
+   static unsigned char right_bits[] =
+      {0xFF,0x7F,0x3F,0x1F,0x0F,0x07,0x03,0x01};
+   unsigned int src_xbyte, dest_xbyte, mapx, mapy, step, x, y, sdx, sdy;
+   unsigned int x1, x2, x1pos, x2pos, x1_data, x2_data, last_mapy, temp_dx;
+   int d, incr1, incr2;
+   BOOLEAN use_source;
+   unsigned char *check_src;
+
+   /* 檢查輸入參數 */
+   if ((dest_dx == 0) || (dest_dy == 0)) return;
+   if (scale_x2 >= src_dx) scale_x2 = src_dx-1;
+   if (scale_y2 >= src_dy) scale_y2 = src_dy-1;
+   if ((scale_x1 > scale_x2) || (scale_y1 > scale_y2)) return;
+   src_xbyte = (src_dx+7)/8;
+   dest_xbyte = (dest_dx+7)/8;
+   src_buf += src_xbyte*scale_y1;
+   sdx = scale_x2 - scale_x1 + 1;
+   sdy = scale_y2 - scale_y1 + 1;
+#ifndef ASSEMBLY_ENABLE
+   if ((dest_dx <= 2) || (sdx >= dest_dx/2))
+#else
+   if ((dest_dx <= 2) || (sdx >= dest_dx))
+#endif
+     {
+      /* 以目的影像計算 */
+      use_source = false;
+      step = sdx / dest_dx;
+      temp_dx = sdx % dest_dx;
+      incr1 = 2 * temp_dx;
+      incr2 = 2 * (temp_dx - dest_dx);
+     }
+   else
+     {
+      /* 以原始影像計算 */
+      use_source = true;
+      step = sdx/2;  /* 用來四捨五入 */
+     }
+   /* 開始產生縮放後影像 */
+   last_mapy = -1;
+   for (y=0; y<dest_dy; y++)
+     {
+      /* 計算本行對應的原始影像所在行 */
+      mapy = (int) ((unsigned long)y*sdy/dest_dy);
+      if (mapy == last_mapy)
+         /* 和前一行相同, 直接拷貝 */
+         memcpy(dest_buf,dest_buf-dest_xbyte,dest_xbyte);
+      else
+        {
+         last_mapy = mapy;
+         /* 產生本行縮放後影像 */
+         check_src = src_buf + src_xbyte*mapy;
+         memset(dest_buf,0,dest_xbyte);
+         if (! use_source)
+           {
+            /* 依目的影像進行縮放 */
+            d = incr1 - dest_dx;
+            x = 0;
+            mapx = scale_x1;
+            for (;;)
+              {
+               if (check_src[mapx/8] & bits[mapx&7])
+                  dest_buf[x/8] |= bits[x&7];
+               x++;
+               if (x >= dest_dx) break;
+               if (d < 0) d += incr1;
+               else
+                 {
+                  mapx++;
+                  d += incr2;
+                 }
+               mapx += step;
+              }
+           }
+         else
+           {
+            /* 依原始影像進行縮放 */
+            mapx = scale_x1;
+            x2 = -1;
+            while (mapx <= scale_x2)
+              {
+               /* 找到原始影像第一個有值之位元 */
+               while (mapx <= scale_x2)
+                  if (check_src[mapx/8] & bits[mapx&7]) break;
+                  else mapx++;
+               if (mapx > scale_x2) break;
+               /* 計算其所對應的位置 */
+#ifndef ASSEMBLY_ENABLE
+               x1 = (int) (((unsigned long)(mapx-scale_x1)*dest_dx+step)/sdx);
+#else
+               asm mov ax,mapx
+               asm sub ax,scale_x1
+               asm mul word ptr dest_dx
+               asm add ax,step
+               asm adc dx,0
+               asm div word ptr sdx
+               asm mov x1,ax
+#endif
+               mapx++;
+               /* 找出所有連續的位元 */
+               while (mapx <= scale_x2)
+                  if ((check_src[mapx/8] & bits[mapx&7]) == 0) break;
+                  else mapx++;
+               /* 計算其所對應的位置 */
+#ifndef ASSEMBLY_ENABLE
+               x2 = (int) (((unsigned long)(mapx-scale_x1)*dest_dx+step)/sdx);
+#else
+               asm mov ax,mapx
+               asm sub ax,scale_x1
+               asm mul word ptr dest_dx
+               asm add ax,step
+               asm adc dx,0
+               asm div word ptr sdx
+               asm mov x2,ax
+#endif
+               mapx++;
+               if (x2 > dest_dx) x2 = dest_dx;
+               if (x1 < x2)
+                 {
+                  x2--;
+                  /* 產生[x1,x2]區間值為1 */
+                  x1pos = x1/8;
+                  x2pos = x2/8;
+                  x1_data = right_bits[x1&7];
+                  x2_data = left_bits[x2&7];
+                  if (x1pos == x2pos)
+                     dest_buf[x1pos] |= x1_data & x2_data;
+                  else
+                    {
+                     dest_buf[x1pos] |= x1_data;
+                     dest_buf[x2pos] |= x2_data;
+                     x1pos++;
+                     if (x1pos < x2pos)
+                        memset(dest_buf+x1pos,0xff,x2pos-x1pos);
+                    }
+                 }
+              }
+           }
+        }
+      dest_buf += dest_xbyte;
+     }
+  }
+
+    現在我們再來探討一下影像縮放後的誤差問題。先從縮小著手好了，考慮
+下列影像資料：
+
+    0101
+    1010  縮小兩倍  -> 00 或 11 理想為 01 或 10
+    0101               00    11        10    01
+    1010
+
+原本網底的資料，結果縮小後變成了全白或全黑，似乎並不是很好。這個問題
+主要來自於縮小時，由對映的原始影像區域多點值，決定出目的影像單一點值
+（多對一），所造成的誤差現象。要改進此一問題，便必須檢驗所有對映的原
+始影像區域各點值，算出目的影像單一點應具有之灰階程度，再使用抖色技巧
+將灰階誤差擴散到鄰近點（或使用Bayer有序抖色矩陣法），才能造出上例中的
+理想目的影像。只不過這些計算是很花時間的，如果不是強烈要求縮小後影像
+的品質，否則一般是不會這麼做的。
+
+    現在考慮放大的情況。放大影像最嚴重的問題便是鋸齒狀的出現，一般的
+做法（尤其是彩色影像）是採用顏色內差法。首先計算目的影像點對映於原始
+影像那四點之間（因為是二維影像），再從其距離算出這四點的顏色內差值，
+做為該目的影像點的顏色值，如此在放大影像上便會有較平順的形狀。不過若
+要轉成黑白雙色，依然必須使用抖色的技巧，同樣也是很花時間的。
+
+</pre>
+</body>
+</html>

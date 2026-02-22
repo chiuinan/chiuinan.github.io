@@ -1,0 +1,4695 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>排序演算法專論</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<font color=blue><b>排序演算法專論</b></font>
+
+<font color=blue><b>前言</b></font>
+
+排序的目的絕大部份都是為了搜尋（但搜尋卻並不一定用到排序），因此排序
+算是資訊人員的基本功，如果能用得好，程式的效率便會顯著提升。本文的目
+的，便是說明各種排序演算法，從觀念、效率、程式、到實測都加以列出，以
+供讀者熟悉各種排序演算法的優劣與特點，進而在各種情況下，妥善運用這些
+演算法。
+
+排序方法的分類，一般可分成三種。第一種是以資料所在媒介物做區分，例如
+Internal Sort指的是資料全部在記憶體中做排序，External Sort指的是資料
+無法全部載入記憶體，大部份資料仍存在外界媒體。由於這兩種情況的排序法，
+考慮的因素完全不同，因此這種分法便成為本文的主分類。第二種是以資料處
+理的方式做區分，例如計數、插入、交換、挑選、合併、配發等等，這種分類
+法，便做為本文基礎排序法的分類標準。第三種是以資料鍵值處理的方式做區
+分，例如鍵值完整比對、子鍵值處理等，這種分類法，本文並不採用。
+
+讀者若發現本文有任何錯誤，或是可補充之處，歡迎提出指正或加以補充。
+
+                                                 －邱奕南，2005/8/28
+
+
+<font color=blue><b>第一章 Internal Sorting</b></font>
+
+<font color=blue><b>一. 以計數（Counting）為基準的排序法</b></font>
+
+1.Comparison Counting Sort
+
+Comparison Counting Sort的觀念，是將資料兩兩相比，統計並記錄各資料比
+該資料小的資料總數。也就是說，如果統計結果，某個資料都沒有比它更小的
+資料，那麼它對應的統計結果值會是0，也就是排在最前面（索引值=0），如果
+只有一個資料比它小的，那麼統計結果值便是1，排在第2位（索引值=1），以
+此類推。藉由這個統計結果，我們便可以將資料排序好，不過必須額外用一個
+陣列，來記錄這個統計結果值。
+
+這個演算法的效率非常差，雖然還有許多改良的方法，但作者並不打算多加著
+墨，畢竟它的實用價值並不高。
+
+void ComparisonCountingSort(int* data, int no, int *count)
+//說明：Comparison Counting Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：count = 資料排序排名，數值0表第1位，以此類推
+//效率：最差／平均狀況均為O(n^2)，需額外O(n)記憶體
+{
+	if (no <= 1) return;
+	memset(count,0,no*sizeof(int));
+	// 資料兩兩相比，進行統計 //
+	for (int i=no-1; i>=1; i--)
+		for (int j=i-1; j>=0; j--)
+			if (data[i] < data[j]) count[j]++;
+			else count[i]++;
+}
+
+另一種稱為Rank Sort，為Comparison Counting Sort的變形，它省略了資料排
+名陣列，而在每一次需要時再去掃瞄資料算出，因此速度更慢。底下是Rank Sort
+的程式部份，但作者並不打算去實測它。
+
+void RankSort(int* data, int no, int *out_data)
+//說明：Rank Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：out_data = 已排好的資料
+//效率：最差／平均狀況均為O(n^2)，需額外O(n)記憶體
+//限制：輸入資料鍵值不得重複
+{
+	for (int i=no-1; i>=0; i--)
+	{
+		int index = 0;
+		for (int j=no-1; j>=0; j--)
+			if (data[i] > data[j]) index++;
+		out_data[index] = data[i];
+	}
+}
+
+注意這個程式並沒有考慮到鍵值相同的情況，因此並不實用。
+
+2.Distribution Counting Sort
+
+Distribution Counting Sort也是利用統計的方式來排序，不同的是，它是統
+計每個鍵值出現的頻率，然後再依照鍵值出現的頻率，重建出排序好的資料。
+其過程是，先掃瞄一遍資料，決定出最大與最小的鍵值，然後依此鍵值分佈範
+圍，另行配置一個頻率陣列，用來表示各鍵值出現的頻率。接著再掃瞄一遍資
+料，將統計結果記錄到頻率陣列裡，最後便是按照頻率陣列裡的值，重新造出
+最後的排序結果。
+
+通常我們說的Counting Sort，都是指Distribution Counting Sort，另外也可
+以稱為Pigeonhole Sort，不過這兩種有點小差異。標準的Distribution Counting Sort，
+只有使用鍵值上限而已，Pigeonhole Sort則是使用上下限值。本文寫的就是
+Pigeonhole Sort，不過作者認為這兩者其實沒什麼兩樣，沒必要分到那麼仔細。
+
+Distribution Counting Sort的效率，取決於資料數量與delta(data)（即Max(data)-Min(data)），
+當鍵值分佈很近，也就是delta(data)很小時，整個演算法的效率便趨近於O(n)，
+效率非常好。可惜的是，這個演算法的限制也很多，使得要判斷是否應使用這
+個演算法，並不太容易。其限制的首要，便是鍵值分佈要近，否則效率可能比
+一般的排序演算法還差。第二，由於overhead頗高，因此資料數量也要到達一
+定程度以上，這意味著要有許多的重複鍵值，這種情況在排序上其實是很少見
+的。第三，鍵值必須是單純的數字，也不可以附加有其他資料，像Record形式
+的資料便不適用（即使鍵值是數字）。如果能符合前述三個限制，那麼
+Distribution Counting Sort其實是一個效率非常好的演算法。
+
+
+void DistributionCountingSort(int* data, int no)
+//說明：Distribution Counting Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n+delta(data))，需額外O(delta(data))記憶體
+{
+	if (no <= 1) return;
+	// 找出最大與最小的鍵值 //
+	int min_key = 0x7FFFFFFFL;
+	int max_key = 0;
+	int i;
+	for (i=no-1; i>=0; i--)
+	{
+		int key = data[i];
+		if (min_key > key) min_key = key;
+		if (max_key < key) max_key = key;
+	}
+	// 配置記憶體 //
+	int key_no = max_key-min_key+1;
+	int *count = new int[key_no];
+	if (count == NULL) return; // 錯誤處理!!! //
+	memset(count,0,key_no*sizeof(int));
+	// 掃瞄資料並統計鍵值頻率 //
+	for (i=no-1; i>=0; i--) count[data[i]-min_key]++;
+	// 造出最後的排序結果 //
+	i = 0;
+	for (int j=0; j < key_no; j++)
+		for (int k=count[j]; k>0; k--) data[i++] = j+min_key;
+	delete[] count;
+}
+
+3.Hash Sort
+
+Hash Sort和Distribution Counting Sort非常類似，只不過Hash Sort將統計
+的陣列做成二維結構而已。它的做法是，先統計資料的最大值MaxKey與最小值
+MinKey，然後以其差值取根號，取其最大整數值做為除法數。假設這個除法數
+是c，那麼任何一個鍵值便可以表示成(a*c+b)+MinKey，其中0&lt;=a&lt;c，0&lt;=b&lt;c，
+這個Hash Function便稱為Super-Hash Function。接著按(a,b)對應到Hash區二
+維陣列中，加以計數，最後再依這個鍵值分割的二維Hash陣列的特性將之排序
+好。
+
+由Hash Sort的做法，便可以知道效率絕對不會比Distribution Counting Sort
+好。不過Hash Sort強調的一點是，當它形成Hash結構後，搜尋會比一般已排序
+好的資料快速，但這已是搜尋的議題而不是排序的議題了。
+
+
+<font color=blue><b>二. 以插入（Insertion）為基準的排序法</b></font>
+
+1.Insertion Sort
+
+Insertion Sort的做法，是逐一從要排序的資料取出一個出來，然後對已排序
+好的資料中，以循序搜尋的方式，找出應插入的位置插入。注意在循序搜尋時，
+應該由後往前搜尋，這樣做的目的，是當資料大部份都已排序好時，它的效率
+會是最佳，這點也是Insertion Sort勝過別的排序法的地方。
+
+void InsertionSort(int* data, int no)
+//說明：Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	for (int i=1; i < no; i++)
+	{
+		int key = data[i];
+		// 進行循序搜尋，同時搬移資料，以空出位置 //
+		int j;
+		for (j=i-1; j>=0; j--)
+			if (key >= data[j]) break;
+			else data[j+1] = data[j];
+		// 將資料插入 //
+		data[j+1] = key;
+	}
+}
+
+2.Binary Insertion Sort
+
+Binary Insertion Sort和Insertion Sort的差異，只是在於前者是使用二分搜
+尋法，後者是採用循序搜尋法。由於使用二分搜尋法的比對次數為O(nlogn)，
+效率當然比循序搜尋法的O(n^2)好，只是找到位置要插入時，資料搬移的動作，
+仍然需要O(n^2)，因此使用二分搜尋法對於效率的提升，其實很有限。
+
+void BinaryInsertionSort(int *data, int no)
+//說明：Binary Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	for (int i=1; i < no; i++)
+	{
+		int key = data[i];
+		// 進行二分搜尋，找到插入位置 //
+		int start = 0;
+		int end = i-1;
+		int m;
+		for (;;)
+		{
+			m = (start+end)/2;
+			if (key < data[m])		// 落在左邊 //
+			{
+				end = m-1;
+				if (start > end) break;
+			}
+			else if (key > data[m])	// 落在右邊 //
+			{
+				start = m+1;
+				if (start > end)
+				{
+					m++;
+					break;
+				}
+			}
+			else					// 已找到 //
+			{
+				m++;
+				break;
+			}
+		}
+		// m為插入位置,搬移後插入 //
+		for (int j=i-1; j>=m; j--) data[j+1] = data[j];
+		data[m] = key;
+	}
+}
+
+3.Two-Way Insertion Sort
+
+Two-Way Insertion Sort的出發點就是為了改善資料搬移量的問題，其做法是
+另行建立一個兩倍大資料量的空間陣列，當第一個元素放入時，是放在中間，
+當之後有元素要插入時，便以中間線為準往兩邊搬，然後再調整中間線。這樣
+的做法可以減少約一半的資料搬移量，但控制上比較麻煩，也需要頗多的額外
+空間，實際對於效率的改善程度並不高，因此算是一種很笨的改良法，不值得
+一提。
+
+4.Shell Sort
+
+又稱為Diminishing Increment Sort，因這個方法是由Donald L. Shell所提出，
+因此稱為Shell Sort。它的基礎仍然是Insertion Sort，只不過是將要排序的
+資料先拆成小群組排好，再組成較大的群組再排，直到最後一起全部排好。舉
+例來說，如果有16個資料要排序，首先可以每間隔8個元素為一組（每組2個元
+素）排好，然後每間隔4個元素為一組（每組4個元素）排好，接著再每間隔2個
+元素為一組（每組8個元素）排好，最後就是全部一起排好。這個例子所使用的
+{1,2,4,8}間隔元素數，便是這個演算法中的漸增序列（由後往前使用起），其
+中第一個必須是1。若漸增序列只有一個數值{1}，其實就等同是Insertion Sort，
+各位比對一下兩個演算法的程式就可以知道。
+
+Shell Sort排序法的效率，取決於漸增序列值的挑選，其理論上的效率分析公
+式是非常複雜的。以下是一些已知的序列值取法，和它的理論效率：
+
+(1)Pratt: {1, 2, 3, 4, 6, 8, 9, 12, 16, ..., 2^p*3^q} -> O(n(logn)^2)
+(2)Hibbard: {1, 3, 7, 15, 31, 63, 127, ..., 2^k-1} -> O(n^1.5)
+(3)Knuth: {1, 2, 4, 8, ..., 2^k} -> O(n^1.667)
+(4)Knuth: {1, 4, 13, 40, 121, ..., (3^s-1)/2} -> O(n^1.5)
+(5)Sedgewick: {1, 5, 19, 41, 109, 209, ..., x} -> O(n^1.33)
+        x = 9*2^s - 9*2^(s/2) + 1，當s為偶數
+          = 8*2^s - 6*2^((s+1)/2) + 1，當s為奇數
+(6)最佳: {1, 4, 10, 23, 57, 132, 301, 701, ...} -> O(nlogn)，但接下來
+   的序列值，沒有人知道
+
+這邊作者只以2^s-1做為漸增序列值為例來寫一個程式供做參考。
+
+void ShellSort(int* data, int no)
+//說明：Shell Sort (Diminishing Increment Sort)，採用2^s-1漸增序列
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^1.5)
+{
+	if (no <= 1) return;
+	// 決定序列數 (取logn) //
+	int step_no = (int)floor(log(no)/log(2));
+	// 開始排序 //
+	for (int k=step_no; k>=1; k--)
+	{
+		int step = (1 << k) - 1; // 間隔元素數=2^k-1 //
+		for (int i=step; i < no; i++)
+		{
+			int key = data[i];
+			// 進行循序搜尋，同時搬移資料，以空出位置 //
+			int j;
+			for (j=i-step; j>=0; j-=step)
+				if (key >= data[j]) break;
+				else data[j+step] = data[j];
+			// 將資料插入 //
+			data[j+step] = key;
+		}
+	}
+}
+
+5.List Insertion Sort
+
+List Insertion Sort的觀念，是使用串列的方式來避開資料大量搬移的動作，
+因此它需要不少額外的空間來處理指標，overhead也比較高一些。按理說，
+List Insertion Sort避開了大量的資料搬移，速度應該比Insertion Sort好
+才對，但實測結果並不盡然，原因請參見後述之Radix Sort裡的說明。
+
+void ListInsertionSort(int* data, int no)
+//說明：List Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)，需要額外O(n)記憶體
+{
+	if (no <= 1) return;
+	// 建立串列指標, 以-1值做null //
+	int *next = new int[no];
+	if (next == NULL) return; // 錯誤處理!!! //
+	int start_ptr = no-1;
+	next[no-1] = -1;
+	// 一個一個取出資料，加入串列中 //
+	// 註：要從後往前取,比較適合部份資料已排序好的狀況 //
+	for (int i=no-2; i>=0; i--)
+	{
+		int key = data[i];
+		// 進行循序搜尋 //
+		int pre_ptr = -1;
+		int ptr = start_ptr;
+		while (ptr >= 0)
+		{
+			if (key <= data[ptr]) break;
+			pre_ptr = ptr;
+			ptr = next[ptr];
+		}
+		next[i] = ptr;
+		if (pre_ptr < 0) start_ptr = i; // 插入位置在串列首 //
+		else next[pre_ptr] = i;
+	}
+	// 開始搬移資料 (需要另一個空間) //
+	int *temp_data = new int[no];
+	if (temp_data == NULL)
+	{
+		delete[] next;
+		return; // 錯誤處理!!! //
+	}
+	int ptr = start_ptr;
+	i = 0;
+	while (ptr >= 0)
+	{
+		temp_data[i++] = data[ptr];
+		ptr = next[ptr];
+	}
+	// 搬移至原始資料空間 //
+	memcpy(data,temp_data,no*sizeof(int));
+	delete[] temp_data;
+	delete[] next;
+}
+
+
+<font color=blue><b>三. 以交換（Exchange）為基準的排序法</b></font>
+
+1.Stupid Sort
+
+Stupid Sort的做法，是不斷的掃瞄資料，如果遇到相鄰兩個元素沒有排好，便
+將之互換，然後再重頭開始掃瞄資料，因此它的效率是O(n^3)，果然是個很笨
+的排序法。
+
+2.Gnome Sort
+
+Gnome Sort的觀念，是從Dutch Garden Gnome而來的，當它要排序一排花盆時，
+首先看前一個與後一個花盆是否排好，如果是就往下一個花盆，否則將兩者對
+調再回到上一個花盆。就程式的寫法而言，它號稱是最簡單的排序法，但在效
+率上可就沒那麼好了。
+
+void GnomeSort(int* data, int no)
+//說明：Gnome Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	int i = 0;
+	while (i < no)
+	{
+		if ((i == 0) || (data[i-1] <= data[i])) 
+		{
+			i++;
+		}
+		else 
+		{ 
+			int temp = data[i-1]; 
+			data[i-1] = data[i]; 
+			data[i] = temp; 
+			i--;
+		}
+	}
+}
+
+3.Exchange Sort
+
+Exchange Sort的觀念，是從第一個元素開始往下比對，凡是比第一個元素小的，
+便調換過來，如此第一次掃完後，第一個元素便是最小值。接著換第二個元素，
+如此反覆進行，便能排序好。這樣的演算法，除了需要比對全部元素外，還會
+造成大量的資料搬移動作，因此它的效率是很差的。
+
+void ExchangeSort(int* data, int no)
+//說明：Exchange Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	for (int i=0; i < n-1; ++i)
+		for (int j=0; j < n; ++j)
+			if (data[j] < data[i])
+			{
+				int temp = data[i]; 
+				data[i] = data[j]; 
+				data[j] = temp; 
+			}
+}
+
+4.Bubble Sort
+
+Bubble Sort的排序方法，是將資料兩兩比對，若次序不對便將資料交換。它的
+特點是，每掃瞄一遍資料，至少有一個資料便排在正確的位置，因此最多只要
+掃瞄n遍便可以排好。不過在實作上，通常會做一個資料交換的範圍，這個範圍
+也就是下次我們再檢驗資料交換的掃瞄範圍。當範圍為0，也就是沒有資料有交
+換時，便不必再排下去了。由於資料交換的結果，最大的資料會一路往上浮到
+正確的位置，這也就是Bubble Sort這個名稱的由來。當然，這樣的資料兩兩交
+換，必定會造成大量的資料搬移動作，因此它的效率想當然是很差。
+
+另一種稱為Swap Sort，其實跟Bubble Sort的觀念幾乎一模一樣，只是檢查的
+方式改成是否有資料交換而已，因此作者將之視為跟Bubble Sort一樣。
+
+void BubbleSort(int* data, int no)
+//說明：Bubble Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	int bound = no-1;
+	while (bound >= 0)
+	{
+		int next_bound = -1;
+		for (int i=0; i < bound; i++)
+		{
+			if (data[i+1] < data[i]) // 次序不對，進行交換 //
+			{
+				int temp = data[i];
+				data[i] = data[i+1];
+				data[i+1] = temp;
+				next_bound = i;
+			}
+		}
+		bound = next_bound;
+	}
+}
+
+當然也有人試圖利用一些小技巧去改良Bubble Sort的速度，例如除了最大值
+的上限外，可以再加入最小值的下限，使得應掃瞄的範圍更小；或是所謂的
+Cocktail Shaker Sort（又稱Bi-direction Bubble Sort或Shake Sort），便
+是一次掃大的資料，一次掃小的資料，如此交互進行。但這些改變，對於效率
+改善的程度都是微乎其微，沒什麼好提的。
+
+5.Comb Sort
+
+Comb Sort是改良Bubble Sort最佳的做法。由於一個元素若沒有排好，與實際
+位置之間必定有個距離（Gap），在Bubble Sort裡，它是一次搬近一個位置，
+因此若遇到距離很遠的元素，效率就變得很差，如果能做跳躍式的搬移，效率
+自然會加快。因此Comb Sort定出一個下沈因子（Shink Factor），初始跳躍距
+離由資料總長度開始，然後每個迴圈之後，這個跳躍距離便除以下沈因子，做
+為下次的跳躍距離，直到跳躍距離為1且沒有資料被交換為止。因此它的做法，
+其實跟Shell Sort蠻像的。
+
+最初這個演算法所定義的下沈因子為1.3，但這個下沈因子逐漸被改良換掉。
+例如使用1/(1-(1/e))=1.279604943109628，或是1/(1-1/exp((sqrt(5)+1)/2))=1.247330950103979
+等，並且公式也不再限於單純的除法。以下作者所列的程式，是別人已仔細推
+算過的跳躍距離，其效率為O(nlogn)。
+
+void CombSort(int* data, int no)
+//說明：Comb Sort (Merge Exchange Sort)
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況為O(nlogn)
+{
+	static const int gap_tab[] = 
+		{1,2,3,4,5,6,7,8,9,11,13,17,23,29,37,47,59,71,89,109,137,173,211,269,
+		 331,419,521,647,809,1009,1249,1567,1951,2437,3037,3779,4723,5897,7349,
+		 9161,11437,14251,17783,22189,27673,34511,43049,53693,66973,83537,104207,
+		 129971,162119,202219,252233,314623,392423,489487,610553,761561,949931,
+		 1184867,1477913,1843447,2299397,2868113,3577487,4462309,5565979,6942601,
+		 8659741,10801561,13473113,16805447,20961937,26146481,32613319,40679603,
+		 50740915,63290713,78944477,98469893};
+	#define GAP_TAB_SIZE (sizeof(gap_tab)/sizeof(gap_tab[0]))
+	// 找出適當的起始跳躍距離 //
+	int gap_index = 0;
+	while ((gap_index < GAP_TAB_SIZE) && (gap_tab[gap_index] < no)) gap_index++;
+	// 開始排序 //
+	for (;;)
+	{
+		// 換下個跳躍距離 //
+		gap_index--;
+		if (gap_index < 0) gap_index = 0;
+		int gap = gap_tab[gap_index];
+		// 進行Bubble Sort掃瞄一次資料 //
+		bool has_switch = false;
+		for (int i=0; i < no-gap; i++)
+			if  (data[i] > data[i+gap])
+			{
+				int temp = data[i];
+				data[i] = data[i+gap];
+				data[i+gap] = temp;
+				has_switch = true;
+			}
+		if ((gap == 1) && (!has_switch)) break;
+	}
+}
+
+另外一種稱為Brick Sort，是將Shell Sort裡的Insertion Sort改成Bubble Sort，
+其結果跟Comb Sort是一樣的。
+
+6.Batcher Parallel Sort
+
+又稱為Merge Exchange Sort，因這個方法係由K. E. Batcher所提出用以平行
+處理的排序法，因此稱為Batcher Parallel Sort。其觀念並不太容易弄懂，基
+本上和Shell Sort有點相似。它是將整個資料視同一個folder，不斷的對折進
+行資料比對與交換，使得每個資料的搬移動作都在O(logn)次內完成。詳細的過
+程要說明起來很費篇幅，有興趣的讀者可以自行找資料研究一下。
+
+雖然這個演算法的效率，實際執行起來並不比Shell Sort好，但它最重要的特
+點是，for i loop裡的程式，其資料都是獨立的，因此可交由分散式的電腦或
+CPU來同時平行處理，其效率是O((logn)^2)。不過作者對平行處理方面的排序
+法並不感興趣，雖然類似的演算法還不少，但這裡作者只介紹這個演算法讓大
+家知道一下有這方面的應用。
+
+void BatcherParallelSort(int* data, int no)
+//說明：Batcher Parallel Sort (Merge Exchange Sort)
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：平行處理時為O((logn)^2)
+{
+	if (no <= 1) return;
+	int t = (int)ceil(log(no)/log(2));
+	int p = 1 << (t-1);
+	while (p > 0)
+	{
+		int q = 1 << (t-1);
+		int r = 0;
+		int d = p;
+		for (;;)
+		{
+			for (int i=0; i < no-d; i++) // 這個loop部份可以做平行處理 //
+			{
+				if ((i & p) != r) continue;
+				if (data[i] > data[i+d])
+				{
+					int temp = data[i];
+					data[i] = data[i+d];
+					data[i+d] = temp;
+				}
+			}
+			if (q == p) break;
+			d = q-p;
+			q /= 2;
+			r = p;
+		}
+		p /= 2;
+	}
+}
+
+7.Quick Sort
+
+又稱為Partition Exchange Sort。由Quick Sort這個名字就知道，這個排序法
+是最快的，事實上也是（以平均情況而言）。像目前SGI STL（Standard Template Library）
+採用的IntroSort排序法，其實也算是Quick Sort的變形，這部份我們會在後面
+再說明。Quick Sort的做法，是任取一個元素做為分堆標準，比它小的分一堆，
+比它大的分一堆，然後再用遞迴的方式去排序這兩堆。它的效率取決於分堆的
+結果是否數量相當，兩堆的元素量愈相近，效率便愈好，因此有一部份的研究
+便是在於如何取得最適當的元素做為分堆標準。但整體而言，它在一般情況的
+效率是O(nlogn)，但最差情況下的效率是O(n^2)。
+
+void QuickSort(int start, int end, int *data)
+//說明：Quick Sort (Partition Exchange Sort)
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料
+//輸出：data = 已排序好的資料
+//效率：平均情況為O(nlogn)，最差情況為O(n^2)
+//注意：本程式可能使用超量的堆疊空間，不適合實際使用
+{
+	if (start >= end) return;
+	// 取中間元素做為劃分標準 //
+	int k = data[(start+end)/2]; 
+	// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+	int i = start;
+	int j = end;
+	do
+	{
+		// 由左找第一個比k大的 //
+		while (data[i] < k) i++;
+		// 由右找第一個比k小的 //
+		while (k < data[j]) j--;
+		// 將i與j位置上的資料對調 //
+		if (i <= j)
+		{
+			int temp = data[i];
+			data[i] = data[j];
+			data[j] = temp;
+			i++;
+			j--;
+		}
+	} while (i <= j);
+	// 遞迴呼叫自己排序分出的兩堆 //
+	if (start < j) QuickSort(start,j,data);
+	if (i < end) QuickSort(i,end,data);
+}
+
+以上這個程式主要是為了方便理解而寫的，事實上，如果是在最差的情況下，
+這種寫法會導致O(n)的堆疊使用量，很容易導致程式當機。比較好的做法是用
+一個迴圈來模擬資料量較大的遞迴呼叫，而先行處理資料量較小的遞迴呼叫。
+由於放在堆疊中的，至少是一半以上的資料，因此堆疊的使用量，便能下降至
+O(logn)。也就是說，4G的資料量，也只不過是32層深度的遞迴呼叫，因此不必
+擔心堆疊空間的使用量。
+
+void QuickSort(int start, int end, int *data)
+//說明：Quick Sort (Partition Exchange Sort)
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料
+//輸出：data = 已排序好的資料
+//效率：平均情況為O(nlogn)，最差情況為O(n^2)
+{
+	while (start < end) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		// 取中間元素做為劃分標準 //
+		int k = data[(start+end)/2]; 
+		// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+		int i = start;
+		int j = end;
+		do
+		{
+			// 由左找第一個比k大的 //
+			while (data[i] < k) i++;
+			// 由右找第一個比k小的 //
+			while (k < data[j]) j--;
+			// 將i與j位置上的資料對調 //
+			if (i <= j)
+			{
+				int temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		if (j-start < end-i) // 左半部較小 //
+		{
+			if (start < j) QuickSort(start,j,data);
+			start = i;
+		}
+		else // 右半部較小 //
+		{
+			if (i < end) QuickSort(i,end,data);
+			end = j;
+		}
+	}
+}
+
+關於分堆標準元素的取法，除了常用的中間元素法外，還有一種稱為Median-3
+法，也就是先將第一個、中間、最後一個元素排好，然後才挑位於中間的元素
+做為分堆標準元素。就理論上的分析結果，Median-3法約可提升Quick Sort 8%
+的效率，實測的結果則是提升約5%左右。
+
+void QuickSort(int start, int end, int *data)
+//說明：Quick Sort (Partition Exchange Sort) - Median-3法
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料
+//輸出：data = 已排序好的資料
+//效率：平均情況為O(nlogn)，最差情況為O(n^2)
+{
+	while (start < end) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		// 取分堆標準元素 (使用Median-3法) //
+		int m = (start+end)/2;
+		if (data[start] > data[m])
+		{
+			int temp = data[start];
+			data[start] = data[m];
+			data[m] = temp;
+		}
+		if (data[start] > data[end])
+		{
+			int temp = data[start];
+			data[start] = data[end];
+			data[end] = temp;
+		}
+		if (data[m] > data[end])
+		{
+			int temp = data[m];
+			data[m] = data[end];
+			data[end] = temp;
+		}
+		int k = data[m];
+		// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+		int i = start;
+		int j = end;
+		do
+		{
+			// 由左找第一個比k大的 //
+			while (data[i] < k) i++;
+			// 由右找第一個比k小的 //
+			while (k < data[j]) j--;
+			// 將i與j位置上的資料對調 //
+			if (i <= j)
+			{
+				int temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		if (j-start < end-i) // 左半部較小 //
+		{
+			if (start < j) QuickSort(start,j,data);
+			start = i;
+		}
+		else // 右半部較小 //
+		{
+			if (i < end) QuickSort(i,end,data);
+			end = j;
+		}
+	}
+}
+
+當然還有其他的方法來挑選分堆標準元素，但愈是複雜的演算法，愈不利於平
+均情況的效率，即使它可以改善最差情況的效率（請參閱拙作〔法則分析〕中
+的"刪減搜尋法"例2之說明），整體效率還是會被拖慢，因此這部份其實可以不
+必太過研究。其他關於Quick Sort改良的議題，我將之留到後面再加以詳述。
+
+8.Radix Exchange Sort
+
+Radix Exchange Sort和Quick Sort很類似，只不過分堆的標準是以位元子鍵值
+為基準。也就是說，一開始先以最高位元排序，將位元0的分一堆，位元1的分
+一堆，再用遞迴方式排序（以下個位元為分堆標準）。如此反覆下去，直到最
+低位元為止。這個演算法的效率其實蠻難分析的，但就一些書籍所寫的理論分
+析與實測結果，其實都和Quick Sort相差不多。
+
+void RadixExchangeSort(int start, int end, int *data, unsigned int bit)
+//說明：Radix Exchange Sort
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料
+//		bit要分堆所使用的位元值（例如0x80000000L）
+//輸出：data = 已排序好的資料
+//效率：平均情況為O(nlogn)，最差情況為O(n^2)
+{
+	if ((start >= end) || (bit == 0)) return;
+	// 開始依子鍵值挑元素分堆, 位元0的放左邊, 位元1的放右邊 //
+	int i = start;
+	int j = end;
+	do
+	{
+		// 由左找第一個位元1者 //
+		while ((i <= end) && ((data[i] & bit) ==0)) i++;
+		// 由右找第一個位元0者 //
+		while ((j >= start) && (data[j] & bit)) j--;
+		// 將i與j位置上的資料對調 //
+		if (i <= j)
+		{
+			int temp = data[i];
+			data[i] = data[j];
+			data[j] = temp;
+			i++;
+			j--;
+		}
+	} while (i <= j);
+	// 遞迴呼叫自己排序分出的兩堆 //
+	if (bit == 1) return; // 最後一個位元時，不必再往下排了 //
+	if (start < j) RadixExchangeSort(start,j,data,bit>>1);
+	if (i < end) RadixExchangeSort(i,end,data,bit>>1);
+}
+
+
+<font color=blue><b>四. 以挑選（Selection）為基準的排序法</b></font>
+
+1.Bogo Sort
+
+Bogo Sort的做法是，隨機挑選資料放入，如果不是全部排好，便再來一次，
+因此它的效率是呈現exponential增長的，甚至會陷入永久迴圈。真不知是那
+個笨蛋去想到這種排序法的。
+
+2.Selection Sort
+
+Selection Sort的觀念其實蠻容易了解的，就是從未排序資料裡，挑出最大的
+元素放在倒數第一個，然後再從剩下的未排序資料裡，挑出最大的元素放在倒
+數第二個，如此反覆下去，便能排好了。當然，這種直覺式的排序法，效率通
+常都很不好。
+
+void SelectionSort(int* data, int no)
+//說明：Selection Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n^2)
+{
+	for (int i=no-1; i>0; i--)
+	{
+		// 由未排序資料中挑出最大的元素 //
+		int max_index = i;
+		int max_key = data[i];
+		for (int j=i-1; j>=0; j--)
+			if (max_key < data[j])
+			{
+				max_key = data[j];
+				max_index = j;
+			}
+		// 將最大元素放到適當位置 //
+		if (max_index != i)
+		{
+			data[max_index] = data[i];
+			data[i] = max_key;
+		}
+	}
+}
+
+3.Heap Sort
+
+Heap Sort的想法，是儘量保留已比對過的資訊，避免像Selection Sort一樣一
+再比對。首先先將資料兩兩比對，找出最大的元素，然後將這些最大的元素再
+兩兩比對，找出更大的元素，但之前比對過的資訊都必須保留下來，以便後續
+要找下個最大元素時會比較快些。於是這些兩兩比對的資訊，就形成了一個
+Complete Binary Tree，所有節點的鍵值都大於等於它的子樹節點的鍵值，這
+個Tree就稱為Heap。其正式定義為：
+
+	K[j/2] >= K[j] for 1 <= j/2 < j <= n
+	
+其中K為鍵值，n為資料總數。由於Heap是一個Complete Binary Tree，因此可
+以使用一個陣列便能儲存表示（參閱拙著〔資料結構－應用篇〕三之(三)的說
+明）。為了避免另行使用額外的空間，Heap Sort的做法，便是調整原始資料陣
+列，以符合Heap的定義。由於在Heap中，最上面的根節點鍵值就是最大的鍵值，
+因此將之取走放到陣列最後面，然後再重新調整陣列成為Heap形式。由於先前
+的比對資訊都有保留住，因此重新調整只需O(logn)速度，使得整個演算法的效
+率為O(nlogn)。
+
+Heap Sort雖然平均情況不是最快速，但在所有最差情況效率為O(nlogn)的排序
+演算法裡，它同時具有快速以及不耗費額外記憶體的優點，因此常被拿來做為
+解決Quick Sort最差情況的替代演算法。
+
+static void adjust_heap(int *data, int start, int end)
+//說明：調整start以下的二元樹陣列符合Heap的定義
+//輸入：data = 輸入資料, start = 根節點位置, end = 資料結束位置
+//備註：父節點在(i-1)/2, 子節點在(2i+1,2i+2)
+{
+	int k = data[start];
+	int j = 2*start+1;
+	while (j <= end)
+	{
+		// 找出子節點中鍵值最大的 //
+		if ((j < end) && (data[j] < data[j+1])) j++;
+		if (k >= data[j]) break;
+		// 將比父節點大的鍵值調上來 //
+		data[(j-1)/2] = data[j];
+		// 以被調上來的子節點做為子樹，繼續往下處理 //
+		j = 2*j+1;
+	}
+	data[(j-1)/2] = k;
+}
+
+void HeapSort(int *data, int no)
+//說明：Heap Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogn)
+{
+	// 建立初始Heap //
+	int i;
+	for (i=no/2-1; i>=0; i--) adjust_heap(data,i,no-1);
+	// 每次取走一個最大的元素，然後重新調整Heap //
+	for (i=no-2; i>=0; i--)
+	{
+		int temp = data[i+1];
+		data[i+1] = data[0];
+		data[0] = temp;
+		adjust_heap(data,0,i);
+	}
+}
+
+4.Smooth Sort
+
+Smooth Sort算是Heap Sort的一個變形。由於Heap Sort無論資料是否排好，需
+要的時間都差不多，因此Smooth Sort主要是設法使得資料大部份都排好的情況
+下，效率可以更好。
+
+觀察Heap Sort可以發現，當建立Heap後，最大的值都在最前面，當取走最大值
+之後，所交換位置的資料是最底層節點的資料，其值一般都是偏小。接著在調
+整Heap時，該資料大都又會沈下去，將比較大的值再調上。這個過程本身就容
+易導致耗時的問題。再者，當資料都差不多排好時，最大值應該都是在最後面
+的，將最大值調到前面來，本身就有點違反了快速的原則。因此Smooth Sort的
+觀念，便是將整個Heap樹反著看，最大值的根節點在最後面。由於最大值根節
+點的位置，就是排序好的位置，因此根本無需取走，直接縮減資料數即可。不
+過重建樹的方式，和Heap Sort就很不一樣了。Heap Sort是將另一個資料放到
+根節點，然後往下比對以調整Heap樹，但Smooth Sort是直接拿走了根節點（改
+變了二元樹的父子節點索引值關係），變成了兩個獨立的子樹。想想看，若
+Heap Tree原本0是根節點，改成1是根節點後，要如何重建Heap樹？這點也使得
+Smooth Sort的演算法變得很複雜。作者並不打算在這裡詳細說明這些細節，主
+要也是太過複雜了，有興趣的讀者請自行找資料研究。
+
+Smooth Sort雖說在資料大部份都排好的情況下，效率是比Heap Sort好一些，
+但就平均效率而言，還是比不上Heap Sort。又因為演算法複雜，不容易看懂與
+維護，因此極少人會捨Heap Sort而就Smooth Sort。在作者的實測過程中也發
+現，Smooth Sort的程式碼最多只能處理4M筆資料，超過時就會出問題，包括排
+序結果不正確，或是p值變成0的forever loop（當資料超過16M筆時），因此想
+使用本演算法的人要特別注意一下。（註：以下程式係直接翻自原作者所發表
+的論文）
+
+#define up { int t = b; b += c+1; c = t; }
+#define down { int t = b; b = c; c = t-c-1; }
+#define up1 { int t = b1; b1 += c1+1; c1 = t; }
+#define down1 { int t = b1; b1 = c1; c1 = t-c1-1; }
+#define swap(a,b) { int t=data[a]; data[a] = data[b]; data[b] = t; }
+#define sift \
+{ \
+	while (b1 >= 3) \
+	{ \
+		int r2 = r1-b1+c1; \
+		if (data[r2] < data[r1-1]) \
+		{ \
+			r2 = r1-1; \
+			down1; \
+		} \
+		if (data[r1] >= data[r2]) \
+		{ \
+			b1 = 1; \
+		} \
+		else \
+		{ \
+			swap(r1,r2); \
+			r1 = r2; \
+			down1; \
+		} \
+	} \
+}
+#define trinkle \
+{ \
+	int p1 = p; \
+	b1 = b; \
+	c1 = c; \
+	while (p1 > 0) \
+	{ \
+		while ((p1 & 1) == 0) \
+		{ \
+			p1 /= 2; \
+			up1; \
+		} \
+		int r3 = r1-b1; \
+		if ((p1 == 1) || (data[r3] <= data[r1]))  \
+		{ \
+			p1 = 0; \
+		} \
+		else  \
+		{ \
+			p1--; \
+			if (b1 == 1) \
+			{ \
+				swap(r1,r3); \
+				r1 = r3; \
+			} \
+			else if (b1 >= 3) \
+			{ \
+				int r2 = r1-b1+c1; \
+				if (data[r2] < data[r1-1]) \
+				{ \
+					r2 = r1-1; \
+					down1; \
+					p1 *= 2; \
+				} \
+				if (data[r3] >= data[r2]) \
+				{ \
+					swap(r1,r3); \
+					r1 = r3; \
+				} \
+				else \
+				{ \
+					swap(r1,r2); \
+					r1 = r2; \
+					down1; \
+					p1 = 0; \
+				} \
+			} \
+		} \
+	} \
+	sift; \
+}
+#define semitrinkle \
+{ \
+	r1 = r-c; \
+	if (data[r1] > data[r]) \
+	{ \
+		swap(r,r1); \
+		trinkle; \
+	} \
+}
+
+void SmoothSort(int *data, int no)
+//說明：Smooth Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogn)
+//限制：最多只能處理4M資料
+{
+	if (no > 4*1024*1024) return; // 錯誤處理!!! //
+	int r1, b1, c1;
+	int q = 1;
+	int r = 0;
+	int p = 1;
+	int b = 1;
+	int c = 1;
+	while (q != no)
+	{
+		r1 = r;
+		if ((p & 7) == 3)
+		{
+			b1 = b;
+			c1 = c;
+			sift;
+			p = (p+1)/4;
+			up;
+			up;
+		}
+		else
+		{
+			if (q+c < no)
+			{
+				b1 = b;
+				c1 = c;
+				sift;
+			}
+			else
+			{
+				trinkle;
+			}
+			down;
+			p *= 2;
+			while (b != 1)
+			{
+				down;
+				p *= 2;
+			}
+			p++;
+		}
+		q++;
+		r++;
+	}
+	r1 = r;
+	trinkle;
+	while (q != 1)
+	{
+		q--;
+		if (b == 1)
+		{
+			r--;
+			p--;
+			while ((p & 1) == 0)
+			{
+				p /= 2;
+				up;
+			}
+		}
+		else if (b >= 3)
+		{
+			p--;
+			r += c-b;
+			if (p > 0) semitrinkle;
+			down;
+			p = 2*p+1;
+			r += c;
+			semitrinkle;
+			down;
+			p = 2*p+1;
+		}
+	}
+}
+
+
+<font color=blue><b>五. 以合併（Merging）為基準的排序法</b></font>
+
+1.Merge Sort
+
+又稱2-Way Merge Sort，其觀念是將要排序的資料分成等量的兩堆，然後分別
+用遞迴方式排好，最後將這兩堆排好的資料合併在一起。它的效率，無論在平
+均或最差的情況下都是不錯的，可惜的是必須另行使用一個額外的空間，同時
+合併過程中資料搬移的次數也頗多，進而影響到它整體的效率。
+
+Merge Sort的觀念，除了用於排序之外，對於合併多個已排序好的資料集也是
+很有用的，比起全部合在一起重排，速度會快很多。
+
+void MergeSort(int *data, int no, int *temp_data)
+//說明：Merge Sort
+//輸入：data = 輸入資料, no = 資料數, temp_data = 暫用空間
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogn)，需額外O(n)空間
+{
+	if (no <= 1) return;
+	// 以遞迴呼叫排好兩堆 //
+	int no2 = no/2;
+	MergeSort(data,no2,temp_data);
+	MergeSort(data+no2,no-no2,temp_data);
+	// 將兩者合併在一起 //
+	int i = 0;
+	int j = no2;
+	int k = 0;
+	for (;;)
+	{
+		if (data[i] < data[j])
+		{
+			temp_data[k++] = data[i++];
+			if (i >= no2) // 第一堆已結束 //
+			{
+				// 因第二堆均在陣列最後面，故將已排好的部份copy回去即可 //
+				memcpy(data,temp_data,k*sizeof(int));
+				return;
+			}
+		}
+		else
+		{
+			temp_data[k++] = data[j++];
+			if (j >= no) // 第二堆已結束 //
+			{
+				// 第一堆在陣列中間，因都是最大，先搬到陣列尾，再將已排好部份copy回去 //
+				memcpy(data+k,data+i,(no2-i)*sizeof(int));
+				memcpy(data,temp_data,k*sizeof(int));
+				return;
+			}
+		}
+	}
+}
+
+以上是遞迴的寫法，另外還有一種非遞迴的寫法，執行效率會比較好些（大約
+提升20-30%）。
+
+void MergeSort(int *data, int no, int *temp_data)
+//說明：Merge Sort
+//輸入：data = 輸入資料, no = 資料數, temp_data = 暫用空間
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogn)，需額外O(n)空間
+{
+	if (no <= 1) return;
+	// 先兩兩排好 //
+	for (int i=1; i < no; i+=2)
+		if (data[i-1]>data[i])
+		{
+			int temp = data[i-1];
+			data[i-1] = data[i];
+			data[i] = temp;
+		}
+	// 開始往上合併 //
+	int step = 2;
+	int* source_data = data;
+	int* dest_data = temp_data;
+	while (step < no)
+	{
+		int start = 0;
+		for (;;)
+		{
+			int mid = start+step;
+			if (mid >= no)
+			{
+				// 將剩餘資料copy到目的緩衝區 //
+				int tno = no-start;
+				if (tno == 1) dest_data[start] = source_data[start];
+				else if (tno > 1) memcpy(dest_data+start,source_data+start,tno*sizeof(int));
+				break;
+			}
+			int end = mid+step;
+			if (end > no) end = no;
+			// 將兩者合併在一起 //
+			int i = start;
+			int j = mid;
+			int k = start;
+			for (;;)
+			{
+				if (source_data[i]<source_data[j])
+				{
+					dest_data[k++] = source_data[i++];
+					if (i >= mid) // 第一堆已結束 //
+					{
+						int tno = end-j;
+						if (tno == 1) dest_data[k] = source_data[j];
+						else memcpy(dest_data+k,source_data+j,tno*sizeof(int));
+						break;
+					}
+				}
+				else
+				{
+					dest_data[k++] = source_data[j++];
+					if (j >= end) // 第二堆已結束 //
+					{
+						int tno = mid-i;
+						if (tno == 1) dest_data[k] = source_data[i];
+						else memcpy(dest_data+k,source_data+i,tno*sizeof(int));
+						break;
+					}
+				}
+			}
+			start += step*2;
+		}
+		step *= 2;
+		int* temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	if (source_data != data) memcpy(data,source_data,no*sizeof(int));
+}
+
+
+<font color=blue><b>六. 以配發（Distribution）為基準的排序法</b></font>
+
+1.Radix Sort
+
+Radix Sort是以鍵值的子鍵值做為排序基準，通常比較適合用來排序串列結構。
+它的做法是由最後的子鍵值開始處理，直到最高的子鍵值為止。對於每個子鍵
+值，均掃瞄一遍資料，依照其子鍵值的值丟入對應的桶子（Bucket）裡，以串
+列形式結合在一起（放到串列尾），最後再依子鍵值的次序將各桶子的串列再
+接回來，做為下一次資料掃瞄的次序。其實這個過程只需畫一畫圖便能理解了。
+
+Radix Sort對於子鍵長度固定的情況下，效率相當於O(n)，非常的快速。但它
+的overhead非常高，因此不適用於低資料量的情況。另外，如果用來排序非串
+列結構的資料，會額外使用到O(n)的記憶體，當資料量相當高時，應加以注意
+一下。
+
+void RadixSort(int* data, int no, unsigned int max_key)
+//說明：Radix Sort (子鍵值為byte)
+//輸入：data = 輸入資料, no = 資料數, max_key = 最大鍵值
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogp/logk)，其中p為鍵值值域，k為子鍵值值域，需額外O(n)空間
+{
+	if (no <= 1) return;
+	// 配置串列模擬空間 (以-1表示NULL) //
+	int *next = new int[no];
+	if (next == NULL) return; // 錯誤處理!!! //
+	int *temp_data = new int[no];
+	if (temp_data == NULL) 
+	{
+		delete[] next;
+		return; // 錯誤處理 !!! //
+	}
+	int i;
+	for (i=no-2; i>=0; i--) next[i] = i+1;
+	next[no-1] = -1;
+	int head = 0; // 串列首 //
+	// 依最大鍵值範圍決定多少pass (因最高位元可能都是0) //
+	int end_key = 3;
+	if (max_key < 0x100) end_key = 0;
+	else if (max_key < 0x10000) end_key = 1;
+	else if (max_key < 0x1000000) end_key = 2;
+	// 對每個鍵值部份進行排序 //
+	int bucket_front[256];		// bucket串列首指標 //
+	int bucket_tail[256];		// bucket串列尾指標 //
+	for (i=0; i < =end_key; i++)
+	{
+		memset(bucket_front,0xFF,256*sizeof(int));
+		memset(bucket_tail,0xFF,256*sizeof(int));
+		// 依照子鍵值部份丟入每個bucket //
+		int node = head;
+		while (node >= 0)
+		{
+			int key = (unsigned char)(data[node] >> (i*8));
+			if (bucket_front[key] < 0) bucket_front[key] = node;
+			else next[bucket_tail[key]] = node;
+			bucket_tail[key] = node;
+			node = next[node];
+		}
+		// 將各個bucket內的串列組合回來 //
+		head = -1;
+		int tail = -1;
+		for (int j=0; j < 256; j++)
+		{
+			if (bucket_front[j] >= 0)
+			{
+				if (tail >= 0) next[tail] = bucket_front[j];
+				else head = bucket_front[j];
+				tail = bucket_tail[j];
+			}
+		}
+		next[tail] = -1;
+	}
+	// 置入暫用空間中 //
+	i = 0;
+	int node = head;
+	while (node >= 0)
+	{
+		temp_data[i++] = data[node];
+		node = next[node];
+	}
+	// 拷回實際空間 //
+	memcpy(data,temp_data,no*sizeof(int));
+	delete[] temp_data;
+	delete[] next;
+}
+
+以上的寫法，是採用陣列來模擬串列結構，以便在Radix Sort的bucket中比較
+容易串接在一起。在實測結果中，我們發現當資料量中等時，比起Quick Sort
+還快，但資料量愈來愈大時，效率卻不升反降，這在理論上而言是不可能的事。
+因為對整數排序而言，Radix Sort是O(n)，Quick Sort是O(nlogn)，當資料量
+愈來愈多時，Radix Sort應該比Quick Sort速度快才對。因此作者便開始從程
+式的執行時間比去分析原因，結果發現應該是跟硬體的記憶體處理有關。以下
+列這段程式來看：
+
+	while (node >= 0) node = next[node];
+
+如果整個串列中，下個節點剛好是下個陣列元素，也就是next陣列的值是1、2、3...
+的情況，掃過16M筆資料，只需不到50ms，如果串列節點分佈很亂，也就是next
+陣列的值分佈很亂的話，那麼有時會高達2800ms，相差50幾倍以上。唯一合理
+的解釋，應該是CPU Cache或是Memory Paging Fault造成的，以致於在大資料
+量時，Random Access速度仍然比Sequential Access速度慢很多。
+
+為了減少記憶體用量，我們可以利用數量統計的方式來記錄各資料應放置的位
+置，以避開使用指標陣列，如此便能減少一半的記憶體用量，同時資料存取也
+比較接近循序的狀況。實測結果，果然效率上改善非常多，甚至比Quick Sort
+都快很多。
+
+void RadixSort(int* data, int no, unsigned int max_key)
+//說明：Radix Sort (子鍵值為byte)
+//輸入：data = 輸入資料, no = 資料數, max_key = 最大鍵值
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(nlogp/logk)，其中p為鍵值值域，k為子鍵值值域，需額外O(n)空間
+{
+	if (no <= 1) return;
+	// 配置暫存空間 //
+	int *temp_data = new int[no];
+	if (temp_data == NULL) return; // 錯誤處理 !!! //
+	// 依最大鍵值範圍決定多少pass (因最高位元可能都是0) //
+	int end_key = 3;
+	if (max_key < 0x100) end_key = 0;
+	else if (max_key < 0x10000) end_key = 1;
+	else if (max_key < 0x1000000) end_key = 2;
+	// 對每個鍵值部份進行排序 //
+	int pos_table[257];
+	int *source_data = data; 	// 目前處理的資料陣列 //
+	int *dest_data = temp_data; // 要放入的資料陣列 //
+	for (int i=0; i < =end_key; i++)
+	{
+		memset(pos_table,0,sizeof(pos_table));
+		// 依照子鍵值部份計算每個bucket丟入數量 //
+		int j;
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)(source_data[j] >> (i*8));
+			pos_table[key+1]++;
+		}
+		// 決定各bucket開始放到資料陣列的起始位置 //
+		for (j=1; j < 256; j++) pos_table[j] += pos_table[j-1];
+		// 開始按子鍵值部份放入暫存空間，注意相同key的資料順序必須保持stable //
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)(source_data[j] >> (i*8));
+			dest_data[pos_table[key]] = source_data[j];
+			pos_table[key]++;
+		}
+		// 調換資料陣列 //
+		int *temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	// 查看是否是正確的輸出陣列 //
+	if (source_data != data) memcpy(data,source_data,no*sizeof(int));
+	delete[] temp_data;
+}
+
+2.Bucket Sort
+
+Bucket Sort的做法，是先準備m個bucket，然後掃瞄資料，依照資料鍵值的MSB
+換算成對應的bucket編號，將資料丟入對應的bucket中，其中bucket編號必須
+和鍵值的排列順序相同。之後再針對每個bucket裡的資料進行排序（使用其他
+排序法），最後再依照bucket的編號順序重新結合回原資料陣列即可。Bucket Sort
+比較適合於串列結構，若使用陣列結構便需要額外的空間來記錄bucket裡的資
+料。至於其效率，則取決於資料鍵值的分佈狀況，愈是平均分佈，其效率愈高。
+
+由於Bucket Sort必須結合其他排序法才能運作，因此這部份我們留到後面再來
+探討。
+
+3.Flash Sort
+
+Flash Sort嚴格來講，應該算是Bucket Sort的一種。假設有m個bucket，它首
+先統計資料的最大值與最小值，那麼資料應置入的bucket編號便是(m-1)*(K-min)/(max-min)。
+之後的處理方式跟Bucket Sort都完全一樣。由於Flash Sort也是必須結合其他
+排序法才能運作，因此一併留到後面再來探討。
+
+4.Self-Indexing Sort
+
+Self-Indexing Sort可說是Bucket Sort的終極做法，其本身和Distribution Counting Sort
+非常類似，所不同的是，Distribution Counting Sort是對鍵值加以計數，而
+Self-Indexing Sort則是將資料放入鍵值對應的bucket裡，最後再依鍵值重組
+回bucket裡的資料。這樣的做法可以解除掉Distribution Counting Sort無法
+適用於Record形式的限制。關於這個演算法的其他限制與適合的應用，請參閱
+Distribution Counting Sort裡的說明。至於丟入bucket裡的資料記錄方式，
+若輸入資料是陣列結構而非串列結構，實際上也可以採用計數結構轉成位置結
+構的方式，而不必再多耗用記憶體（與Radix Sort相同）。如果想連暫存空間
+的記憶體都省略，那麼也可以參考後述的Flash Sort程式（在混合排序法一節）
+來改良，只是速度可能會因此而變慢。
+
+由於Self-Indexing Sort比較適用於Record形式，若是排序單純數字資料，絕
+對快不過Distribution Counting Sort，因此這邊只列出程式供參考，不再進
+行實測了。
+
+void SelfIndexingSort(int* data, int no)
+//說明：Self-Indexing Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n+delta(data))，需額外O(n+delta(data))記憶體
+{
+	if (no <= 1) return;
+	// 找出最大與最小的鍵值 //
+	int min_key = 0x7FFFFFFFL;
+	int max_key = 0;
+	int i;
+	for (i=no-1; i>=0; i--)
+	{
+		int key = data[i];
+		if (min_key > key) min_key = key;
+		if (max_key < key) max_key = key;
+	}
+	// 配置記憶體 //
+	int key_no = max_key-min_key+1;
+	int *pos_table = new int[key_no];
+	if (pos_table == NULL) return; // 錯誤處理!!! //
+	int *temp_data = new int[no];
+	if (temp_data == NULL)
+	{
+		delete[] pos_table;
+		return; // 錯誤處理!!! //
+	}
+	memset(pos_table,0,key_no*sizeof(int));
+	// 掃瞄資料並統計鍵值頻率 //
+	for (i=no-1; i>=0; i--) pos_table[data[i]-min_key]++;
+	// 決定各鍵值開始放到資料陣列的起始位置 //
+	for (i=1; i < key_no; i++) pos_table[i] += pos_table[i-1];
+	// 開始按鍵值放入暫存空間 //
+	for (i=0; i < no; i++)
+	{
+		int key = data[i]-min_key;
+		temp_data[pos_table[key]-1] = data[i];
+		pos_table[key]--;
+	}
+	// 拷貝回原始資料 //
+	memcpy(data,temp_data,no*sizeof(int));
+	delete[] temp_data;
+	delete[] pos_table;
+}
+
+5.Patience Sort
+
+Patience Sort的想法，主要來自接龍遊戲。首先從資料裡取出一個元素，做為
+第一堆的資料，後續的資料只要是不比它大的，便可以放上去，否則就必須在
+右邊另起一堆。之後的資料也是一樣，只要有任何一堆可以放的就放，否則也
+要另起一堆。依理論研究結果，只要遵循將資料儘可能放到最左邊的那一堆
+（Greedy Method），則所需要的堆數會是最少。當所有資料都分堆完畢，最後
+再將各堆組在一起成為排序好的資料。這樣排出來的結構，無論何時，各堆的
+最上層資料，由左至右都是由小排到大，讀者可以自行驗證一下。
+
+這個演算法的效率，取決於新的資料如何快速知道應放在那一堆。由於最上層
+資料都是已排序好，我們可以使用二分搜尋法來處理，速度是O(nlogn)。另一
+種常用在Patience Sort的搜尋方法，則是使用van Emde Boas Tree（簡稱vEB tree）
+來處理，其速度是O(nloglogn)。
+
+vEB tree的做法是以鍵值位元來劃分搜尋，假設鍵值是32位元，那麼一開始將
+鍵值區分成高16位元與低16位元，高16位元經由vEB tree陣列取得對應的子vEB tree，
+然後再用低16位元下去搜尋。同樣的，低16位元進去後，還是再分成高8位元與
+低8位元，繼續經由vEB tree陣列取得對應的子vEB tree下去搜尋。這樣的做法
+雖然速度比較快，但耗費的記憶體也不少，特別是資料量不大的情況下，因此
+一般很少人會使用vEB tree來做搜尋使用。
+
+Patience Sort大部份是用來解決Combinatorial Optimization裡的Longest Increasing Subsequence
+相關問題，確實的排序演算法並沒有人實際寫出來，特別是排成堆之後組合成
+排序好資料的部份。因作者沒有太多時間研究這一議題，為避免誤導讀者，這
+部份的程式便暫時按下了。
+
+6.Tree Sort
+
+Tree Sort主要是結合搜尋樹來做排序的動作，Binary Tree Sort則專指使用二
+元搜尋樹來做排序，屬於Tree Sort的子集。Tree Sort的效率，主要來自插入
+與組回排序資料這兩部份，對於非二元搜尋樹，主要是看尋找下一個較大元素
+的速度，二元搜尋樹則是看二元樹追蹤的速度。
+
+Binary Tree Sort，通常用來排序串列資料，效率依採用的Binary Search Tree
+而定，這部份我們後面再來說明。至於非二元搜尋樹的Tree Sort，我們以前面
+提到的vEB tree來做個例子。不過由於vEB tree本身無法接受重複鍵值，因此
+所做出來的排序演算法，也會受到同樣的限制。vEB tree的插入與搜尋速度都
+是O(loglogk)，其中k是最大鍵值，因此整個排序演算法的效率便是O(nloglogk)。
+雖然理論上的效率看起不錯，但實際執行起來的速度並不快，主要是因為需要
+大量的動態記憶體取得與釋放，而這個動作比其他運算的速度都還要來得慢。
+這部份在搜尋上是比較無關的，因為搜尋通常是多次的，但排序則只有一次，
+那麼這些overhead就顯得相當高了。
+
+關於vEB tree在搜尋上的效能，作者會在〔搜尋演算法專論〕一文中再來探討。
+
+class vEBTree // vEB Tree //
+{
+private:
+	int m_Half_Bit_Size;		// 鍵值位元數/2 //
+	int m_Size;					// 元素數目 //
+	int m_Max_Element;			// 最大的鍵值 //
+	int m_Min_Element;			// 最小的鍵值 //
+	vEBTree* m_Top;				// 儲存高半鍵值用的vEBTree //
+	void* m_Bottom;				// 儲存對應低半鍵值，可能是vEBTree或位元映射表 //
+public:
+	vEBTree(int bit_size=32);
+	~vEBTree();
+	int Initialize(void);
+	void DeleteAllData(void);
+	int Insert(int key);
+	int Delete(int key);
+	int FindNext(int key) const;
+	inline int GetElementSize(void) const { return m_Size; };
+	inline int GetMinElement(void) const { return m_Min_Element; };
+	inline int GetMaxElement(void) const { return m_Max_Element; };
+};
+
+static const int bit_mask[] = 
+	{0x8000,0x4000,0x2000,0x1000,0x0800,0x0400,0x0200,0x0100,
+	 0x0080,0x0040,0x0020,0x0010,0x0008,0x0004,0x0002,0x0001};
+
+vEBTree::vEBTree(int bit_size)
+//說明：建構vEB Tree
+//輸入：bit_size = 用以表示鍵值的位元數
+//限制：建構後必須呼叫Initialize成功後才能使用本物件
+{
+	m_Half_Bit_Size = bit_size/2;
+	m_Size = 0;
+	m_Top = NULL;
+	m_Bottom = NULL;
+	m_Min_Element = 0x7FFFFFFF;
+	m_Max_Element = -0x7FFFFFFF;
+}
+
+vEBTree::~vEBTree()
+//說明：解構vEB Tree
+{
+	DeleteAllData();
+}
+
+int vEBTree::Initialize(void)
+//說明：初始化本物件
+//傳回：成功時傳回0
+{
+	// 註：當鍵值範圍在16個以內時，直接用位元映射方式處理 //
+	if (m_Half_Bit_Size > 2)
+	{
+		int size = 1 << m_Half_Bit_Size;
+		m_Top = new vEBTree(m_Half_Bit_Size);
+		if (m_Top == NULL) return -1; // 錯誤處理!!! //
+		int err = m_Top->Initialize();
+		if (err != 0) return err;
+		m_Bottom = new vEBTree*[size];
+		if (m_Bottom == NULL) return -1; // 錯誤處理!!! //
+		memset(m_Bottom,0,size*sizeof(vEBTree*));
+	}
+	return 0;
+}
+
+void vEBTree::DeleteAllData(void)
+//說明：刪除並釋放所有記憶體
+//備註：呼叫後除非重新Initialize，否則不可再使用本物件
+{
+	if (m_Half_Bit_Size > 2)
+	{
+		delete m_Top;
+		if (m_Bottom != NULL)
+		{
+			int size = 1 << m_Half_Bit_Size;
+			for (int i=0; i < size; i++)
+				if (((vEBTree**)m_Bottom)[i] != NULL) delete ((vEBTree**)m_Bottom)[i];
+			delete[] ((vEBTree**)m_Bottom);
+		}
+	}
+	m_Size = 0;
+	m_Top = NULL;
+	m_Bottom = NULL;
+	m_Min_Element = 0x7FFFFFFF;
+	m_Max_Element = -0x7FFFFFFF;
+}
+
+int vEBTree::Insert(int key)
+//說明：加入一個鍵值
+//輸入：key = 鍵值
+//傳回：成功時傳回0
+{
+	if (m_Half_Bit_Size <= 2)
+	{
+		int bit = bit_mask[key&0x0F];
+		if ((*((short*)&m_Bottom) & bit) == 0)
+		{
+			*((short*)&m_Bottom) |= bit;
+			if (m_Min_Element > key) m_Min_Element = key;
+			if (m_Max_Element < key) m_Max_Element = key;
+			m_Size++;
+		}
+		else
+		{
+			// 重複鍵值 //
+			return -1; // 錯誤處理!!! //
+		}
+	}
+	else
+	{
+		// 固定保留最小值元素，不加入下層樹 //
+		if (m_Size <= 0)
+		{
+			m_Max_Element = m_Min_Element = key;
+			m_Size = 1;
+		}
+		else
+		{
+			if ((m_Bottom == NULL) || (m_Top == NULL)) return -1; // 錯誤處理!!! //
+			// 決定要插入的元素 (保留最小值元素) //
+			int min_element = m_Min_Element;
+			if (key == min_element) 
+			{
+				// 重複鍵值 //
+				return -1; // 錯誤處理!!! //
+			}
+			int insert_key = key;
+			if (insert_key < min_element)
+			{
+				insert_key = m_Min_Element;
+				min_element = key;
+			}
+			// 加入到下層樹裡 //
+			int mask = (1 << m_Half_Bit_Size)-1;
+			int a = (insert_key >> m_Half_Bit_Size) & mask;
+			int b = insert_key & mask;
+			vEBTree* tree = ((vEBTree**)m_Bottom)[a];
+			if (tree == NULL)
+			{
+				// 新增一個下層樹 //
+				tree = new vEBTree(m_Half_Bit_Size);
+				if (tree == NULL) return -1; // 錯誤處理!!! //
+				((vEBTree**)m_Bottom)[a] = tree;
+				int err = tree->Initialize();
+				if (err != 0) return err;
+			}
+			int old_size = tree->GetElementSize();
+			int err = tree->Insert(b);
+			if (err != 0) return err;
+			if (old_size == 0) 
+			{
+				int err = m_Top->Insert(a);
+				if (err != 0) return err;
+			}
+			m_Min_Element = min_element;
+			if (m_Max_Element < insert_key) m_Max_Element = insert_key;
+			m_Size++;
+		}
+	}
+	return 0;
+}
+
+int vEBTree::Delete(int key)
+//說明：刪除一個鍵值
+//輸入：key = 鍵值
+//傳回：成功時傳回0
+{
+	if (m_Size <= 0) return 0;
+	if (m_Half_Bit_Size <= 2)
+	{
+		int bit = bit_mask[key&0x0F];
+		if (*((short*)&m_Bottom) & bit)
+		{
+			*((short*)&m_Bottom) &= ~bit;
+			m_Size--;
+			if (m_Size == 0)
+			{
+				m_Min_Element = 0x7FFFFFFF;
+				m_Max_Element = -0x7FFFFFFF;
+			}
+		}
+	}
+	else
+	{
+		if (m_Size == 1)
+		{
+			if (m_Min_Element == key) m_Size--;
+		}
+		else
+		{
+			if ((m_Bottom == NULL) || (m_Top == NULL)) return -1; // 錯誤處理!!! //
+			if (m_Min_Element == key) 
+			{
+				int index = m_Top->GetMinElement();
+				key = m_Min_Element = (index << m_Half_Bit_Size) + ((vEBTree**)m_Bottom)[index]->GetMinElement();
+			}
+			int mask = (1 << m_Half_Bit_Size)-1;
+			int a = (key >> m_Half_Bit_Size) & mask;
+			int b = key & mask;
+			vEBTree* tree = ((vEBTree**)m_Bottom)[a];
+			if (tree == NULL) return 0;
+			int old_size = tree->GetElementSize();
+			int err = tree->Delete(b);
+			if (err != 0) return err;
+			int new_size = tree->GetElementSize();
+			if (old_size == new_size) return 0;
+			if (new_size == 0)
+			{
+				int err = m_Top->Delete(a);
+				if (err != 0) return err;
+			}
+			m_Size--;
+		}
+		if (m_Size == 0)
+		{
+			m_Min_Element = 0x7FFFFFFF;
+			m_Max_Element = -0x7FFFFFFF;
+		}
+	}
+	return 0;
+}
+
+int vEBTree::FindNext(int key) const
+//說明：找到下一個>=key的鍵值
+//輸入：key = 鍵值
+//傳回：找到的鍵值，若找不到則傳回-0x7FFFFFFF
+{
+	if (m_Size == 0) return -0x7FFFFFFF;
+	if (m_Half_Bit_Size <= 2)
+	{
+		key &= 0x0F;
+		while (key < 16)
+		{
+			if (*((short*)&m_Bottom) & bit_mask[key]) return key;
+			key++;
+		}
+		return -0x7FFFFFFF;
+	}
+	if ((m_Bottom == NULL) || (m_Top == NULL)) return -0x7FFFFFFF; // 錯誤處理!!! //
+	int mask = (1 << m_Half_Bit_Size)-1;
+	int a = (key >> m_Half_Bit_Size) & mask;
+	int b = key & mask;
+	int j;
+	vEBTree* tree = ((vEBTree**)m_Bottom)[a];
+	if ((tree != NULL) && (tree->GetElementSize() == 0)) tree = NULL;
+	if ((tree != NULL) && (tree->GetMaxElement() >= b))
+	{
+		j = (a << m_Half_Bit_Size) + tree->FindNext(b);
+	}
+	else if ((tree == NULL) && (key <= m_Min_Element))
+	{
+		j = m_Min_Element;
+	}
+	else
+	{
+		int c = m_Top->FindNext(a+1);
+		if (c == -0x7FFFFFFF) return c;
+		j = (c << m_Half_Bit_Size) + ((vEBTree**)m_Bottom)[c]->GetMinElement();
+	}
+	if ((key <= m_Min_Element) && (m_Min_Element < j)) j = m_Min_Element;
+	return j;
+}
+
+void vEBTreeSort(int* data, int no)
+//說明：Tree Sort - 採用vEB Tree
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差/平均情況為O(nloglogk)
+{
+	vEBTree tree;
+	int err = tree.Initialize();
+	if (err != 0) return; // 錯誤處理!!! //
+	// 將資料全數丟入搜尋樹裡 //
+	int i;
+	for (i=0; i < no; i++)
+	{
+		int err = tree.Insert(data[i]);
+		if (err != 0) return; // 錯誤處理!!! //
+	}
+	// 將排好的資料取出填回輸出資料 //
+	i = 0;
+	int key = tree.GetMinElement();
+	while (key != -0x7FFFFFFF)
+	{
+		if (i >= no) return; // 錯誤處理!!! //
+		data[i++] = key;
+		key = tree.FindNext(key+1);
+	}
+	if (i != no) return; // 錯誤處理!!! //
+}
+
+
+<font color=blue><b>七. 混合排序法</b></font>
+
+由於排序法各有優劣，因此在不同情況下，往往需要結合多種排序法來達到最
+佳的效果。以下這個部份便是說明現存各種常見的混合排序法。但在說明之前，
+我們先對前述的基礎排序演算法做個結論（以整數陣列排序而言）。
+
+表一　平均執行效率比較表（前加*者表有用動態記憶體）
+
+       演算法               32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)  16M(s)
+----------------------------------------------------------------------------------------------------
+*Comparison Counting Sort      3.2      176     2830    45000    11800   258000
+*Distribution Counting Sort
+   64K鍵值範圍                 797      478      498      589(6)     2(1)     4(1)   19(1)   0.3(1)
+   16M鍵值範圍時            166000   175000   179000   177000      179      196     284      2.0
+ Insertion Sort                1.1(1)    40      622     9780     2490    40800
+ Binary Insertion Sort         2.1(4)    40      401     5310     1420    23160
+ Shell Sort                    2.4(6)    31      159      816       20      103     576     10.3
+*List Insertion Sort           9.4       47      516     8220     7900   189000
+ Gnome Sort                    2.8      125     1840     2940     7480   120000
+ Bubble Sort                   2.8      188     3060     4880     1260   204000
+ Comb Sort                     1.8(3)    23(5)   120(4)   588(5)    14       63     328(6)   7.4(6)
+ Batcher Parallel Sort         3.6       19(2)   333     1830       50      241    1270     25.9
+ Quick Sort                    1.7(2)    18(1)    87(2)   400(2)     8(3)    35(3)  154(3)   2.9(3)
+ Radix Exchange Sort           3.4       31      136(6)   606       12(5)    50(5)  216(4)   3.5(4)
+ Selection Sort                2.5      138     2140     3410     8720   139000
+ Heap Sort                     2.1(4)    24(6)   123(5)   584(4)    13(6)    58(6)  346     13.5
+ Smooth Sort                   3.0       43      213     1020       22      103     531
+*Merge Sort                    5.7       22(4)   108(3)   517(3)    11(4)    47(4)  223(5)   4.2(5)
+*Radix Sort                   10.3       20(3)    61(1)   250(1)     4(2)    18(2)   77(2)   1.6(2)
+*vEB Tree Sort              2780.0    34100   243000   905000      553     1440    3510     13.6
+
+表二　資料接近排好時之平均效率比較表（前加*者表有用動態記憶體）
+
+       演算法               1K(us)   16K(us)  64K(ms)
+-------------------------------------------------------
+ Insertion Sort                5.1(1)    88(1)   1.5(1)
+ Binary Insertion Sort        36.5      422     16.6
+ Shell Sort                   46.9     1380     30.1
+ Gnome Sort                    7.0(2)   109(2)   1.9(2)
+ Bubble Sort                 845.0   217000   1650.0
+ Comb Sort                    75.6     1620     33.3
+ Batcher Parallel Sort       361.0     9340    225.0
+ Quick Sort                  143.0     5640  13800.0
+ Radix Exchange Sort          95.9     1550     25.7
+ Heap Sort                   110.0     3910     39.0
+ Smooth Sort                  38.8(3)   628(3)  10.5(3)
+*Merge Sort                   48.9      780     16.8
+
+平均執行效率結論：
+
+(1)資料非常少時，效率最好的是Insertion Sort。
+(2)中資料量時，效率最好的依次是Radix Sort、Quick Sort、Merge Sort、Heap Sort。
+(3)資料量多時，效率最好的依次是Distribution Counting Sort、Radix Sort、Quick Sort。
+(4)資料接近排好時之平均執行效率最佳者，依次為Insertion Sort、Gnome Sort。
+(5)平均表現最好的是Quick Sort，以最糟情況為O(nlogn)效率的演算法而言，
+   依次為Merge Sort、Comb Sort、Heap Sort，但三者差異不大。
+
+1.Quick Sort + Insertion Sort
+
+在資料量多時，效率最好的演算法排名裡，Distribution Counting Sort只能
+運作在特殊用途，Radix Sort只能適用在固定長度的鍵值（如數字等），只有
+Quick Sort是屬於通用型的演算法，而且平均表現也是最好的，因此運用的機
+率非常高。然而在資料量非常少時，Quick Sort的表現並非最佳，因此第一個
+想法便是與少量資料表現最好的Insertion Sort做結合，這點也是現今Quick Sort
+排序法裡面最常見的改良法。
+
+Quick Sort與Insertion Sort要整合，首先要定出多少資料量以下才交給Insertion Sort
+處理。在SGI STL裡，它是定義16筆以下便交給Insertion Sort處理，這邊我們
+來實測一下。以下便是各種資料量與門檻值的實測結果（單位略）：
+
+     16M   1M   256K   64K   4K    1K    256   32
+---------------------------------------------------
+ 0: 2934  1614  3705  8343  4280  8876  1954  1951
+ 8: 2753  1430  3210  7468  3520  7656  1660  1475
+16: 2647  1364  3065  6813  3295  6936  1433  1212
+24: 2606  1352  2991  6502* 3081* 6752  1444  1165
+32: 2591* 1352  2969* 6605  3126  6658  1407  1155*
+40: 2594  1336* 2984  6703  3107  6532* 1349* 1155
+48: 2609  1359  3003  6592  3235  6688  1401  1155
+56: 2622  1359  3022  6748  3126  6650  1428  1155
+64: 2644  1376  3034  6849  3299  6820  1437  1155
+
+因此門檻值比較適合在24-32之間，大約可提升15%-30%左右，資料量愈少，提
+升得愈多。不過這邊我們量測的是數值資料的排序，後面我們會針對其他資料
+形態的排序再進行一次實測。
+
+void QuickSort(int start, int end, int *data)
+//說明：Quick Sort (Partition Exchange Sort) - Median-3法+Insertion Sort
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料
+//輸出：data = 已排序好的資料
+//效率：平均情況為O(nlogn)，最差情況為O(n^2)
+{
+	while (start < end) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		if (end-start < 32) // 資料量過少的，改用Insertion Sort處理 //
+		{
+			InsertionSort(data+start,end-start+1);
+			return;
+		}
+		// 取分堆標準元素 (使用Median-3法) //
+		int m = (start+end)/2;
+		if (data[start] > data[m])
+		{
+			int temp = data[start];
+			data[start] = data[m];
+			data[m] = temp;
+		}
+		if (data[start] > data[end])
+		{
+			int temp = data[start];
+			data[start] = data[end];
+			data[end] = temp;
+		}
+		if (data[m] > data[end])
+		{
+			int temp = data[m];
+			data[m] = data[end];
+			data[end] = temp;
+		}
+		int k = data[m];
+		// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+		int i = start;
+		int j = end;
+		do
+		{
+			// 由左找第一個比k大的 //
+			while (data[i] < k) i++;
+			// 由右找第一個比k小的 //
+			while (k < data[j]) j--;
+			// 將i與j位置上的資料對調 //
+			if (i <= j)
+			{
+				int temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		if (j-start < end-i) // 左半部較小 //
+		{
+			if (start < j) QuickSort(start,j,data);
+			start = i;
+		}
+		else // 右半部較小 //
+		{
+			if (i < end) QuickSort(i,end,data);
+			end = j;
+		}
+	}
+}
+
+2.Quick Sort + Heap Sort (Introspective Sort)
+
+Quick Sort的優點是平均執行速度快，但最大的缺點就是在最糟情況下，它的
+執行時間會非常久。為了解決此一問題，便有了Quick Sort結合其他最糟情況
+下為O(nlogn)演算法的想法，這也是Introspective Sort（簡稱IntroSort）的
+主要概念。它的做法是在遞迴呼叫時給定一個層數設定，當呼叫層數超過一定
+門檻值時，便改用Heap Sort來處理。這個門檻值，SGI目前定為32，作者認為
+蠻合理的，因為平均情況下，即使是4G的資料量，遞迴呼叫的層數並不會超過32，
+但如果是最糟情況，很容易就超出了32層。
+
+從實測的結果發現，改良最糟情況的效率，對於平均效率其實也有些微的提升。
+
+void IntroSort(int start, int end, int *data, int level)
+//說明：Introspective Sort (Median-3 Quick Sort + Insertion Sort + Heap Sort)
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料, level=呼叫層數,初值為1
+//輸出：data = 已排序好的資料
+//效率：平均/最差情況為O(nlogn)
+{
+	while (start < end) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		if (end-start < 32) // 資料量過少的，改用Insertion Sort處理 //
+		{
+			InsertionSort(data+start,end-start+1);
+			return;
+		}
+		if (level > 32) // 呼叫層數太多時，改用其他O(nlogn)排序演算法處理 //
+		{
+			HeapSort(data+start,end-start+1);
+			return;
+		}
+		// 取分堆標準元素 (使用Median-3法) //
+		int m = (start+end)/2;
+		if (data[start] > data[m])
+		{
+			int temp = data[start];
+			data[start] = data[m];
+			data[m] = temp;
+		}
+		if (data[start] > data[end])
+		{
+			int temp = data[start];
+			data[start] = data[end];
+			data[end] = temp;
+		}
+		if (data[m] > data[end])
+		{
+			int temp = data[m];
+			data[m] = data[end];
+			data[end] = temp;
+		}
+		int k = data[m];
+		// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+		int i = start;
+		int j = end;
+		do
+		{
+			// 由左找第一個比k大的 //
+			while (data[i] < k) i++;
+			// 由右找第一個比k小的 //
+			while (k < data[j]) j--;
+			// 將i與j位置上的資料對調 //
+			if (i <= j)
+			{
+				int temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		level++;
+		if (j-start < end-i) // 左半部較小 //
+		{
+			if (start < j) IntroSort(start,j,data,level);
+			start = i;
+		}
+		else // 右半部較小 //
+		{
+			if (i < end) IntroSort(i,end,data,level);
+			end = j;
+		}
+	}
+}
+
+3.Radix Sort + Introspective Sort
+
+對於數值資料的排序而言，當資料量愈來愈大時，最快的排序演算法並不是
+Quick Sort，而是Radix Sort。然而資料量較少的時候，Quick Sort還是比
+Radix Sort快，因此最佳的排序法便是結合這兩者。由於Quick Sort我們目前
+已改良成IntroSort了，故此處實際上是Radix Sort與Intro Sort的整合，作者
+稱之為Fast Integer Sort，這也是作者多年以來用以排序數值資料的方法。
+
+不過最初作者是定義當資料量超過256時便使用Radix Sort，否則便使用Quick Sort，
+此處便藉由此一機會，以實測方式找出最適當的門檻值。依照下列實測效率表
+（單位略）：
+
+        Intro  Radix(4)  Radix(3)  Radix(2)
+------------------------------------------------------
+ 128:    590    1445      1203       894
+ 256:   1337    1972      1598      1179
+ 384:   2143    3143      2578      1932
+ 512:   2984    3668      3017      2213
+ 640:   3856    4170      3534      2472
+ 768:   4756    4875      3815      2697
+ 896:   5706    5918      4808      3424
+1024:   6643    6626      5422      3831
+
+由此推算，最佳的選擇是512做為門檻值。主要因為實際使用上，3 byte比較常
+見，其次為2 byte，最後才是4 byte。當然，讀者可依照自己資料的鍵值範圍
+來決定門檻值。若都是65535以內，那麼選256會比較適合，若都是4 byte，那
+麼選1024會比較恰當些。
+
+最後必須注意的是，作者所列的Radix Sort用來排序帶有正負號的整數時會有
+點問題，但這點可以修改排序最高位元組時做點特殊處理即可解決。這部份便
+交由讀者依需要自行去修正吧。
+
+void FastIntegerSort(int* data, int no)
+//說明：Fast Integer Sort (Radix Sort + IntroSort)
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n)
+{
+	if (no <= 512) // 門檻值,2 byte:256,3 byte:512,4 byte:1024 //
+	{
+		// 資料數過少的，使用IntroSort //
+		IntroSort(0,no-1,data,1);
+		return;
+	}
+	// 配置暫存空間 //
+	int *temp_data = new int[no];
+	if (temp_data == NULL) 
+	{
+		// 空間不足，改用IntroSort //
+		IntroSort(0,no-1,data,1);
+		return;
+	}
+	// 找出最大鍵值 //
+	unsigned int max_key=data[0];
+	int i;
+	for (i=1; i < no; i++)
+		if (max_key < (unsigned int)data[i]) max_key = data[i];
+	// 依最大鍵值範圍決定多少pass (因最高位元可能都是0) //
+	int end_key = 3;
+	if (max_key < 0x100) end_key = 0;
+	else if (max_key < 0x10000) end_key = 1;
+	else if (max_key < 0x1000000) end_key = 2;
+	// 對每個鍵值部份進行排序 //
+	int pos_table[257];
+	int *source_data = data; 	// 目前處理的資料陣列 //
+	int *dest_data = temp_data; // 要放入的資料陣列 //
+	for (i=0; i < =end_key; i++)
+	{
+		memset(pos_table,0,sizeof(pos_table));
+		// 依照子鍵值部份計算每個bucket丟入數量 //
+		int j;
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)(source_data[j] >> (i*8));
+			pos_table[key+1]++;
+		}
+		// 決定各bucket開始放到資料陣列的起始位置 //
+		for (j=1; j < 256; j++) pos_table[j] += pos_table[j-1];
+		// 開始按子鍵值部份放入暫存空間，注意相同key的資料順序必須保持stable //
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)(source_data[j] >> (i*8));
+			dest_data[pos_table[key]] = source_data[j];
+			pos_table[key]++;
+		}
+		// 調換資料陣列 //
+		int *temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	// 查看是否是正確的輸出陣列 //
+	if (source_data != data) memcpy(data,source_data,no*sizeof(int));
+	delete[] temp_data;
+}
+
+4.Bucket Sort/Flash Sort + Fast Integer Sort/Introspective Sort
+
+Bucket Sort和Flash Sort都需要與其他排序演算法的輔助才能完成實際的排序，
+因此這裡我們開始來討論這類的演算法。由於Flash Sort算是屬於Bucket Sort
+的一種，因此這裡便只針對Flash Sort來說明舉例。由於我們的測試資料是數
+值陣列，因此與Flash Sort整合的演算法，便採用Fast Integer Sort。如果是
+其他形態的資料，例如字串等，採用IntroSort可能會比較適合些。
+
+void FlashSort(int* data, int no)
+//說明：Flash Sort + Fast Integer Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n)，需額外O(n)空間
+{
+	if (no <= 1) return;
+	// 找出最大與最小的鍵值 //
+	int min_key = 0x7FFFFFFFL;
+	int max_key = 0;
+	int i;
+	for (i=no-1; i>=0; i--)
+	{
+		int key = data[i];
+		if (min_key > key) min_key = key;
+		if (max_key < key) max_key = key;
+	}
+	int delta = max_key-min_key;
+	if (delta == 0) return; // 都是相同的鍵值 //
+	// 將資料分配到256個bucket內 //
+	int pos_table[257];
+	memset(pos_table,0,sizeof(pos_table));
+	for (i=no-1; i>=0; i--)
+	{
+		int key = (int)(255.0*(data[i]-min_key)/delta);
+		pos_table[key]++;
+	}
+	pos_table[256] = no;
+	// 決定各bucket開始放到資料陣列的起始位置 //
+	for (i=1; i < 256; i++) pos_table[i] += pos_table[i-1];
+	// 使用另一個空間來存放bucket資料 //
+	int *temp_data = new int[no];
+	if (temp_data == NULL) return; // 錯誤處理!!! //
+	// 開始按bucket分類放入暫存空間 //
+	for (i=no-1; i>=0; i--)
+	{
+		int key = (int)(255.0*(data[i]-min_key)/delta);
+		temp_data[pos_table[key]-1] = data[i];
+		pos_table[key]--;
+	}
+	// 排序各個bucket //
+	for (i=0; i < 256; i++)
+	{
+		int size = pos_table[i+1] - pos_table[i];
+		if (size <= 1) continue;
+		FastIntegerSort(temp_data+pos_table[i],size);
+	}
+	// 將排好的資料拷回 //
+	memcpy(data,temp_data,no*sizeof(int));
+	delete[] temp_data;	
+}
+
+實測的結果發現，即使與最佳的演算法整合，Flash Sort未必就能提升排序的
+效率，反而下降了很多。不過也可能是因為我們多使用了一個O(n)空間有關，
+因此我依照原作者的程式，修正成不必使用動態記憶體。再次實測結果，效率
+又更慢了一些些（以時間／空間效率比的話，還是值得）。看來Flash Sort或
+Bucket Sort，似乎不是很實用，畢竟資料要平均分佈，並不是那麼容易出現的。
+
+void FlashSort(int* data, int no)
+//說明：Flash Sort + Fast Integer Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+//效率：最差／平均情況均為O(n)
+{
+	if (no <= 1) return;
+	// 找出最大與最小的鍵值 //
+	int min_key = 0x7FFFFFFFL;
+	int max_key = 0;
+	int i;
+	for (i=no-1; i>=0; i--)
+	{
+		int key = data[i];
+		if (min_key > key) min_key = key;
+		if (max_key < key) max_key = key;
+	}
+	int delta = max_key-min_key;
+	if (delta == 0) return; // 都是相同的鍵值 //
+	// 將資料分配到256個bucket內 //
+	int pos_table[256];
+	memset(pos_table,0,sizeof(pos_table));
+	for (i=no-1; i>=0; i--)
+	{
+		int key = (int)(255.0*(data[i]-min_key)/delta);
+		pos_table[key]++;
+	}
+	// 決定各bucket開始放到資料陣列的起始位置 //
+	for (i=1; i < 256; i++) pos_table[i] += pos_table[i-1];
+	int old_pos[256];
+	memcpy(old_pos,pos_table,256*sizeof(int));
+	// 開始按bucket重排資料 //
+	int remain_move = no;
+	i = 0;
+	int k = (int)(255.0*(data[i]-min_key)/delta);
+	while (remain_move > 1)
+	{
+		while (i > pos_table[k]-1)
+		{
+			i++;
+			k = (int)(255.0*(data[i]-min_key)/delta);
+		}
+		int temp1 = data[i];
+		while (i != pos_table[k])
+		{
+			k = (int)(255.0*(temp1-min_key)/delta);
+            int temp2 = data[pos_table[k]-1];
+            data[pos_table[k]-1] = temp1;
+            temp1 = temp2;
+			pos_table[k]--;
+			remain_move--;
+		}
+	}
+	// 排序各個bucket //
+	for (i=0; i < 256; i++)
+	{
+		int start = 0;
+		if (i > 0) start = old_pos[i-1];
+		int size = old_pos[i]-start;
+		if (size <= 1) continue;
+		FastIntegerSort(data+start,size);
+	}
+}
+
+在本節結束前，作者把前面各種混合排序法的效率集列成表，讓大家感受一下
+改良的效果。
+
+表三　混合排序法平均效率比較表
+
+       演算法               32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)  16M(s)
+-------------------------------------------------------------------------------------------------
+Heap Sort                     2.1     24.4    123.0      584    12.70     58.0     346    13.50
+Quick Sort                    1.7     18.1     86.6      400     7.97     35.1     154     2.93
+Quick Sort+Insertion Sort     1.2     14.1     66.6      313     6.61     29.7     135     2.59
+IntroSort                     1.0     13.5     66.0      300     6.44     29.4     132     2.57
+Radix Sort                   10.3     20.0     60.9      250     3.78     17.5      77     1.64
+Fast Integer Sort             1.1     13.4     53.9      209     3.06     14.8      72     1.55
+Flash Sort                   10.6     43.4    164.0      718    13.00     50.3     203     3.28
+
+
+<font color=blue><b>八. 各種資料形態的最佳排序演算法</b></font>
+
+（一）陣列資料
+
+1.數值陣列的排序
+
+經過混合排序法一節的分析說明之後，我們已經知道，在通用的情況下，數值
+陣列排序的最佳演算法，就是作者所提出的：
+
+  Fast Integer Sort = Radix Sort + Median-3 Quick Sort + Insertion Sort + Heap Sort
+
+然而這裡我們還有幾點疑問需要加以驗證測試的：
+
+(1)為何不用Merge Sort
+
+以最差情況效率為O(nlogn)的演算法中，Merge Sort的效率其實比Heap Sort好，
+但為何IntroSort不採用Merge Sort而採用Heap Sort呢？當然一個最重要的原
+因是Heap Sort不耗費額外的記憶體，然而如果要求最快速度的話，應該是Heap Sort
+與Merge Sort合併使用。由於Heap Sort在低資料量的速度比Merge Sort快，因
+此我們必須先訂出一個整合的門檻值。下面便是這兩個排序法在不同資料量的
+效率比較表：
+
+         Heap      Merge
+----------------------------
+ 32:     2089      6045
+ 64:     4755      7871
+128:    11240     12879
+160:    14598     14770
+168:    15726     15526
+176:    16688     16178
+192:    18286     17208
+
+因此門檻值大約是在168。不過依據作者實測的結果，這樣的修改對IntroSort
+的效率幾乎完全沒影響（但似乎有點些微的變慢）。當然這是因為當Quick Sort
+最差情況出現時才會去處理這部份，本身出現的機率就不高。再者，當需要處
+理這一部份時，資料量未必會很高，在這種情況下，Merge Sort與Heap Sort的
+效率其實就很相近了。因此是否要加入Merge Sort便由讀者自己決定吧（作者
+個人是覺得沒這個必要去多此一舉）。
+
+(2)最差情況的遞迴門檻值
+
+這部份SGI是定為32，雖然作者也蠻贊同的，但以科學的精神而言，還是需要實
+測一下加以驗證。以下便是不同遞迴門檻值的平均效率比較表：
+
+門檻值    4K(us)  64K(ms) 256K(ms)  1M(ms)  16M(s)
+----------------------------------------------------
+0:         522     10.59    47.2      223    4.24
+16:        312      6.83    34.7      220    3.51
+32:        311      6.52    29.4      132    2.57
+64:        309      6.52    29.5      132    2.57
+128:       310      6.51    29.2      131    2.55
+256:       309      6.52    29.3      131    2.55
+無限:      312      6.55    29.3      131    2.56
+
+大致上來說，只要門檻值超過32，效率就不會有太大的變化了。但依照表中的
+效率變化，似乎門檻值在64-128之間比較好一些些。以下我們再針對Quick Sort
+最差情況下，各門檻值的效率表現狀況：
+
+門檻值      4K    64K    256K     1M     16M
+---------------------------------------------------
+32:        606    118     513     258    478 
+64:        747    147     633     325    589 
+128:      1024    203     863     463    812 
+
+門檻值愈大，Quick Sort最差情況的表現也愈差。由於門檻值在32以上時平均
+效率的差異已不大，因此32確實是一個最適合的門檻值。
+
+2.大資料記錄的排序
+
+資料記錄大，意味著資料搬移的時間比比對的時間長，因此愈大的資料記錄對
+於資料交換頻繁的排序演算法愈不利。以下便是資料記錄為256 byte時，各種
+排序演算法的平均效率比較表。
+
+表四　大資料記錄排序平均效率比較表
+
+      演算法                4(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+---------------------------------------------------------------------------------------
+Insertion Sort (mem)         1.06(3)  1978    30940   493800
+Binary Insertion Sort        1.39     2384    37660   592200
+Comb Sort                    0.92(1)   383     2032    10220      544     2534   11609
+Quick Sort                   1.88      300(3)  1406(2)  6564(2)   175(2)   833(2) 3875(2)
+Selection Sort               0.95(2)   209(2)  1812    23280    40203   646453
+Heap Sort                    3.31      452     2144     9626      321(3)  1647(3) 8093(3)
+Merge Sort (Non-Recursive)   1.64      341     1672(3)  9314(3)   417     1844    8110
+Radix Sort                   6.66      158(1)   600(1)  4250(1)   123(1)   499(1) 1993(1)
+IntroSort                    0.83      183      972     4750      147      721    3422
+
+結論是，當資料量極多時，Radix Sort速度最快，但在中低資料量時，Selection Sort
+最快，在極低資料量時，Comb Sort最快（每筆記錄要夠大）。注意此處的IntroSort
+是整合了Seletion Sort和Heap Sort，至於Comb Sort與Selection Sort差異實
+在很小，因此直接以Selection Sort取代，其門檻值的設定為128。注意此處的
+Insertion Sort有採用memmove來加速，但實際效率依然比不上Selection Sort。
+
+void InsertionSort(record* data, int no)
+//說明：Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	for (int i=1; i < no; i++)
+	{
+		int key = data[i].key;
+		// 進行循序搜尋 //
+		int j;
+		for (j=i-1; j>=0; j--)
+			if (key >= data[j].key) break;
+		// 搬移資料，以空出位置 //
+		j++;
+		if (j != i)
+		{
+			record temp = data[i];
+			memmove(data+j+1,data+j,(i-j)*sizeof(record));
+			data[j] = temp;
+		}
+	}
+}
+
+接下來我們再看看資料記錄大小，對於Radix Sort、Quick Sort、Selection Sort
+這三者的影響程度，以便我們調整這幾個演算法的整合門檻值。以下便是各記
+錄大小對Selection Sort的門檻值影響：
+
+記錄大小        門檻值
+-------------------------------
+8                 14
+64                38
+128               76
+192               94
+256              128
+
+大體而言，我們可以採用以下公式做為門檻值：
+
+10+記錄大小/2
+
+以下則是各記錄大小對RadixSort的門檻值影響：
+
+記錄大小        門檻值
+-------------------------------
+8                134
+32                81
+64                66
+96                74
+128               63
+160               74
+192               65
+224               96
+256              102
+
+這個結果似乎沒有規則可循，大體上可以結論為，資料超過100以上便應該採用
+Radix Sort了。
+
+對於大資料記錄，一般都應採用串列結構（或指標陣列結構），而不應使用陣
+列結構才對，因此這邊的結論，其實用途並不大。
+
+3.字串陣列的排序
+
+字串的排序，意味著比對的時間會比搬移的時間長，因此比對次數愈多的排序
+演算法愈不利。以下便是各種排序演算法對字串的平均效率比較表，其中由於
+Radix Sort不適用於鍵值長度不固定的情況下，因此無需加以測試。
+
+表五　字串排序平均效率比較表（隨機產生256 byte英文小寫字母字串）
+
+      演算法                4(us)   32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+-------------------------------------------------------------------------------------------------
+Insertion Sort              0.06(1)  2.95(1)    94     1593    27180
+Binary Insertion Sort       0.11(2)  3.44(3)    61(4)   531     5770     1501
+Comb Sort                   0.15(3)  3.59       99      332(4)  2062(4)   205     1064     5969
+Quick Sort                  0.70    11.88      130      485     2322       65(2)   323(2)  1587(2)
+Heap Sort                   0.20(4)  3.53(4)    44(3)   216(2)  1244(3)    80(3)   488(4)  2813(4)
+Merge Sort (Recursive)      0.62     4.68       41(2)   218(3)  1164(2)    48(1)   253(1)  1273(1)
+Merge Sort (Non-Recursive)  0.35     2.97(2)    35(1)   189(1)   936(1)    84(4)   400(3)  1883(3)
+
+表六　字串排序平均效率比較表（隨機產生256 byte中英數符號字元混雜字串）
+
+      演算法                4(us)   32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+-------------------------------------------------------------------------------------------------
+Insertion Sort              0.14(2)  2.20(2)   106     1531    26576
+Binary Insertion Sort       0.11(1)  1.59(1)    53(4)   501     5656     1480
+Comb Sort                   0.17(3)  2.64(4)    55      315(4)  1778(4)   183     1553    11962
+Quick Sort                  0.79    10.51       95      435     2124       63(2)   547(3)  3383(3)
+Heap Sort                   0.20(4)  2.51(3)    38(2)   250(2)  1126(3)    75(3)   642(4)  4047(4)
+Merge Sort (Recursive)      0.53     2.68       42(3)   219(1)   940(1)    43(1)   398(1)  2508(1)
+Merge Sort (Non-Recursive)  0.30     3.11       24(1)   282(3)  1004(2)    76(4)   538(2)  3063(2)
+
+表七　字串排序平均效率比較表（前200 byte皆相同字元，其餘部份隨機產生）
+
+      演算法                4(us)   32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+-------------------------------------------------------------------------------------------------
+Insertion Sort              2.13(2) 118.6     6978
+Binary Insertion Sort       1.94(1)  51.0(1)   760(1)  4097(3) 23434(3)  1875 
+Comb Sort                   3.31    148.8     2159    11390    56376     1703
+Quick Sort                  3.83     73.7(4)  1045(4)  5547(4) 25598(4)   594(3)  2900(3) 13375(3)
+Heap Sort                   3.10     95.9     1412     7047    36928      931(4)  4453(4) 21156(4)
+Merge Sort (Recursive)      2.52(4)  53.4(2)   776(3)  3970(2) 19258(2)   453(1)  2110(1)  9797(1)
+Merge Sort (Non-Recursive)  2.31(3)  54.2(3)   760(1)  3892(1) 17894(1)   503(2)  2356(2) 10531(2)
+
+表八　字串排序平均效率比較表（英文單字與中文詞彙約83萬組隨機挑選）
+
+      演算法                4(us)   32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+-------------------------------------------------------------------------------------------------
+Insertion Sort              0.30(1)  5.16(4)   127     2044    31436
+Binary Insertion Sort       0.36(2)  5.81       78      574     6440
+Comb Sort                   0.55     5.19       85      510     2468      163      520     1774
+Quick Sort                  0.46(3)  4.74(2)    50(2)   274(2)  1154(1)    32(1)   145(1)   319(1)
+Heap Sort                   0.52(4)  5.01(3)    64(3)   344(4)  1840(4)    52(3)   306(3)   776(4)
+Merge Sort (Recursive)      0.77     6.45       69(4)   325(3)  1658(3)    41(2)   188(2)   422(2)
+Merge Sort (Non-Recursive)  0.60     3.78(1)    44(1)   270(1)  1278(2)    76(4)   333(4)   712(3)
+
+注意這裡的Binary Insertion Sort其實還可以利用memmove來加快速度，效率
+會再稍微快一些些：
+
+void BinaryInsertionSort(char** data, int no)
+//說明：Binary Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	for (int i=1; i < no; i++)
+	{
+		char* key = data[i];
+		// 進行二分搜尋，找到插入位置 //
+		int start = 0;
+		int end = i-1;
+		int m;
+		for (;;)
+		{
+			m = (start+end)/2;
+			int result = strcmp(key,data[m]);
+			if (result < 0)		// 落在左邊 //
+			{
+				end = m-1;
+				if (start > end) break;
+			}
+			else if (result > 0)	// 落在右邊 //
+			{
+				start = m+1;
+				if (start > end)
+				{
+					m++;
+					break;
+				}
+			}
+			else					// 已找到 //
+			{
+				m++;
+				break;
+			}
+		}
+		// m為插入位置,搬移後插入 //
+		if (i > m)
+		{
+			int no = i-m;
+			if (no == 1) data[i] = data[m];
+			else memmove(data+m+1,data+m,no*sizeof(char*));
+			data[m] = key;
+		}
+	}
+}
+
+由這四個表可以發現，在低資料量時，主要以Insertion Sort與Binary Insertion Sort
+最快；在中資料量時，主要以非遞迴Merge Sort與Heap Sort最快；在高資料量
+時，則是以遞迴Merge Sort與Quick Sort最快。因此這邊可以區分成兩種演算
+法，一是以Quick Sort為主的IntroSort，一個則是以遞迴Merge為主的String Merge Sort。
+
+IntroSort的整合方式為，資料量低於8時用Insertion Sort，低於128時用Binary Insertion Sort。
+Merge Sort的整合方式為，資料量低於8用Insertion Sort，低於128時用Binary Insertion Sort；
+在遞迴呼叫中，當資料量低於1024時用非遞迴Merge Sort。以下便是相關的程
+式部份：
+
+void InsertionSort(char** data, int no)
+//說明：Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	for (int i=1; i < no; i++)
+	{
+		char* key = data[i];
+		// 進行循序搜尋，同時搬移資料，以空出位置 //
+		int j;
+		for (j=i-1; j>=0; j--)
+			if (strcmp(key,data[j]) >= 0) break;
+			else data[j+1] = data[j];
+		// 將資料插入 //
+		data[j+1] = key;
+	}
+}
+
+void BinaryInsertionSort(char**data, int no)
+//說明：Binary Insertion Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	for (int i=1; i < no; i++)
+	{
+		char* key = data[i];
+		// 進行二分搜尋，找到插入位置 //
+		int start = 0;
+		int end = i-1;
+		int m;
+		for (;;)
+		{
+			m = (start+end)/2;
+			int result = strcmp(key,data[m]);
+			if (result < 0)		// 落在左邊 //
+			{
+				end = m-1;
+				if (start > end) break;
+			}
+			else if (result > 0)	// 落在右邊 //
+			{
+				start = m+1;
+				if (start > end)
+				{
+					m++;
+					break;
+				}
+			}
+			else					// 已找到 //
+			{
+				m++;
+				break;
+			}
+		}
+		// m為插入位置,搬移後插入 //
+		for (int j=i-1; j>=m; j--) data[j+1] = data[j];
+		data[m] = key;
+	}
+}
+
+static void adjust_heap(char**data, int start, int end)
+//說明：調整start以下的二元樹陣列符合Heap的定義
+//輸入：data = 輸入資料, start = 根節點位置, end = 資料結束位置
+//備註：父節點在(i-1)/2, 子節點在(2i+1,2i+2)
+{
+	char* k = data[start];
+	int j = 2*start+1;
+	while (j <= end)
+	{
+		// 找出子節點中鍵值最大的 //
+		if ((j < end) && (strcmp(data[j],data[j+1]) < 0)) j++;
+		if (strcmp(k,data[j]) >= 0) break;
+		// 將比父節點大的鍵值調上來 //
+		data[(j-1)/2] = data[j];
+		// 以被調上來的子節點做為子樹，繼續往下處理 //
+		j = 2*j+1;
+	}
+	data[(j-1)/2] = k;
+}
+
+void HeapSort(char**data, int no)
+//說明：Heap Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	// 建立初始Heap //
+	int i;
+	for (i=no/2-1; i>=0; i--) adjust_heap(data,i,no-1);
+	// 每次取走一個最大的元素，然後重新調整Heap //
+	for (i=no-2; i>=0; i--)
+	{
+		char* temp = data[i+1];
+		data[i+1] = data[0];
+		data[0] = temp;
+		adjust_heap(data,0,i);
+	}
+}
+
+void IntroSort(int start, int end, char**data, int level)
+//說明：Introspective Sort (Median-3 Quick Sort + Insertion Sort + Binary Insertion Sort + Heap Sort)
+//輸入：start, end = 要排序資料的起終範圍, data = 輸入資料, level=呼叫層數,初值為1
+//輸出：data = 已排序好的資料
+{
+	while (start < end) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		if (end-start < 128) // 資料量過少的，改用Insertion Sort處理 //
+		{
+			if (end-start < 8) InsertionSort(data+start,end-start+1);
+			else BinaryInsertionSort(data+start,end-start+1);
+			return;
+		}
+		if (level > 32) // 呼叫層數太多時，改用其他O(nlogn)排序演算法處理 //
+		{
+			HeapSort(data+start,end-start+1);
+			return;
+		}
+		// 取分堆標準元素 (使用Median-3法) //
+		int m = (start+end)/2;
+		if (strcmp(data[start],data[m]) > 0)
+		{
+			char* temp = data[start];
+			data[start] = data[m];
+			data[m] = temp;
+		}
+		if (strcmp(data[start],data[end]) > 0)
+		{
+			char* temp = data[start];
+			data[start] = data[end];
+			data[end] = temp;
+		}
+		if (strcmp(data[m],data[end]) > 0)
+		{
+			char* temp = data[m];
+			data[m] = data[end];
+			data[end] = temp;
+		}
+		char* k = data[m];
+		// 開始依k值挑元素分堆, 小的放左邊, 大的放右邊 //
+		int i = start+1;
+		int j = end-1;
+		do
+		{
+			// 由左找第一個比k大的 //
+			while (strcmp(data[i],k) < 0) i++;
+			// 由右找第一個比k小的 //
+			while ((i <= j) && (strcmp(k,data[j]) < 0)) j--;
+			// 將i與j位置上的資料對調 //
+			if (i <= j)
+			{
+				char* temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		} while (i <= j);
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		level++;
+		if (j-start < end-i) // 左半部較小 //
+		{
+			if (start < j) IntroSort(start,j,data,level);
+			start = i;
+		}
+		else // 右半部較小 //
+		{
+			if (i < end) IntroSort(i,end,data,level);
+			end = j;
+		}
+	}
+}
+
+void NonrecursiveMergeSort(char**data, int no, char**temp_data)
+//說明：非遞迴Merge Sort
+//輸入：data = 輸入資料, no = 資料數, temp_data = 暫用空間
+//輸出：data = 已排序好的資料
+{
+	if (no <= 1) return;
+	// 先兩兩排好 //
+	for (int i=1; i < no; i+=2)
+		if (strcmp(data[i-1],data[i]) > 0)
+		{
+			char* temp = data[i-1];
+			data[i-1] = data[i];
+			data[i] = temp;
+		}
+	// 開始往上合併 //
+	int step = 2;
+	char** source_data = data;
+	char** dest_data = temp_data;
+	while (step < no)
+	{
+		int start = 0;
+		for (;;)
+		{
+			int mid = start+step;
+			if (mid >= no)
+			{
+				// 將剩餘資料copy到目的緩衝區 //
+				int tno = no-start;
+				if (tno == 1) dest_data[start] = source_data[start];
+				else if (tno > 1) memcpy(dest_data+start,source_data+start,tno*sizeof(char*));
+				break;
+			}
+			int end = mid+step;
+			if (end > no) end = no;
+			// 將兩者合併在一起 //
+			int i = start;
+			int j = mid;
+			int k = start;
+			for (;;)
+			{
+				if (strcmp(source_data[i],source_data[j]) < 0)
+				{
+					dest_data[k++] = source_data[i++];
+					if (i >= mid) // 第一堆已結束 //
+					{
+						int tno = end-j;
+						if (tno == 1) dest_data[k] = source_data[j];
+						else memcpy(dest_data+k,source_data+j,tno*sizeof(char*));
+						break;
+					}
+				}
+				else
+				{
+					dest_data[k++] = source_data[j++];
+					if (j >= end) // 第二堆已結束 //
+					{
+						int tno = mid-i;
+						if (tno == 1) dest_data[k] = source_data[i];
+						else memcpy(dest_data+k,source_data+i,tno*sizeof(char*));
+						break;
+					}
+				}
+			}
+			start += step*2;
+		}
+		step *= 2;
+		char** temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	if (source_data != data) memcpy(data,source_data,no*sizeof(char*));
+}
+
+void MergeSort(char**data, int no, char**temp_data)
+//說明：遞迴Merge Sort
+//輸入：data = 輸入資料, no = 資料數, temp_data = 暫用空間
+//輸出：data = 已排序好的資料
+{
+	if (no <= 1024) // 資料量過少的用非遞迴Merge Sort //
+	{
+		NonrecursiveMergeSort(data,no,temp_data);
+		return;
+	}
+	// 以遞迴呼叫排好兩堆 //
+	int no2 = no/2;
+	MergeSort(data,no2,temp_data);
+	MergeSort(data+no2,no-no2,temp_data);
+	// 將兩者合併在一起 //
+	int i = 0;
+	int j = no2;
+	int k = 0;
+	for (;;)
+	{
+		if (strcmp(data[i],data[j]) < 0)
+		{
+			temp_data[k++] = data[i++];
+			if (i >= no2) // 第一堆已結束 //
+			{
+				// 因第二堆均在陣列最後面，故將已排好的部份copy回去即可 //
+				memcpy(data,temp_data,k*sizeof(char*));
+				return;
+			}
+		}
+		else
+		{
+			temp_data[k++] = data[j++];
+			if (j >= no) // 第二堆已結束 //
+			{
+				// 第一堆在陣列中間，因都是最大，先搬到陣列尾，再將已排好部份copy回去 //
+				memcpy(data+k,data+i,(no2-i)*sizeof(char*));
+				memcpy(data,temp_data,k*sizeof(char*));
+				return;
+			}
+		}
+	}
+}
+
+void StringMergeSort(char**data, int no)
+//說明：String Merge Sort (Merge Sort + Insertion Sort + Binary Insertion Sort)
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	if (no <= 128) 
+	{
+		if (no <= 8) InsertionSort(data,no);
+		else BinaryInsertionSort(data,no);
+		return;
+	}
+	char** temp_data = new char*[no];
+	if (temp_data == NULL) // 記憶體不足，改用IntroSort //
+	{
+		IntroSort(0,no-1,data,1);
+		return;
+	}
+	MergeSort(data,no,temp_data);
+	delete []temp_data;
+}
+
+下面便是這兩種排序法對於前述四種字串類型最後的效率比較表：
+
+      演算法         256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+---------------------------------------------------------------------------
+IntroSort             62.4      157     1250     40.0      225     1156
+String Merge Sort     31.5      143     1165     42.5      234     1204
+---------------------------------------------------------------------------
+IntroSort             37.4      187      500     38.5      334     1718
+String Merge Sort     28.2      109      785     41.9      375     2375
+---------------------------------------------------------------------------
+IntroSort              807     4657    22050      541     2689    12500
+String Merge Sort      757     3972    19230      453     2101     9624
+---------------------------------------------------------------------------
+IntroSort             51.5      260     1179     29.6      134      565
+String Merge Sort     45.7      255     1236     36.1      171      760
+
+大體而言，IntroSort優於String Merge Sort，但在中低資料量時，String Merge Sort
+優於IntroSort。因此我們可以再度整合二者，便可成為最快速的字串排序法了：
+
+void FastStringSort(char**data, int no)
+//說明：Fast String Sort
+//輸入：data = 輸入資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	if (no <= 64) 
+	{
+		if (no <= 8) InsertionSort(data,no);
+		else BinaryInsertionSort(data,no);
+		return;
+	}
+	if (no <= 640)
+	{
+		char** temp_data = new char*[no];
+		if (temp_data != NULL)
+		{
+			NonrecursiveMergeSort(data,no,temp_data);
+			delete[] temp_data;
+			return;
+		}
+	}
+	IntroSort(0,no-1,data,1);
+}
+
+4.定長二進制資料陣列的排序
+
+定長二進制資料陣列的排序，和字串陣列的排序相當。但字串是不定長，Radix Sort
+並無法適用，如果是定長二進制資料，那麼Radix Sort便可以使用了（因為資
+料量夠大的話，Radix Sort絕對會比IntroSort快的）。由於前面得到的字串最
+快排序法為Fast String Sort = IntroSort + Binary Insertion Sort + Merge Sort，
+因此此處作者準備實驗的，便是鍵值長度對Radix Sort與Fast String Sort的
+影響程度，以便決定多少資料量下，是使用Radix Sort，還是使用Fast String Sort。
+以下便是在各種鍵值長度下，Radix Sort與Fast String Sort的整合門檻值。
+
+鍵值長度  門檻值
+-----------------
+    1       16
+    2       24
+    3       35
+    4       44
+    5       54
+    6       64
+    7       85
+    8      128
+    9      121
+   10      129
+   11      147
+   12      170
+   13      210
+   14      234
+   15      258
+   16      319
+   17      355
+   18      361
+   19      462
+   20      470
+   21      634
+   22      879
+   23    10130
+   24    10786
+   25    20804
+   26    40057
+   27      4M+
+
+若不太講究誤差的話，大抵門檻值可歸納為下列公式：
+
+(1)鍵值長度k=1-6, 門檻值=k*10+6
+(2)鍵值長度k=7-22, 門檻值=4*(k-7)^2+85
+(3)鍵值長度k=23-26, 門檻值=8192*2^(k-23)
+(4)鍵值長度k>=27, 門檻值=無限
+
+void FastBinaryKeySort(char** data, int key_len, int no)
+//說明：Fast Binary Key Sort
+//輸入：data = 輸入資料, key_len = 鍵值長度, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	if ((no <= 1) || (key_len <= 0)) return;
+	bool use_other = false;
+	if (key_len >= 27) 
+	{
+		use_other = true;
+	}
+	else
+	{
+		int cut_value;
+		if (key_len <= 6) cut_value = key_len*10+6;
+		else if (key_len <= 22) cut_value = 4*(key_len-7)*(key_len-7)+85;
+		else cut_value = 8192*(1 << (key_len-23));
+		if (no <= cut_value) use_other = true;
+	}
+	if (use_other)
+	{
+		// 資料數過少的，使用其他演算法 //
+		FastStringSort(data,key_len,no);
+		return;
+	}
+	// 配置暫存空間 //
+	char** temp_data = new char*[no];
+	if (temp_data == NULL) 
+	{
+		// 空間不足，改用其他演算法 //
+		FastStringSort(data,key_len,no);
+		return;
+	}
+	// 對每個鍵值部份進行排序 //
+	int pos_table[257];
+	char** source_data = data; 	// 目前處理的資料陣列 //
+	char** dest_data = temp_data; // 要放入的資料陣列 //
+	for (int i=key_len-1; i>=0; i--)
+	{
+		memset(pos_table,0,sizeof(pos_table));
+		// 依照子鍵值部份計算每個bucket丟入數量 //
+		int j;
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)source_data[j][i];
+			pos_table[key+1]++;
+		}
+		// 決定各bucket開始放到資料陣列的起始位置 //
+		for (j=1; j < 256; j++) pos_table[j] += pos_table[j-1];
+		// 開始按子鍵值部份放入暫存空間，注意相同key的資料順序必須保持stable //
+		for (j=0; j < no; j++)
+		{
+			int key = (unsigned char)source_data[j][i];
+			dest_data[pos_table[key]] = source_data[j];
+			pos_table[key]++;
+		}
+		// 調換資料陣列 //
+		char** temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	// 查看是否是正確的輸出陣列 //
+	if (source_data != data) memcpy(data,source_data,no*sizeof(char*));
+	delete[] temp_data;
+}
+
+由整合門檻值也可看出，即使有字串最長資訊，Radix Sort仍然難以作用於字
+串的排序。畢竟要求最長字串長度只能20幾個byte以內（換算成Unicode則是
+10來個字元），在實際的使用上是不足的。
+
+5.數堆已排好陣列資料的合併
+
+數堆已排好資料的合併，是個很常見的問題。例如原先已有一堆已排好的資料A，
+但後來又需要加了一批已排好資料B，這種情況就是兩堆已排好資料的合併問題。
+又例如原先已有一堆已排好的資料A，後來分別處理不同的資料集，得到許多已
+排好的資料B[i]，需要併入前面的資料A中，這樣就構成了m堆已排好資料的合
+併問題。
+
+對於m堆已排好資料的合併問題，最好的做法便是採用Merge Sort的精神來處理。
+其實當各堆資料數均為1時，這個問題就已經等同一般的資料排序了。也就是說，
+假設有m堆已排好資料，全部共有n筆資料，那麼當m與n接近到一個程度時，首
+先要考慮的便是使用IntroSort或是Radix Sort。然而這種情況少之又少（但也
+不能不考慮），因此以下我們主要還是針對m遠小於n的情況下來考慮最佳的做
+法。
+
+現在來想想非遞迴的Merge Sort是如何處理的？兩兩合併成m/2堆後，再繼續兩
+兩合併下去，從理論上分析可以得知，它的比對次數是O(nlogm)，而且無關每
+堆的資料數。然而這並不是最佳解法，最佳的方式是取資料最少的兩堆合併後
+放回，再取資料最少的兩堆合併後放回，如此反覆下去。這種方式最糟的情況
+是當各堆資料數都相同時，一樣是O(nlogm)，但當各堆的資料數差異愈大時，
+它的效率就會愈高。例如有8堆資料數分別為：
+
+1 1 3 6 12 24 48 96
+
+採用方法一的比對次數是573，方法二的比對次數是374，相差甚多。不過效率
+的考慮，並不只是比對次數而已，還要考慮資料搬移次數，以及其他的額外時
+間。對於資料的搬移方面，方法一只需每層調換緩衝區，那麼它的資料搬移次
+數很容易便可算出是O(nlogm)，但方法二就不是那麼簡單了。現在我們來考慮
+方法二要如何做比較好。
+
+首先是如何取得資料數最少的兩堆資料？如果我們先排序好，那麼便固定要有
+約O(m)到O(mlogm)的額外時間，而且之後取出資料數最少的兩堆合併後，還要
+放入，那麼便需要再排一次。這樣的效率會變成O(m^2)，並不是很好的方法。
+其實這部份我們可以仿造Heap Sort，只不過換成最小值在最前面。接著取出資
+料數最少的一堆，將最後一堆調到頂端調整heap後，再取一個出來，此時先不
+調整heap，合併後直接放到頂端，然後才調整heap。這樣的效率仍能維持在O(mlogm），
+屬於方法二固定的額外時間。
+
+但接下來的問題是，資料的搬移要如何控制？這點目前作者也想不出有效率的
+方式來處理，或許這個方法比較適合串列資料的合併。然而前面的Heap Sort方
+式倒是引發作者另一個想法，就是取各堆資料第一個資料進行Heap Sort，然後
+取走最小的資料，該堆資料往上遞補，然後調整heap（有點類似Patience Sort）。
+這樣的做法，其比對次數與搬移次數都是O(nlogm)，與方法一相當，且需要的
+額外空間可由O(n)降至O(m)。
+
+以下便是這兩種方法的程式寫法（假設要合併的都是數值陣列資料）：
+
+static void merge_sort_array_data(const int* data1, int no1, const int* data2, int no2, int *outdata)
+//說明：合併兩已排序好的陣列資料
+//輸入：data1, data2 = 兩已排序好的陣列資料, no1,no2 = 兩陣列資料的資料數
+//輸出：outdata = 合併後的資料
+{
+	int i = 0; // 第一堆的索引值 //
+	int j = 0; // 第二堆的索引值 //
+	int k = 0; // 輸出空間的索引值 //
+	for (;;)
+	{
+		if (data1[i] < data2[j])
+		{
+			outdata[k++] = data1[i++];
+			if (i >= no1) // 第一堆已結束 //
+			{
+				int tno = no2-j;
+				if (tno == 1) outdata[k] = data2[j];
+				else memcpy(outdata+k,data2+j,tno*sizeof(int));
+				break;
+			}
+		}
+		else
+		{
+			outdata[k++] = data2[j++];
+			if (j >= no2) // 第二堆已結束 //
+			{
+				int tno = no1-i;
+				if (tno == 1) outdata[k] = data1[i];
+				else memcpy(outdata+k,data1+i,tno*sizeof(int));
+				break;
+			}
+		}
+	}
+}
+
+void MergeSortArrayData1(int** data, int* data_no, int pile_no, int total_data_no, int *outdata)
+//說明：合併多個已排好陣列資料 (兩兩合併法)
+//輸入：data = 多個已排好陣列資料, data_no = 各堆已排好陣列資料的資料數
+//		pile_no = 已排好陣列資料的總堆數, total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的陣列資料，外界需給予足夠的空間
+//備註：本函數會破壞data_no的內容
+{
+	if (pile_no <= 0) return;
+	// 先兩兩合併好到輸出空間裡 //
+	int no = 0;
+	int i;
+	for (i=1; i < pile_no; i+=2)
+	{
+		merge_sort_array_data(data[i-1],data_no[i-1],data[i],data_no[i],outdata+no);
+		no += data_no[i/2] = data_no[i-1]+data_no[i];
+	}
+	// 若剩下一個則直接拷貝進去 //
+	if (pile_no & 1)
+	{
+		memcpy(outdata+no,data[i-1],data_no[i-1]*sizeof(int));
+		data_no[i/2] = data_no[i-1];
+		pile_no++;
+	}
+	pile_no /= 2;
+	if (pile_no <= 1) return;
+	// 配置暫存空間 //
+	int* temp_data = new int[total_data_no];
+	if (temp_data == NULL) return; // 錯誤處理!!! //
+	// 開始繼續兩兩合併上去 //
+	int* source_data = outdata;
+	int* dest_data = temp_data;
+	while (pile_no > 1)
+	{
+		no = 0;
+		for (i=1; i < pile_no; i+=2)
+		{
+			merge_sort_array_data(source_data+no,data_no[i-1],source_data+no+data_no[i-1],data_no[i],dest_data+no);
+			no += data_no[i/2] = data_no[i-1]+data_no[i];
+		}
+		// 若剩下一個則直接拷貝進去 //
+		if (pile_no & 1)
+		{
+			memcpy(dest_data+no,source_data+no,data_no[i-1]*sizeof(int));
+			data_no[i/2] = data_no[i-1];
+			pile_no++;
+		}
+		pile_no /= 2;
+		// 對調暫存空間 //
+		int* temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	if (source_data != outdata) memcpy(outdata,source_data,total_data_no*sizeof(int));
+	delete[] temp_data;
+}
+
+static void adjust_heap(int** indata, int* data_no, int start, int end)
+//說明：調整start以下的二元樹陣列符合Heap的定義 (最小值在最上)
+//輸入：indata,data_no = 輸入資料與資料數
+//		start = 根節點位置, end = 資料結束位置
+{
+	int* k = indata[start];
+	int no = data_no[start];
+	int j = 2*start+1;
+	while (j <= end)
+	{
+		// 找出子節點中鍵值最小的 //
+		if ((j < end) && (*indata[j] > *indata[j+1])) j++;
+		if (*k <= *indata[j]) break;
+		// 將比父節點小的鍵值調上來 //
+		indata[(j-1)/2] = indata[j];
+		data_no[(j-1)/2] = data_no[j];
+		// 以被調上來的子節點做為子樹，繼續往下處理 //
+		j = 2*j+1;
+	}
+	indata[(j-1)/2] = k;
+	data_no[(j-1)/2] = no;
+}
+
+void MergeSortArrayData3(int** data, int* data_no, int pile_no, int total_data_no, int *outdata)
+//說明：合併多個已排好陣列資料 (Heap Sort法)
+//輸入：data = 多個已排好陣列資料, data_no = 各堆已排好陣列資料的資料數
+//		pile_no = 已排好陣列資料的總堆數, total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的陣列資料，外界需給予足夠的空間
+//備註：本函數會破壞data_no的內容
+{
+	// 確認三堆以上才開始處理 //
+	if (pile_no <= 0) return;
+	if (pile_no == 1)
+	{
+		memcpy(outdata,data[0],data_no[0]*sizeof(int));
+		return;
+	}
+	if (pile_no == 2)
+	{
+		merge_sort_array_data(data[0],data_no[0],data[1],data_no[1],outdata);
+		return;
+	}
+	// 配置暫存空間 //
+	int** indata = new int*[pile_no];
+	if (indata == NULL) return; // 錯誤處理!!! //
+	memcpy(indata,data,pile_no*sizeof(int*));
+	// 建立初始Heap //
+	int i;
+	for (i=pile_no/2-1; i>=0; i--) adjust_heap(indata,data_no,i,pile_no-1);
+	i = 0;
+	while (pile_no > 0)
+	{
+		// 取出最小的資料輸出 //
+		outdata[i++] = *indata[0];
+		if (data_no[0] <= 1)
+		{
+			indata[0] = indata[pile_no-1];
+			data_no[0] = data_no[pile_no-1];
+			pile_no--;
+		}
+		else
+		{
+			indata[0]++;
+			data_no[0]--;
+		}
+		adjust_heap(indata,data_no,0,pile_no-1);
+	}
+	delete[] indata;
+}
+
+以下我們開始測試這兩種方法的效率。從測試結果可以得知，方法一無論在什
+麼情況下，速度都比方法三快（主要是有memcpy可加速）。
+
+    測試條件                 方法一     方法三
+------------------------------------------------
+65536堆，每堆1元素             119        241
+1024堆，每堆8元素              845       1228
+8堆，每堆1024元素              271        438
+1024堆，每堆1-1024元素不等    1138       2056
+8堆，每堆1-1024元素不等        256        467
+
+接下來我們再來看看，什麼時候用Fast Integer Sort比較適合。由於Fast Integer Sort
+混合了IntroSort與Radix Sort，因此作者將之拆解出來分別測試，以下便是IntroSort
+與方法一的整合門檻值：
+
+堆數   門檻值
+---------------
+2        0
+3       10
+4        8
+5        7
+6        6
+7        6
+8        5
+10       9
+12       9
+14       9
+16       9
+20       9
+24       9
+28       9
+32      10
+40      12
+48      11
+56      13
+64      13
+80      14
+96      13
+112     14
+128     15
+160     18
+192     25
+224     28
+256     32
+320     36
+384     39
+448     48
+512     56
+576     81
+640     90
+768    104
+896    124
+1024   128
+
+也就是說，當平均資料量少於某個程度時，比較適合IntroSort，否則便適合方
+法一。至於Radix Sort比較麻煩，因為資料量少的時候，Radix Sort會比方法
+一慢，但資料量極大時，也一樣會比方法一慢，也就是說，Radix Sort只有在
+某個中資料量範圍下，才會比方法一快。就作者測試結果，當堆數>96時，總資
+料量從最少到2M筆的範圍內，Radix Sort都比方法一快，接著範圍不斷地縮小，
+到堆數<=16時，Radix Sort無論多少筆數都快不過方法一了。由於這個範圍頗
+難測試，同時對程式寫作上也頗為麻煩，因此當這個範圍開始縮小時，作者便
+不予考慮了。以下便是最後整合的程式：
+
+void MergeSortArrayData(int** data, int* data_no, int pile_no, int total_data_no, int *outdata)
+//說明：合併多個已排好陣列資料
+//輸入：data = 多個已排好陣列資料, data_no = 各堆已排好陣列資料的資料數
+//		pile_no = 已排好陣列資料的總堆數, total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的陣列資料，外界需給予足夠的空間
+//備註：本函數會破壞data_no的內容
+{
+	// 確認三堆以上才開始處理 //
+	if (pile_no <= 0) return;
+	if (pile_no == 1)
+	{
+		memcpy(outdata,data[0],data_no[0]*sizeof(int));
+		return;
+	}
+	if (pile_no == 2)
+	{
+		merge_sort_array_data(data[0],data_no[0],data[1],data_no[1],outdata);
+		return;
+	}
+	// 決定處理方法 //
+	bool use_others = false;
+	int average_no = total_data_no/pile_no;
+	if ((pile_no > 96) || 
+		((pile_no <= 32) && (average_no < 9)) ||
+		((pile_no <=128) && (average_no < 13))) use_others = true;
+	int* temp_data = NULL;
+	if (! use_others) temp_data = new int[total_data_no];
+	if (temp_data == NULL) 
+	{
+		// 改用Fast Integer Sort處理 //
+		int index=0;
+		for (int i=0; i < pile_no; i++)
+		{
+			memcpy(outdata+index,data[i],data_no[i]*sizeof(int));
+			index += data_no[i];
+		}
+		FastIntegerSort(outdata,total_data_no);
+		return;
+	}
+	// 先兩兩合併好到輸出空間裡 //
+	int no = 0;
+	int i;
+	for (i=1; i < pile_no; i+=2)
+	{
+		merge_sort_array_data(data[i-1],data_no[i-1],data[i],data_no[i],outdata+no);
+		no += data_no[i/2] = data_no[i-1]+data_no[i];
+	}
+	// 若剩下一個則直接拷貝進去 //
+	if (pile_no & 1)
+	{
+		memcpy(outdata+no,data[i-1],data_no[i-1]*sizeof(int));
+		data_no[i/2] = data_no[i-1];
+		pile_no++;
+	}
+	pile_no /= 2;
+	// 開始繼續兩兩合併上去 //
+	int* source_data = outdata;
+	int* dest_data = temp_data;
+	while (pile_no > 1)
+	{
+		no = 0;
+		for (i=1; i < pile_no; i+=2)
+		{
+			merge_sort_array_data(source_data+no,data_no[i-1],source_data+no+data_no[i-1],data_no[i],dest_data+no);
+			no += data_no[i/2] = data_no[i-1]+data_no[i];
+		}
+		// 若剩下一個則直接拷貝進去 //
+		if (pile_no & 1)
+		{
+			memcpy(dest_data+no,source_data+no,data_no[i-1]*sizeof(int));
+			data_no[i/2] = data_no[i-1];
+			pile_no++;
+		}
+		pile_no /= 2;
+		// 對調暫存空間 //
+		int* temp = source_data;
+		source_data = dest_data;
+		dest_data = temp;
+	}
+	if (source_data != outdata) memcpy(outdata,source_data,total_data_no*sizeof(int));
+	delete[] temp_data;
+}
+
+以下便是整合前後的效率比較表：
+
+    測試條件                 方法一     整合後
+------------------------------------------------
+65536堆，每堆1元素             119         53
+1024堆，每堆8元素              845        474
+8堆，每堆1024元素              271        271
+1024堆，每堆1-1024元素不等    1138        731
+8堆，每堆1-1024元素不等        256        237
+
+至於字串陣列資料的合併，和數值陣列資料的合併差不多，但不必再考慮Radix Sort
+的影響。由於字串陣列資料的合併，遠不如數值陣列資料的合併常見，因此作
+者便不再繼續測試下去。需要的讀者可以自行測試看看。
+
+（二）串列資料
+
+到目前為止，我們討論的都是陣列資料的排序，底下我們開始討論串列資料排
+序的最佳做法。不過在討論之前，讀者最好有個概念：凡是講求高效率的程式，
+都不會去使用動態節點空間的，而是採用陣列方式來模擬串列結構（參閱拙著
+〔資料結構－應用篇〕）。因為動態記憶體的配置與釋放是非常耗時的，這之
+間的速度差會高達數十倍，甚至上百倍以上。由於無論是採用那種方式，對於
+程式的寫法與執行速度上都很相近（主要是慢在動態記憶體的配置與釋放），
+因此為了方便說明，以下作者仍採用動態節點空間的方式來舉例說明。讀者在
+使用時，應依實際運用情況加以修正。
+
+對於串列資料的排序，最簡單的方式，便是將它儲存成陣列資料（儲存資料指
+標即可），然後用陣列資料排序法排好後，再重設串列節點指標即可。例如：
+
+void ArraySort(record* &data, int no)
+//說明：採用陣列排序法排序串列資料
+//輸入：data = 輸入串列資料, no = 資料數目
+//輸出：data = 已排序好的資料
+{
+	record** temp_data = new record*[no];
+	if (temp_data == NULL) return; // 錯誤處理!!! //
+	int i=0;
+	record* ptr = data;
+	while (ptr != NULL)
+	{
+		temp_data[i++] = ptr;
+		ptr = ptr->next;
+	}
+	FastIntegerSort(temp_data,no);
+	temp_data[no-1]->next = NULL;
+	for (i=no-2; i>=0; i--) temp_data[i]->next = temp_data[i+1];
+	data = temp_data[0];
+	delete[] temp_data;
+}
+
+不過這樣的方式需要O(n)的空間，同時也需要O(n)的額外時間，因此我們仍然
+要找出其他方法來處理。
+
+就目前已知的排序演算法中，能適用於單向鏈結串列資料排序的，計有List Insertion Sort、
+Bubble Sort、Quick Sort、Radix Exchange Sort、Selection Sort、Merge Sort、
+Radix Sort等。以下便是各程式的寫法：
+
+void ListInsertionSort(record* &data)
+//說明：List Insertion Sort
+//輸入：data = 輸入串列資料
+//輸出：data = 已排序好的資料
+{
+	if (data == NULL) return;
+	record* remain_ptr = data->next;
+	record* start_ptr = data;
+	data->next = NULL;
+	while (remain_ptr != NULL)
+	{
+		record* cur_ptr = remain_ptr;
+		remain_ptr = remain_ptr->next;
+		// 找出插入位置 //
+		record* pre_ptr = NULL;
+		record* ptr = start_ptr;
+		while (ptr != NULL)
+		{
+			if (cur_ptr->key <= ptr->key) break;
+			pre_ptr = ptr;
+			ptr = ptr->next;
+		}
+		cur_ptr->next = ptr;
+		if (pre_ptr == NULL) start_ptr = cur_ptr;
+		else pre_ptr->next = cur_ptr;
+	}
+	data = start_ptr;
+}
+
+void BubbleSort(record* &data)
+//說明：Bubble Sort
+//輸入：data = 輸入串列資料
+//輸出：data = 已排序好的資料
+{
+	if (data == NULL) return;
+	record* start_ptr = data;
+	record* bound = NULL;
+	while (start_ptr->next != bound)
+	{
+		record* pre_ptr = NULL;
+		record* ptr1 = start_ptr;
+		record* ptr2 = start_ptr->next;
+		record* next_bound = ptr2;
+		while (ptr2 != bound)
+		{
+			if (ptr2->key < ptr1->key) // 次序不對，進行交換 //
+			{
+				ptr1->next = ptr2->next;
+				ptr2->next = ptr1;
+				if (pre_ptr == NULL) start_ptr = ptr2;
+				else pre_ptr->next = ptr2;
+				next_bound = ptr1;
+				pre_ptr = ptr2;
+				ptr2 = ptr1->next;
+			}
+			else
+			{
+				pre_ptr = ptr1;
+				ptr1 = ptr2;
+				ptr2 = ptr2->next;
+			}
+		}
+		bound = next_bound;
+	}
+	data = start_ptr;
+}
+
+void QuickSort(record* &data, record* end)
+//說明：Quick Sort
+//輸入：data = 輸入的串列資料, end = 結尾指標，初始值應為NULL
+//輸出：data = 已排序好的資料
+{
+	record* start = data;
+	record* pre_start = NULL;
+	while ((start != end) && (start->next != end)) // 此迴圈係用以模擬第二次的遞迴呼叫排序 //
+	{
+		// 取第一個元素做為劃分標準 //
+		int k = start->key;
+		// 開始依k值挑元素分堆, 小的在左邊, 大的在右邊 //
+		record* left = end;
+		record* left_end = end;
+		record* right = end;
+		record* right_end = end;
+		int left_no = 0;
+		int right_no = 0;
+		record* ptr = start->next;
+		while (ptr != end)
+		{
+			if (ptr->key <= k)
+			{
+				if (left == end) left = left_end = ptr;
+				else left_end = left_end->next = ptr;
+				left_no++;
+			}
+			else
+			{
+				if (right == end) right = right_end = ptr;
+				else right_end = right_end->next = ptr;
+				right_no++;
+			}
+			ptr = ptr->next;
+		}
+		// 將之串在一起 //
+		if (left != end)
+		{
+			if (pre_start != NULL) pre_start->next = left;
+			else data = left;
+			left_end->next = start;
+		}
+		start->next = right;
+		if (right_end != end) right_end->next = end;
+		// 遞迴呼叫排序較小的那塊 (呼叫次數與深度較少) //
+		// 然後重設參數, 以迴圈模擬遞迴呼叫, 排序較大的那塊 //
+		if (left_no < right_no) // 左半部較小 //
+		{
+			if (left_no > 1) 
+			{
+				QuickSort(left,start);
+				if (pre_start != NULL) pre_start->next = left;
+				else data = left;
+			}
+			if (right_no <= 1) return;
+			pre_start = start;
+			start = right;
+		}
+		else // 右半部較小 //
+		{
+			if (right_no > 1) 
+			{
+				QuickSort(right,end);
+				start->next = right;
+			}
+			if (left_no <= 1) return;
+			end = start;
+			start = left;
+		}
+	}
+}
+
+record* RadixExchangeSort(record* &data, unsigned int bit)
+//說明：Radix Exchange Sort
+//輸入：data = 輸入串列資料
+//		bit要分堆所使用的位元值（例如0x80000000L）
+//輸出：data = 已排序好的資料
+//傳回：串列尾指標
+{
+	if ((bit == 0) || (data == NULL)) return NULL;
+	// 開始依子鍵值挑元素分堆 //
+	record* ptr = data;
+	record* ptr0 = NULL;
+	record* end_ptr0 = NULL;
+	record* ptr1 = NULL;
+	record* end_ptr1 = NULL;
+	while (ptr != NULL)
+	{
+		record* next_ptr = ptr->next;
+		if (ptr->key & bit)
+		{
+			if (ptr1 == NULL) end_ptr1 = ptr;
+			ptr->next = ptr1;
+			ptr1 = ptr;
+		}
+		else
+		{
+			if (ptr0 == NULL) end_ptr0 = ptr;
+			ptr->next = ptr0;
+			ptr0 = ptr;
+		}
+		ptr = next_ptr;
+	}
+	// 遞迴呼叫自己排序分出的兩堆 //
+	if (bit != 1) // 最後一個位元時，不必再往下排了 //
+	{
+		if (ptr0 != NULL) end_ptr0 = RadixExchangeSort(ptr0,bit>>1);
+		if (ptr1 != NULL) end_ptr1 = RadixExchangeSort(ptr1,bit>>1);
+	}
+	if (end_ptr0 != NULL)
+	{
+		data = ptr0;
+		if (end_ptr1 != NULL) 
+		{
+			end_ptr0->next = ptr1;
+			return end_ptr1;
+		}
+		else 
+		{
+			return end_ptr0;
+		}
+	}
+	else
+	{
+		data = ptr1;
+		return end_ptr1;
+	}
+}
+
+void SelectionSort(record* &data)
+//說明：Selection Sort
+//輸入：data = 輸入串列資料
+//輸出：data = 已排序好的資料
+{
+	record* start_ptr = NULL;
+	record* remain_ptr = data;
+	while (remain_ptr != NULL)
+	{
+		record* max_pre_ptr = NULL;
+		record* max_ptr = remain_ptr;
+		record* pre_ptr = remain_ptr;
+		record* ptr = remain_ptr->next;
+		while (ptr != NULL)
+		{
+			if (max_ptr->key < ptr->key)
+			{
+				max_pre_ptr = pre_ptr;
+				max_ptr = ptr;
+			}
+			pre_ptr = ptr;
+			ptr = ptr->next;
+		}
+		if (max_pre_ptr == NULL) remain_ptr = max_ptr->next;
+		else max_pre_ptr->next = max_ptr->next;
+		max_ptr->next = start_ptr;
+		start_ptr = max_ptr;
+	}
+	data = start_ptr;
+}
+
+static record* merge_list(record* ptr1, record* ptr2)
+//說明：將兩串列資料合併
+//輸入：ptr1, ptr2 = 兩串列資料
+//傳回：合併好的資料
+{
+	if (ptr1 == NULL) return ptr2;
+	if (ptr2 == NULL) return ptr1;
+	record* list_start = NULL;
+	record* list_end = NULL;
+	for (;;)
+	{
+		if (ptr1->key < ptr2->key)
+		{
+			if (list_end != NULL) list_end->next = ptr1;
+			else list_start = ptr1;
+			list_end = ptr1;
+			ptr1 = ptr1->next;
+			if (ptr1 == NULL) 
+			{
+				list_end->next = ptr2;
+				return list_start;
+			}
+		}
+		else
+		{
+			if (list_end != NULL) list_end->next = ptr2;
+			else list_start = ptr2;
+			list_end = ptr2;
+			ptr2 = ptr2->next;
+			if (ptr2 == NULL) 
+			{
+				list_end->next = ptr1;
+				return list_start;
+			}
+		}
+	}
+}
+
+void MergeSort(record *&data, int no)
+//說明：Merge Sort (recursive)
+//輸入：data = 輸入串列資料, no = 資料數
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 1) return;
+	int half_no = no/2;
+	record* ptr = data;
+	for (int i=half_no-1; i>0; i--) ptr = ptr->next;
+	record* right_ptr = ptr->next;
+	ptr->next = NULL;
+	// 以遞迴呼叫排好兩堆 //
+	MergeSort(data,half_no);
+	MergeSort(right_ptr,no-half_no);
+	// 將兩者合併在一起 //
+	data = merge_list(data,right_ptr);
+}
+
+void MergeSort(record *&data, int no)
+//說明：Merge Sort (non-recursive)
+//輸入：data = 輸入串列資料, no = 資料數
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 1) return;
+	int no2 = (no+1)/2;
+	record** temp_data = new record*[no2];
+	if (temp_data == NULL) return; // 錯誤處理 //
+	// 先兩兩排好 //
+	record* ptr = data;
+	for (int i=no2-1; i>=0; i--)
+	{
+		record* ptr2 = ptr->next;
+		if (ptr2 != NULL)
+		{
+			record* next_ptr = ptr2->next;
+			if (ptr->key > ptr2->key)
+			{
+				ptr2->next = ptr;
+				ptr->next = NULL;
+				temp_data[i] = ptr2;
+			}
+			else
+			{
+				temp_data[i] = ptr;
+				ptr2->next = NULL;
+			}
+			ptr = next_ptr;
+		}
+		else
+		{
+			temp_data[i] = ptr;
+		}
+	}
+	// 開始往上合併 //
+	while (no2 > 1)
+	{
+		for (int i=0; i < no2-1; i+=2)
+			temp_data[i/2] = merge_list(temp_data[i],temp_data[i+1]);
+		if (no2 & 1) temp_data[no2/2] = temp_data[no2-1];
+		no2 = (no2+1)/2;
+	}
+	data = temp_data[0];
+	delete[] temp_data;
+}
+
+void RadixSort(record* &data)
+//說明：Radix Sort (子鍵值為byte)
+//輸入：data = 輸入串列資料
+//輸出：data = 已排序好的資料
+{
+	if (data == NULL) return;
+	// 對每個鍵值部份進行排序 //
+	unsigned long max_key = 0;
+	record* bucket_front[256];		// bucket串列首指標 //
+	record* bucket_tail[256];		// bucket串列尾指標 //
+	int end_key = 3;
+	for (int i=0; i < =end_key; i++)
+	{
+		memset(bucket_front,0,256*sizeof(record*));
+		memset(bucket_tail,0,256*sizeof(record*));
+		// 依照子鍵值部份丟入每個bucket //
+		// 註：若是第一次，則算出最大值，以決定迴圈次數 //
+		record* ptr = data;
+		while (ptr != NULL)
+		{
+			if ((i == 0) && (max_key < (unsigned long)ptr->key)) max_key = ptr->key;
+			int key = (unsigned char)(ptr->key >> (i*8));
+			if (bucket_front[key] == NULL) bucket_front[key] = ptr;
+			else bucket_tail[key]->next = ptr;
+			bucket_tail[key] = ptr;
+			ptr = ptr->next;
+		}
+		if (i == 0)
+		{
+			if (max_key < 0x100) end_key = 0;
+			else if (max_key < 0x10000) end_key = 1;
+			else if (max_key < 0x1000000) end_key = 2;
+		}
+		// 將各個bucket內的串列組合回來 //
+		data = NULL;
+		record* tail = NULL;
+		for (int j=0; j < 256; j++)
+		{
+			if (bucket_front[j] != NULL)
+			{
+				if (tail != NULL) tail->next = bucket_front[j];
+				else data = bucket_front[j];
+				tail = bucket_tail[j];
+			}
+		}
+		tail->next = NULL;
+	}
+}
+
+至於其他的排序演算法，Binary Tree Sort需要二元樹結構，因此只能作用於
+雙向鍵結串列。不過Binary Tree Sort的效率，主要取決於Binary Tree Search，
+這部份作者會在搜尋演算法專論中再來探討。由於Binary Tree Sort還需要約
+O(n)的額外時間做二元樹In-order追蹤，效率通常比不過其他排序演算法（比
+較常用在搜尋方面），因此這邊便省略不提。
+
+1.數值串列的排序
+
+以下為前面各種演算法的效率比較表（前加*者表有用動態記憶體）：
+
+       演算法               16(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)  16M(s)
+-------------------------------------------------------------------------------------------------
+*Array Sort                   0.64       18      56      294         6      92      631    11.8     
+ List Insertion Sort          0.42(1)    43     625    12796      8977
+ Bubble Sort                  0.96      212    3420    65218     22094
+ Quick Sort                   0.85(4)    25(3)  119(4)   584(4)     15(4)  115(4)   928(4) 29.5
+ Radix Exchange Sort         11.96      168     622     2223        33     169     1033    25.2(4)
+ Selection Sort               0.83(3)    93    1303    32750      8664
+ Radix Sort                   5.73       15(1)   36(1)   127(1)      3(1)   43(1)   313(1)  5.6(1)
+ Merge Sort (Recursive)       1.01       26(4)  111(3)   575(3)     13(3)   77(2)   532(2) 17.6(2)
+*Merge Sort (Non-Recursive)   0.79(2)    19(2)   89(2)   454(2)     11(2)  102(3)   703(3) 20.1(3)
+ IntroSort                    0.50       20     103      519        14     110      909    23.2
+
+結論為：
+
+(1)資料量少時，List Insertion Sort效率最好
+(2)資料量多時，Radix Sort效率最好，其次為Merge Sort
+
+因此，比較適合的演算法為List Insertion Sort + Merge Sort + Radix Sort。
+經測試結果，List Insertion Sort的整合門檻值為16，Radix Sort的整合門檻
+值為184（以3 byte鍵值為準）。
+
+void MergeInsertionSort(record *&data, int no)
+//說明：Merge Sort + List Insertion Sort
+//輸入：data = 輸入串列資料, no = 資料數
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 16) 
+	{
+		ListInsertionSort(data);
+		return;
+	}
+	int half_no = no/2;
+	record* ptr = data;
+	for (int i=half_no-1; i>0; i--) ptr = ptr->next;
+	record* right_ptr = ptr->next;
+	ptr->next = NULL;
+	// 以遞迴呼叫排好兩堆 //
+	MergeInsertionSort(data,half_no);
+	MergeInsertionSort(right_ptr,no-half_no);
+	// 將兩者合併在一起 //
+	data = merge_list(data,right_ptr);
+}
+
+void FastIntegerListSort(record* &data, int no)
+//說明：Fast Integer List Sort (Radix Sort + Merge Sort + List Insertion Sort)
+//輸入：data = 輸入串列資料, no = 資料數
+//輸出：data = 已排序好的資料
+{
+	if (no <= 184)
+	{
+		MergeInsertionSort(data,no);
+		return;
+	}
+	// 對每個鍵值部份進行排序 //
+	unsigned long max_key = 0;
+	record* bucket_front[256];		// bucket串列首指標 //
+	record* bucket_tail[256];		// bucket串列尾指標 //
+	int end_key = 3;
+	for (int i=0; i < =end_key; i++)
+	{
+		memset(bucket_front,0,256*sizeof(record*));
+		memset(bucket_tail,0,256*sizeof(record*));
+		// 依照子鍵值部份丟入每個bucket //
+		// 註：若是第一次，則算出最大值，以決定迴圈次數 //
+		record* ptr = data;
+		while (ptr != NULL)
+		{
+			if ((i == 0) && (max_key < (unsigned long)ptr->key)) max_key = ptr->key;
+			int key = (unsigned char)(ptr->key >> (i*8));
+			if (bucket_front[key] == NULL) bucket_front[key] = ptr;
+			else bucket_tail[key]->next = ptr;
+			bucket_tail[key] = ptr;
+			ptr = ptr->next;
+		}
+		if (i == 0)
+		{
+			if (max_key < 0x100) end_key = 0;
+			else if (max_key < 0x10000) end_key = 1;
+			else if (max_key < 0x1000000) end_key = 2;
+		}
+		// 將各個bucket內的串列組合回來 //
+		data = NULL;
+		record* tail = NULL;
+		for (int j=0; j < 256; j++)
+		{
+			if (bucket_front[j] != NULL)
+			{
+				if (tail != NULL) tail->next = bucket_front[j];
+				else data = bucket_front[j];
+				tail = bucket_tail[j];
+			}
+		}
+		tail->next = NULL;
+	}
+}
+
+以下為最後測試所得的效率比較表：
+
+       演算法               16(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)  16M(s)
+-------------------------------------------------------------------------------------------------
+*Array Sort                   0.64       18      56      294         6      92      631    11.8     
+ List Insertion Sort          0.42       43     625    12796      8977
+ Radix Sort                   5.73       15      36      127         3      43      313     5.6
+ Merge Sort (Recursive)       1.01       26     111      575        13      77      532    17.6
+ Merge + Insertion            0.42       18      92      447        11      66      490    17.1
+ Merge + Insertion + Radix    0.42       15      36      127         3      43      313     5.6
+
+2.字串串列的排序
+
+由前面數值串列排序的測試結果大抵可以得知，Quick Sort對於串列資料的排
+序效率，已經遠遠不如Merge Sort了，因此字串串列的主要排序法，應該以Merge Sort
+為主。至於資料量少的情況下，應該用什麼演算法呢？大抵可以考慮的有List Insertion Sort
+與非遞迴的Merge Sort。由字串陣列排序演算法中，我們知道Binary Insertion Sort
+也佔有重要的一席地位，因此這裡我們也需要模擬一下這個演算法：
+
+void BinaryInsertionSort(record* &data, int no)
+//說明：Binary Insertion Sort
+//輸入：data = 輸入串列資料, no = 資料數，最多不得超過256
+//輸出：data = 已排序好的資料
+{
+	if (no > 256) return; // 錯誤處理!!! //
+	if (no <= 1) return;
+	record* temp_data[256];
+	temp_data[0] = data;
+	record* ptr = data->next;
+	for (int i=1; i < no; i++)
+	{
+		// 進行二分搜尋，找到插入位置 //
+		int start = 0;
+		int end = i-1;
+		int m;
+		for (;;)
+		{
+			m = (start+end)/2;
+			int result = strcmp(ptr->key,temp_data[m]->key);
+			if (result < 0)		// 落在左邊 //
+			{
+				end = m-1;
+				if (start > end) break;
+			}
+			else if (result > 0)	// 落在右邊 //
+			{
+				start = m+1;
+				if (start > end)
+				{
+					m++;
+					break;
+				}
+			}
+			else					// 已找到 //
+			{
+				m++;
+				break;
+			}
+		}
+		// m為插入位置,搬移後插入 //
+		record *next_ptr = ptr->next;
+		if (i > m)
+		{
+			ptr->next = temp_data[m];
+			for (int j=i-1; j>=m; j--) temp_data[j+1] = temp_data[j];
+		}
+		temp_data[m] = ptr;
+		if (m > 0) temp_data[m-1]->next = ptr;
+		ptr = next_ptr;
+	}
+	temp_data[no-1]->next = NULL;
+	data = temp_data[0];
+}
+
+以下便是這三種演算法的效率比較表：
+
+       演算法                  4      8      16      32      64     128
+-------------------------------------------------------------------------
+List Insertion Sort           0.09   0.37   0.70    2.68    4.08    20.5
+Binary Insertion Sort         0.17   0.63   1.57    2.35   10.28    23.7
+Merge Sort (Non-Recursive)    0.17   0.22   0.94    2.07    4.34    14.0
+
+很明顯的，在資料數16以內應使用List Insertion Sort，超過之後則應使用非
+遞迴Merge Sort。至於非遞迴Merge Sort與遞迴Merge Sort的整合門檻值，經
+測試後得知應為1024。以下便是最終的測試數據：
+
+      演算法         32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+----------------------------------------------------------------------------------
+Merge + Insertion      2.33     35.7      191      951     44.4      265    1541
+ArraySort              3.88     45.8      232     1199     51.6      311    1773
+----------------------------------------------------------------------------------
+Merge + Insertion      1.96     35.3      134      783     36.7      445    3013
+ArraySort              3.57     41.5      217     1173     49.0      433    2333
+----------------------------------------------------------------------------------
+Merge + Insertion     52.53      750     3883    18749      461     2196   10312
+ArraySort             52.68      774     4644    22482      565     2866   13812
+----------------------------------------------------------------------------------
+Merge + Insertion      3.55     46.0      249     1256     36.9      202    1091
+ArraySort              6.44     54.7      276     1271     37.8      209    1060
+
+大部份情況，Merge Sort + List Insertion Sort的效率都比用陣列方式來排
+序來得好，但當資料量變多時，卻不盡然。這樣的結果當然會讓我們懷疑
+Merge Sort + List Insertion Sort在資料量極多的實際效率。不過這邊我們
+可以利用Bucket Sort來降低交由Merge Sort + List Insertion Sort處理的資
+料量。之前在字串陣列資料排序法裡，因為Bucket Sort需要大量的資料搬移動
+作，導致實際整合的效率反而變差，但在串列結構裡便沒有此一問題了。以下
+便是整合Bucket Sort後的效率比較表：
+
+      演算法         32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+----------------------------------------------------------------------------------
+Merge + Insertion      2.33     35.7      191      951     44.4      265    1541
+ArraySort              3.88     45.8      232     1199     51.6      311    1773
+Bucket Sort            2.88     17.9      125      703     35.9      225    1446
+----------------------------------------------------------------------------------
+Merge + Insertion      1.96     35.3      134      783     36.7      445    3013
+ArraySort              3.57     41.5      217     1173     49.0      433    2333
+Bucket Sort            2.41     11.3       44      319     25.6      309    2213
+----------------------------------------------------------------------------------
+Merge + Insertion     52.53      750     3883    18749      461     2196   10312
+ArraySort             52.68      774     4644    22482      565     2866   13812
+Bucket Sort           55.73      754     3875    19242      468     2232   10447
+----------------------------------------------------------------------------------
+Merge + Insertion      3.55     46.0      249     1256     36.9      202    1091
+ArraySort              6.44     54.7      276     1271     37.8      209    1060
+Bucket Sort            5.56     42.3      197      972     27.9      145     820
+
+很明顯的，整體的效率提升非常多。注意第三種測試資料為Bucket Sort的最糟
+情況，即使如此，額外多出的O(n)時間顯然沒有增加多少，這點是可以接受的，
+畢竟這種情況出現的機率也是極低的。當然，Bucket Sort並不適合於低資料量
+的情況下，因此我們必須在一定資料量以上時，才使用Bucket Sort。從實測結
+果來看，作者比較建議採用64-128做為門檻值。
+
+void ListInsertionSort(record* &data, record* end)
+//說明：List Insertion Sort
+//輸入：data = 輸入串列資料, end = 結束指標
+//輸出：data = 已排序好的資料
+{
+	if (data == end) return;
+	record* remain_ptr = data->next;
+	record* start_ptr = data;
+	data->next = end;
+	while (remain_ptr != end)
+	{
+		record* cur_ptr = remain_ptr;
+		remain_ptr = remain_ptr->next;
+		// 找出插入位置 //
+		record* pre_ptr = NULL;
+		record* ptr = start_ptr;
+		while (ptr != end)
+		{
+			if (strcmp(cur_ptr->key,ptr->key) <= 0) break;
+			pre_ptr = ptr;
+			ptr = ptr->next;
+		}
+		cur_ptr->next = ptr;
+		if (pre_ptr == NULL) start_ptr = cur_ptr;
+		else pre_ptr->next = cur_ptr;
+	}
+	data = start_ptr;
+}
+
+static record* merge_list(record* ptr1, record* ptr2, record* end)
+//說明：將兩串列資料合併
+//輸入：ptr1, ptr2 = 兩串列資料, end = 結束指標
+//傳回：合併好的資料
+{
+	record* list_start = end;
+	record* list_end = end;
+	for (;;)
+	{
+		if (strcmp(ptr1->key,ptr2->key) < 0)
+		{
+			if (list_end != end) list_end->next = ptr1;
+			else list_start = ptr1;
+			list_end = ptr1;
+			ptr1 = ptr1->next;
+			if (ptr1 == end) 
+			{
+				list_end->next = ptr2;
+				return list_start;
+			}
+		}
+		else
+		{
+			if (list_end != end) list_end->next = ptr2;
+			else list_start = ptr2;
+			list_end = ptr2;
+			ptr2 = ptr2->next;
+			if (ptr2 == end) 
+			{
+				list_end->next = ptr1;
+				return list_start;
+			}
+		}
+	}
+}
+
+void NonrecursiveMergeSort(record *&data, int no, record *end)
+//說明：Merge Sort (non-recursive)
+//輸入：data = 輸入串列資料, no = 資料數，最多不得超過1024, end = 結束指標
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 1) return;
+	int no2 = (no+1)/2;
+	if (no2 > 512) return; // 錯誤處理!!! //
+	record* temp_data[512];
+	// 先兩兩排好 //
+	record* ptr = data;
+	for (int i=no2-1; i>=0; i--)
+	{
+		record* ptr2 = ptr->next;
+		if (ptr2 != end)
+		{
+			record* next_ptr = ptr2->next;
+			if (strcmp(ptr->key,ptr2->key) > 0)
+			{
+				ptr2->next = ptr;
+				ptr->next = end;
+				temp_data[i] = ptr2;
+			}
+			else
+			{
+				temp_data[i] = ptr;
+				ptr2->next = end;
+			}
+			ptr = next_ptr;
+		}
+		else
+		{
+			temp_data[i] = ptr;
+		}
+	}
+	// 開始往上合併 //
+	while (no2 > 1)
+	{
+		for (int i=0; i < no2-1; i+=2)
+			temp_data[i/2] = merge_list(temp_data[i],temp_data[i+1],end);
+		if (no2 & 1) temp_data[no2/2] = temp_data[no2-1];
+		no2 = (no2+1)/2;
+	}
+	data = temp_data[0];
+}
+
+void MergeInsertionSort(record *&data, int no, record* end)
+//說明：Merge Sort + List Insertion Sort
+//輸入：data = 輸入串列資料, no = 資料數, end = 結束指標
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 1024)
+	{
+		if (no <= 16) ListInsertionSort(data,end);
+		else NonrecursiveMergeSort(data,no,end);
+		return;
+	}
+	if (no <= 1) return;
+	int half_no = no/2;
+	record* ptr = data;
+	for (int i=half_no-1; i>0; i--) ptr = ptr->next;
+	record* right_ptr = ptr->next;
+	ptr->next = end;
+	// 以遞迴呼叫排好兩堆 //
+	MergeInsertionSort(data,half_no,end);
+	MergeInsertionSort(right_ptr,no-half_no,end);
+	// 將兩者合併在一起 //
+	data = merge_list(data,right_ptr,end);
+}
+
+void FastStringListSort(record* &data, int no)
+//說明：Fast String List Sort (Bucket Sort + Merge Sort + List Insertion Sort)
+//輸入：data = 輸入串列資料, no = 資料數
+//輸出：data = 已排序好的串列資料
+{
+	if (no <= 96) // 資料量太少的，用其他演算法 //
+	{
+		MergeInsertionSort(data,no,NULL);
+		return;
+	}
+	int bucket_no[256];
+	record* bucket_head[256];
+	record* bucket_tail[256];
+	memset(bucket_no,0,256*sizeof(int));
+	memset(bucket_head,0,256*sizeof(record*));
+	memset(bucket_tail,0,256*sizeof(record*));
+	// 依第一個字元進行分堆動作 //
+	record* ptr = data;
+	while (ptr != NULL)
+	{
+		int key = (unsigned char)*ptr->key;
+		bucket_no[key]++;
+		if (bucket_head[key] == NULL) bucket_head[key] = bucket_tail[key] = ptr;
+		else bucket_tail[key] = bucket_tail[key]->next = ptr;
+		ptr = ptr->next;
+	}
+	// 個別排好後串在一起 //
+	record* start = NULL;
+	for (int i=255; i>=0; i--)
+	{
+		if (bucket_tail[i] == NULL) continue;
+		bucket_tail[i]->next = start;
+		MergeInsertionSort(bucket_head[i],bucket_no[i],start);
+		start = bucket_head[i];
+	}
+	data = start;
+}
+
+3.定長二進制資料串列的排序
+
+和定長二進制資料陣列的排序一樣，此處作者所要實驗的，便是Radix Sort與
+Fast String List Sort的整合門檻值。下面便是測試所得的結果：
+
+鍵值長度  門檻值
+-----------------
+    1        17
+    2       178
+    3       356
+    4       544
+    5       737
+    6       969
+    7      1204
+    8      1381
+    9      2474
+   10      6982
+   11     13002
+   12     16639
+   13     33000
+   14     57000
+   15       4M+
+
+以上大致可歸納為下列公式：
+
+(1)鍵值長度k=1-7, 門檻值=180*k-163
+(2)鍵值長度k=8-14, 門檻值=1400*2^(k-8)
+(3)鍵值長度k>=15, 門檻值=無限
+
+void FastBinaryKeyListSort(record* &data, int key_len, int no)
+//說明：Fast Binary Key List Sort
+//輸入：data = 輸入串列資料, key_len = 鍵值長度, no = 資料數
+//輸出：data = 已排序好的串列資料
+{
+	if ((no <= 1) || (key_len <= 0)) return;
+	bool use_other = false;
+	if (key_len >= 15) 
+	{
+		use_other = true;
+	}
+	else
+	{
+		int cut_value;
+		if (key_len <= 7) cut_value = key_len*180-163;
+		else cut_value = 1400*(1 << (key_len-8));
+		if (no <= cut_value) use_other = true;
+	}
+	if (use_other)
+	{
+		// 資料數過少的，使用其他演算法 //
+		FastStringListSort(data,key_len,no);
+		return;
+	}
+	// 對每個鍵值部份進行排序 //
+	record* bucket_front[256];		// bucket串列首指標 //
+	record* bucket_tail[256];		// bucket串列尾指標 //
+	for (int i=key_len-1; i>=0; i--)
+	{
+		memset(bucket_front,0,256*sizeof(record*));
+		memset(bucket_tail,0,256*sizeof(record*));
+		// 依照子鍵值部份丟入每個bucket //
+		record* ptr = data;
+		while (ptr != NULL)
+		{
+			int key = (unsigned char)ptr->key[i];
+			if (bucket_front[key] == NULL) bucket_front[key] = ptr;
+			else bucket_tail[key]->next = ptr;
+			bucket_tail[key] = ptr;
+			ptr = ptr->next;
+		}
+		// 將各個bucket內的串列組合回來 //
+		data = NULL;
+		record* tail = NULL;
+		for (int j=0; j < 256; j++)
+		{
+			if (bucket_front[j] != NULL)
+			{
+				if (tail != NULL) tail->next = bucket_front[j];
+				else data = bucket_front[j];
+				tail = bucket_tail[j];
+			}
+		}
+		tail->next = NULL;
+	}
+}
+
+4.數堆已排好串列資料的合併
+
+在n堆已排好陣列資料的合併中，作者已提到主要的合併方法有二種，一是兩兩
+合併法，一是最小合併法。由於最小合併法無法適用於陣列資料，因此此處的
+首要工作便是決定何者最佳。以下便是這兩個演算法的測試結果：
+
+    測試條件                 兩兩合併法  最小合併法
+-----------------------------------------------------
+65536堆，每堆1元素            11126        25750
+1024堆，每堆8元素               831          946
+8堆，每堆1024元素               262          262
+1024堆，每堆1-1024元素不等   195940       198440
+8堆，每堆1-1024元素不等         127          105
+8堆，每堆1-65536元素不等      30558        28532
+
+void MergeSortListData1(record** data, int pile_no, int total_data_no, record* &outdata)
+//說明：合併多個已排好串列資料 (兩兩合併法)
+//輸入：data = 多個已排好串列資料, pile_no = 已排好串列資料的總堆數
+//		total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的串列資料
+//備註：本函數會破壞data的內容
+{
+	if (pile_no <= 0)
+	{
+		outdata = NULL;
+		return;
+	}
+	while (pile_no > 1)
+	{
+		// 兩兩合併好 //
+		for (int i=1; i < pile_no; i+=2) 
+			data[i/2] = merge_list(data[i-1],data[i]);
+		// 若剩下一個則直接放進去 //
+		if (pile_no & 1)
+		{
+			data[i/2] = data[i-1];
+			pile_no++;
+		}
+		pile_no /= 2;
+	}
+	outdata = data[0];
+}
+
+static void adjust_heap(record** data, int *data_no, int start, int end)
+//說明：調整start以下的二元樹陣列符合Heap的定義 (資料數最少的在最上)
+//輸入：data,data_no = 輸入資料與資料數
+//		start = 根節點位置, end = 資料結束位置
+{
+	record* r = data[start];
+	int k = data_no[start];
+	int j = 2*start+1;
+	while (j <= end)
+	{
+		// 找出子節點中鍵值最小的 //
+		if ((j < end) && (data_no[j] > data_no[j+1])) j++;
+		if (k <= data_no[j]) break;
+		// 將比父節點小的鍵值調上來 //
+		data[(j-1)/2] = data[j];
+		data_no[(j-1)/2] = data_no[j];
+		// 以被調上來的子節點做為子樹，繼續往下處理 //
+		j = 2*j+1;
+	}
+	data[(j-1)/2] = r;
+	data_no[(j-1)/2] = k;
+}
+
+void MergeSortListData2(record** data, int* data_no, int pile_no, int total_data_no, record* &outdata)
+//說明：合併多個已排好串列資料 (最小合併法)
+//輸入：data = 多個已排好串列資料, data_no = 各堆已排好串列資料的資料數
+//		pile_no = 已排好串列資料的總堆數, total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的串列資料
+//備註：本函數會破壞data和data_no的內容
+{
+	// 確認三堆以上才開始處理 //
+	if (pile_no <= 0) 
+	{
+		outdata = NULL;
+		return;
+	}
+	if (pile_no == 1)
+	{
+		outdata = data[0];
+		return;
+	}
+	if (pile_no == 2)
+	{
+		outdata = merge_list(data[0],data[1]);
+		return;
+	}
+	// 建立初始Heap //
+	int i;
+	for (i=pile_no/2-1; i>=0; i--) adjust_heap(data,data_no,i,pile_no-1);
+	i = 0;
+	while (pile_no > 1)
+	{
+		// 取出資料數最少的串列 //
+		record* ptr1 = data[0];
+		int no1 = data_no[0];
+		// 重調Heap //
+		data[0] = data[pile_no-1];
+		data_no[0] = data_no[pile_no-1];
+		pile_no--;
+		adjust_heap(data,data_no,0,pile_no-1);
+		// 取出資料數次少的串列, 與前一個合併 //
+		data[0] = merge_list(ptr1,data[0]);
+		data_no[0] += no1;
+		// 重調Heap //
+		adjust_heap(data,data_no,0,pile_no-1);
+	}
+	outdata = data[0];
+}
+
+實測結果跟預期的一樣，兩兩合併法適用於堆數多與元素量平均的狀況，最小
+合併法適用於堆數少且元素量差異較大的狀況。然而雖然得到預期的結果，我
+們還是無法決定應該用那個演算法。當然我們也可以嘗試將兩種演算法結合在
+一起，各取其優點。例如第一次先採用兩兩合併法，合併同時計算各堆合併後
+資料數的變異量，接著與堆數做一個運算，以求得應採用那種方法。假設k是各
+堆的平均數量，那麼變異量的計算方式，可以採用abs(各堆資料數-k)的總和。
+此時若delta<=f(m)，便應該採用兩兩合併法，否則便採用最小合併法。然而f(m)
+這個公式並不是那麼容易求得，此外，前面花在變異量計算的額外時間O(m)也
+要考慮進去，因此將兩者整合在一起後的效率，可能會不如預期中來得理想。
+
+作者會比較建議使用最小合併法，理由是一般已排好資料的合併問題，堆數都
+不會太多，而各堆資料量的差異都會比較大些。至於堆數過多的問題，其實可
+與Fast Integer List Sort進行整合，交由該演算法來處理，速度會更快些。
+以下便是這兩者測得的整合門檻值（左邊為MergeInsertionSort，右邊為Radix Sort）：
+
+堆數        門檻值
+--------------------------
+2        0       無
+3        3       無
+4        4       無
+5        4       無
+6        4       無
+7        4       無
+8        4       無
+10       4       無
+12       4       無
+14       4     112-162
+16       4     75-158
+20       4     37-195
+24       4     29-332
+28       4     17-489
+32       4     13-5847
+40       4     5-4903
+48       -     1-4491
+56       -     1-4004
+64       -     1-3760
+72       -     1-無限
+
+以下便是整合前後的效率比較表：
+
+    測試條件                 兩兩合併法  最小合併法  整合後
+------------------------------------------------------------------
+65536堆，每堆1元素            11126        25750      3310
+1024堆，每堆8元素               831          946       345
+8堆，每堆1024元素               262          262       262
+1024堆，每堆1-1024元素不等   195940       198440    136880
+8堆，每堆1-1024元素不等         127          105       105
+8堆，每堆1-65536元素不等      30558        28532     28532
+
+由效率比較表可以發現，原先最小合併法的許多缺點，其實大都已被Fast Integer List Sort
+所補足了。
+
+void MergeSortListData(record** data, int* data_no, int pile_no, int total_data_no, record* &outdata)
+//說明：合併多個已排好串列資料 (Fast Integer List Sort + 最小合併法)
+//輸入：data = 多個已排好串列資料, data_no = 各堆已排好串列資料的資料數
+//		pile_no = 已排好串列資料的總堆數, total_data_no = 全部的資料總數
+//輸出：outdata = 合併後已排序好的串列資料
+//備註：本函數會破壞data和data_no的內容
+{
+	if (pile_no <= 0) 
+	{
+		outdata = NULL;
+		return;
+	}
+	if (pile_no < 72)
+	{
+		bool use_merge = false;
+		int average_no = total_data_no/pile_no;
+		if (pile_no <= 2) use_merge = true;
+		else if (pile_no < 16)
+		{
+			if (average_no >= 4) use_merge = true;
+		}
+		else if (pile_no < 32)
+		{
+			if ((average_no >= 28*pile_no-290) || 
+				((average_no >= 4) && (average_no <= 141-4*pile_no))) use_merge = true;
+		}
+		else
+		{
+			if (average_no <= 4600) use_merge = true;
+		}
+		if (use_merge)
+		{
+			// 使用最小合併法排序 //
+			MergeSortListData2(data,data_no,pile_no,outdata);
+			return;
+		}
+	}
+	// 將所有資料串在一起後，改用Fast Integer List Sort排序 //
+	record* start = NULL;
+	record* last_end = NULL;
+	for (int i=0; i < pile_no; i++)
+	{
+		record* ptr = data[i];
+		if (ptr == NULL) continue;
+		if (last_end != NULL) last_end->next = ptr;
+		else start = ptr;
+		while (ptr->next != NULL) ptr = ptr->next;
+		last_end = ptr;
+	}
+	FastIntegerListSort(start,total_data_no);
+	outdata = start;
+}
+
+5.多重鍵值資料的排序
+
+在提到多重鍵值資料排序前，作者必須先行說明其他鍵值形態的對應排序法。
+一般會用來做為排序鍵值的資料形態，不外乎下列四種：
+
+(1)整數數值
+(2)字串
+(3)浮點數數值
+(4)日期時間
+
+對於整數與字串的排序，前面已提到很多，但後兩者應該如何排序呢？日期時
+間比較容易解決，一種是將之區分為年、月、日、時、分、秒，然後進行多重
+鍵值排序；一種是將這些數值集結成一個長整數進行排序（必須犧牲年或秒的
+部份資訊），這樣的速度會更快些。
+
+至於浮點數的排序就比較麻煩了。最簡單的方式，便是依浮點數的值域，乘上
+一定的倍數，以轉換成近似的整數表示式，這種方式的排序速度最快，但會有
+誤差，同時也必須知道鍵值的值域範圍才行。另一種比較精準的方式，便是將
+浮點數拆成exponet與mantissa兩個整數做多重鍵值排序，不過這樣的方式必須
+了解浮點數的結構，可能依不同機器而有所不同，並不是很通用。最通用的做
+法，便是修改整數數值的排序法，直接以浮點數進行比對，不過這樣一來便不
+能使用Radix Sort了，速度會比前述兩種都來得慢。因此在實際運用時，應該
+如何排序比較好，便必須取決於讀者了。
+
+現在開始說明多重鍵值資料的排序。多重鍵值的排序法，最簡單的便是將所有
+鍵值集結成二進制鍵值，然後依二進制鍵值資料進行排序。這種方式比較適合
+於沒有正負號的數值資料（包括浮點數與日期時間），但對於有正負號的數值，
+以及不定長的字串就沒有辦法了。不過如果允許部份誤差的話，其實也可取字
+串的前4-8字元做為排序用的二進制鍵值。
+
+另一種最通用的做法，便是按字串資料排序法來排序（因鍵值比對時間會較久），
+只不過在鍵值比對的地方必須改成多重鍵值比對。以下作者便以三個整數做為
+多重鍵值為例，來實測前述兩種方法的效率差異（串列資料）。
+
+      演算法         32(us)   256(us)  1K(us)   4K(us)   64K(ms) 256K(ms)  1M(ms)
+----------------------------------------------------------------------------------
+直接比對法（數值）     2.50     28.4      162      760     17.4      121     760
+直接比對法（字串）     2.26     29.4      151      782     16.9      119     754
+二進制鍵值法           5.59     48.1      106      644     13.1      321    1698
+
+採用二進制鍵值法只有在中資料量時比較好些，低資料量與高資料量都變得相
+當差。然而為何Radix Sort在高資料量下，效率反而變差了，這點其實蠻難解
+釋的，可能又是Memory Page Fault在作怪。但無論如何，就實測結果而言，直
+接比對法是比較有效率些，同時也沒有任何的誤差。
+
+<font color=blue><b>九. 結論</b></font>
+
+以下作者再次綜整前述各種資料形態最佳排序法的結論：
+
+1.數值陣列資料：Radix Sort + IntroSort (Median-3 Quick Sort + Insertion Sort + Heap Sort)
+2.大資料記錄數值鍵值陣列資料：Radix Sort + Median-3 Quick Sort + Selection Sort + Heap Sort
+3.字串陣列資料：Median-3 Quick Sort + Insertion Sort + Binary Insertion Sort + Heap Sort + 非遞迴Merge Sort
+4.定長二進制資料陣列：Radix Sort + 前述字串陣列資料序法
+5.數堆已排好數值陣列資料的合併：兩兩合併Merge法 + 前述數值陣列資料序法
+6.數值串列資料：Radix Sort + 遞迴Merge Sort + List Insertion Sort
+7.字串串列資料：Bucket Sort + 遞迴Merge Sort + List Insertion Sort + 非遞迴Merge Sort
+8.定長二進制資料串列：Radix Sort + 前述字串串列資料序法
+9.數堆已排好數值串列資料的合併：最小合併Merge法 + 前述數值串列資料序法
+10.多重鍵值串列資料：直接比對法
+
+雖然作者使用VC++ 6.0、在PC上以Windows 2003 Server做為測試平台，並利用
+亂數的方式來產生測試資料，以提出許多的整合門檻值，但讀者要有個概念，
+這些門檻值並非絕對的。不同compiler有不同的最佳化結果與不同效率的系統
+函數（例如strcmp、memcpy等）、不同電腦有不同的指令集與指令特性、不同
+作業系統有不同的記憶體與CPU等資源的管理方式，這些或多或少都會影響到實
+際的門檻值。更重要的是，實際資料的出現機率絕對是不同的，這點更會嚴重
+地影響到實際的門檻值。以字串而言，排序英文字串，第一個字元出現s的機會
+便遠多於x；如果是排序BIG5中文字串，那麼A4開始的常見字集區出現的機率便
+較高。在這種情況下，作者假設的ASCII 1-255平均出現的論點本身就不正確了，
+所得到的門檻值自然就會有所偏差。總之，讀者在實際使用時，最好直接在軟
+體預計執行的平台上，利用實際的資料進行測試，才能得到最佳的整合門檻值。
+
+以下作者再針對巨量資料（至少16M筆資料以上）的處理，提供一些個人經驗：
+
+1.不要使用大量小塊的動態記憶體
+
+動態記憶體的取得與釋放是非常耗時的，這點作者在前面已有提過。一般串列
+資料為了方便，每個節點都會使用一塊動態記憶體，這種方式對於少量資料是
+沒什麼影響，但若用在巨量資料時，幾乎大部份的時間都會花在動態記憶體的
+取得與釋放上。對於資料的處理，如排序或搜尋等，其時間若以毫秒論，那麼
+動態記憶體的取得與釋放可能就必須以秒論了。當在處理巨量資料，而又需要
+串列資料的節點時，請記得直接取得一大塊記憶體，然後在裡面用陣列的方式
+來模擬串列結構，這樣的速度絕對會比直接用動態記憶體節點的方式快上百倍
+以上。
+
+2.儘量不要使用超大記憶體
+
+雖然這部份不是絕對，但就作者的經驗而言，當處理了動態記憶體極多次之後，
+再取得超大記憶體區塊（數十到數百MB以上），往往都會得到記憶體不足的錯
+誤（應該是fragment的問題）。因此如果需要超大記憶體來記錄資料時，最好
+拆成多個中等記憶體區塊（例如64KB或1MB），然後再模擬超大記憶體區塊的運
+作。雖然速度會減慢一些，但至少不會造成系統完全無法處理的狀況。
+
+3.使用適當的資料形態與資料安排
+
+當處理巨量資料時，每筆資料多佔一個byte，所多耗費的空間都很驚人。因此
+所有資料都應規劃妥它的值域，能用幾位元表示的就用幾位元，能用一個byte
+表示的，便不要用長整數來表示。如此省下來的空間才能供系統做其他用途，
+包括作業系統所需的disk cache等，效率也會更好些。
+
+至於資料的安排，指的是word alignment與double word alignment，主要目的
+是讓CPU在存取時速度比較快（省下一個clock）。因此在物件或struct裡的變
+數，應該依照它的byte數，儘可能地安排在該有的alignment上。例如將char變
+數集中在一起，以4個為一組等。如果變數總大小剛好不是4的倍數，那麼也可
+以打破物件或struct的觀念，直接個別以char陣列、short陣列等方式呈現，既
+可省空間，存取速度也比較快，只是在寫作與維護上可能會比較吃力些。但為
+了巨量資料的處理速度，適當的犧牲是有必要的。
+
+4.少用需要建構／解構的資料物件
+
+物件的寫法，對於C++而言是很方便的，然而對於效率而言，卻是一個殺傷力很
+大的方式。假如資料物件有1M個，這意味著建構函數與解構函數都要呼叫1M次。
+例如下列的資料物件：
+
+class test
+{
+private:
+	int a;
+public:
+	test(void)
+	{
+		a = 0;
+	}
+	~test(void)
+	{
+		a = 0;
+	}
+};
+
+那麼下列這樣的程式，需要花費的時間是17.04ms：
+
+test* a = new test[1024*1024];
+delete[] a;
+
+如果改成沒有建構／解構子，則下列這樣的程式，只需4.69ms，相差將近4倍：
+
+test* a = new test[1024*1024];
+memset(a,0,1024*1024*sizeof(test)); // 如果用for loop的話，效率相差約2倍 //
+delete[] a;
+
+當然，這只是一個簡單的例子，或許舉得並不是很恰當。然而在處理巨量資料
+時，任何與O(n)以上相關的處理，都應該能避則避，能加速則加速，這樣速度
+才能快得起來。
+
+總之，在處理巨量資料時，必須時時顧到任何與時間、空間有關的處理，這是
+選擇正確的演算法之後，所應該做的事。
+
+
+參考文獻
+
+1.The Art of Computer Programming, vol.3, Knuth, 1973
+2.Fundamentals of Data Structure, Ellis Horowitz & Sartaj Sahni, 1982
+3.Algorithms + Data Structure = Programs, Niklaus Wirth, 1976
+4.Algorithms, Robert Sedgewick, 1983
+5.The Design and Analysis of Computer Algorithms, Aho & Hopcroft & Ullman, 1974
+
+參考網站
+
+General:
+	http://www.answers.com/topic/sorting-algorithm
+	http://www.cs.hope.edu/~alganim/ccaa/miscsort.html
+
+Radix Sort:
+	http://thorkildsen.no/faqsys/docs/radix.txt
+
+Comb Sort:
+	http://world.std.com/~jdveale/combsort.htm
+
+Gnome Sort:
+	http://www.cs.vu.nl/~dick/gnomesort.html
+
+Bogo Sort:
+	http://catb.org/~esr/jargon/html/B/bogo-sort.html
+
+Hash Sort:
+	http://arxiv.org/pdf/cs.DS/0408040
+
+Shell Sort:
+	http://www-zo.iinf.polsl.gliwice.pl/~mciura/shellsort.pdf
+
+Smooth Sort:
+	http://www.cs.utexas.edu/users/EWD/ewd07xx/EWD796a.PDF
+	http://www.wikisource.org/wiki/Smooth_sort
+
+Flash Sort:
+	http://www.neubert.net/Flapaper/9802n.htm
+	http://www.neubert.net/Download/flashpap.doc
+	http://www.neubert.net/FSOIntro.html
+
+Patience Sort:
+	http://www.pims.math.ca/publications/preprints/bespamyatnikh-segal_6-12-99.ps.gz
+	http://www-stat.stanford.edu/~cgates/PERSI/papers/Longest.pdf
+	http://www.wikisource.org/wiki/van_Emde_Boas_tree
+</pre>
+</body>
+</html>
+

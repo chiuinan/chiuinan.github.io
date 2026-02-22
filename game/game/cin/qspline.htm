@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>二次Spline曲線的繪製</title>
+</head>
+
+<body>
+
+<p align="center"><big><font color="#800000"><b>二次Spline曲線的繪製</b></font></big>
+<p align="right">邱奕南，1995/7/9
+
+<p>在MS-Windows上用過GetGlyphOutline函數的人都知道，取得的TrueType字形資料包含了兩種邊線定義方式，一是TT_PRIM_LINE的多邊形線，一是TT_PRIM_QSPLINE的二次（Quadratic）Spline曲線。究竟這個二次Spline曲線要如何繪製呢？這便是本文所要探討的課題。首先我們來看一下Spline曲線的定義。
+
+<p>對於n+1個參考點Pi，i=0～n，k階Spline曲線的定義為：
+
+<blockquote>
+  <p><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n<br>
+  P(t) = </font>Σ <font face="Courier">Pi * Ni,k(t) </font>，<font face="Courier">t = 0</font>～<font
+  face="Courier">n-k+2<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i=0</font>
+</blockquote>
+
+<p>其中Ni,k(t)為各參考點的加權函數，由下列遞迴公式所定義：
+
+<blockquote>
+  <p><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  (t-v[i])*Ni,k-1(t) (v[i+k]-t)*Ni+1,k-1(t)<br>
+  Ni,k(t) = </font>───────── <font face="Courier">+ </font>───────────<br>
+  <font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  v[i+k-1]-v[i] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v[i+k]-v[i+1]</font>
+  <p><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>┌ <font
+  face="Courier">1 </font>若 <font face="Courier">v[i] &lt;= t &lt;= v[i+1]<br>
+  Ni,1(t) = </font>┤<br>
+  <font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>└ <font
+  face="Courier">0 t</font>值不在上述值域中
+  <p><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>┌ <font
+  face="Courier">0 </font>若 <font face="Courier">i &lt; k-1<br>
+  v[i] = </font>┤ <font face="Courier">i-k+1 </font>若 <font face="Courier">k-1 &lt;= i 
+  &lt;= n+1<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>└ <font face="Courier">n-k+2 </font>若 <font
+  face="Courier">n+1 &lt; i</font>
+</blockquote>
+
+<p>這個定義是頗為複雜的，我們先來看看k階Spline曲線倒底有什麼特性呢？ 
+
+<ol>
+  <li>在每一個區間（v[i]&lt;=t&lt;=v[i+1]），函數P(t)是一個k-1次多項式。</li>
+  <li>在整條曲線上，P(t)在1～k-2次微分上都是連續的。</li>
+</ol>
+
+<p>也就是說，二次Spline曲線其實便是3階Spline曲線（k=3）。我們再看看各種階數的Spline曲線情況。在2階的情況下，對每個區間t值化為0～1後，成為：
+
+<blockquote>
+  <p>P(t) = Pi * (1-t) + Pi+1 * t
+</blockquote>
+
+<p>因此2階Spline曲線，也就是多邊形直線。而對於4參考點的4階Spline曲線，經上述公式定義計算後可得：
+
+<blockquote>
+  <p>P(t) = (1-t)^3 * P1 + 3t(1-t)^2 * P2 + 3t^2 (1-t) * P3 + t^3 * P4
+</blockquote>
+
+<p>這個曲線就是常見的三次Bezier曲線。由於本文的主要目的是探討二次Spline曲線的繪製方式，因此只著重在3階的Spline曲線。對於3階Spline曲線，它有個重要的特性，便是曲線會正切過相鄰兩參考點線段的中心點（前後兩線例外）。如果讀者覺得上述公式定義不易了解的話，不妨利用此特性自行以幾何數學導出結果。
+
+<p>要繪製3階Spline曲線，首先便得算出各種數目參考點的Ni,3值（參數點數目至少必須3個）。以下為作者利用上述Spline曲線公式定義算得的結果，其中以每3個相鄰參考點為一區間，各t值在0～1之間： 
+
+<ol>
+  <li>參考點數恰為3個時<p>P(t) = (1-t)^2 * P1 + 2t(1-t) * P2 + t^2 * P3
+  </li>
+  <li>首段Spline曲線段<p>P(t) = (1-t)^2 * P1 + t(4-3t)/2 * P2 + t^2/2 * P3
+  </li>
+  <li>中間各段Spline曲線段<p>P(t) = (1-t)^2/2 * P1 + (-2t^2+2t+1)/2 * P2 + t^2/2 * P3
+  </li>
+  <li>末段Spline曲線段<p>P(t) = (1-t)^2/2 * P1 + (1-t)(3t+1)/2 * P2 + t^2 * P3
+  </li>
+</ol>
+
+<p>以下便是計算上述各曲線段的模擬線段各點的程式，其中已將t化成整數範圍，並做一些乘法去除的工作（如何去除請參見本人著之&quot;<a
+href="bezier.htm">Hermite與Bezier曲線繪製方法</a>&quot;一文）：
+
+<p>#define Iterative 24 /* 曲線模擬的線數(必須小於32) */<br>
+#define Iterative2 (Iterative*Iterative)<br>
+#define Iterative3 (Iterative2*Iterative)<br>
+static int X_Pos[Iterative+1], Y_Pos[Iterative+1]; // 保存計算得的曲線點
+
+<p>int GetQuadraticSplinePoints(int x1,int y1,int x2,int y2,int x3,int y3,int 
+curve_type,int **x_array,int **y_array)<br>
+&nbsp; {<br>
+&nbsp;&nbsp; /* ------------------------------------------------------------<br>
+&nbsp;&nbsp; 作用：取得二次Spline曲線段各間隔點<br>
+&nbsp;&nbsp; 輸入：x1,y1,x2,y2,x3,y3 = 曲線段三參考點<br>
+&nbsp;&nbsp; curve_type = 曲線段形態<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 - 三點二次Spline曲線<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 - 四點以上二次Spline曲線首段<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 - 四點以上二次Spline曲線中段<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 - 四點以上二次Spline曲線末段<br>
+&nbsp;&nbsp; 輸出：x_array, y_array = x,y座標陣列<br>
+&nbsp;&nbsp; 傳回：點數<br>
+&nbsp;&nbsp; ------------------------------------------------------------ */<br>
+&nbsp;&nbsp; int i, m1, m2, m3, k1, k2;<br>
+<br>
+&nbsp;&nbsp; if (curve_type &lt;= 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X_Pos[0] = x1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y_Pos[0] = y1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 = 2*Iterative2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X_Pos[0] = (x1+x2)/2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y_Pos[0] = (y1+y2)/2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 = m2 = Iterative2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp; m3 = 0;<br>
+&nbsp;&nbsp; for (i=0; i&lt;Iterative; i++) /* 用Iterative條直線模擬 */<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k2 = (k1 = (i &lt;&lt; 1) + 1) - 2*Iterative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch(curve_type)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 0 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 += 2*k2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 += 4*Iterative - 
+4*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m3 += 2*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 1 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 += 2*k2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 += 4*Iterative - 
+3*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m3 += k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 2 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 += k2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 += 2*Iterative - 
+2*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m3 += k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m1 += k2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m2 += 2*Iterative - 
+3*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m3 += 2*k1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X_Pos[i+1] = (int) (((long) x1*m1 + (long) x2*m2 + (long) 
+x3*m3) / (2*Iterative2));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y_Pos[i+1] = (int) (((long) y1*m1 + (long) y2*m2 + (long) 
+y3*m3) / (2*Iterative2));<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp; *x_array = X_Pos;<br>
+&nbsp;&nbsp; *y_array = Y_Pos;<br>
+&nbsp;&nbsp; return Iterative+1;<br>
+&nbsp; }
+
+<p>將呼叫該函數所得到的各點以多邊形線段方式相連，即可得到所要的近似曲線。呼叫時要注意辨別二次Spline曲線的各段情況。
+</body>
+</html>

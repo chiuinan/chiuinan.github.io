@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTTP的NTLM認證</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+<font color=blue><b>HTTP的NTLM認證</b></font> - 邱奕南, 2005/4/27
+
+NTLM認證的過程如下：
+
+1.Client端送出HTTP Request要求
+2.Server端送出401認證錯誤，並在Response Header中加上"WWW-Authenticate: NTLM"
+3.Client端重新連線，送出Negotiate Message給Server端
+4.Server端送出401認證錯誤，並傳回Challenge Message給Client端
+5.Client端送出Authenticate Message給Server端（必須保持連線）
+6.Server端認證通過的話，便傳回實際網頁
+
+以下為各訊息的內容，接送前後須經Base64編解碼（資料置於HTTP Header "WWW-Authenticate: NTLM "之後）。
+注意此處之整數採小印弟安格式，亦即低位元組在前，高位元組在後。
+
+1.Negotiate Message（又稱type-1訊息，Client端送出，要求認證）
+
+0000：標記，8 byte ANSI字串，固定為"NTLMSSP"（含字串尾ASCII 0字元）
+0008：訊息形態，4 byte長整數，固定為1（Negotiate Message）
+000C：旗標，4 byte長整數
+0010：Domain Name長度，2 byte短整數
+0012：Domain Name長度，2 byte短整數
+0014：Domain Name在訊息中的位置，4 byte長整數
+0018：Host Name長度，2 byte短整數
+001A：Host Name長度，2 byte短整數
+001C：Host Name在訊息中的位置，4 byte長整數
+0020：不明，8 byte，固定為05 00 93 08 00 00 00 0F
+0028：Host Name，ANSI字串，大寫
+????：Domain Name，ANSI字串，大寫
+
+** 旗標意義如下：
+
+0x00000001：NTLMSSP_NEGOTIATE_UNICODE，表示字串為Unicode形式
+0x00000002：NTLMSSP_NEGOTIATE_OEM，表示字串為ANSI形式
+0x00000004：NTLMSSP_REQUEST_TARGET，表示Server端需傳回認證用的Domain資訊
+0x00000010：NTLMSSP_NEGOTIATE_SIGN，表示訊息必須加上數位簽章
+0x00000020：NTLMSSP_NEGOTIATE_SEAL，表示訊息均必須加密
+0x00000080：NTLMSSP_NEGOTIATE_LM_KEY，表示使用Session Key來做認證基準
+0x00000200：NTLMSSP_NEGOTIATE_NTLM，表示為NTLM認證，必須固定為1
+0x00004000：NTLMSSP_NEGOTIATE_LOCAL_CALL，表示Client/Server都在同一台機器上
+0x00008000：NTLMSSP_NEGOTIATE_ALWAYS_SIGN，表示對所有安全層次都加以認證
+0x00010000：NTLMSSP_TARGET_TYPE_DOMAIN，表示Server為一Domain Controller
+0x00020000：NTLMSSP_TARGET_TYPE_SERVER，表示Server為一NT Server
+
+其他旗標位元意義不清楚。旗標值IE是設成0xA2008207，其中Unicode/OEM都設定，
+表示Client端可接受任何一種形式的字串
+
+
+2.Challenge Message（又稱type-2訊息，Server端送回，提供認證用資訊）
+
+0000：標記，8 byte ANSI字串，固定為"NTLMSSP"（含字串尾ASCII 0字元）
+0008：訊息形態，4 byte長整數，固定為2（Challenge Message）
+000C：Domain Name長度（byte數），2 byte短整數
+000E：Domain Name長度（byte數），2 byte短整數
+0010：Domain Name在訊息中的位置，4 byte長整數
+0014：旗標，4 byte長整數
+0018：challenge訊息，8 byte
+0020：保留，8 byte，固定為0
+0028：不明，16 byte
+0038：Domain Name（大寫），ANSI/Unicode由旗標決定
+????：額外訊息，可有多個
+
+** 額外訊息格式為：
+
+訊息種類：2 byte短整數
+訊息長度：2 byte短整數（訊息字串的byte數）
+訊息字串：ANSI/Unicode由旗標決定
+
+** 訊息種類編號意義：
+
+0 = 結束
+1 = Host Name（大寫）
+2 = Domain Name（大寫）
+3 = Host的網域全名
+4 = Domain的網域全名
+5 = Domain Controller的網域全名
+其他 = 不明
+
+額外訊息必須Negotiate Message有設定NTLMSSP_REQUEST_TARGET旗標時才會傳回。
+
+
+3.Authenticate Message（又稱type-3訊息，Client端送出，進行認證）
+
+0000：標記，8 byte ANSI字串，固定為"NTLMSSP"（含字串尾ASCII 0字元）
+0008：訊息形態，4 byte長整數，固定為3（Authenticate Message）
+000C：LM-Resp長度，2 byte短整數，固定為24
+000E：LM-Resp長度，2 byte短整數，固定為24
+0010：LM-Resp在訊息中的位置，4 byte長整數
+0014：NT-Resp長度，2 byte短整數，固定為24
+0016：NT-Resp長度，2 byte短整數，固定為24
+0018：NT-Resp在訊息中的位置，4 byte長整數
+001C：Domain Name長度，2 byte短整數
+001E：Domain Name長度，2 byte短整數
+0020：Domain Name在訊息中的位置，4 byte長整數
+0024：username長度，2 byte短整數
+0026：username長度，2 byte短整數
+0028：username在訊息中的位置，4 byte長整數
+002C：Host Name長度，2 byte短整數
+002E：Host Name長度，2 byte短整數
+0030：Host Name在訊息中的位置，4 byte長整數
+0034：Session Key長度，2 byte短整數
+0036：Session Key長度，2 byte短整數
+0038：Session Key在訊息中的位置，4 byte長整數
+003C：旗標，4 byte長整數
+0040：不明，8 byte，固定為05 00 93 08 00 00 00 0F
+0048：Domain Name，ANSI/Unicode由旗標決定
+????：username，ANSI/Unicode由旗標決定
+????：Host Name，ANSI/Unicode由旗標決定
+????：LM-Resp，24 byte
+????：NT-Resp，24 byte
+
+旗標值IE是設成0xA2808205，表示字串是使用Unicode（NT-Resp使用的字串必須是Unicode格式）。
+
+
+** LM-Resp/NT-Resp的計算演算法：
+
+(1)取得16 byte的LanManager/NT Hashing Password，後面補0至21 byte。
+(2)將21 byte密碼切分成3組7 byte，視為DES 56 bit key，對之前得到的8 byte challenge
+   訊息加密（ECB模式），得到3組8 byte資料。
+
+** LanManager Hashing Password的計算演算法：
+
+(1)將password轉成大寫，並切截至14 byte，不足部份補0。
+(2)將14 byte密碼切分成2組7 byte，視為DES 56 bit key，對一個8 byte Magic Key
+   訊息加密（ECB模式），得到2組8 byte資料。
+(3)Magic Key為0x4B,0x47,0x53,0x21,0x40,0x23,0x24,0x25。
+
+** NT Hashing Password的計算演算法：
+
+(1)將password轉成Unicode形式。
+(2)利用MD4演算法對Unicode password做hashing，得到一個16 byte資料。
+
+** MD4演算法
+
+請參閱"RFC 1320 - The MD4 Message-Digest Algorithm"，裡面有附原始碼可直接參考取用。
+
+** DES ECB模式加密演算法：
+
+(1)鍵值設定
+
+a.將輸入的56 bit key切分成8個7 bit，在每個7 bit之後補上1個parity bit（odd parity），成為64 bit key。
+b.從64 bit key中計算出16個48 bit key schedule，做為DES 16次加密過程中使用的子鍵值（後述）。
+
+(2)資料加密（輸入64 bit資料，輸出64 bit資料）
+
+a.將輸入資料依下列位元順序重排，1表示第1個位元（第1個byte最高位元），64表示最後1個位元：
+
+  58 50 42 34 26 18 10  2
+  60 52 44 36 28 20 12  4
+  62 54 46 38 30 22 14  6
+  64 56 48 40 32 24 16  8
+  57 49 41 33 25 17  9  1
+  59 51 43 35 27 19 11  3
+  61 53 45 37 29 21 13  5
+  63 55 47 39 31 23 15  7
+
+b.將重排後的資料從中拆成兩個32 bit的部份，假設為L(0)R(0)，然後按下列公式計算16次（n=1~16）：
+
+  L(n) = R(n-1)
+  R(n) = L(n-1) xor f(R(n-1),K(n))
+  
+  其中K(n)為第n個key schedule，f為加密函數（cipher function），最後將R(16)L(16)組成輸出資料。
+
+c.依下列位元順序重排輸出資料：
+
+  40  8 48 16 56 24 64 32
+  39  7 47 15 55 23 63 31
+  38  6 46 14 54 22 62 30
+  37  5 45 13 53 21 61 29
+  36  4 44 12 52 20 60 28
+  35  3 43 11 51 19 59 27
+  34  2 42 10 50 18 58 26
+  33  1 41  9 49 17 57 25
+
+(3)資料解密
+
+a.同加密步驟a。
+
+b.將重排後的資料從中拆成兩個32 bit的部份，假設為R(16)L(16)，然後按下列公式計算16次（n=1~16）：
+
+  R(n-1) = L(n)
+  L(n-1) = R(n) xor f(L(n),K(n))
+
+  最後將L(0)R(0)組成輸出資料。
+  
+c.同加密步驟c
+
+(4)key schedule計算法
+
+a.依下列公式重排64 bit key成為56 bit key：
+
+  57 49 41 33 25 17  9
+   1 58 50 42 34 26 18
+  10  2 59 51 43 35 27
+  19 11  3 60 52 44 36
+  63 55 47 39 31 23 15
+   7 62 54 46 38 30 22
+  14  6 61 53 45 37 29
+  21 13  5 28 20 12  4
+
+b.將56 bit key拆成兩個28 bit的部份，假設為C(0)D(0)，然後按下列公式計算（n=1~16）：
+
+  C(n) = C(n-1) rotate left T(n)次
+  D(n) = D(n-1) rotate left T(n)次
+  
+  T(i) = 1 if i=1,2,9,16
+         2 others
+
+c.第i個key schedule為C(i)D(i)依下列方式重排成為48 bit：
+
+  14 17 11 24  1  5  3 28
+  15  6 21 10 23 19 12  4
+  26  8 16  7 27 20 13  2
+  41 52 31 37 47 55 30 40
+  51 45 33 48 44 49 39 56
+  34 53 46 42 50 36 29 32
+
+(5)cipher function f(R,K)公式
+
+a.對32 bit R依下列方式重排成為48 bit：
+
+  32  1  2  3  4  5
+   4  5  6  7  8  9
+   8  9 10 11 12 13
+  12 13 14 15 16 17
+  16 17 18 19 20 21
+  20 21 22 23 24 25
+  24 25 26 27 28 29
+  28 29 30 31 32  1
+
+b.將前面得到的48 bit R與48 bit K進行互斥運算。
+
+c.將運算結果拆成8個6 bit，假設為B(i)，i=1~8，然後取S(i,B(i))輸出的4 bit組合成32 bit輸出資料。
+
+d.欲計算S(n,B)的值，令i=B的最高bit和最低bit組合成的值，j=B中間4 bit的值，S(n)為對應的4x16查表陣列，則輸出資料為S(n)[i,j]。
+
+e.以下為S(n)查表陣列，n=1~8：
+
+S1
+
+14 4 13 1 2 15 11 8 3 10 6 12 5 9 0 7
+0 15 7 4 14 2 13 1 10 6 12 11 9 5 3 8
+4 1 14 8 13 6 2 11 15 12 9 7 3 10 5 0
+15 12 8 2 4 9 1 7 5 11 3 14 10 0 6 13
+
+S2
+
+15 1 8 14 6 11 3 4 9 7 2 13 12 0 5 10
+3 13 4 7 15 2 8 14 12 0 1 10 6 9 11 5
+0 14 7 11 10 4 13 1 5 8 12 6 9 3 2 15
+13 8 10 1 3 15 4 2 11 6 7 12 0 5 14 9
+
+S3
+
+10 0 9 14 6 3 15 5 1 13 12 7 11 4 2 8
+13 7 0 9 3 4 6 10 2 8 5 14 12 11 15 1
+13 6 4 9 8 15 3 0 11 1 2 12 5 10 14 7
+1 10 13 0 6 9 8 7 4 15 14 3 11 5 2 12
+
+S4
+
+7 13 14 3 0 6 9 10 1 2 8 5 11 12 4 15
+13 8 11 5 6 15 0 3 4 7 2 12 1 10 14 9
+10 6 9 0 12 11 7 13 15 1 3 14 5 2 8 4
+3 15 0 6 10 1 13 8 9 4 5 11 12 7 2 14
+
+S5
+
+2 12 4 1 7 10 11 6 8 5 3 15 13 0 14 9
+14 11 2 12 4 7 13 1 5 0 15 10 3 9 8 6
+4 2 1 11 10 13 7 8 15 9 12 5 6 3 0 14
+11 8 12 7 1 14 2 13 6 15 0 9 10 4 5 3
+
+S6
+
+12 1 10 15 9 2 6 8 0 13 3 4 14 7 5 11
+10 15 4 2 7 12 9 5 6 1 13 14 0 11 3 8
+9 14 15 5 2 8 12 3 7 0 4 10 1 13 11 6
+4 3 2 12 9 5 15 10 11 14 1 7 6 0 8 13
+
+S7
+
+4 11 2 14 15 0 8 13 3 12 9 7 5 10 6 1
+13 0 11 7 4 9 1 10 14 3 5 12 2 15 8 6
+1 4 11 13 12 3 7 14 10 15 6 8 0 5 9 2
+6 11 13 8 1 4 10 7 9 5 0 15 14 2 3 12
+
+S8
+
+13 2 8 4 6 15 11 1 10 9 3 14 5 0 12 7
+1 15 13 8 10 3 7 4 12 5 6 11 0 14 9 2
+7 11 4 1 9 12 14 2 0 6 10 13 15 3 5 8
+2 1 14 7 4 10 8 13 15 12 9 0 3 5 6 11
+
+
+建議是參考或直接採用OpenSSL的程式碼，裡面寫的非常精闢，簡單幾個operation便可以達到位元重排的效果，
+不過裡面的運算方式是第1位元擺在最低位元（長整數），需要注意一下。
+
+</pre>
+</body>
+</html>

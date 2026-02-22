@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTTPS通訊界面</title>
+</head>
+<body>
+<pre style="font-family: MingLiU, monospace; font-size: 16px;">
+HTTPS通訊界面 - 邱奕南, 2009/4/3
+
+本文將述及的知識：
+
+    1.HTTPS協定
+    2.SSL/TLS協定
+    3.ANS.1結構DER編碼
+    4.X.509憑證
+    5.RSA加解密演算法與PKCS#1標準
+    6.大整數運算
+    7.大質數產生法／模數倒數演算法
+    8.RC4加解密演算法
+    9.MD2/MD5/SHA-1 Digest演算法
+
+
+<font color=blue><b>*** HTTPS</b></font>
+
+HTTPS協定，主要是將HTTP協定雙方應傳接的資料，透過SSL或TLS協定進行傳接，
+同時將內定通訊埠由80改到443。SSL全名為Secure Sockets Layer，TLS全名為
+Transport Layer Security，目前常用的有三種（參見IE的進階設定）：
+
+    SSL 2.0
+    SSL 3.0
+    TLS 1.0
+
+由於大部份的HTTPS伺服器都有支援SSL 3.0，但未必支援TLS 1.0，因此在實作
+HTTPS Client時，可以SSL 3.0為主。事實上，TLS 1.0係由SSL 3.0微修而來，
+一般亦稱為SSL 3.1，因此弄懂SSL 3.0後，要再擴增為TLS 1.0，其實是很簡單
+的。因此以下說明的內容，便均以SSL 3.0為主。關於SSL 3.0與TLS 1.0的相關
+資料，可參考：
+
+DRAFT302: The SSL Protocol Version 3.0
+RFC2246: The TLS Protocol Version 1.0
+
+又，為了協助讀者看懂這些文件內容，後面的文章裡，我們都會先列出原文的
+定義，然後再用比較容易看懂的方法，重新解說。
+
+註：TLS 1.0新訂了一個RPF函數如下：
+
+    PRF(secret,label,seed) = P_MD5(S1,label+seed) XOR P_SHA-1(S2,label+seed);
+
+S1為serect前半字串，S2為serect後半，各半長度為(len+1)/2，亦即若為奇數
+長度時，會有一個byte重疊。
+
+    P_hash(secret,seed) = HMAC_hash(secret,A(1)+seed) + HMAC_hash(secret,A(2)+seed) + HMAC_hash(secret,A(3)+seed) + ...
+    A(0) = seed
+    A(i) = HMAC_hash(secret,A(i-1))
+    HMAC_hash(secret,data)，secret為key值
+
+
+<font color=blue><b>*** 記錄層</b></font>
+
+SSL雙方傳接的資料，均拆分為Fragment，在SSL文件中定義為：
+
+    struct {
+        uint8 major, minor;
+    } ProtocolVersion;
+
+    enum {
+        change_cipher_spec(20), alert(21), handshake(22),
+        application_data(23), (255)
+    } ContentType;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        opaque fragment[SSLPlaintext.length];
+    } SSLPlaintext;
+
+亦即Fragment的結構為：
+
+    Fragment資料形態：1 byte
+    目前使用的SSL版本：2 byte，主版本在前，次版本在後，SSL 3.0應填入03 00
+    Fragment資料大小：2 byte，假設值為n
+    Fragment資料：n byte
+
+Fragment資料形態有4種，一是啟動加密訊息(20=14h)，一是警示訊息(21=15h)，
+一是Handshake訊息(22=16h)，一是應用程式資料(23=17h)，這些資料形態什麼
+時候使用，如何使用，後面會再述及。
+
+注意SSL裡的數字都是高位元組在前，因此16384 byte，即4000h byte時，Fragment
+資料大小應填入的資料便是：
+
+    40 00
+
+Fragment資料可能是密文（當啟動加密後），也可能是明文（一開始時），前
+面僅列了明文的定義，密文的部份，我們會在後面再述及。又，明文（Plain Text）
+資料最長不能超過16384 byte，亦即n<=16384。
+
+
+<font color=blue><b>*** 邏輯層</b></font>
+
+SSL在開始傳接實際的應用程式資料前，必須先進行Handshake，以確認雙方採
+用的SSL版本、加密演算法等資訊。其訊息傳遞的過程為：
+
+1. Client端送出Client Hello訊息，告知Client端可支援的SSL版本、可支援的加密演算法
+2. Server端送出Server Hello訊息，告知Server端可支援的SSL版本，以及決定採用的加密演算法
+3. Server端送出憑證訊息或公鑰訊息，告知Server端使用的公鑰
+4. Server端送出Server Hello Done訊息
+5. Client端送出密鑰訊息（以公鑰加密），告知Server端密鑰的相關資訊
+6. Client端送出啟動加密訊息
+7. Client端送出Finished訊息（以密鑰加密）
+8. Server端送出啟動加密訊息
+9. Server端送出Finished訊息（以密鑰加密）
+10. Client端與Server端開始互傳實際的應用程式資料
+
+Handshake訊息的定義如下：
+
+    enum {
+        hello_request(0), client_hello(1), server_hello(2),
+        certificate(11), server_key_exchange (12),
+        certificate_request(13), server_hello_done(14),
+        certificate_verify(15), client_key_exchange(16),
+        finished(20), (255)
+    } HandshakeType;
+
+    struct {
+        HandshakeType msg_type;
+        uint24 length;
+        select (HandshakeType) {
+            case hello_request: HelloRequest;
+            case client_hello: ClientHello;
+            case server_hello: ServerHello;
+            case certificate: Certificate;
+            case server_key_exchange: ServerKeyExchange;
+            case certificate_request: CertificateRequest;
+            case server_hello_done: ServerHelloDone;
+            case certificate_verify: CertificateVerify;
+            case client_key_exchange: ClientKeyExchange;
+            case finished: Finished;
+        } body;
+    } Handshake;
+
+亦即Handshake訊息的結構為：
+
+    Handshake訊息形態：1 byte
+    Handshake訊息大小：3 byte（高位元組在前），假設值為n
+    Handshake訊息資料：n byte
+
+以下便依Handshake過程的順序，說明各Handshake訊息。
+
+
+一. Client Hello（形態編號=1）
+
+    struct {
+        uint32 gmt_unix_time;
+        opaque random_bytes[28];
+    } Random;
+
+    opaque SessionID<0..32>;
+
+    uint8 CipherSuite[2];
+
+    enum { null(0), (255) } CompressionMethod;
+
+    struct {
+        ProtocolVersion client_version;
+        Random random;
+        SessionID session_id;
+        CipherSuite cipher_suites<2..2^16-1>;
+        CompressionMethod compression_methods<1..2^8-1>;
+    } ClientHello;
+
+Client Hello的結構為：
+
+    Client採用的SSL版本：2 byte，主版本在前，次版本在後
+    Client Random：32 byte
+        時間：4 byte，採Unix GMT格式，高位元組在前
+        隨意亂數：28 byte
+    Session ID：
+        ID長度：1 byte，假設為a
+        ID資料：a byte
+    Client端可支援的加密法：
+        加密法資料數：2 byte，高位元組在前，假設為b
+        加密法編號：b byte，每2 byte一組，愈想用的排愈前面
+    Client端可支援的壓縮法：
+        壓縮法資料數：1 byte，假設為c
+        壓縮法編號：c byte
+
+若Client有支援TLS 1.0，SSL版本編號可填入03 01，這也就是為何TLS 1.0亦
+可稱為SSL 3.1的原因。當Server亦支援TLS 1.0，在Server Hello時會回傳版
+本3.1，此時雙方便可採用TLS 1.0協定。若Server只支援SSL 3.0，則Server Hello
+會回傳版本3.0，如此雙方便必須採用SSL 3.0協定。當然，若Client只支援SSL 3.0，
+這裡便應該填入03 00，如此Server自然必須使用SSL 3.0協定。
+
+Client Random，在後面的Handshake訊息會用到，必須記錄下來。Unix GMT時
+間格式，便是從1970/1/1 00:00:00開始到目前時間的秒數，這點可呼叫time(NULL)
+函數，取得其回傳值便是。
+
+Session ID是用來回復之前已通過Handshake的Session，直接採用裡面雙方已
+同意的加密演算法與密鑰，避免再次Handshake，浪費時間。在Server Hello訊
+息裡，會回傳一個Session ID，便是本次Handshake所處的Session，在雙方Handshake
+成功，傳接完資料斷線後，Server會暫時將此Session記錄一段時間，若此時Client
+端有需要而再次連線時，便可填入該Session ID，恢復啟用原先協定好的數據。
+當然，在這種情況下，雙方傳接的Handshake訊息次序便和前述的標準流程有些
+不同，這部份請自行參考相關文件。這裡，我們仍以第一次連線為準，因此應
+填入ID長度為0。
+
+Client端可支援的加密法，這部份較複雜些，我們先談壓縮法。在SSL 3.0裡的
+壓縮法只有一種，就是不壓縮（編號=0），因此這裡應填入01 00。
+
+加密法編號，稱為Cipher Suite，可說是SSL協定的重頭大戲，因為它決定了整
+個SSL協定裡應採行的密鑰交換演算法（非對稱性鍵值加密，如RSA、DSS等）、
+資料加解密演算法（對稱性鍵值加密，如RC2、RC4、DES、3DES等）、資料核驗
+演算法（Digest，如MD5、SHA-1等）。這些編號，在SSL或TLS文件裡都有列出：
+
+    CipherSuite TLS_NULL_WITH_NULL_NULL                = { 0x00,0x00 };
+    CipherSuite TLS_RSA_WITH_NULL_MD5                  = { 0x00,0x01 };
+    CipherSuite TLS_RSA_WITH_NULL_SHA                  = { 0x00,0x02 };
+    CipherSuite TLS_RSA_EXPORT_WITH_RC4_40_MD5         = { 0x00,0x03 };
+    CipherSuite TLS_RSA_WITH_RC4_128_MD5               = { 0x00,0x04 };
+    CipherSuite TLS_RSA_WITH_RC4_128_SHA               = { 0x00,0x05 };
+    CipherSuite TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5     = { 0x00,0x06 };
+    CipherSuite TLS_RSA_WITH_IDEA_CBC_SHA              = { 0x00,0x07 };
+    CipherSuite TLS_RSA_EXPORT_WITH_DES40_CBC_SHA      = { 0x00,0x08 };
+    CipherSuite TLS_RSA_WITH_DES_CBC_SHA               = { 0x00,0x09 };
+    CipherSuite TLS_RSA_WITH_3DES_EDE_CBC_SHA          = { 0x00,0x0A };
+    CipherSuite TLS_DH_DSS_EXPORT_WITH_DES40_CBC_SHA   = { 0x00,0x0B };
+    CipherSuite TLS_DH_DSS_WITH_DES_CBC_SHA            = { 0x00,0x0C };
+    CipherSuite TLS_DH_DSS_WITH_3DES_EDE_CBC_SHA       = { 0x00,0x0D };
+    CipherSuite TLS_DH_RSA_EXPORT_WITH_DES40_CBC_SHA   = { 0x00,0x0E };
+    CipherSuite TLS_DH_RSA_WITH_DES_CBC_SHA            = { 0x00,0x0F };
+    CipherSuite TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA       = { 0x00,0x10 };
+    CipherSuite TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA  = { 0x00,0x11 };
+    CipherSuite TLS_DHE_DSS_WITH_DES_CBC_SHA           = { 0x00,0x12 };
+    CipherSuite TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA      = { 0x00,0x13 };
+    CipherSuite TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA  = { 0x00,0x14 };
+    CipherSuite TLS_DHE_RSA_WITH_DES_CBC_SHA           = { 0x00,0x15 };
+    CipherSuite TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA      = { 0x00,0x16 };
+    CipherSuite TLS_DH_anon_EXPORT_WITH_RC4_40_MD5     = { 0x00,0x17 };
+    CipherSuite TLS_DH_anon_WITH_RC4_128_MD5           = { 0x00,0x18 };
+    CipherSuite TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA  = { 0x00,0x19 };
+    CipherSuite TLS_DH_anon_WITH_DES_CBC_SHA           = { 0x00,0x1A };
+    CipherSuite TLS_DH_anon_WITH_3DES_EDE_CBC_SHA      = { 0x00,0x1B };
+
+以下為更多的定義：
+（參見https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.gska100/csdcwh.htm）
+
+    CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA            = { 0x00,0x2F };
+    CipherSuite TLS_DH_DSS_WITH_AES_128_CBC_SHA         = { 0x00,0x30 };
+    CipherSuite TLS_DH_RSA_WITH_AES_128_CBC_SHA         = { 0x00,0x31 };
+    CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA        = { 0x00,0x32 };
+    CipherSuite TLS_DHE_RSA_WITH_AES_128_CBC_SHA        = { 0x00,0x33 };
+    CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA            = { 0x00,0x35 };
+    CipherSuite TLS_DH_DSS_WITH_AES_256_CBC_SHA         = { 0x00,0x36 };
+    CipherSuite TLS_DH_RSA_WITH_AES_256_CBC_SHA         = { 0x00,0x37 };
+    CipherSuite TLS_DHE_DSS_WITH_AES_256_CBC_SHA        = { 0x00,0x38 };
+    CipherSuite TLS_DHE_RSA_WITH_AES_256_CBC_SHA        = { 0x00,0x39 };
+    CipherSuite TLS_RSA_WITH_NULL_SHA256                = { 0x00,0x3B };
+    CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA256         = { 0x00,0x3C };
+    CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA256         = { 0x00,0x3D };
+    CipherSuite TLS_DH_DSS_WITH_AES_128_CBC_SHA256      = { 0x00,0x3E };
+    CipherSuite TLS_DH_RSA_WITH_AES_128_CBC_SHA256      = { 0x00,0x3F };
+    CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA256     = { 0x00,0x40 };
+    CipherSuite TLS_RSA_EXPORT1024_WITH_DES_CBC_SHA     = { 0x00,0x62 };
+    CipherSuite TLS_RSA_EXPORT1024_WITH_RC4_56_SHA      = { 0x00,0x64 };
+    CipherSuite TLS_DHE_DSS_EXPORT1024_WITH_DES_CBC_SHA = { 0x00,0x63 };
+    CipherSuite TLS_DHE_DSS_EXPORT1024_WITH_RC4_56_SHA  = { 0x00,0x65 };
+    CipherSuite TLS_DHE_DSS_WITH_RC4_128_SHA            = { 0x00,0x66 };
+    CipherSuite TLS_ECDH_ECDSA_WITH_NULL_SHA            = { 0xC0,0x01 };
+    CipherSuite TLS_ECDH_ECDSA_WITH_RC4_128_SHA         = { 0xC0,0x02 };
+    CipherSuite TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA    = { 0xC0,0x03 };
+    CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA     = { 0xC0,0x04 };
+    CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA     = { 0xC0,0x05 };
+    CipherSuite TLS_ECDHE_ECDSA_WITH_NULL_SHA           = { 0xC0,0x06 };
+    CipherSuite TLS_ECDHE_ECDSA_WITH_RC4_128_SHA        = { 0xC0,0x07 };
+    CipherSuite TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA   = { 0xC0,0x08 };
+    CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA    = { 0xC0,0x09 };
+    CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA    = { 0xC0,0x0A };
+    CipherSuite TLS_ECDH_RSA_WITH_NULL_SHA              = { 0xC0,0x0B };
+    CipherSuite TLS_ECDH_RSA_WITH_RC4_128_SHA           = { 0xC0,0x0C };
+    CipherSuite TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA      = { 0xC0,0x0D };
+    CipherSuite TLS_ECDH_RSA_WITH_AES_128_CBC_SHA       = { 0xC0,0x0E };
+    CipherSuite TLS_ECDH_RSA_WITH_AES_256_CBC_SHA       = { 0xC0,0x0F };
+    CipherSuite TLS_ECDHE_RSA_WITH_NULL_SHA             = { 0xC0,0x10 };
+    CipherSuite TLS_ECDHE_RSA_WITH_RC4_128_SHA          = { 0xC0,0x11 };
+    CipherSuite TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA     = { 0xC0,0x12 };
+    CipherSuite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA      = { 0xC0,0x13 };
+    CipherSuite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA      = { 0xC0,0x14 };
+
+以IE（Internet Explore）為例，它在Client端可支援的加密法之部份填入的
+值為：
+
+    00 16 // byte數 //
+    00 04 // TLS_RSA_WITH_RC4_128_MD5 //
+    00 05 // TLS_RSA_WITH_RC4_128_SHA //
+    00 0A // TLS_RSA_WITH_3DES_EDE_CBC_SHA //
+    00 09 // TLS_RSA_WITH_DES_CBC_SHA //
+    00 64 // TLS_RSA_EXPORT1024_WITH_RC4_56_SHA //
+    00 62 // TLS_RSA_EXPORT1024_WITH_DES_CBC_SHA //
+    00 03 // TLS_RSA_EXPORT_WITH_RC4_40_MD5 //
+    00 06 // TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5 //
+    00 13 // TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA //
+    00 12 // TLS_DHE_DSS_WITH_DES_CBC_SHA //
+    00 63 // TLS_DHE_DSS_EXPORT1024_WITH_DES_CBC_SHA //
+
+註：其後RC4被確認有漏洞，大部份網站均已取消此一加密法，於是IE11改為：
+
+    00 1C // byte數 //
+    C0 14 // TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA //
+    C0 13 // TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA //
+    00 39 // TLS_DHE_RSA_WITH_AES_256_CBC_SHA //
+    00 33 // TLS_DHE_RSA_WITH_AES_128_CBC_SHA //
+    00 35 // TLS_RSA_WITH_AES_256_CBC_SHA //
+    00 2F // TLS_RSA_WITH_AES_128_CBC_SHA //
+    C0 0A // TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA //
+    C0 09 // TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA //
+    00 38 // TLS_DHE_DSS_WITH_AES_256_CBC_SHA //
+    00 32 // TLS_DHE_DSS_WITH_AES_128_CBC_SHA //
+    00 0A // TLS_RSA_WITH_3DES_EDE_CBC_SHA //
+    00 13 // TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA //
+    00 05 // TLS_RSA_WITH_RC4_128_SHA //
+    00 04 // TLS_RSA_WITH_RC4_128_MD5 //
+
+由於演算法相當地多，若要全部支援，其實是一項頗為嚴苛的考驗。然而對於
+Client端而言，只需實作一、兩種大部份Server都有支援的方法即可，因此這
+裡我們挑IE最前兩種方法進行說明，就作者隨機測試了75個HTTPS網站，都是有
+支援且可正常運作的：
+
+    TLS_RSA_WITH_RC4_128_MD5：RSA、RC4（128位元鍵值）、MD5
+    TLS_RSA_WITH_RC4_128_SHA：RSA、RC4（128位元鍵值）、SHA-1
+
+因此填入的值為：
+
+    00 04 // byte數 //
+    00 04 // TLS_RSA_WITH_RC4_128_MD5 //
+    00 05 // TLS_RSA_WITH_RC4_128_SHA //
+
+注意所有SSL的資料都必須封裝成Fragment格式，因此第一次送給Server的Client Hello
+訊息，實際送進socket裡的資料，應該為：
+
+    ------ Fragment Header (5 byte) -----------
+    16        // Handshake Fragment形態編號 //
+    30 00     // SSL版本 //
+    ?? ??     // Handshake訊息總長 = Client Hello訊息內容長度+4 //
+    ------ Handshake訊息 Header (4 byte) ------
+    01        // Client Hello訊息形態編號 //
+    ?? ?? ??  // Client Hello訊息內容長度 //
+    ------ Client Hello訊息 -------------------
+    03 00     // SSL版本 //
+    ....
+
+當然，多個Handshake訊息亦可合併在同一Fragment裡，例如之後Server會連送
+數個Handshake訊息，這些訊息可以集結在同一個Fragment裡，亦可拆成多個Fragment
+分別傳送。總之，Fragment只是做為雙方傳接訊息的記錄格式而已，在邏輯上，
+雙方皆只看Fragment裡面承載的資料而已。
+
+
+二. Server Hello（形態編號=2）
+
+    struct {
+        ProtocolVersion server_version;
+        Random random;
+        SessionID session_id;
+        CipherSuite cipher_suite;
+        CompressionMethod compression_method;
+    } ServerHello;
+
+Server Hello的結構為：
+
+    Server採用的SSL版本：2 byte，主版本在前，次版本在後
+    Server Random：32 byte
+        時間：4 byte，採Unix GMT格式，高位元組在前
+        隨意亂數：28 byte
+    Session ID：
+        ID長度：1 byte，假設為a
+        ID資料：a byte
+    Server端選用的加密法編號：2 byte
+    Server端選用的壓縮法編號：1 byte
+
+Server Random，在後面的Handshake訊息會用到，必須記錄下來。
+
+當決定了雙方所採行的加密法後，便可決定出幾個相關參數：
+
+    CipherSpec.cipher_type：stream加密法或block加密法，RC4是stream加密法。
+    CipherSpec.key_material：加密法的鍵值byte長度，RC4_128為16。
+    CipherSpec.IV_size：加密法的Initial Vector byte長度，RC4為0（不使用）。
+    CipherSpec.hash_size：digest的hash資料byte長度，MD5為16，SHA-1為20。
+    CipherSpec.is_exportable：是否Exportable，會影響加密的鍵值產生法，RC4_128為false。
+
+這些參數的意義，我們會在後面逐步提及。
+
+
+三. Certificate憑證訊息（形態編號=3）
+
+    opaque ASN.1Cert<1..2^24-1>;
+
+    struct {
+        ASN.1Cert certificate_list<1..2^24-1>;
+    } Certificate;
+
+Certificate的結構為：
+
+    所有憑證資料總長：3 byte，高位元組在前
+        第一張憑證資料長度：3 byte，高位元組在前，假設為a
+        第一張憑證資料：a byte
+        第二張憑證資料長度：3 byte，高位元組在前，假設為b
+        第二張憑證資料：b byte
+        ....
+
+憑證資料主要是取得Server的公鑰，以便在傳送密鑰資訊（Client Key Exchange）
+時，加密使用。各憑證資料皆為採用ANS.1結構DER編碼的X.509憑證，根憑證在
+最後一張，Server憑證在第一張，因此解析驗證時，必須從最後一張解析起。
+關於X.509憑證，我們會在後面再詳細說明，這裡只需要知道可取得Server的公
+鑰即可。
+
+
+四. Server Key Exchange公鑰訊息（形態編號=12）
+
+Server Key Exchange係當前述憑證訊息裡的Server憑證，沒有可供密鑰資訊交
+換時加密用的公鑰，臨時由Server提供的公鑰。以RSA而言，一般在正常的情況
+下，是不太可能會遇到的，因此此處便略而不談。
+
+
+五. Server Hello Done（形態編號=14）
+
+    struct { } ServerHelloDone;
+
+也就是訊息內容為空，故整個Handshake訊息固定為：
+
+    0E 00 00 00
+
+
+六. Client Key Exchange密鑰訊息（形態編號=16）
+
+    struct {
+        ProtocolVersion client_version;
+        opaque random[46];
+    } PreMasterSecret;
+
+    struct {
+        public-key-encrypted PreMasterSecret pre_master_secret;
+    } EncryptedPreMasterSecret;
+
+    struct {
+        select (KeyExchangeAlgorithm) {
+            case rsa: EncryptedPreMasterSecret;
+            case diffie_hellman: ClientDiffieHellmanPublic;
+        } exchange_keys;
+    } ClientKeyExchange;
+
+由於前面我們已限定了非對稱性加密法只支援RSA，故此處僅列出RSA相關的定
+義。Client Key Exchange的結構為：
+
+    pre_master_secret：48 byte
+        雙方採用的SSL版本：2 byte，主版本在前，次版本在後
+        隨意亂數：46 byte
+
+注意pre_master_secret是要經RSA公鑰加密的（public-key-encrypted）。因
+此實際的訊息內容長度並非48 byte，而是依公鑰的Modulus長度而定。RSA加解
+密的部份，會在後面再述及。
+
+有了pre_master_secret後，便必須配合前述的Client Random和Server Random，
+產生出必要的Master Secret（固定48 byte）：
+
+Master Secret = MD5(pre_master_secret + SHA('A' + pre_master_secret + ClientHello.random + ServerHello.random)) +
+                MD5(pre_master_secret + SHA('BB' + pre_master_secret + ClientHello.random + ServerHello.random)) +
+                MD5(pre_master_secret + SHA('CCC' + pre_master_secret + ClientHello.random + ServerHello.random));
+
+也就是將字串"A"、pre_master_secret、Client Random、Server Random依次
+送入SHA-1，得到20 byte digest，接著將pre_master_secret與前述20 byte digest
+依次送入MD5，得到16 byte digest，做為Master Secret的前16 byte。然後再
+做出第二與第三個16 byte，共同組成了48 byte Master Secret。Master Secret
+資訊必須記錄下來，後面Handshake訊息會再用到（pre_master_secret不必）。
+
+註：TLS 1.0改為Master Secret = PRF(pre_master_secret, "master secret", ClientHello.random+ServerHello.random)
+
+Master Secret的作用，主要是用來產生加解密鍵值的相關資訊。首先做出block data
+（每個block固定16 byte）：
+
+    block data = block 1 data + block 2 data + block 3 data + ...
+
+然後從block data裡，依次取出：
+
+    client_write_MAC_secret[CipherSpec.hash_size]
+    server_write_MAC_secret[CipherSpec.hash_size]
+    client_write_key[CipherSpec.key_material]
+    server_write_key[CipherSpec.key_material]
+    client_write_IV[CipherSpec.IV_size]
+    server_write_IV[CipherSpec.IV_size]
+
+因此需要的block data總長為(hash_size+key_material+IV_size)*2。各block
+資料的產生法為：
+
+    block 1 data = MD5(master_secret + SHA('A' + master_secret + ServerHello.random + ClientHello.random))
+    block 2 data = MD5(master_secret + SHA('BB' + master_secret + ServerHello.random + ClientHello.random))
+    block 3 data = MD5(master_secret + SHA('CCC' + master_secret + ServerHello.random + ClientHello.random))
+    block 4 data = MD5(master_secret + SHA('DDDD' + master_secret + ServerHello.random + ClientHello.random))
+
+以此類推。以RC4_128、SHA1為例，共需(20+16+0)*2=72 byte，故至少需要產
+生5個block data（80 byte）。
+
+註：TLS 1.0改為block data = PRF(master_secret, "key expansion", ServerHello.random+ClientHello.random)
+
+當CipherSpec.is_exportable為true時，還需額外進行下列運算：
+
+    client_write_key = MD5(client_write_key + ClientHello.random + ServerHello.random);
+    server_write_key = MD5(server_write_key + ServerHello.random + ClientHello.random);
+
+由於RC4_128不是Exportable encryption algorithm，因此不必進行此一運算
+（註：TLS 1.0亦有變更，請參見RFC2246）。
+
+以Client端而言，當需要加解密時，在傳送時係以client_write_key、client_write_IV
+做為鍵值進行加密，而以client_write_MAC_secret來產生核驗用的digest。在
+接收時，則以server_write_key、server_write_IV做為鍵值進行解密，而以server_write_MAC_secret
+來產生digest核驗。關於資料加解密的部份，我們會在下個訊息再詳細說明。
+
+
+七. Change Cipher Spec啟動加密訊息（Fragment形態編號=20）
+
+    struct {
+        enum { change_cipher_spec(1), (255) } type;
+    } ChangeCipherSpec;
+
+Change Cipher Spec的結構為：
+
+    change_cipher_spec：1 byte，固定值為1
+
+由於Change Cipher Spec並非Handshake訊息，故必須獨立一個Fragment，因此
+整個Fragment便會是：
+
+    ------ Fragment Header (5 byte) -----------
+    14        // Change Cipher Spec Fragment形態編號 //
+    30 00     // SSL版本 //
+    00 01     // Change Cipher Spece訊息總長 = 1 //
+    ------ Change Cipher Spec訊息 -------------
+    01        // Change Cipher Spece訊息 //
+
+當Client端送出Change Cipher Spec訊息，表示之後傳送的訊息全部要開始加
+密，而當Client端收到Server送來的Change Cipher Spec訊息，表示之後接收
+的訊息全部要開始加密。以下為密文的定義：
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        opaque fragment[SSLCompressed.length];
+    } SSLCompressed;
+
+    stream-ciphered struct {
+        opaque content[SSLCompressed.length];
+        opaque MAC[CipherSpec.hash_size];
+    } GenericStreamCipher;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        select (CipherSpec.cipher_type) {
+            case stream: GenericStreamCipher;
+            case block: GenericBlockCipher;
+        } fragment;
+    } SSLCiphertext;
+
+由於RC4是stream加密法，故此處我們只列出相關的定義。加密過程為：
+
+1.假設要送出的明文資料為plain_text（不含Fragment Header）。
+2.對plain_text進行壓縮成為compressed_text（因為SSL未支援任何壓縮法，
+  故compressed_text=plain_text）。
+3.計算MAC，附加到compressed_text後面，成為stream_cipher。
+4.對stream_cipher加密，成為cipher_text。
+5.將cipher_text填入Fragment裡送出。
+
+解密過程則為：
+
+1.接收一個Fragment，去除Fragment Header成為cipher_text。
+2.對cipher_text解密，成為stream_cipher。
+3.從stream_cipher取走舊MAC，成為compressed_text，並計算新MAC，核對新舊MAC是否相同。
+4.將compressed_text解壓成為plain_text。
+5.plain_text即為邏輯層應讀取的資料。
+
+其中MAC的計算法為：
+
+    MAC = hash(MAC_write_secret + pad2 +
+               hash(MAC_write_secret + pad1 + seq_num + SSLCompressed.type + SSLCompressed.length + SSLCompressed.fragment));
+
+hash為Server Hello訊息裡所決定應採用的hash法，如MD5、SHA-1等。pad1和
+pad2與hash法有關：
+
+    pad1 = MD5為連續48個36h字元，SHA-1為40個連續36h字元
+    pad2 = MD5為連續48個5Ch字元，SHA-1為40個連續5Ch字元
+
+註：TLS 1.0改為MAC = HMAC_hash(MAC_write_secret, seq_num + TLSCompressed.type + TLSCompressed.version + TLSCompressed.length + TLSCompressed.fragment));
+
+MAC_write_secret以Client端而言，傳送時使用client_write_MAC_secret，接
+收時使用server_write_MAC_secret（因為是Server端送出來的資料）。SSLCompressed.type
+為Fragment形態編號，1 byte；SSLCompressed.length為compressed_text的長
+度（不含MAC），2 byte。
+
+其中必須要注意的是seq_num，為一8 byte整數（高位元組在前），用以記錄
+Fragment編號（由0開始），可區分為send_seq_num與receive_seq_num。當送
+出Change Cipher Spec訊息時，需將send_seq_num重設為0，當收到Change Cipher Spec
+訊息時，需將receive_seq_num重設為0。每次傳送一個Fragment後，便將send_seq_num
+加一，每次接收一個Fragment後，則將receive_seq_num加一。
+
+另外，前面已提過，plain_text最大長度為16384 byte，因此當以stream加密
+法加密後，cipher_text的最大長度便是16384+hash_size（不含5 byte Fragment Header）。
+
+
+八. Client Finished（形態編號=20）
+
+    enum { client(0x434C4E54), server(0x53525652) } Sender;
+
+    struct {
+        opaque md5_hash[16];
+        opaque sha_hash[20];
+    } Finished;
+
+    md5_hash = MD5(master_secret + pad2 + MD5(handshake_messages + Sender + master_secret + pad1));
+    sha_hash = SHA(master_secret + pad2 + SHA(handshake_messages + Sender + master_secret + pad1));
+
+當Client端要送出Client Finished時，Fragment資料本身已需要加密，請參見
+Change Cipher Spec的說明，這裡仍以明文的邏輯層來解說。pad1與pad2亦請
+參見Change Cipher Spec。
+
+Sender為送出本訊息者的編號（固定4 byte），Client Finished要用前者，
+Server Finished要用後者：
+
+    Client：43 4C 4E 54
+    Server：53 52 56 52
+
+handshake_messages為所有傳接到的Handshake訊息（明文），從Client Hello
+開始，一直到Finished訊息之前（不含Finished訊息），按其傳接的次序組成。
+Change Cipher Spec不是Handshake訊息，不可納入hash的計算。
+
+註：TLS 1.0則為：
+
+    struct {
+        opaque verify_data[12];
+    } Finished;
+
+    PRF(master_secret, finished_label, MD5(handshake_messages) + SHA(handshake_messages)) [0..11];
+    
+    finished_label，Client端用"client finished"，Server端用"server finished"
+
+
+九. Server Finished（形態編號=20）
+
+當Client端收到Server Finished時，Fragment資料本身已需要解密，請參見
+Change Cipher Spec的說明。Server Finished和Client Finished類似，請參
+見Client Finished的說明。
+
+
+十. Alert警示訊息（Fragment形態編號=21）
+
+    enum { warning(1), fatal(2), (255) } AlertLevel;
+
+    enum {
+            close_notify(0),
+            unexpected_message(10),
+            bad_record_mac(20),
+            decryption_failed(21),
+            record_overflow(22),
+            decompression_failure(30),
+            handshake_failure(40),
+            bad_certificate(42),
+            unsupported_certificate(43),
+            certificate_revoked(44),
+            certificate_expired(45),
+            certificate_unknown(46),
+            illegal_parameter(47),
+            unknown_ca(48),
+            access_denied(49),
+            decode_error(50),
+            decrypt_error(51),
+            export_restriction(60),
+            protocol_version(70),
+            insufficient_security(71),
+            internal_error(80),
+            user_canceled(90),
+            no_renegotiation(100),
+            (255)
+    } AlertDescription;
+
+    struct {
+        AlertLevel level;
+        AlertDescription description;
+    } Alert;
+
+Alert訊息的結構為：
+
+    警示層級：1 byte，1=警告，2=錯誤
+    警示描述：1 byte
+
+Alert訊息可能在任何時候傳來。當收到時，若警示層級為錯誤，應立即中止資
+料傳接，若為警告，則可忽略不理。例如HTTP Header若指定"Connection: Close"，
+則在雙方傳接完資料後，Server即將斷線前，可能會傳送一個close_notify的
+警示。
+
+Alert訊息若是出現在Change Cipher Spec訊息之後，置放於Fragment裡的資料
+仍是有加密的。
+
+
+十一. 應用程式資料（Fragment形態編號=23）
+
+一般在Handshake後，雙方都已傳接了Change Cipher Spec訊息，故應用程式資
+料雙方在傳接時，均有加密。請參見Change Cipher Spec的說明，其中的差別
+僅在Fragment形態編號不同而已。
+
+至於什麼時候斷線，或停止讀寫資料，係由外界按實際收到的資料自行決定，
+與SSL協定無關。故SSL協定可運用於任何資料的傳接，包括HTTP、FTP、SMTP等
+協定。
+
+
+<font color=blue><b>*** ANS.1結構與DER編碼</b></font>
+
+由於X.509憑證是採用ANS.1結構的DER編碼，故必須由此部份解說起。關於ANS.1
+結構的邏輯定義，可參見：
+
+X.680: Abstract Syntax Notation One (ASN.1): Specification of basic notation
+X.681: Abstract Syntax Notation One (ASN.1): Information object specification
+X.682: Abstract Syntax Notation One (ASN.1): Constraint specification
+X.683: Abstract Syntax Notation One (ASN.1): Parameterization of ASN.1 specifications
+
+而DER編碼部份，可參見：
+
+X.690: ASN.1 encoding rules: Specification of Basic Encoding Rules (BER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)
+
+由於ANS.1結構的邏輯定義很繁瑣，因此這裡先暫時略過，直接說明DER編碼部
+份，等到解說X.509憑證時，再按其出現的ANS.1結構定義進行說明。ANS.1結構
+的DER編碼，其實和BER編碼類似，只是做了一些限制，使得同一個值的結構，
+必定是唯一編碼。以下我們便以BER編碼為主進行說明，DER編碼的限制則穿插
+其中。
+
+ANS.1結構的BER編碼，主要由標記、長度、資料三個部份所組成。依次說明如下：
+
+
+1.標記
+
+標記的結構為：
+
+    Class Type：2 bit，00 = Univerfal，01 = Application，10 = Context-specific，11 = Private
+    Constructed：1 bit，0 = Primitive，1 = Constructed
+    Tag編號：5 bit，0～30，31=使用擴充Tag編號
+    擴充Tag編號：不定長度
+
+Class Type一般均為Universal，除非有特別的定義，這部份我們會在解說X.509
+憑證遇到時，再行說明。Constructed表示資料亦為ANS.1結構，必須再行解碼
+成ANS.1結構；Primitive表示資料為實體資料，例如整數、字串等。
+
+Tag編號當>=31時，必須採用擴充Tag編號法，從該byte開始，一直找到最高位
+元不為1的byte，然後將各byte取低7位元，按其順序由高到低組合在一起。其
+計算法為：
+
+    int tag_number = *s & 0x1F;
+    if (*s == 31)
+    {
+        tag_number = 0;
+        for (;;)
+        {
+            ++s;
+            tag_number = (tag_number << 7) | (*s & 0x7F);
+            if ((*s & 0x80) == 0) break;
+        }
+    }
+    ++s;
+
+
+2.長度
+
+長度的格式有短格式與長格式兩種，當第一位元組最高位元為0時為短格式，其
+餘7位元便是長度值，若最高位元為1則為長格式，其餘7位元表示其後接幾個位
+元組，共同組成長度值（高位元組在前）。其計算法為：
+
+    if (*s & 0x80)
+    {
+        int no = *s & 0x7F;
+        length = 0;
+        for (int i=0; i < no; ++i)
+        {
+            ++s;
+            length = (length << 8) | (unsigned char)*s;
+        }
+    }
+    else
+    {
+        length = *s;
+    }
+    ++s;
+
+當長度為0，且為Constructed時，表示不定長度，實際子結構的終止以EOC為準
+（後述）。DER編碼不允許不定長度，故長度為0，便表示裡面真的沒資料。
+
+
+3.資料
+
+總byte數由長度值而定。是否應繼續展開子結構，亦由標記中的Constructed決定。
+
+
+Class Type為Universal時，已有許多固定意義的Tag編號：
+
+    EOC               0
+    BOOLEAN           1
+    INTEGER           2
+    BIT STRING        3
+    OCTET STRING      4
+    NULL              5
+    OBJECT IDENTIFIER 6
+    OBJECT DESCRIPTOR 7
+    EXTERNAL          8
+    REAL              9
+    ENUMERATED        10
+    EMBEDDED PDV      11
+    UTF8 STRING       12
+    RELATIVE OID      13
+    SEQUENCE          16
+    SEQUENCE OF       16
+    SET               17
+    SET OF            17
+    NUMERIC STRING    18
+    PRINTABLE STRING  19
+    T61 STRING        20
+    VIDEOTEX STRING   21
+    IA5 STRING        22
+    UTC TIME          23
+    GENERALIZED TIME  24
+    GRAPHIC STRING    25
+    VISIBLE STRING    26
+    GENERAL STRING    27
+    UNIVERSAL STRING  28
+    CHARACTER STRING  29
+    BMP STRING        30
+
+簡單說明幾個（特別是後面X.509憑證會用到的）：
+
+1.EOC
+
+做為不定長度子結構的終止結構（DER編碼用不到），Primitive，內容為空，
+故其編碼為：
+
+    00 00
+
+2.BOOLEAN
+
+布林值，Primitive，0為false，非0為true，DER編碼限制true必須為1。故其
+編碼為：
+
+    false：01 01 00
+    true ：01 01 01
+
+3.INTEGER
+
+整數，Primitive，最高位元組在前，第一個位元組最高位元表示數字的正負號。
+
+4.BIT STRING
+
+位元字串，Primitive，第一位元組表示最後位元組的最低位元有多少個不使用，
+0表全部用到。DER編碼要求不用的位元必須清為0。
+
+5.NULL
+
+空值，Primitive，內容為空，故其編碼為：
+
+    05 00
+
+其他的Tag編號與內容結構，留待X.509憑證遇到時，再行解說。
+
+
+<font color=blue><b>*** X.509憑證</b></font>
+
+關於X.509憑證，可參見：
+
+RFC5280: Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
+
+由於X.509憑證是採用ANS.1結構的DER編碼，故必須先行解碼成ANS.1結構，方
+能解析。以下的說明，均以ANS.1的邏輯結構為主進行說明，部份再輔以實際的
+編碼值，以釐清觀念。
+
+    Certificate  ::=  SEQUENCE  {
+        tbsCertificate       TBSCertificate,
+        signatureAlgorithm   AlgorithmIdentifier,
+        signatureValue       BIT STRING  }
+
+這是X.509憑證一開始的定義，亦即它是一個SEQUENCE結構，裡面包含了三個子
+結構。因此DER解碼後的ANS.1結構，必須只有一個，標記應為Constructed Universal SEQUENCE
+（Tag編號為16），其編碼為30h（參見前述ANS.1結構與DER編碼），因此憑證
+資料的第一個byte必定是30h。由於是Constructed，故SEQUENCE裡的資料，必
+須再繼續解碼成ANS.1結構（必定為3個ANS.1結構），才能繼續解析。
+
+由於要分析完整個X.509憑證，其實是很繁瑣的一件事，裡面有些資料對於SSL
+協定而言，並沒有太大意義，因此以下我們只針對重要的部份進行解說，有興
+趣的人可參考前列的資料，詳細了解其他被略過的資訊。在本文裡，我們主要
+針對下列幾個部份的相關內容進行說明：
+
+1.取得憑證內的公鑰
+2.是否為CA憑證，亦即憑證內的公鑰是否可用來簽證其他憑證
+3.憑證內的公鑰是否可用來做SSL密鑰資訊交換加密
+4.憑證的簽證者（Issuer）與公私鑰擁有者（Subject），以判斷是否自我簽證
+5.數位簽章的核驗
+
+在前述的定義裡，tbsCertificate便是憑證內容，前4項所需的資訊都在這裡面，
+signatureValue為數位簽章內容，signatureAlgorithm則為數位簽章採用的演
+算法，這兩個是第5項所需的資訊。以下我們便從tbsCertificate憑證內容開始
+逐步解析起。
+
+    TBSCertificate  ::=  SEQUENCE  {
+        version         [0]  EXPLICIT Version DEFAULT v1,
+        serialNumber         CertificateSerialNumber,
+        signature            AlgorithmIdentifier,
+        issuer               Name,
+        validity             Validity,
+        subject              Name,
+        subjectPublicKeyInfo SubjectPublicKeyInfo,
+        issuerUniqueID  [1]  IMPLICIT UniqueIdentifier OPTIONAL
+        subjectUniqueID [2]  IMPLICIT UniqueIdentifier OPTIONAL
+        extensions      [3]  EXPLICIT Extensions OPTIONAL
+    }
+
+TBSCertificate同樣是一個Constructed Universal SEQUENCE結構，因此標記
+編碼同樣是30h。不過裡面子結構的定義就比較多了，我們先說明各子結構的意
+義：
+
+    version：憑證的版本，目前有版本v1，v2，v3
+    serialNumber：憑證的序號
+    signature：電子簽章採用的演算法，必須跟前述的signatureAlgorithm內容相同
+    issuer：憑證簽證者
+    validity：憑證的有效期間
+    subject：公私鑰擁有者
+    subjectPublicKeyInfo：公鑰資訊
+    issuerUniqueID：憑證簽證者的ID，必須v2或v3才有
+    subjectUniqueID：公私鑰擁有者的ID，必須v2或v3才有
+    extensions：擴充定義，必須v3才有
+
+1.version（憑證版本）
+
+    version [0]  EXPLICIT Version DEFAULT v1
+
+這樣的ANS.1文法稱為Context-specific，因此Class Type需使用Context-specific，
+Tag編號為0，且必須是Constructed，故編碼值為A0h。當省略時，其內定值為
+版本v1。
+
+    Version  ::=  INTEGER  {  v1(0), v2(1), v3(2)  }
+
+在前述Constructed Context-specific Tag 0結構裡，只會有一個子結構，就
+是Primitive Universal INTEGER，其資料內容（整數）便是版本的編號，0為v1，
+1為v2，2為v3。
+
+憑證版本除了影響TBSCertificate裡結構成員的有無外，同時也影響是否可用
+為CA憑證。v1或v2的憑證，都是CA憑證，v3憑證除非特別在extensions裡標明，
+否則一律不做為CA憑證。檢測是否為CA憑證的目的，我們會在數位簽章核驗時
+再做說明。
+
+
+2.serialNumber（憑證序號）
+
+    CertificateSerialNumber  ::=  INTEGER
+
+憑證序號是一個Primitive Universal INTEGER結構，其內容對於SSL協定而言
+是無用處的。
+
+
+3.signature（電子簽章演算法）
+
+    AlgorithmIdentifier  ::=  SEQUENCE  {
+        algorithm    OBJECT IDENTIFIER,
+        parameters   ANY DEFINED BY algorithm OPTIONAL }
+
+電子簽章演算法是一個Constructed Universal SEQUENCE結構，裡面包含了兩
+個子結構：
+
+    algorithm：演算法的OID（Object Identifier）
+    parameters：該演算法的參數，可省略
+
+OID（標記為Primitive Universal OBJECT IDENTIFIER），在X.509憑證裡運用
+非常多，所需的資訊也非常雜。以電子簽章演算法而言，主要定義在：
+
+RFC3279: Algorithms and Identifiers for the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
+
+另外，下列文件則是一些擴增的定義：
+
+RFC4055: Additional Algorithms and Identifiers for RSA Cryptography for use in the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
+RFC4491: Using the GOST R 34.10-94, GOST R 34.10-2001, and GOST R 34.11-94 Algorithms with the Internet X.509 Public Key Infrastructure Certificate and CRL Profile
+
+以下網站可查閱現行所有已登錄使用的OID：
+
+http://www.oid-info.com/cgi-bin/display?tree=
+
+以RSA憑證而言，參數parameters一律為Primitive Universal NULL，而OID只
+會有三種：
+
+    pkcs-1 OBJECT IDENTIFIER ::= { iso(1) member-body(2) US(840) rsadsi(113549) pkcs(1) 1 }
+    md2WithRSAEncryption OBJECT IDENTIFIER  ::=  { pkcs-1 2 }
+    md5WithRSAEncryption OBJECT IDENTIFIER ::= { pkcs-1 4 }
+    sha-1WithRSAEncryption OBJECT IDENTIFIER  ::=  { pkcs-1 5 }
+
+OID是一組順序數字的結合，其編碼方式為：
+
+    byte1 = 數字1*40+數字2
+    其餘byte = 剩餘數字以7位元拆分，取最少byte為準（至少1 byte），非最後一個byte最高位元為1
+
+例如前述的各OID的編碼便是：
+
+    pkcs-1                 = 2A 86 48 86 F7 0D 01 01
+    md2WithRSAEncryption   = 2A 86 48 86 F7 0D 01 01 02
+    md5WithRSAEncryption   = 2A 86 48 86 F7 0D 01 01 04
+    sha-1WithRSAEncryption = 2A 86 48 86 F7 0D 01 01 05
+
+注意這裡的hash function未必和SSL協定裡，雙方採用的hash function相同，
+故要解析X.509憑證，我們必須支援MD2、MD5、SHA-1等3種hash function。這
+些我們在後面都會予以說明。
+
+記得和signatureAlgorithm比對是否相同。
+
+
+4.issuer（憑證簽證者）
+
+    Name ::= CHOICE { rdnSequence RDNSequence }
+
+CHOICE就是可為裡面列的任何一種結構，由於此處只列了一種，因此Name的結
+構等同RDNSequence。
+
+    RDNSequence ::= SEQUENCE OF RelativeDistinguishedName
+
+RDNSequence是一個Constructed Universal SEQUENCE OF結構，裡面可以有0到
+多個RelativeDistinguishedName結構。
+
+    RelativeDistinguishedName ::= SET SIZE (1..MAX) OF AttributeTypeAndValue
+
+RelativeDistinguishedName是一個Constructed Universal SET OF結構，裡面
+可以有1到多個AttributeTypeAndValue結構。
+
+    AttributeTypeAndValue ::= SEQUENCE {
+        type     AttributeType,
+        value    AttributeValue }
+
+    AttributeType ::= OBJECT IDENTIFIER
+
+    AttributeValue ::= ANY DEFINED BY AttributeType
+
+這裡的AttributeType又是OID，在RFC5280有列了一些，在X.520和RFC2985也有
+許多定義，但實際在使用的Attribute Type OID相當地多又雜。由於在後面，
+Issuer只是用來與Subject比對是否相同而已，因此這邊其實可以只記錄資料而
+不解析。
+
+以下簡單列出一些常見的Attribute Type OID：
+
+    id-at OBJECT IDENTIFIER ::= { joint-iso-ccitt(2) ds(5) 4 }
+        commonName AttributeType ::= { id-at 3 }
+        surname AttributeType ::= { id-at 4 }
+        serialNumber AttributeType ::= { id-at 5 }
+        countryName AttributeType ::= { id-at 6 }
+        localityName AttributeType ::= { id-at 7 }
+        stateOrProvinceName AttributeType ::= { id-at 8 }
+        streetAddress AttributeType ::= {id-at 9}
+        organizationName AttributeType ::= { id-at 10 }
+        organizationalUnitName AttributeType ::= { id-at 11 }
+        title AttributeType ::= { id-at 12 }
+        businessCategory AttributeType ::= {id-at 15}
+        postalCode AttributeType ::= {id-at 17}
+        givenName AttributeType ::= { id-at 42 }
+        initials AttributeType ::= { id-at 43 }
+        generationQualifier AttributeType ::= { id-at 44 }
+        dnQualifier AttributeType ::= { id-at 46 }
+        seudonym AttributeType ::= { id-at 65 }
+    pkcs-9 OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) 9 }
+        emailAddress AttributeType ::= { pkcs-9 1 }
+    domainComponent AttributeType ::= { 0 9 2342 19200300 100 1 25 }
+
+以下則是OID的編碼：
+
+    id-at = 55 04
+    pkcs-9 = 2A 86 48 86 F7 0D 01 09
+    domainComponent = 09 92 26 89 93 F2 2C 64 01 19
+
+
+5.validity（憑證有效期間）
+
+    Validity ::= SEQUENCE {
+        notBefore      Time,
+        notAfter       Time }
+
+    Time ::= CHOICE {
+        utcTime        UTCTime,
+        generalTime    GeneralizedTime }
+
+Validity是一個Constructed Universal SEQUNECE結構，裡面包含了兩個結構：
+
+    notBefore：憑證有效開始時間
+    notAfter：憑證有效結束時間
+
+一般而言，SSL協定裡，Server傳來的憑證皆為有效，因此並沒有必要檢驗有效
+期間。
+
+
+6.subject（公私鑰擁有者）
+
+和issuer相同結構，請參見issuer的說明。
+
+
+7.subjectPublicKeyInfo（公鑰資訊）
+
+    SubjectPublicKeyInfo  ::=  SEQUENCE  {
+        algorithm            AlgorithmIdentifier,
+        subjectPublicKey     BIT STRING  }
+
+SubjectPublicKeyInfo是一個Constructed Universal SEQUENCE結構，裡面包
+含兩個結構：
+
+    algorithm：公鑰適用的演算法
+    subjectPublicKey：公鑰資料
+
+AlgorithmIdentifier在前面signature裡已提過，但要注意這裡的OID不應包含
+hash function，因此必須為：
+
+    rsaEncryption OBJECT IDENTIFIER ::= { pkcs-1 1 }
+
+亦即：
+
+    rsaEncryption = 2A 86 48 86 F7 0D 01 01 01
+
+subjectPublicKey是一個Primitive Universal BIT STRING結構，其資料內容
+裡，無用位元必須為0。又，這個Bit String內容其實仍是一個ANS.1結構的DER
+編碼資料，其定義為（參見RFC2313）：
+
+    RSAPublicKey ::= SEQUENCE {
+        modulus INTEGER, -- n
+        publicExponent INTEGER -- e }
+
+故必須解碼後，方能取得RSA加解密所需的Modulus與Public Exponent。又因
+ANS.1裡的整數是有正負，而RSA的Modulus是無號數，因此若最高位元為1時，
+ANS.1的整數資料會在最前面多加一個byte 00，以避免被解譯成負數。故取得
+Modulus時，應去除所有前導0，方為Modulus真正的位數。關於RSA加解密的部
+份，我們會在後面再說明。
+
+
+8.issuerUniqueID（憑證簽證者的ID）、subjectUniqueID（公私鑰擁有者的ID）
+
+    issuerUniqueID  [1]  IMPLICIT UniqueIdentifier OPTIONAL
+    subjectUniqueID [2]  IMPLICIT UniqueIdentifier OPTIONAL
+
+    UniqueIdentifier  ::=  BIT STRING
+
+跟version的定義一樣，這是屬於Context-specific，因此分別為Constructed Context-specific Tag 1
+和Constructed Context-specific Tag 2結構，而且可以省略。各結構裡面包
+含了一個Primitive Universal BIT STRING結構，其內容對於SSL協定而言是無
+用處的。
+
+注意這兩者只有v2或v3版本才會有。
+
+
+9.extensions（擴充定義）
+
+    extensions [3]  EXPLICIT Extensions OPTIONAL
+
+這是v3版本才會有的資料，為一Constructed Context-specific Tag 3結構，
+可以省略，裡面包含了一個Extensions結構。
+
+    Extensions  ::=  SEQUENCE SIZE (1..MAX) OF Extension
+
+Extensions為一Constructed Universal SEQUENCE OF結構，可以有1到多個
+Extension結構。
+
+    Extension  ::=  SEQUENCE  {
+        extnID      OBJECT IDENTIFIER,
+        critical    BOOLEAN DEFAULT FALSE,
+        extnValue   OCTET STRING
+    }
+
+Extension為一Constructed Universal SEQUENCE結構，裡面包含3個結構：
+
+    extnID：extension的OID
+    critical：是否必要處理，可省略，內定為false
+    extnValue：extension的資料內容
+
+extnID又是採用OID的方式辨別，同樣是多不勝數，一般不認識的可略過不理，
+但若critical為true，必須要認得且處理，否則便應視同無法解析本憑證而失
+敗。以下為一些常見的Extension OID：
+
+    id-ce OBJECT IDENTIFIER ::= { joint-iso-ccitt(2) ds(5) 29 }
+        subjectDirectoryAttributes OBJECT IDENTIFIER ::= { id-ce 9 }
+        subjectKeyIdentifier OBJECT IDENTIFIER ::= { id-ce 14 }
+        keyUsage OBJECT IDENTIFIER ::= { id-ce 15 }
+        privateKeyUsagePeriod OBJECT IDENTIFIER ::=  { id-ce 16 }
+        subjectAltName OBJECT IDENTIFIER ::= { id-ce 17 }
+        issuerAltName OBJECT IDENTIFIER ::= { id-ce 18 }
+        basicConstraints OBJECT IDENTIFIER ::= { id-ce 19 }
+        nameConstraints OBJECT IDENTIFIER ::= { id-ce 30 }
+        cRLDistributionPoints OBJECT IDENTIFIER ::= { id-ce 31 }
+        certificatePolicies OBJECT IDENTIFIER ::= { id-ce 32 }
+        policyMappings OBJECT IDENTIFIER ::= { id-ce 33 }
+        authorityKeyIdentifier OBJECT IDENTIFIER ::= { id-ce 35 }
+        policyConstraints OBJECT IDENTIFIER ::= { id-ce 36 }
+        extKeyUsage OBJECT IDENTIFIER ::= { id-ce 37 }
+        freshestCRL OBJECT IDENTIFIER ::= { id-ce 46 }
+        inhibitAnyPolicy OBJECT IDENTIFIER ::= { id-ce 54 }
+    id-pkix OBJECT IDENTIFIER ::= { iso(1) identified-organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) }
+    id-pe OBJECT IDENTIFIER ::= { id-pkix 1 }
+        authorityInfoAccess OBJECT IDENTIFIER ::= { id-pe 1 }
+        subjectInfoAccess OBJECT IDENTIFIER ::= { id-pe 11 }
+        logotype OBJECT IDENTIFIER ::= { id-pe 12 }
+    id-pki = {joint-iso-itu-t(2) country(16) us(840) organization(1) verisign(113733) 1 }
+        id-extensions = {pki(1) 6}
+    pkcs-9 OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) 9 }
+        smimeCapabilities OBJECT IDENTIFIER ::= {pkcs-9 15}
+
+以下則是OID的編碼：
+
+    id-ce = 55 1D
+    id-pkix = 2B 06 01 05 05 07
+    id-pki = 60 86 48 01 86 F8 45 01
+
+其中我們需要處理的，只有keyUsage（55 1D 0F）和basicConstraints（55 1D 13）
+這兩個，多半會被設為critical。
+
+
+1.Key Usage
+
+先從extnValue（Primitive Universal OCTET STRING）取得資料內容後，視為
+ANS.1結構的DER編碼，解碼回ANS.1結構：
+
+    KeyUsage ::= BIT STRING {
+        digitalSignature        (0),
+        nonRepudiation          (1),
+        keyEncipherment         (2),
+        dataEncipherment        (3),
+        keyAgreement            (4),
+        keyCertSign             (5),
+        cRLSign                 (6),
+        encipherOnly            (7),
+        decipherOnly            (8) }
+
+解析得的結構應為一個Primitive Universal BIT STRING結構，取得位元資料
+後，看看前述那些位元被設立起來。其中我們關心的是：
+
+    keyEncipherment：如果為1的話，便可以用來做為SSL密鑰資訊交換加密使用，否則便不行。
+    keyCertSign：如果為1的話，便可能是CA憑證，但需由Basic Constraints決定。
+
+
+2.Basic Constraints
+
+同樣從extnValue取得資料內容後，解碼回ANS.1結構：
+
+    BasicConstraints ::= SEQUENCE {
+        cA                      BOOLEAN DEFAULT FALSE,
+        pathLenConstraint       INTEGER (0..MAX) OPTIONAL }
+
+為一Constructed Universal SEQUENCE結構，裡面含有兩個結構，我們關心的
+是cA的值，若為true，表示這張憑證是CA憑證，憑證內的公鑰可用來簽證其他
+憑證。注意cA若是省略，內定為false。
+
+
+<font color=blue><b>*** X.509憑證電子簽章核驗</b></font>
+
+在說明電子簽章如何核驗之前，我們要先決定是否可核驗。在SSL協定裡，我們
+可得到一堆X.509憑證，解析順序為從最後一張開始。通常前一張是下一張的簽
+證者，但並非絕對，因此必須先進行下列判斷：
+
+1.本憑證內的Issuer（簽證者）和Subject（擁有者）是否相同？若相同表示是
+  自我簽證，以本憑證的公鑰進行電子簽章核驗。
+2.有前一張憑證時，若該憑證為CA憑證，且前一張憑證的Subject就是本憑證的
+  Issuer，表示本憑證為前一張憑證所簽證，以前一張憑證的公鑰進行電子簽
+  章核驗。
+3.找不到任何簽證者，不進行電子簽章核驗。
+
+又，當電子簽章核驗全數通過後，必須檢查最後一張（亦即整個憑證列的第一
+張，Server憑證）的公鑰是否可用來做為SSL密鑰資訊交換加密使用，如果不行
+便是有問題。
+
+得到了簽證者的公鑰後，便可以開始進行電子簽章核驗。首先取得signatureValue
+的Bit String內容，其無用位元必須為0。然後以RSA公鑰解密後，視同ANS.1結
+構DER編碼，解碼回ANS.1結構（參見RFC2313）：
+
+    DigestInfo ::= SEQUENCE {
+        digestAlgorithm DigestAlgorithmIdentifier,
+        digest Digest }
+
+    DigestAlgorithmIdentifier ::= AlgorithmIdentifier
+
+    Digest ::= OCTET STRING
+
+AlgorithmIdentifier前面已提過，只不過這裡的OID又有點不同了，必須為：
+
+    digestAlgorithm OBJECT IDENTIFIER ::= { iso(1) member-body(2) US(840) rsadsi(113549) 2 }
+        md2 OBJECT IDENTIFIER ::= { digestAlgorithm 2 }
+        md4 OBJECT IDENTIFIER ::= { digestAlgorithm 4 }
+        md5 OBJECT IDENTIFIER ::= { digestAlgorithm 5 }
+    sha1 OBJECT IDENTIFIER ::= { iso(1) identified-organization(3) oiw(14) secsig(3) algorithms(2) 26 }
+
+以下則是OID的編碼（MD4用不到）：
+
+    digestAlgorithm = 2A 86 48 86 F7 0D 02
+    md2             = 2A 86 48 86 F7 0D 02 02
+    md4             = 2A 86 48 86 F7 0D 02 04
+    md5             = 2A 86 48 86 F7 0D 02 05
+    sha1            = 2B 0E 03 02 1A
+
+OID代表的hash function必須和signatureAlgorithm中所指定的hash function
+相同。實際應驗證的為digest（Primitive Universal OCTET STRING結構），
+取得其資料內容，便是應檢驗的digest值。接著採用相同的hash function，將
+tbsCertificate的DER編碼資料送入，若兩個digest值相同，核驗便算通過。
+
+
+<font color=blue><b>*** RSA</b></font>
+
+RSA是1977年由Ron Rivest、Adi Shamir、Leonard Adleman三人所提出的，於
+是便取其三人名字的字首，做為這個加密法的名稱。RSA加密法，主要是根據模
+數運算（Modular Arithmetic）的特性所發展出來的，以下便是相關的做法：
+
+1.公私鑰的建立
+  (1)找任意兩個質數p和q，p不等於q，計算n=p*q
+  (2)選擇一個大於1小於n的自然數e，e必須與p-1和q-1互質（一般實務上多挑65537）
+  (3)找出d，使得d*e mod (p-1)*(q-1) = 1
+  (4)n,d為私鑰，n,e為公鑰（n=modulus，e=public exponent，d=private exponent）
+
+2.加密
+  (1)假設訊息為a，先轉為小於n的整數x
+  (2)計算y = x^e mod n（公鑰加密）或y = x^d mod n（私鑰加密）
+  (3)將整數y轉為訊息b
+
+3.解密
+  (1)假設訊息為b，先轉為整數y
+  (2)計算x = y^d mod n（私鑰解密）或x = y^e mod n（公鑰解密）
+  (3)將整數x轉回訊息a
+
+亦即RSA係利用x^(d*e) mod n = x的特性來進行加解密的。它的保密性質在於，
+當n夠大時，任何人無法在有限的時間內，將它分解成質因數。亦即即使知道n，
+亦無法反推回p與q，自然就算不出d值來破解。如果有人能夠提出有效的質因數
+分解法，那麼RSA便能輕易地破解，自然也就沒有存在的意義了。至於n值需要
+多大？目前一般的應用，多半要求n值在1024位元以上。
+
+
+<font color=blue><b>*** PKCS#1標準</b></font>
+
+關於RSA訊息轉為整數的做法，現行皆採用PKCS#1標準，相關資料可參考：
+
+RFC2313: PKCS #1: RSA Encryption Version 1.5
+
+其格式為：
+
+    00 || BT || PS || 00 || D
+
+第一個byte 00，是為確保所得數字，必定小於模數（Modulus）n。BT為Block Type，
+私鑰加密可為00或01，公鑰加密必須為02。PS為附加字串（Padding String），
+至少要8 byte，這部份後面再述及。D則為訊息資料。
+
+由於整個格式的長度是size(D)+11 byte以上，因此模數n至少要有12 byte（96 bit）
+以上。由於目前n值多半要求1024 bit，也就是128 byte以上，因此這部份不成
+問題。
+
+1.Block Type 0
+
+其Padding String所加入的字元固定為00，由於和分隔用的00相同，因此訊息
+資料D的第一個byte必須不是0，或是雙方已知應傳接資料的大小。也因為有這
+個限制，Block Type 0變成愈來愈少人使用。
+
+2.Block Type 1
+
+其Padding String所加入的字元固定為FFh，由於和分隔用的00不同，因此很容
+易可以區分出訊息資料D。
+
+3.Block Type 2
+
+Padding String必須是非0的亂數，由於和分隔用的00不同，因此也是很容易可
+以區分出訊息資料D。
+
+
+<font color=blue><b>*** 大整數運算</b></font>
+
+由於RSA是基於大整數的運算，無法直接使用系統的整數乘除運算，必須使用陣
+列來模擬，因此大整數的運算速度，便成為RSA效能的瓶頸。由於大整數的運算
+速度一般都不快，故RSA很少用來直接加密資料，多半用來交換其他運算速度較
+快的加密演算法鍵值。在大整數運算中，最需要的便是乘法和除法（餘數運算同）：
+
+1.乘法
+
+兩個大整數相乘，最簡單的做法便是採用傳統的移位累加法，亦即：
+
+             7 3
+     *       2 9
+    -------------
+             2 7 (9*3)
+           6 3   (9*7)
+           0 6   (2*3)
+     +   1 4     (2*7)
+    -------------
+         2 1 1 7
+
+其效率是O(n^2)。一種簡單的改良法，便是使用分割解決法。假設兩數x和y要
+相乘：
+
+    x = a*2^n + b
+    y = c*2^n + d
+
+則：
+
+    u = (a+b)*(c+d)
+    v = a*c
+    w = b*d
+    z = v*2^2n + (u-v-w)*2^n + w
+
+使用3次乘法來取代4次乘法，其效率為O(n^log3)=O(n^1.59)。其他還有Toom-Cook
+的多重分割解決法，效率為O(n^(1+3.5/sqrt(logn)))，以及DFT法，效率為
+O(nlognloglogn)，不過皆有其限制。
+
+2.除法
+
+兩個大整數相除，最簡單的做法便是採用傳統的移位累減法，亦即：
+
+                2 5 ------> 商
+         +-------------
+    2 9  |    7 3 0
+           -) 5 8
+          -------------
+              1 5 0
+           -) 1 4 5
+          -------------
+                  5 ------> 餘數
+
+其效率為O(n^2)。其他有Reciprocal法（牛頓逼近法），效率同乘法演算法，
+但亦有其限制。
+
+
+目前已知OpenSSL乘法採用分割解決法，除法採用移位累減法。關於大整數運算
+的部份，將另以專文探討。
+
+
+<font color=blue><b>*** RSA加解密演算法</b></font>
+
+RSA主要的加解密運算在於次方運算。對於公鑰加解密而言：
+
+     x^e mod n
+
+若直接以x乘上e次，時間會需要非常久，一般皆採用指數位元累乘法來處理，
+其演算法為（e>1，x<n）：
+
+1.由最高位元開始，找到e第一個位元為1者，令y=x
+2.檢視下個低位元，若已無下個位元則傳回y
+3.令y=y*y mod n，若該位元值為1，則y=y*x mod n，回到步驟2
+
+整個運算需要的大整數乘除法次數=e的位元數+e位元為1的數目。因此在挑選
+e值時，應儘可能找位元1只有2個的小質數，如3、17、65537等，以加快此運算
+的速度。又由於e值不宜過小，因此現今實務上多選用65537。
+
+雖然公鑰e值可以做最佳化的挑選，但私鑰d值卻未必能符合相關特性，且通常
+偏大，故前述的指數位元累乘法，顯然就慢了很多。因此在私鑰加解密時，多
+採用中國餘數定理（Chinese Remainder Theorem，CRT）來處理。首先在產生
+公私鑰時，兩質數p和q，假設p>q，則：
+
+    dP = (1/e) mod (p-1) = d mod (p-1)，即dP*e mod (p-1) = 1
+    dQ = (1/e) mod (q-1) = d mod (q-1)，即dQ*e mod (q-1) = 1
+    qInv = (1/q) mod p，即qInv*q mod p = 1
+
+dP與dQ稱為CRT exponents，qInv稱為CRT coefficient，這些多在產生公私鑰
+時，即已算好並置入私鑰資訊裡。於是要計算y^d mod n，則：
+
+    m1 = y^dP mod p
+    m2 = y^dQ mod q
+    h = qInv*(m1-m2) mod p  // h必須是正值，m1-m2可能是負值 //
+    x = m2 + h*q
+
+關於模數倒數（Modular Inverse）的計算，我們後面會再述及。
+
+
+<font color=blue><b>*** 大質數產生法</b></font>
+
+RSA鍵值產生的第一個要件，便是找出兩個大質數，但如何確定選用的大整數是
+質數，其實是一件很困難的事。在小質數下，一般多採用試除法：
+
+    // 假設質數2與其倍數均已排除在外 //
+    n = sqrt(p);
+    for (int i=3; i < =n; i+=2)
+        if (p % i == 0) then p不是質數
+
+想當然耳，試除法用在大整數上，根本不可行，否則模數n值便可用試除法分解
+出p和q了。目前唯一能在Polynomial時間內，完全確認給定數字是否為質數的
+方法，便是2002年被提出的AKS質數檢驗法，這部份請自行參閱相關資料。
+
+在實務上，大質數的產生，多以檢測法將其可能是非質數的機率降到一定程度
+以下。其過程為：
+
+1.使用亂數產生一個待測的可能大質數。
+2.由於RSA鍵值要求e與(質數-1)互質，故可先行檢驗，若非互質，則回步驟1。
+3.利用質數檢測法進行多次測試，若均通過，即可將之視為質數，否則回步驟1。
+
+首先便是如何有效率地產生一個待測的可能大質數，如果隨便產生，當然很容
+易就是非質數。按質數理論，質數分佈的密度，亦即小於n的質數個數約為n/loge(n)，
+而且愈接近1的地方分佈愈密集。因此當以亂數產生一個大整數後，可再利用埃
+拉托斯特尼（Eratosthenes）篩選法，將該亂數移到可能的質數帶中。其演算
+法為：
+
+1.用亂數產生一個奇數的大整數p（排除質因數為2的情況）。
+2.準備k個小質數（2除外），計算餘數r[i] = p mod prime[i], for i = 1～k
+3.令delta = 0
+4.若有任何餘數r[i]+delta mod prime[i] = 0，則delta += 2（需考慮Overflow），繼續步驟4
+5.以p+delta做為待測的質數
+
+前述的演算法，可保證p+delta會與k個小質數互質。在OpenSSL中，一共準備了
+2048個質數（當然質數2是沒用到的）：
+
+const unsigned int primes[]=
+    {
+       2,   3,   5,   7,  11,  13,  17,  19,
+      23,  29,  31,  37,  41,  43,  47,  53,
+      59,  61,  67,  71,  73,  79,  83,  89,
+      97, 101, 103, 107, 109, 113, 127, 131,
+     137, 139, 149, 151, 157, 163, 167, 173,
+     179, 181, 191, 193, 197, 199, 211, 223,
+     227, 229, 233, 239, 241, 251, 257, 263,
+     269, 271, 277, 281, 283, 293, 307, 311,
+     313, 317, 331, 337, 347, 349, 353, 359,
+     367, 373, 379, 383, 389, 397, 401, 409,
+     419, 421, 431, 433, 439, 443, 449, 457,
+     461, 463, 467, 479, 487, 491, 499, 503,
+     509, 521, 523, 541, 547, 557, 563, 569,
+     571, 577, 587, 593, 599, 601, 607, 613,
+     617, 619, 631, 641, 643, 647, 653, 659,
+     661, 673, 677, 683, 691, 701, 709, 719,
+     727, 733, 739, 743, 751, 757, 761, 769,
+     773, 787, 797, 809, 811, 821, 823, 827,
+     829, 839, 853, 857, 859, 863, 877, 881,
+     883, 887, 907, 911, 919, 929, 937, 941,
+     947, 953, 967, 971, 977, 983, 991, 997,
+    1009,1013,1019,1021,1031,1033,1039,1049,
+    1051,1061,1063,1069,1087,1091,1093,1097,
+    1103,1109,1117,1123,1129,1151,1153,1163,
+    1171,1181,1187,1193,1201,1213,1217,1223,
+    1229,1231,1237,1249,1259,1277,1279,1283,
+    1289,1291,1297,1301,1303,1307,1319,1321,
+    1327,1361,1367,1373,1381,1399,1409,1423,
+    1427,1429,1433,1439,1447,1451,1453,1459,
+    1471,1481,1483,1487,1489,1493,1499,1511,
+    1523,1531,1543,1549,1553,1559,1567,1571,
+    1579,1583,1597,1601,1607,1609,1613,1619,
+    1621,1627,1637,1657,1663,1667,1669,1693,
+    1697,1699,1709,1721,1723,1733,1741,1747,
+    1753,1759,1777,1783,1787,1789,1801,1811,
+    1823,1831,1847,1861,1867,1871,1873,1877,
+    1879,1889,1901,1907,1913,1931,1933,1949,
+    1951,1973,1979,1987,1993,1997,1999,2003,
+    2011,2017,2027,2029,2039,2053,2063,2069,
+    2081,2083,2087,2089,2099,2111,2113,2129,
+    2131,2137,2141,2143,2153,2161,2179,2203,
+    2207,2213,2221,2237,2239,2243,2251,2267,
+    2269,2273,2281,2287,2293,2297,2309,2311,
+    2333,2339,2341,2347,2351,2357,2371,2377,
+    2381,2383,2389,2393,2399,2411,2417,2423,
+    2437,2441,2447,2459,2467,2473,2477,2503,
+    2521,2531,2539,2543,2549,2551,2557,2579,
+    2591,2593,2609,2617,2621,2633,2647,2657,
+    2659,2663,2671,2677,2683,2687,2689,2693,
+    2699,2707,2711,2713,2719,2729,2731,2741,
+    2749,2753,2767,2777,2789,2791,2797,2801,
+    2803,2819,2833,2837,2843,2851,2857,2861,
+    2879,2887,2897,2903,2909,2917,2927,2939,
+    2953,2957,2963,2969,2971,2999,3001,3011,
+    3019,3023,3037,3041,3049,3061,3067,3079,
+    3083,3089,3109,3119,3121,3137,3163,3167,
+    3169,3181,3187,3191,3203,3209,3217,3221,
+    3229,3251,3253,3257,3259,3271,3299,3301,
+    3307,3313,3319,3323,3329,3331,3343,3347,
+    3359,3361,3371,3373,3389,3391,3407,3413,
+    3433,3449,3457,3461,3463,3467,3469,3491,
+    3499,3511,3517,3527,3529,3533,3539,3541,
+    3547,3557,3559,3571,3581,3583,3593,3607,
+    3613,3617,3623,3631,3637,3643,3659,3671,
+    3673,3677,3691,3697,3701,3709,3719,3727,
+    3733,3739,3761,3767,3769,3779,3793,3797,
+    3803,3821,3823,3833,3847,3851,3853,3863,
+    3877,3881,3889,3907,3911,3917,3919,3923,
+    3929,3931,3943,3947,3967,3989,4001,4003,
+    4007,4013,4019,4021,4027,4049,4051,4057,
+    4073,4079,4091,4093,4099,4111,4127,4129,
+    4133,4139,4153,4157,4159,4177,4201,4211,
+    4217,4219,4229,4231,4241,4243,4253,4259,
+    4261,4271,4273,4283,4289,4297,4327,4337,
+    4339,4349,4357,4363,4373,4391,4397,4409,
+    4421,4423,4441,4447,4451,4457,4463,4481,
+    4483,4493,4507,4513,4517,4519,4523,4547,
+    4549,4561,4567,4583,4591,4597,4603,4621,
+    4637,4639,4643,4649,4651,4657,4663,4673,
+    4679,4691,4703,4721,4723,4729,4733,4751,
+    4759,4783,4787,4789,4793,4799,4801,4813,
+    4817,4831,4861,4871,4877,4889,4903,4909,
+    4919,4931,4933,4937,4943,4951,4957,4967,
+    4969,4973,4987,4993,4999,5003,5009,5011,
+    5021,5023,5039,5051,5059,5077,5081,5087,
+    5099,5101,5107,5113,5119,5147,5153,5167,
+    5171,5179,5189,5197,5209,5227,5231,5233,
+    5237,5261,5273,5279,5281,5297,5303,5309,
+    5323,5333,5347,5351,5381,5387,5393,5399,
+    5407,5413,5417,5419,5431,5437,5441,5443,
+    5449,5471,5477,5479,5483,5501,5503,5507,
+    5519,5521,5527,5531,5557,5563,5569,5573,
+    5581,5591,5623,5639,5641,5647,5651,5653,
+    5657,5659,5669,5683,5689,5693,5701,5711,
+    5717,5737,5741,5743,5749,5779,5783,5791,
+    5801,5807,5813,5821,5827,5839,5843,5849,
+    5851,5857,5861,5867,5869,5879,5881,5897,
+    5903,5923,5927,5939,5953,5981,5987,6007,
+    6011,6029,6037,6043,6047,6053,6067,6073,
+    6079,6089,6091,6101,6113,6121,6131,6133,
+    6143,6151,6163,6173,6197,6199,6203,6211,
+    6217,6221,6229,6247,6257,6263,6269,6271,
+    6277,6287,6299,6301,6311,6317,6323,6329,
+    6337,6343,6353,6359,6361,6367,6373,6379,
+    6389,6397,6421,6427,6449,6451,6469,6473,
+    6481,6491,6521,6529,6547,6551,6553,6563,
+    6569,6571,6577,6581,6599,6607,6619,6637,
+    6653,6659,6661,6673,6679,6689,6691,6701,
+    6703,6709,6719,6733,6737,6761,6763,6779,
+    6781,6791,6793,6803,6823,6827,6829,6833,
+    6841,6857,6863,6869,6871,6883,6899,6907,
+    6911,6917,6947,6949,6959,6961,6967,6971,
+    6977,6983,6991,6997,7001,7013,7019,7027,
+    7039,7043,7057,7069,7079,7103,7109,7121,
+    7127,7129,7151,7159,7177,7187,7193,7207,
+    7211,7213,7219,7229,7237,7243,7247,7253,
+    7283,7297,7307,7309,7321,7331,7333,7349,
+    7351,7369,7393,7411,7417,7433,7451,7457,
+    7459,7477,7481,7487,7489,7499,7507,7517,
+    7523,7529,7537,7541,7547,7549,7559,7561,
+    7573,7577,7583,7589,7591,7603,7607,7621,
+    7639,7643,7649,7669,7673,7681,7687,7691,
+    7699,7703,7717,7723,7727,7741,7753,7757,
+    7759,7789,7793,7817,7823,7829,7841,7853,
+    7867,7873,7877,7879,7883,7901,7907,7919,
+    7927,7933,7937,7949,7951,7963,7993,8009,
+    8011,8017,8039,8053,8059,8069,8081,8087,
+    8089,8093,8101,8111,8117,8123,8147,8161,
+    8167,8171,8179,8191,8209,8219,8221,8231,
+    8233,8237,8243,8263,8269,8273,8287,8291,
+    8293,8297,8311,8317,8329,8353,8363,8369,
+    8377,8387,8389,8419,8423,8429,8431,8443,
+    8447,8461,8467,8501,8513,8521,8527,8537,
+    8539,8543,8563,8573,8581,8597,8599,8609,
+    8623,8627,8629,8641,8647,8663,8669,8677,
+    8681,8689,8693,8699,8707,8713,8719,8731,
+    8737,8741,8747,8753,8761,8779,8783,8803,
+    8807,8819,8821,8831,8837,8839,8849,8861,
+    8863,8867,8887,8893,8923,8929,8933,8941,
+    8951,8963,8969,8971,8999,9001,9007,9011,
+    9013,9029,9041,9043,9049,9059,9067,9091,
+    9103,9109,9127,9133,9137,9151,9157,9161,
+    9173,9181,9187,9199,9203,9209,9221,9227,
+    9239,9241,9257,9277,9281,9283,9293,9311,
+    9319,9323,9337,9341,9343,9349,9371,9377,
+    9391,9397,9403,9413,9419,9421,9431,9433,
+    9437,9439,9461,9463,9467,9473,9479,9491,
+    9497,9511,9521,9533,9539,9547,9551,9587,
+    9601,9613,9619,9623,9629,9631,9643,9649,
+    9661,9677,9679,9689,9697,9719,9721,9733,
+    9739,9743,9749,9767,9769,9781,9787,9791,
+    9803,9811,9817,9829,9833,9839,9851,9857,
+    9859,9871,9883,9887,9901,9907,9923,9929,
+    9931,9941,9949,9967,9973,10007,10009,10037,
+    10039,10061,10067,10069,10079,10091,10093,10099,
+    10103,10111,10133,10139,10141,10151,10159,10163,
+    10169,10177,10181,10193,10211,10223,10243,10247,
+    10253,10259,10267,10271,10273,10289,10301,10303,
+    10313,10321,10331,10333,10337,10343,10357,10369,
+    10391,10399,10427,10429,10433,10453,10457,10459,
+    10463,10477,10487,10499,10501,10513,10529,10531,
+    10559,10567,10589,10597,10601,10607,10613,10627,
+    10631,10639,10651,10657,10663,10667,10687,10691,
+    10709,10711,10723,10729,10733,10739,10753,10771,
+    10781,10789,10799,10831,10837,10847,10853,10859,
+    10861,10867,10883,10889,10891,10903,10909,10937,
+    10939,10949,10957,10973,10979,10987,10993,11003,
+    11027,11047,11057,11059,11069,11071,11083,11087,
+    11093,11113,11117,11119,11131,11149,11159,11161,
+    11171,11173,11177,11197,11213,11239,11243,11251,
+    11257,11261,11273,11279,11287,11299,11311,11317,
+    11321,11329,11351,11353,11369,11383,11393,11399,
+    11411,11423,11437,11443,11447,11467,11471,11483,
+    11489,11491,11497,11503,11519,11527,11549,11551,
+    11579,11587,11593,11597,11617,11621,11633,11657,
+    11677,11681,11689,11699,11701,11717,11719,11731,
+    11743,11777,11779,11783,11789,11801,11807,11813,
+    11821,11827,11831,11833,11839,11863,11867,11887,
+    11897,11903,11909,11923,11927,11933,11939,11941,
+    11953,11959,11969,11971,11981,11987,12007,12011,
+    12037,12041,12043,12049,12071,12073,12097,12101,
+    12107,12109,12113,12119,12143,12149,12157,12161,
+    12163,12197,12203,12211,12227,12239,12241,12251,
+    12253,12263,12269,12277,12281,12289,12301,12323,
+    12329,12343,12347,12373,12377,12379,12391,12401,
+    12409,12413,12421,12433,12437,12451,12457,12473,
+    12479,12487,12491,12497,12503,12511,12517,12527,
+    12539,12541,12547,12553,12569,12577,12583,12589,
+    12601,12611,12613,12619,12637,12641,12647,12653,
+    12659,12671,12689,12697,12703,12713,12721,12739,
+    12743,12757,12763,12781,12791,12799,12809,12821,
+    12823,12829,12841,12853,12889,12893,12899,12907,
+    12911,12917,12919,12923,12941,12953,12959,12967,
+    12973,12979,12983,13001,13003,13007,13009,13033,
+    13037,13043,13049,13063,13093,13099,13103,13109,
+    13121,13127,13147,13151,13159,13163,13171,13177,
+    13183,13187,13217,13219,13229,13241,13249,13259,
+    13267,13291,13297,13309,13313,13327,13331,13337,
+    13339,13367,13381,13397,13399,13411,13417,13421,
+    13441,13451,13457,13463,13469,13477,13487,13499,
+    13513,13523,13537,13553,13567,13577,13591,13597,
+    13613,13619,13627,13633,13649,13669,13679,13681,
+    13687,13691,13693,13697,13709,13711,13721,13723,
+    13729,13751,13757,13759,13763,13781,13789,13799,
+    13807,13829,13831,13841,13859,13873,13877,13879,
+    13883,13901,13903,13907,13913,13921,13931,13933,
+    13963,13967,13997,13999,14009,14011,14029,14033,
+    14051,14057,14071,14081,14083,14087,14107,14143,
+    14149,14153,14159,14173,14177,14197,14207,14221,
+    14243,14249,14251,14281,14293,14303,14321,14323,
+    14327,14341,14347,14369,14387,14389,14401,14407,
+    14411,14419,14423,14431,14437,14447,14449,14461,
+    14479,14489,14503,14519,14533,14537,14543,14549,
+    14551,14557,14561,14563,14591,14593,14621,14627,
+    14629,14633,14639,14653,14657,14669,14683,14699,
+    14713,14717,14723,14731,14737,14741,14747,14753,
+    14759,14767,14771,14779,14783,14797,14813,14821,
+    14827,14831,14843,14851,14867,14869,14879,14887,
+    14891,14897,14923,14929,14939,14947,14951,14957,
+    14969,14983,15013,15017,15031,15053,15061,15073,
+    15077,15083,15091,15101,15107,15121,15131,15137,
+    15139,15149,15161,15173,15187,15193,15199,15217,
+    15227,15233,15241,15259,15263,15269,15271,15277,
+    15287,15289,15299,15307,15313,15319,15329,15331,
+    15349,15359,15361,15373,15377,15383,15391,15401,
+    15413,15427,15439,15443,15451,15461,15467,15473,
+    15493,15497,15511,15527,15541,15551,15559,15569,
+    15581,15583,15601,15607,15619,15629,15641,15643,
+    15647,15649,15661,15667,15671,15679,15683,15727,
+    15731,15733,15737,15739,15749,15761,15767,15773,
+    15787,15791,15797,15803,15809,15817,15823,15859,
+    15877,15881,15887,15889,15901,15907,15913,15919,
+    15923,15937,15959,15971,15973,15991,16001,16007,
+    16033,16057,16061,16063,16067,16069,16073,16087,
+    16091,16097,16103,16111,16127,16139,16141,16183,
+    16187,16189,16193,16217,16223,16229,16231,16249,
+    16253,16267,16273,16301,16319,16333,16339,16349,
+    16361,16363,16369,16381,16411,16417,16421,16427,
+    16433,16447,16451,16453,16477,16481,16487,16493,
+    16519,16529,16547,16553,16561,16567,16573,16603,
+    16607,16619,16631,16633,16649,16651,16657,16661,
+    16673,16691,16693,16699,16703,16729,16741,16747,
+    16759,16763,16787,16811,16823,16829,16831,16843,
+    16871,16879,16883,16889,16901,16903,16921,16927,
+    16931,16937,16943,16963,16979,16981,16987,16993,
+    17011,17021,17027,17029,17033,17041,17047,17053,
+    17077,17093,17099,17107,17117,17123,17137,17159,
+    17167,17183,17189,17191,17203,17207,17209,17231,
+    17239,17257,17291,17293,17299,17317,17321,17327,
+    17333,17341,17351,17359,17377,17383,17387,17389,
+    17393,17401,17417,17419,17431,17443,17449,17467,
+    17471,17477,17483,17489,17491,17497,17509,17519,
+    17539,17551,17569,17573,17579,17581,17597,17599,
+    17609,17623,17627,17657,17659,17669,17681,17683,
+    17707,17713,17729,17737,17747,17749,17761,17783,
+    17789,17791,17807,17827,17837,17839,17851,17863
+};
+
+接下來便是質數檢測法，一般多採用Miller-Rabin質數檢測法（OpenSSL亦然），
+其演算法為：
+
+1.假設待測的質數為n
+2.產生亂數a，1<a<n-1
+3.計算r = a^(n-1) mod n，過程中（X=次方從最高位元往下計算時的結果，參見前述指數位元累乘法）
+      if 存在X^2≡1 (mod n) but X <> ±1 (mod n) then 不是質數
+  if r <> 1 then 不是質數
+4.重複前述測試，最裡面的if每通過一次，非質數的機率便小1/4
+
+然而這個質數檢測法要進行多少次呢？可以參考OpenSSL：
+
+/* number of Miller-Rabin iterations for an error rate  of less than 2^-80
+ * for random 'b'-bit input, b >= 100 (taken from table 4.4 in the Handbook
+ * of Applied Cryptography [Menezes, van Oorschot, Vanstone; CRC Press 1996];
+ * original paper: Damgaard, Landrock, Pomerance: Average case error estimates
+ * for the strong probable prime test. -- Math. Comp. 61 (1993) 177-194) */
+#define BN_prime_checks_for_size(b) ((b) >= 1300 ?  2 : \
+                                (b) >=  850 ?  3 : \
+                                (b) >=  650 ?  4 : \
+                                (b) >=  550 ?  5 : \
+                                (b) >=  450 ?  6 : \
+                                (b) >=  400 ?  7 : \
+                                (b) >=  350 ?  8 : \
+                                (b) >=  300 ?  9 : \
+                                (b) >=  250 ? 12 : \
+                                (b) >=  200 ? 15 : \
+                                (b) >=  150 ? 18 : \
+                                /* b >= 100 */ 27)
+
+這裡的b便是待測質數的位元數。至於為什麼，便請自行參閱註解中提到的文件了。
+
+如果只是想做測試，找兩個固定的大質數做出RSA公私鑰，那麼可以考慮使用莫
+仙尼（Mersenne）數字：
+
+    Mersenne Numbers = 2^n - 1
+
+其中n = 2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 127, 521, 607, 1279, 2203, 2281, 3217, 4253, 4423, 9889, 9941, 11213, 19937
+時皆為質數。因此可取n=521,17做為兩質數，且符合與e=65537互質的條件，最
+後可得536 bit（67 byte）的模數n值。
+
+
+<font color=blue><b>*** 兩數互質檢測法</b></font>
+
+兩數互質，也就是GCD(a,b)=1，一般可用輾轉相除法，其效率為O(n^2)，n=位數。
+演算法如下：
+
+    r = a % b，if r = 1 then 互質，if r = 0 then 不互質
+    gcd(a,b) = gcd(b,r)
+
+
+<font color=blue><b>*** 模數倒數（Modular Inverse）演算法</b></font>
+
+若a*b mod n = 1，則a與b在模數n中互為模數倒數，一般亦可寫成：
+
+    a = 1/b mod n  或
+    a = b^-1 mod n
+
+模數倒數在RSA裡，計算d、qInv值時都需要，一般多採用Extended Euclidean algorithm：
+
+function extended_gcd(a,b) // 求ax + by = GCD(a,b), 回傳(x,y,gcd) //
+    x := 0    lastx := 1
+    y := 1    lasty := 0
+    while b ≠ 0
+        temp := b
+        quotient := a div b
+        b := a mod b
+        a := temp
+        temp := x
+        x := lastx-quotient*x
+        lastx := temp
+        temp := y
+        y := lasty-quotient*y
+        lasty := temp
+    return {lastx, lasty, a}
+
+以gcd(b,n)代入，回傳的lastx便是模數倒數，其中gcd必須為1。注意回傳的
+lastx可能是負值，故必須判斷並轉成正值。
+
+
+<font color=blue><b>*** RC4</b></font>
+
+RC4全名為Rivest Cipher 4，為提出RSA加密法作者之一的Ron Rivest於1987所
+提出。相關資料與演算法可自行上網搜尋查閱，這裡我們直接列出其程式供參考：
+
+class RC4    // RC4加解密物件 //
+{
+private:
+    int m_X, m_Y;
+    unsigned char m_State[256];
+public:
+    void SetKey(const void* key, int key_len);
+    void Encrypt(const void* data, int len, void* output);
+};
+
+void RC4::SetKey(const void* key, int key_len)
+//說明：設定鍵值
+//輸入：key, key_len = 鍵值資料與大小
+{
+    m_X = 0;
+    m_Y = 0;
+    int i;
+    for (i=0; i < 256; i++) m_State[i] = i;
+    unsigned char index1 = 0;
+    unsigned char index2 = 0;
+    for (i=0; i < 256; i++) 
+    {
+        index2 = (((char*)key)[index1] + m_State[i] + index2) & 0xff;
+        char t = m_State[i];
+        m_State[i] = m_State[index2];
+        m_State[index2] = t;
+        index1 = (char)((index1 + 1) % key_len);
+    }
+}
+
+void RC4::Encrypt(const void* indata, int in_len, void* outdata)
+//說明：對輸入資料進行RC4加解密
+//輸入：indata,in_len = 輸入資料與長度
+//輸出：outdata = 加解密結果，長度與輸入資料長度相同
+{
+    unsigned char x = m_X;
+    unsigned char y = m_Y;
+    for (int i=0; i < in_len; i++)
+    {
+        unsigned char c = ((char*)indata)[i];
+        unsigned char x1 = x = (char)(x + 1);
+        unsigned char y1 = y = (char)(m_State[x] + y);
+        unsigned char tx = m_State[x1];
+        unsigned char ty = m_State[y1];
+        m_State[x1] = ty;
+        m_State[y1] = tx;
+        ((char*)outdata)[i] = c ^ m_State[(tx + ty) & 0xff];
+    }
+    m_X = x;
+    m_Y = y;
+}
+
+
+<font color=blue><b>*** MD2</b></font>
+
+參考下列文件，裡面有程式碼可直接取用：
+
+RFC1319: The MD2 Message-Digest Algorithm
+
+
+<font color=blue><b>*** MD5</b></font>
+
+參考下列文件，裡面有程式碼可直接取用：
+
+RFC1321: The MD5 Message-Digest Algorithm
+
+
+<font color=blue><b>*** SHA-1</b></font>
+
+參考下列文件，裡面有程式碼可直接取用：
+
+RFC3174: US Secure Hash Algorithm 1 (SHA1)
+
+<font color=blue><b>*** 補充：block加密法</b></font>
+
+由於前文採用的RC4是stream加密法，故省略了所有block加密法的相關資訊。底下，我們以3DES為例，來進行補充說明。
+
+    CipherSuite TLS_RSA_WITH_3DES_EDE_CBC_SHA          = { 0x00,0x0A };
+
+以下為3DES_EDE_CBC加密法的特性：
+
+    CipherSpec.cipher_type：stream加密法或block加密法，3DES是block加密法。
+    CipherSpec.key_material：加密法的鍵值byte長度，3DES為24。
+    CipherSpec.IV_size：加密法的Initial Vector byte長度，3DES為8。
+    CipherSpec.hash_size：digest的hash資料byte長度，SHA-1為20。
+    CipherSpec.is_exportable：是否Exportable，會影響加密的鍵值產生法，3DES_EDE_CBC為false。
+
+block加密法和stream加密法的差異，主要是在送出Change Cipher Spec啟動加密訊息後的記錄層資料格式（參閱邏輯層第七部份）。
+
+     block-ciphered struct {
+         opaque content[SSLCompressed.length];
+         opaque MAC[CipherSpec.hash_size];
+         uint8 padding[GenericBlockCipher.padding_length];
+         uint8 padding_length;
+     } GenericBlockCipher;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        select (CipherSpec.cipher_type) {
+            case stream: GenericStreamCipher;
+            case block: GenericBlockCipher;
+        } fragment;
+    } SSLCiphertext;
+
+和stream加密法相較之下，block加密法會在記錄層資料的最後面，加上一些Padding資料，以使得整個資料的長度符合加密法所需
+的block大小。以3DES為例，它的block大小為8，因此假設內容與MAC的大小總合為0x81，那麼後面便必須補上7個byte，以便成為8的倍數。
+由於padding_lenth固定佔用1 byte，因此padding_length的值便是6。亦即當內容與MAC的大小剛好是block大小的倍數，後面還是得補上
+一個block大小的資料。至於padding裡面的內容值，和padding_length相同。以前例而言，便是補上7個0x06的值。
+注意MAC的計算並不含這些Padding資料。
+
+在接收到對方的加密資料時，首先要檢查資料長度是否為block大小的倍數，如果不是便是有問題。接著解密後，將附加在最後的Padding資料
+去掉即可（讀取最後一個byte便可得知padding_lenth）。
+
+其實將SSL主架構寫好後，其他都是在擴充採用的加密法而已，並不會再動到其他地方。
+
+<font color=blue><b>*** 3DES</b></font>
+
+3DES，又稱Triple DES，是一種利用3組DES密碼來進行多重加密的方法，以補強DES加密法的弱點。一般3DES加密法的做法，
+多採用EDE（Encrypt-Decrypt-Encrypt）的方式進行，其定義為：
+
+    cipher_text = E(k3,D(k2,E(k1,plain_text)))
+    plain_text = D(k3,E(k2,D(k1,cipher_text)))
+
+其中k1,k2,k3即為使用的3組DES密碼，函數E與D分別表示加密與解密。亦即在做3DES-EDE加密時，先用第一組密碼對原始資料加密，
+將結果交給第二組密碼做解密，再將結果交給第三組密碼做加密，得到最終的加密結果。解密時，反其道而行即可。
+
+前述的定義是針對個別的block資料做加解密，前後的block資料之間並不互相影響，一般稱為ECB模式（Electronic CodeBook）。
+若需要前後文相關來強化加密效果，則多會採用CBC模式（Cipher-Block Chaining），
+此時會需要一個初始向量（Initialization Vector，簡稱IV）。IV在加密過程裡，主要記錄前一個block的加密結果
+（只有第一個block才是真的初始向量），當下一個block要做加密時，先與IV（前一個block加密結果）做互斥後，再進行加密。
+
+以下為CBC模式的處理流程（對每一個block依次進行）：
+
+(1) 加密
+
+    實際資料 = 原始資料 ^ IV
+    加密結果 = 加密(實際資料)
+    IV = 加密結果
+    輸出加密結果
+
+(2) 解密
+
+    下一個IV = 已加密資料
+    解密結果 = 解密(已加密資料)
+    實際結果 = 解密結果 ^ IV
+    IV = 下一個IV
+    輸出實際結果
+
+DES的密碼長度，主要是56 bit（7 byte），然後在內部處理時，以每7 bit共拆成8份，每份的最低位元（LSB）補上一個奇位元（Odd Parity），
+最後形成8 byte的密碼。按3DES是採用3組DES密碼，故密碼長度應為168 bit（21 byte），然而實際運用時，多採用24 byte密碼，
+亦即每個DES密碼都是64 bit（8 byte）。這種情況，其實主要是省下了DES 7 bit拆分的工作，故在進行DES密碼處理時，應只取各
+byte的前7 bit，然後將最低位元改成正確的奇位元，最後再進行key schedule的工作。這部份可參考DES加密演算法。
+
+<font color=blue><b>*** DES</b></font>
+
+請參閱拙著〔HTTP的NTLM認證〕。
+
+</pre>
+</body>
+</html>
