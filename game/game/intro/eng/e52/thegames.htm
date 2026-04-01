@@ -18,6 +18,9 @@
         E8 EF 57 E8 76 12
         -- -- -- 90 90 90
       或
+        E8 BA 01 FA 06
+        E9 8E -- -- --
+      或
         C7 06 CC 32 01 02 07 A1 2E 13
         -- -- -- -- -- 00 -- -- -- --
         F6 C4 10 75 0E 80 F2 01
@@ -26,8 +29,14 @@
         -- -- -- -- -- 33 -- -- --
         BE 03 00 B8 09 02
         -- -- -- -- -- 00
-<b>備註</b>：點選聖火按下"Begin Competition"後，鍵盤會無反應而卡死。其原因在於遊戲攔走了
-      INT 09h的鍵盤岔斷，造成Int21 0Bh與08h等STDIN輸入功能無法生效，目前暫時無解。
+<b>備註</b>：點選聖火按下"Begin Competition"後，若鍵盤無反應，請改用DosBox-X 0.83（Daum
+      版、SVN版DosBox、PCem/86Box等均不行），設定machine=cga（ega、vgaonly、svga
+      等均不行），刪除THECNFG.DAT，進入遊戲重選顯示模式，便可以輸入姓名。
+<b>操作</b>：
+
+上下左右 = 移動
+Space = 執行動作
+Ins = 確定
 </pre>
 </body>
 </html>

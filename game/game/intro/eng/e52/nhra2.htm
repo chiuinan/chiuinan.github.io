@@ -12,8 +12,33 @@
 <IMG SRC="nhra2/game1.jpg">
 
 <IMG SRC="nhra2/game2.jpg">
-<b>保護</b>：光碟
+<b>保護</b>：光碟，破解碼（需最大安裝）：
+      dragster.exe
+        75 44 68 00 7F 00 00
+        EB -- -- -- -- -- --
+<b>備註</b>：非安裝移機者，必須設定下列Registry（假設安裝目錄在C:\NHRA2）：
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Motorsims\NHRA2 Drag Racing\1.0\Information]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Motorsims\NHRA2 Drag Racing\1.0\Information]
+
+"Movies"="yes"
+"Sounds"="yes"
+"Interface"="yes"
+"AGP"="yes"
+"Low"="yes"
+"Medium"="yes"
+"High"="yes"
+"Installpath"="C:\\NHRA2"
+
+黃金版則是：
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Motorsims\NHRA Drag Racing 2 Gold\1.0\Information]
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Motorsims\NHRA Drag Racing 2 Gold\1.0\Information]
+
 <b>備註</b>：VirtualBox無法執行，虛擬機請使用VMware。
+<b>備註</b>：目前已知的光碟有2000/11/3的1.0版，和2000/11/22的1.1版兩種，差別只有執行檔。
 </pre>
 </body>
 </html>
