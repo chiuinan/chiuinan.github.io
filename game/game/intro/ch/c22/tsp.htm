@@ -14,25 +14,45 @@
 <IMG src="tsp/game1.png">
 
 <IMG src="tsp/game2.png">
-<b>保護</b>：光碟，破解碼：
+<b>保護</b>：光碟，破解碼（放入光碟才有背景音樂）：
+      LOGO.EXE
+        74 1E 9A B9 10
+        EB 43 -- -- --
+      TK.EXE
+        74 1E 9A EC 10
+        EB 43 -- -- --
+<b>備註</b>：遊戲檔中有兩個特殊檔名，會造成無法在中文Windows系統下使用DosBox安裝與執行。
+      首先將XP設定成英文語系後安裝本遊戲，然後將兩個特殊檔名的檔案改成一般的檔名，
+      接著在TK.EXE尋找對應的檔名加以修改：
+        BA CF DD C4 DE 32 (.GRA, 350 byte)
+        BA CF DD C4 DE 33 (.GRA, 89 byte)
+      例如將BA CF DD C4 DE都改成41 42 43 44 45（ABCDE）。
+<b>修改</b>：TK.EXE
 
-LOGO.EXE
-  74 1E 9A B9 10
-  EB 43 -- -- --
-TK.EXE
-  74 1E 9A EC 10
-  EB 43 -- -- --
+1.使用MIDI做為背景音樂（使用光碟音軌者勿改）
+  8B DE D1 E3 FF B7 C2 03 9A 2E 01 D1 0D 59 EB 70
+  -- -- -- -- -- -- -- -- -- -- -- -- -- -- 90 90
+  以下必須同時修改幾個BAT檔，否則播放MIDI音樂的同時，畫面會亂掉：
 
-<b>修改</b>：
+(1)EM_DRV.BAT
 
-1.特殊檔名：遊戲檔中有兩個特殊檔名，會造成無法在中文Windows系統下使用DosBox執行。
-  首先將該兩個特殊檔名的檔案改成一般的檔名，然後在TK.EXE尋找對應的檔名加以修改：
-    BA CF DD C4 DE 32 (.GRA, 350 byte)
-    BA CF DD C4 DE 33 (.GRA, 89 byte)
-2.有背景音樂
-  TK.EXE
-    8B DE D1 E3 FF B7 C2 03 9A 2E 01 D1 0D 59 EB 70
-    -- -- -- -- -- -- -- -- -- -- -- -- -- -- 90 90
+@echo off
+rem stop >nul:
+rem play /q /r %1
+pmp %1 >nul:
+
+(2)MIDI_DRV.BAT
+
+@echo off
+rem stop >nul:
+play /q /r %1 >nul:
+rem ssinit GM >nul:
+
+(3)STOP.BAT
+
+@echo off
+rem stop >nul:
+pmp -s >nul:
 
 <b>備註</b>：<A href="tsp/cg.7z">CG圖</A>有露點。
 <b>操作</b>：有選項選擇時按滑鼠右鍵即可出現系統選單。
