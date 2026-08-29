@@ -18,9 +18,12 @@
 
 <IMG SRC="kx3/game2.png">
 <b>保護</b>：光碟，破解碼：
-      INST.EXE
+      INSTALL.EXE
         74 05 E8 CD 0F
         EB -- -- -- --
+      須將光碟上的KR、KX、KXV1、KXV2、KXV3等目錄拷貝到安裝目錄，再更改INSTALL.CFG
+      位置18h的值為01（D磁碟安裝為04），然後利用下列命令模擬磁碟A成為光碟內容：
+        SUBST A: .
 <b>備註</b>：電腦速度不可太快，否則人物動作會過快。DoxBox cycles建議3000即可。
 <b>修改</b>：KX.EXE
 
